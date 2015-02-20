@@ -201,13 +201,7 @@ public class Simulator extends SimulationBasics
 	public SettingsControllerServer getSettingsControllerServer()
 	{
 		return settingsControllerServer;
-	}	
-	
-	private EyetrackerCenter eyetrackerCenter;
-	public EyetrackerCenter getEyetrackerCenter()
-	{
-		return eyetrackerCenter;
-	}	
+	}		
 	
 	private static String outputFolder;
 	public static String getOutputFolder()
@@ -398,11 +392,6 @@ public class Simulator extends SimulationBasics
         	File videoFile = new File(videoPath);
         	stateManager.attach(new VideoRecorderAppState(videoFile));
         }
-        
-		if(settingsLoader.getSetting(Setting.Eyetracker_enableConnection, SimulationDefaults.Eyetracker_enableConnection))
-		{
-			eyetrackerCenter = new EyetrackerCenter(this);
-		}
 		
 		initializationFinished = true;
     }
@@ -496,8 +485,6 @@ public class Simulator extends SimulationBasics
 				instructionScreenID = null;
 			}
 			
-			if(eyetrackerCenter != null)
-				eyetrackerCenter.update();
     	}
     }
 
@@ -578,8 +565,6 @@ public class Simulator extends SimulationBasics
 			if(settingsControllerServer != null)
 				settingsControllerServer.close();
 			
-			if(eyetrackerCenter != null)
-				eyetrackerCenter.close();
 			
 			//initDrivingTaskSelectionGUI();
 		}
