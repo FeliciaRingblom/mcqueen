@@ -229,7 +229,7 @@ public class Simulator extends SimulationBasics
     	// Create a new NiftyGUI object
     	nifty = niftyDisplay.getNifty();
     		
-    	String xmlPath = "Interface/DrivingTaskSelectionGUI.xml";
+    	String xmlPath = "Interface/myTaskGUI.xml";
     	
     	// Read XML and initialize custom ScreenController
     	nifty.fromXml(xmlPath, "start", new DrivingTaskSelectionGUIController(this, nifty));
