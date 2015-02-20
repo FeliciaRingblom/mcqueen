@@ -59,8 +59,8 @@ public class SteeringCar extends Car
 		mass = scenarioLoader.getChassisMass();
 		
 		minSpeed = scenarioLoader.getCarProperty(CarProperty.engine_minSpeed, SimulationDefaults.engine_minSpeed);
-		maxSpeed = scenarioLoader.getCarProperty(CarProperty.engine_maxSpeed, SimulationDefaults.engine_maxSpeed);
-			
+		//maxSpeed = scenarioLoader.getCarProperty(CarProperty.engine_maxSpeed, SimulationDefaults.engine_maxSpeed);
+		maxSpeed = 70;	
 		decelerationBrake = scenarioLoader.getCarProperty(CarProperty.brake_decelerationBrake, 
 				SimulationDefaults.brake_decelerationBrake);
 		maxBrakeForce = 0.004375f * decelerationBrake * mass;
@@ -104,20 +104,21 @@ public class SteeringCar extends Car
 			// apply 0 acceleration when engine not running
 			pAccel = powerTrain.getPAccel(tpf, 0) * 30f;
 		}
-		else if(isAutoAcceleration && (getCurrentSpeedKmh() < minSpeed))
-		{
-			// apply maximum acceleration (= -1 for forward) to maintain minimum speed
-			pAccel = powerTrain.getPAccel(tpf, -1) * 30f;
-		}
-		else if(isCruiseControl && (getCurrentSpeedKmh() < targetSpeedCruiseControl))
-		{
-			// apply maximum acceleration (= -1 for forward) to maintain target speed
-			pAccel = powerTrain.getPAccel(tpf, -1) * 30f;
-		}
+//		else if(isAutoAcceleration && (getCurrentSpeedKmh() < minSpeed))
+//		{
+//			// apply maximum acceleration (= -1 for forward) to maintain minimum speed
+//			pAccel = powerTrain.getPAccel(tpf, -1) * 30f;
+//		}
+//		else if(isCruiseControl && (getCurrentSpeedKmh() < targetSpeedCruiseControl))
+//		{
+//			// apply maximum acceleration (= -1 for forward) to maintain target speed
+//			pAccel = powerTrain.getPAccel(tpf, -1) * 30f;
+//		}
 		else
 		{
 			// apply acceleration according to gas pedal state
-			pAccel = powerTrain.getPAccel(tpf, gasPedalPressIntensity) * 30f;
+			//pAccel = powerTrain.getPAccel(tpf, gasPedalPressIntensity) * 30f;
+			pAccel = -1500f;
 		}
 		transmission.performAcceleration(pAccel);
 		
