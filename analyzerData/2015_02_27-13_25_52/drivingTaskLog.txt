@@ -1,0 +1,19 @@
+Driver: default driver
+Driving Task: reactionTest.xml
+Start Time: 2015-02-27 13:25:59.314
+
+trial;vpn;age;gender;task;task_detail;condition_num;condition_string;track;accuracy;additional_false_r;RT_brake1;RT_brake2;RT_brake3;RT_brake4;RT_change1;RT_change2;RT_change3;RT_change4
+-1;-1;-1;-1;1;braking;-1;Brake;-1;0;0;;;;;;;;
+-1;-1;-1;-1;1;braking;-1;Brake;-1;0;1;;;;;;;;
+-1;-1;-1;-1;1;braking;-1;Brake;-1;0;0;;;;;;;;
+-1;-1;-1;-1;1;braking;-1;Brake;-1;0;0;;;;;;;;
+-1;-1;-1;-1;1;braking;-1;Brake;-1;0;1;;;;;;;;
+-1;-1;-1;-1;1;braking;-1;Brake;-1;0;1;;;;;;;;
+-1;-1;-1;-1;3;steering;-1;LaneChange;-1;1;0;;;;;574;574;1240;1416
+-1;-1;-1;-1;3;steering;-1;LaneChange;-1;0;0;;;;;553;553;1234;
+-1;-1;-1;-1;1;braking;-1;Brake;-1;0;1;;;;;;;;
+-1;-1;-1;-1;1;braking;-1;Brake;-1;0;0;;;;;;;;
+-1;-1;-1;-1;2;steering;-1;LaneChange;-1;0;0;;;;;558;558;686;
+-1;-1;-1;-1;1;braking;-1;Brake;-1;0;1;;;;;;;;
+-1;-1;-1;-1;2;steering;-1;LaneChange;-1;0;0;;;;;970;970;251;
+-1;-1;-1;-1;1;braking;-1;Brake;-1;0;0;;;;;;;;
