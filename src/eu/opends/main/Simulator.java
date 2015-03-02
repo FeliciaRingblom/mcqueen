@@ -253,6 +253,8 @@ public class Simulator extends SimulationBasics
     public void simpleInitDrivingTask(String drivingTaskFileName, String driverName)
     {
     	SimulationDefaults.drivingTaskFileName = drivingTaskFileName;
+    	//SimulationDefaults.drivingTaskFileName = "countryside.xml";
+    	System.out.println("thihi" + drivingTaskFileName);
     	
     	Util.makeDirectory("analyzerData");
     	outputFolder = "analyzerData/" + Util.getDateTimeString();
@@ -402,6 +404,8 @@ public class Simulator extends SimulationBasics
 		String drivingTaskFileName = SimulationDefaults.drivingTaskFileName;
 		File drivingTaskFile = new File(drivingTaskFileName);
 		drivingTask = new DrivingTask(this, drivingTaskFile);
+		System.out.println("driing task: " + drivingTask);
+		System.out.println("drivingtaskfilename : " + drivingTaskFileName) ;
 
 		sceneLoader = drivingTask.getSceneLoader();
 		scenarioLoader = drivingTask.getScenarioLoader();
@@ -611,8 +615,9 @@ public class Simulator extends SimulationBasics
 			
 	    	AppSettings settings = new AppSettings(false);
 	        settings.setUseJoysticks(true);
-	        settings.setSettingsDialogImage("OpenDS.png");
-	        settings.setTitle("OpenDS");
+	        //settings.setSettingsDialogImage("OpenDS.png");
+	        settings.setSettingsDialogImage("assets/Textures/Logo/mcQueen.jpg");
+	        settings.setTitle("MCQueen by Jessica & Felicia");
 	        
 	        // set splash screen parameters
 	        /*

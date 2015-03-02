@@ -103,6 +103,8 @@ public class DrivingTaskSelectionGUIController implements ScreenController
     public void clickStartButton() 
     {
     	String drivingTaskFileName = getTextFromTextfield("drivingTaskTextfield");
+    	//System.out.println("drivingTaskFileName i clickStartButton: " + drivingTaskFileName);
+    	
     	File drivingTaskFile = new File(drivingTaskFileName);
     	if(drivingTaskFile.isFile() && DrivingTask.isValidDrivingTask(drivingTaskFile))
     	{
