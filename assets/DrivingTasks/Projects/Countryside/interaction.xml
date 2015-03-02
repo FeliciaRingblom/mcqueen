@@ -45,9 +45,20 @@
 				<parameter name="soundID" value="beep" />
 			</action>
 		</activity>
+		    <activity id="End_pauseSimulation" ref="">
+                  <action delay="0.0" id="pauseSimulation" repeat="4">
+                        <parameter name="duration" value="0"/>
+                  </action>
+            </activity>
 	</activities>
 	
 	<triggers>
+		<trigger id="BLC_Test_End_Trigger" priority="1">
+            <activities>
+                <activity ref="End_pauseSimulation"/>
+            </activities>
+            <condition>collideWith:BLC_Test_End_Trigger</condition>
+        </trigger>
 
 	</triggers>
 	
