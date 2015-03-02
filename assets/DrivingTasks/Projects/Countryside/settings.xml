@@ -7,11 +7,14 @@
 		<driverName>default driver</driverName>
 		<showStats>false</showStats>
 		<captureVideo>countryside.avi</captureVideo>
-		<outsideCamPosition>
-			<x>-620</x>
-			<y>25</y>
-			<z>-749</z>
-		</outsideCamPosition>
+		<mirrorMode>all</mirrorMode>
+		<rearviewMirror>
+			<viewPortLeft>0.25</viewPortLeft>
+			<viewPortRight>0.75</viewPortRight>
+			<viewPortBottom>0.65</viewPortBottom>
+			<viewPortTop>0.95</viewPortTop>
+		</rearviewMirror>
+
 		<topView>
 			<carPointingUp>true</carPointingUp>
 			<viewPortLeft>0.05</viewPortLeft>
@@ -23,38 +26,6 @@
 		</topView>	
 	</general>
 	
-	<SIMTD>
-		<sendDataToHmi>false</sendDataToHmi>
-		<startGui>false</startGui>
-		<hmiNativePath>assets/HMI</hmiNativePath>
-		<hmiNativeExecutable>HMI_GUI.exe</hmiNativeExecutable>
-		<ip>127.0.0.1</ip>
-		<port>3110</port>
-	</SIMTD>
-	
-	<externalVisualization>
-		<enableConnection>false</enableConnection>
-		<ip>141.96.189.103</ip>
-		<port>4711</port>
-		<updateRate>20</updateRate>
-		<scalingFactor>100</scalingFactor>
-		<sendPosOriAsOneString>false</sendPosOriAsOneString>
-	</externalVisualization>
-	
-	<CANInterface>
-		<enableConnection>false</enableConnection>
-		<ip>192.168.0.3</ip>
-		<port>4711</port>
-		<updateRate>20</updateRate>
-		<maxSteeringAngle>180</maxSteeringAngle>
-		<!-- <maxSteeringAngle>270</maxSteeringAngle> -->
-		<!-- <maxSteeringAngle>540</maxSteeringAngle> -->
-	</CANInterface>
-	
-	<vsimrtiServer>
-		<startServer>false</startServer>
-		<port>1122</port>
-	</vsimrtiServer>
 
 	<reactionMeasurement>
 		<groupRed>incongruent</groupRed>
