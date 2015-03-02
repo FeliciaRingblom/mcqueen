@@ -86,7 +86,6 @@ public class DrivingTask
 	 */
 	public DrivingTask(SimulationBasics sim, File xmlfile) 
 	{
-		
 		this.drivingTaskFileName = xmlfile.getName();
 		this.drivingTaskPath = xmlfile.getPath();
 			

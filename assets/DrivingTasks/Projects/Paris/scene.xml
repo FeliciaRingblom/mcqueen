@@ -36,7 +36,7 @@
 			</translation>
 		</model>
          
-		<model id="driverCar" key="Models/Cars/drivingCars/Chevy/Car.scene">
+		<model id="driverCar" key="Models/Cars/drivingCars/Ferrari/Car.scene">
 			<mass>800</mass>
 			<visible>true</visible>
 			<collisionShape>meshShape</collisionShape>

@@ -1,4 +1,0 @@
-Driver: default driver
-Driving Task: threeVehiclePlatooningTask.xml
-Start Time: 2015-02-27 13:34:50.699
-

@@ -1,4 +1,0 @@
-Driver: default driver
-Driving Task: paris.xml
-Start Time: 2015-02-27 13:20:50.801
-

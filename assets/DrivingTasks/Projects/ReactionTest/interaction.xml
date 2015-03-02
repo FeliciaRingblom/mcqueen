@@ -459,7 +459,7 @@
             </trigger>
             <trigger id="BLC_Test_End_Trigger" priority="1">
                   <activities>
-                        
+                        <activity ref="End_stopRecording"/>
                         <activity ref="End_pauseSimulation"/>
                   </activities>
                   <condition>collideWith:BLC_Test_End_Trigger</condition>
