@@ -24,6 +24,7 @@ import com.jme3.math.Quaternion;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Spatial;
 import com.jme3.scene.Spatial.CullHint;
+import com.jme3.ui.Picture;
 
 import eu.opends.basics.SimulationBasics;
 import eu.opends.tools.Util;
@@ -54,6 +55,7 @@ public class ManipulateObjectTriggerAction extends TriggerAction
 	private boolean updateScale;
 	private boolean updateVisibility;
 
+
 	
 	/**
 	 * Creates a new ManipulateObject trigger action instance, providing maximum
@@ -74,6 +76,7 @@ public class ManipulateObjectTriggerAction extends TriggerAction
 		this.updateRotation = false;
 		this.updateScale = false;
 		this.updateVisibility = false;
+	
 	}
 
 	
@@ -121,12 +124,14 @@ public class ManipulateObjectTriggerAction extends TriggerAction
 	
 	public void setVisibility(boolean isVisible)
 	{
+		System.out.println("setVisibility");
 		if(isVisible)
 			this.visibility = CullHint.Dynamic;
 		else
 			this.visibility = CullHint.Always;
 		this.updateVisibility = true;
 	}
+	
 		
 	
 	/**

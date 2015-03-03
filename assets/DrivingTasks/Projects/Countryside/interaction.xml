@@ -50,6 +50,12 @@
                         <parameter name="duration" value="0"/>
                   </action>
             </activity>
+        <activity id="showCircle" ref="">
+            <action id="showStimuli" delay="0.1"  repeat="4">
+                
+                
+             </action>
+        </activity>
 	</activities>
 	
 	<triggers>
@@ -58,6 +64,13 @@
                 <activity ref="End_pauseSimulation"/>
             </activities>
             <condition>collideWith:BLC_Test_End_Trigger</condition>
+        </trigger>
+        
+        <trigger id="Circle_Trigger" priority="1">
+            <activities>
+                <activity ref="showCircle"/>
+            </activities>
+            <condition>collideWith:Circle_Trigger</condition>
         </trigger>
 
 	</triggers>

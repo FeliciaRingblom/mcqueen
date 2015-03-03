@@ -7,23 +7,8 @@
 		<driverName>default driver</driverName>
 		<showStats>false</showStats>
 		<captureVideo>countryside.avi</captureVideo>
-		<mirrorMode>all</mirrorMode>
-		<rearviewMirror>
-			<viewPortLeft>0.25</viewPortLeft>
-			<viewPortRight>0.75</viewPortRight>
-			<viewPortBottom>0.65</viewPortBottom>
-			<viewPortTop>0.95</viewPortTop>
-		</rearviewMirror>
-
-		<topView>
-			<carPointingUp>true</carPointingUp>
-			<viewPortLeft>0.05</viewPortLeft>
-			<viewPortRight>0.35</viewPortRight>
-			<viewPortBottom>0.3</viewPortBottom>
-			<viewPortTop>0.95</viewPortTop>
-			<verticalDistance>500</verticalDistance>
-			<carOffset>100</carOffset>
-		</topView>	
+		<mirrorMode>back_only</mirrorMode>
+ 		
 	</general>
 	
 

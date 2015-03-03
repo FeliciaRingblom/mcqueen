@@ -47,6 +47,7 @@ import eu.opends.trigger.StartReactionMeasurementTriggerAction;
 import eu.opends.trigger.StartRecordingTriggerAction;
 import eu.opends.trigger.StopRecordingTriggerAction;
 import eu.opends.trigger.TriggerAction;
+import eu.opends.trigger.ShowStimuliTriggerAction;
 import eu.opends.trigger.WriteToKnowledgeBaseTriggerAction;
 
 /**
@@ -216,6 +217,7 @@ public class InteractionMethods
 			if(visible != null)
 				manipulateObjectTriggerAction.setVisibility(Boolean.parseBoolean(visible));
 			
+											
 			return manipulateObjectTriggerAction;
 			
 		} catch (Exception e) {
@@ -381,6 +383,20 @@ public class InteractionMethods
 	{
 		// create StopRecordingTriggerAction
 		return new StopRecordingTriggerAction(delay, repeat,(Simulator)sim);
+	}
+	
+	@Action(
+			name="showStimuli",
+			layer = Layer.INTERACTION,
+			description ="Shows and hides the stimuli",
+			defaultDelay = 0,
+			defaultRepeat = 0,
+			param = {}
+			)
+	public TriggerAction ShowStimuliTriggerAction(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	{
+		// create ShowStimuliTriggerAction
+		return new ShowStimuliTriggerAction(delay, repeat,(Simulator)sim);
 	}
 
 
