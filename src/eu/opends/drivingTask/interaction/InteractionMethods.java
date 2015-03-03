@@ -393,10 +393,10 @@ public class InteractionMethods
 			defaultRepeat = 0,
 			param = {}
 			)
-	public TriggerAction ShowStimuliTriggerAction(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction showStimuli(SimulationBasics sim, float delay, int repeat, Properties parameterList)
 	{
 		// create ShowStimuliTriggerAction
-		return new ShowStimuliTriggerAction(delay, repeat,(Simulator)sim);
+		return new ShowStimuliTriggerAction((Simulator)sim, delay, repeat);
 	}
 
 

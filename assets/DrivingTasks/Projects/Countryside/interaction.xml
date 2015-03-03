@@ -51,7 +51,7 @@
                   </action>
             </activity>
         <activity id="showCircle" ref="">
-            <action id="showStimuli" delay="0.1"  repeat="4">
+            <action id="showStimuli">
                 
                 
              </action>
