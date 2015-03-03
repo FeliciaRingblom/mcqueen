@@ -2,6 +2,7 @@
 /build/
 /bin/
 target/
+analyzerData/
  
 # OS Files #
 .DS_Store
@@ -9,7 +10,6 @@ target/
 *.class
  
 # Package Files #
-*.jar
 *.war
 *.ear
 *.db
@@ -39,33 +39,3 @@ Desktop.ini
 .Trashes
  
  
-######################
-# Eclipse
-######################
- 
-*.pydevproject
-.project
-.metadata
-bin/**
-tmp/**
-tmp/**/*
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.classpath
-.settings/
-.loadpath
-/src/main/resources/rebel.xml
-# External tool builders
-.externalToolBuilders/
- 
-# Locally stored "Eclipse launch configurations"
-*.launch
- 
-# CDT-specific
-.cproject
- 
-# PDT-specific
-.buildpath
