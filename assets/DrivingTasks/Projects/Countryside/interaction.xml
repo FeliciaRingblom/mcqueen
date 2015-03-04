@@ -50,10 +50,12 @@
                         <parameter name="duration" value="0"/>
                   </action>
             </activity>
+
                <activity id="showStimuli" ref="">
             <action delay="0.1" id="manipulatePicture" repeat="4">  
             	<parameter name="id" value="all" /> 
             	<parameter name="visible" value="true"/>     
+
              </action>
         </activity>
 	</activities>
