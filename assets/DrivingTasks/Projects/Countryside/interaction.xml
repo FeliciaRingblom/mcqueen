@@ -52,8 +52,7 @@
             </activity>
         <activity id="showCircle" ref="">
             <action id="showStimuli">
-                
-                
+                <parameter name="picture" value="circle.jpg" />    
              </action>
         </activity>
 	</activities>

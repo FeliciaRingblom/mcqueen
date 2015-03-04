@@ -21,13 +21,31 @@ import eu.opends.tools.PanelCenter;
 public class ShowStimuliTriggerAction extends TriggerAction 
 {
 	private SimulationBasics sim;
+	private String pictureName;
+	private Picture stimuliPicture;
 	
 	
 
-	public ShowStimuliTriggerAction(SimulationBasics sim, float delay, int maxRepeat) 
+	public ShowStimuliTriggerAction(SimulationBasics sim, float delay, int maxRepeat, String pictureString) 
 	{
 		super(delay, maxRepeat);
 		this.sim = sim;
+		this.pictureName = pictureString;
+		this.stimuliPicture = createStimuliPicture();
+		this.sim.getGuiNode().attachChild(this.stimuliPicture);
+		this.stimuliPicture.setCullHint(CullHint.Always);
+	}
+	
+	private Picture createStimuliPicture(){
+		Picture img = new Picture(this.pictureName);
+        img.setImage(sim.getAssetManager(), "Textures/Misc/" + pictureName, true);
+        
+        img.setWidth(100);
+        img.setHeight(100);
+        
+        img.setPosition(100, 100);
+        
+        return img;
 	}
 
 	
@@ -36,7 +54,8 @@ public class ShowStimuliTriggerAction extends TriggerAction
 	{
 		if(!isExceeded())
 		{
-			System.out.println("Yeyeyeyey");
+			System.out.println("Yeyeyeyey: " + pictureName);
+			stimuliPicture.setCullHint(CullHint.Dynamic);
 		}
 	}
 

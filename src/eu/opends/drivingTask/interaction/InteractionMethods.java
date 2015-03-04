@@ -391,12 +391,30 @@ public class InteractionMethods
 			description ="Shows and hides the stimuli",
 			defaultDelay = 0,
 			defaultRepeat = 0,
-			param = {}
+			param = {@Parameter(name="picture", type="String", defaultValue="circle.png", 
+		 	description="Image to display as stimuli")}
 			)
 	public TriggerAction showStimuli(SimulationBasics sim, float delay, int repeat, Properties parameterList)
 	{
-		// create ShowStimuliTriggerAction
-		return new ShowStimuliTriggerAction((Simulator)sim, delay, repeat);
+
+		String parameter = "picture";
+		
+		try {
+			
+			// read duration of pause
+			String pictureString = parameterList.getProperty(parameter);
+			if(pictureString == null)
+				pictureString = setDefault("showStimuli", parameter, "circle.png");
+			
+			// create ShowStimuliTriggerAction
+			return new ShowStimuliTriggerAction((Simulator)sim, delay, repeat, pictureString);
+			
+			
+		} catch (Exception e) {
+	
+			reportError("startRecording", parameter);
+			return null;
+		}
 	}
 
 
