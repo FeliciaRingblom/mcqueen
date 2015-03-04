@@ -228,6 +228,33 @@
                   </translation>
             </model> 
 
+            <model id="Circle_Trigger2" key="Models/trigger/trigger.scene" ref="">
+                  <mass>0</mass>
+                  <visible>false</visible>
+                  <collisionShape>none</collisionShape>
+                  <scale>
+                        <vector jtype="java_lang_Float" size="3">
+                              <entry>1.0</entry>
+                              <entry>1.0</entry>
+                              <entry>1.0</entry>
+                        </vector>
+                  </scale>
+                  <rotation quaternion="false">
+                        <vector jtype="java_lang_Float" size="3">
+                              <entry>0.0</entry>
+                              <entry>-153.75056</entry>
+                              <entry>0.0</entry>
+                        </vector>
+                  </rotation>
+                  <translation>
+                        <vector jtype="java_lang_Float" size="3">
+                          <entry>-538.22473</entry>
+                              <entry>19.692575</entry>
+                              <entry>-671.4367</entry>
+                        </vector>
+                  </translation>
+            </model> 
+
 
 		<model id="speedLimit70_1" key="Models/RoadSigns/speedLimits/speedLimit70/speedLimit70.scene"><mass>0</mass><visible>false</visible><collisionShape>meshShape</collisionShape><scale><vector jtype="java_lang_Float" size="3"><entry>1.0</entry><entry>1.0</entry><entry>1.0</entry></vector></scale><rotation quaternion="false"><vector jtype="java_lang_Float" size="3"><entry>0</entry><entry>-133.09236</entry><entry>0</entry></vector></rotation><translation><vector jtype="java_lang_Float" size="3"><entry>-538.22473</entry><entry>19.692575</entry><entry>-671.4367</entry></vector></translation></model>
 		<model id="speedLimit70_2" key="Models/RoadSigns/speedLimits/speedLimit70/speedLimit70.scene"><mass>0</mass><visible>true</visible><collisionShape>meshShape</collisionShape><scale><vector jtype="java_lang_Float" size="3"><entry>1.0</entry><entry>1.0</entry><entry>1.0</entry></vector></scale><rotation quaternion="false"><vector jtype="java_lang_Float" size="3"><entry>0</entry><entry>48.145496</entry><entry>0</entry></vector></rotation><translation><vector jtype="java_lang_Float" size="3"><entry>-533.3986</entry><entry>19.692232</entry><entry>-677.16003</entry></vector></translation></model>
@@ -314,7 +341,7 @@
 		</directionalLight>
 	</lights>
 	<pictures>
-		<picture id="1" key="assets/Textures/ReactionTest/peripheralIcons/green_right_06.png" level="0">
+		<picture id="left" key="assets/Textures/ReactionTest/peripheralIcons/green_right_06.png" level="0">
 			<hPosition><fromLeft value="22" unit="px"></fromLeft></hPosition>
 			<vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
 			<width>100</width>
@@ -323,7 +350,7 @@
 			<visible>false</visible>
 
 		</picture>
-		<picture id="2" key="assets/Textures/ReactionTest/peripheralIcons/green_right_02.png" level="1">
+		<picture id="right" key="assets/Textures/ReactionTest/peripheralIcons/green_right_02.png" level="1">
 			<hPosition><fromRight value="22" unit="px"></fromRight></hPosition>
 			<vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
 			<width>100</width>

@@ -53,7 +53,14 @@
 
                <activity id="showStimuli" ref="">
             <action delay="0.1" id="manipulatePicture" repeat="4">  
-            	<parameter name="id" value="all" /> 
+            	<parameter name="id" value="left" /> 
+            	<parameter name="visible" value="true"/>     
+
+             </action>
+        </activity>
+                 <activity id="showStimuli2" ref="">
+            <action delay="0.1" id="manipulatePicture" repeat="4">  
+            	<parameter name="id" value="right" /> 
             	<parameter name="visible" value="true"/>     
 
              </action>
@@ -74,7 +81,12 @@
             </activities>
             <condition>collideWith:Circle_Trigger</condition>
         </trigger>
-
+         <trigger id="Circle_Trigger2" priority="1">
+            <activities>
+                <activity ref="showStimuli2"/>
+            </activities>
+            <condition>collideWith:Circle_Trigger2</condition>
+        </trigger>
 	</triggers>
 	
 </interaction>

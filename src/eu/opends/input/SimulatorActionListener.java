@@ -32,6 +32,8 @@ import eu.opends.main.Simulator;
 import eu.opends.niftyGui.MessageBoxGUI;
 import eu.opends.tools.PanelCenter;
 import eu.opends.tools.Util;
+import eu.opends.trigger.ManipulatePictureTriggerAction;
+import eu.opends.trigger.TriggerAction;
 
 /**
  * 
@@ -159,6 +161,38 @@ public class SimulatorActionListener implements ActionListener
 					car.setTurnSignal(TurnSignalState.OFF);
 				else
 					car.setTurnSignal(TurnSignalState.BOTH);
+			}
+		}
+		
+		else if (binding.equals(KeyMapping.REACT_LEFT.getID())) 
+		{
+			if (value) 
+			{
+				System.out.println("value: " + value);
+				//veta om bilden syns eller inte (rätt knapptryck)
+				//dölja bild
+				ManipulatePictureTriggerAction manipulatePicture =  new ManipulatePictureTriggerAction(sim, 0, 4, "left", false);
+				manipulatePicture.execute();
+			}
+			else
+			{
+				
+			}
+		}
+		
+		else if (binding.equals(KeyMapping.REACT_RIGHT.getID())) 
+		{
+			if (value) 
+			{
+				System.out.println("value: " + value);
+				//veta om bilden syns eller inte (rätt knapptryck)
+				//dölja bild
+				ManipulatePictureTriggerAction manipulatePicture =  new ManipulatePictureTriggerAction(sim, 0, 4, "right", false);
+				manipulatePicture.execute();
+			}
+			else
+			{
+				
 			}
 		}
 		

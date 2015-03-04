@@ -67,7 +67,7 @@ public class ManipulatePictureTriggerAction extends TriggerAction
 	 * Manipulates the given picture by applying a visibility change. 
 	 */
 	@Override
-	protected void execute() 
+	public void execute() 
 	{
 		
 		
