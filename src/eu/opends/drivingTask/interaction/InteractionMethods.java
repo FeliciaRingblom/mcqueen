@@ -233,7 +233,7 @@ public class InteractionMethods
 	
 	@Action(
 			name = "manipulatePicture", 
-			layer = Layer.SCENE, 
+			layer = Layer.INTERACTION, 
 			description = "Manipulates visibility of the given picture",
 			defaultDelay = 0,
 			defaultRepeat = 0,
@@ -257,6 +257,7 @@ public class InteractionMethods
 
 			// set visibility, if available
 			parameter = "visible";
+			
 			String visible = parameterList.getProperty(parameter);
 			if(visible == null)
 				throw new Exception();
@@ -393,7 +394,7 @@ public class InteractionMethods
 			defaultRepeat = 0,
 			param = {}
 			)
-	public TriggerAction ShowStimuliTriggerAction(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction ShowStimuli(SimulationBasics sim, float delay, int repeat, Properties parameterList)
 	{
 		// create ShowStimuliTriggerAction
 		return new ShowStimuliTriggerAction(delay, repeat,(Simulator)sim);

@@ -50,10 +50,10 @@
                         <parameter name="duration" value="0"/>
                   </action>
             </activity>
-        <activity id="showCircle" ref="">
-            <action id="showStimuli" delay="0.1"  repeat="4">
-                
-                
+               <activity id="showStimuli" ref="">
+            <action delay="0.1" id="manipulatePicture" repeat="4">  
+            	<parameter name="id" value="all" /> 
+            	<parameter name="visible" value="true"/>     
              </action>
         </activity>
 	</activities>
@@ -68,7 +68,7 @@
         
         <trigger id="Circle_Trigger" priority="1">
             <activities>
-                <activity ref="showCircle"/>
+                <activity ref="showStimuli"/>
             </activities>
             <condition>collideWith:Circle_Trigger</condition>
         </trigger>

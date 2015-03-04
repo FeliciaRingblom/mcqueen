@@ -254,7 +254,7 @@ public class Simulator extends SimulationBasics
     {
     	SimulationDefaults.drivingTaskFileName = drivingTaskFileName;
     	//SimulationDefaults.drivingTaskFileName = "countryside.xml";
-    	System.out.println("thihi" + drivingTaskFileName);
+    	//System.out.println("thihi" + drivingTaskFileName);
     	
     	Util.makeDirectory("analyzerData");
     	outputFolder = "analyzerData/" + Util.getDateTimeString();

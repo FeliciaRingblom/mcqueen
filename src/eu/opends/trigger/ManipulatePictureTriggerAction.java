@@ -26,6 +26,8 @@ import com.jme3.scene.Spatial.CullHint;
 import com.jme3.ui.Picture;
 
 import eu.opends.basics.SimulationBasics;
+import eu.opends.camera.CameraFactory;
+import eu.opends.camera.SimulatorCam;
 import eu.opends.tools.PanelCenter;
 
 
@@ -57,6 +59,7 @@ public class ManipulatePictureTriggerAction extends TriggerAction
 		this.sim = sim;
 		this.pictureID = pictureID;
 		this.isVisible = isVisible;
+		
 	}
 
 	
@@ -66,15 +69,20 @@ public class ManipulatePictureTriggerAction extends TriggerAction
 	@Override
 	protected void execute() 
 	{
+		
+		
 		if(!isExceeded())
 		{
 			CullHint visibility;
-			if(isVisible)
-				visibility = CullHint.Dynamic;
-			else
+			if(isVisible) {	
+				visibility = CullHint.Dynamic;	        
+			}
+				
+			else{
+				System.out.println("i ManipulatePicture");
 				visibility = CullHint.Always;
-			
-			
+			}
+						
 			// set all pictures to ...
 			if(pictureID.equalsIgnoreCase("all"))
 			{
@@ -85,8 +93,10 @@ public class ManipulatePictureTriggerAction extends TriggerAction
 			
 			// set only given picture to ...
 			Spatial spatial = sim.getGuiNode().getChild(pictureID);
+	
 			if(spatial instanceof Picture)
 			{
+				spatial.setCullHint(CullHint.Always);
 				Picture picture = (Picture) spatial;
 					picture.setCullHint(visibility);
 			}

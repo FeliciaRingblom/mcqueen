@@ -217,13 +217,17 @@ public class SceneLoader
 				// get URL of picture node
 				//String pictureURL = dtData.getValue(Layer.SCENE,
 				//		"/scene:scene/scene:pictures/scene:picture["+k+"]/@key", String.class);
+				
 				String pictureURL = currentNode.getAttributes().getNamedItem("key").getNodeValue();
 				
+				
 				String pictureLevel = currentNode.getAttributes().getNamedItem("level").getNodeValue();
+				
 							
 				if((pictureURL != null) && (!pictureURL.equals("")))
 				{
 					Picture picture = new Picture(pictureID);
+					
 					
 					// set useAlpha
 					Boolean useAlpha = dtData.getValue(Layer.SCENE,
@@ -241,13 +245,14 @@ public class SceneLoader
 					picture.setWidth(width);
 					
 					
+					
 					// set height
 					Integer height = dtData.getValue(Layer.SCENE,
 							"/scene:scene/scene:pictures/scene:picture["+k+"]/scene:height", Integer.class);
 					if(height == null)
 						height = 100;
 					picture.setHeight(height);
-
+					
 					
 					// set isVisible
 					Boolean isVisible = dtData.getValue(Layer.SCENE,
@@ -277,7 +282,6 @@ public class SceneLoader
 								if(currentVPositionChild.getNodeName().equals("center"))
 								{
 									vPosition = (int) ((maxHeight-height)/2.0f);
-									//System.out.println("center: " + vPosition);
 								}
 								else if(currentVPositionChild.getNodeName().equals("fromTop") || 
 										currentVPositionChild.getNodeName().equals("fromBottom"))
@@ -300,7 +304,6 @@ public class SceneLoader
 									
 									vPosition = Math.max(Math.min(vPosition,maxHeight),0);
 									
-									//System.out.println("vpos: " + vPosition);
 								}
 							}
 						}
@@ -315,7 +318,6 @@ public class SceneLoader
 								if(currentHPositionChild.getNodeName().equals("center"))
 								{
 									hPosition = (int) ((maxWidth-width)/2.0f);
-									//System.out.println("hpos center: " + hPosition);
 								}
 								else if(currentHPositionChild.getNodeName().equals("fromLeft") || 
 										currentHPositionChild.getNodeName().equals("fromRight"))
@@ -327,7 +329,6 @@ public class SceneLoader
 										valueFloat = Float.parseFloat(value);
 									
 									String unit = currentHPositionChild.getAttributes().getNamedItem("unit").getNodeValue();
-									
 									if((value != null && !value.isEmpty()) && (unit.equals("%") || unit.equals("percent")))
 										hPosition = (int)((maxWidth*valueFloat)/100.0f);
 									else
