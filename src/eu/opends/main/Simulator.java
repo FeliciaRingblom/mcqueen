@@ -329,20 +329,7 @@ public class Simulator extends SimulationBasics
 		{
 			lightningClient = new LightningClient();
 		}
-		
-		// open TCP connection to CAN-bus
-		if(settingsLoader.getSetting(Setting.CANInterface_enableConnection, SimulationDefaults.CANInterface_enableConnection))
-		{
-			canClient = new CANClient(this);
-			canClient.start();
-		}
-		
-		if(settingsLoader.getSetting(Setting.MultiDriver_enableConnection, SimulationDefaults.MultiDriver_enableConnection))
-		{
-			multiDriverClient = new MultiDriverClient(this, driverName);
-			multiDriverClient.start();
-		}
-		
+				
 		drivingTaskLogger = new DrivingTaskLogger(outputFolder, driverName, drivingTask.getFileName());
 		
 		SpeedControlCenter.init(this);
@@ -404,8 +391,6 @@ public class Simulator extends SimulationBasics
 		String drivingTaskFileName = SimulationDefaults.drivingTaskFileName;
 		File drivingTaskFile = new File(drivingTaskFileName);
 		drivingTask = new DrivingTask(this, drivingTaskFile);
-		System.out.println("driing task: " + drivingTask);
-		System.out.println("drivingtaskfilename : " + drivingTaskFileName) ;
 
 		sceneLoader = drivingTask.getSceneLoader();
 		scenarioLoader = drivingTask.getScenarioLoader();
@@ -447,14 +432,7 @@ public class Simulator extends SimulationBasics
 			// send camera data via TCP to Lightning
 			if(lightningClient != null)
 				lightningClient.sendCameraData(cam);
-			
-			// send car data via TCP to CAN-bus
-			if(canClient != null)
-				canClient.sendCarData();
-				
-			if(multiDriverClient != null)
-				multiDriverClient.update();
-			
+					
 			if(!isPause())
 				car.update(tpf);
 			

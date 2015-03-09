@@ -132,13 +132,6 @@ public class APIData {
 			float brakePedalPress = car.getBrakePedalPressIntensity(); // in %	
 			value = String.valueOf(brakePedalPress);
 		}
-		else if(var.equals("/root/thisVehicle/interior/cockpit/steeringWheel/Properties/steerAngle")){
-			float maxSteeringAngle = Simulator.getDrivingTask().getSettingsLoader().getSetting(
-					Setting.CANInterface_maxSteeringAngle, SimulationDefaults.CANInterface_maxSteeringAngle);			
-			float steeringAngle = -maxSteeringAngle*car.getSteeringWheelState(); // in degree (+ = right, - = left)
-			
-			value = String.valueOf(steeringAngle);					
-		}
 		
 		//exterior
 		else if(var.equals("/root/thisVehicle/exterior/lights/Properties/headlights")){

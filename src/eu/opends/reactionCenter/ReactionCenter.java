@@ -70,8 +70,10 @@ public class ReactionCenter
 	public void setupKeyReactionTimer(String timerID, String reactionGroupID, String correctReaction, 
 			String failureReaction,	String comment)
 	{
+		System.out.println("i setupKeyReactionTrigger" + isRunning);
 		if(isRunning)
 		{
+			
 			// if timerID is not contained in reactionTimerList
 			ReactionTimer reactionTimer = getReactionTimer(timerID);
 			if(reactionTimer == null)

@@ -52,6 +52,7 @@ public class SetupKeyReactionTimerTriggerAction extends TriggerAction
 	{
 		if(!isExceeded())
 		{
+			
 			sim.getReactionCenter().setupKeyReactionTimer(timerID, reactionGroup, correctReaction, 
 					failureReaction, comment);
 			
