@@ -127,23 +127,8 @@ public class SettingsLoader
 		Joystick_pedalSensitivityFactor("settings:controllers/settings:joystick/settings:pedalSensitivityFactor"),
 		Mouse_scrollSensitivityFactor("settings:controllers/settings:mouse/settings:scrollSensitivityFactor"),
 		Mouse_minScrollZoom("settings:controllers/settings:mouse/settings:minScrollZoom"),
-		Mouse_maxScrollZoom("settings:controllers/settings:mouse/settings:maxScrollZoom"), 
-		Eyetracker_enableConnection("settings:eyetracker/settings:enableConnection"),
-		Eyetracker_port("settings:eyetracker/settings:port"),
-		Eyetracker_smoothingFactor("settings:eyetracker/settings:smoothingFactor"),
-		Eyetracker_crossHairs_show("settings:eyetracker/settings:crossHairs/settings:show"),
-		Eyetracker_crossHairs_color("settings:eyetracker/settings:crossHairs/settings:color"),
-		Eyetracker_crossHairs_scalingFactor("settings:eyetracker/settings:crossHairs/settings:scalingFactor"),
-		Eyetracker_gazeSphere_show("settings:eyetracker/settings:gazeSphere/settings:show"),
-		Eyetracker_gazeSphere_color("settings:eyetracker/settings:gazeSphere/settings:color"),
-		Eyetracker_highlightObjects_mode("settings:eyetracker/settings:highlightObjects/settings:mode"),
-		Eyetracker_highlightObjects_color("settings:eyetracker/settings:highlightObjects/settings:color"),
-		Eyetracker_warningFrame_show("settings:eyetracker/settings:warningFrame/settings:show"),
-		Eyetracker_warningFrame_threshold("settings:eyetracker/settings:warningFrame/settings:threshold"),
-		Eyetracker_warningFrame_flashingInterval("settings:eyetracker/settings:warningFrame/settings:flashingInterval");
-		
-		
-		
+		Mouse_maxScrollZoom("settings:controllers/settings:mouse/settings:maxScrollZoom"); 
+				
 		private String path;
 		
 		Setting(){
