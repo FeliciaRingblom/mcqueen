@@ -23,14 +23,14 @@
 	</reactionMeasurement>
 	
 	<controllers>
-		<joystick>
+	<joystick>
 			<controllerID>0</controllerID>
-			<steeringAxis>3</steeringAxis>
+			<steeringAxis>0</steeringAxis>
 			<invertSteeringAxis>false</invertSteeringAxis>
-			<pedalAxis>4</pedalAxis>
+			<pedalAxis>1</pedalAxis>
 			<invertPedalAxis>false</invertPedalAxis>
-			<steeringSensitivityFactor>0.3</steeringSensitivityFactor>
-			<pedalSensitivityFactor>1.0</pedalSensitivityFactor>
+			<steeringSensitivityFactor>1.0</steeringSensitivityFactor>
+			<pedalSensitivityFactor>4.0</pedalSensitivityFactor>
 			<keyAssignments>
 				<keyAssignment function="start_engine" key="BUTTON_1" />
 				<keyAssignment function="stop_engine" key="BUTTON_2" />
