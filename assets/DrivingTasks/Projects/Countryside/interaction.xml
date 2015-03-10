@@ -52,7 +52,7 @@
                   </action>
             </activity>
 
-        <activity id="showStimuli" ref="">
+        <activity id="showStimuli1" ref="">
         	  <action id="setupReactionTimer">
              	<parameter name="reactionGroup" value="1"/>
              	<parameter name="correctReaction" value="KEY_N"/>
@@ -84,20 +84,50 @@
             <condition>collideWith:Finish_Trigger</condition>
         </trigger>
         
-        <trigger id="Circle_Trigger" priority="1">
+        <trigger id="timuli_Trigger1" priority="1">
             <activities>
             		<activity id="Start_startRM" ref="">
                   <action delay="0.0" id="startReactionMeasurement" repeat="1"/>
             </activity>
-                <activity ref="showStimuli"/>
+                <activity ref="showStimuli1"/>
             </activities>
-            <condition>collideWith:Circle_Trigger</condition>
+            <condition>collideWith:Stimuli_Trigger1</condition>
         </trigger>
-         <trigger id="Circle_Trigger2" priority="1">
+         <trigger id="Stimuli_Trigger2" priority="1">
             <activities>
                 <activity ref="showStimuli2"/>
             </activities>
-            <condition>collideWith:Circle_Trigger2</condition>
+            <condition>collideWith:Stimuli_Trigger2</condition>
+        </trigger>
+         <trigger id="Stimuli_Trigger3" priority="1">
+            <activities>
+                <activity ref="showStimuli2"/>
+            </activities>
+            <condition>collideWith:Stimuli_Trigger3</condition>
+        </trigger>
+         <trigger id="Stimuli_Trigger4" priority="1">
+            <activities>
+                <activity ref="showStimuli1"/>
+            </activities>
+            <condition>collideWith:Stimuli_Trigger4</condition>
+        </trigger>
+          <trigger id="Stimuli_Trigger5" priority="1">
+            <activities>
+                <activity ref="showStimuli2"/>
+            </activities>
+            <condition>collideWith:Stimuli_Trigger5</condition>
+        </trigger>
+         <trigger id="Stimuli_Trigger6" priority="1">
+            <activities>
+                <activity ref="showStimuli2"/>
+            </activities>
+            <condition>collideWith:Stimuli_Trigger6</condition>
+        </trigger>
+         <trigger id="Stimuli_Trigger7" priority="1">
+            <activities>
+                <activity ref="showStimuli1"/>
+            </activities>
+            <condition>collideWith:Stimuli_Trigger7</condition>
         </trigger>
 	</triggers>
 	
