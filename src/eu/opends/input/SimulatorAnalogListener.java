@@ -64,7 +64,7 @@ public class SimulatorAnalogListener implements AnalogListener
 				simulator.getCar().unsteer();
 			else*/
 				simulator.getCar().steer(steeringValue/2.3f);
-				System.out.println("left: " + Math.round((steeringValue/2.3f)*100000)/1000f);
+				//System.out.println("left: " + Math.round((steeringValue/2.3f)*100000)/1000f);
 		} 
 		
 		else if (binding.equals("Joy Right")) 
@@ -80,7 +80,7 @@ public class SimulatorAnalogListener implements AnalogListener
 				simulator.getCar().unsteer();
 			else*/
 				simulator.getCar().steer(steeringValue/2.3f);
-				System.out.println("right: " + Math.round((steeringValue/2.3f)*100000)/1000f);
+				//System.out.println("right: " + Math.round((steeringValue/2.3f)*100000)/1000f);
 		} 
 		
 		else if (binding.equals("Joy Down")) 

@@ -60,7 +60,7 @@ public class SteeringCar extends Car
 		
 		minSpeed = scenarioLoader.getCarProperty(CarProperty.engine_minSpeed, SimulationDefaults.engine_minSpeed);
 		//maxSpeed = scenarioLoader.getCarProperty(CarProperty.engine_maxSpeed, SimulationDefaults.engine_maxSpeed);
-		maxSpeed = 70;	
+		maxSpeed = 60;	
 		decelerationBrake = scenarioLoader.getCarProperty(CarProperty.brake_decelerationBrake, 
 				SimulationDefaults.brake_decelerationBrake);
 		maxBrakeForce = 0.004375f * decelerationBrake * mass;
