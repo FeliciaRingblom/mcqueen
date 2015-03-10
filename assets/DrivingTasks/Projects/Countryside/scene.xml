@@ -35,7 +35,7 @@
 				</vector>
 			</translation>
 		</model>
-		<model id="driverCar" key="Models/Cars/drivingCars/Ferrari/Car.scene">
+		<model id="driverCar" key="Models/Cars/drivingCars/PurpleMitsubishi/Car.scene">
 			<mass>800</mass>
 			<visible>true</visible>
 			<collisionShape>meshShape</collisionShape>
@@ -123,83 +123,61 @@
                 </vector>
             </translation>
         </model>
-        <model id="BLC_Test_FinishSignBridge" key="Models/sign_bridges/bridge_5lane/bridge_5lane.scene" ref="">
+            <model id="finishSign" key="Models/finishSign/finishSign.scene" ref="">
                   <mass>0</mass>
                   <visible>true</visible>
                   <collisionShape>none</collisionShape>
-                  <scale>
-                        <vector jtype="java_lang_Float" size="3">
-                              <entry>1.0</entry>
-                              <entry>1.0</entry>
-                              <entry>1.0</entry>
-                        </vector>
-                  </scale>
-                  <rotation quaternion="false">
-                        <vector jtype="java_lang_Float" size="3">
-                              <entry>0.0</entry>
-                              <entry>44.393166</entry>
-                              <entry>0.0</entry>
-                        </vector>
-                  </rotation>
-                  <translation>
-                        <vector jtype="java_lang_Float" size="3">
-                              <entry>38.63848</entry>
-                              <entry>19.732124</entry>
-                              <entry>72.893265</entry>
-                        </vector>
-                  </translation>
+          
+			<scale>
+				<vector jtype="java_lang_Float" size="3">
+					<entry>2</entry>
+					<entry>1</entry>
+					<entry>0.5</entry>
+				</vector>
+			</scale>
+	
+			<rotation quaternion="false">
+				<vector jtype="java_lang_Float" size="3">
+					<entry>0</entry>
+					<entry>230</entry>
+					<entry>0</entry>
+				</vector>
+			</rotation>
+	
+			<translation>
+				<vector jtype="java_lang_Float" size="3">
+					<entry>210.50781</entry>
+					<entry>45</entry>
+					<entry>297.00974</entry>
+				</vector>
+			</translation>
             </model>
-            <model id="BLC_Test_FinishSignPanel" key="Models/sign_panels/Finish/panel_sign.scene" ref="">
-                  <mass>0</mass>
-                  <visible>true</visible>
-                  <collisionShape>none</collisionShape>
-                  <scale>
-                        <vector jtype="java_lang_Float" size="3">
-                              <entry>1.0</entry>
-                              <entry>1.0</entry>
-                              <entry>1.0</entry>
-                        </vector>
-                  </scale>
-                  <rotation quaternion="false">
-                        <vector jtype="java_lang_Float" size="3">
-                              <entry>0.0</entry>
-                              <entry>224.393166</entry>
-                              <entry>0.0</entry>
-                        </vector>
-                  </rotation>
-                  <translation>
-                        <vector jtype="java_lang_Float" size="3">
-                              <entry>38.63848</entry>
-                              <entry>19.732124</entry>
-                              <entry>72.893265</entry>
-                        </vector>
-                  </translation>
-            </model>
-           <model id="BLC_Test_End_Trigger" key="Models/trigger/trigger.scene" ref="">
+           <model id="Finish_Trigger" key="Models/trigger/trigger.scene" ref="">
                   <mass>0</mass>
                   <visible>false</visible>
                   <collisionShape>none</collisionShape>
-                  <scale>
-                        <vector jtype="java_lang_Float" size="3">
-                              <entry>1.0</entry>
-                              <entry>1.0</entry>
-                              <entry>1.0</entry>
-                        </vector>
-                  </scale>
-                  <rotation quaternion="false">
-                        <vector jtype="java_lang_Float" size="3">
-                              <entry>0.0</entry>
-                              <entry>44.393166</entry>
-                              <entry>0.0</entry>
-                        </vector>
-                  </rotation>
-                  <translation>
-                        <vector jtype="java_lang_Float" size="3">
-                           <entry>38.63848</entry>
-                              <entry>19.732124</entry>
-                              <entry>72.893265</entry>
-                        </vector>
-                  </translation>
+              	<scale>
+				<vector jtype="java_lang_Float" size="3">
+					<entry>2</entry>
+					<entry>1</entry>
+					<entry>0.5</entry>
+				</vector>
+			</scale>
+        		<rotation quaternion="false">
+				<vector jtype="java_lang_Float" size="3">
+					<entry>0</entry>
+					<entry>230</entry>
+					<entry>0</entry>
+				</vector>
+			</rotation>
+	
+			<translation>
+				<vector jtype="java_lang_Float" size="3">
+					<entry>210.50781</entry>
+					<entry>43</entry>
+					<entry>297.00974</entry>
+				</vector>
+			</translation>
             </model> 
 			<model id="Circle_Trigger" key="Models/trigger/trigger.scene" ref="">
                   <mass>0</mass>
@@ -256,7 +234,7 @@
             </model> 
 
 
-		<model id="speedLimit70_1" key="Models/RoadSigns/speedLimits/speedLimit70/speedLimit70.scene"><mass>0</mass><visible>false</visible><collisionShape>meshShape</collisionShape><scale><vector jtype="java_lang_Float" size="3"><entry>1.0</entry><entry>1.0</entry><entry>1.0</entry></vector></scale><rotation quaternion="false"><vector jtype="java_lang_Float" size="3"><entry>0</entry><entry>-133.09236</entry><entry>0</entry></vector></rotation><translation><vector jtype="java_lang_Float" size="3"><entry>-538.22473</entry><entry>19.692575</entry><entry>-671.4367</entry></vector></translation></model>
+		<model id="speedLimit70_1" key="Models/RoadSigns/speedLimits/speedLimit70/speedLimit70.scene"><mass>0</mass><visible>true</visible><collisionShape>meshShape</collisionShape><scale><vector jtype="java_lang_Float" size="3"><entry>1.0</entry><entry>1.0</entry><entry>1.0</entry></vector></scale><rotation quaternion="false"><vector jtype="java_lang_Float" size="3"><entry>0</entry><entry>-133.09236</entry><entry>0</entry></vector></rotation><translation><vector jtype="java_lang_Float" size="3"><entry>-538.22473</entry><entry>19.692575</entry><entry>-671.4367</entry></vector></translation></model>
 		<model id="speedLimit70_2" key="Models/RoadSigns/speedLimits/speedLimit70/speedLimit70.scene"><mass>0</mass><visible>true</visible><collisionShape>meshShape</collisionShape><scale><vector jtype="java_lang_Float" size="3"><entry>1.0</entry><entry>1.0</entry><entry>1.0</entry></vector></scale><rotation quaternion="false"><vector jtype="java_lang_Float" size="3"><entry>0</entry><entry>48.145496</entry><entry>0</entry></vector></rotation><translation><vector jtype="java_lang_Float" size="3"><entry>-533.3986</entry><entry>19.692232</entry><entry>-677.16003</entry></vector></translation></model>
 		<model id="speedLimit70_3" key="Models/RoadSigns/speedLimits/speedLimit70/speedLimit70.scene"><mass>0</mass><visible>true</visible><collisionShape>meshShape</collisionShape><scale><vector jtype="java_lang_Float" size="3"><entry>1.0</entry><entry>1.0</entry><entry>1.0</entry></vector></scale><rotation quaternion="false"><vector jtype="java_lang_Float" size="3"><entry>0</entry><entry>-153.75056</entry><entry>0</entry></vector></rotation><translation><vector jtype="java_lang_Float" size="3"><entry>24.329275</entry><entry>19.732534</entry><entry>59.670444</entry></vector></translation></model>
 		<model id="speedLimit70_4" key="Models/RoadSigns/speedLimits/speedLimit70/speedLimit70.scene"><mass>0</mass><visible>true</visible><collisionShape>meshShape</collisionShape><scale><vector jtype="java_lang_Float" size="3"><entry>1.0</entry><entry>1.0</entry><entry>1.0</entry></vector></scale><rotation quaternion="false"><vector jtype="java_lang_Float" size="3"><entry>0</entry><entry>44.393166</entry><entry>0</entry></vector></rotation><translation><vector jtype="java_lang_Float" size="3"><entry>-34.789753</entry><entry>19.7322</entry><entry>-41.598827</entry></vector></translation></model>

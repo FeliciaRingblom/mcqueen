@@ -77,11 +77,11 @@
 	</activities>
 	
 	<triggers>
-		<trigger id="BLC_Test_End_Trigger" priority="1">
+		<trigger id="Finish_Trigger" priority="1">
             <activities>
                 <activity ref="End_pauseSimulation"/>
             </activities>
-            <condition>collideWith:BLC_Test_End_Trigger</condition>
+            <condition>collideWith:Finish_Trigger</condition>
         </trigger>
         
         <trigger id="Circle_Trigger" priority="1">
