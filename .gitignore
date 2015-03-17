@@ -31,6 +31,8 @@ Desktop.ini
  
 .DS_Store
 .svn
+*.dylib
+*.jnilib
  
 # Thumbnails
 ._*
