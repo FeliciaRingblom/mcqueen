@@ -130,6 +130,12 @@
 									<interact onClick="clickStartButton()" />
 								</control>
 							</panel>
+							<panel childLayout="center">
+								<control id="startButton" name="button" label="QuickStart"
+									align="center" height="30px">
+									<interact onClick="clickQuickStartButton()" />
+								</control>
+							</panel>
 
 							<panel width="10px" />
 

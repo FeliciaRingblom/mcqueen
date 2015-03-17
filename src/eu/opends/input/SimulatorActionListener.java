@@ -171,7 +171,7 @@ public class SimulatorActionListener implements ActionListener
 				System.out.println("value: " + value);
 				//veta om bilden syns eller inte (rätt knapptryck)
 				//dölja bild
-				ManipulatePictureTriggerAction manipulatePicture =  new ManipulatePictureTriggerAction(sim, 0, 4, "left", false);
+				ManipulatePictureTriggerAction manipulatePicture =  new ManipulatePictureTriggerAction(sim, 0, 4, "leftGreenCircle", false);
 				manipulatePicture.execute();
 			}
 			else
@@ -187,7 +187,7 @@ public class SimulatorActionListener implements ActionListener
 				System.out.println("value: " + value);
 				//veta om bilden syns eller inte (rätt knapptryck)
 				//dölja bild
-				ManipulatePictureTriggerAction manipulatePicture =  new ManipulatePictureTriggerAction(sim, 0, 4, "right", false);
+				ManipulatePictureTriggerAction manipulatePicture =  new ManipulatePictureTriggerAction(sim, 0, 4, "rightGreenSquare", false);
 				manipulatePicture.execute();
 			}
 			else

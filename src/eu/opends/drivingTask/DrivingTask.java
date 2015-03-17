@@ -108,7 +108,9 @@ public class DrivingTask
 	
 	public static boolean isValidDrivingTask(File xmlfile)
 	{
+		//System.out.println("xml: " + xmlfile);
 		DrivingTaskDataQuery dtData = new DrivingTaskDataQuery(xmlfile.getPath());
+		//System.out.println(dtData.isValidDrivingTask());
 		return dtData.isValidDrivingTask();
 	}
 	

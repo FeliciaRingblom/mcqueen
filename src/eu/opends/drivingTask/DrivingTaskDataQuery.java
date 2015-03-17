@@ -425,6 +425,7 @@ public class DrivingTaskDataQuery
         try {
 
             String stringValue = (String) xPathQuery(layer, query, XPathConstants.STRING);
+            //System.out.println("innan verbose: " + XPathConstants.STRING);
             
             if (verbose) 
             {

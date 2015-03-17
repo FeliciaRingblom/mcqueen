@@ -103,11 +103,33 @@ public class DrivingTaskSelectionGUIController implements ScreenController
     public void clickStartButton() 
     {
     	String drivingTaskFileName = getTextFromTextfield("drivingTaskTextfield");
-    	//System.out.println("drivingTaskFileName i clickStartButton: " + drivingTaskFileName);
+    	System.out.println("drivingTaskFileName i clickStartButton: " + drivingTaskFileName);
     	
     	File drivingTaskFile = new File(drivingTaskFileName);
     	if(drivingTaskFile.isFile() && DrivingTask.isValidDrivingTask(drivingTaskFile))
     	{
+    		sim.closeDrivingTaskSelectionGUI();
+    	}
+    	else
+    	{
+    		// show error message when invalid DT selected
+    		errorPopup = nifty.createPopup("errorPopup");
+    		nifty.showPopup(nifty.getCurrentScreen(), errorPopup.getId(), null);
+    	}
+    }
+    
+    public void clickQuickStartButton() 
+    {
+    	String nn = getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
+    	System.out.println("nn: " + nn);
+    	String drivingTaskFileName = "./assets/DrivingTasks/Projects/Countryside/countryside.xml";
+    	System.out.println("drivingTaskFileName i clickQuickStartButton: " + drivingTaskFileName);
+    	
+    	File drivingTaskFile = new File(drivingTaskFileName);
+    	System.out.println(drivingTaskFile.isFile());
+    	if(drivingTaskFile.isFile() && DrivingTask.isValidDrivingTask(drivingTaskFile))
+    	{
+    		//System.out.println(drivingTaskFile.getAbsolutePath());
     		sim.closeDrivingTaskSelectionGUI();
     	}
     	else
