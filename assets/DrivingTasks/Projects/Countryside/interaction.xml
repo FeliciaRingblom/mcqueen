@@ -115,7 +115,7 @@
             <condition>collideWith:Finish_Trigger</condition>
         </trigger>
         
-        <trigger id="timuli_Trigger1" priority="1">
+        <trigger id="Stimuli_Trigger1" priority="1">
             <activities>
             		<activity id="Start_startRM" ref="">
                   <action delay="0.0" id="startReactionMeasurement" repeat="1"/>

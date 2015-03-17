@@ -39,7 +39,6 @@
 			<mass>800</mass>
 			<visible>true</visible>
 			<collisionShape>meshShape</collisionShape>
-	
 			<scale>
 				<vector jtype="java_lang_Float" size="3">
 					<entry>1</entry>
@@ -47,7 +46,6 @@
 					<entry>1</entry>
 				</vector>
 			</scale>
-	
 			<rotation quaternion="false">
 				<vector jtype="java_lang_Float" size="3">
 					<entry>0</entry>
@@ -55,12 +53,11 @@
 					<entry>0</entry>
 				</vector>
 			</rotation>
-	
 			<translation>
 				<vector jtype="java_lang_Float" size="3">
-					<entry>-620.4993</entry>
-					<entry>21</entry>
-					<entry>-749.1053</entry>
+					<entry>-347.19275</entry>
+					<entry>19.945967</entry>
+					<entry>-377.39667</entry>
 				</vector>
 			</translation>
 	
@@ -151,217 +148,138 @@
 					<entry>297.00974</entry>
 				</vector>
 			</translation>
-            </model>
-           <model id="Finish_Trigger" key="Models/trigger/trigger.scene" ref="">
-                  <mass>0</mass>
-                  <visible>false</visible>
-                  <collisionShape>none</collisionShape>
-              	<scale>
-				<vector jtype="java_lang_Float" size="3">
-					<entry>2</entry>
-					<entry>1</entry>
-					<entry>0.5</entry>
-				</vector>
-			</scale>
-        		<rotation quaternion="false">
-				<vector jtype="java_lang_Float" size="3">
-					<entry>0</entry>
-					<entry>230</entry>
-					<entry>0</entry>
-				</vector>
-			</rotation>
-	
-			<translation>
-				<vector jtype="java_lang_Float" size="3">
-					<entry>210.50781</entry>
-					<entry>43</entry>
-					<entry>297.00974</entry>
-				</vector>
-			</translation>
-            </model> 
+    </model>
+    <model id="Finish_Trigger" key="Models/trigger/trigger.scene" ref="">
+      <mass>0</mass>
+      <visible>false</visible>
+      <collisionShape>none</collisionShape>
+  	   <scale>
+        <vector jtype="java_lang_Float" size="3">
+        	<entry>2</entry>
+        	<entry>1</entry>
+        	<entry>0.5</entry>
+        </vector>
+      </scale>
+      <rotation quaternion="false">
+        <vector jtype="java_lang_Float" size="3">
+        	<entry>0</entry>
+        	<entry>230</entry>
+        	<entry>0</entry>
+        </vector>
+      </rotation>
+      <translation>
+      <vector jtype="java_lang_Float" size="3">
+      	<entry>-211.03143</entry>
+      	<entry>19.945967</entry>
+      	<entry>-218.33557</entry>
+      </vector>
+      </translation>
+          </model> 
 			<model id="Stimuli_Trigger1" key="Models/trigger/trigger.scene" ref="">
-                  <mass>0</mass>
-                  <visible>false</visible>
-                  <collisionShape>none</collisionShape>
-                  <scale>
-                        <vector jtype="java_lang_Float" size="3">
-                              <entry>1.0</entry>
-                              <entry>1.0</entry>
-                              <entry>1.0</entry>
-                        </vector>
-                  </scale>
-                  <rotation quaternion="false">
-                        <vector jtype="java_lang_Float" size="3">
-                              <entry>0.0</entry>
-                              <entry>44.393166</entry>
-                              <entry>0.0</entry>
-                        </vector>
-                  </rotation>
-                  <translation>
-                        <vector jtype="java_lang_Float" size="3">
-                           <entry>-538.22473</entry>
-                              <entry>19.692575</entry>
-                              <entry>-671.4367</entry>
-                        </vector>
-                  </translation>
-            </model> 
+        <mass>0</mass>
+        <visible>false</visible>
+        <collisionShape>none</collisionShape>
+        <scale>
+          <vector jtype="java_lang_Float" size="3">
+            <entry>1.0</entry>
+            <entry>1.0</entry>
+            <entry>1.0</entry>
+          </vector>
+        </scale>
+        <rotation quaternion="false">
+          <vector jtype="java_lang_Float" size="3">
+            <entry>0.0</entry>
+            <entry>44.393166</entry>
+            <entry>0.0</entry>
+          </vector>
+        </rotation>
+        <translation>
+          <vector jtype="java_lang_Float" size="3">
+            <entry>-330.25284</entry>
+            <entry>19.945955</entry>
+            <entry>-359.84738</entry>
+          </vector>
+        </translation>
+      </model> 
 
-            <model id="Stimuli_Trigger2" key="Models/trigger/trigger.scene" ref="">
-                  <mass>0</mass>
-                  <visible>false</visible>
-                  <collisionShape>none</collisionShape>
-                  <scale>
-                        <vector jtype="java_lang_Float" size="3">
-                              <entry>1.0</entry>
-                              <entry>1.0</entry>
-                              <entry>1.0</entry>
-                        </vector>
-                  </scale>
-                  <rotation quaternion="false">
-                        <vector jtype="java_lang_Float" size="3">
-                              <entry>0.0</entry>
-                              <entry>-153.75056</entry>
-                              <entry>0.0</entry>
-                        </vector>
-                  </rotation>
-                  <translation>
-                        <vector jtype="java_lang_Float" size="3">
-                          <entry>-478.0395</entry>
-                              <entry>19.9455961</entry>
-                              <entry>-607.4234</entry>
-                        </vector>
-                  </translation>
-            </model> 
-                <model id="Stimuli_Trigger3" key="Models/trigger/trigger.scene" ref="">
-                  <mass>0</mass>
-                  <visible>false</visible>
-                  <collisionShape>none</collisionShape>
-                  <scale>
-                        <vector jtype="java_lang_Float" size="3">
-                              <entry>1.0</entry>
-                              <entry>1.0</entry>
-                              <entry>1.0</entry>
-                        </vector>
-                  </scale>
-                  <rotation quaternion="false">
-                        <vector jtype="java_lang_Float" size="3">
-                              <entry>0.0</entry>
-                              <entry>-153.75056</entry>
-                              <entry>0.0</entry>
-                        </vector>
-                  </rotation>
-                  <translation>
-                        <vector jtype="java_lang_Float" size="3">
-                          <entry>-449.25485</entry>
-                              <entry>19.945967</entry>
-                              <entry>-573.71924</entry>
-                        </vector>
-                  </translation>
-            </model> 
-            <model id="Stimuli_Trigger4" key="Models/trigger/trigger.scene" ref="">
-              <mass>0</mass>
-              <visible>false</visible>
-              <collisionShape>none</collisionShape>
-              <scale>
-                    <vector jtype="java_lang_Float" size="3">
-                          <entry>1.0</entry>
-                          <entry>1.0</entry>
-                          <entry>1.0</entry>
-                    </vector>
-              </scale>
-              <rotation quaternion="false">
-                    <vector jtype="java_lang_Float" size="3">
-                          <entry>0.0</entry>
-                          <entry>-153.75056</entry>
-                          <entry>0.0</entry>
-                    </vector>
-              </rotation>
-              <translation>
-                    <vector jtype="java_lang_Float" size="3">
-                      <entry>-412.06284</entry>
-                          <entry>19.94569</entry>
-                          <entry>-474.053</entry>
-                    </vector>
-              </translation>
-            </model>  
-            <model id="Stimuli_Trigger5" key="Models/trigger/trigger.scene" ref="">
-              <mass>0</mass>
-              <visible>false</visible>
-              <collisionShape>none</collisionShape>
-              <scale>
-                    <vector jtype="java_lang_Float" size="3">
-                          <entry>1.0</entry>
-                          <entry>1.0</entry>
-                          <entry>1.0</entry>
-                    </vector>
-              </scale>
-              <rotation quaternion="false">
-                    <vector jtype="java_lang_Float" size="3">
-                          <entry>0.0</entry>
-                          <entry>-153.75056</entry>
-                          <entry>0.0</entry>
-                    </vector>
-              </rotation>
-              <translation>
-                    <vector jtype="java_lang_Float" size="3">
-                      <entry>-278.7772</entry>
-                          <entry>19.945967</entry>
-                          <entry>-296.92007</entry>
-                    </vector>
-              </translation>
-            </model> 
-            <model id="Stimuli_Trigger6" key="Models/trigger/trigger.scene" ref="">
-              <mass>0</mass>
-              <visible>false</visible>
-              <collisionShape>none</collisionShape>
-              <scale>
-                    <vector jtype="java_lang_Float" size="3">
-                          <entry>1.0</entry>
-                          <entry>1.0</entry>
-                          <entry>1.0</entry>
-                    </vector>
-              </scale>
-              <rotation quaternion="false">
-                    <vector jtype="java_lang_Float" size="3">
-                          <entry>0.0</entry>
-                          <entry>-153.75056</entry>
-                          <entry>0.0</entry>
-                    </vector>
-              </rotation>
-              <translation>
-                    <vector jtype="java_lang_Float" size="3">
-                      <entry>21.736777</entry>
-                          <entry>19.94596</entry>
-                          <entry>51.677532</entry>
-                    </vector>
-              </translation>
-            </model> 
-            <model id="Stimuli_Trigger7" key="Models/trigger/trigger.scene" ref="">
-              <mass>0</mass>
-              <visible>false</visible>
-              <collisionShape>none</collisionShape>
-              <scale>
-                    <vector jtype="java_lang_Float" size="3">
-                          <entry>1.0</entry>
-                          <entry>1.0</entry>
-                          <entry>1.0</entry>
-                    </vector>
-              </scale>
-              <rotation quaternion="false">
-                    <vector jtype="java_lang_Float" size="3">
-                          <entry>0.0</entry>
-                          <entry>-153.75056</entry>
-                          <entry>0.0</entry>
-                    </vector>
-              </rotation>
-              <translation>
-                    <vector jtype="java_lang_Float" size="3">
-                      <entry>87.032745</entry>
-                          <entry>20.09788</entry>
-                          <entry>189.12337</entry>
-                    </vector>
-              </translation>
-            </model>  
+      <model id="Stimuli_Trigger2" key="Models/trigger/trigger.scene" ref="">
+        <mass>0</mass>
+        <visible>false</visible>
+        <collisionShape>none</collisionShape>
+        <scale>
+          <vector jtype="java_lang_Float" size="3">
+            <entry>1.0</entry>
+            <entry>1.0</entry>
+            <entry>1.0</entry>
+          </vector>
+        </scale>
+        <rotation quaternion="false">
+          <vector jtype="java_lang_Float" size="3">
+            <entry>0.0</entry>
+            <entry>-153.75056</entry>
+            <entry>0.0</entry>
+          </vector>
+        </rotation>
+        <translation>
+          <vector jtype="java_lang_Float" size="3">
+            <entry>-288.28018</entry>
+            <entry>19.945967</entry>
+            <entry>-308.9875</entry>
+          </vector>
+        </translation>
+      </model> 
+      <model id="Stimuli_Trigger3" key="Models/trigger/trigger.scene" ref="">
+        <mass>0</mass>
+        <visible>false</visible>
+        <collisionShape>none</collisionShape>
+        <scale>
+          <vector jtype="java_lang_Float" size="3">
+            <entry>1.0</entry>
+            <entry>1.0</entry>
+            <entry>1.0</entry>
+          </vector>
+        </scale>
+        <rotation quaternion="false">
+          <vector jtype="java_lang_Float" size="3">
+            <entry>0.0</entry>
+            <entry>-153.75056</entry>
+            <entry>0.0</entry>
+          </vector>
+        </rotation>
+        <translation>
+          <vector jtype="java_lang_Float" size="3">
+            <entry>-234.30113</entry>
+            <entry>19.945967</entry>
+            <entry>-247.09281</entry>
+          </vector>
+        </translation>
+      </model> 
+      <model id="Stimuli_Trigger4" key="Models/trigger/trigger.scene" ref="">
+        <mass>0</mass>
+        <visible>false</visible>
+        <collisionShape>none</collisionShape>
+        <scale>
+          <vector jtype="java_lang_Float" size="3">
+            <entry>1.0</entry>
+            <entry>1.0</entry>
+            <entry>1.0</entry>
+          </vector>
+        </scale>
+        <rotation quaternion="false">
+          <vector jtype="java_lang_Float" size="3">
+            <entry>0.0</entry>
+            <entry>-153.75056</entry>
+            <entry>0.0</entry>
+          </vector>
+        </rotation>
+        <translation>
+          <vector jtype="java_lang_Float" size="3">
+            <entry>-215.7324</entry>
+            <entry>19.94569</entry>
+            <entry>-226.43402</entry>
+          </vector>
+        </translation>
+      </model> 
 
 
 		<model id="speedLimit70_1" key="Models/RoadSigns/speedLimits/speedLimit70/speedLimit70.scene"><mass>0</mass><visible>true</visible><collisionShape>meshShape</collisionShape><scale><vector jtype="java_lang_Float" size="3"><entry>1.0</entry><entry>1.0</entry><entry>1.0</entry></vector></scale><rotation quaternion="false"><vector jtype="java_lang_Float" size="3"><entry>0</entry><entry>-133.09236</entry><entry>0</entry></vector></rotation><translation><vector jtype="java_lang_Float" size="3"><entry>-538.22473</entry><entry>19.692575</entry><entry>-671.4367</entry></vector></translation></model>
