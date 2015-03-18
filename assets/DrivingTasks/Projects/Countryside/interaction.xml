@@ -52,114 +52,192 @@
                   </action>
             </activity>
 
-        <activity id="showStimuli1" ref="">
-        	  <action id="setupReactionTimer">
-             	<parameter name="reactionGroup" value="1"/>
-             	<parameter name="correctReaction" value="KEY_N"/>
-             	<parameter name="failureReaction" value="KEY_B"/>
-             </action>
-            <action delay="0.0" id="manipulatePicture" repeat="4">  
-            	<parameter name="id" value="leftGreenCircle" /> 
-            	<parameter name="visible" value="true"/>     
-            </action>  
-        </activity>
-        <activity id="showStimuli2" ref="">
+        <activity id="showStimuliGreenCircleR" ref="">
+      	  <action id="setupReactionTimer">
+           	<parameter name="reactionGroup" value="1"/>
+           	<parameter name="correctReaction" value="KEY_N"/>
+           	<parameter name="failureReaction" value="KEY_B"/>
+           </action>
           <action delay="0.0" id="manipulatePicture" repeat="4">  
-            <parameter name="id" value="leftRedSquare" /> 
+          	<parameter name="id" value="rightGreenCircle" /> 
+          	<parameter name="visible" value="true"/>     
+          </action>  
+        </activity>
+        <activity id="showStimuliGreenCircleL" ref="">
+          <action delay="0.0" id="manipulatePicture" repeat="4">  
+            <parameter name="id" value="leftGreenCircle" /> 
             <parameter name="visible" value="true"/>     
           </action>
         </activity>
-        <activity id="showStimuli3" ref="">
-          <action delay="0.0" id="manipulatePicture" repeat="4">  
-            <parameter name="id" value="leftRedSquare" /> 
-            <parameter name="visible" value="false"/>     
-          </action>
-        </activity>
-        <activity id="showStimuli4" ref="">
-          <action delay="0.0" id="manipulatePicture" repeat="4">  
-            <parameter name="id" value="leftRedCircle" /> 
-            <parameter name="visible" value="true"/>     
-          </action>
-        </activity>
-        <activity id="showStimuli5" ref="">
+        <activity id="showStimuliGreenSquareR" ref="">
           <action delay="0.0" id="manipulatePicture" repeat="4">  
             <parameter name="id" value="rightGreenSquare" /> 
             <parameter name="visible" value="true"/>     
           </action>
         </activity>
-        <activity id="showStimuli6" ref="">
+        <activity id="showStimuliGreenSquareL" ref="">
           <action delay="0.0" id="manipulatePicture" repeat="4">  
-            <parameter name="id" value="rightGreenCircle" /> 
+            <parameter name="id" value="leftGreenSquare" /> 
             <parameter name="visible" value="true"/>     
           </action>
         </activity>
-        <activity id="showStimuli7" ref="">
+        <activity id="showStimuliRedCircleL" ref="">
+          <action delay="0.0" id="manipulatePicture" repeat="4">  
+            <parameter name="id" value="leftRedCircle" /> 
+            <parameter name="visible" value="true"/>     
+          </action>
+        </activity>
+        <activity id="hideStimuliCircleL" ref="">
+          <action delay="0.0" id="manipulatePicture" repeat="4">  
+            <parameter name="id" value="leftRedCircle" /> 
+            <parameter name="visible" value="false"/>     
+          </action>
+        </activity>
+        <activity id="showStimuliRedCircleR" ref="">
+          <action delay="0.0" id="manipulatePicture" repeat="4">  
+            <parameter name="id" value="rightRedCircle" /> 
+            <parameter name="visible" value="true"/>     
+          </action>
+        </activity>
+          <activity id="hideStimuliCircleR" ref="">
+          <action delay="0.0" id="manipulatePicture" repeat="4">  
+            <parameter name="id" value="rightRedCircle" /> 
+            <parameter name="visible" value="false"/>     
+          </action>
+        </activity>
+        <activity id="showStimuliRedSquareL" ref="">
+          <action delay="0.0" id="manipulatePicture" repeat="4">  
+            <parameter name="id" value="leftRedSquare" /> 
+            <parameter name="visible" value="true"/>     
+          </action>
+        </activity>
+        <activity id="hideStimuliSquareL" ref="">
+          <action delay="0.0" id="manipulatePicture" repeat="4">  
+            <parameter name="id" value="leftRedSquare" /> 
+            <parameter name="visible" value="false"/>     
+          </action>
+        </activity>
+        <activity id="showStimuliRedSquareR" ref="">
           <action delay="0.0" id="manipulatePicture" repeat="4">  
             <parameter name="id" value="rightRedSquare" /> 
             <parameter name="visible" value="true"/>     
           </action>
         </activity>
-        <activity id="showStimuli8" ref="">
+          <activity id="hideStimuliSquareR" ref="">
           <action delay="0.0" id="manipulatePicture" repeat="4">  
-            <parameter name="id" value="rightRedCircle" /> 
-            <parameter name="visible" value="true"/>     
+            <parameter name="id" value="rightRedSquare" /> 
+            <parameter name="visible" value="false"/>     
           </action>
         </activity>
 	</activities>
 	
 	<triggers>
 		<trigger id="Finish_Trigger" priority="1">
-            <activities>
-                <activity ref="End_pauseSimulation"/>
-            </activities>
-            <condition>collideWith:Finish_Trigger</condition>
-        </trigger>
-        
-        <trigger id="Stimuli_Trigger1" priority="1">
-            <activities>
-            		<activity id="Start_startRM" ref="">
-                  <action delay="0.0" id="startReactionMeasurement" repeat="1"/>
-            </activity>
-                <activity ref="showStimuli1"/>
-            </activities>
-            <condition>collideWith:Stimuli_Trigger1</condition>
-        </trigger>
-         <trigger id="Stimuli_Trigger2" priority="1">
-            <activities>
-                <activity ref="showStimuli2"/>
-            </activities>
-            <condition>collideWith:Stimuli_Trigger2</condition>
-        </trigger>
-         <trigger id="Stimuli_Trigger3" priority="1">
-            <activities>
-                <activity ref="showStimuli3"/>
-            </activities>
-            <condition>collideWith:Stimuli_Trigger3</condition>
-        </trigger>
-         <trigger id="Stimuli_Trigger4" priority="1">
-            <activities>
-                <activity ref="showStimuli4"/>
-            </activities>
-            <condition>collideWith:Stimuli_Trigger4</condition>
-        </trigger>
-          <trigger id="Stimuli_Trigger5" priority="1">
-            <activities>
-                <activity ref="showStimuli5"/>
-            </activities>
-            <condition>collideWith:Stimuli_Trigger5</condition>
-        </trigger>
-         <trigger id="Stimuli_Trigger6" priority="1">
-            <activities>
-                <activity ref="showStimuli6"/>
-            </activities>
-            <condition>collideWith:Stimuli_Trigger6</condition>
-        </trigger>
-         <trigger id="Stimuli_Trigger7" priority="1">
-            <activities>
-                <activity ref="showStimuli7"/>
-            </activities>
-            <condition>collideWith:Stimuli_Trigger7</condition>
-        </trigger>
+      <activities>
+        <activity ref="End_pauseSimulation"/>
+      </activities>
+      <condition>collideWith:Finish_Trigger</condition>
+    </trigger>
+      
+    <trigger id="Stimuli_Trigger1" priority="1">
+      <activities>
+      	<activity id="Start_startRM" ref="">
+          <action delay="0.0" id="startReactionMeasurement" repeat="1"/>
+      </activity>
+      <activity ref="showStimuliGreenCircleR"/>
+      </activities>
+      <condition>collideWith:Stimuli_Trigger1</condition>
+    </trigger>
+     <trigger id="Stimuli_Trigger2" priority="1">
+        <activities>
+          <activity ref="showStimuliGreenSquareL"/>
+        </activities>
+        <condition>collideWith:Stimuli_Trigger2</condition>
+    </trigger>
+     <trigger id="Stimuli_Trigger3" priority="1">
+        <activities>
+            <activity ref="showStimuliRedCircleL"/>
+        </activities>
+        <condition>collideWith:Stimuli_Trigger3</condition>
+    </trigger>
+     <trigger id="Stimuli_Trigger4" priority="1">
+        <activities>
+            <activity ref="hideStimuliCircleL"/>
+        </activities>
+        <condition>collideWith:Stimuli_Trigger4</condition>
+    </trigger>
+      <trigger id="Stimuli_Trigger5" priority="1">
+        <activities>
+            <activity ref="showStimuliGreenCircleR"/>
+        </activities>
+        <condition>collideWith:Stimuli_Trigger5</condition>
+    </trigger>
+     <trigger id="Stimuli_Trigger6" priority="1">
+        <activities>
+            <activity ref="showStimuliGreenCircleL"/>
+        </activities>
+        <condition>collideWith:Stimuli_Trigger6</condition>
+    </trigger>
+     <trigger id="Stimuli_Trigger7" priority="1">
+        <activities>
+          <activity ref="showStimuliGreenSquareR"/>
+        </activities>
+        <condition>collideWith:Stimuli_Trigger7</condition>
+    </trigger>
+        <trigger id="Stimuli_Trigger8" priority="1">
+        <activities>
+          <activity ref="showStimuliGreenSquareR"/>
+        </activities>
+        <condition>collideWith:Stimuli_Trigger8</condition>
+    </trigger>
+    <trigger id="Stimuli_Trigger9" priority="1">
+        <activities>
+          <activity ref="showStimuliGreenCircleR"/>
+        </activities>
+        <condition>collideWith:Stimuli_Trigger9</condition>
+    </trigger>
+    <trigger id="Stimuli_Trigger10" priority="1">
+        <activities>
+          <activity ref="showStimuliGreenCircleL"/>
+        </activities>
+        <condition>collideWith:Stimuli_Trigger10</condition>
+    </trigger>
+    <trigger id="Stimuli_Trigger11" priority="1">
+        <activities>
+          <activity ref="showStimuliGreenSquareL"/>
+        </activities>
+        <condition>collideWith:Stimuli_Trigger11</condition>
+    </trigger>
+    <trigger id="Stimuli_Trigger12" priority="1">
+        <activities>
+          <activity ref="showStimuliGreenSquareR"/>
+        </activities>
+        <condition>collideWith:Stimuli_Trigger12</condition>
+    </trigger>
+    <trigger id="Stimuli_Trigger13" priority="1">
+        <activities>
+          <activity ref="hideStimuliSquareR"/>
+        </activities>
+        <condition>collideWith:Stimuli_Trigger13</condition>
+    </trigger>
+    <trigger id="Stimuli_Trigger14" priority="1">
+        <activities>
+          <activity ref="showStimuliGreenCircleL"/>
+        </activities>
+        <condition>collideWith:Stimuli_Trigger14</condition>
+    </trigger>
+    <trigger id="Stimuli_Trigger15" priority="1">
+        <activities>
+          <activity ref="showStimuliRedSquareR"/>
+        </activities>
+        <condition>collideWith:Stimuli_Trigger15</condition>
+    </trigger>
+    <trigger id="Stimuli_Trigger16" priority="1">
+        <activities>
+          <activity ref="hideStimuliSquareR"/>
+        </activities>
+        <condition>collideWith:Stimuli_Trigger16</condition>
+    </trigger>
 	</triggers>
 	
 </interaction>
