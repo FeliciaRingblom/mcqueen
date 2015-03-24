@@ -17,7 +17,7 @@
   <style id="console-font">
     <attributes font="fonts/verdana-48-regular.fnt" color="#00ff"/>
   </style>
-  <resourceBundle id="dialog" filename="assets/Interface/dialog" />
+  <resourceBundle id="intro" filename="assets/Interface/intro" />
 
 
   <screen id="start" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
@@ -26,7 +26,13 @@
       <panel width="50%" height="50%" backgroundColor="#0f08" /> 
     </layer>
 
-    <layer id="layer" backgroundColor="#003f" childLayout="vertical">  <text id="text1" style="nifty-label" height="15%" width="75%"        backgroundColor="#f60f" text="TextHAlign: center, TextVAlign: top ${dialog.hello}"        color="#000f" textHAlign="center" textVAlign="top"/>  <text id="text2" style="nifty-label" height="15%" width="75%"        backgroundColor="#f80f" text="TextHAlign: center, TextVAlign: center"        color="#000f" textHAlign="center" textVAlign="center"/>  <text id="text3" style="nifty-label" height="15%" width="75%"        backgroundColor="#fa0f" text="TextHAlign: center, TextVAlign: bottom"        color="#000f" textHAlign="center" textVAlign="bottom"/>  <text id="text4" style="nifty-label" height="15%" width="75%"        backgroundColor="#fc0f" text="TextHAlign: left, TextVAlign: center"        color="#000f" textHAlign="left" textVAlign="center"/>  <text id="text5" style="nifty-label" height="15%" width="75%"         backgroundColor="#fe0f" text="TextHAlign: center, TextVAlign: center"         color="#000f" textHAlign="center" textVAlign="center"/>  <text id="text6" style="nifty-label" height="15%" width="75%"         backgroundColor="#ff2f" text="TextHAlign: right, TextVAlign: center"         color="#000f" textHAlign="right" textVAlign="center"/> </layer>
+      <layer id="layer" backgroundColor="#003f" childLayout="vertical">  <text id="text1" style="nifty-label" height="15%" width="75%"        backgroundColor="#f60f" text="TextHAlign: center, TextVAlign: top ${intro.header}" color="#000f" textHAlign="center" textVAlign="top"/>  
+      <text id="text2" style="nifty-label" height="30%" width="75%" backgroundColor="#f80f" text="${intro.intro1}" color="#000f" textHAlign="center" textVAlign="center"/>  
+      <text id="text3" style="nifty-label" height="15%" width="75%" backgroundColor="#fa0f" text="TextHAlign: center, TextVAlign: bottom" color="#000f" textHAlign="center" textVAlign="bottom"/>  
+      <text id="text4" style="nifty-label" height="15%" width="75%" backgroundColor="#fc0f" text="TextHAlign: left, TextVAlign: center" color="#000f" textHAlign="left" textVAlign="center"/>  
+      <text id="text5" style="nifty-label" height="15%" width="75%" backgroundColor="#fe0f" text="TextHAlign: center, TextVAlign: center" color="#000f" textHAlign="center" textVAlign="center"/>  
+ 
+    </layer>
   </screen>
 
 </nifty>

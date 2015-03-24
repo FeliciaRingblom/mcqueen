@@ -22,6 +22,8 @@ package eu.opends.main;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
+
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
@@ -216,6 +218,7 @@ public class Simulator extends SimulationBasics
     	
     	// Create a new NiftyGUI object
     	nifty = niftyDisplay.getNifty();
+    	nifty.setLocale(new Locale("sv", "SE"));
     		
     	String xmlPath = "Interface/myTaskGUI.xml";
     	
