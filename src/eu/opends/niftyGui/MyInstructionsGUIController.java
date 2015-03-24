@@ -13,20 +13,20 @@ import de.lessvoid.nifty.tools.SizeValue;
 import eu.opends.main.Simulator;
 
 public class MyInstructionsGUIController implements ScreenController{
-	
-	private Simulator sim;
-	private Nifty nifty;
-	private String currentPath = "./assets/DrivingTasks/Projects";
-	private Element errorPopup;
+//	
+//	private Simulator sim;
+//	private Nifty nifty;
+//	private String currentPath = "./assets/DrivingTasks/Projects";
+//	private Element errorPopup;
 	
 	public MyInstructionsGUIController(Simulator sim, Nifty nifty)
 	{
-		this.sim = sim;
-		this.nifty = nifty;
-		
-		
-		AssetManager assetManager = sim.getAssetManager();
-		assetManager.registerLocator("assets", FileLocator.class);
+//		this.sim = sim;
+//		this.nifty = nifty;
+//		
+//		
+//		AssetManager assetManager = sim.getAssetManager();
+//		assetManager.registerLocator("assets", FileLocator.class);
 	}
 
 	@Override
@@ -47,6 +47,10 @@ public class MyInstructionsGUIController implements ScreenController{
 	public void onStartScreen() {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public void next(String param1, String param2) {
+		System.out.println("next() clicked!");
 	}
 
 }

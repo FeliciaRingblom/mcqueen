@@ -26,11 +26,13 @@
       <panel width="50%" height="50%" backgroundColor="#0f08" /> 
     </layer>
 
-      <layer id="layer" backgroundColor="#003f" childLayout="vertical">  <text id="text1" style="nifty-label" height="15%" width="75%"        backgroundColor="#f60f" text="TextHAlign: center, TextVAlign: top ${intro.header}" color="#000f" textHAlign="center" textVAlign="top"/>  
-      <text id="text2" style="nifty-label" height="30%" width="75%" backgroundColor="#f80f" text="${intro.intro1}" color="#000f" textHAlign="center" textVAlign="center"/>  
-      <text id="text3" style="nifty-label" height="15%" width="75%" backgroundColor="#fa0f" text="TextHAlign: center, TextVAlign: bottom" color="#000f" textHAlign="center" textVAlign="bottom"/>  
-      <text id="text4" style="nifty-label" height="15%" width="75%" backgroundColor="#fc0f" text="TextHAlign: left, TextVAlign: center" color="#000f" textHAlign="left" textVAlign="center"/>  
-      <text id="text5" style="nifty-label" height="15%" width="75%" backgroundColor="#fe0f" text="TextHAlign: center, TextVAlign: center" color="#000f" textHAlign="center" textVAlign="center"/>  
+      <layer id="layer" backgroundColor="#003f" childLayout="vertical">  <text id="text1" style="nifty-label" height="15%" width="75%" backgroundColor="#f60f" text="${intro.header}" color="#000f" textHAlign="center" textVAlign="top"/>  
+      <text id="text2" style="nifty-label" height="50%" width="50%" backgroundColor="#f80f" text="${intro.intro1}" wrap="true" color="#000f" textHAlign="center" textVAlign="center" padding="10%"/>  
+      <text id="text3" style="nifty-label" height="15%" width="75%" backgroundColor="#fa0f" text="${intro.intro2}" color="#000f" textHAlign="center" textVAlign="bottom"/>  
+      
+      <image filename="assets/Interface/images_instruction_screen/laneChange.png" width="50%" height="50%" align="center">
+        <interact onClick="next(hello, there)"/>
+      </image> 
  
     </layer>
   </screen>
