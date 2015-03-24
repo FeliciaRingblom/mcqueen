@@ -117,18 +117,6 @@ public class Simulator extends SimulationBasics
 		return lightningClient;
 	}
 	
-	private static CANClient canClient;
-	public static CANClient getCanClient() 
-	{
-		return canClient;
-	}
-	
-	private MultiDriverClient multiDriverClient;
-	public MultiDriverClient getMultiDriverClient() 
-	{
-		return multiDriverClient;
-	}
-	
 	private TriggerCenter triggerCenter = new TriggerCenter(this);
 	public TriggerCenter getTriggerCenter()
 	{
@@ -524,12 +512,6 @@ public class Simulator extends SimulationBasics
 			if(lightningClient != null)
 				lightningClient.close();
 			
-			if(canClient != null)
-				canClient.requestStop();
-				
-			if(multiDriverClient != null)
-				multiDriverClient.close();
-			
 			trafficLightCenter.close();
 			
 			steeringTask.close();
@@ -593,19 +575,17 @@ public class Simulator extends SimulationBasics
 			
 	    	AppSettings settings = new AppSettings(false);
 	        settings.setUseJoysticks(true);
-	        //settings.setSettingsDialogImage("OpenDS.png");
 	        settings.setSettingsDialogImage("assets/Textures/Logo/mcQueen.jpg");
-	        settings.setTitle("MCQueen by Jessica & Felicia");
+	        settings.setTitle("Testa din körförmåga. ");
 	        
 	        // set splash screen parameters
-	        /*
 	        settings.setFullscreen(false);
 	        settings.setResolution(1280, 720);
 	        settings.setSamples(4);
 	        settings.setBitsPerPixel(24);
 	        settings.setVSync(false);
 	        settings.setFrequency(60);
-	        */
+	     
 	        
 			sim.setSettings(settings);
 

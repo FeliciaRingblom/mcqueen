@@ -367,7 +367,7 @@
 		</directionalLight>
 	</lights>
 	<pictures>
-		<picture id="leftGreenCircle" key="assets/Textures/ReactionTest/peripheralIcons/green_square.png" level="0">
+		<picture id="leftGreenCircle" key="assets/Textures/ReactionTest/peripheralIcons/green_circle.png" level="0">
 			<hPosition><fromLeft value="22" unit="px"></fromLeft></hPosition>
 			<vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
 			<width>100</width>

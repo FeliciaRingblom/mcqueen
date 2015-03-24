@@ -24,7 +24,6 @@ import com.jme3.math.Vector3f;
 import eu.opends.audio.AudioCenter;
 import eu.opends.camera.CameraFactory;
 import eu.opends.camera.CameraFactory.MirrorMode;
-import eu.opends.canbus.CANClient;
 import eu.opends.car.Car;
 import eu.opends.car.SteeringCar;
 import eu.opends.car.LightTexturesContainer.TurnSignalState;
@@ -33,7 +32,6 @@ import eu.opends.niftyGui.MessageBoxGUI;
 import eu.opends.tools.PanelCenter;
 import eu.opends.tools.Util;
 import eu.opends.trigger.ManipulatePictureTriggerAction;
-import eu.opends.trigger.TriggerAction;
 
 /**
  * 
@@ -66,11 +64,6 @@ public class SimulatorActionListener implements ActionListener
 				steeringValue += -.3f;
 			}
 			
-			// if CAN-Client is running suppress external steering
-			CANClient canClient = Simulator.getCanClient();
-			if(canClient != null)
-				canClient.suppressSteering();
-			
 			sim.getSteeringTask().setSteeringIntensity(-3*steeringValue);
 			car.steer(steeringValue);
 		} 
@@ -84,10 +77,6 @@ public class SimulatorActionListener implements ActionListener
 				steeringValue += .3f;
 			}
 			
-			// if CAN-Client is running suppress external steering
-			CANClient canClient = Simulator.getCanClient();
-			if(canClient != null)
-				canClient.suppressSteering();
 			
 			sim.getSteeringTask().setSteeringIntensity(-3*steeringValue);
 			car.steer(steeringValue);
@@ -168,11 +157,13 @@ public class SimulatorActionListener implements ActionListener
 		{
 			if (value) 
 			{
-				System.out.println("value: " + value);
 				//veta om bilden syns eller inte (rätt knapptryck)
 				//dölja bild
-				ManipulatePictureTriggerAction manipulatePicture =  new ManipulatePictureTriggerAction(sim, 0, 4, "leftGreenCircle", false);
+				ManipulatePictureTriggerAction manipulatePicture2 =  new ManipulatePictureTriggerAction(sim, 0, 4, "rightGreenSquare", false);
+				manipulatePicture2.execute();
+				ManipulatePictureTriggerAction manipulatePicture =  new ManipulatePictureTriggerAction(sim, 0, 4, "leftGreenSquare", false);
 				manipulatePicture.execute();
+
 			}
 			else
 			{
@@ -183,12 +174,13 @@ public class SimulatorActionListener implements ActionListener
 		else if (binding.equals(KeyMapping.REACT_RIGHT.getID())) 
 		{
 			if (value) 
-			{
-				System.out.println("value: " + value);
+			{	
 				//veta om bilden syns eller inte (rätt knapptryck)
 				//dölja bild
-				ManipulatePictureTriggerAction manipulatePicture =  new ManipulatePictureTriggerAction(sim, 0, 4, "rightGreenSquare", false);
+				ManipulatePictureTriggerAction manipulatePicture =  new ManipulatePictureTriggerAction(sim, 0, 4, "rightGreenCircle", false);
 				manipulatePicture.execute();
+				ManipulatePictureTriggerAction manipulatePicture2 =  new ManipulatePictureTriggerAction(sim, 0, 4, "leftGreenCircle", false);
+				manipulatePicture2.execute();
 			}
 			else
 			{

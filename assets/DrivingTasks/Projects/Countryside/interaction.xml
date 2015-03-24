@@ -31,6 +31,9 @@
 				<parameter name="duration" value="3" />
 			</action>
 		</activity>
+    <activity id="Start_startRM" ref="">
+            <action delay="0.0" id="startReactionMeasurement" repeat="1"/>
+      </activity>
 
 		<activity id="activity04">
 			<action id="startRecording" delay="0" repeat="4">
@@ -53,13 +56,14 @@
             </activity>
 
         <activity id="showStimuliGreenCircleR" ref="">
-      	  <action id="setupReactionTimer">
+      	  <action id="setupKeyReactionTimer">
            	<parameter name="reactionGroup" value="1"/>
+             <parameter name="timerID" value="timer1"/>
            	<parameter name="correctReaction" value="KEY_N"/>
            	<parameter name="failureReaction" value="KEY_B"/>
            </action>
           <action delay="0.0" id="manipulatePicture" repeat="4">  
-          	<parameter name="id" value="rightGreenCircle" /> 
+          	<parameter name="id" value="rightGreenSquare" /> 
           	<parameter name="visible" value="true"/>     
           </action>  
         </activity>

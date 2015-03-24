@@ -54,13 +54,13 @@
 
     <activity id="showStimuli1" ref="">
       <action delay="0.0" id="manipulatePicture" repeat="4">  
-        <parameter name="id" value="rightGreenCircle" /> 
+        <parameter name="id" value="rightGreenSquare" /> 
         <parameter name="visible" value="true"/>     
       </action>  
     </activity>
     <activity id="showStimuli2" ref="">
       <action delay="0.0" id="manipulatePicture" repeat="4">  
-        <parameter name="id" value="leftGreenSquare" /> 
+        <parameter name="id" value="leftGreenCircle" /> 
         <parameter name="visible" value="true"/>     
       </action>
     </activity>

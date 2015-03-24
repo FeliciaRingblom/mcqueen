@@ -125,6 +125,7 @@ public class InstructionScreenGUI
     	nifty = niftyDisplay.getNifty();
     		
     	String xmlPath = "Interface/InstructionScreenGUI.xml";
+    	System.out.println("hhh");
     	
     	// Read XML and initialize custom ScreenController
     	nifty.fromXml(xmlPath, "start", new InstructionScreenGUIController(sim, this));

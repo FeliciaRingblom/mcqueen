@@ -37,6 +37,7 @@ public class SetupKeyReactionTimerTriggerAction extends TriggerAction
 	public SetupKeyReactionTimerTriggerAction(float delay, int maxRepeat, String timerID, String reactionGroup, 
 			String correctReaction, String failureReaction, String comment, Simulator sim) 
 	{
+		
 		super(delay, maxRepeat);
 		this.sim = sim;
 		this.timerID = timerID;
@@ -44,6 +45,7 @@ public class SetupKeyReactionTimerTriggerAction extends TriggerAction
 		this.correctReaction = correctReaction;
 		this.failureReaction = failureReaction;
 		this.comment = comment;
+		System.out.println("I SetupReactinoimeTriggerAction");
 	}
 
 	
