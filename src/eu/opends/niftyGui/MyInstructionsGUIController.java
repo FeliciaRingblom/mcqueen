@@ -2,6 +2,9 @@ package eu.opends.niftyGui;
 
 import java.util.Locale;
 
+import com.jme3.app.Application;
+import com.jme3.app.state.AbstractAppState;
+import com.jme3.app.state.AppStateManager;
 import com.jme3.asset.AssetManager;
 import com.jme3.asset.plugins.FileLocator;
 
@@ -12,22 +15,14 @@ import de.lessvoid.nifty.screen.ScreenController;
 import de.lessvoid.nifty.tools.SizeValue;
 import eu.opends.main.Simulator;
 
-public class MyInstructionsGUIController implements ScreenController{
-//	
-//	private Simulator sim;
-//	private Nifty nifty;
-//	private String currentPath = "./assets/DrivingTasks/Projects";
-//	private Element errorPopup;
-	
-	public MyInstructionsGUIController(Simulator sim, Nifty nifty)
-	{
-//		this.sim = sim;
-//		this.nifty = nifty;
-//		
-//		
-//		AssetManager assetManager = sim.getAssetManager();
-//		assetManager.registerLocator("assets", FileLocator.class);
-	}
+public class MyInstructionsGUIController extends AbstractAppState implements ScreenController{
+
+    @Override
+    public void initialize(AppStateManager stateManager, Application app) {
+        super.initialize(stateManager, app);
+        //TODO: initialize your AppState, e.g. attach spatials to rootNode
+        //this is called on the OpenGL thread after the AppState has been attached
+    }
 
 	@Override
 	public void bind(Nifty arg0, Screen arg1) {
@@ -36,6 +31,19 @@ public class MyInstructionsGUIController implements ScreenController{
 	
 		
 	}
+	
+   @Override
+    public void update(float tpf) {
+        //TODO: implement behavior during runtime
+    }
+ 
+    @Override
+    public void cleanup() {
+        super.cleanup();
+        //TODO: clean up what you initialized in the initialize method,
+        //e.g. remove all spatials from rootNode
+        //this is called on the OpenGL thread after the AppState has been detached
+    }
 
 	@Override
 	public void onEndScreen() {
@@ -52,5 +60,8 @@ public class MyInstructionsGUIController implements ScreenController{
 	public void next(String param1, String param2) {
 		System.out.println("next() clicked!");
 	}
-
+	
+	public void clickNextButton(){
+		System.out.println("clickNextButton() clicked!");
+	}
 }
