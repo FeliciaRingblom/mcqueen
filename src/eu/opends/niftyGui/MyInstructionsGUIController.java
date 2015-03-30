@@ -7,16 +7,21 @@ import com.jme3.app.state.AbstractAppState;
 import com.jme3.app.state.AppStateManager;
 import com.jme3.asset.AssetManager;
 import com.jme3.asset.plugins.FileLocator;
+import com.jme3.niftygui.NiftyJmeDisplay;
 
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.elements.Element;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
 import de.lessvoid.nifty.tools.SizeValue;
+import eu.opends.basics.SimulationBasics;
 import eu.opends.main.Simulator;
 
 public class MyInstructionsGUIController extends AbstractAppState implements ScreenController{
-
+	
+	private Nifty nifty;
+	private SimulationBasics sim;
+	
     @Override
     public void initialize(AppStateManager stateManager, Application app) {
         super.initialize(stateManager, app);
@@ -27,7 +32,8 @@ public class MyInstructionsGUIController extends AbstractAppState implements Scr
 	@Override
 	public void bind(Nifty arg0, Screen arg1) {
 	
-
+		 this.nifty= arg0;
+	     //this.screen= arg1;
 	
 		
 	}
@@ -57,11 +63,16 @@ public class MyInstructionsGUIController extends AbstractAppState implements Scr
 		
 	}
 	
-	public void next(String param1, String param2) {
-		System.out.println("next() clicked!");
+	public void clickNextButton(){
+		//System.out.println("clickNextButton() clicked!");
+		 nifty.gotoScreen("next1"); 
 	}
 	
-	public void clickNextButton(){
-		System.out.println("clickNextButton() clicked!");
+	public void clickNext2Button(){
+		nifty.gotoScreen("next2");
+	}
+	
+	public void clickNext3Button(){
+		nifty.gotoScreen("next3");
 	}
 }
