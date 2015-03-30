@@ -74,8 +74,7 @@ public class KeyReactionTimer extends ReactionTimer
 	public void update()
 	{		
 		super.update();
-		
-		if(timerIsActive && (correctReactionReported || failureReactionReported))
+		if(!timerIsActive && (correctReactionReported || failureReactionReported))
 		{
 			inputManager.deleteMapping("reaction_group_" + index);
 			inputManager.deleteMapping("failure_group_" + index);

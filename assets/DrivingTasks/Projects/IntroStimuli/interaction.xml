@@ -79,6 +79,7 @@
   </activities>
 
   <triggers>
+
     <trigger id="Finish_Trigger" priority="1">
       <activities>
         <activity ref="End_pauseSimulation"/>
@@ -88,9 +89,9 @@
   
     <trigger id="Stimuli_Trigger1" priority="1">
       <activities>
-          <activity ref="showStimuli1"/>
-        </activities>
-        <condition>collideWith:Stimuli_Trigger1</condition>
+        <activity ref="showStimuli1"/>
+      </activities>
+      <condition>collideWith:Stimuli_Trigger1</condition>
     </trigger>
      <trigger id="Stimuli_Trigger2" priority="1">
         <activities>

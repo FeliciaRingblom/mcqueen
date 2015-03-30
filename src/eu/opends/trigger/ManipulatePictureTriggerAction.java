@@ -79,7 +79,6 @@ public class ManipulatePictureTriggerAction extends TriggerAction
 			}
 				
 			else{
-				System.out.println("i ManipulatePicture");
 				visibility = CullHint.Always;
 			}
 						

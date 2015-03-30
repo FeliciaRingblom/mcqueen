@@ -164,15 +164,14 @@ public class SimulatorActionListener implements ActionListener
 			}
 		}
 		
-		else if (binding.equals(KeyMapping.REACT_LEFT.getID())) 
+		else if (binding.equals(KeyMapping.REACT_SQUARE.getID())) 
 		{
 			if (value) 
 			{
-				System.out.println("value: " + value);
-				//veta om bilden syns eller inte (rätt knapptryck)
-				//dölja bild
-				ManipulatePictureTriggerAction manipulatePicture =  new ManipulatePictureTriggerAction(sim, 0, 4, "leftGreenCircle", false);
+				ManipulatePictureTriggerAction manipulatePicture =  new ManipulatePictureTriggerAction(sim, 0, 4, "leftGreenSquare", false);
 				manipulatePicture.execute();
+				ManipulatePictureTriggerAction manipulatePicture2 =  new ManipulatePictureTriggerAction(sim, 0, 4, "rightGreenSquare", false);
+				manipulatePicture2.execute();
 			}
 			else
 			{
@@ -180,15 +179,14 @@ public class SimulatorActionListener implements ActionListener
 			}
 		}
 		
-		else if (binding.equals(KeyMapping.REACT_RIGHT.getID())) 
+		else if (binding.equals(KeyMapping.REACT_CIRCLE.getID())) 
 		{
 			if (value) 
 			{
-				System.out.println("value: " + value);
-				//veta om bilden syns eller inte (rätt knapptryck)
-				//dölja bild
-				ManipulatePictureTriggerAction manipulatePicture =  new ManipulatePictureTriggerAction(sim, 0, 4, "rightGreenSquare", false);
+				ManipulatePictureTriggerAction manipulatePicture =  new ManipulatePictureTriggerAction(sim, 0, 4, "rightGreenCircle", false);
 				manipulatePicture.execute();
+				ManipulatePictureTriggerAction manipulatePicture2 =  new ManipulatePictureTriggerAction(sim, 0, 4, "leftGreenCircle", false);
+				manipulatePicture2.execute();
 			}
 			else
 			{

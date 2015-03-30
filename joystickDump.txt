@@ -1,0 +1,23 @@
+Creation Date: 2015-03-10
+Creation Time: 13:02:04
+
+Joystick[0]:Driving Force GT
+  buttons:12
+   JoystickButton[name=Button 0, parent=Driving Force GT, id=0, logicalId=0]
+   JoystickButton[name=Button 1, parent=Driving Force GT, id=1, logicalId=1]
+   JoystickButton[name=Button 2, parent=Driving Force GT, id=2, logicalId=2]
+   JoystickButton[name=Button 3, parent=Driving Force GT, id=3, logicalId=3]
+   JoystickButton[name=Button 4, parent=Driving Force GT, id=4, logicalId=4]
+   JoystickButton[name=Button 5, parent=Driving Force GT, id=5, logicalId=5]
+   JoystickButton[name=Button 6, parent=Driving Force GT, id=6, logicalId=6]
+   JoystickButton[name=Button 7, parent=Driving Force GT, id=7, logicalId=7]
+   JoystickButton[name=Button 8, parent=Driving Force GT, id=8, logicalId=8]
+   JoystickButton[name=Button 9, parent=Driving Force GT, id=9, logicalId=9]
+   JoystickButton[name=Button 10, parent=Driving Force GT, id=10, logicalId=10]
+   JoystickButton[name=Button 11, parent=Driving Force GT, id=11, logicalId=11]
+  axes:5
+   JoystickAxis[name=X Axis, parent=Driving Force GT, id=0, logicalId=x, isAnalog=true, isRelative=false, deadZone=0.0]
+   JoystickAxis[name=Y Axis, parent=Driving Force GT, id=1, logicalId=y, isAnalog=true, isRelative=false, deadZone=0.0]
+   JoystickAxis[name=Hat Switch, parent=Driving Force GT, id=2, logicalId=pov, isAnalog=false, isRelative=false, deadZone=0.0]
+   JoystickAxis[name=pov_x, parent=Driving Force GT, id=3, logicalId=pov_x, isAnalog=false, isRelative=false, deadZone=0.0]
+   JoystickAxis[name=pov_y, parent=Driving Force GT, id=4, logicalId=pov_y, isAnalog=false, isRelative=false, deadZone=0.0]

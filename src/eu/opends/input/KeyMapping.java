@@ -83,8 +83,8 @@ public class KeyMapping
 	public static KeyMapping TURN_LEFT = new KeyMapping("turn_left", "flash left turn signal", new String[] {"KEY_J"});
 	public static KeyMapping TURN_RIGHT = new KeyMapping("turn_right", "flash right turn signal", new String[] {"KEY_K"});
 	public static KeyMapping HAZARD_LIGHTS = new KeyMapping("hazard_lights", "flash hazard lights", new String[] {"KEY_F"});
-	public static KeyMapping REACT_LEFT = new KeyMapping("react_left", "react to stimuli left side", new String[] {"KEY_B"});
-	public static KeyMapping REACT_RIGHT = new KeyMapping("react_right", "react to stimuli right side", new String[] {"KEY_N"});
+	public static KeyMapping REACT_SQUARE = new KeyMapping("react_square", "react to stimuli left side", new String[] {"KEY_B"});
+	public static KeyMapping REACT_CIRCLE = new KeyMapping("react_circle", "react to stimuli right side", new String[] {"KEY_N"});
 	
 	// analyzer keys
 	public static KeyMapping GOTO_NEXT_DATAPOINT = new KeyMapping("goto_next_datapoint", "next data point", new String[] {"KEY_UP"});
@@ -165,8 +165,8 @@ public class KeyMapping
 		keyMappingList.add(KeyMapping.TURN_LEFT);
 		keyMappingList.add(KeyMapping.TURN_RIGHT);
 		keyMappingList.add(KeyMapping.HAZARD_LIGHTS);
-		keyMappingList.add(KeyMapping.REACT_LEFT);
-		keyMappingList.add(KeyMapping.REACT_RIGHT);
+		keyMappingList.add(KeyMapping.REACT_SQUARE);
+		keyMappingList.add(KeyMapping.REACT_CIRCLE);
 		
 		SimulationBasics.getDrivingTask().getSettingsLoader().lookUpKeyMappings(keyMappingList);
 		

@@ -467,7 +467,7 @@ public abstract class Car
 		
 		// update values
 		previousPosition = currentPosition;
-		System.out.println("currentPos: " + currentPosition);
+		//System.out.println("currentPos: " + currentPosition);
 	}
 	
 	

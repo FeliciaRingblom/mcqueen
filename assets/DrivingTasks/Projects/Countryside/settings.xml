@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings xmlns="http://opends.eu/drivingtask/settings"
-		  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-          xsi:schemaLocation="http://opends.eu/drivingtask/settings ../../Schema/settings.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://opends.eu/drivingtask/settings ../../Schema/settings.xsd">
 
 	<general>
 		<driverName>default driver</driverName>
@@ -9,7 +9,7 @@
 		<captureVideo>countryside.avi</captureVideo>
 		<showHood>true</showHood>
 		
- 		
+
 	</general>
 	
 
@@ -17,13 +17,13 @@
 		<groupRed>incongruent</groupRed>
 		<groupGreen>congruent</groupGreen>
 		<groupYellow>control_neutral</groupYellow>
-		<groupCyan>control_silence</groupCyan>
-		<groupBlue>no_target</groupBlue>
+		<groupCyan>stimuli_left</groupCyan>
+		<groupBlue>stimuli_right</groupBlue>
 		<groupMagenta></groupMagenta>
 	</reactionMeasurement>
 	
 	<controllers>
-	<joystick>
+		<joystick>
 			<controllerID>0</controllerID>
 			<steeringAxis>0</steeringAxis>
 			<invertSteeringAxis>false</invertSteeringAxis>
@@ -32,8 +32,8 @@
 			<steeringSensitivityFactor>0.6</steeringSensitivityFactor>
 			<pedalSensitivityFactor>4.0</pedalSensitivityFactor>
 			<keyAssignments>
-				<keyAssignment function="react_left" key="BUTTON_1" />
-				<keyAssignment function="react_right" key="BUTTON_2" />
+				<keyAssignment function="react_square" key="BUTTON_1" />
+				<keyAssignment function="react_circle" key="BUTTON_2" />
 			</keyAssignments>
 		</joystick>
 		<keyboard>
