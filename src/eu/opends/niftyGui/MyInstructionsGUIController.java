@@ -4,6 +4,9 @@ package eu.opends.niftyGui;
 
 import com.jme3.asset.AssetManager;
 import com.jme3.asset.plugins.FileLocator;
+import com.jme3.scene.Spatial;
+import com.jme3.scene.Spatial.CullHint;
+import com.jme3.ui.Picture;
 
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.elements.Element;
@@ -82,7 +85,15 @@ public class MyInstructionsGUIController implements ScreenController{
 	}
 
 	
-	public static void setScreen(int screenNumber) {
+	public static void setScreen(int screenNumber) {		
+		Spatial spatial = sim.getGuiNode().getChild("hood");
+		
+		if(spatial instanceof Picture)
+		{
+			spatial.setCullHint(CullHint.Always);
+			Picture picture = (Picture) spatial;
+				picture.setCullHint(CullHint.Always);
+		}
 		String next = "next" + screenNumber;
 		nifty.gotoScreen(next);
 	
