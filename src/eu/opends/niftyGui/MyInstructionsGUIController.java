@@ -1,55 +1,49 @@
 package eu.opends.niftyGui;
 
-import java.util.Locale;
 
-import com.jme3.app.Application;
-import com.jme3.app.state.AbstractAppState;
-import com.jme3.app.state.AppStateManager;
+
 import com.jme3.asset.AssetManager;
 import com.jme3.asset.plugins.FileLocator;
-import com.jme3.niftygui.NiftyJmeDisplay;
 
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.elements.Element;
+import de.lessvoid.nifty.elements.render.PanelRenderer;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
+import de.lessvoid.nifty.tools.Color;
 import de.lessvoid.nifty.tools.SizeValue;
-import eu.opends.basics.SimulationBasics;
 import eu.opends.main.Simulator;
 
-public class MyInstructionsGUIController extends AbstractAppState implements ScreenController{
+public class MyInstructionsGUIController implements ScreenController{
 	
 	private Nifty nifty;
-	private SimulationBasics sim;
+	private Simulator sim;
+	private Screen screen;
 	
-    @Override
-    public void initialize(AppStateManager stateManager, Application app) {
-        super.initialize(stateManager, app);
-        //TODO: initialize your AppState, e.g. attach spatials to rootNode
-        //this is called on the OpenGL thread after the AppState has been attached
-    }
+	public MyInstructionsGUIController(Simulator sim, Nifty nifty)
+	{
+		this.sim = sim;
+		this.nifty = nifty;
+		
+		AssetManager assetManager = sim.getAssetManager();
+		assetManager.registerLocator("assets", FileLocator.class);
+		
+	}
 
 	@Override
 	public void bind(Nifty arg0, Screen arg1) {
 	
-		 this.nifty= arg0;
-	     //this.screen= arg1;
+		 //this.nifty= arg0;
+	     this.screen= arg1;
+			if(sim.getSettings().getWidth() >= 2400)
+			{
+				SizeValue sv = new SizeValue("20%");
+				nifty.getCurrentScreen().findElementByName("menuPanel").setConstraintWidth(sv);
+			}
 	
 		
 	}
 	
-   @Override
-    public void update(float tpf) {
-        //TODO: implement behavior during runtime
-    }
- 
-    @Override
-    public void cleanup() {
-        super.cleanup();
-        //TODO: clean up what you initialized in the initialize method,
-        //e.g. remove all spatials from rootNode
-        //this is called on the OpenGL thread after the AppState has been detached
-    }
 
 	@Override
 	public void onEndScreen() {
@@ -66,10 +60,18 @@ public class MyInstructionsGUIController extends AbstractAppState implements Scr
 	public void clickNextButton(){
 		//System.out.println("clickNextButton() clicked!");
 		 nifty.gotoScreen("next1"); 
+
 	}
 	
 	public void clickNext2Button(){
-		nifty.gotoScreen("next2");
+		//nifty.gotoScreen("next2");
+		 String driverName = "Lightning McQueen";
+		String drivingTask = "assets/DrivingTasks/Projects/IntroStimuli/introStimuli.xml";
+		screen.findElementByName("panel1").getRenderer(PanelRenderer.class).setBackgroundColor(null);
+		screen.findElementByName("img1").hide();
+		sim.simpleInitDrivingTask(drivingTask,driverName);
+		
+		
 	}
 	
 	public void clickNext3Button(){

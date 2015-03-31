@@ -55,6 +55,7 @@ import eu.opends.input.KeyBindingCenter;
 import eu.opends.knowledgeBase.KnowledgeBase;
 import eu.opends.multiDriver.MultiDriverClient;
 import eu.opends.niftyGui.DrivingTaskSelectionGUIController;
+import eu.opends.niftyGui.MyInstructionsGUIController;
 import eu.opends.reactionCenter.ReactionCenter;
 import eu.opends.settingsController.SettingsControllerServer;
 import eu.opends.taskDescription.contreTask.SteeringTask;
@@ -220,11 +221,13 @@ public class Simulator extends SimulationBasics
     	nifty = niftyDisplay.getNifty();
     	nifty.setLocale(new Locale("sv", "SE"));
     		
-    	String xmlPath = "Interface/myTaskGUI.xml";
+    	String xmlPath = "Interface/MyInstructionsGUI.xml";
+    	nifty.fromXml(xmlPath, "start", new MyInstructionsGUIController(this, nifty));
     	
+    	//String xmlPath = "Interface/DrivingTaskSelectionGUI.xml";
     	// Read XML and initialize custom ScreenController
-    	nifty.fromXml(xmlPath, "start", new DrivingTaskSelectionGUIController(this, nifty));
-    		
+    	//nifty.fromXml(xmlPath, "start", new DrivingTaskSelectionGUIController(this, nifty));
+    	
     	// attach the Nifty display to the gui view port as a processor
     	guiViewPort.addProcessor(niftyDisplay);
     	
@@ -243,9 +246,10 @@ public class Simulator extends SimulationBasics
     
     public void simpleInitDrivingTask(String drivingTaskFileName, String driverName)
     {
+    	
     	SimulationDefaults.drivingTaskFileName = drivingTaskFileName;
     	//SimulationDefaults.drivingTaskFileName = "countryside.xml";
-    	//System.out.println("thihi" + drivingTaskFileName);
+    	System.out.println("thihi" + drivingTaskFileName);
     	
     	Util.makeDirectory("analyzerData");
     	outputFolder = "analyzerData/" + Util.getDateTimeString();

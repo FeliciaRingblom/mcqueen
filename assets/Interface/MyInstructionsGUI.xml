@@ -42,11 +42,12 @@
   </screen>
 
   <screen id="next1" controller="eu.opends.niftyGui.MyInstructionsGUIController">
-    <layer id="backLayer" childLayout="vertical" backgroundColor="#FFFFE9">
+    <layer id="backLayer1" childLayout="vertical" >
+      <panel id="panel1" childLayout="vertical" height="100%" width="100%" backgroundColor="#FFFFE9">
       <panel height="10px"/>
        <text style="nifty-label" height="15%" width="75%" text="Under testet kommer du köra en bil. Hastigheten kan du inte påverka, den är konstant. Du ska styra bilen med ratten precis som en vanlig bil. " color="#000f" textHAlign="center" textVAlign="top"/>  
        <panel childLayout="horizontal" height="*"></panel>
-      <image filename="assets/Interface/images_instruction_screen/laneChange.png" width="50%" height="50%" align="center"/>
+      <image id="img1" filename="assets/Interface/images_instruction_screen/laneChange.png" width="50%" height="50%" align="center"/>
       <text style="nifty-label" height="15%" width="75%" text="Du ska nu få prova på att köra en sträcka." color="#000f" textHAlign="center" textVAlign="top"/>  
 
       <panel childLayout="horizontal" height="60px">
@@ -57,6 +58,7 @@
           </image>
         </panel>
       </panel>
+    </panel>
     </layer>
   </screen>
 
