@@ -21,8 +21,8 @@ import eu.opends.main.Simulator;
 public class MyInstructionsGUIController implements ScreenController{
 	
 	private static Nifty nifty;
-	private Simulator sim;
-	private Screen screen;
+	private static Simulator sim;
+	private static Screen screen;
 	
 	public MyInstructionsGUIController(Simulator sim, Nifty nifty)
 	{
@@ -74,14 +74,17 @@ public class MyInstructionsGUIController implements ScreenController{
 		String driverName = "Lightning McQueen";
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStraight/introStraight.xml";
 		sim.simpleInitDrivingTask(drivingTask,driverName);
+		
 	}
 	
 	public void clickNext3Button(){
 		nifty.gotoScreen("next3");
 	}
+
 	
 	public static void setScreen(int screenNumber) {
 		String next = "next" + screenNumber;
 		nifty.gotoScreen(next);
+	
 	}
 }

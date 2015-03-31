@@ -64,6 +64,7 @@
 
   <screen id="next2" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
     <layer id="backLayer" childLayout="vertical" backgroundColor="#FFFFE9">
+      <panel id="panel2" height="100%" width="100%" childLayout="vertical">
       <panel height="30px"/>
       <text style="nifty-label" wrap="true" height="15%" width="75%" text="Under sträckans gång kommer det komma upp bilder på varje sida av skärmen. Om Bilden visar en grön fyrkant trycker du på fyrkant. Om bilden visar grön cirkel trycker du på cirkel." color="#000f" textHAlign="center" textVAlign="top"/> 
             <panel childLayout="horizontal" height="40px">
@@ -74,6 +75,7 @@
           </image>
         </panel>
       </panel> 
+    </panel>
     </layer>
   </screen>
 
