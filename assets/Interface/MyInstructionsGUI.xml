@@ -48,12 +48,12 @@
        <text id="txt1" style="nifty-label" height="15%" width="75%" text="Under testet kommer du köra en bil. Hastigheten kan du inte påverka, den är konstant. Du ska styra bilen med ratten precis som en vanlig bil. " color="#000f" textHAlign="center" textVAlign="top"/>  
        <panel childLayout="horizontal" height="*"></panel>
       <image id="img1" filename="assets/Interface/images_instruction_screen/laneChange.png" width="50%" height="50%" align="center"/>
-      <text style="nifty-label" height="15%" width="75%" text="Du ska nu få prova på att köra en sträcka." color="#000f" textHAlign="center" textVAlign="top"/>  
+      <text id="txt2" style="nifty-label" height="15%" width="75%" text="Du ska nu få prova på att köra en sträcka." color="#000f" textHAlign="center" textVAlign="top"/>  
 
       <panel childLayout="horizontal" height="60px">
         <panel width="90%" />
         <panel childLayout="center">
-          <image filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
+          <image id="img2" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
             <interact onClick="clickNext2Button()" />
           </image>
         </panel>
@@ -63,14 +63,14 @@
   </screen>
 
   <screen id="next2" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
-    <layer id="backLayer" childLayout="vertical" backgroundColor="#FFFFE9">
-      <panel id="panel2" height="100%" width="100%" childLayout="vertical">
+    <layer id="backLayer" childLayout="vertical">
+      <panel id="panel2" height="100%" width="100%" childLayout="vertical" backgroundColor="#FFFFE9">
       <panel height="30px"/>
-      <text style="nifty-label" wrap="true" height="15%" width="75%" text="Under sträckans gång kommer det komma upp bilder på varje sida av skärmen. Om Bilden visar en grön fyrkant trycker du på fyrkant. Om bilden visar grön cirkel trycker du på cirkel." color="#000f" textHAlign="center" textVAlign="top"/> 
+      <text id="txt3" style="nifty-label" wrap="true" height="15%" width="75%" text="Under sträckans gång kommer det komma upp bilder på varje sida av skärmen. Om Bilden visar en grön fyrkant trycker du på fyrkant. Om bilden visar grön cirkel trycker du på cirkel." color="#000f" textHAlign="center" textVAlign="top"/> 
             <panel childLayout="horizontal" height="40px">
         <panel width="90%" />
         <panel childLayout="center">
-          <image filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
+          <image id="img3" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
             <interact onClick="clickNext3Button()" />
           </image>
         </panel>

@@ -76,6 +76,8 @@ public class MyInstructionsGUIController implements ScreenController{
 		screen.findElementByName("txt1").hide();
 		screen.findElementByName("panel1").getRenderer(PanelRenderer.class).setBackgroundColor(null);
 		screen.findElementByName("img1").hide();
+		screen.findElementByName("img2").hide();
+		screen.findElementByName("txt2").hide();
 		
 		String driverName = "Lightning McQueen";
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStraight/introStraight.xml";
@@ -84,11 +86,18 @@ public class MyInstructionsGUIController implements ScreenController{
 	}
 	
 	public void clickNext3Button(){
-		nifty.gotoScreen("next3");
+		screen.findElementByName("txt3").hide();
+		screen.findElementByName("panel2").getRenderer(PanelRenderer.class).setBackgroundColor(null);
+		screen.findElementByName("img3").hide();
+		
+		String driverName = "Lightning McQueen";
+		String drivingTask = "assets/DrivingTasks/Projects/IntroStimuli/introStimuli.xml";
+		sim.simpleInitDrivingTask(drivingTask,driverName);
 	}
 
 	
-	public static void setScreen(int screenNumber) {		
+	public static void setScreen(int screenNumber) {
+		System.out.println("i setScreen" + screenNumber);
 		Spatial spatial = sim.getGuiNode().getChild("hood");
 		
 		if(spatial instanceof Picture)
