@@ -14,9 +14,13 @@ import de.lessvoid.nifty.tools.Color;
 import de.lessvoid.nifty.tools.SizeValue;
 import eu.opends.main.Simulator;
 
+/**
+ * @author Jessica Larsson, Felicia Ringblom, 2015
+ */
+
 public class MyInstructionsGUIController implements ScreenController{
 	
-	private Nifty nifty;
+	private static Nifty nifty;
 	private Simulator sim;
 	private Screen screen;
 	
@@ -32,8 +36,6 @@ public class MyInstructionsGUIController implements ScreenController{
 
 	@Override
 	public void bind(Nifty arg0, Screen arg1) {
-	
-		 //this.nifty= arg0;
 	     this.screen= arg1;
 			if(sim.getSettings().getWidth() >= 2400)
 			{
@@ -58,23 +60,28 @@ public class MyInstructionsGUIController implements ScreenController{
 	}
 	
 	public void clickNextButton(){
-		//System.out.println("clickNextButton() clicked!");
+		
 		 nifty.gotoScreen("next1"); 
 
 	}
 	
-	public void clickNext2Button(){
-		//nifty.gotoScreen("next2");
-		 String driverName = "Lightning McQueen";
-		String drivingTask = "assets/DrivingTasks/Projects/IntroStimuli/introStimuli.xml";
+	public void clickNext2Button(){	
+		//hide all elements on screen and start simulation of introductionStraight
+		screen.findElementByName("txt1").hide();
 		screen.findElementByName("panel1").getRenderer(PanelRenderer.class).setBackgroundColor(null);
 		screen.findElementByName("img1").hide();
+		
+		String driverName = "Lightning McQueen";
+		String drivingTask = "assets/DrivingTasks/Projects/IntroStraight/introStraight.xml";
 		sim.simpleInitDrivingTask(drivingTask,driverName);
-		
-		
 	}
 	
 	public void clickNext3Button(){
 		nifty.gotoScreen("next3");
+	}
+	
+	public static void setScreen(int screenNumber) {
+		String next = "next" + screenNumber;
+		nifty.gotoScreen(next);
 	}
 }
