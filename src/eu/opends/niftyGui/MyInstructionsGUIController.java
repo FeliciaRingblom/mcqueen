@@ -4,6 +4,7 @@ package eu.opends.niftyGui;
 
 import com.jme3.asset.AssetManager;
 import com.jme3.asset.plugins.FileLocator;
+import com.jme3.input.InputManager;
 import com.jme3.scene.Spatial;
 import com.jme3.scene.Spatial.CullHint;
 import com.jme3.ui.Picture;
@@ -26,11 +27,13 @@ public class MyInstructionsGUIController implements ScreenController{
 	private static Nifty nifty;
 	private static Simulator sim;
 	private static Screen screen;
+	private static InputManager inputManager;
 	
 	public MyInstructionsGUIController(Simulator sim, Nifty nifty)
 	{
 		this.sim = sim;
 		this.nifty = nifty;
+		this.inputManager = sim.getInputManager();
 		
 		AssetManager assetManager = sim.getAssetManager();
 		assetManager.registerLocator("assets", FileLocator.class);
@@ -96,6 +99,7 @@ public class MyInstructionsGUIController implements ScreenController{
 		}
 		String next = "next" + screenNumber;
 		nifty.gotoScreen(next);
+		inputManager.setCursorVisible(true);
 	
 	}
 }
