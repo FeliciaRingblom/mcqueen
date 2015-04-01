@@ -431,6 +431,15 @@ public class SimulatorActionListener implements ActionListener
 				AudioCenter.stopSound("horn");
 		}
 		
+		else if (binding.equals(KeyMapping.PRINT_POS.getID())) 
+		{
+			if (value)
+			{
+				System.out.println(car.getPosition());		
+			}
+		}
+		
+		
 		else if (binding.equals(KeyMapping.TOGGLE_KEYMAPPING.getID())) 
 		{
 			if (value)
