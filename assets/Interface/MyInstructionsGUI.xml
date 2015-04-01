@@ -21,23 +21,31 @@
 
 
   <screen id="start" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
-    <layer id="backLayer" childLayout="vertical" backgroundColor="#FFFFE9">
+    <layer id="backLayer" childLayout="vertical" >
       <panel width="50%" height="50%"/> 
     </layer>
 
-    <layer id="layer" childLayout="vertical">  
-      <text style="nifty-label" height="50%" width="50%" text="Du ska nu utföra en uppgift som testar din simultana förmåga. Som bilförare är det viktigt att ha en bra simultan förmåga, dvs förmågan att utföra flera uppgifter samtidigt. Uppgiften går ut på att du ska hålla bilen på vägen, samtidigt som du ska reagera på bilder som dyker upp." wrap="true" color="#000f" textHAlign="center" textVAlign="center" padding="10%"/>  
-      <text style="nifty-label" height="15%" width="75%" text="Resultatet kommer vara en del av läkarens beslutsunderlag som baseras på många aspekter, inte enbart det här testet." color="#000f" textHAlign="center" textVAlign="bottom"/>  
+    <layer id="layer" childLayout="vertical"> 
+    <panel id="panel0" childLayout="vertical" width="100%" height="100%" backgroundColor="#FFFFE9"> 
+      <text id="txt0" style="nifty-label" height="50%" width="50%" text="Du ska nu utföra en uppgift som testar din simultana förmåga. Som bilförare är det viktigt att ha en bra simultan förmåga, dvs förmågan att utföra flera uppgifter samtidigt. Uppgiften går ut på att du ska hålla bilen på vägen, samtidigt som du ska reagera på bilder som dyker upp." wrap="true" color="#000f" textHAlign="center" textVAlign="center" padding="10%"/>  
+      <text id="txt01" style="nifty-label" height="15%" width="75%" text="Resultatet kommer vara en del av läkarens beslutsunderlag som baseras på många aspekter, inte enbart det här testet." color="#000f" textHAlign="center" textVAlign="bottom"/>  
     
-      
+      <panel childLayout="center">
+        <panel childLayout="center" width="30px"/>
+        <control id="quickButton" name="button" label="QuickStart" align="center" height="30px">
+          <interact onClick="clickQuickstartButton()" />
+        </control>
+      </panel>
+    
       <panel childLayout="horizontal" height="40px">
         <panel width="90%" />
         <panel childLayout="center">
-          <image filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
+          <image id="img0" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
             <interact onClick="clickNextButton()" />
           </image>
         </panel>
       </panel>
+    </panel>
     </layer>
   </screen>
 
