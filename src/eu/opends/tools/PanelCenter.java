@@ -686,5 +686,15 @@ public class PanelCenter
 		PanelCenter.showWarningFrame = showWarningFrame;
 		PanelCenter.flashingInterval = flashingInterval;
 	}
+
+
+	public static void removeAll() {
+		Node guiNode = sim.getGuiNode();
+		System.out.println("GuiNode children: "  + guiNode.getChildren().size());
+		guiNode.detachAllChildren();
+		System.out.println("GuiNode children: "  + guiNode.getChildren().size());
+		pictureMap.clear();
+		
+	}
 	
 }

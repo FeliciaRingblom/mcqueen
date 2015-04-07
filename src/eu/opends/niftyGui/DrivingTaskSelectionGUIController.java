@@ -97,7 +97,7 @@ public class DrivingTaskSelectionGUIController implements ScreenController
 		//if(driverName.isEmpty()) driverName = SimulationDefaults.driverName; // this is already done in "simpleInitDrivingTask"
 		System.out.println("driverName=" + driverName);
 		System.out.println("drivingTask= " + getTextFromTextfield("drivingTaskTextfield"));
-		sim.simpleInitDrivingTask(getTextFromTextfield("drivingTaskTextfield"),driverName);
+		//sim.simpleInitDrivingTask(getTextFromTextfield("drivingTaskTextfield"),driverName);
 	}
 	
 	

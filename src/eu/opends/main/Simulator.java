@@ -206,15 +206,16 @@ public class Simulator extends SimulationBasics
     {
     	showStats(false);
     	
-    	if(drivingTaskGiven)
-    		simpleInitDrivingTask(SimulationDefaults.drivingTaskFileName, SimulationDefaults.driverName);
-    	else
-    		initDrivingTaskSelectionGUI();
+//    	if(drivingTaskGiven)
+//    		//simpleInitDrivingTask(SimulationDefaults.drivingTaskFileName, SimulationDefaults.driverName);
+//    	else
+    		initDrivingAssessmentTest();
+    		//initDrivingTaskSelectionGUI();
     }
     
-    
-	private void initDrivingTaskSelectionGUI() 
-	{
+    /*Author: Jessica Larsson, Felicia Ringblom, 2015 */
+    private void initDrivingAssessmentTest() 
+    {
 		NiftyJmeDisplay niftyDisplay = new NiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort);
     	
     	// Create a new NiftyGUI object
@@ -224,9 +225,23 @@ public class Simulator extends SimulationBasics
     	String xmlPath = "Interface/MyInstructionsGUI.xml";
     	nifty.fromXml(xmlPath, "start", new MyInstructionsGUIController(this, nifty));
     	
-    	//String xmlPath = "Interface/DrivingTaskSelectionGUI.xml";
+    	// attach the Nifty display to the gui view port as a processor
+    	guiViewPort.addProcessor(niftyDisplay);
+    	
+    	// disable fly cam
+    	flyCam.setEnabled(false);
+    }
+    
+	private void initDrivingTaskSelectionGUI() 
+	{
+		NiftyJmeDisplay niftyDisplay = new NiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort);
+    	
+    	// Create a new NiftyGUI object
+    	nifty = niftyDisplay.getNifty();
+  	
+    	String xmlPath = "Interface/DrivingTaskSelectionGUI.xml";
     	// Read XML and initialize custom ScreenController
-    	//nifty.fromXml(xmlPath, "start", new DrivingTaskSelectionGUIController(this, nifty));
+    	nifty.fromXml(xmlPath, "start", new DrivingTaskSelectionGUIController(this, nifty));
     	
     	// attach the Nifty display to the gui view port as a processor
     	guiViewPort.addProcessor(niftyDisplay);
@@ -242,14 +257,19 @@ public class Simulator extends SimulationBasics
         inputManager.setCursorVisible(false);
         flyCam.setEnabled(true);
 	}
+	
 
-    
+    public void removeAllDrivingTaskElements(){
+    	destroyDrivingTask();
+    	super.resetSimulationBasics();
+    	PanelCenter.removeAll();
+    	
+    }
+	
     public void simpleInitDrivingTask(String drivingTaskFileName, String driverName)
     {
-    	
+    
     	SimulationDefaults.drivingTaskFileName = drivingTaskFileName;
-    	//SimulationDefaults.drivingTaskFileName = "countryside.xml";
-
     	
     	Util.makeDirectory("analyzerData");
     	outputFolder = "analyzerData/" + Util.getDateTimeString();

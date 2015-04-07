@@ -294,6 +294,17 @@ public class SimulationBasics extends SimpleApplication
 				numberOfScreens = 1;
 		}
     }
+    
+    public void resetSimulationBasics(){
+ 	
+    	sceneNode.detachAllChildren();
+    	triggerNode.detachAllChildren();
+    	trafficLightCenter.close();
+    	triggerActionListMap.clear();
+    	keyBindingCenter.close();
+    	
+    
+    }
 
 
 }
