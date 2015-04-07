@@ -31,9 +31,9 @@ public class MyInstructionsGUIController implements ScreenController{
 	
 	public MyInstructionsGUIController(Simulator sim, Nifty nifty)
 	{
-		this.sim = sim;
-		this.nifty = nifty;
-		this.inputManager = sim.getInputManager();
+		MyInstructionsGUIController.sim = sim;
+		MyInstructionsGUIController.nifty = nifty;
+		MyInstructionsGUIController.inputManager = sim.getInputManager();
 		
 		AssetManager assetManager = sim.getAssetManager();
 		assetManager.registerLocator("assets", FileLocator.class);
@@ -42,7 +42,7 @@ public class MyInstructionsGUIController implements ScreenController{
 
 	@Override
 	public void bind(Nifty arg0, Screen arg1) {
-	     this.screen= arg1;
+	     MyInstructionsGUIController.screen= arg1;
 			if(sim.getSettings().getWidth() >= 2400)
 			{
 				SizeValue sv = new SizeValue("20%");
@@ -65,7 +65,7 @@ public class MyInstructionsGUIController implements ScreenController{
 		
 	}
 	
-	public void clickQuickstartButton(){
+	public void startMainTest(){
 		//hide all elements on screen and start simulation of introductionStraight
 		System.out.println("i clickQuick");
 		screen.findElementByName("txt0").hide();
@@ -84,13 +84,21 @@ public class MyInstructionsGUIController implements ScreenController{
 
 	}
 	
+	public void startOver() {
+		System.out.println("i startOver()");
+		prepareScreen();
+		 nifty.gotoScreen("start"); 
+	}
+	
 	public void clickNext2Button(){	
+		System.out.println("number of Layer elements: " + screen.getLayerElements().size()); 
 		//hide all elements on screen and start simulation of introductionStraight
 		screen.findElementByName("txt1").hide();
 		screen.findElementByName("panel1").getRenderer(PanelRenderer.class).setBackgroundColor(null);
 		screen.findElementByName("img1").hide();
 		screen.findElementByName("img2").hide();
 		screen.findElementByName("txt2").hide();
+		System.out.println("number of Layer elements: " + screen.getLayerElements().size()); 
 		
 		String driverName = "Lightning McQueen";
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStraight/introStraight.xml";
@@ -99,10 +107,12 @@ public class MyInstructionsGUIController implements ScreenController{
 	}
 	
 	public void clickNext3Button(){
+		System.out.println("number of Layer elements: " + screen.getLayerElements().size()); 
 		screen.findElementByName("txt3").hide();
 		screen.findElementByName("panel2").getRenderer(PanelRenderer.class).setBackgroundColor(null);
 		screen.findElementByName("img3").hide();
-		
+		prepareScreen();
+		sim.destroyDrivingTask();
 		String driverName = "Lightning McQueen";
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStimuli/introStimuli.xml";
 		sim.simpleInitDrivingTask(drivingTask,driverName);
@@ -110,7 +120,6 @@ public class MyInstructionsGUIController implements ScreenController{
 
 	
 	public static void setScreen(int screenNumber) {
-		System.out.println("i setScreen" + screenNumber);
 		prepareScreen();
 		String next = "next" + screenNumber;
 		nifty.gotoScreen(next);
@@ -119,10 +128,11 @@ public class MyInstructionsGUIController implements ScreenController{
 	}
 	
 	public static void prepareScreen() {
-		
+		System.out.println("i prepareScreen");
 		Spatial spatial = sim.getGuiNode().getChild("hood");	
 		if(spatial instanceof Picture)
 		{
+			System.out.println("picture");
 			spatial.setCullHint(CullHint.Always);
 			Picture picture = (Picture) spatial;
 				picture.setCullHint(CullHint.Always);

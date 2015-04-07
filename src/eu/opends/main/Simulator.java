@@ -249,7 +249,7 @@ public class Simulator extends SimulationBasics
     	
     	SimulationDefaults.drivingTaskFileName = drivingTaskFileName;
     	//SimulationDefaults.drivingTaskFileName = "countryside.xml";
-    	System.out.println("thihi" + drivingTaskFileName);
+
     	
     	Util.makeDirectory("analyzerData");
     	outputFolder = "analyzerData/" + Util.getDateTimeString();
@@ -543,6 +543,36 @@ public class Simulator extends SimulationBasics
 		super.destroy();
 		logger.info("finished destroy()");
 		//System.exit(0);
+    }
+	
+	/*Author: Felicia & Jessica*/
+	public void destroyDrivingTask()
+    {
+		System.out.println("destroy !!!!!!!!!!!");
+
+		if(initializationFinished)
+		{
+			if(lightningClient != null)
+				lightningClient.close();
+			
+			trafficLightCenter.close();
+			
+			steeringTask.close();
+			
+			threeVehiclePlatoonTask.close();
+			
+			reactionCenter.close();
+			
+			KnowledgeBase.KB.disconnect();
+			
+			car.close();
+			
+			physicalTraffic.close();
+			
+			if(settingsControllerServer != null)
+				settingsControllerServer.close();
+
+		}
     }
 
     public static void main(String[] args) 

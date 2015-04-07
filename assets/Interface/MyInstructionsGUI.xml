@@ -33,7 +33,7 @@
       <panel childLayout="center">
         <panel childLayout="center" width="30px"/>
         <control id="quickButton" name="button" label="QuickStart" align="center" height="30px">
-          <interact onClick="clickQuickstartButton()" />
+          <interact onClick="startMainTest()" />
         </control>
       </panel>
     
@@ -87,13 +87,17 @@
     </layer>
   </screen>
 
-  <screen id="next3">
+  <screen id="next3" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
     <layer id="backLayer" childLayout="vertical" backgroundColor="#FFFFE9">
       <panel height="30px"/>
       <text style="nifty-label" wrap="true" height="15%" width="75%" text="Jag känner mig redo att starta testet." color="#000f" textHAlign="center" textVAlign="top"/> 
-      <image filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center"/>
+      <image filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
+        <interact onClick="startMainTest()" />
+      </image>
       <text style="nifty-label" wrap="true" height="15%" width="75%" text="Jag vill gå igenom instruktionerna igen." color="#000f" textHAlign="center" textVAlign="top"/> 
-      <image filename="assets/Interface/images_instruction_screen/repeat.png" width="10%" height="10%" align="center"/> 
+      <image filename="assets/Interface/images_instruction_screen/repeat.png" width="10%" height="10%" align="center">
+         <interact onClick="startOver()" />
+      </image> 
     </layer>
 
   </screen>
