@@ -67,13 +67,27 @@ public class MyInstructionsGUIController implements ScreenController {
 	}
 	
 	
-	public void startMainTest(){
+	public void quickStartMainTest(){
 		//hide all elements on screen and start simulation of introductionStraight
 		screen.findElementByName("txt0").hide();
 		screen.findElementByName("panel0").getRenderer(PanelRenderer.class).setBackgroundColor(null);
 		screen.findElementByName("img0").hide();
 		screen.findElementByName("quickButton").hide();
 		screen.findElementByName("txt01").hide();
+		String driverName = "Lightning McQueen";
+		String drivingTask = "assets/DrivingTasks/Projects/Countryside/countryside.xml";
+		sim.simpleInitDrivingTask(drivingTask,driverName);
+		
+	}
+	
+	public void startMainTest(){
+		//hide all elements on screen and start simulation of introductionStraight
+		System.out.println("hehehhe");
+		screen.findElementByName("txt4").hide();
+		screen.findElementByName("panel3").getRenderer(PanelRenderer.class).setBackgroundColor(null);
+		screen.findElementByName("img4").hide();
+		screen.findElementByName("img5").hide();
+		screen.findElementByName("txt5").hide();
 		String driverName = "Lightning McQueen";
 		String drivingTask = "assets/DrivingTasks/Projects/Countryside/countryside.xml";
 		sim.simpleInitDrivingTask(drivingTask,driverName);
