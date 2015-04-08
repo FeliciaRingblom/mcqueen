@@ -25,6 +25,7 @@ import com.jme3.math.FastMath;
 import eu.opends.basics.SimulationBasics;
 import eu.opends.drivingTask.DrivingTaskDataQuery.Layer;
 import eu.opends.main.Simulator;
+import eu.opends.niftyGui.MyInstructionsGUIController;
 import eu.opends.trigger.GetTimeUntilBrakeAction;
 import eu.opends.trigger.GetTimeUntilSpeedChangeAction;
 import eu.opends.trigger.ManipulateObjectTriggerAction;
@@ -37,6 +38,7 @@ import eu.opends.trigger.ReportSpeedTriggerAction;
 import eu.opends.trigger.ReportTrafficLightTriggerAction;
 import eu.opends.trigger.RequestGreenTrafficLightAction;
 import eu.opends.trigger.ResetCarToResetPointAction;
+import eu.opends.trigger.ReturnToInstruction;
 import eu.opends.trigger.SendMessageTriggerAction;
 import eu.opends.trigger.SetSpeedLimitAction;
 import eu.opends.trigger.SetTVPTStimulusTriggerAction;
@@ -334,6 +336,38 @@ public class InteractionMethods
 			reportError("pauseSimulation", parameter);
 			return null;
 		}
+	}
+	
+	@Action(
+			name = "returnToInstruction", 
+			layer = Layer.INTERACTION, 
+			description = "Returns to the instructions to given screen",
+			defaultDelay = 0,
+			defaultRepeat = 0,
+			param = {@Parameter(name="next", type="Integer", defaultValue="1", 
+							 	description="screen number to switch to")
+					}
+		)
+	public TriggerAction returnToInstruction(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	{
+		String parameter = "next";
+
+		try {
+						
+			// read next screen
+			String nextString = parameterList.getProperty(parameter);
+			
+			
+			int screenNumber = Integer.parseInt(nextString);
+			return new ReturnToInstruction(sim, delay, repeat, screenNumber);
+			
+		} catch (Exception e) {
+	
+			reportError("returnToInstruction", parameter);
+			return null;
+			
+		}
+		
 	}
 	
 	

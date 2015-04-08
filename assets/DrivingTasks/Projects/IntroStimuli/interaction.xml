@@ -5,40 +5,14 @@
 
 
   <activities>
-    <activity id="activity01">
-      <action id="manipulateObject" delay="0" repeat="4">
-        <parameter name="id" value="RoadworksSign1" />
-        <parameter name="translationX" value="-81" />
-        <parameter name="translationY" value="-1.693" />
-        <parameter name="translationZ" value="-48" />
-        <parameter name="rotationX" value="0" />
-        <parameter name="rotationY" value="135" />
-        <parameter name="rotationZ" value="0" />
-        <parameter name="scaleX" value="0.02" />
-        <parameter name="scaleY" value="0.02" />
-        <parameter name="scaleZ" value="0.02" />
-        <parameter name="visible" value="true" />
-      </action>
-    </activity>
-    <activity id="activity02">
-      <action id="sendMessage" delay="0" repeat="4">
-        <parameter name="text" value="Rafael" />
-        <parameter name="duration" value="3" />
-      </action>
-    </activity>
+      <activity id="ReturnToInstructions" ref="">
+    <action delay="6.0" id="returnToInstruction" repeat="1">
+        <parameter name="next" value="3"/>
+    </action>
+  </activity>
     <activity id="activity03">
       <action id="pauseSimulation" delay="0" repeat="4">
         <parameter name="duration" value="3" />
-      </action>
-    </activity>
-
-    <activity id="activity04">
-      <action id="startRecording" delay="0" repeat="4">
-        <parameter name="track" value="1" />
-      </action>
-    </activity>
-    <activity id="activity05">
-      <action id="stopRecording" delay="0" repeat="4">
       </action>
     </activity>
     <activity id="activity06">
@@ -47,20 +21,20 @@
       </action>
     </activity>
     <activity id="End_pauseSimulation" ref="">
-      <action delay="0.0" id="pauseSimulation" repeat="4">
+      <action delay="5.0" id="pauseSimulation" repeat="4">
         <parameter name="duration" value="0"/>
       </action>
     </activity>
 
     <activity id="showStimuli1" ref="">
       <action delay="0.0" id="manipulatePicture" repeat="4">  
-        <parameter name="id" value="rightGreenCircle" /> 
+        <parameter name="id" value="rightGreenSquare" /> 
         <parameter name="visible" value="true"/>     
       </action>  
     </activity>
     <activity id="showStimuli2" ref="">
       <action delay="0.0" id="manipulatePicture" repeat="4">  
-        <parameter name="id" value="leftGreenSquare" /> 
+        <parameter name="id" value="leftGreenCircle" /> 
         <parameter name="visible" value="true"/>     
       </action>
     </activity>
@@ -83,6 +57,7 @@
     <trigger id="Finish_Trigger" priority="1">
       <activities>
         <activity ref="End_pauseSimulation"/>
+        <activity ref="ReturnToInstructions"/>
       </activities>
       <condition>collideWith:Finish_Trigger</condition>
     </trigger>

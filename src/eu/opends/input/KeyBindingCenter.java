@@ -232,4 +232,12 @@ public class KeyBindingCenter
 		for(KeyMapping keyMapping : KeyMapping.getDriveAnalyzerAnalogKeyMappingList())
 			addKeyMapping(keyMapping, driveAnalyzerAnalogListener);
 	}
+
+
+	public void close() {
+		System.out.println("keybinding: " + keyBindingList.size());
+		keyBindingList.clear();
+		System.out.println("keybinding: " + keyBindingList.size());
+		
+	}
 }

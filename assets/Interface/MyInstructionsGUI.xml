@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
+  <!-- +++++++++++++++++++++++++++++++++++++++ -->
+  <!-- load default styles and controls -->
+  <!-- +++++++++++++++++++++++++++++++++++++++ -->
+  <useStyles filename="nifty-default-styles.xml" />
+  <useControls filename="nifty-default-controls.xml" />
+  <style id="console-red" base="button-font">
+    <attributes font="fonts/menu.fnt" color="#f00f"/>
+  </style>
+  <style id="console-white" base="button-font">
+    <attributes font="fonts/menu.fnt" color="#ffff"/>
+  </style>
+  <style id="console-font">
+    <attributes font="fonts/verdana-48-regular.fnt" color="#00ff"/>
+  </style>
+  <resourceBundle id="intro" filename="assets/Interface/intro" />
+
+
+  <screen id="start" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
+    <layer id="backLayer" childLayout="vertical" >
+      <panel width="50%" height="50%"/> 
+    </layer>
+
+    <layer id="layer" childLayout="vertical"> 
+    <panel id="panel0" childLayout="vertical" width="100%" height="100%" backgroundColor="#FFFFE9"> 
+      <text id="txt0" style="nifty-label" height="50%" width="50%" text="Du ska nu utföra en uppgift som testar din simultana förmåga. Som bilförare är det viktigt att ha en bra simultan förmåga, dvs förmågan att utföra flera uppgifter samtidigt. Uppgiften går ut på att du ska hålla bilen på vägen, samtidigt som du ska reagera på bilder som dyker upp." wrap="true" color="#000f" textHAlign="center" textVAlign="center" padding="10%"/>  
+      <text id="txt01" style="nifty-label" height="15%" width="75%" text="Resultatet kommer vara en del av läkarens beslutsunderlag som baseras på många aspekter, inte enbart det här testet." color="#000f" textHAlign="center" textVAlign="bottom"/>  
+    
+      <panel childLayout="horizontal">
+        <panel childLayout="center" width="30px"/>
+        <control id="quickButton" name="button" label="QuickStart" align="center" height="30px">
+          <interact onClick="quickStartMainTest()" />
+        </control>
+          <control id="skipStraight" name="button" label="skip Straight" align="center" height="30px">
+          <interact onClick="clickSkipStraight()"/>
+        </control>
+          <control id="skipStimuli" name="button" label="skip Stimuli" align="center" height="30px">
+          <interact onClick="clickSkipStimuli()" />
+        </control>
+        <control id="skipAssessment" name="button" label="skip assessment" align="center" height="30px">
+          <interact onClick="clickSkipAssessment()" />
+        </control>
+      </panel>
+    
+      <panel childLayout="horizontal" height="40px">
+        <panel width="90%" />
+        <panel childLayout="center">
+          <image id="img0" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
+            <interact onClick="clickNextButton()" />
+          </image>
+        </panel>
+      </panel>
+    </panel>
+    </layer>
+  </screen>
+
+  <screen id="next1" controller="eu.opends.niftyGui.MyInstructionsGUIController">
+    <layer id="backLayer1" childLayout="vertical" >
+      <panel id="panel1" childLayout="vertical" height="100%" width="100%" backgroundColor="#FFFFE9">
+      <panel height="10px"/>
+       <text id="txt1" style="nifty-label" height="15%" width="75%" text="Under testet kommer du köra en bil. Hastigheten kan du inte påverka, den är konstant. Du ska styra bilen med ratten precis som en vanlig bil. " color="#000f" textHAlign="center" textVAlign="top"/>  
+       <panel childLayout="horizontal" height="*"></panel>
+      <image id="img1" filename="assets/Interface/images_instruction_screen/laneChange.png" width="50%" height="50%" align="center"/>
+      <text id="txt2" style="nifty-label" height="15%" width="75%" text="Du ska nu få prova på att köra en sträcka." color="#000f" textHAlign="center" textVAlign="top"/>  
+
+      <panel childLayout="horizontal" height="60px">
+        <panel width="90%" />
+        <panel childLayout="center">
+          <image id="img2" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
+            <interact onClick="clickNext2Button()" />
+          </image>
+        </panel>
+      </panel>
+    </panel>
+    </layer>
+  </screen>
+
+  <screen id="next2" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
+    <layer id="backLayer" childLayout="vertical">
+      <panel id="panel2" height="100%" width="100%" childLayout="vertical" backgroundColor="#FFFFE9">
+      <panel height="30px"/>
+      <text id="txt3" style="nifty-label" wrap="true" height="15%" width="75%" text="Under sträckans gång kommer det komma upp bilder på varje sida av skärmen. Om Bilden visar en grön fyrkant trycker du på fyrkant. Om bilden visar grön cirkel trycker du på cirkel." color="#000f" textHAlign="center" textVAlign="top"/> 
+            <panel childLayout="horizontal" height="40px">
+        <panel width="90%" />
+        <panel childLayout="center">
+          <image id="img3" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
+            <interact onClick="clickNext3Button()" />
+          </image>
+        </panel>
+      </panel> 
+    </panel>
+    </layer>
+  </screen>
+
+  <screen id="next3" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
+    <layer id="backLayer" childLayout="vertical">
+      <panel id="panel3" height="100%" width="100%" childLayout="vertical" backgroundColor="#FFFFE9">
+      <panel height="30px"/>
+      <text id="txt4" style="nifty-label" wrap="true" height="15%" width="75%" text="Jag känner mig redo att starta testet." color="#000f" textHAlign="center" textVAlign="top"/> 
+      <image id="img4" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
+        <interact onClick="startMainTest()" />
+      </image>
+      <text id="txt5" style="nifty-label" wrap="true" height="15%" width="75%" text="Jag vill gå igenom instruktionerna igen." color="#000f" textHAlign="center" textVAlign="top"/> 
+      <image id="img5" filename="assets/Interface/images_instruction_screen/repeat.png" width="10%" height="10%" align="center">
+         <interact onClick="startOver()" />
+      </image> 
+    </panel>
+    </layer>
+
+  </screen>
+  <screen id="next4" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
+    <layer id="backLayer" childLayout="vertical">
+      <panel id="panel3" height="100%" width="100%" childLayout="vertical" backgroundColor="#FFFFE9">
+        <text id="txt5" style="nifty-label" wrap="true" height="15%" width="75%" text="Du är nu klar med testet. " color="#000f" textHAlign="center" textVAlign="top"/> 
+    </panel>
+    </layer>
+
+  </screen>
+
+</nifty>

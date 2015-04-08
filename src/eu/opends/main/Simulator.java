@@ -22,6 +22,8 @@ package eu.opends.main;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
+
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
@@ -53,6 +55,7 @@ import eu.opends.input.KeyBindingCenter;
 import eu.opends.knowledgeBase.KnowledgeBase;
 import eu.opends.multiDriver.MultiDriverClient;
 import eu.opends.niftyGui.DrivingTaskSelectionGUIController;
+import eu.opends.niftyGui.MyInstructionsGUIController;
 import eu.opends.reactionCenter.ReactionCenter;
 import eu.opends.settingsController.SettingsControllerServer;
 import eu.opends.taskDescription.contreTask.SteeringTask;
@@ -115,18 +118,6 @@ public class Simulator extends SimulationBasics
 	public LightningClient getLightningClient() 
 	{
 		return lightningClient;
-	}
-	
-	private static CANClient canClient;
-	public static CANClient getCanClient() 
-	{
-		return canClient;
-	}
-	
-	private MultiDriverClient multiDriverClient;
-	public MultiDriverClient getMultiDriverClient() 
-	{
-		return multiDriverClient;
 	}
 	
 	private TriggerCenter triggerCenter = new TriggerCenter(this);
@@ -215,12 +206,31 @@ public class Simulator extends SimulationBasics
     {
     	showStats(false);
     	
-    	if(drivingTaskGiven)
-    		simpleInitDrivingTask(SimulationDefaults.drivingTaskFileName, SimulationDefaults.driverName);
-    	else
-    		initDrivingTaskSelectionGUI();
+//    	if(drivingTaskGiven)
+//    		//simpleInitDrivingTask(SimulationDefaults.drivingTaskFileName, SimulationDefaults.driverName);
+//    	else
+    		initDrivingAssessmentTest();
+    		//initDrivingTaskSelectionGUI();
     }
     
+    /*Author: Jessica Larsson, Felicia Ringblom, 2015 */
+    private void initDrivingAssessmentTest() 
+    {
+		NiftyJmeDisplay niftyDisplay = new NiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort);
+    	
+    	// Create a new NiftyGUI object
+    	nifty = niftyDisplay.getNifty();
+    	nifty.setLocale(new Locale("sv", "SE"));
+    		
+    	String xmlPath = "Interface/MyInstructionsGUI.xml";
+    	nifty.fromXml(xmlPath, "start", new MyInstructionsGUIController(this, nifty));
+    	
+    	// attach the Nifty display to the gui view port as a processor
+    	guiViewPort.addProcessor(niftyDisplay);
+    	
+    	// disable fly cam
+    	flyCam.setEnabled(false);
+    }
     
 	private void initDrivingTaskSelectionGUI() 
 	{
@@ -228,12 +238,11 @@ public class Simulator extends SimulationBasics
     	
     	// Create a new NiftyGUI object
     	nifty = niftyDisplay.getNifty();
-    		
-    	String xmlPath = "Interface/myTaskGUI.xml";
-    	
+  	
+    	String xmlPath = "Interface/DrivingTaskSelectionGUI.xml";
     	// Read XML and initialize custom ScreenController
     	nifty.fromXml(xmlPath, "start", new DrivingTaskSelectionGUIController(this, nifty));
-    		
+    	
     	// attach the Nifty display to the gui view port as a processor
     	guiViewPort.addProcessor(niftyDisplay);
     	
@@ -248,13 +257,19 @@ public class Simulator extends SimulationBasics
         inputManager.setCursorVisible(false);
         flyCam.setEnabled(true);
 	}
+	
 
-    
+    public void removeAllDrivingTaskElements(){
+    	destroyDrivingTask();
+    	super.resetSimulationBasics();
+    	PanelCenter.removeAll();
+    	
+    }
+	
     public void simpleInitDrivingTask(String drivingTaskFileName, String driverName)
     {
+    
     	SimulationDefaults.drivingTaskFileName = drivingTaskFileName;
-    	//SimulationDefaults.drivingTaskFileName = "countryside.xml";
-    	//System.out.println("thihi" + drivingTaskFileName);
     	
     	Util.makeDirectory("analyzerData");
     	outputFolder = "analyzerData/" + Util.getDateTimeString();
@@ -524,12 +539,6 @@ public class Simulator extends SimulationBasics
 			if(lightningClient != null)
 				lightningClient.close();
 			
-			if(canClient != null)
-				canClient.requestStop();
-				
-			if(multiDriverClient != null)
-				multiDriverClient.close();
-			
 			trafficLightCenter.close();
 			
 			steeringTask.close();
@@ -556,6 +565,33 @@ public class Simulator extends SimulationBasics
 		//System.exit(0);
     }
 	
+	/*Author: Felicia & Jessica*/
+	public void destroyDrivingTask()
+    {
+		if(initializationFinished)
+		{
+			if(lightningClient != null)
+				lightningClient.close();
+			
+			trafficLightCenter.close();
+			
+			steeringTask.close();
+			
+			threeVehiclePlatoonTask.close();
+			
+			reactionCenter.close();
+			
+			KnowledgeBase.KB.disconnect();
+			
+			car.close();
+			
+			physicalTraffic.close();
+			
+			if(settingsControllerServer != null)
+				settingsControllerServer.close();
+
+		}
+    }
 
     public static void main(String[] args) 
     {    
@@ -593,19 +629,17 @@ public class Simulator extends SimulationBasics
 			
 	    	AppSettings settings = new AppSettings(false);
 	        settings.setUseJoysticks(true);
-	        //settings.setSettingsDialogImage("OpenDS.png");
 	        settings.setSettingsDialogImage("assets/Textures/Logo/mcQueen.jpg");
-	        settings.setTitle("MCQueen by Jessica & Felicia");
+	        settings.setTitle("Testa din k�rf�rm�ga. ");
 	        
 	        // set splash screen parameters
-	        /*
 	        settings.setFullscreen(false);
 	        settings.setResolution(1280, 720);
 	        settings.setSamples(4);
 	        settings.setBitsPerPixel(24);
 	        settings.setVSync(false);
 	        settings.setFrequency(60);
-	        */
+	     
 	        
 			sim.setSettings(settings);
 

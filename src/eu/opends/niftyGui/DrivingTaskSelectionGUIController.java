@@ -95,8 +95,9 @@ public class DrivingTaskSelectionGUIController implements ScreenController
 	{
 		String driverName = getTextFromTextfield("driversNameTextfield");
 		//if(driverName.isEmpty()) driverName = SimulationDefaults.driverName; // this is already done in "simpleInitDrivingTask"
-		
-		sim.simpleInitDrivingTask(getTextFromTextfield("drivingTaskTextfield"),driverName);
+		System.out.println("driverName=" + driverName);
+		System.out.println("drivingTask= " + getTextFromTextfield("drivingTaskTextfield"));
+		//sim.simpleInitDrivingTask(getTextFromTextfield("drivingTaskTextfield"),driverName);
 	}
 	
 	
@@ -118,29 +119,6 @@ public class DrivingTaskSelectionGUIController implements ScreenController
     	}
     }
     
-    public void clickQuickStartButton() 
-    {
-    	String nn = getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
-    	System.out.println("nn: " + nn);
-    	String drivingTaskFileName = "./assets/DrivingTasks/Projects/Countryside/countryside.xml";
-    	System.out.println("drivingTaskFileName i clickQuickStartButton: " + drivingTaskFileName);
-    	
-    	File drivingTaskFile = new File(drivingTaskFileName);
-    	System.out.println(drivingTaskFile.isFile());
-    	if(drivingTaskFile.isFile() && DrivingTask.isValidDrivingTask(drivingTaskFile))
-    	{
-    		//System.out.println(drivingTaskFile.getAbsolutePath());
-    		sim.closeDrivingTaskSelectionGUI();
-    	}
-    	else
-    	{
-    		// show error message when invalid DT selected
-    		errorPopup = nifty.createPopup("errorPopup");
-    		nifty.showPopup(nifty.getCurrentScreen(), errorPopup.getId(), null);
-    	}
-    }
-    
-
 	public void clickQuitButton()
     {
     	sim.stop();

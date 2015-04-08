@@ -30,6 +30,7 @@ import com.jme3.math.ColorRGBA;
 import com.jme3.math.FastMath;
 import com.jme3.math.Quaternion;
 import com.jme3.scene.Node;
+import com.jme3.scene.Spatial;
 import com.jme3.scene.Spatial.CullHint;
 import com.jme3.ui.Picture;
 
@@ -684,6 +685,16 @@ public class PanelCenter
 	{
 		PanelCenter.showWarningFrame = showWarningFrame;
 		PanelCenter.flashingInterval = flashingInterval;
+	}
+
+
+	public static void removeAll() {
+		Node guiNode = sim.getGuiNode();
+		System.out.println("GuiNode children: "  + guiNode.getChildren().size());
+		guiNode.detachAllChildren();
+		System.out.println("GuiNode children: "  + guiNode.getChildren().size());
+		pictureMap.clear();
+		
 	}
 	
 }
