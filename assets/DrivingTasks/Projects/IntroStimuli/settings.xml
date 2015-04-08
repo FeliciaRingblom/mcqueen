@@ -6,7 +6,6 @@
 	<general>
 		<driverName>default driver</driverName>
 		<showStats>false</showStats>
-		<captureVideo>countryside.avi</captureVideo>
 		<showHood>true</showHood>
 		
  		

@@ -2,6 +2,8 @@ package eu.opends.niftyGui;
 
 
 
+import java.util.Set;
+
 import com.jme3.app.state.AbstractAppState;
 import com.jme3.asset.AssetManager;
 import com.jme3.asset.plugins.FileLocator;
@@ -82,7 +84,6 @@ public class MyInstructionsGUIController implements ScreenController {
 	
 	public void startMainTest(){
 		//hide all elements on screen and start simulation of introductionStraight
-		System.out.println("hehehhe");
 		screen.findElementByName("txt4").hide();
 		screen.findElementByName("panel3").getRenderer(PanelRenderer.class).setBackgroundColor(null);
 		screen.findElementByName("img4").hide();
@@ -130,7 +131,12 @@ public class MyInstructionsGUIController implements ScreenController {
 
 	
 	public static void setScreen(int screenNumber) {
-		
+		Set<Thread> threadSet = Thread.getAllStackTraces().keySet();
+		Thread[] threadArray = threadSet.toArray(new Thread[threadSet.size()]);
+		System.out.println("thread size: " + threadSet.size());
+		for(int i = 0; i<threadArray.length; i++) {
+			System.out.println("ThreadArray " + threadArray[i]);
+		}
 		sim.removeAllDrivingTaskElements();
 		String next = "next" + screenNumber;
 		nifty.gotoScreen(next);

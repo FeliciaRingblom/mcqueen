@@ -568,8 +568,6 @@ public class Simulator extends SimulationBasics
 	/*Author: Felicia & Jessica*/
 	public void destroyDrivingTask()
     {
-		System.out.println("destroy !!!!!!!!!!!");
-
 		if(initializationFinished)
 		{
 			if(lightningClient != null)
@@ -632,7 +630,7 @@ public class Simulator extends SimulationBasics
 	    	AppSettings settings = new AppSettings(false);
 	        settings.setUseJoysticks(true);
 	        settings.setSettingsDialogImage("assets/Textures/Logo/mcQueen.jpg");
-	        settings.setTitle("Testa din körförmåga. ");
+	        settings.setTitle("Testa din kï¿½rfï¿½rmï¿½ga. ");
 	        
 	        // set splash screen parameters
 	        settings.setFullscreen(false);
