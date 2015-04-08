@@ -30,10 +30,19 @@
       <text id="txt0" style="nifty-label" height="50%" width="50%" text="Du ska nu utföra en uppgift som testar din simultana förmåga. Som bilförare är det viktigt att ha en bra simultan förmåga, dvs förmågan att utföra flera uppgifter samtidigt. Uppgiften går ut på att du ska hålla bilen på vägen, samtidigt som du ska reagera på bilder som dyker upp." wrap="true" color="#000f" textHAlign="center" textVAlign="center" padding="10%"/>  
       <text id="txt01" style="nifty-label" height="15%" width="75%" text="Resultatet kommer vara en del av läkarens beslutsunderlag som baseras på många aspekter, inte enbart det här testet." color="#000f" textHAlign="center" textVAlign="bottom"/>  
     
-      <panel childLayout="center">
+      <panel childLayout="horizontal">
         <panel childLayout="center" width="30px"/>
         <control id="quickButton" name="button" label="QuickStart" align="center" height="30px">
           <interact onClick="quickStartMainTest()" />
+        </control>
+          <control id="skipStraight" name="button" label="skip Straight" align="center" height="30px">
+          <interact onClick="clickSkipStraight()"/>
+        </control>
+          <control id="skipStimuli" name="button" label="skip Stimuli" align="center" height="30px">
+          <interact onClick="clickSkipStimuli()" />
+        </control>
+        <control id="skipAssessment" name="button" label="skip assessment" align="center" height="30px">
+          <interact onClick="clickSkipAssessment()" />
         </control>
       </panel>
     
@@ -99,6 +108,14 @@
       <image id="img5" filename="assets/Interface/images_instruction_screen/repeat.png" width="10%" height="10%" align="center">
          <interact onClick="startOver()" />
       </image> 
+    </panel>
+    </layer>
+
+  </screen>
+  <screen id="next4" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
+    <layer id="backLayer" childLayout="vertical">
+      <panel id="panel3" height="100%" width="100%" childLayout="vertical" backgroundColor="#FFFFE9">
+        <text id="txt5" style="nifty-label" wrap="true" height="15%" width="75%" text="Du är nu klar med testet. " color="#000f" textHAlign="center" textVAlign="top"/> 
     </panel>
     </layer>
 

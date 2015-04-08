@@ -129,14 +129,28 @@ public class MyInstructionsGUIController implements ScreenController {
 		sim.simpleInitDrivingTask(drivingTask,driverName);
 	}
 
+	public void clickSkipStraight() {
+		nifty.gotoScreen("next2");
+		
+	}
+	
+	public void clickSkipStimuli() {
+		nifty.gotoScreen("next3");
+		
+	}
+	
+	public void clickSkipAssessment() {
+		nifty.gotoScreen("next4");
+		
+	}
 	
 	public static void setScreen(int screenNumber) {
-		Set<Thread> threadSet = Thread.getAllStackTraces().keySet();
-		Thread[] threadArray = threadSet.toArray(new Thread[threadSet.size()]);
-		System.out.println("thread size: " + threadSet.size());
-		for(int i = 0; i<threadArray.length; i++) {
-			System.out.println("ThreadArray " + threadArray[i]);
-		}
+//		Set<Thread> threadSet = Thread.getAllStackTraces().keySet();
+//		Thread[] threadArray = threadSet.toArray(new Thread[threadSet.size()]);
+//		System.out.println("thread size: " + threadSet.size());
+//		for(int i = 0; i<threadArray.length; i++) {
+//			System.out.println("ThreadArray " + threadArray[i]);
+//		}
 		sim.removeAllDrivingTaskElements();
 		String next = "next" + screenNumber;
 		nifty.gotoScreen(next);
