@@ -21,11 +21,36 @@
 
 
   <screen id="start" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
-    <layer id="backLayer" childLayout="vertical" >
-      <panel width="50%" height="50%"/> 
-    </layer>
+    <layer id="backLayer1" childLayout="vertical" >
+      <panel id="panel1" childLayout="vertical" height="100%" width="100%" backgroundColor="#FFFFE9">
+      
+        <panel id="" childLayout="horizontal" height="30%">
+          <text id="txt00" style="nifty-label" width="20%" height="20%" text="Personnummer: " wrap="true" color="#000f" textHAlign="center" textVAlign="center" align="left"/> 
+          <control name="textfield" id="pNumberTextfield" text="19990101-1234"
+                align="center" width="10%" hight="20%"/>
+        </panel>
+        
+        <panel id="" childLayout="horizontal" height="30%">
+          <control id="simpleCheckBox" name="checkbox" checked="true" />
+          <text style="nifty-label" height="50%" width="20%" text="Testet ska ingå i normdata " wrap="true" color="#000f" textHAlign="center" textVAlign="center" align="center"/> 
+        </panel>
 
-    <layer id="layer" childLayout="vertical"> 
+        <panel childLayout="horizontal" height="60px">
+        <panel width="90%" />
+        <panel childLayout="center">
+          <image id="img2" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
+            <interact onClick="clickNext1Button()" />
+          </image>
+        </panel>
+      </panel>
+      </panel>
+
+    </layer>
+  </screen>
+
+  <screen id="next0" controller="eu.opends.niftyGui.MyInstructionsGUIController">
+    <layer id="backLayer" childLayout="vertical" >
+      
     <panel id="panel0" childLayout="vertical" width="100%" height="100%" backgroundColor="#FFFFE9"> 
       <text id="txt0" style="nifty-label" height="50%" width="50%" text="Du ska nu utföra en uppgift som testar din simultana förmåga. Som bilförare är det viktigt att ha en bra simultan förmåga, dvs förmågan att utföra flera uppgifter samtidigt. Uppgiften går ut på att du ska hålla bilen på vägen, samtidigt som du ska reagera på bilder som dyker upp." wrap="true" color="#000f" textHAlign="center" textVAlign="center" padding="10%"/>  
       <text id="txt01" style="nifty-label" height="15%" width="75%" text="Resultatet kommer vara en del av läkarens beslutsunderlag som baseras på många aspekter, inte enbart det här testet." color="#000f" textHAlign="center" textVAlign="bottom"/>  

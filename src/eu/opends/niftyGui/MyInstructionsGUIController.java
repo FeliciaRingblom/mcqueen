@@ -95,6 +95,11 @@ public class MyInstructionsGUIController implements ScreenController {
 		
 	}
 	
+	public void clickNext1Button(){
+		 nifty.gotoScreen("next0"); 
+
+	}
+	
 	public void clickNextButton(){
 		 nifty.gotoScreen("next1"); 
 
