@@ -533,7 +533,7 @@ public abstract class Car
 		this.engineOn = engineOn;
 		resetPedals();
 		
-		showEngineStatusMessage(engineOn);
+		//showEngineStatusMessage(engineOn);
 		
 		if(engineOn)
 			AudioCenter.startEngine();
