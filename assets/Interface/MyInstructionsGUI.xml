@@ -22,85 +22,83 @@
 
   <screen id="start" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
     <layer id="backLayer1" childLayout="vertical" >
-      <panel id="panel1" childLayout="vertical" height="100%" width="100%" backgroundColor="#FFFFE9">
-      
-        <panel id="" childLayout="horizontal" height="30%">
-          <text id="txt00" style="nifty-label" width="20%" height="20%" text="Personnummer: " wrap="true" color="#000f" textHAlign="center" textVAlign="center" align="left"/> 
-          <control name="textfield" id="pNumberTextfield" text="19990101-1234"
-                align="center" width="10%" hight="20%"/>
-        </panel>
+      <panel id="panel1" childLayout="horizontal" height="100%" width="100%" backgroundColor="#FFFFE9">
         
-        <panel id="" childLayout="horizontal" height="30%">
-          <control id="simpleCheckBox" name="checkbox" checked="true" />
-          <text style="nifty-label" height="50%" width="20%" text="Testet ska ingå i normdata " wrap="true" color="#000f" textHAlign="center" textVAlign="center" align="center"/> 
+        <panel width="15%" height="100%" backgroundColor="#84E074"></panel>
+        <panel width="70%" childLayout="vertical">
+          <panel height="10%"/>
+          <panel childLayout="horizontal">
+            <panel width="30px"/>
+            <control id="skipStraight" name="button" label="skip Straight" align="center" height="30px">
+              <interact onClick="clickSkipStraight()"/>
+            </control>
+            <control id="skipStimuli" name="button" label="skip Stimuli" align="center" height="30px">
+              <interact onClick="clickSkipStimuli()" />
+            </control>
+            <control id="skipAssessment" name="button" label="skip assessment" align="center" height="30px">
+              <interact onClick="clickSkipAssessment()" />
+            </control>
+          </panel>
+          
+            <image id="img2" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
+              <interact onClick="clickNext1Button()" />
+            </image>
+          <panel height="10%"/>
         </panel>
+        <panel width="15%" height="100%" backgroundColor="#84E074"></panel>
+      
 
-        <panel childLayout="horizontal" height="60px">
-        <panel width="90%" />
-        <panel childLayout="center">
-          <image id="img2" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
-            <interact onClick="clickNext1Button()" />
-          </image>
-        </panel>
       </panel>
-      </panel>
-
     </layer>
   </screen>
 
   <screen id="next0" controller="eu.opends.niftyGui.MyInstructionsGUIController">
     <layer id="backLayer" childLayout="vertical" >
-      
-    <panel id="panel0" childLayout="vertical" width="100%" height="100%" backgroundColor="#FFFFE9"> 
-      <text id="txt0" style="nifty-label" height="50%" width="50%" text="Du ska nu utföra en uppgift som testar din simultana förmåga. Som bilförare är det viktigt att ha en bra simultan förmåga, dvs förmågan att utföra flera uppgifter samtidigt. Uppgiften går ut på att du ska hålla bilen på vägen, samtidigt som du ska reagera på bilder som dyker upp." wrap="true" color="#000f" textHAlign="center" textVAlign="center" padding="10%"/>  
-      <text id="txt01" style="nifty-label" height="15%" width="75%" text="Resultatet kommer vara en del av läkarens beslutsunderlag som baseras på många aspekter, inte enbart det här testet." color="#000f" textHAlign="center" textVAlign="bottom"/>  
-    
-      <panel childLayout="horizontal">
-        <panel childLayout="center" width="30px"/>
-        <control id="quickButton" name="button" label="QuickStart" align="center" height="30px">
-          <interact onClick="quickStartMainTest()" />
-        </control>
-          <control id="skipStraight" name="button" label="skip Straight" align="center" height="30px">
-          <interact onClick="clickSkipStraight()"/>
-        </control>
-          <control id="skipStimuli" name="button" label="skip Stimuli" align="center" height="30px">
-          <interact onClick="clickSkipStimuli()" />
-        </control>
-        <control id="skipAssessment" name="button" label="skip assessment" align="center" height="30px">
-          <interact onClick="clickSkipAssessment()" />
-        </control>
-      </panel>
-    
-      <panel childLayout="horizontal" height="40px">
-        <panel width="90%" />
-        <panel childLayout="center">
-          <image id="img0" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
-            <interact onClick="clickNextButton()" />
+      <panel id="panel1" childLayout="horizontal" height="100%" width="100%" backgroundColor="#FFFFE9">
+        
+        <panel width="15%" height="100%" backgroundColor="#84E074" childLayout="vertical">
+          <panel height="10%"/>
+          <image id="imgSound" filename="assets/Interface/images_instruction_screen/speaker.png" width="50px" height="40px" align="center">
+              <interact onClick="clickChangeSound()" />
           </image>
         </panel>
+        <panel width="70%" childLayout="vertical">
+          <panel height="10%"/>
+          <panel childLayout="vertical">
+            <text id="txt0" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Du ska nu utföra en uppgift som testar din simultana förmåga. Som bilförare är det viktigt att ha en bra simultan förmåga, dvs förmågan att utföra flera uppgifter samtidigt. Uppgiften går ut på att du ska hålla bilen på vägen, samtidigt som du ska reagera på bilder som dyker upp." wrap="true" color="#000f" textHAlign="center" textVAlign="top"/>  
+            <panel height="4%"/>
+            <text id="txt01" font="assets/Interface/Fonts/Arial32px.fnt" width="95%" text="Resultatet kommer vara en del av läkarens beslutsunderlag som baseras på många aspekter, inte enbart det här testet." wrap="true" color="#000f" textHAlign="center" textVAlign="bottom"/>  
+          </panel>
+          
+            <image id="img2" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
+              <interact onClick="clickNextButton()" />
+            </image>
+          <panel height="10%"/>
+        </panel>
+        <panel width="15%" height="100%" backgroundColor="#84E074"></panel>
+      
+
       </panel>
-    </panel>
+    
     </layer>
   </screen>
 
   <screen id="next1" controller="eu.opends.niftyGui.MyInstructionsGUIController">
     <layer id="backLayer1" childLayout="vertical" >
-      <panel id="panel1" childLayout="vertical" height="100%" width="100%" backgroundColor="#FFFFE9">
-      <panel height="10px"/>
-       <text id="txt1" style="nifty-label" height="15%" width="75%" text="Under testet kommer du köra en bil. Hastigheten kan du inte påverka, den är konstant. Du ska styra bilen med ratten precis som en vanlig bil. " color="#000f" textHAlign="center" textVAlign="top"/>  
-       <panel childLayout="horizontal" height="*"></panel>
-      <image id="img1" filename="assets/Interface/images_instruction_screen/laneChange.png" width="50%" height="50%" align="center"/>
-      <text id="txt2" style="nifty-label" height="15%" width="75%" text="Du ska nu få prova på att köra en sträcka." color="#000f" textHAlign="center" textVAlign="top"/>  
-
-      <panel childLayout="horizontal" height="60px">
-        <panel width="90%" />
-        <panel childLayout="center">
+      <panel id="panel1" childLayout="horizontal" height="100%" width="100%" backgroundColor="#FFFFE9">
+        <panel width="15%" height="100%" backgroundColor="#84E074" childLayout="vertical"/>
+        <panel width="70%" childLayout="vertical">
+          <panel height="10%"/>
+          <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Under testet kommer du köra en bil. Hastigheten kan du inte påverka, den är konstant. Du ska styra bilen med ratten precis som en vanlig bil." wrap="true" color="#000f" textHAlign="center" textVAlign="top"/>  
+          <image id="img1" filename="assets/Interface/images_instruction_screen/laneChange.png" width="80%" height="50%" align="center"/>
+          <text id="txt2" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Du ska nu få prova på att köra en sträcka." wrap="true" color="#000f" textHAlign="center" textVAlign="top"/>  
           <image id="img2" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
             <interact onClick="clickNext2Button()" />
           </image>
+        
         </panel>
+        <panel width="15%" height="100%" backgroundColor="#84E074"></panel>
       </panel>
-    </panel>
     </layer>
   </screen>
 

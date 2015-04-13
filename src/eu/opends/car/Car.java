@@ -544,10 +544,10 @@ public abstract class Car
 
 	protected void showEngineStatusMessage(boolean engineOn) 
 	{
-		if(engineOn)
-			PanelCenter.getMessageBox().addMessage("Engin on", 2);
-		else
-			PanelCenter.getMessageBox().addMessage("Engin off. Press 'e' to start.", 0);
+//		if(engineOn)
+//			PanelCenter.getMessageBox().addMessage("Engin on", 2);
+//		else
+//			PanelCenter.getMessageBox().addMessage("Engin off. Press 'e' to start.", 0);
 	}
 
 	
@@ -620,5 +620,6 @@ public abstract class Car
 	public void close()
 	{
 		lightTexturesContainer.close();
+		
 	}
 }

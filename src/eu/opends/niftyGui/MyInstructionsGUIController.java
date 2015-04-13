@@ -1,23 +1,14 @@
 package eu.opends.niftyGui;
 
-
-
-import java.util.Set;
-
-import com.jme3.app.state.AbstractAppState;
 import com.jme3.asset.AssetManager;
 import com.jme3.asset.plugins.FileLocator;
 import com.jme3.input.InputManager;
-import com.jme3.scene.Spatial;
-import com.jme3.scene.Spatial.CullHint;
-import com.jme3.ui.Picture;
+import com.jme3.niftygui.NiftyJmeDisplay;
 
 import de.lessvoid.nifty.Nifty;
-import de.lessvoid.nifty.elements.Element;
 import de.lessvoid.nifty.elements.render.PanelRenderer;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
-import de.lessvoid.nifty.tools.Color;
 import de.lessvoid.nifty.tools.SizeValue;
 import eu.opends.main.Simulator;
 
@@ -45,12 +36,12 @@ public class MyInstructionsGUIController implements ScreenController {
 
 	@Override
 	public void bind(Nifty arg0, Screen arg1) {
-	     MyInstructionsGUIController.screen= arg1;
-			if(sim.getSettings().getWidth() >= 2400)
-			{
-				SizeValue sv = new SizeValue("20%");
-				nifty.getCurrentScreen().findElementByName("menuPanel").setConstraintWidth(sv);
-			}
+	     MyInstructionsGUIController.screen = arg1;
+//			if(sim.getSettings().getWidth() >= 2400)
+//			{
+//				SizeValue sv = new SizeValue("20%");
+//				nifty.getCurrentScreen().findElementByName("menuPanel").setConstraintWidth(sv);
+//			}
 	
 		
 	}
@@ -68,18 +59,9 @@ public class MyInstructionsGUIController implements ScreenController {
 		
 	}
 	
-	
-	public void quickStartMainTest(){
-		//hide all elements on screen and start simulation of introductionStraight
-		screen.findElementByName("txt0").hide();
-		screen.findElementByName("panel0").getRenderer(PanelRenderer.class).setBackgroundColor(null);
-		screen.findElementByName("img0").hide();
-		screen.findElementByName("quickButton").hide();
-		screen.findElementByName("txt01").hide();
-		String driverName = "Lightning McQueen";
-		String drivingTask = "assets/DrivingTasks/Projects/Countryside/countryside.xml";
-		sim.simpleInitDrivingTask(drivingTask,driverName);
-		
+	public void clickChangeSound() {
+		//System.out.println("clicked sound");
+		//screen.findElementByName("imgSound").getRenderer().setImage();
 	}
 	
 	public void startMainTest(){
@@ -119,7 +101,7 @@ public class MyInstructionsGUIController implements ScreenController {
 		
 		String driverName = "Lightning McQueen";
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStraight/introStraight.xml";
-		
+		sim.closeDrivingTaskSelectionGUI();
 		sim.simpleInitDrivingTask(drivingTask,driverName);
 		
 	}
@@ -131,6 +113,7 @@ public class MyInstructionsGUIController implements ScreenController {
 
 		String driverName = "Lightning McQueen";
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStimuli/introStimuli.xml";
+		sim.closeDrivingTaskSelectionGUI();
 		sim.simpleInitDrivingTask(drivingTask,driverName);
 	}
 
