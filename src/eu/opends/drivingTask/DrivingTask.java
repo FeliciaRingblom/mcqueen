@@ -132,4 +132,20 @@ public class DrivingTask
 		return drivingTaskPath;
 	}
 
+
+	public void delete() {
+		
+		System.out.println("i delete() i DrivingTask()");
+		dtData = null;
+		drivingTaskFileName = null;
+		drivingTaskPath = null;
+		
+		sceneLoader = null;
+		scenarioLoader = null;
+		interactionLoader = null;
+		settingsLoader = null;
+		taskLoader = null;
+		
+	}
+
 }

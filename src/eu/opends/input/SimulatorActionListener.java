@@ -431,6 +431,7 @@ public class SimulatorActionListener implements ActionListener
 		{
 			if (value)
 			{
+				
 				System.out.println(car.getPosition());		
 			}
 		}

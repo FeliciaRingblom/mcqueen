@@ -45,7 +45,6 @@ public class SetupKeyReactionTimerTriggerAction extends TriggerAction
 		this.correctReaction = correctReaction;
 		this.failureReaction = failureReaction;
 		this.comment = comment;
-		System.out.println("I SetupReactinoimeTriggerAction");
 	}
 
 	

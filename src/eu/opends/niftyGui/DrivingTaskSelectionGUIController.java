@@ -58,6 +58,7 @@ public class DrivingTaskSelectionGUIController implements ScreenController
 	
 	public DrivingTaskSelectionGUIController(Simulator sim, Nifty nifty)
 	{
+		System.out.println("DrivingTaskSelectionGUIController");
 		this.sim = sim;
 		this.nifty = nifty;
 		
@@ -70,6 +71,7 @@ public class DrivingTaskSelectionGUIController implements ScreenController
 	@Override
     public void bind(Nifty nifty, Screen screen)
 	{
+		System.out.println("bind()");
 
 		if(sim.getSettings().getWidth() >= 2400)
 		{
@@ -85,6 +87,7 @@ public class DrivingTaskSelectionGUIController implements ScreenController
 	@Override
     public void onStartScreen() 
 	{
+		System.out.println("onStartScreen()");
 		if(!SimulationDefaults.driverName.isEmpty())
 			setTextToTextfield("driversNameTextfield", SimulationDefaults.driverName);
     }
@@ -93,18 +96,16 @@ public class DrivingTaskSelectionGUIController implements ScreenController
 	@Override
     public void onEndScreen() 
 	{
+		System.out.println("i onEndScreen innan sim.simpleInitDrivingTask");
 		String driverName = getTextFromTextfield("driversNameTextfield");
 		//if(driverName.isEmpty()) driverName = SimulationDefaults.driverName; // this is already done in "simpleInitDrivingTask"
-		System.out.println("driverName=" + driverName);
-		System.out.println("drivingTask= " + getTextFromTextfield("drivingTaskTextfield"));
-		//sim.simpleInitDrivingTask(getTextFromTextfield("drivingTaskTextfield"),driverName);
+		sim.simpleInitDrivingTask(getTextFromTextfield("drivingTaskTextfield"),driverName);
 	}
 	
 	
     public void clickStartButton() 
     {
     	String drivingTaskFileName = getTextFromTextfield("drivingTaskTextfield");
-    	System.out.println("drivingTaskFileName i clickStartButton: " + drivingTaskFileName);
     	
     	File drivingTaskFile = new File(drivingTaskFileName);
     	if(drivingTaskFile.isFile() && DrivingTask.isValidDrivingTask(drivingTaskFile))

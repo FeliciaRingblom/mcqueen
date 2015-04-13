@@ -124,7 +124,6 @@ public class ManipulateObjectTriggerAction extends TriggerAction
 	
 	public void setVisibility(boolean isVisible)
 	{
-		System.out.println("setVisibility");
 		if(isVisible)
 			this.visibility = CullHint.Dynamic;
 		else

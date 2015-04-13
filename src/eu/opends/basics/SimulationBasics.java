@@ -202,10 +202,11 @@ public class SimulationBasics extends SimpleApplication
 		bulletAppState.setDebugEnabled(debugEnabled);
 	}
 	
-
+	//anropas när en drivingTask simulation drar igång
     @Override
     public void simpleInitApp() 
     {    	
+    	System.out.println("simpleInitApp() i SimulationBasics");
     	lookupNumberOfScreens();
     	
     	// init physics
@@ -236,7 +237,8 @@ public class SimulationBasics extends SimpleApplication
         
         keyMappingGUI = new KeyMappingGUI(this);
         shutDownGUI = new ShutDownGUI(this);
-        instructionScreenGUI = new InstructionScreenGUI(this);
+        //System.out.println("nu ska instructionScreen skapas");
+        //instructionScreenGUI = new InstructionScreenGUI(this);
     }
 
 
@@ -296,14 +298,17 @@ public class SimulationBasics extends SimpleApplication
     }
     
     public void resetSimulationBasics(){
- 	
-    	sceneNode.detachAllChildren();
-    	triggerNode.detachAllChildren();
-    	trafficLightCenter.close();
+    	System.out.println("resetSimulationBasics() i SimualtionBasics");
+
+
     	triggerActionListMap.clear();
-    	keyBindingCenter.close();
-    	
+    	System.out.println("state innan: " + stateManager.hasState(bulletAppState));
+    	stateManager.detach(bulletAppState);
+    	System.out.println("state efter: " + stateManager.hasState(bulletAppState));
     
+    	
+    	
+   
     }
 
 

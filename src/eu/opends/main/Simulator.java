@@ -234,6 +234,7 @@ public class Simulator extends SimulationBasics
     
 	private void initDrivingTaskSelectionGUI() 
 	{
+		System.out.println("i initDrivingTaskSelectionGUI()");
 		NiftyJmeDisplay niftyDisplay = new NiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort);
     	
     	// Create a new NiftyGUI object
@@ -253,22 +254,23 @@ public class Simulator extends SimulationBasics
 	
 	public void closeDrivingTaskSelectionGUI() 
 	{
+		System.out.println("i closeDdrivingTaskSelectionGUI i Simulator.java precis innan nifty.exit()");
 		nifty.exit();
-        inputManager.setCursorVisible(false);
+        //inputManager.setCursorVisible(false);
         flyCam.setEnabled(true);
 	}
 	
 
     public void removeAllDrivingTaskElements(){
+    	System.out.println("i removeAllDrivingTaskElements() i Simulator.java");
     	destroyDrivingTask();
     	super.resetSimulationBasics();
-    	PanelCenter.removeAll();
-    	
+    	 	
     }
 	
     public void simpleInitDrivingTask(String drivingTaskFileName, String driverName)
     {
-    
+    	
     	SimulationDefaults.drivingTaskFileName = drivingTaskFileName;
     	
     	Util.makeDirectory("analyzerData");
@@ -301,22 +303,22 @@ public class Simulator extends SimulationBasics
 		car = new SteeringCar(this);
 		
 		// initialize physical vehicles
-		physicalTraffic = new PhysicalTraffic(this);
+		//physicalTraffic = new PhysicalTraffic(this);
 		//physicalTraffic.start(); //TODO
 		
 		// open TCP connection to KAPcom (knowledge component) [affects the driver name, see below]
-		if(settingsLoader.getSetting(Setting.KnowledgeManager_enableConnection, SimulationDefaults.KnowledgeManager_enableConnection))
-		{
-			String ip = settingsLoader.getSetting(Setting.KnowledgeManager_ip, SimulationDefaults.KnowledgeManager_ip);
-			if(ip == null || ip.isEmpty())
-				ip = "127.0.0.1";
-			int port = settingsLoader.getSetting(Setting.KnowledgeManager_port, SimulationDefaults.KnowledgeManager_port);
-					
-			//KnowledgeBase.KB.setConnect(true);
-			KnowledgeBase.KB.setCulture("en-US");
-			KnowledgeBase.KB.Initialize(this, ip, port);
-			KnowledgeBase.KB.start();
-		}
+//		if(settingsLoader.getSetting(Setting.KnowledgeManager_enableConnection, SimulationDefaults.KnowledgeManager_enableConnection))
+//		{
+//			String ip = settingsLoader.getSetting(Setting.KnowledgeManager_ip, SimulationDefaults.KnowledgeManager_ip);
+//			if(ip == null || ip.isEmpty())
+//				ip = "127.0.0.1";
+//			int port = settingsLoader.getSetting(Setting.KnowledgeManager_port, SimulationDefaults.KnowledgeManager_port);
+//					
+//			//KnowledgeBase.KB.setConnect(true);
+//			KnowledgeBase.KB.setCulture("en-US");
+//			KnowledgeBase.KB.Initialize(this, ip, port);
+//			KnowledgeBase.KB.start();
+//		}
 		
 		// sync driver name with KAPcom. May provide suggestion for driver name if NULL.
 		//driverName = KnowledgeBase.User().initUserName(driverName);  
@@ -334,20 +336,20 @@ public class Simulator extends SimulationBasics
         cameraFactory = new SimulatorCam(this, car);
         
 		// start trafficLightCenter
-		trafficLightCenter = new TrafficLightCenter(this);
+		//trafficLightCenter = new TrafficLightCenter(this);
 		
 		// init trigger center
 		triggerCenter.setup();
 
 		// open TCP connection to Lightning
-		if(settingsLoader.getSetting(Setting.ExternalVisualization_enableConnection, SimulationDefaults.Lightning_enableConnection))
-		{
-			lightningClient = new LightningClient();
-		}
+//		if(settingsLoader.getSetting(Setting.ExternalVisualization_enableConnection, SimulationDefaults.Lightning_enableConnection))
+//		{
+//			lightningClient = new LightningClient();
+//		}
 				
 		drivingTaskLogger = new DrivingTaskLogger(outputFolder, driverName, drivingTask.getFileName());
 		
-		SpeedControlCenter.init(this);
+		//SpeedControlCenter.init(this);
 		
 		try {
 			
@@ -364,10 +366,10 @@ public class Simulator extends SimulationBasics
 		
 		steeringTask = new SteeringTask(this, driverName);
 		
-		threeVehiclePlatoonTask = new ThreeVehiclePlatoonTask(this, driverName);
+		//threeVehiclePlatoonTask = new ThreeVehiclePlatoonTask(this, driverName);
 		
 		// start effect center
-		effectCenter = new EffectCenter(this);
+		//effectCenter = new EffectCenter(this);
 		
 		objectManipulationCenter = new ObjectManipulationCenter(this);
 		
@@ -392,7 +394,7 @@ public class Simulator extends SimulationBasics
         String videoPath = settingsLoader.getSetting(Setting.General_captureVideo, "");
         if((videoPath != null) && (!videoPath.isEmpty()) && (Util.isValidFilename(videoPath)))
         {
-        	System.err.println("videoPath: " + videoPath);
+        	//System.err.println("videoPath: " + videoPath);
         	File videoFile = new File(videoPath);
         	stateManager.attach(new VideoRecorderAppState(videoFile));
         }
@@ -428,6 +430,7 @@ public class Simulator extends SimulationBasics
     @Override
     public void simpleUpdate(float tpf) 
     {
+    	
     	if(initializationFinished)
     	{
 			super.simpleUpdate(tpf);
@@ -452,9 +455,9 @@ public class Simulator extends SimulationBasics
 				car.update(tpf);
 			
 			// TODO start thread in init-method to update traffic
-			physicalTraffic.update(); 
+			//physicalTraffic.update(); 
 			
-			SpeedControlCenter.update();
+			//SpeedControlCenter.update();
 			
 			// update necessary even in pause
 			AudioCenter.update(tpf, cam);
@@ -465,7 +468,7 @@ public class Simulator extends SimulationBasics
 			//if(!isPause())
 				//getCameraFlight().play();
 			
-			threeVehiclePlatoonTask.update(tpf);
+			//threeVehiclePlatoonTask.update(tpf);
 			
 			if(cameraFlight != null)
 				cameraFlight.update();
@@ -473,14 +476,14 @@ public class Simulator extends SimulationBasics
 			reactionCenter.update();
 			
 			// update effects
-			effectCenter.update(tpf);
+			//effectCenter.update(tpf);
 			
 			// forward instruction screen if available
-			if(instructionScreenID != null)
-			{
-				instructionScreenGUI.showDialog(instructionScreenID);
-				instructionScreenID = null;
-			}
+//			if(instructionScreenID != null)
+//			{
+//				instructionScreenGUI.showDialog(instructionScreenID);
+//				instructionScreenID = null;
+//			}
 			
     	}
     }
@@ -517,11 +520,12 @@ public class Simulator extends SimulationBasics
 	@Override
     public void stop()
     {
+		System.out.println("i stop()");
 		logger.info("started stop()");		
 		super.stop();
 		logger.info("finished stop()");
     }
-	*/
+*/
 	
 	
 	/**
@@ -532,6 +536,7 @@ public class Simulator extends SimulationBasics
 	@Override
 	public void destroy()
     {
+		System.out.println("i destroy()");
 		logger.info("started destroy()");
 
 		if(initializationFinished)
@@ -539,11 +544,11 @@ public class Simulator extends SimulationBasics
 			if(lightningClient != null)
 				lightningClient.close();
 			
-			trafficLightCenter.close();
+			//trafficLightCenter.close();
 			
 			steeringTask.close();
 			
-			threeVehiclePlatoonTask.close();
+			//threeVehiclePlatoonTask.close();
 			
 			reactionCenter.close();
 			
@@ -551,7 +556,8 @@ public class Simulator extends SimulationBasics
 			
 			car.close();
 			
-			physicalTraffic.close();
+			
+			//physicalTraffic.close();
 			
 			if(settingsControllerServer != null)
 				settingsControllerServer.close();
@@ -568,29 +574,49 @@ public class Simulator extends SimulationBasics
 	/*Author: Felicia & Jessica*/
 	public void destroyDrivingTask()
     {
+		System.out.println("i destroyDrivingTask() i Simulator.java");
 		if(initializationFinished)
 		{
+			
 			if(lightningClient != null)
 				lightningClient.close();
 			
-			trafficLightCenter.close();
+			//trafficLightCenter.close();
 			
 			steeringTask.close();
 			
-			threeVehiclePlatoonTask.close();
+			//threeVehiclePlatoonTask.close();
 			
 			reactionCenter.close();
 			
 			KnowledgeBase.KB.disconnect();
+			PanelCenter.removeAll(); 
 			
-			car.close();
-			
-			physicalTraffic.close();
+			car.close(); //stänger enbart texturen
+			car.delete();
+			keyBindingCenter.close();
+			//physicalTraffic.close();
 			
 			if(settingsControllerServer != null)
 				settingsControllerServer.close();
+			
+			stateManager.detach(bulletAppState);
+			stateManager.cleanup();
+			
+			
+			
+			
+			
 
+			sceneLoader = drivingTask.getSceneLoader();
+			scenarioLoader = drivingTask.getScenarioLoader();
+			interactionLoader = drivingTask.getInteractionLoader();
+			settingsLoader = drivingTask.getSettingsLoader();
+			drivingTask.delete();
+			
 		}
+		
+		
     }
 
     public static void main(String[] args) 
@@ -630,7 +656,7 @@ public class Simulator extends SimulationBasics
 	    	AppSettings settings = new AppSettings(false);
 	        settings.setUseJoysticks(true);
 	        settings.setSettingsDialogImage("assets/Textures/Logo/mcQueen.jpg");
-	        settings.setTitle("Testa din k�rf�rm�ga. ");
+	        settings.setTitle("Testa din körförmåga. ");
 	        
 	        // set splash screen parameters
 	        settings.setFullscreen(false);
@@ -642,12 +668,13 @@ public class Simulator extends SimulationBasics
 	     
 	        
 			sim.setSettings(settings);
-
+			
+		
 			// TODO show/hide splash screen
 			//sim.setShowSettings(false);
 			
 			sim.setPauseOnLostFocus(false);
-			
+			System.out.println("ska nu anropa sim.start() från main");
 			sim.start();
     	}
     	catch(Exception e1)

@@ -235,9 +235,8 @@ public class KeyBindingCenter
 
 
 	public void close() {
-		System.out.println("keybinding: " + keyBindingList.size());
 		keyBindingList.clear();
-		System.out.println("keybinding: " + keyBindingList.size());
+
 		
 	}
 }

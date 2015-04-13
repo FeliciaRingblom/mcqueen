@@ -622,4 +622,17 @@ public abstract class Car
 		lightTexturesContainer.close();
 		
 	}
+	
+	public void delete() {
+        System.out.println("delete i car.java: ");
+		
+		sim.getSceneNode().detachChild(carNode);
+		sim.getPhysicsSpace().remove(carControl);
+		carModel = null;
+		
+		
+
+
+    
+	}
 }
