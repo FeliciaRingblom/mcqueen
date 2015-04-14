@@ -81,7 +81,12 @@ public class Simulator extends SimulationBasics
     private boolean drivingTaskGiven = false;
     private boolean initializationFinished = false;
     
-    private static String driverName;
+    private MyInstructionsGUIController myInstructions;
+    public MyInstructionsGUIController getMyInstructions() {
+		return myInstructions;
+	}
+
+	private static String driverName;
     
     private static Float gravityConstant;
 	public static Float getGravityConstant()
@@ -221,9 +226,11 @@ public class Simulator extends SimulationBasics
     	// Create a new NiftyGUI object
     	nifty = niftyDisplay.getNifty();
     	nifty.setLocale(new Locale("sv", "SE"));
+    	
+    	myInstructions = new MyInstructionsGUIController(this, nifty);
     		
     	String xmlPath = "Interface/MyInstructionsGUI.xml";
-    	nifty.fromXml(xmlPath, "start", new MyInstructionsGUIController(this, nifty));
+    	nifty.fromXml(xmlPath, "start", myInstructions);
     	
     	// attach the Nifty display to the gui view port as a processor
     	guiViewPort.addProcessor(niftyDisplay);
@@ -303,22 +310,8 @@ public class Simulator extends SimulationBasics
 		car = new SteeringCar(this);
 		
 		// initialize physical vehicles
-		//physicalTraffic = new PhysicalTraffic(this);
+		physicalTraffic = new PhysicalTraffic(this);
 		//physicalTraffic.start(); //TODO
-		
-		// open TCP connection to KAPcom (knowledge component) [affects the driver name, see below]
-//		if(settingsLoader.getSetting(Setting.KnowledgeManager_enableConnection, SimulationDefaults.KnowledgeManager_enableConnection))
-//		{
-//			String ip = settingsLoader.getSetting(Setting.KnowledgeManager_ip, SimulationDefaults.KnowledgeManager_ip);
-//			if(ip == null || ip.isEmpty())
-//				ip = "127.0.0.1";
-//			int port = settingsLoader.getSetting(Setting.KnowledgeManager_port, SimulationDefaults.KnowledgeManager_port);
-//					
-//			//KnowledgeBase.KB.setConnect(true);
-//			KnowledgeBase.KB.setCulture("en-US");
-//			KnowledgeBase.KB.Initialize(this, ip, port);
-//			KnowledgeBase.KB.start();
-//		}
 		
 		// sync driver name with KAPcom. May provide suggestion for driver name if NULL.
 		//driverName = KnowledgeBase.User().initUserName(driverName);  
@@ -336,16 +329,16 @@ public class Simulator extends SimulationBasics
         cameraFactory = new SimulatorCam(this, car);
         
 		// start trafficLightCenter
-		//trafficLightCenter = new TrafficLightCenter(this);
+		trafficLightCenter = new TrafficLightCenter(this);
 		
 		// init trigger center
 		triggerCenter.setup();
 
 		// open TCP connection to Lightning
-//		if(settingsLoader.getSetting(Setting.ExternalVisualization_enableConnection, SimulationDefaults.Lightning_enableConnection))
-//		{
-//			lightningClient = new LightningClient();
-//		}
+		if(settingsLoader.getSetting(Setting.ExternalVisualization_enableConnection, SimulationDefaults.Lightning_enableConnection))
+		{
+			lightningClient = new LightningClient();
+		}
 				
 		drivingTaskLogger = new DrivingTaskLogger(outputFolder, driverName, drivingTask.getFileName());
 		
@@ -603,11 +596,6 @@ public class Simulator extends SimulationBasics
 			stateManager.detach(bulletAppState);
 			stateManager.cleanup();
 			
-			
-			
-			
-			
-
 			sceneLoader = drivingTask.getSceneLoader();
 			scenarioLoader = drivingTask.getScenarioLoader();
 			interactionLoader = drivingTask.getInteractionLoader();
@@ -625,18 +613,11 @@ public class Simulator extends SimulationBasics
     	{
     		// load logger configuration file
     		PropertyConfigurator.configure("assets/JasperReports/log4j/log4j.properties");
-    		
-    		/*
-    		logger.debug("Sample debug message");
-    		logger.info("Sample info message");
-    		logger.warn("Sample warn message");
-    		logger.error("Sample error message");
-    		logger.fatal("Sample fatal message");
-    		*/
     	
     		// only show severe jme3-logs
     		java.util.logging.Logger.getLogger("").setLevel(java.util.logging.Level.SEVERE);
     		
+    		System.out.println("new sim main");
 	    	Simulator sim = new Simulator();
 
 	    	if(args.length >= 1)
@@ -668,10 +649,6 @@ public class Simulator extends SimulationBasics
 	     
 	        
 			sim.setSettings(settings);
-			
-		
-			// TODO show/hide splash screen
-			//sim.setShowSettings(false);
 			
 			sim.setPauseOnLostFocus(false);
 			System.out.println("ska nu anropa sim.start() från main");

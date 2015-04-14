@@ -359,7 +359,7 @@ public class InteractionMethods
 			
 			
 			int screenNumber = Integer.parseInt(nextString);
-			return new ReturnToInstruction(sim, delay, repeat, screenNumber);
+			return new ReturnToInstruction((Simulator)sim, delay, repeat, screenNumber);
 			
 		} catch (Exception e) {
 	

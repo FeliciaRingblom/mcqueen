@@ -237,8 +237,6 @@ public class SimulationBasics extends SimpleApplication
         
         keyMappingGUI = new KeyMappingGUI(this);
         shutDownGUI = new ShutDownGUI(this);
-        //System.out.println("nu ska instructionScreen skapas");
-        //instructionScreenGUI = new InstructionScreenGUI(this);
     }
 
 
@@ -256,21 +254,6 @@ public class SimulationBasics extends SimpleApplication
         }
         sky.setShadowMode(ShadowMode.Off);
         sceneNode.attachChild(sky);
-        
-        /*
-        Texture west = assetManager.loadTexture("Textures/Sky/Clouds/west.png");
-        Texture east = assetManager.loadTexture("Textures/Sky/Clouds/east.png");
-        Texture north = assetManager.loadTexture("Textures/Sky/Clouds/north.png");
-        Texture south = assetManager.loadTexture("Textures/Sky/Clouds/south.png");
-        Texture up = assetManager.loadTexture("Textures/Sky/Clouds/up.png");
-        Texture down = assetManager.loadTexture("Textures/Sky/Clouds/down.png");
-
-        // vector used to flip textures (as textures will be applied from the outside of the box)
-        Vector3f normalScale = new Vector3f(-1, 1, 1);
-        Spatial skySpatial = SkyFactory.createSky(assetManager, west, east, north, south, up, down, normalScale);
-        skySpatial.setShadowMode(ShadowMode.Off);
-        rootNode.attachChild(skySpatial);
-        */
 	}
     
 
