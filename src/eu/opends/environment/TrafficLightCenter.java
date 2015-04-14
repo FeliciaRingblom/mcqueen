@@ -23,6 +23,7 @@ import java.util.List;
 
 
 
+
 import eu.opends.drivingTask.scenario.Intersection;
 import eu.opends.environment.TrafficLight.*;
 import eu.opends.environment.TrafficLightException.NoInternalProgramException;
@@ -212,11 +213,11 @@ public class TrafficLightCenter
 	 */
 	public static TrafficLight getTrafficLightByName(String trafficLightName)
 	{		
-		for(TrafficLight trafficLight : globalTrafficLightsList)
-		{
-			if(trafficLight.getName().equals(trafficLightName))
-				return trafficLight;
-		}
+//		for(TrafficLight trafficLight : globalTrafficLightsList)
+//		{
+//			if(trafficLight.getName().equals(trafficLightName))
+//				return trafficLight;
+//		}
 		return null;
 	}
 	

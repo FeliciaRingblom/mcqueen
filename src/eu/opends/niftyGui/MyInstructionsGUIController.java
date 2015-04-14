@@ -142,6 +142,6 @@ public class MyInstructionsGUIController implements ScreenController {
 		sim.removeAllDrivingTaskElements();
 		String next = "next" + screenNumber;
 		nifty.gotoScreen(next);
-		inputManager.setCursorVisible(true);
+		//inputManager.setCursorVisible(true);
 	}
 }

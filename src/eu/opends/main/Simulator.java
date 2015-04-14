@@ -35,6 +35,7 @@ import com.jme3.niftygui.NiftyJmeDisplay;
 import com.jme3.system.AppSettings;
 
 import de.lessvoid.nifty.Nifty;
+import eu.opends.analyzer.CarPositionWriter;
 import eu.opends.analyzer.DrivingTaskLogger;
 import eu.opends.analyzer.DataWriter;
 import eu.opends.audio.AudioCenter;
@@ -117,6 +118,13 @@ public class Simulator extends SimulationBasics
 	public DataWriter getMyDataWriter() 
 	{
 		return dataWriter;
+	}
+	
+	private boolean carPositionWriterQuittable = false;
+	private CarPositionWriter carPositionWriter;
+	public CarPositionWriter getMyCarPositionWriter() 
+	{
+		return carPositionWriter;
 	}
 	
 	private LightningClient lightningClient;
@@ -310,7 +318,7 @@ public class Simulator extends SimulationBasics
 		car = new SteeringCar(this);
 		
 		// initialize physical vehicles
-		physicalTraffic = new PhysicalTraffic(this);
+		//physicalTraffic = new PhysicalTraffic(this);
 		//physicalTraffic.start(); //TODO
 		
 		// sync driver name with KAPcom. May provide suggestion for driver name if NULL.
@@ -329,16 +337,16 @@ public class Simulator extends SimulationBasics
         cameraFactory = new SimulatorCam(this, car);
         
 		// start trafficLightCenter
-		trafficLightCenter = new TrafficLightCenter(this);
+		//trafficLightCenter = new TrafficLightCenter(this);
 		
 		// init trigger center
 		triggerCenter.setup();
 
 		// open TCP connection to Lightning
-		if(settingsLoader.getSetting(Setting.ExternalVisualization_enableConnection, SimulationDefaults.Lightning_enableConnection))
-		{
-			lightningClient = new LightningClient();
-		}
+//		if(settingsLoader.getSetting(Setting.ExternalVisualization_enableConnection, SimulationDefaults.Lightning_enableConnection))
+//		{
+//			lightningClient = new LightningClient();
+//		}
 				
 		drivingTaskLogger = new DrivingTaskLogger(outputFolder, driverName, drivingTask.getFileName());
 		
@@ -392,6 +400,15 @@ public class Simulator extends SimulationBasics
         	stateManager.attach(new VideoRecorderAppState(videoFile));
         }
 		
+        //start car position writer
+  
+    		initializeDataWriter();
+			if (carPositionWriter.isDataWriterEnabled() == false) {
+				System.out.println("Start storing Drive-Data");
+				carPositionWriter.setDataWriterEnabled(true);
+			} 
+		
+        
 		initializationFinished = true;
     }
     
@@ -416,9 +433,10 @@ public class Simulator extends SimulationBasics
 	 */
 	public void initializeDataWriter() 
 	{
-		dataWriter = new DataWriter(outputFolder, car, driverName, SimulationDefaults.drivingTaskFileName);
-	}
+		//dataWriter = new DataWriter(outputFolder, car, driverName, SimulationDefaults.drivingTaskFileName);
+		carPositionWriter = new CarPositionWriter(outputFolder, car, driverName, SimulationDefaults.drivingTaskFileName);
 	
+	}
 	
     @Override
     public void simpleUpdate(float tpf) 
@@ -484,21 +502,21 @@ public class Simulator extends SimulationBasics
     
 	private void updateDataWriter() 
 	{
-		if (dataWriter != null && dataWriter.isDataWriterEnabled()) 
+		if (carPositionWriter != null && carPositionWriter.isDataWriterEnabled()) 
 		{
 			if(!isPause())
-				dataWriter.saveAnalyzerData();
+				carPositionWriter.saveAnalyzerData();
 
 			if (!dataWriterQuittable)
-				dataWriterQuittable = true;
+				carPositionWriterQuittable = true;
 		} 
 		else 
 		{
-			if (dataWriterQuittable) 
+			if (carPositionWriterQuittable) 
 			{
-				dataWriter.quit();
-				dataWriter = null;
-				dataWriterQuittable = false;
+				carPositionWriter.quit();
+				carPositionWriter = null;
+				carPositionWriterQuittable = false;
 			}
 		}
 	}
@@ -570,6 +588,8 @@ public class Simulator extends SimulationBasics
 		System.out.println("i destroyDrivingTask() i Simulator.java");
 		if(initializationFinished)
 		{
+			System.out.println("Stop storing Drive-Data");
+			carPositionWriter.setDataWriterEnabled(false);		
 			
 			if(lightningClient != null)
 				lightningClient.close();

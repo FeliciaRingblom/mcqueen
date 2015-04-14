@@ -39,6 +39,14 @@ public class DataUnit implements Serializable
 	private boolean isEngineOn;
 	private Date date;
 	
+	
+	public DataUnit(Date date, float xpos, float ypos, float zpos) 
+	{
+		setDate(date);
+		setXpos(xpos);
+		setYpos(ypos);
+		setZpos(zpos);
+	}
 
 	/**
 	 * The default constructor used in simulator.
