@@ -262,17 +262,17 @@ public class SimulatorActionListener implements ActionListener
 		{
 			if (value)
 			{
-				if (sim.getMyDataWriter() == null) {
+				if (sim.getMyCarPositionWriter() == null) {
 					sim.initializeDataWriter();
 				}
 	
-				if (sim.getMyDataWriter().isDataWriterEnabled() == false) {
+				if (sim.getMyCarPositionWriter().isDataWriterEnabled() == false) {
 					System.out.println("Start storing Drive-Data");
-					sim.getMyDataWriter().setDataWriterEnabled(true);
+					sim.getMyCarPositionWriter().setDataWriterEnabled(true);
 					PanelCenter.getStoreText().setText("S");
 				} else {
 					System.out.println("Stop storing Drive-Data");
-					sim.getMyDataWriter().setDataWriterEnabled(false);
+					sim.getMyCarPositionWriter().setDataWriterEnabled(false);
 					PanelCenter.getStoreText().setText(" ");
 				}
 			}

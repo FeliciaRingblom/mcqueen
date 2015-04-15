@@ -18,16 +18,16 @@ import eu.opends.main.Simulator;
 
 public class MyInstructionsGUIController implements ScreenController {
 	
-	private static Nifty nifty;
-	private static Simulator sim;
-	private static Screen screen;
-	private static InputManager inputManager;
+	private Nifty nifty;
+	private Simulator sim;
+	private Screen screen;
+	private InputManager inputManager;
 	
 	public MyInstructionsGUIController(Simulator sim, Nifty nifty)
 	{
-		MyInstructionsGUIController.sim = sim;
-		MyInstructionsGUIController.nifty = nifty;
-		MyInstructionsGUIController.inputManager = sim.getInputManager();
+		this.sim = sim;
+		this.nifty = nifty;
+		this.inputManager = sim.getInputManager();
 		
 		AssetManager assetManager = sim.getAssetManager();
 		assetManager.registerLocator("assets", FileLocator.class);
@@ -36,7 +36,7 @@ public class MyInstructionsGUIController implements ScreenController {
 
 	@Override
 	public void bind(Nifty arg0, Screen arg1) {
-	     MyInstructionsGUIController.screen = arg1;
+	     this.screen = arg1;
 //			if(sim.getSettings().getWidth() >= 2400)
 //			{
 //				SizeValue sv = new SizeValue("20%");
@@ -132,7 +132,7 @@ public class MyInstructionsGUIController implements ScreenController {
 		
 	}
 	
-	public static void setScreen(int screenNumber) {
+	public void setScreen(int screenNumber) {
 //		Set<Thread> threadSet = Thread.getAllStackTraces().keySet();
 //		Thread[] threadArray = threadSet.toArray(new Thread[threadSet.size()]);
 //		System.out.println("thread size: " + threadSet.size());
@@ -142,7 +142,6 @@ public class MyInstructionsGUIController implements ScreenController {
 		sim.removeAllDrivingTaskElements();
 		String next = "next" + screenNumber;
 		nifty.gotoScreen(next);
-		inputManager.setCursorVisible(true);
-	
+		//inputManager.setCursorVisible(true);
 	}
 }

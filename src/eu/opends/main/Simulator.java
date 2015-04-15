@@ -35,6 +35,7 @@ import com.jme3.niftygui.NiftyJmeDisplay;
 import com.jme3.system.AppSettings;
 
 import de.lessvoid.nifty.Nifty;
+import eu.opends.analyzer.CarPositionWriter;
 import eu.opends.analyzer.DrivingTaskLogger;
 import eu.opends.analyzer.DataWriter;
 import eu.opends.audio.AudioCenter;
@@ -81,7 +82,12 @@ public class Simulator extends SimulationBasics
     private boolean drivingTaskGiven = false;
     private boolean initializationFinished = false;
     
-    private static String driverName;
+    private MyInstructionsGUIController myInstructions;
+    public MyInstructionsGUIController getMyInstructions() {
+		return myInstructions;
+	}
+
+	private static String driverName;
     
     private static Float gravityConstant;
 	public static Float getGravityConstant()
@@ -112,6 +118,13 @@ public class Simulator extends SimulationBasics
 	public DataWriter getMyDataWriter() 
 	{
 		return dataWriter;
+	}
+	
+	private boolean carPositionWriterQuittable = false;
+	private CarPositionWriter carPositionWriter;
+	public CarPositionWriter getMyCarPositionWriter() 
+	{
+		return carPositionWriter;
 	}
 	
 	private LightningClient lightningClient;
@@ -221,9 +234,11 @@ public class Simulator extends SimulationBasics
     	// Create a new NiftyGUI object
     	nifty = niftyDisplay.getNifty();
     	nifty.setLocale(new Locale("sv", "SE"));
+    	
+    	myInstructions = new MyInstructionsGUIController(this, nifty);
     		
     	String xmlPath = "Interface/MyInstructionsGUI.xml";
-    	nifty.fromXml(xmlPath, "start", new MyInstructionsGUIController(this, nifty));
+    	nifty.fromXml(xmlPath, "start", myInstructions);
     	
     	// attach the Nifty display to the gui view port as a processor
     	guiViewPort.addProcessor(niftyDisplay);
@@ -306,20 +321,6 @@ public class Simulator extends SimulationBasics
 		//physicalTraffic = new PhysicalTraffic(this);
 		//physicalTraffic.start(); //TODO
 		
-		// open TCP connection to KAPcom (knowledge component) [affects the driver name, see below]
-//		if(settingsLoader.getSetting(Setting.KnowledgeManager_enableConnection, SimulationDefaults.KnowledgeManager_enableConnection))
-//		{
-//			String ip = settingsLoader.getSetting(Setting.KnowledgeManager_ip, SimulationDefaults.KnowledgeManager_ip);
-//			if(ip == null || ip.isEmpty())
-//				ip = "127.0.0.1";
-//			int port = settingsLoader.getSetting(Setting.KnowledgeManager_port, SimulationDefaults.KnowledgeManager_port);
-//					
-//			//KnowledgeBase.KB.setConnect(true);
-//			KnowledgeBase.KB.setCulture("en-US");
-//			KnowledgeBase.KB.Initialize(this, ip, port);
-//			KnowledgeBase.KB.start();
-//		}
-		
 		// sync driver name with KAPcom. May provide suggestion for driver name if NULL.
 		//driverName = KnowledgeBase.User().initUserName(driverName);  
 		
@@ -399,6 +400,15 @@ public class Simulator extends SimulationBasics
         	stateManager.attach(new VideoRecorderAppState(videoFile));
         }
 		
+        //start car position writer
+  
+    		initializeDataWriter();
+			if (carPositionWriter.isDataWriterEnabled() == false) {
+				System.out.println("Start storing Drive-Data");
+				carPositionWriter.setDataWriterEnabled(true);
+			} 
+		
+        
 		initializationFinished = true;
     }
     
@@ -423,9 +433,10 @@ public class Simulator extends SimulationBasics
 	 */
 	public void initializeDataWriter() 
 	{
-		dataWriter = new DataWriter(outputFolder, car, driverName, SimulationDefaults.drivingTaskFileName);
-	}
+		//dataWriter = new DataWriter(outputFolder, car, driverName, SimulationDefaults.drivingTaskFileName);
+		carPositionWriter = new CarPositionWriter(outputFolder, car, driverName, SimulationDefaults.drivingTaskFileName);
 	
+	}
 	
     @Override
     public void simpleUpdate(float tpf) 
@@ -491,21 +502,21 @@ public class Simulator extends SimulationBasics
     
 	private void updateDataWriter() 
 	{
-		if (dataWriter != null && dataWriter.isDataWriterEnabled()) 
+		if (carPositionWriter != null && carPositionWriter.isDataWriterEnabled()) 
 		{
 			if(!isPause())
-				dataWriter.saveAnalyzerData();
+				carPositionWriter.saveAnalyzerData();
 
 			if (!dataWriterQuittable)
-				dataWriterQuittable = true;
+				carPositionWriterQuittable = true;
 		} 
 		else 
 		{
-			if (dataWriterQuittable) 
+			if (carPositionWriterQuittable) 
 			{
-				dataWriter.quit();
-				dataWriter = null;
-				dataWriterQuittable = false;
+				carPositionWriter.quit();
+				carPositionWriter = null;
+				carPositionWriterQuittable = false;
 			}
 		}
 	}
@@ -577,6 +588,8 @@ public class Simulator extends SimulationBasics
 		System.out.println("i destroyDrivingTask() i Simulator.java");
 		if(initializationFinished)
 		{
+			System.out.println("Stop storing Drive-Data");
+			carPositionWriter.setDataWriterEnabled(false);		
 			
 			if(lightningClient != null)
 				lightningClient.close();
@@ -603,11 +616,6 @@ public class Simulator extends SimulationBasics
 			stateManager.detach(bulletAppState);
 			stateManager.cleanup();
 			
-			
-			
-			
-			
-
 			sceneLoader = drivingTask.getSceneLoader();
 			scenarioLoader = drivingTask.getScenarioLoader();
 			interactionLoader = drivingTask.getInteractionLoader();
@@ -625,18 +633,11 @@ public class Simulator extends SimulationBasics
     	{
     		// load logger configuration file
     		PropertyConfigurator.configure("assets/JasperReports/log4j/log4j.properties");
-    		
-    		/*
-    		logger.debug("Sample debug message");
-    		logger.info("Sample info message");
-    		logger.warn("Sample warn message");
-    		logger.error("Sample error message");
-    		logger.fatal("Sample fatal message");
-    		*/
     	
     		// only show severe jme3-logs
     		java.util.logging.Logger.getLogger("").setLevel(java.util.logging.Level.SEVERE);
     		
+    		System.out.println("new sim main");
 	    	Simulator sim = new Simulator();
 
 	    	if(args.length >= 1)
@@ -668,10 +669,6 @@ public class Simulator extends SimulationBasics
 	     
 	        
 			sim.setSettings(settings);
-			
-		
-			// TODO show/hide splash screen
-			//sim.setShowSettings(false);
 			
 			sim.setPauseOnLostFocus(false);
 			System.out.println("ska nu anropa sim.start() från main");

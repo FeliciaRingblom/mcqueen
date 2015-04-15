@@ -1,6 +1,7 @@
 package eu.opends.trigger;
 
 import eu.opends.basics.SimulationBasics;
+import eu.opends.main.Simulator;
 import eu.opends.niftyGui.MyInstructionsGUIController;
 /**
  * @author Jessica Larsson, Felicia Ringblom, 2015
@@ -8,11 +9,11 @@ import eu.opends.niftyGui.MyInstructionsGUIController;
 public class ReturnToInstruction extends TriggerAction {
 	
 	
-	private SimulationBasics sim;
+	private Simulator sim;
 	private int screenNumber;
 	
 	
-	public ReturnToInstruction(SimulationBasics sim, float delay, int maxRepeat, int screenNumber)
+	public ReturnToInstruction(Simulator sim, float delay, int maxRepeat, int screenNumber)
 	{
 		super(delay, maxRepeat);
 		this.sim = sim;
@@ -21,7 +22,7 @@ public class ReturnToInstruction extends TriggerAction {
 
 	@Override
 	protected void execute() {
-		MyInstructionsGUIController.setScreen(this.screenNumber);
+		sim.getMyInstructions().setScreen(this.screenNumber);
 	}
 
 }
