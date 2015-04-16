@@ -111,6 +111,9 @@ public class MyInstructionsGUIController implements ScreenController {
 		screen.findElementByName("panel2").getRenderer(PanelRenderer.class).setBackgroundColor(null);
 		screen.findElementByName("img3").hide();
 
+		String analyzerFile = "analyzerData/2015_04_16-09_39_07/carData.txt";
+		sim.calculateCarData(analyzerFile);
+		
 		String driverName = "Lightning McQueen";
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStimuli/introStimuli.xml";
 		sim.closeDrivingTaskSelectionGUI();

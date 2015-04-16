@@ -158,11 +158,11 @@
 
 	<geometries>
 		<point id="IdealPoint.001"><translation><vector jtype="java_lang_Float" size="3"><entry>-620.499</entry><entry>20.977</entry><entry>-749.105</entry></vector></translation></point>
-		<point id="IdealPoint.002"><translation><vector jtype="java_lang_Float" size="3"><entry>-566.642</entry><entry>19.828</entry><entry>--700.569</entry></vector></translation></point>
+		<point id="IdealPoint.002"><translation><vector jtype="java_lang_Float" size="3"><entry>-566.642</entry><entry>19.828</entry><entry>-700.569</entry></vector></translation></point>
 		<point id="IdealPoint.003"><translation><vector jtype="java_lang_Float" size="3"><entry>-529.848</entry><entry>19.931</entry><entry>-667.41</entry></vector></translation></point>
 		<point id="IdealPoint.004"><translation><vector jtype="java_lang_Float" size="3"><entry>-488.124</entry><entry>19.946</entry><entry>-620.173</entry></vector></translation></point>
 		<point id="IdealPoint.005"><translation><vector jtype="java_lang_Float" size="3"><entry>-461.264</entry><entry>19.946</entry><entry>-586.86</entry></vector></translation></point>
-		<point id="IdealPoint.006"><translation><vector jtype="java_lang_Float" size="3"><entry>--444.093</entry><entry>19.945</entry><entry>-564.223</entry></vector></translation></point>
+		<point id="IdealPoint.006"><translation><vector jtype="java_lang_Float" size="3"><entry>-444.093</entry><entry>19.945</entry><entry>-564.223</entry></vector></translation></point>
 	</geometries>
     
     <gravity>9.81</gravity>

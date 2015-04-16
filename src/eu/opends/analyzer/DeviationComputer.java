@@ -259,6 +259,7 @@ public class DeviationComputer
 	public float getDeviation() throws Exception
 	{
 		int nrOfIdealPoints = idealPoints.size();
+		System.out.println("Number of ideal points after processing is: " + nrOfIdealPoints);
 
 		if(nrOfIdealPoints >= 3)
 		{

@@ -118,7 +118,7 @@ public class ScenarioLoader
 		extractCameraFlight();
 		extractConversionMatrices();
 		
-		if(sim instanceof DriveAnalyzer)
+		if(sim instanceof Simulator)
 			extractIdealLine();
 		
 		extractRoadInformation();
@@ -292,7 +292,7 @@ public class ScenarioLoader
 			
 			NodeList pointNodes = (NodeList) dtData.xPathQuery(Layer.SCENARIO, 
 					"/scenario:scenario/scenario:driver/scenario:idealTrack/scenario:point", XPathConstants.NODESET);
-
+			
 			for (int k = 1; k <= pointNodes.getLength(); k++) 
 			{
 				Vector3f point = dtData.getVector3f(Layer.SCENARIO, 
@@ -319,7 +319,7 @@ public class ScenarioLoader
 			for(Vector3f idealPoint : idealPoints)
 			{
 				Vector2f idealPoint2f = new Vector2f(idealPoint.getX(), idealPoint.getZ());
-				((DriveAnalyzer) sim).getDeviationComputer().addIdealPoint(idealPoint2f);
+				((Simulator) sim).getDeviationComputer().addIdealPoint(idealPoint2f);
 			}
 			
 		} catch (Exception e) {
