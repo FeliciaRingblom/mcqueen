@@ -47,6 +47,12 @@ public class DataUnit implements Serializable
 		setYpos(ypos);
 		setZpos(zpos);
 	}
+	
+	public DataUnit(Date date, Vector3f carPosition) 
+	{
+		setDate(date);
+		setCarPosition(carPosition);
+	}
 
 	/**
 	 * The default constructor used in simulator.
