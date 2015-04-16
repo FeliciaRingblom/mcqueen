@@ -29,13 +29,18 @@ import org.apache.log4j.PropertyConfigurator;
 
 import com.jme3.app.StatsAppState;
 import com.jme3.app.state.VideoRecorderAppState;
+import com.jme3.font.BitmapText;
 import com.jme3.input.Joystick;
 import com.jme3.math.Vector3f;
 import com.jme3.niftygui.NiftyJmeDisplay;
 import com.jme3.system.AppSettings;
 
 import de.lessvoid.nifty.Nifty;
+import eu.opends.analyzer.CarPositionReader;
 import eu.opends.analyzer.CarPositionWriter;
+import eu.opends.analyzer.DataReader;
+import eu.opends.analyzer.DataUnit;
+import eu.opends.analyzer.DeviationComputer;
 import eu.opends.analyzer.DrivingTaskLogger;
 import eu.opends.analyzer.DataWriter;
 import eu.opends.audio.AudioCenter;
@@ -212,6 +217,63 @@ public class Simulator extends SimulationBasics
 	{
 		return outputFolder;
 	}
+	
+	/*Added by Felicia*/
+	
+	private float area = 0;
+	private float lengthOfIdealLine = 1;
+	
+	private float roadWidth = 30.0f; //what is a good value here????
+	private DeviationComputer devComp = new DeviationComputer(roadWidth);
+	public DeviationComputer getDeviationComputer() 
+	{
+		return devComp;
+	}
+
+	private LinkedList<Vector3f> carPositionList = new LinkedList<Vector3f>();
+	private LinkedList<DataUnit> dataUnitList = new LinkedList<DataUnit>();
+	
+	private CarPositionReader carPositionReader = new CarPositionReader();
+	private Long initialTimeStamp = 0l;
+
+	public enum VisualizationMode 
+	{
+		POINT, LINE, CONE;
+	}
+
+	private DataUnit currentDataUnit;
+	public DataUnit getCurrentDataUnit() 
+	{
+		return currentDataUnit;
+	}
+	
+	public void calculateCarData(String fileName){
+		carPositionReader.initReader(fileName, true);
+		carPositionReader.loadDriveData();
+
+		carPositionList = carPositionReader.getCarPositionList();
+		for(Vector3f carPos : carPositionList)
+			devComp.addWayPoint(carPos);
+
+		dataUnitList = carPositionReader.getDataUnitList();
+		
+		if(dataUnitList.size() > 0)
+			initialTimeStamp = dataUnitList.get(0).getDate().getTime();
+		
+		//devComp.showAllIdealPoints();
+		//devComp.showAllWayPoints();
+		try {
+			area = devComp.getDeviation();
+			lengthOfIdealLine = devComp.getLengthOfIdealLine();
+			System.out.println("Area between ideal line and driven line: " + area);
+			System.out.println("Length of ideal line: " + lengthOfIdealLine);
+			System.out.println("Mean deviation: " + (float)area/lengthOfIdealLine + "\n");
+		} catch (Exception e) {
+			System.out.println(e.getMessage() + "\n");
+		}
+	}
+	
+	/*end added by Felicia*/
 	
 	
     @Override
