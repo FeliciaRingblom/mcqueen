@@ -83,7 +83,7 @@ public class CarPositionWriter {
 					+ new SimpleDateFormat("yyyy_MM_dd-HH_mm_ss")
 							.format(new Date()) + newLine);
 			out.write("Driver: " + driverName + newLine);
-			out.write("Used Format = Time (ms): Position (x,y,z)" + newLine);
+			out.write("Position (x,y,z)" + newLine);
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -145,7 +145,7 @@ public class CarPositionWriter {
 		try {
 			StringBuffer sb = new StringBuffer();
 			for (DataUnit r : arrayDataList) {
-				sb.append(r.getDate().getTime() + ":" + r.getXpos() + ":"
+				sb.append(r.getXpos() + ":"
 						+ r.getYpos() + ":" + r.getZpos() + newLine
 						);
 			}
