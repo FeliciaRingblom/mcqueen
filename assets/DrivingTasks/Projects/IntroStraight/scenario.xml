@@ -12,6 +12,14 @@
         </environment>
 
         <driver>
+                <idealTrack>
+                        <point ref="IdealPoint.001" />
+                        <point ref="IdealPoint.002" />
+                        <point ref="IdealPoint.003" />
+                        <point ref="IdealPoint.004" />
+                        <point ref="IdealPoint.005" />
+                        <point ref="IdealPoint.006" />
+                </idealTrack>
         	<car id="" ref="driverCar" profile="">
         		<tires profile="">
         			<type>winter</type>
