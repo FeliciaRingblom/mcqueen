@@ -1,21 +1,3 @@
-/*
-*  This file is part of OpenDS (Open Source Driving Simulator).
-*  Copyright (C) 2014 Rafael Math
-*
-*  OpenDS is free software: you can redistribute it and/or modify
-*  it under the terms of the GNU General Public License as published by
-*  the Free Software Foundation, either version 3 of the License, or
-*  (at your option) any later version.
-*
-*  OpenDS is distributed in the hope that it will be useful,
-*  but WITHOUT ANY WARRANTY; without even the implied warranty of
-*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-*  GNU General Public License for more details.
-*
-*  You should have received a copy of the GNU General Public License
-*  along with OpenDS. If not, see <http://www.gnu.org/licenses/>.
-*/
-
 package eu.opends.jasperReport;
 
 import java.io.BufferedWriter;
@@ -27,12 +9,6 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-import eu.opends.drivingTask.settings.SettingsLoader;
-import eu.opends.drivingTask.settings.SettingsLoader.Setting;
-import eu.opends.main.SimulationDefaults;
-import eu.opends.main.Simulator;
-import eu.opends.tools.Util;
-
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
@@ -42,20 +18,22 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JaxenXmlDataSource;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
-
-/**
- * 
- * @author Rafael Math
- */
-public class ReactionLogger 
-{
+import eu.opends.drivingTask.settings.SettingsLoader;
+import eu.opends.drivingTask.settings.SettingsLoader.Setting;
+import eu.opends.main.SimulationDefaults;
+import eu.opends.main.Simulator;
+import eu.opends.tools.Util;
+/*
+ * author: Jessica Larsson, Felicia Ringblom, 2015
+ * */
+public class AssessmentReport {
+	
 	private boolean isRunning = false;
 	private String dataFileName = "reactionData.xml";
 	private String reportFileName = "reactionReport.pdf";
 	private String outputFolder;
 	BufferedWriter bw;
-
-
+	
 	private void start()
 	{
 		try
@@ -140,8 +118,7 @@ public class ReactionLogger
 
 			//get report template for reaction measurement
 			//InputStream reportStream = new FileInputStream("assets/JasperReports/templates/reactionMeasurement.jasper");
-			//InputStream inputStream = new FileInputStream("assets/JasperReports/templates/reactionMeasurement.jrxml");
-			InputStream inputStream = new FileInputStream("assets/JasperReports/templates/assessmentResults.jrxml");
+			InputStream inputStream = new FileInputStream("assets/JasperReports/templates/reactionMeasurement.jrxml");
 			JasperDesign design = JRXmlLoader.load(inputStream);
 			JasperReport report = JasperCompileManager.compileReport(design);
 
@@ -187,7 +164,6 @@ public class ReactionLogger
 			parameters.put("groupGreen", groupGreen);
 		
 		String groupCyan = settingsLoader.getSetting(Setting.ReactionMeasurement_groupCyan, "    ");
-		System.out.println("groupCyan = " + groupCyan);
 		if(!groupCyan.isEmpty())
 			parameters.put("groupCyan", groupCyan);
 		
@@ -201,4 +177,5 @@ public class ReactionLogger
 
 		return parameters;
 	}
+
 }
