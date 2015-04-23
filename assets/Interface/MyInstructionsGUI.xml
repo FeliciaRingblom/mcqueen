@@ -31,7 +31,8 @@
       <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#eeeeee">
         <panel id="content" backgroundColor="#ffffff" width="75%" height="90%" childLayout="absolute-inside">  
           
-          <panel id="top" width="100%" height="25%">
+          <panel id="top" width="100%" height="25%" childLayout="vertical">
+            <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" text="Testa din simultanförmåga" wrap="true" color="#000f" textHAlign="center" textVAlign="center"/> 
           </panel>
           
           <panel id="center" childLayout="absolute-inside" backgroundImage="assets/Interface/images_instruction_screen/bg_img_start.png" width="100%" y="25%" height="50%">
@@ -67,7 +68,7 @@
                 <onHover name="border" border="2px" color="#00ff" timeType="infinite"/>
               </effect>
               <interact onClick="startIntroStimuli()" />
-              <!-- <interact onClick="gotoInstructions5()" />-->
+              <!--<interact onClick="gotoInstructions5()" />-->
             </image>
             <image id="start_main" filename="assets/Interface/images_instruction_screen/small_start_button3.png" width="25%" height="25%" align="center" y="65%" x="70%">
               <effect>
@@ -97,7 +98,7 @@
           </panel>
           
           <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">  
-            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
+            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="15%" height="35%" x="80%">
               <interact onClick="gotoInstructions2()" />
             </image>                 
           </panel>
@@ -120,11 +121,11 @@
           <panel id="center" childLayout="absolute-inside" width="100%" y="25%" height="50%">
             <text id="txt2" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Du ska nu få prova på att köra en sträcka." wrap="true" color="#000f" textHAlign="center" textVAlign="top"/> 
           </panel>
-          
+    
           <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">  
-            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
+            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="15%" height="35%" x="80%">
               <interact onClick="startIntroStraight()" />
-            </image>              
+            </image>                 
           </panel>
 
         </panel>
@@ -140,17 +141,15 @@
          
           <panel id="top" width="100%" height="25%" childLayout="vertical">
             <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Under sträckans gång kommer det komma upp bilder på varje sida av skärmen. Om Bilden visar en grön fyrkant trycker du på fyrkant. Om bilden visar grön cirkel trycker du på cirkel." wrap="true" color="#000f" textHAlign="center" textVAlign="top"/>  
-            <image id="img_green_square" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center"/>
           </panel>
           
           <panel id="center" childLayout="absolute-inside" width="100%" y="25%" height="50%">
           </panel>
-          
-          <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">  
 
-            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
-            <interact onClick="gotoInstructions4()" />
-          </image>            
+          <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">  
+            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="15%" height="35%" x="80%">
+              <interact onClick="gotoInstructions4()" />
+            </image>                 
           </panel>
 
         </panel>
@@ -166,19 +165,18 @@
          
           <panel id="top" width="100%" height="25%" childLayout="vertical">
             <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Om bilden visar en röd fyrkant eller en röd cirkel ska du inte trycka på någon knapp alls." wrap="true" color="#000f" textHAlign="center" textVAlign="top"/>  
-            <image id="img_red_square" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center"/>
           </panel>
           
           <panel id="center" childLayout="absolute-inside" width="100%" y="25%" height="50%">
             <text id="txt2" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Du ska nu få prova på att köra en sträcka." wrap="true" color="#000f" textHAlign="center" textVAlign="top"/> 
           </panel>
-          
-          <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">  
-            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
-              <interact onClick="startIntroStimuli()" />
-            </image>            
-          </panel>
 
+          <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">  
+            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="15%" height="35%" x="80%">
+              <interact onClick="startIntroStimuli()" />
+            </image>                 
+          </panel>
+          
         </panel>
       </panel>
     </layer>
@@ -191,7 +189,7 @@
         <panel id="content" backgroundColor="#ffffff" width="75%" height="90%" childLayout="absolute-inside">
          
           <panel id="top" width="100%" height="25%" childLayout="vertical">
-            <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Jag känner mig redo att starta testet." wrap="true" color="#000f" textHAlign="center" textVAlign="top"/>  
+            <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Jag känner mig redo att starta testet." wrap="true" color="#000f" textHAlign="center" textVAlign="center"/>  
 
             <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
               <interact onClick="startMainTest()" />
@@ -200,14 +198,15 @@
           
           <panel id="center" childLayout="absolute-inside" width="100%" y="25%" height="50%">
           </panel>
-          
-          <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">  
-            <text id="txt5" style="nifty-label" wrap="true" height="15%" width="75%" text="Jag vill gå igenom instruktionerna igen." color="#000f" textHAlign="center" textVAlign="top"/> 
-            <image id="img5" filename="assets/Interface/images_instruction_screen/repeat.png" width="10%" height="10%" align="center">
-               <interact onClick="startTest()" />
-            </image>          
-          </panel>
 
+          <panel id="bottom" width="100%" y="75%" height="25%" childLayout="vertical"> 
+            <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Jag vill gå igenom instruktionerna igen." wrap="true" color="#000f" textHAlign="center" textVAlign="center"/>  
+
+            <image id="img_next" filename="assets/Interface/images_instruction_screen/repeat.png" width="114px" height="54px" align="center">
+              <interact onClick="startMainTest()" />
+            </image>
+          </panel>
+          
         </panel>
       </panel>
     </layer>
