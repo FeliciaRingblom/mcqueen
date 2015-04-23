@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<nifty-styles xmlns="http://nifty-gui.sourceforge.net/nifty-styles-1.3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-styles-1.3.xsd http://nifty-gui.sourceforge.net/nifty-styles-1.3.xsd">
+
+	<style id="nifty-textfield#field" base="nifty-textfield">
+
+		<attributes childLayout="center" visibleToMouse="true" childClip="true" backgroundColor="#ffffff" padding="3px,2px" />
+		<effect>
+			<onActive name="border" color="#000000" post="true" inset="1px" />
+			
+			<!-- This should change the regular colour -->
+			<onFocus name="colorBar" color="#ffffff" post="true" inset="1px" />
+			<onFocus name="border" color="#00ff00" post="true" />
+
+			<!-- Rollover effect -->
+			<onHover name="changeMouseCursor" id="textFieldCursor" />
+
+			<!-- These two change the overlay when the field is disabled -->
+			<onEnabled name="renderQuad" startColor="#2228" endColor="#2220" post="true" length="150" />
+			<onDisabled name="renderQuad" startColor="#2220" endColor="#2228" post="true" length="150" />
+		</effect>
+	</style>
+</nifty-styles>
+
+

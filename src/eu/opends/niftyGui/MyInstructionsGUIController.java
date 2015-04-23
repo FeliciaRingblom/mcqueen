@@ -63,77 +63,71 @@ public class MyInstructionsGUIController implements ScreenController {
 		//System.out.println("clicked sound");
 		//screen.findElementByName("imgSound").getRenderer().setImage();
 	}
+
+	public void startTest(){
+		nifty.gotoScreen("instruction_1"); 
+	}
 	
-	public void startMainTest(){
-		//hide all elements on screen and start simulation of introductionStraight
-		screen.findElementByName("txt4").hide();
-		screen.findElementByName("panel3").getRenderer(PanelRenderer.class).setBackgroundColor(null);
-		screen.findElementByName("img4").hide();
-		screen.findElementByName("img5").hide();
-		screen.findElementByName("txt5").hide();
-		String driverName = "Lightning McQueen";
-		String drivingTask = "assets/DrivingTasks/Projects/Countryside/countryside.xml";
-		sim.simpleInitDrivingTask(drivingTask,driverName);
+	public void gotoInstructions2(){
+		nifty.gotoScreen("instruction_2"); 
+	}
+	
+	public void gotoInstructions3(){
+		nifty.gotoScreen("instruction_3"); 
+	}
 		
+	public void gotoInstructions4(){
+		nifty.gotoScreen("instruction_4"); 
 	}
 	
-	public void clickNext1Button(){
-		 nifty.gotoScreen("next0"); 
+	public void gotoInstructions5(){
+		nifty.gotoScreen("instruction_5"); 
+	}
 
+	public void gotoInstructions6(){
+		nifty.gotoScreen("instruction_6"); 
 	}
 	
-	public void clickNextButton(){
-		 nifty.gotoScreen("next1"); 
-
-	}
+	public void gotoEndScreen(){
+		nifty.gotoScreen("end"); 
+	}	
 	
-	public void startOver() {
-		 nifty.gotoScreen("start"); 
-	}
-	
-	public void clickNext2Button(){	
-		//hide all elements on screen and start simulation of introductionStraight
-		screen.findElementByName("txt1").hide();
-		screen.findElementByName("panel1").getRenderer(PanelRenderer.class).setBackgroundColor(null);
-		screen.findElementByName("img1").hide();
-		screen.findElementByName("img2").hide();
-		screen.findElementByName("txt2").hide();
+	public void startIntroStraight(){
+		//hide all elements on screen and start simulation of introductionStraight		
+		nifty.exit();
 		
 		String driverName = "Lightning McQueen";
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStraight/introStraight.xml";
 		sim.closeDrivingTaskSelectionGUI();
-		sim.simpleInitDrivingTask(drivingTask,driverName);
-		
+		sim.simpleInitDrivingTask(drivingTask,driverName);	
 	}
 	
-	public void clickNext3Button(){
-		screen.findElementByName("txt3").hide();
-		screen.findElementByName("panel2").getRenderer(PanelRenderer.class).setBackgroundColor(null);
-		screen.findElementByName("img3").hide();
-
-		String analyzerFile = "analyzerData/2015_04_16-09_39_07/carData.txt";
-		sim.calculateCarData(analyzerFile);
+	public void startIntroStimuli(){
+		//String analyzerFile = "analyzerData/2015_04_16-09_39_07/carData.txt";
+		//sim.calculateCarData(analyzerFile);
+		
+		//hide all elements on screen and start simulation of introductionStraight		
+		nifty.exit();	
 		
 		String driverName = "Lightning McQueen";
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStimuli/introStimuli.xml";
 		sim.closeDrivingTaskSelectionGUI();
 		sim.simpleInitDrivingTask(drivingTask,driverName);
 	}
+	
+	public void startMainTest(){
+		//hide all elements on screen and start simulation of introductionStraight
+		nifty.exit();
+		
+		String driverName = "Lightning McQueen";
+		String drivingTask = "assets/DrivingTasks/Projects/Countryside/countryside.xml";
+		sim.simpleInitDrivingTask(drivingTask,driverName);
+	}
+	
+	public void gotoResult(){
+		nifty.gotoScreen("result"); 
+	}
 
-	public void clickSkipStraight() {
-		nifty.gotoScreen("next2");
-		
-	}
-	
-	public void clickSkipStimuli() {
-		nifty.gotoScreen("next3");
-		
-	}
-	
-	public void clickSkipAssessment() {
-		nifty.gotoScreen("next4");
-		
-	}
 	
 	public void setScreen(int screenNumber) {
 //		Set<Thread> threadSet = Thread.getAllStackTraces().keySet();
@@ -143,7 +137,7 @@ public class MyInstructionsGUIController implements ScreenController {
 //			System.out.println("ThreadArray " + threadArray[i]);
 //		}
 		sim.removeAllDrivingTaskElements();
-		String next = "next" + screenNumber;
+		String next = "instruction_" + screenNumber;
 		nifty.gotoScreen(next);
 		//inputManager.setCursorVisible(true);
 	}

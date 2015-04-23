@@ -7,7 +7,7 @@
   <activities>
       <activity id="ReturnToInstructions" ref="">
     <action delay="6.0" id="returnToInstruction" repeat="1">
-        <parameter name="next" value="3"/>
+        <parameter name="next" value="5"/>
     </action>
   </activity>
     <activity id="activity03">
