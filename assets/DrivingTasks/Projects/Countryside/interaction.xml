@@ -24,8 +24,13 @@
   </activity>
   <activity id="End_pauseSimulation" ref="">
    <action id="pauseSimulation" delay="0" repeat="1">
-    <parameter name="duration" value="3" />
+    <parameter name="duration" value="0" />
   </action>
+  </activity>
+    <activity id="ReturnToInstructions" ref="">
+    <action delay="2.0" id="returnToInstruction" repeat="1">
+        <parameter name="next" value="6"/>
+    </action>
   </activity>
 
   <activity id="showStimuliGreenCircleR" ref="">
@@ -183,6 +188,7 @@
     <trigger id="Finish_Trigger" priority="1">
       <activities>
         <activity ref="End_pauseSimulation"/>
+        <activity ref="ReturnToInstructions" />
       </activities>
       <condition>collideWith:Finish_Trigger</condition>
     </trigger>
