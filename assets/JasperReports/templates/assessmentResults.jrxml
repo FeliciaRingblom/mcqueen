@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report9" language="groovy" pageWidth="595" pageHeight="842" orientation="Portrait" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
-	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
-	<parameter name="groupRed" class="java.lang.String">
-		<defaultValueExpression><![CDATA[" "]]></defaultValueExpression>
-	</parameter>
-	<parameter name="groupGreen" class="java.lang.String">
-		<defaultValueExpression><![CDATA["   "]]></defaultValueExpression>
-	</parameter>
-	<parameter name="groupYellow" class="java.lang.String">
-		<defaultValueExpression><![CDATA["  "]]></defaultValueExpression>
-	</parameter>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report9" pageWidth="595" pageHeight="842" orientation="Portrait" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<style name="Arial_Normal" isDefault="true" fontName="Arial" fontSize="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<style name="Arial_Bold" isDefault="false" fontName="Arial" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 	<parameter name="groupCyan" class="java.lang.String">
 		<defaultValueExpression><![CDATA["    "]]></defaultValueExpression>
 	</parameter>
@@ -54,88 +44,83 @@
 	<variable name="lowestReactionTime" class="java.lang.Integer" calculation="Lowest">
 		<variableExpression><![CDATA[(($F{reactionResult} < 0 && $F{reactionResult} > -2) ? -$F{reactionTime} : 0)]]></variableExpression>
 	</variable>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
 	<title>
-		<band splitType="Stretch"/>
+		<band height="100">
+			<staticText>
+				<reportElement x="0" y="40" width="375" height="50" style="Arial_Bold"/>
+				<textElement textAlignment="Left">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Test Resultat]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="98" width="555" height="1"/>
+				<graphicElement/>
+			</line>
+		</band>
 	</title>
 	<pageHeader>
-		<band splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band splitType="Stretch"/>
-	</columnHeader>
-	<detail>
-		<band splitType="Stretch"/>
-	</detail>
-	<columnFooter>
-		<band splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band splitType="Stretch"/>
-	</pageFooter>
-	<summary>
-		<band height="548" splitType="Stretch">
+		<band height="60">
 			<staticText>
-				<reportElement x="8" y="27" width="86" height="20"/>
-				<textElement textAlignment="Right">
-					<font isBold="true"/>
+				<reportElement x="0" y="0" width="200" height="14" style="Arial_Normal"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
 				</textElement>
-				<text><![CDATA[End:]]></text>
+				<text><![CDATA[Namn]]></text>
 			</staticText>
-			<textField pattern="HH.mm">
-				<reportElement x="105" y="7" width="100" height="20"/>
-				<textElement>
-					<font isBold="true"/>
+			<staticText>
+				<reportElement x="0" y="15" width="200" height="14" style="Arial_Normal"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format($V{startTime})]]></textFieldExpression>
+				<text><![CDATA[Personnummer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="200" height="14" style="Arial_Normal"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Datum]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="5" width="100" height="30" style="Arial_Bold"/>
+				<textElement textAlignment="Right">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[8.0]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="59" width="555" height="1"/>
+				<graphicElement/>
+			</line>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="200">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="10" width="515" height="30"/>
+				<textElement textAlignment="Center">
+        			<font size="22"/>
+    			</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{reactionGroup}]]></textFieldExpression>
 			</textField>
-			<xyBarChart>
-				<chart>
-					<reportElement mode="Transparent" x="0" y="67" width="802" height="457"/>
-					<box leftPadding="0"/>
-					<chartTitle/>
-					<chartSubtitle/>
-					<chartLegend position="Right"/>
-				</chart>
-				<xyDataset>
-					<xySeries>
-						<seriesExpression><![CDATA[$P{groupRed}]]></seriesExpression>
-						<xValueExpression><![CDATA[$F{experimentTime}/1000.0]]></xValueExpression>
-						<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupRed}) ?
-(
-    (($F{reactionResult} < 0) ?
-    (($F{reactionResult} < -1) ? $F{reactionTime} : -$F{reactionTime})
-    :
-    $F{reactionTime})
-):0]]></yValueExpression>
-						<labelExpression><![CDATA[""]]></labelExpression>
-					</xySeries>
-					<xySeries>
-						<seriesExpression><![CDATA[$P{groupGreen}]]></seriesExpression>
-						<xValueExpression><![CDATA[$F{experimentTime}/1000.0]]></xValueExpression>
-						<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupGreen}) ?
-(
-    (($F{reactionResult} < 0) ?
-    (($F{reactionResult} < -1) ? $F{reactionTime} : -$F{reactionTime})
-    :
-    $F{reactionTime})
-):0]]></yValueExpression>
-						<labelExpression><![CDATA[""]]></labelExpression>
-					</xySeries>
-					<xySeries>
-						<seriesExpression><![CDATA[$P{groupYellow}]]></seriesExpression>
-						<xValueExpression><![CDATA[$F{experimentTime}/1000.0]]></xValueExpression>
-						<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupYellow}) ?
-(
-    (($F{reactionResult} < 0) ?
-    (($F{reactionResult} < -1) ? $F{reactionTime} : -$F{reactionTime})
-    :
-    $F{reactionTime})
-):0]]></yValueExpression>
-						<labelExpression><![CDATA[""]]></labelExpression>
-					</xySeries>
+			<line>
+				<reportElement x="0" y="199" width="555" height="1"/>
+				<graphicElement/>
+			</line>
+		</band>
+
+<band height="548">
+	<xyBarChart>
+		<chart>
+			<reportElement mode="Transparent" x="0" y="67" width="555" height="300"/>
+			<box leftPadding="0"/>
+			<chartTitle/>
+			<chartSubtitle/>
+			<chartLegend position="Right"/>
+		</chart>
+		<xyDataset>
+	
 					<xySeries>
 						<seriesExpression><![CDATA[$P{groupCyan}]]></seriesExpression>
 						<xValueExpression><![CDATA[$F{experimentTime}/1000.0]]></xValueExpression>
@@ -163,11 +148,8 @@
 				</xyDataset>
 				<barPlot isShowLabels="true" isShowTickLabels="true">
 					<plot>
-						<seriesColor seriesOrder="0" color="#FF0000"/>
-						<seriesColor seriesOrder="1" color="#00FF00"/>
-						<seriesColor seriesOrder="2" color="#FFFF00"/>
-						<seriesColor seriesOrder="3" color="#00FFFF"/>
-						<seriesColor seriesOrder="4" color="#0000FF"/>
+						<seriesColor seriesOrder="0" color="#00FFFF"/>
+						<seriesColor seriesOrder="1" color="#0000FF"/>
 					</plot>
 					<itemLabel>
 						<font size="10" isUnderline="false"/>
@@ -181,20 +163,7 @@
 					<rangeAxisMaxValueExpression><![CDATA[$V{highestReactionTime}+1000]]></rangeAxisMaxValueExpression>
 				</barPlot>
 			</xyBarChart>
-			<staticText>
-				<reportElement x="8" y="7" width="86" height="20"/>
-				<textElement textAlignment="Right">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[Start:]]></text>
-			</staticText>
-			<textField pattern="HH.mm">
-				<reportElement x="105" y="27" width="100" height="20"/>
-				<textElement>
-					<font isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format($V{endTime})]]></textFieldExpression>
-			</textField>
-		</band>
-	</summary>
+	</band>
+</detail>
+
 </jasperReport>
