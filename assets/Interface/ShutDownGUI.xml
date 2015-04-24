@@ -7,14 +7,15 @@
   <!-- +++++++++++++++++++++++++++++++++++++++ -->
   <useStyles filename="nifty-default-styles.xml" />
   <useControls filename="nifty-default-controls.xml" />
-  <style id="console-red" base="button-font">
-    <attributes font="fonts/menu.fnt" color="#f00f"/>
+    <useStyles filename="Interface/Styles/style.xml" />
+  <style id="console-white" base="button-font">
+    <attributes font="fonts/menu.fnt" color="#ffff"/>
   </style>
   <style id="console-white" base="button-font">
     <attributes font="fonts/menu.fnt" color="#ffff"/>
   </style>
   <style id="console-font">
-    <attributes font="fonts/verdana-48-regular.fnt" color="#00ff"/>
+    <attributes font="assets/Interface/Fonts/Arial32px.fnt"  color="#00ff"/>
   </style>
 	
   <!-- +++++++++++++++++++++++++++++++++++++++ -->
@@ -24,11 +25,11 @@
 	<screen id="start" controller="eu.opends.niftyGui.ShutDownGUIController">
 	
 	<layer id="topLayer" childLayout="center" backgroundColor="#0008">
-		<panel childLayout="vertical" style="nifty-panel-red" width="350px" height="150px" valign="center" align="center">
+		<panel childLayout="vertical" style="nifty-panel-bright" width="350px" height="150px" valign="center" align="center">
 			<panel childLayout="center" height="25px"/>
 			<panel childLayout="vertical" height="40px" valign="center">
-				<control name="label" id="closeMessageText" text="Do you really want to quit?" 
-					width="100%" heigth="100%" color="#ffffffff" textHAlign="center"/>
+				<control name="label" id="closeMessageText" text="Vill du verkligen avsluta?" 
+					width="100%" heigth="100%" color="#000000" textHAlign="center"/>
 			</panel>
 			<panel childLayout="horizontal" height="80px" width="100%" align="center">
 				<panel childLayout="center" height="100%" width="50%" align="center">
