@@ -6,6 +6,8 @@ import com.jme3.input.InputManager;
 import com.jme3.niftygui.NiftyJmeDisplay;
 
 import de.lessvoid.nifty.Nifty;
+import de.lessvoid.nifty.controls.TextField;
+import de.lessvoid.nifty.elements.Element;
 import de.lessvoid.nifty.elements.render.PanelRenderer;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
@@ -36,14 +38,7 @@ public class MyInstructionsGUIController implements ScreenController {
 
 	@Override
 	public void bind(Nifty arg0, Screen arg1) {
-	     this.screen = arg1;
-//			if(sim.getSettings().getWidth() >= 2400)
-//			{
-//				SizeValue sv = new SizeValue("20%");
-//				nifty.getCurrentScreen().findElementByName("menuPanel").setConstraintWidth(sv);
-//			}
-	
-		
+	     this.screen = arg1;		
 	}
 	
 
@@ -65,38 +60,45 @@ public class MyInstructionsGUIController implements ScreenController {
 	}
 
 	public void startTest(){
+		String driverName = getTextFromTextfield("driversNameTextfield");
+		nifty.exit();
 		nifty.gotoScreen("instruction_1"); 
 	}
 	
 	public void gotoInstructions2(){
+		nifty.exit();
 		nifty.gotoScreen("instruction_2"); 
 	}
 	
 	public void gotoInstructions3(){
+		nifty.exit();
 		nifty.gotoScreen("instruction_3"); 
 	}
 		
 	public void gotoInstructions4(){
+		nifty.exit();
 		nifty.gotoScreen("instruction_4"); 
 	}
 	
 	public void gotoInstructions5(){
+		nifty.exit();
 		nifty.gotoScreen("instruction_5"); 
 	}
 
 	public void gotoInstructions6(){
+		nifty.exit();
 		nifty.gotoScreen("instruction_6"); 
 	}
 	
 	public void gotoEndScreen(){
+		nifty.exit();
 		nifty.gotoScreen("end"); 
 	}	
 	
 	public void startIntroStraight(){
-		//hide all elements on screen and start simulation of introductionStraight		
+		String driverName = getTextFromTextfield("driversNameTextfield");
 		nifty.exit();
 		
-		String driverName = "Lightning McQueen";
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStraight/introStraight.xml";
 		sim.closeDrivingTaskSelectionGUI();
 		sim.simpleInitDrivingTask(drivingTask,driverName);	
@@ -106,19 +108,16 @@ public class MyInstructionsGUIController implements ScreenController {
 		//String analyzerFile = "analyzerData/2015_04_16-09_39_07/carData.txt";
 		//sim.calculateCarData(analyzerFile);
 		
-		//hide all elements on screen and start simulation of introductionStraight		
+		String driverName = getTextFromTextfield("driversNameTextfield");
 		nifty.exit();	
 		
-		String driverName = "Lightning McQueen";
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStimuli/introStimuli.xml";
 		sim.closeDrivingTaskSelectionGUI();
 		sim.simpleInitDrivingTask(drivingTask,driverName);
 	}
 	
 	public void startMainTest(){
-		//hide all elements on screen and start simulation of introductionStraight
-		nifty.exit();
-		
+		nifty.exit();		
 		String driverName = "Lightning McQueen";
 		String drivingTask = "assets/DrivingTasks/Projects/Countryside/countryside.xml";
 		sim.simpleInitDrivingTask(drivingTask,driverName);
@@ -139,6 +138,16 @@ public class MyInstructionsGUIController implements ScreenController {
 		sim.removeAllDrivingTaskElements();
 		String next = "instruction_" + screenNumber;
 		nifty.gotoScreen(next);
-		//inputManager.setCursorVisible(true);
 	}
+	
+    public Element getElementByName(String element)
+    {
+    	return nifty.getCurrentScreen().findElementByName(element);
+    }
+    
+    
+    public String getTextFromTextfield(String element)
+    {
+    	return nifty.getCurrentScreen().findNiftyControl(element, TextField.class).getRealText();
+    }
 }
