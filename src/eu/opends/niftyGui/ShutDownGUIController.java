@@ -32,14 +32,12 @@ public class ShutDownGUIController implements ScreenController
 {
 	private SimulationBasics sim;
 	private ShutDownGUI shutDownGUI;
-	//private Nifty nifty;
 	
 	
 	public ShutDownGUIController(SimulationBasics sim, ShutDownGUI shutDownGUI) 
 	{
 		this.sim = sim;
 		this.shutDownGUI = shutDownGUI;
-		//this.nifty = shutDownGUI.getNifty();
 	}
 
 	
@@ -60,13 +58,13 @@ public class ShutDownGUIController implements ScreenController
 	@Override
 	public void onStartScreen() 
 	{
-		//nifty.getCurrentScreen().findControl("closeButton", ButtonControl.class).setFocusable(false);
+		
 	}
 	
 	
 	public void clickCancelButton()
 	{
-		shutDownGUI.toggleDialog();
+		sim.getShutDownGUI().toggleDialog();
 	}
 	
 	

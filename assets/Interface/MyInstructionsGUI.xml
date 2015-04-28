@@ -20,11 +20,6 @@
   </style>
   <resourceBundle id="intro" filename="assets/Interface/intro" />
 
-  <style id="customized-textfield#content">
-    <attributes backgroundColor="#ffffff" color="#ffffff" borderColor="#ffffff" childLayout="vertical"/>
-  </style>
-
-
   <!-- Start screen with -->
   <screen id="start" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
     <layer id="backLayer" childLayout="vertical" >
@@ -43,9 +38,11 @@
                 <text id="label_age" text="Ålder:" font="assets/Interface/Fonts/Arial32px.fnt" width="90%" height="15%" y="62%" wrap="true" color="#000f" borderColor="#bbb" textHAlign="right" textVAlign="center"/>
             </panel>
             <panel id="input_fields" width="20%" height="100%" childLayout="absolute-inside" x="20%">
-                <control id="input_name" name="textfield" width="90%" height="15%" text="" y="20%" color="#ffffff" borderColor="#bbb"/>
-                <control id="input_id_nr" name="textfield" width="90%" height="15%" text="" y="40%" color="#ff0000" borderColor="#bbb"/>
-                <control id="input_age" name="textfield" width="90%" height="15%" text="" y="60%" color="#ffffff" borderColor="#bbb"/>
+                <control id="input_name" name="textfield" width="90%" height="15%" y="20%" color="#ffffff" borderColor="#bbb"/>
+                <control id="input_id_nr" name="textfield" width="90%" height="15%" y="40%" color="#ff0000" borderColor="#bbb"/>
+                <control id="input_age" name="textfield" width="90%" height="15%" y="60%" color="#ffffff" borderColor="#bbb"/>
+                <control id="normDataCheck" name="checkbox" y="80%" x="75%"/>
+                <text id="label_normCheck" text="Spara till normdata" font="assets/Interface/Fonts/DigitalFinal.fnt" height="15%" y="81%" wrap="true" color="#000f" borderColor="#bbb" textHAlign="left" textVAlign="top"/>
             </panel>
           </panel>
           
