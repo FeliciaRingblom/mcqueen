@@ -12,6 +12,85 @@
         </environment>
 
         <driver>
+                <idealTrack>
+                        <point ref='IdealPoint.0001'/><point ref='IdealPoint.0002'/><point ref='IdealPoint.0003'/><point ref='IdealPoint.0004'/>
+                        <point ref='IdealPoint.0005'/><point ref='IdealPoint.0006'/><point ref='IdealPoint.0007'/><point ref='IdealPoint.0008'/>
+                        <point ref='IdealPoint.0009'/><point ref='IdealPoint.0010'/><point ref='IdealPoint.0011'/><point ref='IdealPoint.0012'/>
+                        <point ref='IdealPoint.0013'/><point ref='IdealPoint.0014'/><point ref='IdealPoint.0015'/><point ref='IdealPoint.0016'/>
+                        <point ref='IdealPoint.0017'/><point ref='IdealPoint.0018'/><point ref='IdealPoint.0019'/><point ref='IdealPoint.0020'/>
+                        <point ref='IdealPoint.0021'/><point ref='IdealPoint.0022'/><point ref='IdealPoint.0023'/><point ref='IdealPoint.0024'/>
+                        <point ref='IdealPoint.0025'/><point ref='IdealPoint.0026'/><point ref='IdealPoint.0027'/><point ref='IdealPoint.0028'/>
+                        <point ref='IdealPoint.0029'/><point ref='IdealPoint.0030'/><point ref='IdealPoint.0031'/><point ref='IdealPoint.0032'/>
+                        <point ref='IdealPoint.0033'/><point ref='IdealPoint.0034'/><point ref='IdealPoint.0035'/><point ref='IdealPoint.0036'/>
+                        <point ref='IdealPoint.0037'/><point ref='IdealPoint.0038'/><point ref='IdealPoint.0039'/><point ref='IdealPoint.0040'/>
+                        <point ref='IdealPoint.0041'/><point ref='IdealPoint.0042'/><point ref='IdealPoint.0043'/><point ref='IdealPoint.0044'/>
+                        <point ref='IdealPoint.0045'/><point ref='IdealPoint.0046'/><point ref='IdealPoint.0047'/><point ref='IdealPoint.0048'/>
+                        <point ref='IdealPoint.0049'/><point ref='IdealPoint.0050'/><point ref='IdealPoint.0051'/><point ref='IdealPoint.0052'/>
+                        <point ref='IdealPoint.0053'/><point ref='IdealPoint.0054'/><point ref='IdealPoint.0055'/><point ref='IdealPoint.0056'/>
+                        <point ref='IdealPoint.0057'/><point ref='IdealPoint.0058'/><point ref='IdealPoint.0059'/><point ref='IdealPoint.0060'/>
+                        <point ref='IdealPoint.0061'/><point ref='IdealPoint.0062'/><point ref='IdealPoint.0063'/><point ref='IdealPoint.0064'/>
+                        <point ref='IdealPoint.0065'/><point ref='IdealPoint.0066'/><point ref='IdealPoint.0067'/><point ref='IdealPoint.0068'/>
+                        <point ref='IdealPoint.0069'/><point ref='IdealPoint.0070'/><point ref='IdealPoint.0071'/><point ref='IdealPoint.0072'/>
+                        <point ref='IdealPoint.0073'/><point ref='IdealPoint.0074'/><point ref='IdealPoint.0075'/><point ref='IdealPoint.0076'/>
+                        <point ref='IdealPoint.0077'/><point ref='IdealPoint.0078'/><point ref='IdealPoint.0079'/><point ref='IdealPoint.0080'/>
+                        <point ref='IdealPoint.0081'/><point ref='IdealPoint.0082'/><point ref='IdealPoint.0083'/><point ref='IdealPoint.0084'/>
+                        <point ref='IdealPoint.0085'/><point ref='IdealPoint.0086'/><point ref='IdealPoint.0087'/><point ref='IdealPoint.0088'/>
+                        <point ref='IdealPoint.0089'/><point ref='IdealPoint.0090'/><point ref='IdealPoint.0091'/><point ref='IdealPoint.0092'/>
+                        <point ref='IdealPoint.0093'/><point ref='IdealPoint.0094'/><point ref='IdealPoint.0095'/><point ref='IdealPoint.0096'/>
+                        <point ref='IdealPoint.0097'/><point ref='IdealPoint.0098'/><point ref='IdealPoint.0099'/><point ref='IdealPoint.0100'/>
+                        <point ref='IdealPoint.0101'/><point ref='IdealPoint.0102'/><point ref='IdealPoint.0103'/><point ref='IdealPoint.0104'/>
+                        <point ref='IdealPoint.0105'/><point ref='IdealPoint.0106'/><point ref='IdealPoint.0107'/><point ref='IdealPoint.0108'/>
+                        <point ref='IdealPoint.0109'/><point ref='IdealPoint.0110'/><point ref='IdealPoint.0111'/><point ref='IdealPoint.0112'/>
+                        <point ref='IdealPoint.0113'/><point ref='IdealPoint.0114'/><point ref='IdealPoint.0115'/><point ref='IdealPoint.0116'/>
+                        <point ref='IdealPoint.0117'/><point ref='IdealPoint.0118'/><point ref='IdealPoint.0119'/><point ref='IdealPoint.0120'/>
+                        <point ref='IdealPoint.0121'/><point ref='IdealPoint.0122'/><point ref='IdealPoint.0123'/><point ref='IdealPoint.0124'/>
+                        <point ref='IdealPoint.0125'/><point ref='IdealPoint.0126'/><point ref='IdealPoint.0127'/><point ref='IdealPoint.0128'/>
+                        <point ref='IdealPoint.0129'/><point ref='IdealPoint.0130'/><point ref='IdealPoint.0131'/><point ref='IdealPoint.0132'/>
+                        <point ref='IdealPoint.0133'/><point ref='IdealPoint.0134'/><point ref='IdealPoint.0135'/><point ref='IdealPoint.0136'/>
+                        <point ref='IdealPoint.0137'/><point ref='IdealPoint.0138'/><point ref='IdealPoint.0139'/><point ref='IdealPoint.0140'/>
+                        <point ref='IdealPoint.0141'/><point ref='IdealPoint.0142'/><point ref='IdealPoint.0143'/><point ref='IdealPoint.0144'/>
+                        <point ref='IdealPoint.0145'/><point ref='IdealPoint.0146'/><point ref='IdealPoint.0147'/><point ref='IdealPoint.0148'/>
+                        <point ref='IdealPoint.0149'/><point ref='IdealPoint.0150'/><point ref='IdealPoint.0151'/><point ref='IdealPoint.0152'/>
+                        <point ref='IdealPoint.0153'/><point ref='IdealPoint.0154'/><point ref='IdealPoint.0155'/><point ref='IdealPoint.0156'/>
+                        <point ref='IdealPoint.0157'/><point ref='IdealPoint.0158'/><point ref='IdealPoint.0159'/><point ref='IdealPoint.0160'/>
+                        <point ref='IdealPoint.0161'/><point ref='IdealPoint.0162'/><point ref='IdealPoint.0163'/><point ref='IdealPoint.0164'/>
+                        <point ref='IdealPoint.0165'/><point ref='IdealPoint.0166'/><point ref='IdealPoint.0167'/><point ref='IdealPoint.0168'/>
+                        <point ref='IdealPoint.0169'/><point ref='IdealPoint.0170'/><point ref='IdealPoint.0171'/><point ref='IdealPoint.0172'/>
+                        <point ref='IdealPoint.0173'/><point ref='IdealPoint.0174'/><point ref='IdealPoint.0175'/><point ref='IdealPoint.0176'/>
+                        <point ref='IdealPoint.0177'/><point ref='IdealPoint.0178'/><point ref='IdealPoint.0179'/><point ref='IdealPoint.0180'/>
+                        <point ref='IdealPoint.0181'/><point ref='IdealPoint.0182'/><point ref='IdealPoint.0183'/><point ref='IdealPoint.0184'/>
+                        <point ref='IdealPoint.0185'/><point ref='IdealPoint.0186'/><point ref='IdealPoint.0187'/><point ref='IdealPoint.0188'/>
+                        <point ref='IdealPoint.0189'/><point ref='IdealPoint.0190'/><point ref='IdealPoint.0191'/><point ref='IdealPoint.0192'/>
+                        <point ref='IdealPoint.0193'/><point ref='IdealPoint.0194'/><point ref='IdealPoint.0195'/><point ref='IdealPoint.0196'/>
+                        <point ref='IdealPoint.0197'/><point ref='IdealPoint.0198'/><point ref='IdealPoint.0199'/><point ref='IdealPoint.0200'/>
+                        <point ref='IdealPoint.0201'/><point ref='IdealPoint.0202'/><point ref='IdealPoint.0203'/><point ref='IdealPoint.0204'/>
+                        <point ref='IdealPoint.0205'/><point ref='IdealPoint.0206'/><point ref='IdealPoint.0207'/><point ref='IdealPoint.0208'/>
+                        <point ref='IdealPoint.0209'/><point ref='IdealPoint.0210'/><point ref='IdealPoint.0211'/><point ref='IdealPoint.0212'/>
+                        <point ref='IdealPoint.0213'/><point ref='IdealPoint.0214'/><point ref='IdealPoint.0215'/><point ref='IdealPoint.0216'/>
+                        <point ref='IdealPoint.0217'/><point ref='IdealPoint.0218'/><point ref='IdealPoint.0219'/><point ref='IdealPoint.0220'/>
+                        <point ref='IdealPoint.0221'/><point ref='IdealPoint.0222'/><point ref='IdealPoint.0223'/><point ref='IdealPoint.0224'/>
+                        <point ref='IdealPoint.0225'/><point ref='IdealPoint.0226'/><point ref='IdealPoint.0227'/><point ref='IdealPoint.0228'/>
+                        <point ref='IdealPoint.0229'/><point ref='IdealPoint.0230'/><point ref='IdealPoint.0231'/><point ref='IdealPoint.0232'/>
+                        <point ref='IdealPoint.0233'/><point ref='IdealPoint.0234'/><point ref='IdealPoint.0235'/><point ref='IdealPoint.0236'/>
+                        <point ref='IdealPoint.0237'/><point ref='IdealPoint.0238'/><point ref='IdealPoint.0239'/><point ref='IdealPoint.0240'/>
+                        <point ref='IdealPoint.0241'/><point ref='IdealPoint.0242'/><point ref='IdealPoint.0243'/><point ref='IdealPoint.0244'/>
+                        <point ref='IdealPoint.0245'/><point ref='IdealPoint.0246'/><point ref='IdealPoint.0247'/><point ref='IdealPoint.0248'/>
+                        <point ref='IdealPoint.0249'/><point ref='IdealPoint.0250'/><point ref='IdealPoint.0251'/><point ref='IdealPoint.0252'/>
+                        <point ref='IdealPoint.0253'/><point ref='IdealPoint.0254'/><point ref='IdealPoint.0255'/><point ref='IdealPoint.0256'/>
+                        <point ref='IdealPoint.0257'/><point ref='IdealPoint.0258'/><point ref='IdealPoint.0259'/><point ref='IdealPoint.0260'/>
+                        <point ref='IdealPoint.0261'/><point ref='IdealPoint.0262'/><point ref='IdealPoint.0263'/><point ref='IdealPoint.0264'/>
+                        <point ref='IdealPoint.0265'/><point ref='IdealPoint.0266'/><point ref='IdealPoint.0267'/><point ref='IdealPoint.0268'/>
+                        <point ref='IdealPoint.0269'/><point ref='IdealPoint.0270'/><point ref='IdealPoint.0271'/><point ref='IdealPoint.0272'/>
+                        <point ref='IdealPoint.0273'/><point ref='IdealPoint.0274'/><point ref='IdealPoint.0275'/><point ref='IdealPoint.0276'/>
+                        <point ref='IdealPoint.0277'/><point ref='IdealPoint.0278'/><point ref='IdealPoint.0279'/><point ref='IdealPoint.0280'/>
+                        <point ref='IdealPoint.0281'/><point ref='IdealPoint.0282'/><point ref='IdealPoint.0283'/><point ref='IdealPoint.0284'/>
+                        <point ref='IdealPoint.0285'/><point ref='IdealPoint.0286'/><point ref='IdealPoint.0287'/><point ref='IdealPoint.0288'/>
+                        <point ref='IdealPoint.0289'/><point ref='IdealPoint.0290'/><point ref='IdealPoint.0291'/><point ref='IdealPoint.0292'/>
+                        <point ref='IdealPoint.0293'/><point ref='IdealPoint.0294'/><point ref='IdealPoint.0295'/><point ref='IdealPoint.0296'/>
+                        <point ref='IdealPoint.0297'/><point ref='IdealPoint.0298'/><point ref='IdealPoint.0299'/><point ref='IdealPoint.0300'/>
+                        <point ref='IdealPoint.0301'/><point ref='IdealPoint.0302'/><point ref='IdealPoint.0303'/><point ref='IdealPoint.0304'/>
+                        <point ref='IdealPoint.0305'/><point ref='IdealPoint.0306'/>
+                </idealTrack>
         	<car id="" ref="driverCar" profile="">
         		<tires profile="">
         			<type>winter</type>
