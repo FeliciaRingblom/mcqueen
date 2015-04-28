@@ -63,21 +63,14 @@ public class AssessmentReport {
 		if(isRunning)
 		{
 			try {
-				
-	            bw.write("\t<reactionMeasurement>\n");
-	            
+		
+	            bw.write("\t<reactionMeasurement>\n");          
 	            bw.write("\t\t<reactionGroup>" + reactionGroup + "</reactionGroup>\n");
-				
 				bw.write("\t\t<reactionResult>" + reactionResult + "</reactionResult>\n");
-				
 				bw.write("\t\t<reactionTime>" + reactionTime + "</reactionTime>\n");
-				
 				bw.write("\t\t<absoluteTime>" + absoluteTime + "</absoluteTime>\n");
-				
 				bw.write("\t\t<experimentTime>" + experimentTime + "</experimentTime>\n");
-				
-				bw.write("\t\t<comment>" + comment + "</comment>\n");
-
+				//bw.write("\t\t<comment>" + comment + "</comment>\n");
 	            bw.write("\t</reactionMeasurement>\n");
 	            
 			} catch (IOException e) {
@@ -151,17 +144,17 @@ public class AssessmentReport {
 		
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		
-		String groupRed = settingsLoader.getSetting(Setting.ReactionMeasurement_groupRed, " ");
-		if(!groupRed.isEmpty())
-			parameters.put("groupRed", groupRed);
-
-		String groupYellow = settingsLoader.getSetting(Setting.ReactionMeasurement_groupYellow, "  ");
-		if(!groupYellow.isEmpty())
-			parameters.put("groupYellow", groupYellow);
-
-		String groupGreen = settingsLoader.getSetting(Setting.ReactionMeasurement_groupGreen, "   ");
-		if(!groupGreen.isEmpty())
-			parameters.put("groupGreen", groupGreen);
+//		String groupRed = settingsLoader.getSetting(Setting.ReactionMeasurement_groupRed, " ");
+//		if(!groupRed.isEmpty())
+//			parameters.put("groupRed", groupRed);
+//
+//		String groupYellow = settingsLoader.getSetting(Setting.ReactionMeasurement_groupYellow, "  ");
+//		if(!groupYellow.isEmpty())
+//			parameters.put("groupYellow", groupYellow);
+//
+//		String groupGreen = settingsLoader.getSetting(Setting.ReactionMeasurement_groupGreen, "   ");
+//		if(!groupGreen.isEmpty())
+//			parameters.put("groupGreen", groupGreen);
 		
 		String groupCyan = settingsLoader.getSetting(Setting.ReactionMeasurement_groupCyan, "    ");
 		if(!groupCyan.isEmpty())
@@ -171,9 +164,9 @@ public class AssessmentReport {
 		if(!groupBlue.isEmpty())
 			parameters.put("groupBlue", groupBlue);
 		
-		String groupMagenta = settingsLoader.getSetting(Setting.ReactionMeasurement_groupMagenta, "      ");
-		if(!groupMagenta.isEmpty())
-			parameters.put("groupMagenta", groupMagenta);
+//		String groupMagenta = settingsLoader.getSetting(Setting.ReactionMeasurement_groupMagenta, "      ");
+//		if(!groupMagenta.isEmpty())
+//			parameters.put("groupMagenta", groupMagenta);
 
 		return parameters;
 	}

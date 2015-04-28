@@ -8,9 +8,22 @@
 	<parameter name="groupBlue" class="java.lang.String">
 		<defaultValueExpression><![CDATA["     "]]></defaultValueExpression>
 	</parameter>
-	<parameter name="groupMagenta" class="java.lang.String">
-		<defaultValueExpression><![CDATA["      "]]></defaultValueExpression>
-	</parameter>
+<!-- 	<queryString language="xPath">
+		<![CDATA[report/data]]>
+	</queryString>
+	<field name="assessmentId" class="java.lang.Integer">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="gender" class="java.lang.String">
+		<fieldDescription><![CDATA[gender]]></fieldDescription>
+	</field>
+	<field name="age" class="java.lang.Integer">
+		<fieldDescription><![CDATA[age]]></fieldDescription>
+	</field>
+	<field name="caseId" class="java.lang.Integer">
+		<fieldDescription><![CDATA[caseNumber]]></fieldDescription>
+	</field> -->
+	<!-- här -->
 	<queryString language="xPath">
 		<![CDATA[report/reactionMeasurement]]>
 	</queryString>
@@ -29,6 +42,9 @@
 	<field name="experimentTime" class="java.lang.Long">
 		<fieldDescription><![CDATA[experimentTime]]></fieldDescription>
 	</field>
+	<field name="reactionID" class="java.lang.Long">
+		<fieldDescription><![CDATA[reactionID]]></fieldDescription>
+	</field>
 	<variable name="startTime" class="java.lang.Long" calculation="Lowest">
 		<variableExpression><![CDATA[$F{absoluteTime}]]></variableExpression>
 	</variable>
@@ -37,6 +53,13 @@
 	</variable>
 	<variable name="highestReactionTime" class="java.lang.Integer" calculation="Highest">
 		<variableExpression><![CDATA[(($F{reactionResult} > 0 || $F{reactionResult} < -1) ? $F{reactionTime} : 1000)]]></variableExpression>
+	</variable>
+	
+	<variable name="missedReaction" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[($F{reactionResult} < 0 ? 1 : 0)]]></variableExpression>
+	</variable>
+	<variable name="amountReactions" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[($F{reactionResult})]]></variableExpression>
 	</variable>
 	<variable name="experimentDuration" class="java.lang.Long" calculation="Highest">
 		<variableExpression><![CDATA[$F{experimentTime}]]></variableExpression>
@@ -60,27 +83,27 @@
 		</band>
 	</title>
 	<pageHeader>
-		<band height="60">
+		<band height="100">
 			<staticText>
 				<reportElement x="0" y="0" width="200" height="14" style="Arial_Normal"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
-				<text><![CDATA[Namn]]></text>
+				<text><![CDATA[löpnummer]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="15" width="200" height="14" style="Arial_Normal"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
-				<text><![CDATA[Personnummer]]></text>
+				<text><![CDATA[ålder]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="30" width="200" height="14" style="Arial_Normal"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
-				<text><![CDATA[Datum]]></text>
+				<text><![CDATA[kön]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="210" y="5" width="100" height="30" style="Arial_Bold"/>
@@ -90,14 +113,87 @@
 				<text><![CDATA[8.0]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="59" width="555" height="1"/>
-				<graphicElement/>
+				<reportElement x="0" y="90" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1"/>
+				</graphicElement>
 			</line>
 		</band>
 	</pageHeader>
 	<detail>
-		<band height="200">
-			<textField isBlankWhenNull="true">
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="500">
+			<staticText>
+				<reportElement x="0" y="0" width="300" height="30" style="Arial_Bold"/>
+				<textElement textAlignment="Left">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Sammanfattning]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="25" width="300" height="30" style="Arial_Normal"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Antal Stimuli: ]]></text>
+			</staticText>
+ 			<textField isBlankWhenNull="true">
+				<reportElement x="75" y="25" width="515" height="30"/>
+				<textElement textAlignment="Left">
+        			<font size="12"/>
+    			</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{amountReactions}]]></textFieldExpression>
+			</textField> 
+			<staticText>
+				<reportElement x="0" y="38" width="300" height="30" style="Arial_Normal"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Missad: ]]></text>
+			</staticText>
+ 			<textField isBlankWhenNull="true">
+				<reportElement x="50" y="38" width="515" height="30"/>
+				<textElement textAlignment="Left">
+        			<font size="12"/>
+    			</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{missedReaction}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="200" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="210" width="300" height="30" style="Arial_Bold"/>
+				<textElement textAlignment="Left">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Del 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="240" width="300" height="30" style="Arial_Normal"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Reaktionsförmåga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="240" width="300" height="30" style="Arial_Normal"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Vinglighet]]></text>
+			</staticText>
+<!-- 			<textField isBlankWhenNull="true">
 				<reportElement x="0" y="10" width="515" height="30"/>
 				<textElement textAlignment="Center">
         			<font size="22"/>
@@ -107,63 +203,58 @@
 			<line>
 				<reportElement x="0" y="199" width="555" height="1"/>
 				<graphicElement/>
-			</line>
-		</band>
+			</line> -->
 
-<band height="548">
-	<xyBarChart>
-		<chart>
-			<reportElement mode="Transparent" x="0" y="67" width="555" height="300"/>
-			<box leftPadding="0"/>
-			<chartTitle/>
-			<chartSubtitle/>
-			<chartLegend position="Right"/>
-		</chart>
-		<xyDataset>
-	
-					<xySeries>
-						<seriesExpression><![CDATA[$P{groupCyan}]]></seriesExpression>
-						<xValueExpression><![CDATA[$F{experimentTime}/1000.0]]></xValueExpression>
-						<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupCyan}) ?
-(
-    (($F{reactionResult} < 0) ?
-    (($F{reactionResult} < -1) ? $F{reactionTime} : -$F{reactionTime})
-    :
-    $F{reactionTime})
-):0]]></yValueExpression>
-						<labelExpression><![CDATA[""]]></labelExpression>
-					</xySeries>
-					<xySeries>
-						<seriesExpression><![CDATA[$P{groupBlue}]]></seriesExpression>
-						<xValueExpression><![CDATA[$F{experimentTime}/1000.0]]></xValueExpression>
-						<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupBlue}) ?
-(
-    (($F{reactionResult} < 0) ?
-    (($F{reactionResult} < -1) ? $F{reactionTime} : -$F{reactionTime})
-    :
-    $F{reactionTime})
-):0]]></yValueExpression>
-						<labelExpression><![CDATA[""]]></labelExpression>
-					</xySeries>
-				</xyDataset>
-				<barPlot isShowLabels="true" isShowTickLabels="true">
-					<plot>
-						<seriesColor seriesOrder="0" color="#00FFFF"/>
-						<seriesColor seriesOrder="1" color="#0000FF"/>
-					</plot>
-					<itemLabel>
-						<font size="10" isUnderline="false"/>
-					</itemLabel>
-					<categoryAxisFormat>
-						<axisFormat labelColor="#000000" verticalTickLabels="false"/>
-					</categoryAxisFormat>
-					<domainAxisMinValueExpression><![CDATA[0]]></domainAxisMinValueExpression>
-					<domainAxisMaxValueExpression><![CDATA[($V{experimentDuration}+1000)/1000.0]]></domainAxisMaxValueExpression>
-					<rangeAxisMinValueExpression><![CDATA[$V{lowestReactionTime}-1000]]></rangeAxisMinValueExpression>
-					<rangeAxisMaxValueExpression><![CDATA[$V{highestReactionTime}+1000]]></rangeAxisMaxValueExpression>
-				</barPlot>
-			</xyBarChart>
+		<xyBarChart>
+			<chart isShowLegend="false">
+				<reportElement mode="Transparent" x="0" y="260" width="250" height="100"/>
+				<box leftPadding="0"/>
+				<chartTitle/>
+				<chartSubtitle/>
+
+				<!-- <chartLegend/> -->
+			</chart>
+			<xyDataset>
+				<xySeries>
+					<seriesExpression><![CDATA[$P{groupCyan}]]></seriesExpression>
+					<xValueExpression><![CDATA[$F{reactionID}]]></xValueExpression>		
+					<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupCyan}) ?
+						(
+						    (($F{reactionResult} < 0) ? -10000 : -$F{reactionTime})
+						):0]]>
+					</yValueExpression>
+					<labelExpression><![CDATA[""]]></labelExpression>
+				</xySeries>
+				<xySeries>
+					<seriesExpression><![CDATA[$P{groupBlue}]]></seriesExpression>	
+					<xValueExpression><![CDATA[$F{reactionID}]]></xValueExpression>	
+					<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupBlue}) ?
+						(
+						    (($F{reactionResult} < 0) ? 10000 : $F{reactionTime})	
+						):0]]>
+					</yValueExpression>
+					<labelExpression><![CDATA[""]]></labelExpression>
+				</xySeries>
+			</xyDataset>
+			<barPlot isShowLabels="false" isShowTickLabels="false" isShowTickMarks="false">
+				<plot orientation="Horizontal">
+					<seriesColor seriesOrder="0" color="#00FFFF"/>
+					<seriesColor seriesOrder="1" color="#0000FF"/>
+				</plot>
+				<itemLabel>
+					<font size="8" isUnderline="false"/>
+				</itemLabel>
+				<categoryAxisFormat>
+					<axisFormat labelColor="#FFFFFF" verticalTickLabels="false"/>
+				</categoryAxisFormat>
+
+				<domainAxisMinValueExpression><![CDATA[-0.5]]></domainAxisMinValueExpression>
+				<domainAxisMaxValueExpression><![CDATA[10.5]]></domainAxisMaxValueExpression>
+				<rangeAxisMinValueExpression><![CDATA[-5000]]></rangeAxisMinValueExpression>
+				<rangeAxisMaxValueExpression><![CDATA[5000]]></rangeAxisMaxValueExpression>
+			</barPlot>
+		</xyBarChart>
 	</band>
-</detail>
+</summary>
 
 </jasperReport>
