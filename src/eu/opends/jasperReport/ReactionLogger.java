@@ -135,9 +135,10 @@ public class ReactionLogger
 		try
 		{
 			// open XML data source
-			JRDataSource dataSource = new JaxenXmlDataSource(new File(outputFolder + "/" + dataFileName),
+//			JRDataSource dataSource = new JaxenXmlDataSource(new File(outputFolder + "/" + dataFileName),
+//					"report/reactionMeasurement");
+			JRDataSource dataSource = new JaxenXmlDataSource(new File("analyzerData/Analyzer_1fel/reactionData.xml"),
 					"report/reactionMeasurement");
-
 			//get report template for reaction measurement
 			//InputStream reportStream = new FileInputStream("assets/JasperReports/templates/reactionMeasurement.jasper");
 			//InputStream inputStream = new FileInputStream("assets/JasperReports/templates/reactionMeasurement.jrxml");
