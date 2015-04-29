@@ -54,6 +54,7 @@ public class ReactionLogger
 	private String reportFileName = "reactionReport.pdf";
 	private String outputFolder;
 	BufferedWriter bw;
+	private int count = 0;
 
 
 	private void start()
@@ -84,23 +85,19 @@ public class ReactionLogger
 		
 		if(isRunning)
 		{
+			
 			try {
 				
 	            bw.write("\t<reactionMeasurement>\n");
-	            
-	            bw.write("\t\t<reactionGroup>" + reactionGroup + "</reactionGroup>\n");
-				
-				bw.write("\t\t<reactionResult>" + reactionResult + "</reactionResult>\n");
-				
-				bw.write("\t\t<reactionTime>" + reactionTime + "</reactionTime>\n");
-				
-				bw.write("\t\t<absoluteTime>" + absoluteTime + "</absoluteTime>\n");
-				
-				bw.write("\t\t<experimentTime>" + experimentTime + "</experimentTime>\n");
-				
+	            bw.write("\t\t<reactionID>" + count + "</reactionID>\n");
+	            bw.write("\t\t<reactionGroup>" + reactionGroup + "</reactionGroup>\n");	
+				bw.write("\t\t<reactionResult>" + reactionResult + "</reactionResult>\n");				
+				bw.write("\t\t<reactionTime>" + reactionTime + "</reactionTime>\n");				
+				bw.write("\t\t<absoluteTime>" + absoluteTime + "</absoluteTime>\n");				
+				bw.write("\t\t<experimentTime>" + experimentTime + "</experimentTime>\n");				
 				bw.write("\t\t<comment>" + comment + "</comment>\n");
-
 	            bw.write("\t</reactionMeasurement>\n");
+	            count = count+1;
 	            
 			} catch (IOException e) {
 
