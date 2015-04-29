@@ -2,10 +2,10 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report9" pageWidth="595" pageHeight="842" orientation="Portrait" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<style name="Arial_Normal" isDefault="true" fontName="Arial" fontSize="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 	<style name="Arial_Bold" isDefault="false" fontName="Arial" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
-	<parameter name="groupCyan" class="java.lang.String">
+	<parameter name="groupLeft" class="java.lang.String">
 		<defaultValueExpression><![CDATA["    "]]></defaultValueExpression>
 	</parameter>
-	<parameter name="groupBlue" class="java.lang.String">
+	<parameter name="groupRight" class="java.lang.String">
 		<defaultValueExpression><![CDATA["     "]]></defaultValueExpression>
 	</parameter>
 <!-- 	<queryString language="xPath">
@@ -216,9 +216,9 @@
 			</chart>
 			<xyDataset>
 				<xySeries>
-					<seriesExpression><![CDATA[$P{groupCyan}]]></seriesExpression>
+					<seriesExpression><![CDATA[$P{groupLeft}]]></seriesExpression>
 					<xValueExpression><![CDATA[$F{reactionID}]]></xValueExpression>		
-					<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupCyan}) ?
+					<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupLeft}) ?
 						(
 						    (($F{reactionResult} < 0) ? -10000 : -$F{reactionTime})
 						):0]]>
@@ -226,9 +226,9 @@
 					<labelExpression><![CDATA[""]]></labelExpression>
 				</xySeries>
 				<xySeries>
-					<seriesExpression><![CDATA[$P{groupBlue}]]></seriesExpression>	
+					<seriesExpression><![CDATA[$P{groupRight}]]></seriesExpression>	
 					<xValueExpression><![CDATA[$F{reactionID}]]></xValueExpression>	
-					<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupBlue}) ?
+					<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupRight}) ?
 						(
 						    (($F{reactionResult} < 0) ? 10000 : $F{reactionTime})	
 						):0]]>
@@ -238,8 +238,8 @@
 			</xyDataset>
 			<barPlot isShowLabels="false" isShowTickLabels="false" isShowTickMarks="false">
 				<plot orientation="Horizontal">
-					<seriesColor seriesOrder="0" color="#00FFFF"/>
-					<seriesColor seriesOrder="1" color="#0000FF"/>
+					<seriesColor seriesOrder="0" color="#1B7BA7"/>
+					<seriesColor seriesOrder="1" color="#2F4D5A"/>
 				</plot>
 				<itemLabel>
 					<font size="8" isUnderline="false"/>

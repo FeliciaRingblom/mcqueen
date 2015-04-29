@@ -14,12 +14,8 @@
 	
 
 	<reactionMeasurement>
-		<groupRed>incongruent</groupRed>
-		<groupGreen>congruent</groupGreen>
-		<groupYellow>control_neutral</groupYellow>
-		<groupCyan>stimuli_left</groupCyan>
-		<groupBlue>stimuli_right</groupBlue>
-		<groupMagenta></groupMagenta>
+		<groupLeft>stimuli_left</groupLeft>
+		<groupRight>stimuli_right</groupRight>
 	</reactionMeasurement>
 	
 	<controllers>

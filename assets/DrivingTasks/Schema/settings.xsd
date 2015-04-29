@@ -224,12 +224,8 @@ elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns
 
     <xs:complexType name="reactionMeasurement">
         <xs:all>
-    		<xs:element name="groupRed" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
-    		<xs:element name="groupGreen" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
-    		<xs:element name="groupYellow" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
-    		<xs:element name="groupCyan" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
-    		<xs:element name="groupBlue" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
-    		<xs:element name="groupMagenta" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+    		<xs:element name="groupLeft" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+    		<xs:element name="groupRight" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
     	</xs:all>
     </xs:complexType>
 
@@ -275,7 +271,8 @@ elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns
         <xs:all>
 
 
-            
+            
+
             <xs:element name="left" type="xs:int" maxOccurs="1" minOccurs="0">
                 </xs:element>
             <xs:element name="right" type="xs:int" maxOccurs="1" minOccurs="0">

@@ -172,30 +172,13 @@ public class ReactionLogger
 		
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		
-		String groupRed = settingsLoader.getSetting(Setting.ReactionMeasurement_groupRed, " ");
-		if(!groupRed.isEmpty())
-			parameters.put("groupRed", groupRed);
-
-		String groupYellow = settingsLoader.getSetting(Setting.ReactionMeasurement_groupYellow, "  ");
-		if(!groupYellow.isEmpty())
-			parameters.put("groupYellow", groupYellow);
-
-		String groupGreen = settingsLoader.getSetting(Setting.ReactionMeasurement_groupGreen, "   ");
-		if(!groupGreen.isEmpty())
-			parameters.put("groupGreen", groupGreen);
+		String groupLeft = settingsLoader.getSetting(Setting.ReactionMeasurement_groupLeft, "    ");
+		if(!groupLeft.isEmpty())
+			parameters.put("groupLeft", groupLeft);
 		
-		String groupCyan = settingsLoader.getSetting(Setting.ReactionMeasurement_groupCyan, "    ");
-		System.out.println("groupCyan = " + groupCyan);
-		if(!groupCyan.isEmpty())
-			parameters.put("groupCyan", groupCyan);
-		
-		String groupBlue = settingsLoader.getSetting(Setting.ReactionMeasurement_groupBlue, "     ");
-		if(!groupBlue.isEmpty())
-			parameters.put("groupBlue", groupBlue);
-		
-		String groupMagenta = settingsLoader.getSetting(Setting.ReactionMeasurement_groupMagenta, "      ");
-		if(!groupMagenta.isEmpty())
-			parameters.put("groupMagenta", groupMagenta);
+		String groupRight = settingsLoader.getSetting(Setting.ReactionMeasurement_groupRight, "     ");
+		if(!groupRight.isEmpty())
+			parameters.put("groupRight", groupRight);
 
 		return parameters;
 	}
