@@ -58,7 +58,14 @@
 	<variable name="highestReactionTime" class="java.lang.Integer" calculation="Highest">
 		<variableExpression><![CDATA[(($F{reactionResult} > 0 || $F{reactionResult} < -1) ? $F{reactionTime} : 1000)]]></variableExpression>
 	</variable>
-	
+	<variable name="averageReactionTimeLeft" class="java.lang.Integer" calculation="Average">
+		<variableExpression><![CDATA[$F{reactionGroup}.equals($P{groupLeft}) && ($F{reactionResult} > 0)
+						     ? $F{reactionTime}:null]]></variableExpression>
+	</variable>
+	<variable name="averageReactionTimeRight" class="java.lang.Integer" calculation="Average">
+		<variableExpression><![CDATA[$F{reactionGroup}.equals($P{groupRight}) && ($F{reactionResult} > 0)
+						     ? $F{reactionTime}:null]]></variableExpression>
+	</variable>
 	<variable name="missedReaction" class="java.lang.Integer" calculation="Sum">
 		<variableExpression><![CDATA[($F{reactionResult} < 0 ? 1 : 0)]]></variableExpression>
 	</variable>
@@ -170,6 +177,48 @@
     			</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$V{missedReaction}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="0" y="51" width="300" height="30" style="Arial_Normal"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Reaktionstid vänster: ]]></text>
+			</staticText>
+ 			<textField isBlankWhenNull="true">
+				<reportElement x="130" y="51" width="515" height="30"/>
+				<textElement textAlignment="Left">
+        			<font size="12"/>
+    			</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeLeft}]]></textFieldExpression>
+			</textField>	
+			<staticText>
+				<reportElement x="160" y="51" width="300" height="30" style="Arial_Normal"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ms]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="64" width="300" height="30" style="Arial_Normal"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Reaktionstid höger: ]]></text>
+			</staticText>
+ 			<textField isBlankWhenNull="true">
+				<reportElement x="130" y="64" width="515" height="30"/>
+				<textElement textAlignment="Left">
+        			<font size="12"/>
+    			</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeRight}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="160" y="64" width="300" height="30" style="Arial_Normal"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ms]]></text>
+			</staticText>
 			<line>
 				<reportElement x="0" y="200" width="555" height="1"/>
 				<graphicElement>
@@ -197,21 +246,9 @@
 				</textElement>
 				<text><![CDATA[Vinglighet]]></text>
 			</staticText>
-<!-- 			<textField isBlankWhenNull="true">
-				<reportElement x="0" y="10" width="515" height="30"/>
-				<textElement textAlignment="Center">
-        			<font size="22"/>
-    			</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{reactionGroup}]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement x="0" y="199" width="555" height="1"/>
-				<graphicElement/>
-			</line> -->
-
 		<xyBarChart>
 			<chart isShowLegend="false">
-				<reportElement mode="Transparent" x="0" y="260" width="250" height="100"/>
+				<reportElement mode="Transparent" x="0" y="300" width="250" height="100"/>
 				<box leftPadding="0"/>
 				<chartTitle/>
 				<chartSubtitle/>
@@ -259,11 +296,11 @@
 					<seriesColor seriesOrder="2" color="#2F4D5A"/> <!-- mörk -->
 					
 				</plot>
-				<itemLabel>
+		<!-- 		<itemLabel>
 					<font size="8" isUnderline="false"/>
-				</itemLabel>
-				<categoryAxisFormat>
-					<axisFormat labelColor="#FFFFFF" verticalTickLabels="false"/>
+				</itemLabel> -->
+				<categoryAxisFormat><!-- fungerar ej? -->
+					<axisFormat verticalTickLabels="false" tickLabelColor="#FFFFFF" axisLineColor="#FFFFFF"/>
 				</categoryAxisFormat>
 
 				<domainAxisMinValueExpression><![CDATA[-0.5]]></domainAxisMinValueExpression>
@@ -272,6 +309,27 @@
 				<rangeAxisMaxValueExpression><![CDATA[3000]]></rangeAxisMaxValueExpression>
 			</barPlot>
 		</xyBarChart>
+		<staticText>
+			<reportElement x="0" y="280" width="125" height="30" style="Arial_Normal" forecolor="#2F4D5A"/>
+			<textElement textAlignment="Right">
+				<font size="11"/>
+			</textElement>
+				<text><![CDATA[Vänster stimuli]]></text>
+		</staticText>
+		<staticText>
+			<reportElement x="145" y="280" width="300" height="30" style="Arial_Normal" forecolor="#1B7BA7"/>
+			<textElement textAlignment="Left">
+				<font size="11"/>
+			</textElement>
+				<text><![CDATA[Höger stimuli]]></text>
+		</staticText>	
+
+		<line>
+			<reportElement x="135" y="290" width="0" height="95" forecolor="#42485A"/>
+			<graphicElement>
+				<pen lineWidth="2"/>
+			</graphicElement>
+		</line>
 	</band>
 </summary>
 
