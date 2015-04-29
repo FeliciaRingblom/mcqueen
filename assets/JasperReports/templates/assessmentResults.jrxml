@@ -8,6 +8,10 @@
 	<parameter name="groupRight" class="java.lang.String">
 		<defaultValueExpression><![CDATA["     "]]></defaultValueExpression>
 	</parameter>
+		<parameter name="groupMissed" class="java.lang.String">
+		<defaultValueExpression><![CDATA["    "]]></defaultValueExpression>
+	</parameter>
+
 <!-- 	<queryString language="xPath">
 		<![CDATA[report/data]]>
 	</queryString>
@@ -220,7 +224,7 @@
 					<xValueExpression><![CDATA[$F{reactionID}]]></xValueExpression>		
 					<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupLeft}) ?
 						(
-						    (($F{reactionResult} < 0) ? -10000 : -$F{reactionTime})
+						    (($F{reactionResult} < 0) ? 0 : -$F{reactionTime})
 						):0]]>
 					</yValueExpression>
 					<labelExpression><![CDATA[""]]></labelExpression>
@@ -230,16 +234,30 @@
 					<xValueExpression><![CDATA[$F{reactionID}]]></xValueExpression>	
 					<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupRight}) ?
 						(
-						    (($F{reactionResult} < 0) ? 10000 : $F{reactionTime})	
+						    (($F{reactionResult} < 0) ? 0 : $F{reactionTime})	
 						):0]]>
 					</yValueExpression>
 					<labelExpression><![CDATA[""]]></labelExpression>
 				</xySeries>
+				<xySeries>
+					<seriesExpression><![CDATA[$P{groupMissed}]]></seriesExpression>	
+					<xValueExpression><![CDATA[$F{reactionID}]]></xValueExpression>	
+					<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupRight}) ?
+						(
+						    (($F{reactionResult} < 0) ? 10000 : 0)	
+						):(($F{reactionResult} < 0) ? -10000 : 0)]]>
+					</yValueExpression>
+					<labelExpression><![CDATA[""]]></labelExpression>
+				</xySeries>
+			
+
 			</xyDataset>
 			<barPlot isShowLabels="false" isShowTickLabels="false" isShowTickMarks="false">
 				<plot orientation="Horizontal">
-					<seriesColor seriesOrder="0" color="#1B7BA7"/>
-					<seriesColor seriesOrder="1" color="#2F4D5A"/>
+					<seriesColor seriesOrder="0" color="#DA3C08"/> <!--röd-->
+					<seriesColor seriesOrder="1" color="#1B7BA7"/> <!--ljus-->
+					<seriesColor seriesOrder="2" color="#2F4D5A"/> <!-- mörk -->
+					
 				</plot>
 				<itemLabel>
 					<font size="8" isUnderline="false"/>
@@ -250,8 +268,8 @@
 
 				<domainAxisMinValueExpression><![CDATA[-0.5]]></domainAxisMinValueExpression>
 				<domainAxisMaxValueExpression><![CDATA[10.5]]></domainAxisMaxValueExpression>
-				<rangeAxisMinValueExpression><![CDATA[-5000]]></rangeAxisMinValueExpression>
-				<rangeAxisMaxValueExpression><![CDATA[5000]]></rangeAxisMaxValueExpression>
+				<rangeAxisMinValueExpression><![CDATA[-3000]]></rangeAxisMinValueExpression>
+				<rangeAxisMaxValueExpression><![CDATA[3000]]></rangeAxisMaxValueExpression>
 			</barPlot>
 		</xyBarChart>
 	</band>
