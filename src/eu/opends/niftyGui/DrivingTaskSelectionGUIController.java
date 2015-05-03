@@ -99,7 +99,7 @@ public class DrivingTaskSelectionGUIController implements ScreenController
 		System.out.println("i onEndScreen innan sim.simpleInitDrivingTask");
 		String driverName = getTextFromTextfield("driversNameTextfield");
 		//if(driverName.isEmpty()) driverName = SimulationDefaults.driverName; // this is already done in "simpleInitDrivingTask"
-		sim.simpleInitDrivingTask(getTextFromTextfield("drivingTaskTextfield"),driverName);
+		//sim.simpleInitDrivingTask(getTextFromTextfield("drivingTaskTextfield"),driverName);
 	}
 	
 	

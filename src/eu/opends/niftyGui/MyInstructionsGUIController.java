@@ -6,6 +6,8 @@ import com.jme3.input.InputManager;
 import com.jme3.niftygui.NiftyJmeDisplay;
 
 import de.lessvoid.nifty.Nifty;
+import de.lessvoid.nifty.NiftyEventSubscriber;
+import de.lessvoid.nifty.controls.RadioButtonGroupStateChangedEvent;
 import de.lessvoid.nifty.controls.TextField;
 import de.lessvoid.nifty.elements.Element;
 import de.lessvoid.nifty.elements.render.PanelRenderer;
@@ -24,6 +26,7 @@ public class MyInstructionsGUIController implements ScreenController {
 	private Simulator sim;
 	private Screen screen;
 	private InputManager inputManager;
+	private String speed = "low";
 	
 	public MyInstructionsGUIController(Simulator sim, Nifty nifty)
 	{
@@ -101,31 +104,38 @@ public class MyInstructionsGUIController implements ScreenController {
 		
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStraight/introStraight.xml";
 		sim.closeDrivingTaskSelectionGUI();
-		sim.simpleInitDrivingTask(drivingTask,driverName);	
+		sim.simpleInitDrivingTask(drivingTask,driverName, speed);	
 	}
 	
 	public void startIntroStimuli(){
 		//String analyzerFile = "analyzerData/2015_04_16-09_39_07/carData.txt";
 		//sim.calculateCarData(analyzerFile);
 		
-		String driverName = getTextFromTextfield("driversNameTextfield");
+		String driverName = getTextFromTextfield("input_id");
+		System.out.println("from text: " + driverName);
 		nifty.exit();	
 		
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStimuli/introStimuli.xml";
 		sim.closeDrivingTaskSelectionGUI();
-		sim.simpleInitDrivingTask(drivingTask,driverName);
+		sim.simpleInitDrivingTask(drivingTask,driverName, speed);
 	}
 	
 	public void startMainTest(){
 		nifty.exit();		
-		String driverName = "Lightning McQueen";
+		String input_id = getTextFromTextfield("input_id");
 		String drivingTask = "assets/DrivingTasks/Projects/Countryside/countryside.xml";
-		sim.simpleInitDrivingTask(drivingTask,driverName);
+		sim.simpleInitDrivingTask(drivingTask,input_id, speed);
 	}
 	
 	public void gotoResult(){
 		nifty.gotoScreen("result"); 
 	}
+	
+	  @NiftyEventSubscriber(id="RadioGroup-speed")
+	  public void onRadioGroupSpeedChanged(final String id, final RadioButtonGroupStateChangedEvent event) {
+	    speed = event.getSelectedId();
+		// System.out.println("RadioButton [" + event.getSelectedId() + "] is now selected. The old selection was [" + event.getPreviousSelectedId() + "]");
+	  }
 
 	
 	public void setScreen(int screenNumber) {

@@ -33,17 +33,47 @@
           <panel id="center" childLayout="absolute-inside" backgroundImage="assets/Interface/images_instruction_screen/bg_img_start.png" width="100%" y="25%" height="50%">
             <image id="start_test_img_btn" filename="assets/Interface/images_instruction_screen/trans_box.png" width="45%" height="100%"/>
             <panel id="input_labels" width="20%" height="100%" childLayout="absolute-inside" x="0%">
-                <text id="label_name" text="Namn:" font="assets/Interface/Fonts/Arial32px.fnt" width="90%" height="15%" y="22%" wrap="true" color="#000f" borderColor="#bbb" textHAlign="right" textVAlign="center"/>
-                <text id="label_id_nr" text="Personnr:" font="assets/Interface/Fonts/Arial32px.fnt" width="90%" height="15%" y="42%" wrap="true" color="#000f" borderColor="#bbb" textHAlign="right" textVAlign="center"/>
+                <text id="label_id_nr" text="Löpnr:" font="assets/Interface/Fonts/Arial32px.fnt" width="90%" height="15%" y="22%" wrap="true" color="#000f" borderColor="#bbb" textHAlign="right" textVAlign="center"/>
+                <text id="label_diagnosis_nr" text="Diagnosnr:" font="assets/Interface/Fonts/Arial32px.fnt" width="90%" height="15%" y="42%" wrap="true" color="#000f" borderColor="#bbb" textHAlign="right" textVAlign="center"/>
                 <text id="label_age" text="Ålder:" font="assets/Interface/Fonts/Arial32px.fnt" width="90%" height="15%" y="62%" wrap="true" color="#000f" borderColor="#bbb" textHAlign="right" textVAlign="center"/>
             </panel>
             <panel id="input_fields" width="20%" height="100%" childLayout="absolute-inside" x="20%">
-                <control id="input_name" name="textfield" width="90%" height="15%" y="20%" color="#ffffff" borderColor="#bbb"/>
-                <control id="input_id_nr" name="textfield" width="90%" height="15%" y="40%" color="#ff0000" borderColor="#bbb"/>
+                <control id="input_id" name="textfield" width="90%" height="15%" y="20%" color="#ffffff" borderColor="#bbb"/>
+                <control id="input_diagnosis_nr" name="textfield" width="90%" height="15%" y="40%" color="#ff0000" borderColor="#bbb"/>
                 <control id="input_age" name="textfield" width="90%" height="15%" y="60%" color="#ffffff" borderColor="#bbb"/>
-                <control id="normDataCheck" name="checkbox" y="80%" x="75%"/>
-                <text id="label_normCheck" text="Spara till normdata" font="assets/Interface/Fonts/DigitalFinal.fnt" height="15%" y="81%" wrap="true" color="#000f" borderColor="#bbb" textHAlign="left" textVAlign="top"/>
-            </panel>
+            </panel>            
+                <!-- <control id="normDataCheck" name="checkbox" y="80%" x="75%"/>
+                <text id="label_normCheck" text="Spara till normdata" font="assets/Interface/Fonts/DigitalFinal.fnt" height="15%" y="81%" wrap="true" color="#000f" borderColor="#bbb" textHAlign="left" textVAlign="top"/> -->
+            
+            <control id="RadioGroup-gender" name="radioButtonGroup"/>          
+              <panel width="40%" childLayout="horizontal" x="40%">
+                <panel childLayout="horizontal">
+                  <control name="label" text="man" with="60px" color="#000f"/>
+                  <control name="radioButton" id="option-male" group="RadioGroup-gender" />
+                </panel>
+                <panel childLayout="horizontal">
+                  <control name="label" text="kvinna" with="60px" color="#000f"/>
+                  <control name="radioButton" id="option-female" group="RadioGroup-gender" />
+                </panel>
+              </panel>          
+              <control id="RadioGroup-speed" name="radioButtonGroup"/>          
+              <panel width="40%" childLayout="horizontal" x="90%">
+                <panel childLayout="horizontal" x="0%">
+                  <control name="label" text="40km/h" with="60px" color="#000f"/>
+                  <control name="radioButton" id="low" group="RadioGroup-speed" />
+                </panel>
+                <panel childLayout="horizontal" x="40%">
+                  <control name="label" text="50km/h" with="60px" color="#000f"/>
+                  <control name="radioButton" id="middle" group="RadioGroup-speed" />
+                </panel>    
+              <panel childLayout="horizontal" y="90%">
+                <panel childLayout="horizontal" x="0%">
+                  <control name="label" text="60km/h" with="60px" color="#000f"/>
+                  <control name="radioButton" id="high" group="RadioGroup-speed" />
+                </panel> 
+                </panel>        
+          </panel>
+
           </panel>
           
           <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">                   

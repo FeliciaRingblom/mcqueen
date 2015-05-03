@@ -38,7 +38,7 @@ public class SteeringCar extends Car
     private TrafficObjectLocator trafficObjectLocator;
     
     
-	public SteeringCar(Simulator sim) 
+	public SteeringCar(Simulator sim, String speed) 
 	{		
 		this.sim = sim;
 		
@@ -60,7 +60,16 @@ public class SteeringCar extends Car
 		
 		minSpeed = scenarioLoader.getCarProperty(CarProperty.engine_minSpeed, SimulationDefaults.engine_minSpeed);
 		//maxSpeed = scenarioLoader.getCarProperty(CarProperty.engine_maxSpeed, SimulationDefaults.engine_maxSpeed);
-		maxSpeed = 50;	
+		System.out.println("string Speed = " + speed);
+		if(speed.equals("low"))
+			maxSpeed = 40;	
+			
+		else if(speed.equals("middle"))
+			maxSpeed = 50;
+	
+		else 
+			maxSpeed = 60;
+		
 		decelerationBrake = scenarioLoader.getCarProperty(CarProperty.brake_decelerationBrake, 
 				SimulationDefaults.brake_decelerationBrake);
 		maxBrakeForce = 0.004375f * decelerationBrake * mass;

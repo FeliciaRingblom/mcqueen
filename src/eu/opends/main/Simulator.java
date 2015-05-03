@@ -345,7 +345,7 @@ public class Simulator extends SimulationBasics
     	 	
     }
 	
-    public void simpleInitDrivingTask(String drivingTaskFileName, String driverName)
+    public void simpleInitDrivingTask(String drivingTaskFileName, String driverName, String speed)
     {
     	
     	SimulationDefaults.drivingTaskFileName = drivingTaskFileName;
@@ -377,7 +377,7 @@ public class Simulator extends SimulationBasics
 		new InternalMapProcessing(this);
 		
 		// create and place steering car
-		car = new SteeringCar(this);
+		car = new SteeringCar(this, speed);
 		
 		// initialize physical vehicles
 		//physicalTraffic = new PhysicalTraffic(this);

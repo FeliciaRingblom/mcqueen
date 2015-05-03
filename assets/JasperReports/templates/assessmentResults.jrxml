@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report9" pageWidth="595" pageHeight="842" orientation="Portrait" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report9" pageWidth="595" pageHeight="842" orientation="Portrait" columnWidth="505" leftMargin="60" rightMargin="30" topMargin="20" bottomMargin="20">
 	<style name="Arial_Normal" isDefault="true" fontName="Arial" fontSize="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 	<style name="Arial_Bold" isDefault="false" fontName="Arial" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 	<parameter name="groupLeft" class="java.lang.String">
@@ -12,7 +12,7 @@
 		<defaultValueExpression><![CDATA["    "]]></defaultValueExpression>
 	</parameter>
 
-<!-- 	<queryString language="xPath">
+<!--   	<queryString language="xPath">
 		<![CDATA[report/data]]>
 	</queryString>
 	<field name="assessmentId" class="java.lang.Integer">
@@ -23,10 +23,8 @@
 	</field>
 	<field name="age" class="java.lang.Integer">
 		<fieldDescription><![CDATA[age]]></fieldDescription>
-	</field>
-	<field name="caseId" class="java.lang.Integer">
-		<fieldDescription><![CDATA[caseNumber]]></fieldDescription>
-	</field> -->
+	</field>  -->
+
 	<!-- här -->
 	<queryString language="xPath">
 		<![CDATA[report/reactionMeasurement]]>
@@ -78,8 +76,14 @@
 	<variable name="lowestReactionTime" class="java.lang.Integer" calculation="Lowest">
 		<variableExpression><![CDATA[(($F{reactionResult} < 0 && $F{reactionResult} > -2) ? -$F{reactionTime} : 0)]]></variableExpression>
 	</variable>
+	<variable name="lowestReactionTimeLeft" class="java.lang.Integer" calculation="Lowest">
+		<variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupLeft})) ? $F{reactionTime} : null)]]></variableExpression>
+	</variable>
+	<variable name="lowestReactionTimeRight" class="java.lang.Integer" calculation="Lowest">
+		<variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupRight})) ? $F{reactionTime} : null)]]></variableExpression>
+	</variable>
 	<title>
-		<band height="100">
+		<band height="90">
 			<staticText>
 				<reportElement x="0" y="40" width="375" height="50" style="Arial_Bold"/>
 				<textElement textAlignment="Left">
@@ -87,14 +91,10 @@
 				</textElement>
 				<text><![CDATA[Test Resultat]]></text>
 			</staticText>
-			<line>
-				<reportElement x="0" y="98" width="555" height="1"/>
-				<graphicElement/>
-			</line>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="100">
+		<band height="80">
 			<staticText>
 				<reportElement x="0" y="0" width="200" height="14" style="Arial_Normal"/>
 				<textElement textAlignment="Left">
@@ -124,7 +124,7 @@
 				<text><![CDATA[8.0]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="90" width="555" height="1"/>
+				<reportElement x="0" y="70" width="490" height="1"/>
 				<graphicElement>
 					<pen lineWidth="1"/>
 				</graphicElement>
@@ -144,87 +144,127 @@
 		<band height="500">
 			<staticText>
 				<reportElement x="0" y="0" width="300" height="30" style="Arial_Bold"/>
-				<textElement textAlignment="Left">
-					<font size="18"/>
-				</textElement>
+				<textElement textAlignment="Left"><font size="18"/></textElement>
 				<text><![CDATA[Sammanfattning]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="25" width="300" height="30" style="Arial_Normal"/>
-				<textElement textAlignment="Left">
-					<font size="12"/>
-				</textElement>
+				<textElement textAlignment="Left"><font size="10"/></textElement>
 				<text><![CDATA[Antal Stimuli: ]]></text>
 			</staticText>
  			<textField isBlankWhenNull="true">
-				<reportElement x="75" y="25" width="515" height="30"/>
-				<textElement textAlignment="Left">
-        			<font size="12"/>
-    			</textElement>
+				<reportElement x="65" y="25" width="515" height="30"/>
+				<textElement textAlignment="Left"><font size="10"/></textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$V{amountReactions}]]></textFieldExpression>
 			</textField> 
 			<staticText>
-				<reportElement x="0" y="38" width="300" height="30" style="Arial_Normal"/>
-				<textElement textAlignment="Left">
-					<font size="12"/>
-				</textElement>
+				<reportElement x="100" y="25" width="300" height="30" style="Arial_Normal"/>
+				<textElement textAlignment="Left"><font size="10"/></textElement>
 				<text><![CDATA[Missad: ]]></text>
 			</staticText>
  			<textField isBlankWhenNull="true">
-				<reportElement x="50" y="38" width="515" height="30"/>
-				<textElement textAlignment="Left">
-        			<font size="12"/>
-    			</textElement>
+				<reportElement x="140" y="25" width="515" height="30"/>
+				<textElement textAlignment="Left"><font size="10"/></textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$V{missedReaction}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="51" width="300" height="30" style="Arial_Normal"/>
-				<textElement textAlignment="Left">
-					<font size="12"/>
-				</textElement>
+				<reportElement x="175" y="25" width="300" height="30" style="Arial_Normal"/>
+				<textElement textAlignment="Left"><font size="10"/></textElement>
 				<text><![CDATA[Reaktionstid vänster: ]]></text>
 			</staticText>
  			<textField isBlankWhenNull="true">
-				<reportElement x="130" y="51" width="515" height="30"/>
-				<textElement textAlignment="Left">
-        			<font size="12"/>
-    			</textElement>
+				<reportElement x="270" y="25" width="515" height="30"/>
+				<textElement textAlignment="Left"><font size="10"/></textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeLeft}]]></textFieldExpression>
 			</textField>	
 			<staticText>
-				<reportElement x="160" y="51" width="300" height="30" style="Arial_Normal"/>
-				<textElement textAlignment="Left">
-					<font size="12"/>
-				</textElement>
+				<reportElement x="295" y="25" width="300" height="30" style="Arial_Normal"/>
+				<textElement textAlignment="Left"><font size="10"/></textElement>
 				<text><![CDATA[ms]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="64" width="300" height="30" style="Arial_Normal"/>
+				<reportElement x="335" y="25" width="300" height="30" style="Arial_Normal"/>
 				<textElement textAlignment="Left">
-					<font size="12"/>
+					<font size="10"/>
 				</textElement>
 				<text><![CDATA[Reaktionstid höger: ]]></text>
 			</staticText>
  			<textField isBlankWhenNull="true">
-				<reportElement x="130" y="64" width="515" height="30"/>
-				<textElement textAlignment="Left">
-        			<font size="12"/>
-    			</textElement>
+				<reportElement x="423" y="25" width="515" height="30"/>
+				<textElement textAlignment="Left"><font size="10"/></textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeRight}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="160" y="64" width="300" height="30" style="Arial_Normal"/>
-				<textElement textAlignment="Left">
-					<font size="12"/>
-				</textElement>
+				<reportElement x="453" y="25" width="300" height="30" style="Arial_Normal"/>
+				<textElement textAlignment="Left"><font size="10"/></textElement>
 				<text><![CDATA[ms]]></text>
 			</staticText>
+			<rectangle radius="15">
+				<reportElement x="0" y="60" width="480" height="120" backcolor="#E6E6E6"/>
+				<graphicElement pen="None"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="150" y="70" width="110" height="30" style="Arial_Bold"/>
+				<textElement textAlignment="Center"><font size="12"/></textElement>
+				<text><![CDATA[Del 1]]></text>
+			</staticText>
+ 			<textField isBlankWhenNull="true">
+				<reportElement x="150" y="100" width="110" height="30"/>
+				<textElement textAlignment="Center"><font size="12"/></textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{missedReaction}]]></textFieldExpression>
+			</textField>
 			<line>
-				<reportElement x="0" y="200" width="555" height="1"/>
-				<graphicElement>
-					<pen lineWidth="1"/>
-				</graphicElement>
+				<reportElement x="205" y="125" width="0" height="50" forecolor="#FFFFFF"/>
+				<graphicElement><pen lineWidth="1"/></graphicElement>
 			</line>
+ 			<textField isBlankWhenNull="true">
+				<reportElement x="150" y="130" width="55" height="30"/>
+				<textElement textAlignment="Center"><font size="12"/></textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeLeft}]]></textFieldExpression>
+			</textField>
+ 			<textField isBlankWhenNull="true">
+				<reportElement x="205" y="130" width="55" height="30"/>
+				<textElement textAlignment="Center"><font size="12"/></textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeRight}]]></textFieldExpression>
+			</textField>
+ 			<textField isBlankWhenNull="true">
+				<reportElement x="150" y="143" width="55" height="30"/>
+				<textElement textAlignment="Center"><font size="12"/></textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{lowestReactionTimeLeft}]]></textFieldExpression>
+			</textField>
+ 			<textField isBlankWhenNull="true">
+				<reportElement x="205" y="143" width="55" height="30"/>
+				<textElement textAlignment="Center"><font size="12"/></textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{lowestReactionTimeRight}]]></textFieldExpression>
+			</textField>
+ 			<textField isBlankWhenNull="true">
+				<reportElement x="150" y="156" width="55" height="30"/>
+				<textElement textAlignment="Center"><font size="12"/></textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeLeft}]]></textFieldExpression>
+			</textField>
+ 			<textField isBlankWhenNull="true">
+				<reportElement x="205" y="156" width="55" height="30"/>
+				<textElement textAlignment="Center"><font size="12"/></textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeRight}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="260" y="65" width="0" height="110" forecolor="#FFFFFF"/>
+				<graphicElement><pen lineWidth="2"/></graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="260" y="70" width="110" height="30" style="Arial_Bold"/>
+				<textElement textAlignment="Center"><font size="12"/></textElement>
+				<text><![CDATA[Del 2]]></text>
+			</staticText>
+			<line>
+				<reportElement x="370" y="65" width="0" height="110" forecolor="#FFFFFF"/>
+				<graphicElement><pen lineWidth="2"/></graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="370" y="70" width="110" height="30" style="Arial_Bold"/>
+				<textElement textAlignment="Center"><font size="12"/></textElement>
+				<text><![CDATA[Del 3]]></text>
+			</staticText>
 			<staticText>
 				<reportElement x="0" y="210" width="300" height="30" style="Arial_Bold"/>
 				<textElement textAlignment="Left">
@@ -252,17 +292,13 @@
 				<box leftPadding="0"/>
 				<chartTitle/>
 				<chartSubtitle/>
-
-				<!-- <chartLegend/> -->
 			</chart>
 			<xyDataset>
 				<xySeries>
 					<seriesExpression><![CDATA[$P{groupLeft}]]></seriesExpression>
 					<xValueExpression><![CDATA[$F{reactionID}]]></xValueExpression>		
 					<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupLeft}) ?
-						(
-						    (($F{reactionResult} < 0) ? 0 : -$F{reactionTime})
-						):0]]>
+						((($F{reactionResult} < 0) ? 0 : -$F{reactionTime})):0]]>
 					</yValueExpression>
 					<labelExpression><![CDATA[""]]></labelExpression>
 				</xySeries>
@@ -270,9 +306,7 @@
 					<seriesExpression><![CDATA[$P{groupRight}]]></seriesExpression>	
 					<xValueExpression><![CDATA[$F{reactionID}]]></xValueExpression>	
 					<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupRight}) ?
-						(
-						    (($F{reactionResult} < 0) ? 0 : $F{reactionTime})	
-						):0]]>
+						((($F{reactionResult} < 0) ? 0 : $F{reactionTime})):0]]>
 					</yValueExpression>
 					<labelExpression><![CDATA[""]]></labelExpression>
 				</xySeries>
@@ -280,9 +314,7 @@
 					<seriesExpression><![CDATA[$P{groupMissed}]]></seriesExpression>	
 					<xValueExpression><![CDATA[$F{reactionID}]]></xValueExpression>	
 					<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupRight}) ?
-						(
-						    (($F{reactionResult} < 0) ? 10000 : 0)	
-						):(($F{reactionResult} < 0) ? -10000 : 0)]]>
+						((($F{reactionResult} < 0) ? 10000 : 0)):(($F{reactionResult} < 0) ? -10000 : 0)]]>
 					</yValueExpression>
 					<labelExpression><![CDATA[""]]></labelExpression>
 				</xySeries>
@@ -293,7 +325,7 @@
 				<plot orientation="Horizontal">
 					<seriesColor seriesOrder="0" color="#DA3C08"/> <!--röd-->
 					<seriesColor seriesOrder="1" color="#1B7BA7"/> <!--ljus-->
-					<seriesColor seriesOrder="2" color="#2F4D5A"/> <!-- mörk -->
+					<seriesColor seriesOrder="2" color="#1B7BA7"/> 
 					
 				</plot>
 		<!-- 		<itemLabel>
@@ -310,18 +342,18 @@
 			</barPlot>
 		</xyBarChart>
 		<staticText>
-			<reportElement x="0" y="280" width="125" height="30" style="Arial_Normal" forecolor="#2F4D5A"/>
+			<reportElement x="0" y="280" width="125" height="30" style="Arial_Normal" forecolor="#1B7BA7"/>
 			<textElement textAlignment="Right">
 				<font size="11"/>
 			</textElement>
-				<text><![CDATA[Vänster stimuli]]></text>
+				<text><![CDATA[Vänster]]></text>
 		</staticText>
 		<staticText>
 			<reportElement x="145" y="280" width="300" height="30" style="Arial_Normal" forecolor="#1B7BA7"/>
 			<textElement textAlignment="Left">
 				<font size="11"/>
 			</textElement>
-				<text><![CDATA[Höger stimuli]]></text>
+				<text><![CDATA[Höger]]></text>
 		</staticText>	
 
 		<line>
