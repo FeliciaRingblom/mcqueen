@@ -84,18 +84,19 @@ public class CarPositionReader {
 	
 	
 	public boolean loadDriveData() 
-	{		
+	{	
+
 		try {
 			// get drive data
 			String inputLine = inputReader.readLine();
-			
 			Vector3f previousPos = null;
 
 			while (inputLine != null) 
 			{
+				
 				Vector3f carPosition = parseCarPosition(inputLine);
 				carPositionList.add(carPosition);
-								
+							
 				Long timeStamp = parseTimeStamp(inputLine);
 				
 				if(previousPos == null)

@@ -108,9 +108,9 @@ public class MyInstructionsGUIController implements ScreenController {
 	}
 	
 	public void startIntroStimuli(){
-		//String analyzerFile = "analyzerData/2015_04_16-09_39_07/carData.txt";
-		//sim.calculateCarData(analyzerFile);
-		
+//		String analyzerFile = "analyzerData/test/carData.txt";
+//		sim.calculateCarData(analyzerFile);
+//		
 		String driverName = getTextFromTextfield("input_id");
 		System.out.println("from text: " + driverName);
 		nifty.exit();	

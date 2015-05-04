@@ -31,6 +31,7 @@ import com.jme3.app.StatsAppState;
 import com.jme3.app.state.VideoRecorderAppState;
 import com.jme3.font.BitmapText;
 import com.jme3.input.Joystick;
+import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
 import com.jme3.niftygui.NiftyJmeDisplay;
 import com.jme3.system.AppSettings;
@@ -232,8 +233,10 @@ public class Simulator extends SimulationBasics
 
 	private LinkedList<Vector3f> carPositionList = new LinkedList<Vector3f>();
 	private LinkedList<DataUnit> dataUnitList = new LinkedList<DataUnit>();
+	private LinkedList<Vector3f> idealPositionList = new LinkedList<Vector3f>();
 	
 	private CarPositionReader carPositionReader = new CarPositionReader();
+	private CarPositionReader idealPositionReader = new CarPositionReader();
 	private Long initialTimeStamp = 0l;
 
 	public enum VisualizationMode 
@@ -248,29 +251,42 @@ public class Simulator extends SimulationBasics
 	}
 	
 	public void calculateCarData(String fileName){
-		carPositionReader.initReader(fileName, true);
-		carPositionReader.loadDriveData();
-
-		carPositionList = carPositionReader.getCarPositionList();
-		for(Vector3f carPos : carPositionList)
-			devComp.addWayPoint(carPos);
-
-		dataUnitList = carPositionReader.getDataUnitList();
-		
-		if(dataUnitList.size() > 0)
-			initialTimeStamp = dataUnitList.get(0).getDate().getTime();
-		
-		//devComp.showAllIdealPoints();
-		//devComp.showAllWayPoints();
-		try {
-			area = devComp.getDeviation();
-			lengthOfIdealLine = devComp.getLengthOfIdealLine();
-			System.out.println("Area between ideal line and driven line: " + area);
-			System.out.println("Length of ideal line: " + lengthOfIdealLine);
-			System.out.println("Mean deviation: " + (float)area/lengthOfIdealLine + "\n");
-		} catch (Exception e) {
-			System.out.println(e.getMessage() + "\n");
-		}
+//		carPositionReader.initReader(fileName, true);
+//		carPositionReader.loadDriveData();
+//		idealPositionReader.initReader("script/carData", true);
+//		idealPositionReader.loadDriveData();
+//		
+//		
+//
+//		carPositionList = carPositionReader.getCarPositionList();
+//		idealPositionList = idealPositionReader.getCarPositionList();
+//		for(Vector3f carPos : carPositionList){
+//			devComp.addWayPoint(carPos);
+//		}
+//		for(Vector3f carPos : idealPositionList) {
+//			devComp.addIdealPoint(new Vector2f(carPos.x, carPos.y));
+//		}
+//		
+//		
+//
+//		dataUnitList = carPositionReader.getDataUnitList();
+//		
+//		if(dataUnitList.size() > 0)
+//			initialTimeStamp = dataUnitList.get(0).getDate().getTime();
+//		
+//		//devComp.showAllIdealPoints();
+//		//devComp.showAllWayPoints();
+//		try {
+//			
+//			area = devComp.getDeviation();
+//			System.out.println("kommer in i try");
+//			lengthOfIdealLine = devComp.getLengthOfIdealLine();
+//			System.out.println("Area between ideal line and driven line: " + area);
+//			System.out.println("Length of ideal line: " + lengthOfIdealLine);
+//			System.out.println("Mean deviation: " + (float)area/lengthOfIdealLine + "\n");
+//		} catch (Exception e) {
+//			System.out.println(e.getMessage() + "\n");
+//		}
 	}
 	
 	/*end added by Felicia*/
