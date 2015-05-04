@@ -225,12 +225,6 @@ public class KeyBindingCenter
 		InputListener driveAnalyzerActionListener = new DriveAnalyzerActionListener(analyzer);
 		for(KeyMapping keyMapping : KeyMapping.getDriveAnalyzerActionKeyMappingList())
 			addKeyMapping(keyMapping, driveAnalyzerActionListener);
-
-
-		// ANALOG
-		InputListener driveAnalyzerAnalogListener = new DriveAnalyzerAnalogListener(analyzer);
-		for(KeyMapping keyMapping : KeyMapping.getDriveAnalyzerAnalogKeyMappingList())
-			addKeyMapping(keyMapping, driveAnalyzerAnalogListener);
 	}
 
 
