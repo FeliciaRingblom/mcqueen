@@ -14,10 +14,10 @@
   <style id="nifty-textfield#field">
     <attributes childLayout="center" childClip="true" backgroundColor="#efefef" padding="0px,2px"/>
     <effect>
-      <onFocus name="border" border="2px" color="#0f0f" post="true" />
+      <onFocus name="border" border="2px" color="#ffba00" post="true" />
       <onFocus name="colorBar" color="#ffff" post="true" inset="1px" />
-      <onEnabled name="renderQuad" startColor="#ff0f" endColor="#ffff" post="true" length="150" />
-      <onDisabled name="renderQuad" startColor="#ff0f" endColor="#ffff" post="true" length="150" />
+      <onEnabled name="renderQuad" startColor="#ffba00" endColor="#ffff" post="true" length="150" />
+      <onDisabled name="renderQuad" startColor="#ffba00" endColor="#ffff" post="true" length="150" />
     </effect>
   </style>
 
@@ -86,6 +86,26 @@
     <effect>
       <onEnabled name="textColorAnimated" startColor="#8886" endColor="#eeef" post="false" length="150" />
       <onDisabled name="textColorAnimated" startColor="#eeef" endColor="#8886" post="false" length="150" />
+    </effect>
+  </style>
+
+  <style id="nifty-radiobutton-style#panel">
+    <attributes width="30px" height="30" childLayout="center" focusable="true" visibleToMouse="true" />
+  </style>
+  
+  <!-- Radiobutton -->
+  <style id="nifty-radiobutton-style#select">
+    <attributes childLayout="overlay" align="center" valign="center" width="23px" height="23px" filename="assets/Interface/images_instruction_screen/radiobutton.png" />
+    <effect overlay="true">
+      <onEnabled name="fade" start="#f" end="#f" post="false" length="150" inherit="true"/>
+      <onDisabled name="fade" start="#f" end="#f" post="false" length="150" inherit="true" neverStopRendering="true" />
+      <onCustom customKey="show" name="imageSize" startSize="2.0" endSize="1.0" length="150" post="true" />
+      <onCustom customKey="show" name="fade" start="#0" end="#f" length="150" post="true" />
+      <onCustom customKey="show" name="imageOverlay" filename="assets/Interface/images_instruction_screen/radiobutton-checked.png" width="23px" height="23px" post="true" neverStopRendering="true" />
+      <onCustom customKey="hide" name="fade" start="#f" end="#0" length="350" post="true" />
+      <onCustom customKey="hide" name="imageOverlay" filename="assets/Interface/images_instruction_screen/radiobutton-checked.png" width="23px" height="23px" post="true" length="350" />
+      <onFocus name="imageOverlay" filename="assets/Interface/images_instruction_screen/radiobutton-hover.png" width="23px" height="23px" post="true" />
+      <onHover name="imageOverlay" filename="assets/Interface/images_instruction_screen/radiobutton-hover.png" width="23px" height="23px" post="true" />
     </effect>
   </style>
 

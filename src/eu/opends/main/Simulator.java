@@ -88,7 +88,6 @@ public class Simulator extends SimulationBasics
     private Nifty nifty;
     private boolean drivingTaskGiven = false;
     private boolean initializationFinished = false;
-    private boolean initialized = false;
     
     private MyInstructionsGUIController myInstructions;
     public MyInstructionsGUIController getMyInstructions() {
@@ -386,7 +385,6 @@ public class Simulator extends SimulationBasics
     	// set gravity
     	gravityConstant = drivingTask.getSceneLoader().getGravity(SimulationDefaults.gravity);
     	getPhysicsSpace().setGravity(new Vector3f(0, -gravityConstant, 0));	
-    	//getPhysicsSpace().setAccuracy(0.005f);
     	
     	PanelCenter.init(this);
 	
@@ -404,33 +402,20 @@ public class Simulator extends SimulationBasics
 		if(driverName == null || driverName.isEmpty())
 			driverName = settingsLoader.getSetting(Setting.General_driverName, SimulationDefaults.driverName);
     	SimulationDefaults.driverName = driverName;
-
         
 		// setup key binding
 		keyBindingCenter = new KeyBindingCenter(this);
 		
-        
         AudioCenter.init(this);
 
         // setup camera settings
         cameraFactory = new SimulatorCam(this, car);
-        
-        
-		// start trafficLightCenter
-		//trafficLightCenter = new TrafficLightCenter(this);
-		
+
 		// init trigger center
 		triggerCenter.setup();
-
-		// open TCP connection to Lightning
-//		if(settingsLoader.getSetting(Setting.ExternalVisualization_enableConnection, SimulationDefaults.Lightning_enableConnection))
-//		{
-//			lightningClient = new LightningClient();
-//		}
 				
 		drivingTaskLogger = new DrivingTaskLogger(outputFolder, driverName, drivingTask.getFileName());
 		
-		//SpeedControlCenter.init(this);
 		
 		try {
 			
@@ -446,11 +431,6 @@ public class Simulator extends SimulationBasics
 		reactionCenter = new ReactionCenter(this);
 		
 		steeringTask = new SteeringTask(this, driverName);
-		
-		//threeVehiclePlatoonTask = new ThreeVehiclePlatoonTask(this, driverName);
-		
-		// start effect center
-		//effectCenter = new EffectCenter(this);
 		
 		objectManipulationCenter = new ObjectManipulationCenter(this);
 		
@@ -490,7 +470,6 @@ public class Simulator extends SimulationBasics
 		
         
 		initializationFinished = true;
-		initialized = true;
     }
     
     
@@ -687,7 +666,6 @@ public class Simulator extends SimulationBasics
 			PanelCenter.removeAll(); 
 			
 			car.close(); //stänger enbart texturen
-			car.delete();
 			keyBindingCenter.close();
 			//physicalTraffic.close();
 			

@@ -142,7 +142,7 @@ public class PanelCenter
 		float analogIndicatorsScale = settingsLoader.getSetting(Setting.General_analogIndicatorsScale, 1.0f);
 		
         // Display a line of text with a default font
-		//guiNode.detachAllChildren();
+		sim.getGuiNode().detachAllChildren();
 	    BitmapFont guiFont = sim.getAssetManager().loadFont("Interface/Fonts/Default.fnt");
         Node guiNode = sim.getGuiNode();
         

@@ -53,9 +53,7 @@ public class AudioCenter
 		audioNodeList = AudioFiles.load(sim);
 		audioNodeVolumeList = new HashMap<String,Float>();
 		engineVolume = Simulator.getDrivingTask().getScenarioLoader().getEngineSoundIntensity(-1f);
-		
-		//audioRenderer.setEnvironment(new Environment(Environment.Dungeon));
-		
+				
 		if(sim.getCar().isEngineOn())
 			playSound("engineIdle");
 	}
