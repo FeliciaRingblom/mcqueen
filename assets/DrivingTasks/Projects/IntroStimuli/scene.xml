@@ -367,7 +367,7 @@
 		</directionalLight>
 	</lights>
 	<pictures>
-		<picture id="leftGreenCircle" key="assets/Textures/ReactionTest/peripheralIcons/green_circle.png" level="0">
+		<picture id="rightArrow_toLeft" key="assets/Textures/ReactionTest/stimuliImages/right.png" level="0">
 			<hPosition><fromLeft value="22" unit="px"></fromLeft></hPosition>
 			<vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
 			<width>100</width>
@@ -385,7 +385,7 @@
       <visible>false</visible>
     </picture>
 
-    <picture id="lefGreenSquare" key="assets/Textures/ReactionTest/peripheralIcons/green_square.png" level="2">
+    <picture id="leftArrow_toLeft" key="assets/Textures/ReactionTest/stimuliImages/left.png" level="2">
       <hPosition><fromLeft value="22" unit="px"></fromLeft></hPosition>
       <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
       <width>100</width>
@@ -403,7 +403,7 @@
       <visible>false</visible>
     </picture>
 
-    <picture id="rightGreenSquare" key="assets/Textures/ReactionTest/peripheralIcons/green_square.png" level="4">
+    <picture id="leftArrow_toRight" key="assets/Textures/ReactionTest/stimuliImages/left.png" level="4">
       <hPosition><fromRight value="22" unit="px"></fromRight></hPosition>
       <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
       <width>100</width>
@@ -412,7 +412,7 @@
       <visible>false</visible>
     </picture>
 
-		<picture id="rightGreenCircle" key="assets/Textures/ReactionTest/peripheralIcons/green_circle.png" level="5">
+		<picture id="rightArrow_toRight" key="assets/Textures/ReactionTest/stimuliImages/right.png" level="5">
 			<hPosition><fromRight value="22" unit="px"></fromRight></hPosition>
 			<vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
 			<width>100</width>
