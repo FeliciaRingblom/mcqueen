@@ -132,7 +132,7 @@
 		<band splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band height="500">
+		<band height="600">
 			<staticText>
 				<reportElement x="0" y="0" width="300" height="30" style="Arial_Bold"/>
 				<textElement textAlignment="Left"><font size="18"/></textElement>
@@ -181,7 +181,7 @@
 				<text><![CDATA[Reaktionstid höger: ]]></text>
 			</staticText>
  			<textField isBlankWhenNull="true">
-				<reportElement x="423" y="25" width="515" height="30"/>
+				<reportElement x="425" y="25" width="515" height="30"/>
 				<textElement textAlignment="Left"><font size="10"/></textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeRight}]]></textFieldExpression>
 			</textField>
@@ -199,6 +199,36 @@
 				<textElement textAlignment="Center"><font size="12"/></textElement>
 				<text><![CDATA[Del 1]]></text>
 			</staticText>
+            <staticText>
+                <reportElement x="0" y="89" width="150" height="30" style="Arial_Normal"/>
+                <textElement textAlignment="Right"><font size="10"/></textElement>
+                <text><![CDATA[Totalt antal stimuli]]></text>
+            </staticText>
+			<staticText>
+				<reportElement x="0" y="102" width="150" height="30" style="Arial_Normal"/>
+				<textElement textAlignment="Right"><font size="10"/></textElement>
+				<text><![CDATA[Antal missade stimuli]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="132" width="150" height="30" style="Arial_Normal"/>
+				<textElement textAlignment="Right"><font size="10"/></textElement>
+				<text><![CDATA[Genomsnittlig reaktionstid (ms)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="145" width="150" height="30" style="Arial_Normal"/>
+				<textElement textAlignment="Right"><font size="10"/></textElement>
+				<text><![CDATA[Snabbast reaktionstid (ms)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="158" width="150" height="30" style="Arial_Normal"/>
+				<textElement textAlignment="Right"><font size="10"/></textElement>
+				<text><![CDATA[Långsammast reaktionstid (ms)]]></text>
+			</staticText>
+            <textField isBlankWhenNull="true">
+                <reportElement x="150" y="87" width="110" height="30"/>
+                <textElement textAlignment="Center"><font size="12"/></textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$V{amountReactions}]]></textFieldExpression>
+            </textField>
  			<textField isBlankWhenNull="true">
 				<reportElement x="150" y="100" width="110" height="30"/>
 				<textElement textAlignment="Center"><font size="12"/></textElement>
@@ -263,20 +293,7 @@
 				</textElement>
 				<text><![CDATA[Del 1]]></text>
 			</staticText>
-			<staticText>
-				<reportElement x="0" y="240" width="300" height="30" style="Arial_Normal"/>
-				<textElement textAlignment="Left">
-					<font size="12"/>
-				</textElement>
-				<text><![CDATA[Reaktionsförmåga]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="310" y="240" width="300" height="30" style="Arial_Normal"/>
-				<textElement textAlignment="Left">
-					<font size="12"/>
-				</textElement>
-				<text><![CDATA[Vinglighet]]></text>
-			</staticText>
+
 		<xyBarChart>
 			<chart isShowLegend="false">
 				<reportElement mode="Transparent" x="0" y="300" width="250" height="100"/>
@@ -314,17 +331,12 @@
 			</xyDataset>
 			<barPlot isShowLabels="false" isShowTickLabels="false" isShowTickMarks="false">
 				<plot orientation="Horizontal">
-					<seriesColor seriesOrder="0" color="#DA3C08"/> <!--röd-->
-					<seriesColor seriesOrder="1" color="#1B7BA7"/> <!--ljus-->
-					<seriesColor seriesOrder="2" color="#1B7BA7"/> 
+					<seriesColor seriesOrder="0" color="#DA3C08"/> <!--red-->
+					<seriesColor seriesOrder="1" color="#1B7BA7"/> <!--blue-->
+					<seriesColor seriesOrder="2" color="#1B7BA7"/> <!--blue-->
 					
 				</plot>
-		<!-- 		<itemLabel>
-					<font size="8" isUnderline="false"/>
-				</itemLabel> -->
-				<categoryAxisFormat><!-- fungerar ej? -->
-					<axisFormat verticalTickLabels="false" tickLabelColor="#FFFFFF" axisLineColor="#FFFFFF"/>
-				</categoryAxisFormat>
+
 
 				<domainAxisMinValueExpression><![CDATA[-0.5]]></domainAxisMinValueExpression>
 				<domainAxisMaxValueExpression><![CDATA[10.5]]></domainAxisMaxValueExpression>
@@ -346,7 +358,56 @@
 			</textElement>
 				<text><![CDATA[Höger]]></text>
 		</staticText>	
+        <staticText>
+            <reportElement x="0" y="240" width="300" height="30" style="Arial_Normal"/>
+            <textElement textAlignment="Left">
+                <font size="12"/>
+            </textElement>
+            <text><![CDATA[Reaktionsförmåga]]></text>
+        </staticText>
+        <staticText>
+            <reportElement x="300" y="240" width="300" height="30" style="Arial_Normal"/>
+            <textElement textAlignment="Left">
+                <font size="12"/>
+            </textElement>
+            <text><![CDATA[Vinglighet]]></text>
+        </staticText>
 
+            <stackedBarChart>
+                <chart isShowLegend="false">
+                    <reportElement mode="Transparent" x="300" y="270" width="60" height="140"/>
+                    <chartTitle/>
+                    <chartSubtitle/>
+                    <chartLegend/>
+                </chart>
+                <categoryDataset>
+                    <categorySeries>
+                        <seriesExpression><![CDATA["Bra"]]></seriesExpression>
+                        <categoryExpression><![CDATA["steadiness"]]></categoryExpression>
+                        <valueExpression><![CDATA[80]]></valueExpression>
+                    </categorySeries>
+                    <categorySeries>
+                        <seriesExpression><![CDATA["Ok"]]></seriesExpression>
+                        <categoryExpression><![CDATA["steadiness"]]></categoryExpression>
+                        <valueExpression><![CDATA[15]]></valueExpression>
+                    </categorySeries>
+                    <categorySeries>
+                        <seriesExpression><![CDATA["Inte så bra"]]></seriesExpression>
+                        <categoryExpression><![CDATA["steadiness"]]></categoryExpression>
+                        <valueExpression><![CDATA[5]]></valueExpression>
+                    </categorySeries>
+                </categoryDataset>
+                <barPlot>
+                    <plot orientation="Vertical">
+                        <seriesColor seriesOrder="0" color="#197E36"/> <!-- green -->
+                        <seriesColor seriesOrder="1" color="#1B7BA7"/> <!-- blue -->
+                        <seriesColor seriesOrder="2" color="#DA3C08"/> <!-- red -->
+                    </plot>
+                    <categoryAxisFormat>
+                        <axisFormat verticalTickLabels="false" tickLabelColor="#FFFFFF" axisLineColor="#FFFFFF"/>
+                    </categoryAxisFormat>
+                </barPlot>
+            </stackedBarChart>
 		<line>
 			<reportElement x="135" y="290" width="0" height="95" forecolor="#42485A"/>
 			<graphicElement>
