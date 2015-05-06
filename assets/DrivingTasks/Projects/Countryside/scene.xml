@@ -671,7 +671,7 @@
    <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
    <width>100</width>
    <height>100</height>
-   <useAlpha>false</useAlpha>
+   <useAlpha>true</useAlpha>
    <visible>false</visible>
  </picture>
 
@@ -680,7 +680,7 @@
   <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
   <width>100</width>
   <height>100</height>
-  <useAlpha>false</useAlpha>
+  <useAlpha>true</useAlpha>
   <visible>false</visible>
 </picture>
 
@@ -689,7 +689,7 @@
   <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
   <width>100</width>
   <height>100</height>
-  <useAlpha>false</useAlpha>
+  <useAlpha>true</useAlpha>
   <visible>false</visible>
 </picture>
 
@@ -698,7 +698,7 @@
   <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
   <width>100</width>
   <height>100</height>
-  <useAlpha>false</useAlpha>
+  <useAlpha>true</useAlpha>
   <visible>false</visible>
 </picture>
 
@@ -707,7 +707,7 @@
   <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
   <width>100</width>
   <height>100</height>
-  <useAlpha>false</useAlpha>
+  <useAlpha>true</useAlpha>
   <visible>false</visible>
 </picture>
 
@@ -716,7 +716,7 @@
  <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
  <width>100</width>
  <height>100</height>
- <useAlpha>false</useAlpha>
+ <useAlpha>true</useAlpha>
  <visible>false</visible>
 </picture>
 
@@ -725,7 +725,7 @@
   <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
   <width>100</width>
   <height>100</height>
-  <useAlpha>false</useAlpha>
+  <useAlpha>true</useAlpha>
   <visible>false</visible>
 </picture>
 
@@ -734,7 +734,7 @@
   <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
   <width>100</width>
   <height>100</height>
-  <useAlpha>false</useAlpha>
+  <useAlpha>true</useAlpha>
   <visible>false</visible>
 
 </picture>
