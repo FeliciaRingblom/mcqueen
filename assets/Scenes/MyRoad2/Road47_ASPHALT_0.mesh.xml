@@ -1,0 +1,68 @@
+<mesh>
+	<submeshes>
+		<submesh material="ASPHALT_0" usesharedvertices="false">
+			<faces count="8">
+				<face v1="0" v2="1" v3="2"/>
+				<face v1="1" v2="3" v3="2"/>
+				<face v1="2" v2="3" v3="4"/>
+				<face v1="3" v2="5" v3="4"/>
+				<face v1="6" v2="7" v3="8"/>
+				<face v1="7" v2="9" v3="8"/>
+				<face v1="8" v2="9" v3="10"/>
+				<face v1="9" v2="11" v3="10"/>
+			</faces>
+			<geometry vertexcount="12">
+				<vertexbuffer positions="true" normals="true">
+					<vertex>
+						<position x="-598.860413" y="-309.864838" z="0.000000"/>
+						<normal x="-0.000000" y="0.000000" z="1.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-597.123413" y="-310.856201" z="0.000000"/>
+						<normal x="-0.000000" y="0.000000" z="1.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-590.291504" y="-298.746307" z="0.000000"/>
+						<normal x="-0.000000" y="0.000000" z="1.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-588.709106" y="-299.969421" z="0.000000"/>
+						<normal x="0.000000" y="0.000000" z="1.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-581.976013" y="-288.017914" z="0.000000"/>
+						<normal x="-0.000000" y="0.000000" z="1.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-580.570129" y="-289.440430" z="0.000000"/>
+						<normal x="0.000000" y="0.000000" z="1.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-597.036560" y="-310.905792" z="0.000000"/>
+						<normal x="-0.000000" y="0.000000" z="1.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-595.299561" y="-311.897186" z="0.000000"/>
+						<normal x="-0.000000" y="0.000000" z="1.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-588.629944" y="-300.030579" z="0.000000"/>
+						<normal x="-0.000000" y="0.000000" z="1.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-587.047546" y="-301.253693" z="0.000000"/>
+						<normal x="0.000000" y="0.000000" z="1.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-580.499878" y="-289.511566" z="0.000000"/>
+						<normal x="-0.000000" y="0.000000" z="1.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-579.093994" y="-290.934082" z="0.000000"/>
+						<normal x="0.000000" y="0.000000" z="1.000000"/>
+					</vertex>
+				</vertexbuffer>
+			</geometry>
+		</submesh>
+	</submeshes>
+</mesh>

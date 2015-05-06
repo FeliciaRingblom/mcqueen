@@ -1,0 +1,1987 @@
+<scene formatVersion="1.0.0">
+  <nodes>
+    <node name="Road69_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road69_ASPHALT_0" meshFile="Road69_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road59_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road59_ASPHALT_0" meshFile="Road59_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road112_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road112_ASPHALT_0" meshFile="Road112_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road75_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road75_ASPHALT_0" meshFile="Road75_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road136_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road136_ASPHALT_0" meshFile="Road136_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road130_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road130_ASPHALT_0" meshFile="Road130_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road15_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road15_ASPHALT_0" meshFile="Road15_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road118_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road118_ROAD_MARKING_" meshFile="Road118_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road68_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road68_ASPHALT_0" meshFile="Road68_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road59_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road59_ROAD_MARKING_D" meshFile="Road59_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road44_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road44_ROAD_MARKING_D" meshFile="Road44_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road36_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road36_ASPHALT_0" meshFile="Road36_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road57_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road57_ROAD_MARKING_D" meshFile="Road57_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road138_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road138_ASPHALT_0" meshFile="Road138_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road113_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road113_ROAD_MARKING_" meshFile="Road113_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road62_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road62_ASPHALT_0" meshFile="Road62_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road54_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road54_ASPHALT_0" meshFile="Road54_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road141_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road141_ROAD_MARKING_" meshFile="Road141_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="SurfaceArea171_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea171_TERRAI" meshFile="SurfaceArea171_TERRAI.mesh"/>
+    </node>
+    <node name="Road21_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road21_ROAD_MARKING_D" meshFile="Road21_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road140_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road140_ASPHALT_0" meshFile="Road140_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road102_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road102_ROAD_MARKING_" meshFile="Road102_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road144_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road144_ASPHALT_0" meshFile="Road144_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road132_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road132_ROAD_MARKING_" meshFile="Road132_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road23_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road23_ROAD_MARKING_D" meshFile="Road23_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road11_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road11_ROAD_MARKING_D" meshFile="Road11_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road134_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road134_ASPHALT_0" meshFile="Road134_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road60_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road60_ROAD_MARKING_D" meshFile="Road60_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road126_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road126_ASPHALT_0" meshFile="Road126_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road19_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road19_ROAD_MARKING_D" meshFile="Road19_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road140_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road140_ROAD_MARKING_" meshFile="Road140_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road135_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road135_ASPHALT_0" meshFile="Road135_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road70_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road70_ROAD_MARKING_D" meshFile="Road70_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road32_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road32_ROAD_MARKING_D" meshFile="Road32_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road48_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road48_ASPHALT_0" meshFile="Road48_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road14_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road14_ASPHALT_0" meshFile="Road14_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road139_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road139_ROAD_MARKING_" meshFile="Road139_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road39_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road39_ASPHALT_0" meshFile="Road39_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road103_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road103_ASPHALT_0" meshFile="Road103_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road122_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road122_ROAD_MARKING_" meshFile="Road122_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road94_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road94_ASPHALT_0" meshFile="Road94_ASPHALT_0.mesh"/>
+    </node>
+    <node name="SurfaceArea157_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea157_TERRAI" meshFile="SurfaceArea157_TERRAI.mesh"/>
+    </node>
+    <node name="Road16_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road16_ROAD_MARKING_D" meshFile="Road16_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road42_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road42_ASPHALT_0" meshFile="Road42_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road96_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road96_ASPHALT_0" meshFile="Road96_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road87_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road87_ROAD_MARKING_D" meshFile="Road87_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road92_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road92_ASPHALT_0" meshFile="Road92_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road7_ROAD_MARKING_DA">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road7_ROAD_MARKING_DA" meshFile="Road7_ROAD_MARKING_DA.mesh"/>
+    </node>
+    <node name="Road29_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road29_ASPHALT_0" meshFile="Road29_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road20_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road20_ASPHALT_0" meshFile="Road20_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road141_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road141_ASPHALT_0" meshFile="Road141_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road136_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road136_ROAD_MARKING_" meshFile="Road136_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road25_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road25_ASPHALT_0" meshFile="Road25_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road83_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road83_ROAD_MARKING_D" meshFile="Road83_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road57_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road57_ASPHALT_0" meshFile="Road57_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road0_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road0_ASPHALT_0" meshFile="Road0_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road99_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road99_ROAD_MARKING_D" meshFile="Road99_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road100_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road100_ROAD_MARKING_" meshFile="Road100_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="SurfaceArea159_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea159_TERRAI" meshFile="SurfaceArea159_TERRAI.mesh"/>
+    </node>
+    <node name="Road64_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road64_ROAD_MARKING_D" meshFile="Road64_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="SurfaceArea164_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea164_TERRAI" meshFile="SurfaceArea164_TERRAI.mesh"/>
+    </node>
+    <node name="SurfaceArea165_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea165_TERRAI" meshFile="SurfaceArea165_TERRAI.mesh"/>
+    </node>
+    <node name="Road67_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road67_ROAD_MARKING_D" meshFile="Road67_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road13_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road13_ASPHALT_0" meshFile="Road13_ASPHALT_0.mesh"/>
+    </node>
+    <node name="SurfaceArea168_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea168_TERRAI" meshFile="SurfaceArea168_TERRAI.mesh"/>
+    </node>
+    <node name="Road28_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road28_ROAD_MARKING_D" meshFile="Road28_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road109_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road109_ASPHALT_0" meshFile="Road109_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road100_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road100_ASPHALT_0" meshFile="Road100_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road52_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road52_ROAD_MARKING_D" meshFile="Road52_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="SurfaceArea150_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea150_TERRAI" meshFile="SurfaceArea150_TERRAI.mesh"/>
+    </node>
+    <node name="Road41_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road41_ASPHALT_0" meshFile="Road41_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road108_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road108_ASPHALT_0" meshFile="Road108_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road45_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road45_ROAD_MARKING_D" meshFile="Road45_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road51_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road51_ROAD_MARKING_D" meshFile="Road51_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road97_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road97_ROAD_MARKING_D" meshFile="Road97_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road115_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road115_ROAD_MARKING_" meshFile="Road115_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road110_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road110_ASPHALT_0" meshFile="Road110_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road49_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road49_ASPHALT_0" meshFile="Road49_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road53_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road53_ASPHALT_0" meshFile="Road53_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road106_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road106_ASPHALT_0" meshFile="Road106_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road38_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road38_ASPHALT_0" meshFile="Road38_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road3_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road3_ASPHALT_0" meshFile="Road3_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road32_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road32_ASPHALT_0" meshFile="Road32_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road81_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road81_ASPHALT_0" meshFile="Road81_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road35_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road35_ROAD_MARKING_D" meshFile="Road35_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road107_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road107_ASPHALT_0" meshFile="Road107_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road10_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road10_ASPHALT_0" meshFile="Road10_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road55_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road55_ASPHALT_0" meshFile="Road55_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road121_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road121_ROAD_MARKING_" meshFile="Road121_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road62_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road62_ROAD_MARKING_D" meshFile="Road62_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road92_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road92_ROAD_MARKING_D" meshFile="Road92_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road112_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road112_ROAD_MARKING_" meshFile="Road112_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road11_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road11_ASPHALT_0" meshFile="Road11_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road44_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road44_ASPHALT_0" meshFile="Road44_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road77_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road77_ROAD_MARKING_D" meshFile="Road77_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road78_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road78_ROAD_MARKING_D" meshFile="Road78_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road147_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road147_ROAD_MARKING_" meshFile="Road147_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="SurfaceArea160_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea160_TERRAI" meshFile="SurfaceArea160_TERRAI.mesh"/>
+    </node>
+    <node name="Road128_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road128_ROAD_MARKING_" meshFile="Road128_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road131_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road131_ROAD_MARKING_" meshFile="Road131_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road75_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road75_ROAD_MARKING_D" meshFile="Road75_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road76_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road76_ROAD_MARKING_D" meshFile="Road76_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road60_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road60_ASPHALT_0" meshFile="Road60_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road72_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road72_ASPHALT_0" meshFile="Road72_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road117_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road117_ASPHALT_0" meshFile="Road117_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road89_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road89_ASPHALT_0" meshFile="Road89_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road97_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road97_ASPHALT_0" meshFile="Road97_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road33_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road33_ROAD_MARKING_D" meshFile="Road33_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road87_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road87_ASPHALT_0" meshFile="Road87_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road24_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road24_ROAD_MARKING_D" meshFile="Road24_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road105_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road105_ROAD_MARKING_" meshFile="Road105_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road90_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road90_ASPHALT_0" meshFile="Road90_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road145_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road145_ROAD_MARKING_" meshFile="Road145_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road1_ROAD_MARKING_DA">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road1_ROAD_MARKING_DA" meshFile="Road1_ROAD_MARKING_DA.mesh"/>
+    </node>
+    <node name="Road129_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road129_ASPHALT_0" meshFile="Road129_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road120_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road120_ASPHALT_0" meshFile="Road120_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road143_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road143_ROAD_MARKING_" meshFile="Road143_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road28_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road28_ASPHALT_0" meshFile="Road28_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road84_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road84_ASPHALT_0" meshFile="Road84_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road21_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road21_ASPHALT_0" meshFile="Road21_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road129_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road129_ROAD_MARKING_" meshFile="Road129_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road78_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road78_ASPHALT_0" meshFile="Road78_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road149_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road149_ROAD_MARKING_" meshFile="Road149_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road72_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road72_ROAD_MARKING_D" meshFile="Road72_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road116_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road116_ROAD_MARKING_" meshFile="Road116_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road1_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road1_ASPHALT_0" meshFile="Road1_ASPHALT_0.mesh"/>
+    </node>
+    <node name="SurfaceArea170_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea170_TERRAI" meshFile="SurfaceArea170_TERRAI.mesh"/>
+    </node>
+    <node name="Road121_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road121_ASPHALT_0" meshFile="Road121_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road47_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road47_ASPHALT_0" meshFile="Road47_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road31_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road31_ASPHALT_0" meshFile="Road31_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road6_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road6_ASPHALT_0" meshFile="Road6_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road52_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road52_ASPHALT_0" meshFile="Road52_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road4_ROAD_MARKING_DA">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road4_ROAD_MARKING_DA" meshFile="Road4_ROAD_MARKING_DA.mesh"/>
+    </node>
+    <node name="Road148_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road148_ROAD_MARKING_" meshFile="Road148_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road142_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road142_ASPHALT_0" meshFile="Road142_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road145_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road145_ASPHALT_0" meshFile="Road145_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road54_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road54_ROAD_MARKING_D" meshFile="Road54_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="SurfaceArea173_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea173_TERRAI" meshFile="SurfaceArea173_TERRAI.mesh"/>
+    </node>
+    <node name="SurfaceArea177_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea177_TERRAI" meshFile="SurfaceArea177_TERRAI.mesh"/>
+    </node>
+    <node name="Road43_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road43_ROAD_MARKING_D" meshFile="Road43_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road17_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road17_ASPHALT_0" meshFile="Road17_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road120_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road120_ROAD_MARKING_" meshFile="Road120_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road123_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road123_ASPHALT_0" meshFile="Road123_ASPHALT_0.mesh"/>
+    </node>
+    <node name="SurfaceArea167_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea167_TERRAI" meshFile="SurfaceArea167_TERRAI.mesh"/>
+    </node>
+    <node name="SurfaceArea172_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea172_TERRAI" meshFile="SurfaceArea172_TERRAI.mesh"/>
+    </node>
+    <node name="Road70_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road70_ASPHALT_0" meshFile="Road70_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road80_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road80_ASPHALT_0" meshFile="Road80_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road46_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road46_ASPHALT_0" meshFile="Road46_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road122_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road122_ASPHALT_0" meshFile="Road122_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road63_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road63_ROAD_MARKING_D" meshFile="Road63_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road133_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road133_ASPHALT_0" meshFile="Road133_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road73_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road73_ROAD_MARKING_D" meshFile="Road73_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road104_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road104_ROAD_MARKING_" meshFile="Road104_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road98_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road98_ASPHALT_0" meshFile="Road98_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road128_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road128_ASPHALT_0" meshFile="Road128_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road16_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road16_ASPHALT_0" meshFile="Road16_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road35_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road35_ASPHALT_0" meshFile="Road35_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road30_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road30_ROAD_MARKING_D" meshFile="Road30_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road12_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road12_ASPHALT_0" meshFile="Road12_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road18_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road18_ASPHALT_0" meshFile="Road18_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road110_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road110_ROAD_MARKING_" meshFile="Road110_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road53_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road53_ROAD_MARKING_D" meshFile="Road53_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road5_ROAD_MARKING_DA">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road5_ROAD_MARKING_DA" meshFile="Road5_ROAD_MARKING_DA.mesh"/>
+    </node>
+    <node name="Road47_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road47_ROAD_MARKING_D" meshFile="Road47_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road71_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road71_ASPHALT_0" meshFile="Road71_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road6_ROAD_MARKING_DA">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road6_ROAD_MARKING_DA" meshFile="Road6_ROAD_MARKING_DA.mesh"/>
+    </node>
+    <node name="Road33_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road33_ASPHALT_0" meshFile="Road33_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road88_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road88_ROAD_MARKING_D" meshFile="Road88_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road5_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road5_ASPHALT_0" meshFile="Road5_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road139_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road139_ASPHALT_0" meshFile="Road139_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road22_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road22_ASPHALT_0" meshFile="Road22_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road99_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road99_ASPHALT_0" meshFile="Road99_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road63_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road63_ASPHALT_0" meshFile="Road63_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road127_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road127_ASPHALT_0" meshFile="Road127_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road37_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road37_ASPHALT_0" meshFile="Road37_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road2_ROAD_MARKING_DA">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road2_ROAD_MARKING_DA" meshFile="Road2_ROAD_MARKING_DA.mesh"/>
+    </node>
+    <node name="Road24_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road24_ASPHALT_0" meshFile="Road24_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road96_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road96_ROAD_MARKING_D" meshFile="Road96_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road58_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road58_ROAD_MARKING_D" meshFile="Road58_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road25_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road25_ROAD_MARKING_D" meshFile="Road25_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road68_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road68_ROAD_MARKING_D" meshFile="Road68_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road98_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road98_ROAD_MARKING_D" meshFile="Road98_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="SurfaceArea169_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea169_TERRAI" meshFile="SurfaceArea169_TERRAI.mesh"/>
+    </node>
+    <node name="Road119_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road119_ROAD_MARKING_" meshFile="Road119_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="SurfaceArea158_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea158_TERRAI" meshFile="SurfaceArea158_TERRAI.mesh"/>
+    </node>
+    <node name="Road115_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road115_ASPHALT_0" meshFile="Road115_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road13_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road13_ROAD_MARKING_D" meshFile="Road13_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road149_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road149_ASPHALT_0" meshFile="Road149_ASPHALT_0.mesh"/>
+    </node>
+    <node name="SurfaceArea155_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea155_TERRAI" meshFile="SurfaceArea155_TERRAI.mesh"/>
+    </node>
+    <node name="Road116_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road116_ASPHALT_0" meshFile="Road116_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road79_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road79_ASPHALT_0" meshFile="Road79_ASPHALT_0.mesh"/>
+    </node>
+    <node name="SurfaceArea175_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea175_TERRAI" meshFile="SurfaceArea175_TERRAI.mesh"/>
+    </node>
+    <node name="Road55_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road55_ROAD_MARKING_D" meshFile="Road55_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road17_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road17_ROAD_MARKING_D" meshFile="Road17_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road147_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road147_ASPHALT_0" meshFile="Road147_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road18_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road18_ROAD_MARKING_D" meshFile="Road18_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road80_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road80_ROAD_MARKING_D" meshFile="Road80_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road58_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road58_ASPHALT_0" meshFile="Road58_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road2_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road2_ASPHALT_0" meshFile="Road2_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road109_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road109_ROAD_MARKING_" meshFile="Road109_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road86_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road86_ASPHALT_0" meshFile="Road86_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road103_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road103_ROAD_MARKING_" meshFile="Road103_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road26_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road26_ASPHALT_0" meshFile="Road26_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road38_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road38_ROAD_MARKING_D" meshFile="Road38_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road48_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road48_ROAD_MARKING_D" meshFile="Road48_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road8_ROAD_MARKING_DA">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road8_ROAD_MARKING_DA" meshFile="Road8_ROAD_MARKING_DA.mesh"/>
+    </node>
+    <node name="Road26_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road26_ROAD_MARKING_D" meshFile="Road26_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road46_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road46_ROAD_MARKING_D" meshFile="Road46_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road95_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road95_ASPHALT_0" meshFile="Road95_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road65_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road65_ASPHALT_0" meshFile="Road65_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road50_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road50_ROAD_MARKING_D" meshFile="Road50_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="SurfaceArea156_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea156_TERRAI" meshFile="SurfaceArea156_TERRAI.mesh"/>
+    </node>
+    <node name="Road74_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road74_ROAD_MARKING_D" meshFile="Road74_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road146_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road146_ROAD_MARKING_" meshFile="Road146_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road22_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road22_ROAD_MARKING_D" meshFile="Road22_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road9_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road9_ASPHALT_0" meshFile="Road9_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road34_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road34_ASPHALT_0" meshFile="Road34_ASPHALT_0.mesh"/>
+    </node>
+    <node name="SurfaceArea154_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea154_TERRAI" meshFile="SurfaceArea154_TERRAI.mesh"/>
+    </node>
+    <node name="Road51_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road51_ASPHALT_0" meshFile="Road51_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road40_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road40_ROAD_MARKING_D" meshFile="Road40_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road133_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road133_ROAD_MARKING_" meshFile="Road133_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road56_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road56_ASPHALT_0" meshFile="Road56_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road95_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road95_ROAD_MARKING_D" meshFile="Road95_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road12_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road12_ROAD_MARKING_D" meshFile="Road12_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road50_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road50_ASPHALT_0" meshFile="Road50_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road36_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road36_ROAD_MARKING_D" meshFile="Road36_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road65_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road65_ROAD_MARKING_D" meshFile="Road65_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Water Ymsen_WATER_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Water Ymsen_WATER_0" meshFile="Water Ymsen_WATER_0.mesh"/>
+    </node>
+    <node name="SurfaceArea162_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea162_TERRAI" meshFile="SurfaceArea162_TERRAI.mesh"/>
+    </node>
+    <node name="Road43_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road43_ASPHALT_0" meshFile="Road43_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road85_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road85_ASPHALT_0" meshFile="Road85_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road40_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road40_ASPHALT_0" meshFile="Road40_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road142_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road142_ROAD_MARKING_" meshFile="Road142_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road3_ROAD_MARKING_DA">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road3_ROAD_MARKING_DA" meshFile="Road3_ROAD_MARKING_DA.mesh"/>
+    </node>
+    <node name="Road131_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road131_ASPHALT_0" meshFile="Road131_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road125_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road125_ASPHALT_0" meshFile="Road125_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road4_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road4_ASPHALT_0" meshFile="Road4_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road9_ROAD_MARKING_DA">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road9_ROAD_MARKING_DA" meshFile="Road9_ROAD_MARKING_DA.mesh"/>
+    </node>
+    <node name="Road89_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road89_ROAD_MARKING_D" meshFile="Road89_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road10_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road10_ROAD_MARKING_D" meshFile="Road10_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road124_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road124_ASPHALT_0" meshFile="Road124_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road134_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road134_ROAD_MARKING_" meshFile="Road134_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road76_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road76_ASPHALT_0" meshFile="Road76_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road119_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road119_ASPHALT_0" meshFile="Road119_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road83_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road83_ASPHALT_0" meshFile="Road83_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road84_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road84_ROAD_MARKING_D" meshFile="Road84_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road118_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road118_ASPHALT_0" meshFile="Road118_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road77_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road77_ASPHALT_0" meshFile="Road77_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road104_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road104_ASPHALT_0" meshFile="Road104_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road82_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road82_ASPHALT_0" meshFile="Road82_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road61_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road61_ROAD_MARKING_D" meshFile="Road61_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="SurfaceArea163_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea163_TERRAI" meshFile="SurfaceArea163_TERRAI.mesh"/>
+    </node>
+    <node name="Road19_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road19_ASPHALT_0" meshFile="Road19_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road30_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road30_ASPHALT_0" meshFile="Road30_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road41_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road41_ROAD_MARKING_D" meshFile="Road41_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road94_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road94_ROAD_MARKING_D" meshFile="Road94_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road31_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road31_ROAD_MARKING_D" meshFile="Road31_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road15_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road15_ROAD_MARKING_D" meshFile="Road15_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road93_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road93_ASPHALT_0" meshFile="Road93_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road27_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road27_ASPHALT_0" meshFile="Road27_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road88_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road88_ASPHALT_0" meshFile="Road88_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road124_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road124_ROAD_MARKING_" meshFile="Road124_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road130_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road130_ROAD_MARKING_" meshFile="Road130_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road143_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road143_ASPHALT_0" meshFile="Road143_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road86_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road86_ROAD_MARKING_D" meshFile="Road86_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road82_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road82_ROAD_MARKING_D" meshFile="Road82_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="SurfaceArea151_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea151_TERRAI" meshFile="SurfaceArea151_TERRAI.mesh"/>
+    </node>
+    <node name="SurfaceArea176_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea176_TERRAI" meshFile="SurfaceArea176_TERRAI.mesh"/>
+    </node>
+    <node name="Road137_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road137_ROAD_MARKING_" meshFile="Road137_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road114_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road114_ROAD_MARKING_" meshFile="Road114_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road113_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road113_ASPHALT_0" meshFile="Road113_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road27_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road27_ROAD_MARKING_D" meshFile="Road27_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road146_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road146_ASPHALT_0" meshFile="Road146_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road45_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road45_ASPHALT_0" meshFile="Road45_ASPHALT_0.mesh"/>
+    </node>
+    <node name="SurfaceArea181_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea181_TERRAI" meshFile="SurfaceArea181_TERRAI.mesh"/>
+    </node>
+    <node name="Road132_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road132_ASPHALT_0" meshFile="Road132_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road74_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road74_ASPHALT_0" meshFile="Road74_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road148_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road148_ASPHALT_0" meshFile="Road148_ASPHALT_0.mesh"/>
+    </node>
+    <node name="SurfaceArea166_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea166_TERRAI" meshFile="SurfaceArea166_TERRAI.mesh"/>
+    </node>
+    <node name="Road102_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road102_ASPHALT_0" meshFile="Road102_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road29_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road29_ROAD_MARKING_D" meshFile="Road29_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road117_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road117_ROAD_MARKING_" meshFile="Road117_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road123_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road123_ROAD_MARKING_" meshFile="Road123_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road8_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road8_ASPHALT_0" meshFile="Road8_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road108_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road108_ROAD_MARKING_" meshFile="Road108_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road111_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road111_ASPHALT_0" meshFile="Road111_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road101_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road101_ASPHALT_0" meshFile="Road101_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road93_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road93_ROAD_MARKING_D" meshFile="Road93_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road64_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road64_ASPHALT_0" meshFile="Road64_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road114_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road114_ASPHALT_0" meshFile="Road114_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road138_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road138_ROAD_MARKING_" meshFile="Road138_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road90_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road90_ROAD_MARKING_D" meshFile="Road90_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road71_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road71_ROAD_MARKING_D" meshFile="Road71_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="SurfaceArea153_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea153_TERRAI" meshFile="SurfaceArea153_TERRAI.mesh"/>
+    </node>
+    <node name="Road85_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road85_ROAD_MARKING_D" meshFile="Road85_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road69_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road69_ROAD_MARKING_D" meshFile="Road69_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road101_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road101_ROAD_MARKING_" meshFile="Road101_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road144_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road144_ROAD_MARKING_" meshFile="Road144_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road7_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road7_ASPHALT_0" meshFile="Road7_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road49_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road49_ROAD_MARKING_D" meshFile="Road49_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road42_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road42_ROAD_MARKING_D" meshFile="Road42_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road14_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road14_ROAD_MARKING_D" meshFile="Road14_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road66_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road66_ROAD_MARKING_D" meshFile="Road66_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road81_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road81_ROAD_MARKING_D" meshFile="Road81_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road73_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road73_ASPHALT_0" meshFile="Road73_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road0_ROAD_MARKING_DA">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road0_ROAD_MARKING_DA" meshFile="Road0_ROAD_MARKING_DA.mesh"/>
+    </node>
+    <node name="Road127_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road127_ROAD_MARKING_" meshFile="Road127_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road111_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road111_ROAD_MARKING_" meshFile="Road111_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road91_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road91_ROAD_MARKING_D" meshFile="Road91_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road126_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road126_ROAD_MARKING_" meshFile="Road126_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road20_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road20_ROAD_MARKING_D" meshFile="Road20_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road56_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road56_ROAD_MARKING_D" meshFile="Road56_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="SurfaceArea161_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea161_TERRAI" meshFile="SurfaceArea161_TERRAI.mesh"/>
+    </node>
+    <node name="Road66_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road66_ASPHALT_0" meshFile="Road66_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road34_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road34_ROAD_MARKING_D" meshFile="Road34_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road39_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road39_ROAD_MARKING_D" meshFile="Road39_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road105_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road105_ASPHALT_0" meshFile="Road105_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road137_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road137_ASPHALT_0" meshFile="Road137_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road125_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road125_ROAD_MARKING_" meshFile="Road125_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road67_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road67_ASPHALT_0" meshFile="Road67_ASPHALT_0.mesh"/>
+    </node>
+    <node name="SurfaceArea152_TERRAI">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="SurfaceArea152_TERRAI" meshFile="SurfaceArea152_TERRAI.mesh"/>
+    </node>
+    <node name="Road37_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road37_ROAD_MARKING_D" meshFile="Road37_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road79_ROAD_MARKING_D">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road79_ROAD_MARKING_D" meshFile="Road79_ROAD_MARKING_D.mesh"/>
+    </node>
+    <node name="Road106_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road106_ROAD_MARKING_" meshFile="Road106_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road23_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road23_ASPHALT_0" meshFile="Road23_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road61_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road61_ASPHALT_0" meshFile="Road61_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road91_ASPHALT_0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road91_ASPHALT_0" meshFile="Road91_ASPHALT_0.mesh"/>
+    </node>
+    <node name="Road135_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road135_ROAD_MARKING_" meshFile="Road135_ROAD_MARKING_.mesh"/>
+    </node>
+    <node name="Road107_ROAD_MARKING_">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <quaternion x="0.000000" y="0.000000" z="0.000000" w="1.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <entity name="Road107_ROAD_MARKING_" meshFile="Road107_ROAD_MARKING_.mesh"/>
+    </node>
+  </nodes>
+  <externals>
+    <item type="material">
+      <file name="Scene.material"/>
+    </item>
+  </externals>
+  <environment>
+    <colourAmbient r="0.000000" g="0.000000" b="0.000000"/>
+    <colourBackground r="0.056563" g="0.220815" b="0.400000"/>
+  </environment>
+</scene>
