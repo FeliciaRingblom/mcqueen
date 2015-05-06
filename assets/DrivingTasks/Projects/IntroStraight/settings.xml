@@ -6,11 +6,8 @@
 	<general>
 		<driverName>default driver</driverName>
 		<showStats>false</showStats>
-		<showHood>true</showHood>
-		
- 		
+		<showHood>true</showHood>	
 	</general>
-	
 
 	<reactionMeasurement>
 		<groupLeft>stimuli_left</groupLeft>

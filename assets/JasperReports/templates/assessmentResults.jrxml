@@ -11,21 +11,6 @@
 		<parameter name="groupMissed" class="java.lang.String">
 		<defaultValueExpression><![CDATA["    "]]></defaultValueExpression>
 	</parameter>
-
-<!--   	<queryString language="xPath">
-		<![CDATA[report/data]]>
-	</queryString>
-	<field name="assessmentId" class="java.lang.Integer">
-		<fieldDescription><![CDATA[id]]></fieldDescription>
-	</field>
-	<field name="gender" class="java.lang.String">
-		<fieldDescription><![CDATA[gender]]></fieldDescription>
-	</field>
-	<field name="age" class="java.lang.Integer">
-		<fieldDescription><![CDATA[age]]></fieldDescription>
-	</field>  -->
-
-	<!-- här -->
 	<queryString language="xPath">
 		<![CDATA[report/reactionMeasurement]]>
 	</queryString>
@@ -53,9 +38,6 @@
 	<variable name="endTime" class="java.lang.Long" calculation="Highest">
 		<variableExpression><![CDATA[$F{absoluteTime}]]></variableExpression>
 	</variable>
-	<variable name="highestReactionTime" class="java.lang.Integer" calculation="Highest">
-		<variableExpression><![CDATA[(($F{reactionResult} > 0 || $F{reactionResult} < -1) ? $F{reactionTime} : 1000)]]></variableExpression>
-	</variable>
 	<variable name="averageReactionTimeLeft" class="java.lang.Integer" calculation="Average">
 		<variableExpression><![CDATA[$F{reactionGroup}.equals($P{groupLeft}) && ($F{reactionResult} > 0)
 						     ? $F{reactionTime}:null]]></variableExpression>
@@ -80,6 +62,15 @@
 		<variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupLeft})) ? $F{reactionTime} : null)]]></variableExpression>
 	</variable>
 	<variable name="lowestReactionTimeRight" class="java.lang.Integer" calculation="Lowest">
+		<variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupRight})) ? $F{reactionTime} : null)]]></variableExpression>
+	</variable>
+	<variable name="highestReactionTime" class="java.lang.Integer" calculation="Highest">
+		<variableExpression><![CDATA[(($F{reactionResult} > 0 || $F{reactionResult} < -1) ? $F{reactionTime} : 1000)]]></variableExpression>
+	</variable>
+	<variable name="highestReactionTimeLeft" class="java.lang.Integer" calculation="Highest">
+		<variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupLeft})) ? $F{reactionTime} : null)]]></variableExpression>
+	</variable>
+	<variable name="highestReactionTimeRight" class="java.lang.Integer" calculation="Highest">
 		<variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupRight})) ? $F{reactionTime} : null)]]></variableExpression>
 	</variable>
 	<title>
@@ -240,12 +231,12 @@
  			<textField isBlankWhenNull="true">
 				<reportElement x="150" y="156" width="55" height="30"/>
 				<textElement textAlignment="Center"><font size="12"/></textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeLeft}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{highestReactionTimeLeft}]]></textFieldExpression>
 			</textField>
  			<textField isBlankWhenNull="true">
 				<reportElement x="205" y="156" width="55" height="30"/>
 				<textElement textAlignment="Center"><font size="12"/></textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeRight}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{highestReactionTimeRight}]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement x="260" y="65" width="0" height="110" forecolor="#FFFFFF"/>
