@@ -88,7 +88,6 @@ public class Simulator extends SimulationBasics
     private Nifty nifty;
     private boolean drivingTaskGiven = false;
     private boolean initializationFinished = false;
-    private boolean initialized = false;
     
     private MyInstructionsGUIController myInstructions;
     public MyInstructionsGUIController getMyInstructions() {
@@ -383,7 +382,6 @@ public class Simulator extends SimulationBasics
     	// set gravity
     	gravityConstant = drivingTask.getSceneLoader().getGravity(SimulationDefaults.gravity);
     	getPhysicsSpace().setGravity(new Vector3f(0, -gravityConstant, 0));	
-    	//getPhysicsSpace().setAccuracy(0.005f);
     	
     	PanelCenter.init(this);
 	
@@ -494,7 +492,6 @@ public class Simulator extends SimulationBasics
 		
         
 		initializationFinished = true;
-		initialized = true;
     }
     
     

@@ -44,55 +44,6 @@ public class LightFactory
 		
 		for(Light light : lightList)
 			sim.getSceneNode().addLight(light);     
-		
-
-		// LIGHT EXAMPLES
-/*
-        DirectionalLight dlA = new DirectionalLight();
-        dlA.setDirection(new Vector3f(0.5f, -0.5f, 0.5f).normalizeLocal());
-        dlA.setColor(ColorRGBA.White.mult(0.7f));
-        sim.getSceneNode().addLight(dlA);
-        
-        DirectionalLight dlB = new DirectionalLight();
-        dlB.setDirection(new Vector3f(-0.5f, -0.5f, 0.5f).normalizeLocal());
-        dlB.setColor(ColorRGBA.White.mult(0.7f));
-        sim.getSceneNode().addLight(dlB);
-        
-        DirectionalLight dlC = new DirectionalLight();
-        dlC.setDirection(new Vector3f(0.5f, -0.5f, -0.5f).normalizeLocal());
-        dlC.setColor(ColorRGBA.White.mult(0.7f));
-        sim.getSceneNode().addLight(dlC);
-        
-        DirectionalLight dlD = new DirectionalLight();
-        dlD.setDirection(new Vector3f(-0.5f, -0.5f, -0.5f).normalizeLocal());
-        dlD.setColor(ColorRGBA.White.mult(0.7f));
-        sim.getSceneNode().addLight(dlD);
-*/       
-        
-/*
-		Vector3f sunPosition = new Vector3f(-1200, 400, 0);
-        PointLight pointLight01 = new PointLight();
-		pointLight01.setPosition(sunPosition);
-		pointLight01.setRadius(10000);
-		sim.getSceneNode().addLight(pointLight01);
-*/
-		
-/*
-        AmbientLight a = new AmbientLight();
-        a.setColor(ColorRGBA.White.mult(1.5f));
-        sim.getSceneNode().addLight(a);
-*/  
-		
-/*
-        SpotLight spotLight = new SpotLight();
-        spotLight.setPosition(new Vector3f(0,50,0));
-        spotLight.setColor(ColorRGBA.White.mult(2));
-        spotLight.setDirection(new Vector3f(0,-1,0));
-        spotLight.setSpotRange(1000);
-        spotLight.setSpotInnerAngle(5*FastMath.DEG_TO_RAD);
-        spotLight.setSpotOuterAngle(10*FastMath.DEG_TO_RAD);        
-        sim.getSceneNode().addLight(spotLight);
-*/
 	}
 
 }
