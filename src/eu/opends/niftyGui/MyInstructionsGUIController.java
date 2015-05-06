@@ -103,7 +103,7 @@ public class MyInstructionsGUIController implements ScreenController {
 		nifty.exit();
 		
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStraight/introStraight.xml";
-		sim.closeDrivingTaskSelectionGUI();
+		//sim.closeDrivingTaskSelectionGUI();
 		sim.simpleInitDrivingTask(drivingTask,driverName, speed);	
 	}
 	
@@ -145,7 +145,7 @@ public class MyInstructionsGUIController implements ScreenController {
 //		for(int i = 0; i<threadArray.length; i++) {
 //			System.out.println("ThreadArray " + threadArray[i]);
 //		}
-		sim.removeAllDrivingTaskElements();
+		//sim.removeAllDrivingTaskElements();
 		String next = "instruction_" + screenNumber;
 		nifty.gotoScreen(next);
 	}

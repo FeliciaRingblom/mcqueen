@@ -55,8 +55,9 @@ public class KeyBindingCenter
 	
     public KeyBindingCenter(SimulationBasics sim) 
     {
-    	inputManager = sim.getInputManager();
     	
+    	inputManager = sim.getInputManager();
+    	inputManager.clearMappings();
     	// disable shutdown by ESCAPE button
     	inputManager.deleteMapping("SIMPLEAPP_Exit");
     	

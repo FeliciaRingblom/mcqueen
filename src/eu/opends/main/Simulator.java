@@ -26,6 +26,7 @@ import java.util.Locale;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.springframework.beans.factory.InitializingBean;
 
 import com.jme3.app.StatsAppState;
 import com.jme3.app.state.VideoRecorderAppState;
@@ -87,6 +88,7 @@ public class Simulator extends SimulationBasics
     private Nifty nifty;
     private boolean drivingTaskGiven = false;
     private boolean initializationFinished = false;
+    private boolean initialized = false;
     
     private MyInstructionsGUIController myInstructions;
     public MyInstructionsGUIController getMyInstructions() {
@@ -363,6 +365,7 @@ public class Simulator extends SimulationBasics
 	
     public void simpleInitDrivingTask(String drivingTaskFileName, String driverName, String speed)
     {
+    	initializationFinished = false;
     	
     	SimulationDefaults.drivingTaskFileName = drivingTaskFileName;
     	
@@ -406,13 +409,16 @@ public class Simulator extends SimulationBasics
 			driverName = settingsLoader.getSetting(Setting.General_driverName, SimulationDefaults.driverName);
     	SimulationDefaults.driverName = driverName;
 
-        // setup key binding
+        
+		// setup key binding
 		keyBindingCenter = new KeyBindingCenter(this);
+		
         
         AudioCenter.init(this);
 
         // setup camera settings
         cameraFactory = new SimulatorCam(this, car);
+        
         
 		// start trafficLightCenter
 		//trafficLightCenter = new TrafficLightCenter(this);
@@ -488,6 +494,7 @@ public class Simulator extends SimulationBasics
 		
         
 		initializationFinished = true;
+		initialized = true;
     }
     
     
@@ -732,7 +739,7 @@ public class Simulator extends SimulationBasics
 	    		SimulationDefaults.driverName = args[1];
 	    	}
 			
-	    	AppSettings settings = new AppSettings(false);
+	    	AppSettings settings = new AppSettings(true);
 	        settings.setUseJoysticks(true);
 	        settings.setSettingsDialogImage("assets/Textures/Logo/mcQueen.jpg");
 	        settings.setTitle("Testa din körförmåga. ");
@@ -750,6 +757,7 @@ public class Simulator extends SimulationBasics
 			
 			sim.setPauseOnLostFocus(false);
 			System.out.println("ska nu anropa sim.start() från main");
+			sim.setShowSettings(false);
 			sim.start();
     	}
     	catch(Exception e1)
