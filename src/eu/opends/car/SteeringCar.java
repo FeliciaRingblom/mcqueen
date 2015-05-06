@@ -60,7 +60,6 @@ public class SteeringCar extends Car
 		
 		minSpeed = scenarioLoader.getCarProperty(CarProperty.engine_minSpeed, SimulationDefaults.engine_minSpeed);
 		//maxSpeed = scenarioLoader.getCarProperty(CarProperty.engine_maxSpeed, SimulationDefaults.engine_maxSpeed);
-		System.out.println("string Speed = " + speed);
 		if(speed.equals("low"))
 			maxSpeed = 40;	
 			

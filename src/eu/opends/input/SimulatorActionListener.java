@@ -197,14 +197,6 @@ public class SimulatorActionListener implements ActionListener
 				sim.getThreeVehiclePlatoonTask().reportReactionKeyPressed();
 			}
 		}
-
-		else if (binding.equals(KeyMapping.TOGGLE_CAM.getID())) 
-		{
-			if (value) {
-				// toggle camera
-				sim.getCameraFactory().changeCamera();
-			}
-		}
 		
 		else if (binding.equals(KeyMapping.TOGGLE_WIREFRAME.getID())) 
 		{
@@ -247,15 +239,6 @@ public class SimulatorActionListener implements ActionListener
 				sim.getTrafficLightCenter().toggleMode();
 			}
 				
-		}
-		
-		else if (binding.equals(KeyMapping.TOGGLE_MESSAGEBOX.getID())) 
-		{
-			if (value)
-			{
-				MessageBoxGUI messageBoxGUI = PanelCenter.getMessageBox();
-				messageBoxGUI.toggleDialog();
-			}
 		}
 		
 		else if (binding.equals(KeyMapping.TOGGLE_RECORD_DATA.getID())) 
@@ -434,13 +417,6 @@ public class SimulatorActionListener implements ActionListener
 				
 				System.out.println(car.getPosition());		
 			}
-		}
-		
-		
-		else if (binding.equals(KeyMapping.TOGGLE_KEYMAPPING.getID())) 
-		{
-			if (value)
-				sim.getKeyMappingGUI().toggleDialog();
 		}
 		
 		else if (binding.equals(KeyMapping.SHUTDOWN.getID())) 

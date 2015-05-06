@@ -55,8 +55,9 @@ public class KeyBindingCenter
 	
     public KeyBindingCenter(SimulationBasics sim) 
     {
-    	inputManager = sim.getInputManager();
     	
+    	inputManager = sim.getInputManager();
+    	inputManager.clearMappings();
     	// disable shutdown by ESCAPE button
     	inputManager.deleteMapping("SIMPLEAPP_Exit");
     	
@@ -225,12 +226,6 @@ public class KeyBindingCenter
 		InputListener driveAnalyzerActionListener = new DriveAnalyzerActionListener(analyzer);
 		for(KeyMapping keyMapping : KeyMapping.getDriveAnalyzerActionKeyMappingList())
 			addKeyMapping(keyMapping, driveAnalyzerActionListener);
-
-
-		// ANALOG
-		InputListener driveAnalyzerAnalogListener = new DriveAnalyzerAnalogListener(analyzer);
-		for(KeyMapping keyMapping : KeyMapping.getDriveAnalyzerAnalogKeyMappingList())
-			addKeyMapping(keyMapping, driveAnalyzerAnalogListener);
 	}
 
 

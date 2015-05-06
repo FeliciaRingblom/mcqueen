@@ -28,13 +28,7 @@ import eu.opends.basics.SimulationBasics;
  */
 public class KeyMapping
 {
-	// common keys
-	public static KeyMapping TOGGLE_KEYMAPPING = new KeyMapping("toggle_keymapping", "show/hide key mapping", new String[] {"KEY_F1"});
 	public static KeyMapping SHUTDOWN = new KeyMapping("shutdown", "exit simulator", new String[] {"KEY_ESCAPE"});
-	public static KeyMapping TOGGLE_CAM = new KeyMapping("toggle_cam", "change camera view", new String[] {"KEY_V"});
-	public static KeyMapping TOGGLE_MESSAGEBOX = new KeyMapping("toggle_messagebox", "show/hide messages", new String[] {"KEY_M"});
-	
-	// simulator keys
 	public static KeyMapping ACCELERATE = new KeyMapping("accelerate", "accelerate", new String[] {"KEY_UP"});
 	public static KeyMapping ACCELERATE_BACK = new KeyMapping("accelerate_back", "accelerate back", new String[] {"KEY_DOWN"});
 	public static KeyMapping STEER_LEFT = new KeyMapping("steer_left", "steer left", new String[] {"KEY_LEFT"});
@@ -87,52 +81,27 @@ public class KeyMapping
 	public static KeyMapping REACT_SQUARE = new KeyMapping("react_square", "react to stimuli left side", new String[] {"KEY_B"});
 	public static KeyMapping REACT_CIRCLE = new KeyMapping("react_circle", "react to stimuli right side", new String[] {"KEY_N"});
 
-	
 	// help function that prints the cars current position to the console
 	public static KeyMapping PRINT_POS = new KeyMapping("print_pos", "prints the car position", new String[] {"KEY_Q"});
 	
-	// analyzer keys
-	public static KeyMapping GOTO_NEXT_DATAPOINT = new KeyMapping("goto_next_datapoint", "next data point", new String[] {"KEY_UP"});
-	public static KeyMapping GOTO_PREVIOUS_DATAPOINT = new KeyMapping("goto_previous_datapoint", "previous data point", new String[] {"KEY_DOWN"});
-	public static KeyMapping GO_FORWARD = new KeyMapping("go_forward", "move forwards", new String[] {"KEY_RIGHT"});
-	public static KeyMapping GO_BACKWARD = new KeyMapping("go_backward", "move backwards", new String[] {"KEY_LEFT"});
-	public static KeyMapping TOGGLE_POINTS = new KeyMapping("toggle_points", "show points", new String[] {"KEY_1"});
-	public static KeyMapping TOGGLE_LINE = new KeyMapping("toggle_line", "show line", new String[] {"KEY_2"});
-	public static KeyMapping TOGGLE_CONE = new KeyMapping("toggle_cone", "show cone", new String[] {"KEY_3"});
-	public static KeyMapping TOGGLE_REPLAY = new KeyMapping("toggle_replay", "start/stop replay", new String[] {"KEY_RETURN"});
-	
-	
-	// look up table of joystick buttons
-	/*
-	inputManager.addMapping(KeyMapping.TOGGLE_AUTOMATIC.getID(), new JoyButtonTrigger(0,1));
-	inputManager.addMapping(KeyMapping.TOGGLE_CAM.getID(), new JoyButtonTrigger(0,3));
-	inputManager.addMapping(KeyMapping.REPORT_LANDMARK.getID(), new JoyButtonTrigger(0,7));
-	inputManager.addMapping(KeyMapping.SHIFT_DOWN.getID(), new JoyButtonTrigger(0,8));
-	inputManager.addMapping(KeyMapping.SHIFT_UP.getID(), new JoyButtonTrigger(0,9));
-	inputManager.addMapping(KeyMapping.CLOSE_INSTRUCTION_SCREEN.getID(), new JoyButtonTrigger(0,14));
-	inputManager.addListener(simulatorActionListener, KeyMapping.TOGGLE_CAM.getID());
-	 */
 	
 	public static ArrayList<KeyMapping> getSimulatorActionKeyMappingList()
 	{
 		ArrayList<KeyMapping> keyMappingList = new ArrayList<KeyMapping>();
 		
 		// specify order of key mapping list (if available)
-		keyMappingList.add(KeyMapping.TOGGLE_KEYMAPPING);
 		keyMappingList.add(KeyMapping.SHUTDOWN);
 		keyMappingList.add(KeyMapping.ACCELERATE);
 		keyMappingList.add(KeyMapping.ACCELERATE_BACK);
 		keyMappingList.add(KeyMapping.STEER_LEFT);
 		keyMappingList.add(KeyMapping.STEER_RIGHT);
 		keyMappingList.add(KeyMapping.BRAKE);
-		keyMappingList.add(KeyMapping.TOGGLE_CAM);
 		keyMappingList.add(KeyMapping.TOGGLE_WIREFRAME);
 		keyMappingList.add(KeyMapping.TOGGLE_ENGINE);		
 		keyMappingList.add(KeyMapping.TOGGLE_PAUSE);
 		keyMappingList.add(KeyMapping.START_PAUSE);
 		keyMappingList.add(KeyMapping.STOP_PAUSE);
 		keyMappingList.add(KeyMapping.TOGGLE_TRAFFICLIGHTMODE);
-		keyMappingList.add(KeyMapping.TOGGLE_MESSAGEBOX);
 		keyMappingList.add(KeyMapping.TOGGLE_RECORD_DATA);
 		keyMappingList.add(KeyMapping.TOGGLE_TOPVIEW);
 		keyMappingList.add(KeyMapping.TOGGLE_BACKMIRROR);
@@ -199,37 +168,14 @@ public class KeyMapping
 		ArrayList<KeyMapping> keyMappingList = new ArrayList<KeyMapping>();
 
 		// specify order of key mapping list  (if available)
-		keyMappingList.add(KeyMapping.TOGGLE_KEYMAPPING);
 		keyMappingList.add(KeyMapping.SHUTDOWN);
-		keyMappingList.add(KeyMapping.TOGGLE_CAM);
-		keyMappingList.add(KeyMapping.TOGGLE_POINTS);
-		keyMappingList.add(KeyMapping.TOGGLE_LINE);
-		keyMappingList.add(KeyMapping.TOGGLE_CONE);
-		keyMappingList.add(KeyMapping.GOTO_NEXT_DATAPOINT);
-		keyMappingList.add(KeyMapping.GOTO_PREVIOUS_DATAPOINT);
-		keyMappingList.add(KeyMapping.TOGGLE_MESSAGEBOX);
-		keyMappingList.add(KeyMapping.TOGGLE_REPLAY);
 		
 		SimulationBasics.getDrivingTask().getSettingsLoader().lookUpKeyMappings(keyMappingList);
 		
 		return keyMappingList;
 	}
 	
-	
-	public static ArrayList<KeyMapping> getDriveAnalyzerAnalogKeyMappingList() 
-	{
-		ArrayList<KeyMapping> keyMappingList = new ArrayList<KeyMapping>();
-
-		// specify order of key mapping list  (if available)
-		keyMappingList.add(KeyMapping.GO_FORWARD);
-		keyMappingList.add(KeyMapping.GO_BACKWARD);
 		
-		SimulationBasics.getDrivingTask().getSettingsLoader().lookUpKeyMappings(keyMappingList);
-		
-		return keyMappingList;
-	}
-	
-	
 	private String ID;
 	private String description;
 	private String[] defaultKeys;

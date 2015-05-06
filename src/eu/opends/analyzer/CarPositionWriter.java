@@ -145,7 +145,7 @@ public class CarPositionWriter {
 		try {
 			StringBuffer sb = new StringBuffer();
 			for (DataUnit r : arrayDataList) {
-				sb.append(r.getXpos() + ":"
+				sb.append(r.getDate().getTime() + ":" + r.getXpos() + ":"
 						+ r.getYpos() + ":" + r.getZpos() + newLine
 						);
 			}

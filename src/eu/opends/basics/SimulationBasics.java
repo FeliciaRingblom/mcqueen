@@ -210,24 +210,25 @@ public class SimulationBasics extends SimpleApplication
     	lookupNumberOfScreens();
     	
     	// init physics
+    	stateManager.detach(bulletAppState);
+    	stateManager.cleanup();
         bulletAppState = new BulletAppState();
         stateManager.attach(bulletAppState);
-		
+        
         // register loader for *.properties-files
         assetManager.registerLoader(PropertiesLoader.class, "properties");
         assetManager.registerLoader(XMLLoader.class, "xml");
         
+        if(sceneNode != null){
+        	getViewPort().detachScene(sceneNode);
+        	rootNode.detachChild(sceneNode);
+        }
 		sceneNode = new Node("sceneNode");
-		//sceneNode.setShadowMode(ShadowMode.CastAndReceive);
 		rootNode.attachChild(sceneNode);
-		
+		        
 		triggerNode = new Node("triggerNode");
 		sceneNode.attachChild(triggerNode);
-    	
-        // apply shadow casting       
-        //if (settings.getRenderer().startsWith("LWJGL")) 
-        //	sceneNode.setShadowMode(ShadowMode.Receive);
-        
+
         // setup light settings
         lightFactory = new LightFactory(this);
         lightFactory.initLight();

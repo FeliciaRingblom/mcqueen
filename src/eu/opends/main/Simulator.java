@@ -26,11 +26,13 @@ import java.util.Locale;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.springframework.beans.factory.InitializingBean;
 
 import com.jme3.app.StatsAppState;
 import com.jme3.app.state.VideoRecorderAppState;
 import com.jme3.font.BitmapText;
 import com.jme3.input.Joystick;
+import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
 import com.jme3.niftygui.NiftyJmeDisplay;
 import com.jme3.system.AppSettings;
@@ -86,6 +88,7 @@ public class Simulator extends SimulationBasics
     private Nifty nifty;
     private boolean drivingTaskGiven = false;
     private boolean initializationFinished = false;
+    private boolean initialized = false;
     
     private MyInstructionsGUIController myInstructions;
     public MyInstructionsGUIController getMyInstructions() {
@@ -232,8 +235,10 @@ public class Simulator extends SimulationBasics
 
 	private LinkedList<Vector3f> carPositionList = new LinkedList<Vector3f>();
 	private LinkedList<DataUnit> dataUnitList = new LinkedList<DataUnit>();
+	private LinkedList<Vector3f> idealPositionList = new LinkedList<Vector3f>();
 	
 	private CarPositionReader carPositionReader = new CarPositionReader();
+	private CarPositionReader idealPositionReader = new CarPositionReader();
 	private Long initialTimeStamp = 0l;
 
 	public enum VisualizationMode 
@@ -248,29 +253,42 @@ public class Simulator extends SimulationBasics
 	}
 	
 	public void calculateCarData(String fileName){
-		carPositionReader.initReader(fileName, true);
-		carPositionReader.loadDriveData();
-
-		carPositionList = carPositionReader.getCarPositionList();
-		for(Vector3f carPos : carPositionList)
-			devComp.addWayPoint(carPos);
-
-		dataUnitList = carPositionReader.getDataUnitList();
-		
-		if(dataUnitList.size() > 0)
-			initialTimeStamp = dataUnitList.get(0).getDate().getTime();
-		
-		//devComp.showAllIdealPoints();
-		//devComp.showAllWayPoints();
-		try {
-			area = devComp.getDeviation();
-			lengthOfIdealLine = devComp.getLengthOfIdealLine();
-			System.out.println("Area between ideal line and driven line: " + area);
-			System.out.println("Length of ideal line: " + lengthOfIdealLine);
-			System.out.println("Mean deviation: " + (float)area/lengthOfIdealLine + "\n");
-		} catch (Exception e) {
-			System.out.println(e.getMessage() + "\n");
-		}
+//		carPositionReader.initReader(fileName, true);
+//		carPositionReader.loadDriveData();
+//		idealPositionReader.initReader("script/carData", true);
+//		idealPositionReader.loadDriveData();
+//		
+//		
+//
+//		carPositionList = carPositionReader.getCarPositionList();
+//		idealPositionList = idealPositionReader.getCarPositionList();
+//		for(Vector3f carPos : carPositionList){
+//			devComp.addWayPoint(carPos);
+//		}
+//		for(Vector3f carPos : idealPositionList) {
+//			devComp.addIdealPoint(new Vector2f(carPos.x, carPos.y));
+//		}
+//		
+//		
+//
+//		dataUnitList = carPositionReader.getDataUnitList();
+//		
+//		if(dataUnitList.size() > 0)
+//			initialTimeStamp = dataUnitList.get(0).getDate().getTime();
+//		
+//		//devComp.showAllIdealPoints();
+//		//devComp.showAllWayPoints();
+//		try {
+//			
+//			area = devComp.getDeviation();
+//			System.out.println("kommer in i try");
+//			lengthOfIdealLine = devComp.getLengthOfIdealLine();
+//			System.out.println("Area between ideal line and driven line: " + area);
+//			System.out.println("Length of ideal line: " + lengthOfIdealLine);
+//			System.out.println("Mean deviation: " + (float)area/lengthOfIdealLine + "\n");
+//		} catch (Exception e) {
+//			System.out.println(e.getMessage() + "\n");
+//		}
 	}
 	
 	/*end added by Felicia*/
@@ -347,6 +365,7 @@ public class Simulator extends SimulationBasics
 	
     public void simpleInitDrivingTask(String drivingTaskFileName, String driverName, String speed)
     {
+    	initializationFinished = false;
     	
     	SimulationDefaults.drivingTaskFileName = drivingTaskFileName;
     	
@@ -390,13 +409,16 @@ public class Simulator extends SimulationBasics
 			driverName = settingsLoader.getSetting(Setting.General_driverName, SimulationDefaults.driverName);
     	SimulationDefaults.driverName = driverName;
 
-        // setup key binding
+        
+		// setup key binding
 		keyBindingCenter = new KeyBindingCenter(this);
+		
         
         AudioCenter.init(this);
 
         // setup camera settings
         cameraFactory = new SimulatorCam(this, car);
+        
         
 		// start trafficLightCenter
 		//trafficLightCenter = new TrafficLightCenter(this);
@@ -472,6 +494,7 @@ public class Simulator extends SimulationBasics
 		
         
 		initializationFinished = true;
+		initialized = true;
     }
     
     
@@ -716,7 +739,7 @@ public class Simulator extends SimulationBasics
 	    		SimulationDefaults.driverName = args[1];
 	    	}
 			
-	    	AppSettings settings = new AppSettings(false);
+	    	AppSettings settings = new AppSettings(true);
 	        settings.setUseJoysticks(true);
 	        settings.setSettingsDialogImage("assets/Textures/Logo/mcQueen.jpg");
 	        settings.setTitle("Testa din körförmåga. ");
@@ -734,6 +757,7 @@ public class Simulator extends SimulationBasics
 			
 			sim.setPauseOnLostFocus(false);
 			System.out.println("ska nu anropa sim.start() från main");
+			sim.setShowSettings(false);
 			sim.start();
     	}
     	catch(Exception e1)
