@@ -146,6 +146,7 @@ public class MyInstructionsGUIController implements ScreenController {
 //			System.out.println("ThreadArray " + threadArray[i]);
 //		}
 		//sim.removeAllDrivingTaskElements();
+		sim.getGuiNode().detachAllChildren();
 		String next = "instruction_" + screenNumber;
 		nifty.gotoScreen(next);
 	}

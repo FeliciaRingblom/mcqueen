@@ -84,7 +84,7 @@ public class CameraFlight
         	float distanceMeters = path.getLength();
             float speed = speedKmPerHour / 3.6f;
             float duration = distanceMeters / speed;
-            
+                        
             cinematic = new Cinematic(sim.getSceneNode(), duration);
             sim.getStateManager().attach(cinematic);
             

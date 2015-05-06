@@ -59,6 +59,7 @@ public class SimulatorCam extends CameraFactory
 	{
 		Cylinder cone = new Cylinder(10, 10, 3f, 0.1f, 9f, true, false);
 		cone.setLineWidth(4f);
+
 		geoCone = new Geometry("TopViewMarker", cone);
 		
 	    Material coneMaterial = new Material(sim.getAssetManager(),"Common/MatDefs/Misc/Unshaded.j3md");
