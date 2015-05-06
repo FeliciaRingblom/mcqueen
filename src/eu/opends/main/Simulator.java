@@ -224,7 +224,7 @@ public class Simulator extends SimulationBasics
 	private float area = 0;
 	private float lengthOfIdealLine = 1;
 	
-	private float roadWidth = 30.0f; //what is a good value here????
+	private float roadWidth = 20000.0f; //what is a good value here????
 	private DeviationComputer devComp = new DeviationComputer(roadWidth);
 	public DeviationComputer getDeviationComputer() 
 	{
@@ -251,42 +251,45 @@ public class Simulator extends SimulationBasics
 	}
 	
 	public void calculateCarData(String fileName){
-//		carPositionReader.initReader(fileName, true);
-//		carPositionReader.loadDriveData();
-//		idealPositionReader.initReader("script/carData", true);
-//		idealPositionReader.loadDriveData();
-//		
-//		
-//
-//		carPositionList = carPositionReader.getCarPositionList();
-//		idealPositionList = idealPositionReader.getCarPositionList();
-//		for(Vector3f carPos : carPositionList){
-//			devComp.addWayPoint(carPos);
-//		}
-//		for(Vector3f carPos : idealPositionList) {
-//			devComp.addIdealPoint(new Vector2f(carPos.x, carPos.y));
-//		}
-//		
-//		
-//
-//		dataUnitList = carPositionReader.getDataUnitList();
-//		
-//		if(dataUnitList.size() > 0)
-//			initialTimeStamp = dataUnitList.get(0).getDate().getTime();
-//		
-//		//devComp.showAllIdealPoints();
-//		//devComp.showAllWayPoints();
-//		try {
-//			
-//			area = devComp.getDeviation();
-//			System.out.println("kommer in i try");
-//			lengthOfIdealLine = devComp.getLengthOfIdealLine();
-//			System.out.println("Area between ideal line and driven line: " + area);
-//			System.out.println("Length of ideal line: " + lengthOfIdealLine);
-//			System.out.println("Mean deviation: " + (float)area/lengthOfIdealLine + "\n");
-//		} catch (Exception e) {
-//			System.out.println(e.getMessage() + "\n");
-//		}
+		carPositionReader.initReader("analyzerData/test/carData.txt", true);
+		carPositionReader.loadDriveData();
+		idealPositionReader.initReader("analyzerData/ideal/carData.txt", true);
+		idealPositionReader.loadDriveData();
+		
+		Vector2f idealVector = new Vector2f();
+		Vector2f carVector = new Vector2f();
+		
+		carPositionList = carPositionReader.getCarPositionList();
+		idealPositionList = idealPositionReader.getCarPositionList();
+		for(Vector3f carPos : carPositionList){
+			//carVector.add(new Vector2f(carPos.x, carPos.y));
+			devComp.addWayPoint(carPos);
+		}
+		for(Vector3f carPos : idealPositionList) {
+			devComp.addIdealPoint(new Vector2f(carPos.x, carPos.y));
+		}
+	
+		
+		
+
+		dataUnitList = carPositionReader.getDataUnitList();
+		
+		if(dataUnitList.size() > 0)
+			initialTimeStamp = dataUnitList.get(0).getDate().getTime();
+		
+		//devComp.showAllIdealPoints();
+		//devComp.showAllWayPoints();
+		try {
+			
+			area = devComp.getDeviation();
+			System.out.println("kommer in i try efter getDeviation()");
+			lengthOfIdealLine = devComp.getLengthOfIdealLine();
+			System.out.println("Area between ideal line and driven line: " + area);
+			System.out.println("Length of ideal line: " + lengthOfIdealLine);
+			System.out.println("Mean deviation: " + (float)area/lengthOfIdealLine + "\n");
+		} catch (Exception e) {
+			System.out.println(e.getMessage() + "\n");
+		}
 	}
 	
 	/*end added by Felicia*/
@@ -347,14 +350,14 @@ public class Simulator extends SimulationBasics
 	
 	public void closeDrivingTaskSelectionGUI() 
 	{
-		System.out.println("i closeDdrivingTaskSelectionGUI i Simulator.java precis innan nifty.exit()");
 		nifty.exit();
         //inputManager.setCursorVisible(false);
         flyCam.setEnabled(true);
 	}
 	
 
-    public void removeAllDrivingTaskElements(){
+    public void removeAllDrivingTaskElements()
+    {
     	System.out.println("i removeAllDrivingTaskElements() i Simulator.java");
     	destroyDrivingTask();
     	super.resetSimulationBasics();
@@ -394,13 +397,6 @@ public class Simulator extends SimulationBasics
 		
 		// create and place steering car
 		car = new SteeringCar(this, speed);
-		
-		// initialize physical vehicles
-		//physicalTraffic = new PhysicalTraffic(this);
-		//physicalTraffic.start(); //TODO
-		
-		// sync driver name with KAPcom. May provide suggestion for driver name if NULL.
-		//driverName = KnowledgeBase.User().initUserName(driverName);  
 		
 		if(driverName == null || driverName.isEmpty())
 			driverName = settingsLoader.getSetting(Setting.General_driverName, SimulationDefaults.driverName);
@@ -709,6 +705,7 @@ public class Simulator extends SimulationBasics
     {    
     	try
     	{
+    		
     		// load logger configuration file
     		PropertyConfigurator.configure("assets/JasperReports/log4j/log4j.properties");
     	

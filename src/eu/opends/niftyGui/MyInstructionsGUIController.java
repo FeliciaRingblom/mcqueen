@@ -53,6 +53,9 @@ public class MyInstructionsGUIController implements ScreenController {
 
 	@Override
 	public void onStartScreen() {
+		System.out.println("i onstartscreen");
+		String analyzerFile = "analyzerData/test/carData.txt";
+		sim.calculateCarData(analyzerFile);	
 		// TODO Auto-generated method stub
 		
 	}
@@ -107,12 +110,8 @@ public class MyInstructionsGUIController implements ScreenController {
 		sim.simpleInitDrivingTask(drivingTask,driverName, speed);	
 	}
 	
-	public void startIntroStimuli(){
-//		String analyzerFile = "analyzerData/test/carData.txt";
-//		sim.calculateCarData(analyzerFile);
-//		
+	public void startIntroStimuli(){	
 		String driverName = getTextFromTextfield("input_id");
-		System.out.println("from text: " + driverName);
 		nifty.exit();	
 		
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStimuli/introStimuli.xml";

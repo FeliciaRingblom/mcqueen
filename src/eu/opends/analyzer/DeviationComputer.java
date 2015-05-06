@@ -47,7 +47,7 @@ public class DeviationComputer
 	private static final double MAX_DISTANCE = 30.0;
 	
 	private static final float MAX_DISTANCE_BETWEEN_TWO_IDEAL_POINTS = 0.1f;
-	private static final boolean DEBUGMODE = false;
+	private static final boolean DEBUGMODE = true;
 	private SortedMap<String, Vector2f> idealPointMap = new TreeMap<String, Vector2f>();
 		
 	
@@ -275,12 +275,13 @@ public class DeviationComputer
 				Vector2f prevIP = idealPoints.elementAt(i-1);
 				Vector2f currIP = idealPoints.elementAt(i);
 				Vector2f nextIP = idealPoints.elementAt(i+1);
+				System.out.println("prevIP: " + prevIP + " currIP=" + currIP + "nextIP = " + nextIP);
 			
 				// compute the line which divides the angle at currIP in two equal halves
 				Line2D.Float crossLine = getHalfwayVector(prevIP, currIP, nextIP);
 				log("Line through IP " + currIP + " from (" + crossLine.getX1() + "," + crossLine.getY1() + ")" +
 						" to (" + crossLine.getX2() + "," + crossLine.getY2() + ")");
-				
+				//System.out.println("crossLine = " + crossLine.x1 + ", " + crossLine.y1 + ", " + crossLine.x2 + ", " + crossLine.y2);
 				// get way point on or next to the line
 				Vector3f currWP3f = getPointOnLine(crossLine);
 				Vector2f currWP = new Vector2f(currWP3f.getX(), currWP3f.getZ());
@@ -471,7 +472,8 @@ public class DeviationComputer
 			
 			// distance of current point from line segment
 			double distance = line.ptSegDist(point);
-			
+			//System.out.println("point = " + point);
+			//System.out.println("distance = " + distance + " Maxidstance = " + MAX_DISTANCE);
 			// ignore points, that are located too far away from the line
 			if(distance > MAX_DISTANCE)
 				continue;
@@ -479,12 +481,14 @@ public class DeviationComputer
 			// if point is already located on the line --> return this point
 			if(line.relativeCCW(point) == 0)
 			{
+				System.out.println("points already on line");
 				return wayPoint;
 			}
 
 			// store distance and coordinates of the nearest point left of the line
 			if(line.relativeCCW(point) == -1)
 			{
+				System.out.println("nearest point left of the line");
 				leftValue = wayPoint;
 				leftDistance = (float) line.ptLineDist(point);
 				leftValueFound = true;
@@ -493,6 +497,7 @@ public class DeviationComputer
 			// store distance and coordinates of the nearest point right of the line
 			if(line.relativeCCW(point) == 1)
 			{
+				System.out.println("nearest point right of the line");
 				rightValue = wayPoint;
 				rightDistance = (float) line.ptLineDist(point);
 				rightValueFound = true;
@@ -517,6 +522,7 @@ public class DeviationComputer
 		// if no points on or near the line found --> throw exception
 		throw new NotFinishedException("No waypoints on both sides of the line");		
 	}
+
 
 	
 /*	
@@ -565,6 +571,8 @@ public class DeviationComputer
 */
 	
 }
+
+
 
 
 /**

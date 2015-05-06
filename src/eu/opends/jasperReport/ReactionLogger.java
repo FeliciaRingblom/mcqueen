@@ -119,6 +119,7 @@ public class ReactionLogger
 				bw.close();
 				generateReport();
 				
+				
 			} catch (IOException e) {
 	
 				e.printStackTrace();
