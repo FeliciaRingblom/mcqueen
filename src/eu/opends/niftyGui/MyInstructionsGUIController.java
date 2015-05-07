@@ -54,8 +54,6 @@ public class MyInstructionsGUIController implements ScreenController {
 	@Override
 	public void onStartScreen() {
 		System.out.println("i onstartscreen");
-		String analyzerFile = "analyzerData/test/carData.txt";
-		sim.calculateCarData(analyzerFile);	
 		// TODO Auto-generated method stub
 		
 	}

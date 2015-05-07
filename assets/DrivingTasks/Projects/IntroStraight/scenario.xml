@@ -12,13 +12,38 @@
         </environment>
 
         <driver>
-                <idealTrack>
-                        <point ref="IdealPoint.001" />
-                        <point ref="IdealPoint.002" />
-                        <point ref="IdealPoint.003" />
-                        <point ref="IdealPoint.004" />
-                        <point ref="IdealPoint.005" />
-                        <point ref="IdealPoint.006" />
+                 <idealTrack>
+                        <point ref='IdealPoint.0001'/>
+                        <point ref='IdealPoint.0002'/>
+                        <point ref='IdealPoint.0003'/>
+                        <point ref='IdealPoint.0004'/>
+                        <point ref='IdealPoint.0005'/>
+                        <point ref='IdealPoint.0006'/>
+                        <point ref='IdealPoint.0007'/>
+                        <point ref='IdealPoint.0008'/>
+                        <point ref='IdealPoint.0009'/>
+                        <point ref='IdealPoint.0010'/>
+                        <point ref='IdealPoint.0011'/>
+                        <point ref='IdealPoint.0012'/>
+                        <point ref='IdealPoint.0013'/>
+                        <point ref='IdealPoint.0014'/>
+                        <point ref='IdealPoint.0015'/>
+                        <point ref='IdealPoint.0016'/>
+                        <point ref='IdealPoint.0017'/>
+                        <point ref='IdealPoint.0018'/>
+                        <point ref='IdealPoint.0019'/>
+                        <point ref='IdealPoint.0020'/>
+                        <point ref='IdealPoint.0021'/>
+                        <point ref='IdealPoint.0022'/>
+                        <point ref='IdealPoint.0023'/>
+                        <point ref='IdealPoint.0024'/>
+                        <point ref='IdealPoint.0025'/>
+                        <point ref='IdealPoint.0026'/>
+                        <point ref='IdealPoint.0027'/>
+                        <point ref='IdealPoint.0028'/>
+                        <point ref='IdealPoint.0029'/>
+                        <point ref='IdealPoint.0030'/>
+                        <point ref='IdealPoint.0031'/>
                 </idealTrack>
         	<car id="" ref="driverCar" profile="">
         		<tires profile="">

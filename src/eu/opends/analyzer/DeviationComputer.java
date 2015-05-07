@@ -275,22 +275,22 @@ public class DeviationComputer
 				Vector2f prevIP = idealPoints.elementAt(i-1);
 				Vector2f currIP = idealPoints.elementAt(i);
 				Vector2f nextIP = idealPoints.elementAt(i+1);
-				System.out.println("prevIP: " + prevIP + " currIP=" + currIP + "nextIP = " + nextIP);
-			
+				//System.out.println("prevIP: " + prevIP + " currIP=" + currIP + "nextIP = " + nextIP);
+			//
 				// compute the line which divides the angle at currIP in two equal halves
 				Line2D.Float crossLine = getHalfwayVector(prevIP, currIP, nextIP);
-				log("Line through IP " + currIP + " from (" + crossLine.getX1() + "," + crossLine.getY1() + ")" +
-						" to (" + crossLine.getX2() + "," + crossLine.getY2() + ")");
+				//log("Line through IP " + currIP + " from (" + crossLine.getX1() + "," + crossLine.getY1() + ")" +
+						//" to (" + crossLine.getX2() + "," + crossLine.getY2() + ")");
 				//System.out.println("crossLine = " + crossLine.x1 + ", " + crossLine.y1 + ", " + crossLine.x2 + ", " + crossLine.y2);
 				// get way point on or next to the line
 				Vector3f currWP3f = getPointOnLine(crossLine);
 				Vector2f currWP = new Vector2f(currWP3f.getX(), currWP3f.getZ());
-				log("Point on line: " + currWP);
+				//log("Point on line: " + currWP);
 
 				// compute area of current quadrangle with the given corners
 				quadrangle = new DeviationQuadrangle(prevWP, currWP, currIP, prevIP);
 				area = quadrangle.getArea();
-				log("Area: " + area);
+				//log("Area: " + area);
 				
 				// sum up all computed areas
 				sum += area;
@@ -481,14 +481,12 @@ public class DeviationComputer
 			// if point is already located on the line --> return this point
 			if(line.relativeCCW(point) == 0)
 			{
-				System.out.println("points already on line");
 				return wayPoint;
 			}
 
 			// store distance and coordinates of the nearest point left of the line
 			if(line.relativeCCW(point) == -1)
 			{
-				System.out.println("nearest point left of the line");
 				leftValue = wayPoint;
 				leftDistance = (float) line.ptLineDist(point);
 				leftValueFound = true;
@@ -497,7 +495,6 @@ public class DeviationComputer
 			// store distance and coordinates of the nearest point right of the line
 			if(line.relativeCCW(point) == 1)
 			{
-				System.out.println("nearest point right of the line");
 				rightValue = wayPoint;
 				rightDistance = (float) line.ptLineDist(point);
 				rightValueFound = true;
@@ -531,7 +528,7 @@ public class DeviationComputer
 	{
 		DeviationComputer devComp = new DeviationComputer(5.0f,-0.30f);
 		
-		devComp.addIdealPoint(new Vector2f(3.5f,1));
+		devComp.˛Line through IPaddIdealPoint(new Vector2f(3.5f,1));
 		devComp.addIdealPoint(new Vector2f(3.5f,3.5f));
 		devComp.addIdealPoint(new Vector2f(7,3.5f));
 		devComp.addIdealPoint(new Vector2f(7,8));

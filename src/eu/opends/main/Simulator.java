@@ -225,7 +225,7 @@ public class Simulator extends SimulationBasics
 	private float area = 0;
 	private float lengthOfIdealLine = 1;
 	
-	private float roadWidth = 20000.0f; //what is a good value here????
+	private float roadWidth = 50.0f; //what is a good value here????
 	private DeviationComputer devComp = new DeviationComputer(roadWidth);
 	public DeviationComputer getDeviationComputer() 
 	{
@@ -252,38 +252,23 @@ public class Simulator extends SimulationBasics
 	}
 	
 	public void calculateCarData(String fileName){
-		carPositionReader.initReader("analyzerData/test/carData.txt", true);
+		carPositionReader.initReader("analyzerData/test/introStraight.txt", true);
 		carPositionReader.loadDriveData();
-		idealPositionReader.initReader("analyzerData/ideal/carData.txt", true);
-		idealPositionReader.loadDriveData();
-		
-		Vector2f idealVector = new Vector2f();
-		Vector2f carVector = new Vector2f();
 		
 		carPositionList = carPositionReader.getCarPositionList();
-		idealPositionList = idealPositionReader.getCarPositionList();
+
 		for(Vector3f carPos : carPositionList){
-			//carVector.add(new Vector2f(carPos.x, carPos.y));
 			devComp.addWayPoint(carPos);
 		}
-		for(Vector3f carPos : idealPositionList) {
-			devComp.addIdealPoint(new Vector2f(carPos.x, carPos.y));
-		}
-	
 		
-		
-
 		dataUnitList = carPositionReader.getDataUnitList();
 		
 		if(dataUnitList.size() > 0)
 			initialTimeStamp = dataUnitList.get(0).getDate().getTime();
 		
-		//devComp.showAllIdealPoints();
-		//devComp.showAllWayPoints();
 		try {
 			
 			area = devComp.getDeviation();
-			System.out.println("kommer in i try efter getDeviation()");
 			lengthOfIdealLine = devComp.getLengthOfIdealLine();
 			System.out.println("Area between ideal line and driven line: " + area);
 			System.out.println("Length of ideal line: " + lengthOfIdealLine);
@@ -470,6 +455,10 @@ public class Simulator extends SimulationBasics
 		
         
 		initializationFinished = true;
+		
+		
+		String analyzerFile = "analyzerData/test/carData.txt";
+		calculateCarData(analyzerFile);	
     }
     
     

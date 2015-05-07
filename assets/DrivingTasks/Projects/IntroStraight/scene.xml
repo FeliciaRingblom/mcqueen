@@ -157,12 +157,37 @@
 	</models>
 
 	<geometries>
-		<point id="IdealPoint.001"><translation><vector jtype="java_lang_Float" size="3"><entry>-620.499</entry><entry>20.977</entry><entry>-749.105</entry></vector></translation></point>
-		<point id="IdealPoint.002"><translation><vector jtype="java_lang_Float" size="3"><entry>-566.642</entry><entry>19.828</entry><entry>-700.569</entry></vector></translation></point>
-		<point id="IdealPoint.003"><translation><vector jtype="java_lang_Float" size="3"><entry>-529.848</entry><entry>19.931</entry><entry>-667.41</entry></vector></translation></point>
-		<point id="IdealPoint.004"><translation><vector jtype="java_lang_Float" size="3"><entry>-488.124</entry><entry>19.946</entry><entry>-620.173</entry></vector></translation></point>
-		<point id="IdealPoint.005"><translation><vector jtype="java_lang_Float" size="3"><entry>-461.264</entry><entry>19.946</entry><entry>-586.86</entry></vector></translation></point>
-		<point id="IdealPoint.006"><translation><vector jtype="java_lang_Float" size="3"><entry>-444.093</entry><entry>19.945</entry><entry>-564.223</entry></vector></translation></point>
+		<point id='IdealPoint.0001'><translation><vector jtype='java_lang_Float' size='3'><entry>-620.485</entry><entry>20.358</entry><entry>-749.092</entry></vector></translation></point>
+		<point id='IdealPoint.0002'><translation><vector jtype='java_lang_Float' size='3'><entry>-619.688</entry><entry>20.444</entry><entry>-748.375</entry></vector></translation></point>
+		<point id='IdealPoint.0003'><translation><vector jtype='java_lang_Float' size='3'><entry>-617.09</entry><entry>20.35</entry><entry>-746.035</entry></vector></translation></point>
+		<point id='IdealPoint.0004'><translation><vector jtype='java_lang_Float' size='3'><entry>-613.175</entry><entry>20.242</entry><entry>-742.507</entry></vector></translation></point>
+		<point id='IdealPoint.0005'><translation><vector jtype='java_lang_Float' size='3'><entry>-608.713</entry><entry>20.156</entry><entry>-738.487</entry></vector></translation></point>
+		<point id='IdealPoint.0006'><translation><vector jtype='java_lang_Float' size='3'><entry>-603.877</entry><entry>20.098</entry><entry>-734.129</entry></vector></translation></point>
+		<point id='IdealPoint.0007'><translation><vector jtype='java_lang_Float' size='3'><entry>-597.754</entry><entry>20.057</entry><entry>-728.61</entry></vector></translation></point>
+		<point id='IdealPoint.0008'><translation><vector jtype='java_lang_Float' size='3'><entry>-591.907</entry><entry>20.03</entry><entry>-723.34</entry></vector></translation></point>
+		<point id='IdealPoint.0009'><translation><vector jtype='java_lang_Float' size='3'><entry>-585.887</entry><entry>19.989</entry><entry>-717.914</entry></vector></translation></point>
+		<point id='IdealPoint.0010'><translation><vector jtype='java_lang_Float' size='3'><entry>-579.693</entry><entry>19.917</entry><entry>-712.332</entry></vector></translation></point>
+		<point id='IdealPoint.0011'><translation><vector jtype='java_lang_Float' size='3'><entry>-573.205</entry><entry>19.854</entry><entry>-705.609</entry></vector></translation></point>
+		<point id='IdealPoint.0012'><translation><vector jtype='java_lang_Float' size='3'><entry>-566.474</entry><entry>19.827</entry><entry>-699.976</entry></vector></translation></point>
+		<point id='IdealPoint.0013'><translation><vector jtype='java_lang_Float' size='3'><entry>-560.433</entry><entry>19.822</entry><entry>-694.93</entry></vector></translation></point>
+		<point id='IdealPoint.0014'><translation><vector jtype='java_lang_Float' size='3'><entry>-553.682</entry><entry>19.834</entry><entry>-689.292</entry></vector></translation></point>
+		<point id='IdealPoint.0015'><translation><vector jtype='java_lang_Float' size='3'><entry>-547.466</entry><entry>19.855</entry><entry>-684.099</entry></vector></translation></point>
+		<point id='IdealPoint.0016'><translation><vector jtype='java_lang_Float' size='3'><entry>-541.782</entry><entry>19.879</entry><entry>-679.351</entry></vector></translation></point>
+		<point id='IdealPoint.0017'><translation><vector jtype='java_lang_Float' size='3'><entry>-535.388</entry><entry>19.907</entry><entry>-674.009</entry></vector></translation></point>
+		<point id='IdealPoint.0018'><translation><vector jtype='java_lang_Float' size='3'><entry>-529.81</entry><entry>19.929</entry><entry>-668.882</entry></vector></translation></point>
+		<point id='IdealPoint.0019'><translation><vector jtype='java_lang_Float' size='3'><entry>-524.502</entry><entry>19.943</entry><entry>-663.393</entry></vector></translation></point>
+		<point id='IdealPoint.0020'><translation><vector jtype='java_lang_Float' size='3'><entry>-518.71</entry><entry>19.945</entry><entry>-657.403</entry></vector></translation></point>
+		<point id='IdealPoint.0021'><translation><vector jtype='java_lang_Float' size='3'><entry>-513.327</entry><entry>19.945</entry><entry>-651.438</entry></vector></translation></point>
+		<point id='IdealPoint.0022'><translation><vector jtype='java_lang_Float' size='3'><entry>-508.603</entry><entry>19.946</entry><entry>-644.872</entry></vector></translation></point>
+		<point id='IdealPoint.0023'><translation><vector jtype='java_lang_Float' size='3'><entry>-503.407</entry><entry>19.946</entry><entry>-638.746</entry></vector></translation></point>
+		<point id='IdealPoint.0024'><translation><vector jtype='java_lang_Float' size='3'><entry>-498.701</entry><entry>19.945</entry><entry>-632.555</entry></vector></translation></point>
+		<point id='IdealPoint.0025'><translation><vector jtype='java_lang_Float' size='3'><entry>-493.155</entry><entry>19.946</entry><entry>-626.351</entry></vector></translation></point>
+		<point id='IdealPoint.0026'><translation><vector jtype='java_lang_Float' size='3'><entry>-487.598</entry><entry>19.946</entry><entry>-620.141</entry></vector></translation></point>
+		<point id='IdealPoint.0027'><translation><vector jtype='java_lang_Float' size='3'><entry>-482.295</entry><entry>19.945</entry><entry>-613.535</entry></vector></translation></point>
+		<point id='IdealPoint.0028'><translation><vector jtype='java_lang_Float' size='3'><entry>-477.683</entry><entry>19.945</entry><entry>-606.712</entry></vector></translation></point>
+		<point id='IdealPoint.0029'><translation><vector jtype='java_lang_Float' size='3'><entry>-473.062</entry><entry>19.946</entry><entry>-600.484</entry></vector></translation></point>
+		<point id='IdealPoint.0030'><translation><vector jtype='java_lang_Float' size='3'><entry>-467.923</entry><entry>19.946</entry><entry>-594.345</entry></vector></translation></point>
+		<point id='IdealPoint.0031'><translation><vector jtype='java_lang_Float' size='3'><entry>-462.674</entry><entry>19.946</entry><entry>-588.48</entry></vector></translation></point>
 	</geometries>
     
     <gravity>9.81</gravity>
