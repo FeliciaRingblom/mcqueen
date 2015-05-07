@@ -223,7 +223,6 @@ public class SimulationBasics extends SimpleApplication
         shutDownGUI = new ShutDownGUI(this);
     }
 
-
 	private void createSkyBox()
 	{
 		String skyModelPath = Simulator.getDrivingTask().getSceneLoader().getSkyTexture(SimulationDefaults.skyTexture);
@@ -239,7 +238,7 @@ public class SimulationBasics extends SimpleApplication
         sky.setShadowMode(ShadowMode.Off);
         sceneNode.attachChild(sky);
 	}
-    
+	
 
     @Override
     public void simpleUpdate(float tpf) 

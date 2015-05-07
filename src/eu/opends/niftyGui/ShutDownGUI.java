@@ -28,6 +28,7 @@ import com.jme3.scene.Spatial.CullHint;
 
 import de.lessvoid.nifty.Nifty;
 import eu.opends.basics.SimulationBasics;
+import eu.opends.main.Simulator;
 
 /**
  * 
@@ -84,6 +85,7 @@ public class ShutDownGUI
 	{
 		if(!shutDownDialogHidden)
 		{
+			
 			closeShutDownGUI();
 			shutDownDialogHidden = true;
 			sim.getGuiNode().setCullHint(CullHint.Inherit);
@@ -103,7 +105,7 @@ public class ShutDownGUI
 		String xmlPath = "Interface/ShutDownGUI.xml";
 
 		// Read XML and initialize custom ScreenController
-		nifty.fromXml(xmlPath, "start",	new ShutDownGUIController(sim, this));
+		nifty.fromXml(xmlPath, "start",	new ShutDownGUIController((Simulator)sim, this));
 
 		// attach the Nifty display to the gui view port as a processor
 		guiViewPort.addProcessor(niftyDisplay);

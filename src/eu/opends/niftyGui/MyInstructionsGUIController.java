@@ -131,17 +131,11 @@ public class MyInstructionsGUIController implements ScreenController {
 	  @NiftyEventSubscriber(id="RadioGroup-speed")
 	  public void onRadioGroupSpeedChanged(final String id, final RadioButtonGroupStateChangedEvent event) {
 	    speed = event.getSelectedId();
-		// System.out.println("RadioButton [" + event.getSelectedId() + "] is now selected. The old selection was [" + event.getPreviousSelectedId() + "]");
 	  }
 
 	
 	public void setScreen(int screenNumber) {
-//		Set<Thread> threadSet = Thread.getAllStackTraces().keySet();
-//		Thread[] threadArray = threadSet.toArray(new Thread[threadSet.size()]);
-//		System.out.println("thread size: " + threadSet.size());
-//		for(int i = 0; i<threadArray.length; i++) {
-//			System.out.println("ThreadArray " + threadArray[i]);
-//		}
+
 		sim.getGuiNode().detachAllChildren();
 		String next = "instruction_" + screenNumber;
 		nifty.gotoScreen(next);

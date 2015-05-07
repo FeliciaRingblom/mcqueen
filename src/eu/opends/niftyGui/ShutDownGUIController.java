@@ -22,7 +22,7 @@ import de.lessvoid.nifty.Nifty;
 //import de.lessvoid.nifty.controls.button.ButtonControl;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
-import eu.opends.basics.SimulationBasics;
+import eu.opends.main.Simulator;
 
 /**
  * 
@@ -30,11 +30,11 @@ import eu.opends.basics.SimulationBasics;
  */
 public class ShutDownGUIController implements ScreenController 
 {
-	private SimulationBasics sim;
+	private Simulator sim;
 	private ShutDownGUI shutDownGUI;
 	
 	
-	public ShutDownGUIController(SimulationBasics sim, ShutDownGUI shutDownGUI) 
+	public ShutDownGUIController(Simulator sim, ShutDownGUI shutDownGUI) 
 	{
 		this.sim = sim;
 		this.shutDownGUI = shutDownGUI;
@@ -67,10 +67,15 @@ public class ShutDownGUIController implements ScreenController
 		sim.getShutDownGUI().toggleDialog();
 	}
 	
+	public void clickBackToMenuButton(){
+		sim.getShutDownGUI().hideDialog();
+		sim.getGuiNode().detachChildNamed("hood");
+		sim.simpleInitApp();
+	}
+	
 	
 	public void clickCloseButton()
 	{
 		sim.stop();
 	}
-
 }
