@@ -3,14 +3,6 @@
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
         xsi:schemaLocation="http://opends.eu/drivingtask/scenario ../../Schema/scenario.xsd">
         
-        <environment>
-        	<weather>
-                <snowingPercentage>0</snowingPercentage>
-        		<rainingPercentage>0</rainingPercentage>
-        		<fogPercentage>0</fogPercentage>
-        	</weather>
-        </environment>
-
         <driver>
                  <idealTrack>
                         <point ref='IdealPoint.0001'/>
