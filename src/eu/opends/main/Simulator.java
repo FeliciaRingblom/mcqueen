@@ -252,7 +252,7 @@ public class Simulator extends SimulationBasics
 	}
 	
 	public void calculateCarData(String fileName){
-		carPositionReader.initReader("analyzerData/test/introStraight.txt", true);
+		carPositionReader.initReader("analyzerData/test/countryside.txt", true);
 		carPositionReader.loadDriveData();
 		
 		carPositionList = carPositionReader.getCarPositionList();
@@ -513,7 +513,7 @@ public class Simulator extends SimulationBasics
 					
 			if(!isPause())
 				car.update(tpf);
-			
+						
 			// TODO start thread in init-method to update traffic
 			//physicalTraffic.update(); 
 			
