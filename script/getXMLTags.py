@@ -1,10 +1,10 @@
 # this script returns a txt file with the xml tags for the ideal points used in openDS 
-# you need to provide the carData.txt file as input
-# use from console: python getXMLTags.py carData.txt
+# you need to provide the carData.txt file as input as well as a number for indicating how many lines you want  
+# e.g use from console: python getXMLTags.py carData.txt 1 -> takes all lines (2 takes every other, 3 every third ...)
 from sys import argv
 import string
 
-script, filename = argv
+script, filename, lineNumber = argv
 
 newFile = open('xmlData.txt', 'w')
 newFile.write("<geometries>")
@@ -17,7 +17,7 @@ with open(filename) as f:
 	for line in f:
 		
 		l = l+1
-		if l > 4:
+		if l > 4 and l%int(lineNumber) == 0:
 			line = line.replace("\n", "")
 			newFile.write("\n<point id='IdealPoint.")
 			p = p+1
