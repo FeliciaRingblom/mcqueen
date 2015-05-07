@@ -23,7 +23,9 @@ with open(filename) as f:
 			p = p+1
 			idealTrack = idealTrack + "<point ref='IdealPoint." + str(p).zfill(4) + "'/>"
 			newFile.write(str(p).zfill(4) + "'><translation><vector jtype='java_lang_Float' size='3'><entry>")
+	
 			for char in ':':
+				line = line[14:]
 				line = line.replace(char, "</entry><entry>")
 			
 			newFile.write(line + "</entry></vector></translation></point>")
@@ -31,5 +33,5 @@ with open(filename) as f:
 
 
 newFile.write("\n</geometries>\n\n\n")
-newFile.write(idealTrack)
+newFile.write(idealTrack + "\n</idealTrack>")
 print "Done! The file xmlData.txt has been created for you."
