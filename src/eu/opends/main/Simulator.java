@@ -56,9 +56,6 @@ import eu.opends.car.ResetPosition;
 import eu.opends.car.SteeringCar;
 import eu.opends.drivingTask.DrivingTask;
 import eu.opends.drivingTask.settings.SettingsLoader.Setting;
-import eu.opends.effects.EffectCenter;
-import eu.opends.environment.TrafficLightCenter;
-import eu.opends.eyetracker.EyetrackerCenter;
 import eu.opends.input.KeyBindingCenter;
 import eu.opends.knowledgeBase.KnowledgeBase;
 import eu.opends.multiDriver.MultiDriverClient;
@@ -190,12 +187,6 @@ public class Simulator extends SimulationBasics
 		return reactionCenter;
 	}
 	
-	private EffectCenter effectCenter;
-	public EffectCenter getEffectCenter()
-	{
-		return effectCenter;
-	}
-	
 	private ObjectManipulationCenter objectManipulationCenter;
 	public ObjectManipulationCenter getObjectManipulationCenter()
 	{
@@ -285,12 +276,7 @@ public class Simulator extends SimulationBasics
     public void simpleInitApp()
     {
     	showStats(false);
-    	
-//    	if(drivingTaskGiven)
-//    		//simpleInitDrivingTask(SimulationDefaults.drivingTaskFileName, SimulationDefaults.driverName);
-//    	else
-    		initDrivingAssessmentTest();
-    		//initDrivingTaskSelectionGUI();
+    	initDrivingAssessmentTest();
     }
     
     /*Author: Jessica Larsson, Felicia Ringblom, 2015 */
@@ -314,41 +300,12 @@ public class Simulator extends SimulationBasics
     	flyCam.setEnabled(false);
     }
     
-	private void initDrivingTaskSelectionGUI() 
-	{
-		System.out.println("i initDrivingTaskSelectionGUI()");
-		NiftyJmeDisplay niftyDisplay = new NiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort);
-    	
-    	// Create a new NiftyGUI object
-    	nifty = niftyDisplay.getNifty();
-  	
-    	String xmlPath = "Interface/DrivingTaskSelectionGUI.xml";
-    	// Read XML and initialize custom ScreenController
-    	nifty.fromXml(xmlPath, "start", new DrivingTaskSelectionGUIController(this, nifty));
-    	
-    	// attach the Nifty display to the gui view port as a processor
-    	guiViewPort.addProcessor(niftyDisplay);
-    	
-    	// disable fly cam
-    	flyCam.setEnabled(false);
-	}
-	
-	
 	public void closeDrivingTaskSelectionGUI() 
 	{
 		nifty.exit();
         //inputManager.setCursorVisible(false);
         flyCam.setEnabled(true);
 	}
-	
-
-    public void removeAllDrivingTaskElements()
-    {
-    	System.out.println("i removeAllDrivingTaskElements() i Simulator.java");
-    	destroyDrivingTask();
-    	super.resetSimulationBasics();
-    	 	
-    }
 	
     public void simpleInitDrivingTask(String drivingTaskFileName, String driverName, String speed)
     {
@@ -440,18 +397,16 @@ public class Simulator extends SimulationBasics
         String videoPath = settingsLoader.getSetting(Setting.General_captureVideo, "");
         if((videoPath != null) && (!videoPath.isEmpty()) && (Util.isValidFilename(videoPath)))
         {
-        	//System.err.println("videoPath: " + videoPath);
         	File videoFile = new File(videoPath);
         	stateManager.attach(new VideoRecorderAppState(videoFile));
         }
 		
         //start car position writer
-  
-    		initializeDataWriter();
-			if (carPositionWriter.isDataWriterEnabled() == false) {
-				System.out.println("Start storing Drive-Data");
-				carPositionWriter.setDataWriterEnabled(true);
-			} 
+		initializeDataWriter();
+		if (carPositionWriter.isDataWriterEnabled() == false) {
+			System.out.println("Start storing Drive-Data");
+			carPositionWriter.setDataWriterEnabled(true);
+		} 
 		
         
 		initializationFinished = true;
@@ -482,9 +437,7 @@ public class Simulator extends SimulationBasics
 	 */
 	public void initializeDataWriter() 
 	{
-		//dataWriter = new DataWriter(outputFolder, car, driverName, SimulationDefaults.drivingTaskFileName);
 		carPositionWriter = new CarPositionWriter(outputFolder, car, driverName, SimulationDefaults.drivingTaskFileName);
-	
 	}
 	
     @Override
@@ -513,37 +466,17 @@ public class Simulator extends SimulationBasics
 					
 			if(!isPause())
 				car.update(tpf);
-						
-			// TODO start thread in init-method to update traffic
-			//physicalTraffic.update(); 
-			
-			//SpeedControlCenter.update();
-			
+
 			// update necessary even in pause
 			AudioCenter.update(tpf, cam);
 			
 			if(!isPause())
 				steeringTask.update(tpf);
 			
-			//if(!isPause())
-				//getCameraFlight().play();
-			
-			//threeVehiclePlatoonTask.update(tpf);
-			
 			if(cameraFlight != null)
 				cameraFlight.update();
 			
 			reactionCenter.update();
-			
-			// update effects
-			//effectCenter.update(tpf);
-			
-			// forward instruction screen if available
-//			if(instructionScreenID != null)
-//			{
-//				instructionScreenGUI.showDialog(instructionScreenID);
-//				instructionScreenID = null;
-//			}
 			
     	}
     }
@@ -570,24 +503,6 @@ public class Simulator extends SimulationBasics
 		}
 	}
 	
-	
-	/**
-	 * Cleanup after game loop was left.
-	 * Will be called when pressing any close-button.
-	 * destroy() will be called subsequently.
-	 */
-	/*
-	@Override
-    public void stop()
-    {
-		System.out.println("i stop()");
-		logger.info("started stop()");		
-		super.stop();
-		logger.info("finished stop()");
-    }
-*/
-	
-	
 	/**
 	 * Cleanup after game loop was left
 	 * Will be called whenever application is closed.
@@ -603,78 +518,25 @@ public class Simulator extends SimulationBasics
 		{
 			if(lightningClient != null)
 				lightningClient.close();
-			
-			//trafficLightCenter.close();
-			
+						
 			steeringTask.close();
-			
-			//threeVehiclePlatoonTask.close();
 			
 			reactionCenter.close();
 			
 			KnowledgeBase.KB.disconnect();
 			
 			car.close();
-			
-			
-			//physicalTraffic.close();
-			
+
 			if(settingsControllerServer != null)
 				settingsControllerServer.close();
 			
-			
-			//initDrivingTaskSelectionGUI();
 		}
 
 		super.destroy();
 		logger.info("finished destroy()");
-		//System.exit(0);
     }
 	
-	/*Author: Felicia & Jessica*/
-	public void destroyDrivingTask()
-    {
-		System.out.println("i destroyDrivingTask() i Simulator.java");
-		if(initializationFinished)
-		{
-			System.out.println("Stop storing Drive-Data");
-			carPositionWriter.setDataWriterEnabled(false);		
-			
-			if(lightningClient != null)
-				lightningClient.close();
-			
-			//trafficLightCenter.close();
-			
-			steeringTask.close();
-			
-			//threeVehiclePlatoonTask.close();
-			
-			reactionCenter.close();
-			
-			KnowledgeBase.KB.disconnect();
-			PanelCenter.removeAll(); 
-			
-			car.close(); //stänger enbart texturen
-			keyBindingCenter.close();
-			//physicalTraffic.close();
-			
-			if(settingsControllerServer != null)
-				settingsControllerServer.close();
-			
-			stateManager.detach(bulletAppState);
-			stateManager.cleanup();
-			
-			sceneLoader = drivingTask.getSceneLoader();
-			scenarioLoader = drivingTask.getScenarioLoader();
-			interactionLoader = drivingTask.getInteractionLoader();
-			settingsLoader = drivingTask.getSettingsLoader();
-			drivingTask.delete();
-			
-		}
-		
-		
-    }
-
+	
     public static void main(String[] args) 
     {    
     	try

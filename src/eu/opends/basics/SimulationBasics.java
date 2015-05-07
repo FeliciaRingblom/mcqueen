@@ -280,20 +280,4 @@ public class SimulationBasics extends SimpleApplication
 				numberOfScreens = 1;
 		}
     }
-    
-    public void resetSimulationBasics(){
-    	System.out.println("resetSimulationBasics() i SimualtionBasics");
-
-
-    	triggerActionListMap.clear();
-    	System.out.println("state innan: " + stateManager.hasState(bulletAppState));
-    	stateManager.detach(bulletAppState);
-    	System.out.println("state efter: " + stateManager.hasState(bulletAppState));
-    
-    	
-    	
-   
-    }
-
-
 }
