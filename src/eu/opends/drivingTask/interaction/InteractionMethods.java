@@ -39,7 +39,6 @@ import eu.opends.trigger.ReportTrafficLightTriggerAction;
 import eu.opends.trigger.RequestGreenTrafficLightAction;
 import eu.opends.trigger.ResetCarToResetPointAction;
 import eu.opends.trigger.ReturnToInstruction;
-import eu.opends.trigger.SendMessageTriggerAction;
 import eu.opends.trigger.SetSpeedLimitAction;
 import eu.opends.trigger.SetTVPTStimulusTriggerAction;
 import eu.opends.trigger.SetupBrakeReactionTimerTriggerAction;
@@ -58,44 +57,44 @@ import eu.opends.trigger.WriteToKnowledgeBaseTriggerAction;
 public class InteractionMethods 
 {  
 
-	@Action(
-		name = "sendMessage", 
-		layer = Layer.INTERACTION, 
-		description = "Outputs text to the screen for the given amount of seconds",
-		defaultDelay = 0,
-		defaultRepeat = 0,
-		param = {@Parameter(name="text", type="String", defaultValue="hello world", 
-							description="Text to display on screen"),
-				 @Parameter(name="duration", type="Integer", defaultValue="1", 
-						 	description="Amount of seconds to show text (0 = infinite)")
-				}
-	)
-	public TriggerAction sendMessage(SimulationBasics sim, float delay, int repeat, Properties parameterList)
-	{
-		String parameter = "";
-		try {
-
-			// read message text
-			parameter = "text";
-			String message = parameterList.getProperty(parameter);
-			if(message == null)
-				throw new Exception();
-				
-			// read duration of display
-			parameter = "duration";
-			String durationString = parameterList.getProperty(parameter);
-			if(durationString == null)
-				durationString = setDefault("sendMessage", parameter, "1");
-			int duration = Integer.parseInt(durationString);
-			
-			return new SendMessageTriggerAction(delay, repeat, message, duration);
-			
-		} catch (Exception e) {
-
-			reportError("sendMessage", parameter);
-			return null;
-		}
-	}
+//	@Action(
+//		name = "sendMessage", 
+//		layer = Layer.INTERACTION, 
+//		description = "Outputs text to the screen for the given amount of seconds",
+//		defaultDelay = 0,
+//		defaultRepeat = 0,
+//		param = {@Parameter(name="text", type="String", defaultValue="hello world", 
+//							description="Text to display on screen"),
+//				 @Parameter(name="duration", type="Integer", defaultValue="1", 
+//						 	description="Amount of seconds to show text (0 = infinite)")
+//				}
+//	)
+//	public TriggerAction sendMessage(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+//	{
+//		String parameter = "";
+//		try {
+//
+//			// read message text
+//			parameter = "text";
+//			String message = parameterList.getProperty(parameter);
+//			if(message == null)
+//				throw new Exception();
+//				
+//			// read duration of display
+//			parameter = "duration";
+//			String durationString = parameterList.getProperty(parameter);
+//			if(durationString == null)
+//				durationString = setDefault("sendMessage", parameter, "1");
+//			int duration = Integer.parseInt(durationString);
+//			
+//			return new SendMessageTriggerAction(delay, repeat, message, duration);
+//			
+//		} catch (Exception e) {
+//
+//			reportError("sendMessage", parameter);
+//			return null;
+//		}
+//	}
 	
 	
 	

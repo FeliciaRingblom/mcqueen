@@ -50,10 +50,6 @@ public class StopRecordingTriggerAction extends TriggerAction
 					System.out.println("Stop storing Drive-Data");
 					dataWriter.setDataWriterEnabled(false);
 					PanelCenter.getStoreText().setText(" ");
-					
-					// print time elapsed since start trigger was hit to screen 
-					String timestamp = dataWriter.getElapsedTime();
-					PanelCenter.getMessageBox().addMessage(timestamp, 0);
 				}
 			}
 			

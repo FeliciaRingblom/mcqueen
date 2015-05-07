@@ -71,8 +71,6 @@ public class ShutDownGUI
 		System.out.println("i showDialog i ShutDownGUI.java");
 		if(shutDownDialogHidden)
 		{
-			sim.getKeyMappingGUI().hideDialog();
-			//sim.getInstructionScreenGUI().hideDialog();
 			initiallyPaused = sim.isPause();
 			sim.setPause(true);
 			sim.getGuiNode().setCullHint(CullHint.Always);

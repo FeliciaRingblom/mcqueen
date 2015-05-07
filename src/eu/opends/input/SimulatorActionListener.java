@@ -19,18 +19,9 @@
 package eu.opends.input;
 
 import com.jme3.input.controls.ActionListener;
-import com.jme3.math.Vector3f;
 
-import eu.opends.audio.AudioCenter;
-import eu.opends.camera.CameraFactory;
-import eu.opends.camera.CameraFactory.MirrorMode;
 import eu.opends.car.Car;
-import eu.opends.car.SteeringCar;
-import eu.opends.car.LightTexturesContainer.TurnSignalState;
 import eu.opends.main.Simulator;
-import eu.opends.niftyGui.MessageBoxGUI;
-import eu.opends.tools.PanelCenter;
-import eu.opends.tools.Util;
 import eu.opends.trigger.ManipulatePictureTriggerAction;
 
 /**

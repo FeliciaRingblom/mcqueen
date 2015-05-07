@@ -46,8 +46,6 @@ import eu.opends.environment.TrafficLightCenter;
 import eu.opends.input.KeyBindingCenter;
 import eu.opends.main.SimulationDefaults;
 import eu.opends.main.Simulator;
-import eu.opends.niftyGui.InstructionScreenGUI;
-import eu.opends.niftyGui.KeyMappingGUI;
 import eu.opends.niftyGui.ShutDownGUI;
 import eu.opends.tools.PropertiesLoader;
 import eu.opends.tools.XMLLoader;
@@ -70,9 +68,7 @@ public class SimulationBasics extends SimpleApplication
 	protected CameraFactory cameraFactory;
 	protected Node sceneNode;
 	protected Node triggerNode;
-	protected KeyMappingGUI keyMappingGUI;
 	protected ShutDownGUI shutDownGUI;
-	protected InstructionScreenGUI instructionScreenGUI;
 	protected KeyBindingCenter keyBindingCenter;
 	protected TrafficLightCenter trafficLightCenter;
 	protected boolean debugEnabled = false;
@@ -166,21 +162,9 @@ public class SimulationBasics extends SimpleApplication
 	}
 	
 	
-	public KeyMappingGUI getKeyMappingGUI() 
-	{
-		return keyMappingGUI;
-	}
-	
-	
 	public ShutDownGUI getShutDownGUI() 
 	{
 		return shutDownGUI;
-	}
-	
-	
-	public InstructionScreenGUI getInstructionScreenGUI() 
-	{
-		return instructionScreenGUI;
 	}
 	
 
@@ -236,7 +220,6 @@ public class SimulationBasics extends SimpleApplication
         // build sky
         createSkyBox();
         
-        keyMappingGUI = new KeyMappingGUI(this);
         shutDownGUI = new ShutDownGUI(this);
     }
 

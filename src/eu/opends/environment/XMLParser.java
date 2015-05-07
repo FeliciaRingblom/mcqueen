@@ -286,7 +286,7 @@ public class XMLParser
 							} catch(Exception e){
 								duration = 0;
 							}
-							PanelCenter.getMessageBox().addMessage(valueString,duration);
+							//PanelCenter.getMessageBox().addMessage(valueString,duration);
 						}
 						
 					} catch(Exception e){

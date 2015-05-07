@@ -40,7 +40,6 @@ import eu.opends.drivingTask.settings.SettingsLoader;
 import eu.opends.drivingTask.settings.SettingsLoader.Setting;
 import eu.opends.main.DriveAnalyzer;
 import eu.opends.main.Simulator;
-import eu.opends.niftyGui.MessageBoxGUI;
 import eu.opends.niftyGui.KeyMappingGUI.GuiLayer;
 
 /**
@@ -61,7 +60,6 @@ public class PanelCenter
 	private static int flashingInterval = 500;
 	
 	// message box
-	private static MessageBoxGUI messageBoxGUI;
 	private static boolean resolutionHasChanged = false;
 	private static int updateDelayCounter = 0;
 	
@@ -81,32 +79,11 @@ public class PanelCenter
 	}
 	
 	
-	public static MessageBoxGUI getMessageBox()
-	{
-		return messageBoxGUI;
-	}
-	
-	
-	public static void resetMessageBox()
-	{
-		messageBoxGUI.close();
-		messageBoxGUI = new MessageBoxGUI(sim);
-	}
-	
-	
 	public static BitmapText getEngineSpeedText() 
 	{
 		return engineSpeedText;
 	}
-
-	
-	public static void init(DriveAnalyzer analyzer)
-	{
-		sim = analyzer;
-		messageBoxGUI = new MessageBoxGUI(sim);
-	}
-	
-	
+		
 	public static void showHood(boolean locallyEnabled)
 	{
 		Simulator.getSettingsLoader();
@@ -119,8 +96,6 @@ public class PanelCenter
 	public static void init(Simulator simulator)
 	{
 		sim = simulator;
-		messageBoxGUI = new MessageBoxGUI(sim);
-
 		settingsLoader = Simulator.getSettingsLoader();
 		
 		String showAnalogString = settingsLoader.getSetting(Setting.General_showAnalogIndicators, "true");
@@ -450,9 +425,7 @@ public class PanelCenter
 		updateSpeedText(car);
 		
 		updateMilageText(car);
-		
-		// update message on screen
-		messageBoxGUI.update();
+
 		
 		if(fixRPM != 0)
 			setRPMIndicator(fixRPM);
@@ -462,11 +435,6 @@ public class PanelCenter
 		if(resolutionHasChanged && (++updateDelayCounter%2==0))
 		{
 			resetPanelPosition(car.getTransmission().isAutomatic());
-			resetMessageBox();
-			
-			// restore change resolution menu
-			sim.getKeyMappingGUI().showDialog();
-			sim.getKeyMappingGUI().openLayer(GuiLayer.GRAPHICSETTINGS);
 			
 			resolutionHasChanged = false;
 		}

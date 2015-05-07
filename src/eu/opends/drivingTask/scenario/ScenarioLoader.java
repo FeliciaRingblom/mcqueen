@@ -42,14 +42,12 @@ import eu.opends.drivingTask.DrivingTask;
 import eu.opends.drivingTask.DrivingTaskDataQuery;
 import eu.opends.drivingTask.DrivingTaskDataQuery.Layer;
 import eu.opends.drivingTask.scene.SceneLoader;
-import eu.opends.effects.WeatherSettings;
 import eu.opends.environment.LaneLimit;
 import eu.opends.environment.TrafficLight;
 import eu.opends.environment.TrafficLightPhase;
 import eu.opends.environment.TrafficLightPositionData;
 import eu.opends.environment.TrafficLight.TrafficLightDirection;
 import eu.opends.environment.TrafficLight.TrafficLightState;
-import eu.opends.main.DriveAnalyzer;
 import eu.opends.main.Simulator;
 import eu.opends.traffic.FollowBoxSettings;
 import eu.opends.traffic.PhysicalTraffic;
@@ -350,25 +348,25 @@ public class ScenarioLoader
 	}
 	
 	
-	public WeatherSettings getWeatherSettings()
-	{
-		Float snowingPercentage = dtData.getValue(Layer.SCENARIO, 
-				"/scenario:scenario/scenario:environment/scenario:weather/scenario:snowingPercentage", Float.class);
-		if(snowingPercentage == null)
-			snowingPercentage = 0f;
-		
-		Float rainingPercentage = dtData.getValue(Layer.SCENARIO, 
-				"/scenario:scenario/scenario:environment/scenario:weather/scenario:rainingPercentage", Float.class);
-		if(rainingPercentage == null)
-			rainingPercentage = 0f;
-		
-		Float fogPercentage = dtData.getValue(Layer.SCENARIO, 
-				"/scenario:scenario/scenario:environment/scenario:weather/scenario:fogPercentage", Float.class);
-		if(fogPercentage == null)
-			fogPercentage = 0f;
-		
-		return new WeatherSettings(snowingPercentage, rainingPercentage, fogPercentage);
-	}
+//	public WeatherSettings getWeatherSettings()
+//	{
+//		Float snowingPercentage = dtData.getValue(Layer.SCENARIO, 
+//				"/scenario:scenario/scenario:environment/scenario:weather/scenario:snowingPercentage", Float.class);
+//		if(snowingPercentage == null)
+//			snowingPercentage = 0f;
+//		
+//		Float rainingPercentage = dtData.getValue(Layer.SCENARIO, 
+//				"/scenario:scenario/scenario:environment/scenario:weather/scenario:rainingPercentage", Float.class);
+//		if(rainingPercentage == null)
+//			rainingPercentage = 0f;
+//		
+//		Float fogPercentage = dtData.getValue(Layer.SCENARIO, 
+//				"/scenario:scenario/scenario:environment/scenario:weather/scenario:fogPercentage", Float.class);
+//		if(fogPercentage == null)
+//			fogPercentage = 0f;
+//		
+//		return new WeatherSettings(snowingPercentage, rainingPercentage, fogPercentage);
+//	}
 	
 
 	/**
