@@ -99,144 +99,149 @@ public class Simulator extends SimpleApplication
 	private static ScenarioLoader scenarioLoader;
 	private static InteractionLoader interactionLoader;
 	private static SettingsLoader settingsLoader;
+	private static DrivingTaskLogger drivingTaskLogger;
+	
 	private static Map<String,List<TriggerAction>> triggerActionListMap = new HashMap<String,List<TriggerAction>>();
+	private static List<ResetPosition> resetPositionList = new LinkedList<ResetPosition>();
+
+	private final static Logger logger = Logger.getLogger(Simulator.class);
+
+	
 	private BulletAppState bulletAppState;
 	private LightFactory lightFactory;
 	private CameraFactory cameraFactory;
 	private Node sceneNode;
 	private Node triggerNode;
+	private Nifty nifty;
 	private ShutDownGUI shutDownGUI;
+    private MyInstructionsGUIController myInstructions;
 	private KeyBindingCenter keyBindingCenter;
 	private TrafficLightCenter trafficLightCenter;
+    private PhysicalTraffic physicalTraffic;
+	private SteeringCar car;
+	private CarPositionWriter carPositionWriter;
+	private LightningClient lightningClient;
+	private CameraFlight cameraFlight;
+	private SteeringTask steeringTask;
+	private ThreeVehiclePlatoonTask threeVehiclePlatoonTask;
+	private ReactionCenter reactionCenter;
+	private ObjectManipulationCenter objectManipulationCenter;
+	private SettingsControllerServer settingsControllerServer;
+	private DataUnit currentDataUnit;
+	private LinkedList<Vector3f> carPositionList = new LinkedList<Vector3f>();
+	private LinkedList<DataUnit> dataUnitList = new LinkedList<DataUnit>();
+	
+	private CarPositionReader carPositionReader = new CarPositionReader();
+	private Long initialTimeStamp = 0l;
+
+	public enum VisualizationMode 
+	{
+		POINT, LINE, CONE;
+	}
+	
+    private boolean initializationFinished = false;
 	private boolean debugEnabled = false;
+	private boolean carPositionWriterQuittable = false;
+	private boolean showStats = false;	
+
+	
 	private int numberOfScreens;
 	
-	private final static Logger logger = Logger.getLogger(Simulator.class);
+	private float area = 0;
+	private float lengthOfIdealLine = 1;
+	private float roadWidth = 50.0f; //what is a good value here????
+    private static Float gravityConstant;
 
-    private Nifty nifty;
-    private boolean drivingTaskGiven = false;
-    private boolean initializationFinished = false;
-    
-    private MyInstructionsGUIController myInstructions;
-    public MyInstructionsGUIController getMyInstructions() {
+	//private String instructionScreenID = null;
+	private static String driverName;
+	private static String outputFolder;
+	
+	private DeviationComputer devComp = new DeviationComputer(roadWidth);
+	private TriggerCenter triggerCenter = new TriggerCenter(this);
+	
+
+	
+    public MyInstructionsGUIController getMyInstructions() 
+    {
 		return myInstructions;
 	}
-
-	private static String driverName;
     
-    private static Float gravityConstant;
 	public static Float getGravityConstant()
 	{
 		return gravityConstant;
 	}
 	
-	private SteeringCar car;
     public SteeringCar getCar()
     {
     	return car;
     }
     
-    private PhysicalTraffic physicalTraffic;
     public PhysicalTraffic getPhysicalTraffic()
     {
     	return physicalTraffic;
     }
 	
-	private static DrivingTaskLogger drivingTaskLogger;
 	public static DrivingTaskLogger getDrivingTaskLogger()
 	{
 		return drivingTaskLogger;
-	}
-	
-	private boolean dataWriterQuittable = false;
-	private DataWriter dataWriter;
-	public DataWriter getMyDataWriter() 
-	{
-		return dataWriter;
-	}
-	
-	private boolean carPositionWriterQuittable = false;
-	private CarPositionWriter carPositionWriter;
+	}	
+
 	public CarPositionWriter getMyCarPositionWriter() 
 	{
 		return carPositionWriter;
 	}
 	
-	private LightningClient lightningClient;
 	public LightningClient getLightningClient() 
 	{
 		return lightningClient;
 	}
 	
-	private TriggerCenter triggerCenter = new TriggerCenter(this);
 	public TriggerCenter getTriggerCenter()
 	{
 		return triggerCenter;
 	}
 
-	private static List<ResetPosition> resetPositionList = new LinkedList<ResetPosition>();
 	public static List<ResetPosition> getResetPositionList() 
 	{
 		return resetPositionList;
 	}
 
-	private boolean showStats = false;	
-	public void showStats(boolean show)
-	{
-		showStats = show;
-		setDisplayFps(show);
-    	setDisplayStatView(show);
-	}
 	
-	public void toggleStats()
-	{
-		showStats = !showStats;
-		showStats(showStats);
-	}
-	
-	private CameraFlight cameraFlight;
 	public CameraFlight getCameraFlight()
 	{
 		return cameraFlight;
 	}
 	
-	private SteeringTask steeringTask;
 	public SteeringTask getSteeringTask()
 	{
 		return steeringTask;
 	}
 	
-	private ThreeVehiclePlatoonTask threeVehiclePlatoonTask;
 	public ThreeVehiclePlatoonTask getThreeVehiclePlatoonTask()
 	{
 		return threeVehiclePlatoonTask;
 	}
 	
-	private ReactionCenter reactionCenter;
 	public ReactionCenter getReactionCenter()
 	{
 		return reactionCenter;
 	}
 	
-	private ObjectManipulationCenter objectManipulationCenter;
 	public ObjectManipulationCenter getObjectManipulationCenter()
 	{
 		return objectManipulationCenter;
 	}
 	
-	private String instructionScreenID = null;
-	public void setInstructionScreen(String ID)
-	{
-		instructionScreenID = ID;
-	}
+//	public void setInstructionScreen(String ID)
+//	{
+//		instructionScreenID = ID;
+//	}
 	
-	private SettingsControllerServer settingsControllerServer;
 	public SettingsControllerServer getSettingsControllerServer()
 	{
 		return settingsControllerServer;
 	}		
 	
-	private static String outputFolder;
 	public static String getOutputFolder()
 	{
 		return outputFolder;
@@ -276,37 +281,7 @@ public class Simulator extends SimpleApplication
         return bulletAppState.getPhysicsSpace();
     }
     
-    
-    public float getPhysicsSpeed() 
-    {
-        return bulletAppState.getSpeed();
-    }
-    
-    
-    public boolean isPause() 
-    {
-        return !bulletAppState.isEnabled();
-    }
-    
-    
-    public void setPause(boolean pause) 
-    {
-    	if(this instanceof Simulator)
-    	{
-    		CameraFlight camFlight = ((Simulator)this).getCameraFlight();
-    		if(camFlight != null && !camFlight.isTerminated())
-    		{
-    			camFlight.play(); // must be set
-    		
-    			if(pause)				
-    				camFlight.pause();
-    		}
-    	}
-        bulletAppState.setEnabled(!pause);
-    }
-	
-	
-	public static DrivingTask getDrivingTask()
+    public static DrivingTask getDrivingTask()
 	{
 		return drivingTask;
 	}
@@ -346,44 +321,62 @@ public class Simulator extends SimpleApplication
 	{
 		return numberOfScreens;
 	}
-	
-	
-	public void toggleDebugMode()
+    
+    public void showStats(boolean show)
 	{
-		debugEnabled = !debugEnabled;
-		bulletAppState.setDebugEnabled(debugEnabled);
+		showStats = show;
+		setDisplayFps(show);
+    	setDisplayStatView(show);
 	}
 	
-	
-	/*Added by Felicia*/
-	
-	private float area = 0;
-	private float lengthOfIdealLine = 1;
-	
-	private float roadWidth = 50.0f; //what is a good value here????
-	private DeviationComputer devComp = new DeviationComputer(roadWidth);
+	public void toggleStats()
+	{
+		showStats = !showStats;
+		showStats(showStats);
+	}
+    
+    
+    public float getPhysicsSpeed() 
+    {
+        return bulletAppState.getSpeed();
+    }
+   		
 	public DeviationComputer getDeviationComputer() 
 	{
 		return devComp;
 	}
 
-	private LinkedList<Vector3f> carPositionList = new LinkedList<Vector3f>();
-	private LinkedList<DataUnit> dataUnitList = new LinkedList<DataUnit>();
-	private LinkedList<Vector3f> idealPositionList = new LinkedList<Vector3f>();
-	
-	private CarPositionReader carPositionReader = new CarPositionReader();
-	private CarPositionReader idealPositionReader = new CarPositionReader();
-	private Long initialTimeStamp = 0l;
-
-	public enum VisualizationMode 
-	{
-		POINT, LINE, CONE;
-	}
-
-	private DataUnit currentDataUnit;
 	public DataUnit getCurrentDataUnit() 
 	{
 		return currentDataUnit;
+	}
+	
+    public boolean isPause() 
+    {
+        return !bulletAppState.isEnabled();
+    }
+    
+    
+    public void setPause(boolean pause) 
+    {
+    	if(this instanceof Simulator)
+    	{
+    		CameraFlight camFlight = ((Simulator)this).getCameraFlight();
+    		if(camFlight != null && !camFlight.isTerminated())
+    		{
+    			camFlight.play(); // must be set
+    		
+    			if(pause)				
+    				camFlight.pause();
+    		}
+    	}
+        bulletAppState.setEnabled(!pause);
+    }
+	
+	public void toggleDebugMode()
+	{
+		debugEnabled = !debugEnabled;
+		bulletAppState.setDebugEnabled(debugEnabled);
 	}
 	
 	public void calculateCarData(String fileName){
@@ -413,9 +406,7 @@ public class Simulator extends SimpleApplication
 		}
 	}
 	
-	/*end added by Felicia*/
-	
-	
+		
     @Override
     public void simpleInitApp()
     {
@@ -423,7 +414,6 @@ public class Simulator extends SimpleApplication
     	initDrivingAssessmentTest();
     }
     
-    /*Author: Jessica Larsson, Felicia Ringblom, 2015 */
     private void initDrivingAssessmentTest() 
     {
 		NiftyJmeDisplay niftyDisplay = new NiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort);
@@ -574,11 +564,6 @@ public class Simulator extends SimpleApplication
 	}
 	
 	
-	/**
-	 * That method is going to be executed, when the dataWriter is
-	 * <code>null</code> and the S-key is pressed.
-	 *
-	 */
 	public void initializeDataWriter() 
 	{
 		carPositionWriter = new CarPositionWriter(outputFolder, car, driverName, SimulationDefaults.drivingTaskFileName);
@@ -702,7 +687,7 @@ public class Simulator extends SimpleApplication
 			if(!isPause())
 				carPositionWriter.saveAnalyzerData();
 
-			if (!dataWriterQuittable)
+			if (!carPositionWriterQuittable)
 				carPositionWriterQuittable = true;
 		} 
 		else 
@@ -760,24 +745,9 @@ public class Simulator extends SimpleApplication
     	
     		// only show severe jme3-logs
     		java.util.logging.Logger.getLogger("").setLevel(java.util.logging.Level.SEVERE);
-    		
-    		System.out.println("new sim main");
-	    	Simulator sim = new Simulator();
+   
+    		Simulator sim = new Simulator();
 
-	    	if(args.length >= 1)
-	    	{
-	    		if(DrivingTask.isValidDrivingTask(new File(args[0])))
-	    		{
-	    			SimulationDefaults.drivingTaskFileName = args[0];
-	    			sim.drivingTaskGiven = true;
-	    		}
-	    	}
-	
-	    	if(args.length >= 2)
-	    	{
-	    		SimulationDefaults.driverName = args[1];
-	    	}
-			
 	    	AppSettings settings = new AppSettings(true);
 	        settings.setUseJoysticks(true);
 	        settings.setSettingsDialogImage("assets/Textures/Logo/mcQueen.jpg");

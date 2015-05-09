@@ -30,7 +30,6 @@ import eu.opends.trigger.GetTimeUntilSpeedChangeAction;
 import eu.opends.trigger.ManipulateObjectTriggerAction;
 import eu.opends.trigger.ManipulatePictureTriggerAction;
 import eu.opends.trigger.MoveTrafficTriggerAction;
-import eu.opends.trigger.OpenInstructionsScreenTriggerAction;
 import eu.opends.trigger.PauseTriggerAction;
 import eu.opends.trigger.PlaySoundAction;
 import eu.opends.trigger.ReportSpeedTriggerAction;
@@ -44,8 +43,6 @@ import eu.opends.trigger.SetupBrakeReactionTimerTriggerAction;
 import eu.opends.trigger.SetupLaneChangeReactionTimerTriggerAction;
 import eu.opends.trigger.SetupKeyReactionTimerTriggerAction;
 import eu.opends.trigger.StartReactionMeasurementTriggerAction;
-import eu.opends.trigger.StartRecordingTriggerAction;
-import eu.opends.trigger.StopRecordingTriggerAction;
 import eu.opends.trigger.TriggerAction;
 import eu.opends.trigger.WriteToKnowledgeBaseTriggerAction;
 
@@ -369,53 +366,53 @@ public class InteractionMethods
 	}
 	
 	
-
-	@Action(
-			name = "startRecording", 
-			layer = Layer.INTERACTION, 
-			description = "Starts recording driver information",
-			defaultDelay = 0,
-			defaultRepeat = 0,
-			param = {@Parameter(name="track", type="Integer", defaultValue="1", 
-							 	description="Provide an ID to identify recording (optional)")
-					}
-		)
-	public TriggerAction startRecording(Simulator sim, float delay, int repeat, Properties parameterList)
-	{
-		String parameter = "track";
-		
-		try {
-			
-			// read duration of pause
-			String trackString = parameterList.getProperty(parameter);
-			if(trackString == null)
-				trackString = setDefault("startRecording", parameter, "1");
-			int trackNumber = Integer.parseInt(trackString);
-			
-			// create StartRecordingTriggerAction
-			return new StartRecordingTriggerAction(delay, repeat, (Simulator) sim, trackNumber);
-			
-		} catch (Exception e) {
+//
+//	@Action(
+//			name = "startRecording", 
+//			layer = Layer.INTERACTION, 
+//			description = "Starts recording driver information",
+//			defaultDelay = 0,
+//			defaultRepeat = 0,
+//			param = {@Parameter(name="track", type="Integer", defaultValue="1", 
+//							 	description="Provide an ID to identify recording (optional)")
+//					}
+//		)
+//	public TriggerAction startRecording(Simulator sim, float delay, int repeat, Properties parameterList)
+//	{
+//		String parameter = "track";
+//		
+//		try {
+//			
+//			// read duration of pause
+//			String trackString = parameterList.getProperty(parameter);
+//			if(trackString == null)
+//				trackString = setDefault("startRecording", parameter, "1");
+//			int trackNumber = Integer.parseInt(trackString);
+//			
+//			// create StartRecordingTriggerAction
+//			return new StartRecordingTriggerAction(delay, repeat, (Simulator) sim, trackNumber);
+//			
+//		} catch (Exception e) {
+//	
+//			reportError("startRecording", parameter);
+//			return null;
+//		}
+//	}
 	
-			reportError("startRecording", parameter);
-			return null;
-		}
-	}
-	
 
-	@Action(
-			name = "stopRecording", 
-			layer = Layer.INTERACTION, 
-			description = "Stops recording driver information",
-			defaultDelay = 0,
-			defaultRepeat = 0,
-			param = {}
-		)
-	public TriggerAction stopRecording(Simulator sim, float delay, int repeat, Properties parameterList)
-	{
-		// create StopRecordingTriggerAction
-		return new StopRecordingTriggerAction(delay, repeat,(Simulator)sim);
-	}
+//	@Action(
+//			name = "stopRecording", 
+//			layer = Layer.INTERACTION, 
+//			description = "Stops recording driver information",
+//			defaultDelay = 0,
+//			defaultRepeat = 0,
+//			param = {}
+//		)
+//	public TriggerAction stopRecording(Simulator sim, float delay, int repeat, Properties parameterList)
+//	{
+//		// create StopRecordingTriggerAction
+//		return new StopRecordingTriggerAction(delay, repeat,(Simulator)sim);
+//	}
 	
 
 
@@ -1226,37 +1223,37 @@ public class InteractionMethods
 	}
 	
 	
-	@Action(
-			name = "openInstructionsScreen", 
-			layer = Layer.INTERACTION, 
-			description = "Shows up a screen with instructions",
-			defaultDelay = 0,
-			defaultRepeat = 0,
-			param = {@Parameter(name="instructionID", type="String", defaultValue="", 
-							 	description="Provide an ID to identify the instruction to show")
-					}
-		)
-	public TriggerAction openInstructionsScreen(Simulator sim, float delay, int repeat, Properties parameterList)
-	{
-		String parameter = "instructionID";
-		
-		try {
-			
-			// extract instructionID
-			String instructionID = parameterList.getProperty(parameter);
-			if(instructionID == null)
-				throw new Exception();
-			
-			// create StartRecordingTriggerAction
-			return new OpenInstructionsScreenTriggerAction(delay, repeat, (Simulator) sim, instructionID);
-			
-		} catch (Exception e) {
-	
-			reportError("openInstructionsScreen", parameter);
-			return null;
-		}
-	}
-	
+//	@Action(
+//			name = "openInstructionsScreen", 
+//			layer = Layer.INTERACTION, 
+//			description = "Shows up a screen with instructions",
+//			defaultDelay = 0,
+//			defaultRepeat = 0,
+//			param = {@Parameter(name="instructionID", type="String", defaultValue="", 
+//							 	description="Provide an ID to identify the instruction to show")
+//					}
+//		)
+//	public TriggerAction openInstructionsScreen(Simulator sim, float delay, int repeat, Properties parameterList)
+//	{
+//		String parameter = "instructionID";
+//		
+//		try {
+//			
+//			// extract instructionID
+//			String instructionID = parameterList.getProperty(parameter);
+//			if(instructionID == null)
+//				throw new Exception();
+//			
+//			// create StartRecordingTriggerAction
+//			return new OpenInstructionsScreenTriggerAction(delay, repeat, (Simulator) sim, instructionID);
+//			
+//		} catch (Exception e) {
+//	
+//			reportError("openInstructionsScreen", parameter);
+//			return null;
+//		}
+//	}
+//	
 	
 	@Action(
 			name = "setTVPTStimulus", 
