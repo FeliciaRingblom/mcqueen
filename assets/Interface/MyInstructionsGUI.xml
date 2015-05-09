@@ -23,99 +23,89 @@
   <!-- Start screen with -->
   <screen id="start" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
     <layer id="backLayer" childLayout="vertical" >
-      <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#eeeeee">
-        <panel id="content" backgroundColor="#ffffff" width="75%" height="90%" childLayout="absolute-inside">  
-          
-          <panel id="top" width="100%" height="25%" childLayout="vertical">
-            <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" text="Testa din simultanförmåga" wrap="true" color="#000f" textHAlign="center" textVAlign="center"/> 
+      <panel id="wrapper" width="100%" height="100%" childLayout="vertical" backgroundColor="#efefef">    
+        <panel id="top" width="100%" height="25%" childLayout="vertical">
+          <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" text="Testa din simultanförmåga" wrap="true" color="#000f" textHAlign="center" textVAlign="center"/> 
+        </panel><!-- ./top -->
+        
+        <panel id="center" childLayout="absolute-inside" backgroundImage="assets/Interface/images_instruction_screen/bg_img_start.png" width="100%" y="25%" height="50%">
+          <image id="start_test_img_btn" filename="assets/Interface/images_instruction_screen/trans_box.png" width="45%" height="100%"/>
+          <panel id="input_labels" width="20%" height="90%" childLayout="absolute-inside" x="0%">
+              <text id="label_id_nr" text="Löpnr:" font="assets/Interface/Fonts/Arial32px.fnt" width="90%" height="15%" y="12%" wrap="true" color="#000f" borderColor="#bbb" textHAlign="right" textVAlign="center"/>
+              <text id="label_diagnosis_nr" text="Diagnosnr:" font="assets/Interface/Fonts/Arial32px.fnt" width="90%" height="15%" y="32%" wrap="true" color="#000f" borderColor="#bbb" textHAlign="right" textVAlign="center"/>
+              <text id="label_age" text="Ålder:" font="assets/Interface/Fonts/Arial32px.fnt" width="90%" height="15%" y="52%" wrap="true" color="#000f" borderColor="#bbb" textHAlign="right" textVAlign="center"/>
           </panel>
-          
-          <panel id="center" childLayout="absolute-inside" backgroundImage="assets/Interface/images_instruction_screen/bg_img_start.png" width="100%" y="25%" height="50%">
-            <image id="start_test_img_btn" filename="assets/Interface/images_instruction_screen/trans_box.png" width="45%" height="100%"/>
-            <panel id="input_labels" width="20%" height="90%" childLayout="absolute-inside" x="0%">
-                <text id="label_id_nr" text="Löpnr:" font="assets/Interface/Fonts/Arial32px.fnt" width="90%" height="15%" y="12%" wrap="true" color="#000f" borderColor="#bbb" textHAlign="right" textVAlign="center"/>
-                <text id="label_diagnosis_nr" text="Diagnosnr:" font="assets/Interface/Fonts/Arial32px.fnt" width="90%" height="15%" y="32%" wrap="true" color="#000f" borderColor="#bbb" textHAlign="right" textVAlign="center"/>
-                <text id="label_age" text="Ålder:" font="assets/Interface/Fonts/Arial32px.fnt" width="90%" height="15%" y="52%" wrap="true" color="#000f" borderColor="#bbb" textHAlign="right" textVAlign="center"/>
-            </panel>
-            <panel id="input_fields" width="20%" height="90%" childLayout="absolute-inside" x="20%">
-                <control id="input_id" name="textfield" width="90%" height="15%" y="10%" color="#ffffff" borderColor="#bbb"/>
-                <control id="input_diagnosis_nr" name="textfield" width="90%" height="15%" y="30%" color="#ff0000" borderColor="#bbb"/>
-                <control id="input_age" name="textfield" width="90%" height="15%" y="50%" color="#ffffff" borderColor="#bbb"/>
-            </panel>  
-            <panel id="radio_buttons" width="40%" height="25%" childLayout="vertical" y="70%" x="4%">
-           
-              <control id="RadioGroup-gender" name="radioButtonGroup"/>          
-              <panel width="40%" childLayout="horizontal" x="40%" height="50%">
-                <panel childLayout="horizontal">
-                  <control name="label" text="man" with="60px" color="#000f"/>
-                  <control name="radioButton" id="man" group="RadioGroup-gender" />
-                </panel>
-                <panel childLayout="horizontal">
-                  <control name="label" text="kvinna" with="60px" color="#000f"/>
-                  <control name="radioButton" id="kvinna" group="RadioGroup-gender" />
-                </panel>
-              </panel>          
-              <control id="RadioGroup-speed" name="radioButtonGroup"/>          
-              <panel width="40%" childLayout="horizontal" x="90%">
-                <panel childLayout="horizontal" x="0%">
-                  <control name="label" text="40km/h" with="60px" color="#000f"/>
-                  <control name="radioButton" id="low" group="RadioGroup-speed" />
-                </panel>
-                <panel childLayout="horizontal" x="40%">
-                  <control name="label" text="50km/h" with="60px" color="#000f"/>
-                  <control name="radioButton" id="middle" group="RadioGroup-speed" />
-                </panel>    
-              <panel childLayout="horizontal" y="90%">
-                <panel childLayout="horizontal" x="0%">
-                  <control name="label" text="60km/h" with="60px" color="#000f"/>
-                  <control name="radioButton" id="high" group="RadioGroup-speed" />
-                </panel> 
-              </panel>  
+          <panel id="input_fields" width="20%" height="90%" childLayout="absolute-inside" x="20%">
+              <control id="input_id" name="textfield" width="90%" height="15%" y="10%" color="#ffffff" borderColor="#bbb"/>
+              <control id="input_diagnosis_nr" name="textfield" width="90%" height="15%" y="30%" color="#ff0000" borderColor="#bbb"/>
+              <control id="input_age" name="textfield" width="90%" height="15%" y="50%" color="#ffffff" borderColor="#bbb"/>
+          </panel>  
+          <panel id="radio_buttons" width="40%" height="25%" childLayout="vertical" y="70%" x="4%">
+         
+            <control id="RadioGroup-gender" name="radioButtonGroup"/>          
+            <panel width="40%" childLayout="horizontal" x="40%" height="50%">
+              <panel childLayout="horizontal">
+                <control name="label" text="man" with="60px" color="#000f"/>
+                <control name="radioButton" id="option-male" group="RadioGroup-gender" />
+              </panel>
+              <panel childLayout="horizontal">
+                <control name="label" text="kvinna" with="60px" color="#000f"/>
+                <control name="radioButton" id="option-female" group="RadioGroup-gender" />
+              </panel>
+            </panel>          
+            <control id="RadioGroup-speed" name="radioButtonGroup"/>          
+            <panel width="40%" childLayout="horizontal" x="90%">
+              <panel childLayout="horizontal" x="0%">
+                <control name="label" text="40km/h" with="60px" color="#000f"/>
+                <control name="radioButton" id="low" group="RadioGroup-speed" />
+              </panel>
+              <panel childLayout="horizontal" x="40%">
+                <control name="label" text="50km/h" with="60px" color="#000f"/>
+                <control name="radioButton" id="middle" group="RadioGroup-speed" />
+              </panel>    
+
+  
             </panel>            
-            
-       
-            </panel>
-          </panel>
           
-          <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">                   
-            <image id="start_test_img_btn" filename="assets/Interface/images_instruction_screen/large_start_button.png" width="90%" height="35%" align="center" y="15%" x="5%">
-              <effect>
-                <onHover name="border" border="3px" color="#ffba00" timeType="infinite"/>
-              </effect>
-              <interact onClick="startTest()" />
-            </image>
-            <image id="start_straight" filename="assets/Interface/images_instruction_screen/small_start_button1.png" width="25%" height="25%" align="center" y="65%" x="5%">
-              <effect>
-                <onHover name="border" border="2px" color="#ffba00" timeType="infinite"/>
-              </effect>
-              <interact onClick="startIntroStraight()" />
-              <!--<interact onClick="gotoInstructions3()" />-->
-            </image>
-            <image id="start_stimuli" filename="assets/Interface/images_instruction_screen/small_start_button2.png" width="26%" height="25%" align="center" y="65%" x="37%">
-              <effect>
-                <onHover name="border" border="2px" color="#ffba00" timeType="infinite"/>
-              </effect>
-              <interact onClick="startIntroStimuli()" />
-              <!--<interact onClick="gotoInstructions5()" />-->
-            </image>
-            <image id="start_main" filename="assets/Interface/images_instruction_screen/small_start_button3.png" width="25%" height="25%" align="center" y="65%" x="70%">
-              <effect>
-                <onHover name="border" border="2px" color="#ffba00" timeType="infinite"/>
-              </effect>
-              <interact onClick="startMainTest()" />
-              <!--<interact onClick="gotoInstructions6()" />-->
-            </image>
           </panel>
-        </panel>
-      </panel>
+        </panel><!-- ./center -->
+        
+        <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">                   
+          <image id="start_test_img_btn" filename="assets/Interface/images_instruction_screen/large_start_button.png" width="90%" height="35%" align="center" y="15%" x="5%">
+            <effect>
+              <onHover name="border" border="3px" color="#ffba00" timeType="infinite"/>
+            </effect>
+            <interact onClick="startTest()" />
+          </image>
+          <image id="start_straight" filename="assets/Interface/images_instruction_screen/small_start_button1.png" width="25%" height="25%" align="center" y="65%" x="5%">
+            <effect>
+              <onHover name="border" border="2px" color="#ffba00" timeType="infinite"/>
+            </effect>
+            <interact onClick="startIntroStraight()" />
+          </image>
+          <image id="start_stimuli" filename="assets/Interface/images_instruction_screen/small_start_button2.png" width="26%" height="25%" align="center" y="65%" x="37%">
+            <effect>
+              <onHover name="border" border="2px" color="#ffba00" timeType="infinite"/>
+            </effect>
+            <interact onClick="startIntroStimuli()" />
+          </image>
+          <image id="start_main" filename="assets/Interface/images_instruction_screen/small_start_button3.png" width="25%" height="25%" align="center" y="65%" x="70%">
+            <effect>
+              <onHover name="border" border="2px" color="#ffba00" timeType="infinite"/>
+            </effect>
+            <interact onClick="startMainTest()" />
+          </image>
+        </panel><!-- ./botttom -->
+
+      </panel><!-- ./wrapper -->
     </layer>
   </screen>
 
   <!-- First instructions screen, explaining the purpose -->
   <screen id="instruction_1" controller="eu.opends.niftyGui.MyInstructionsGUIController">
     <layer id="backLayer" childLayout="vertical" >
-      <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#eeeeee">
-        <panel id="content" backgroundColor="#ffffff" width="75%" height="90%" childLayout="absolute-inside">
+      <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#efefef">
+        <panel id="content" width="75%" height="90%" childLayout="absolute-inside">
          
           <panel id="top" width="100%" height="25%" childLayout="vertical">
              <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Du ska nu utföra en uppgift som testar din simultana förmåga. Som bilförare är det viktigt att ha en bra simultan förmåga, dvs förmågan att utföra flera uppgifter samtidigt. Uppgiften går ut på att du ska hålla bilen på vägen, samtidigt som du ska reagera på bilder som dyker upp." wrap="true" color="#000f" textHAlign="center" textVAlign="top"/>  
@@ -126,21 +116,21 @@
           </panel>
           
           <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">  
-            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="15%" height="35%" x="80%">
+            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="30%" height="85%" x="35%">
               <interact onClick="gotoInstructions2()" />
             </image>                 
           </panel>
 
         </panel>
-      </panel>
+      </panel><!-- ./wrapper -->
     </layer>
   </screen>
 
   <!-- Second instructions screen, explaining the setup and button to start the intro straight task. -->
   <screen id="instruction_2" controller="eu.opends.niftyGui.MyInstructionsGUIController">
     <layer id="backLayer" childLayout="vertical" >
-     <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#eeeeee">
-        <panel id="content" backgroundColor="#ffffff" width="75%" height="90%" childLayout="absolute-inside">
+     <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#efefef">
+        <panel id="content" width="75%" height="90%" childLayout="absolute-inside">
          
           <panel id="top" width="100%" height="25%" childLayout="vertical">
             <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Under testet kommer du köra en bil. Hastigheten kan du inte påverka, den är konstant. Du ska styra bilen med ratten precis som en vanlig bil." wrap="true" color="#000f" textHAlign="center" textVAlign="top"/>  
@@ -151,21 +141,21 @@
           </panel>
     
           <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">  
-            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="15%" height="35%" x="80%">
+            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="30%" height="85%" x="35%">
               <interact onClick="startIntroStraight()" />
             </image>                 
           </panel>
 
         </panel>
-      </panel>
+      </panel><!-- ./wrapper -->
     </layer>
   </screen>
 
   <!-- Third instructions screen, explaining stimuli. -->
   <screen id="instruction_3" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
     <layer id="backLayer" childLayout="vertical">
-     <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#eeeeee">
-        <panel id="content" backgroundColor="#ffffff" width="75%" height="90%" childLayout="absolute-inside">
+     <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#efefef">
+        <panel id="content" width="75%" height="90%" childLayout="absolute-inside">
          
           <panel id="top" width="100%" height="25%" childLayout="vertical">
             <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Under sträckans gång kommer det komma upp bilder på varje sida av skärmen. Om Bilden visar en grön fyrkant trycker du på fyrkant. Om bilden visar grön cirkel trycker du på cirkel." wrap="true" color="#000f" textHAlign="center" textVAlign="top"/>  
@@ -175,21 +165,21 @@
           </panel>
 
           <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">  
-            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="15%" height="35%" x="80%">
+            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="30%" height="85%" x="35%">
               <interact onClick="gotoInstructions4()" />
             </image>                 
           </panel>
 
         </panel>
-      </panel>
+      </panel><!-- ./wrapper -->
     </layer>
   </screen>
 
   <!-- Fourth instructions screen, explaining red stiumuli -->  
   <screen id="instruction_4" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
     <layer id="backLayer" childLayout="vertical">
-     <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#eeeeee">
-        <panel id="content" backgroundColor="#ffffff" width="75%" height="90%" childLayout="absolute-inside">
+     <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#efefef">
+        <panel id="content" width="75%" height="90%" childLayout="absolute-inside">
          
           <panel id="top" width="100%" height="25%" childLayout="vertical">
             <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Om bilden visar en röd fyrkant eller en röd cirkel ska du inte trycka på någon knapp alls." wrap="true" color="#000f" textHAlign="center" textVAlign="top"/>  
@@ -200,21 +190,21 @@
           </panel>
 
           <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">  
-            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="15%" height="35%" x="80%">
+            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="30%" height="85%" x="35%">
               <interact onClick="startIntroStimuli()" />
             </image>                 
           </panel>
           
         </panel>
-      </panel>
+      </panel><!-- ./wrapper -->
     </layer>
   </screen>
 
    <!-- Fifth instructions screen, two options: start main test or redo instructions. -->
   <screen id="instruction_5" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
     <layer id="backLayer" childLayout="vertical">
-     <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#eeeeee">
-        <panel id="content" backgroundColor="#ffffff" width="75%" height="90%" childLayout="absolute-inside">
+     <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#efefef">
+        <panel id="content" width="75%" height="90%" childLayout="absolute-inside">
          
           <panel id="top" width="100%" height="25%" childLayout="vertical">
             <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Jag känner mig redo att starta testet." wrap="true" color="#000f" textHAlign="center" textVAlign="center"/>  
@@ -236,15 +226,15 @@
           </panel>
           
         </panel>
-      </panel>
+      </panel><!-- ./wrapper -->
     </layer>
   </screen>
 
   <!-- Last instruction screen, shows when test is completed -->
   <screen id="instruction_6" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
     <layer id="backLayer" childLayout="vertical">
-     <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#eeeeee">
-        <panel id="content" backgroundColor="#ffffff" width="75%" height="90%" childLayout="absolute-inside">
+     <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#efefef">
+        <panel id="content" width="75%" height="90%" childLayout="absolute-inside">
          
           <panel id="top" width="100%" height="25%" childLayout="vertical">
             <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Du är nu klar med testet" wrap="true" color="#000f" textHAlign="center" textVAlign="top"/>  
@@ -260,15 +250,15 @@
           </panel>
 
         </panel>
-      </panel>
+      </panel><!-- ./wrapper -->
     </layer>
   </screen>
   
    <!-- End screen, result -->
   <screen id="end" controller="eu.opends.niftyGui.MyInstructionsGUIController" >
     <layer id="backLayer" childLayout="vertical">
-     <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#eeeeee">
-        <panel id="content" backgroundColor="#ffffff" width="75%" height="90%" childLayout="absolute-inside">
+     <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#efefef">
+        <panel id="content" width="75%" height="90%" childLayout="absolute-inside">
          
           <panel id="top" width="100%" height="25%" childLayout="vertical">
             <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Ditt resultat." wrap="true" color="#000f" textHAlign="center" textVAlign="top"/>  
@@ -281,7 +271,7 @@
           </panel>
 
         </panel>
-      </panel>
+      </panel><!-- ./wrapper -->
     </layer>
   </screen>
 

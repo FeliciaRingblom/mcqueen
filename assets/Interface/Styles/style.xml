@@ -71,10 +71,10 @@
   <!-- style for the button background panel -->
   <!-- +++++++++++++++++++++++++++++++++++++ -->
   <style id="nifty-button#panel">
-    <attributes backgroundColor="#555f" paddingLeft="7px" paddingRight="7px" width="100px" height="23px" childLayout="center" visibleToMouse="true" />
+    <attributes backgroundColor="#555f" paddingLeft="7px" paddingRight="7px" width="130px" height="23px" childLayout="center" visibleToMouse="true" />
     <effect>
       <onHover name="border" color="#ffff" post="true" />
-      <onFocus name="backgroundColor" color="#ff0f" post="true" />
+      <onFocus name="border" color="#ffba00" post="true" />
     </effect>
   </style>
 

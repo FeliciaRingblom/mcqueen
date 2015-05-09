@@ -25,21 +25,27 @@
 	<screen id="start" controller="eu.opends.niftyGui.ShutDownGUIController">
 	
 	<layer id="topLayer" childLayout="center" backgroundColor="#0008">
-		<panel childLayout="vertical" style="nifty-panel-bright" width="350px" height="150px" valign="center" align="center">
+		<panel childLayout="vertical" style="nifty-panel-bright" width="450px" height="150px" valign="center" align="center">
 			<panel childLayout="center" height="25px"/>
 			<panel childLayout="vertical" height="40px" valign="center">
 				<control name="label" id="closeMessageText" text="Vill du verkligen avsluta?" 
 					width="100%" heigth="100%" color="#000000" textHAlign="center"/>
 			</panel>
 			<panel childLayout="horizontal" height="80px" width="100%" align="center">
-				<panel childLayout="center" height="100%" width="50%" align="center">
-					<control id="closeButton" name="button" label="Quit"
+				<panel childLayout="center" height="100%" width="33%" align="center">
+					<control id="closeButton" name="button" label="Avsluta programmet"
 						align="center" height="30px">
 						<interact onClick="clickCloseButton()" />
 					</control>
 				</panel>
-				<panel childLayout="center" height="100%" width="50%" align="center">
-					<control id="cancelButton" name="button" label="Cancel"
+				<panel childLayout="center" height="100%" width="33%" align="center">
+					<control id="closeButton" name="button" label="Tillbaka till menyn"
+						align="center" height="30px">
+						<interact onClick="clickBackToMenuButton()" />
+					</control>
+				</panel>
+				<panel childLayout="center" height="100%" width="33%" align="center">
+					<control id="cancelButton" name="button" label="Fortsätt"
 						align="center" height="30px">
 						<interact onClick="clickCancelButton()" />
 					</control>
