@@ -22,8 +22,7 @@ import de.dfki.automotive.kapcom.knowledgebase.KAPcomException;
 import de.dfki.automotive.kapcom.knowledgebase.NetClient;
 import de.dfki.automotive.kapcom.knowledgebase.PropertyValue;
 import de.dfki.automotive.kapcom.knowledgebase.ontology.*;
-import eu.opends.basics.SimulationBasics;
-import eu.opends.main.DriveAnalyzer;
+import eu.opends.main.Simulator;import eu.opends.main.DriveAnalyzer;
 import eu.opends.main.Simulator;
 
 /**
@@ -50,7 +49,7 @@ final public class KnowledgeBase extends Thread
 	private UserKnowledge user = null;
 	private VehicleKnowledge vehicle = null;
 	
-	private SimulationBasics sim;
+	private Simulator sim;
 	
 	public KnowledgeBase(boolean connect, boolean fallback)
 	{
@@ -87,7 +86,7 @@ final public class KnowledgeBase extends Thread
 	/**
 	 * Initializes the knowledge store. This might establish a connection to KAPcom.
 	 */
-	public void Initialize(SimulationBasics sim, String host, int port)
+	public void Initialize(Simulator sim, String host, int port)
 	{
 		this.sim = sim;
 		
@@ -227,8 +226,7 @@ final public class KnowledgeBase extends Thread
 				try{
 					if(sim instanceof Simulator)
 						getVehicle().sendCarData(((Simulator)sim).getCar());
-					else if(sim instanceof DriveAnalyzer)
-						getVehicle().sendAnalyzerData(((DriveAnalyzer)sim).getCurrentDataUnit());
+;
 				} catch (Exception ex) {
 					ex.printStackTrace();
 					System.err.println("Failed to send update to KAPcom. Will stop sending updates for 60 seconds.");

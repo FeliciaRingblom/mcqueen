@@ -12,8 +12,7 @@ import com.jme3.scene.Node;
 import com.jme3.scene.Spatial.CullHint;
 import com.jme3.ui.Picture;
 
-import eu.opends.basics.SimulationBasics;
-
+import eu.opends.main.Simulator;
 public class DistanceBar 
 {
 	// default extent, position and rotation
@@ -45,7 +44,7 @@ public class DistanceBar
 	private BitmapText distanceText;
 	
 	
-	public DistanceBar(SimulationBasics sim, ArrayList<DistanceBarSegment> segmentsList, 
+	public DistanceBar(Simulator sim, ArrayList<DistanceBarSegment> segmentsList, 
 			float width, float height, float left, float bottom, float rotation, boolean showText)
 	{
 		this.distanceBarWidth = width;

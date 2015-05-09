@@ -37,7 +37,6 @@ import com.jme3.input.controls.JoyAxisTrigger;
 import com.jme3.input.controls.JoyButtonTrigger;
 import com.jme3.input.controls.KeyTrigger;
 
-import eu.opends.basics.SimulationBasics;
 import eu.opends.drivingTask.settings.SettingsLoader;
 import eu.opends.drivingTask.settings.SettingsLoader.Setting;
 import eu.opends.main.DriveAnalyzer;
@@ -53,7 +52,7 @@ public class KeyBindingCenter
 	
 	private InputManager inputManager;
 	
-    public KeyBindingCenter(SimulationBasics sim) 
+    public KeyBindingCenter(Simulator sim) 
     {
     	
     	inputManager = sim.getInputManager();
@@ -64,8 +63,6 @@ public class KeyBindingCenter
     	if(sim instanceof Simulator)
 	    	assignSimulatorKeys((Simulator)sim);
 
-    	else if(sim instanceof DriveAnalyzer)
-    		assignDriveAnalyzerKeys((DriveAnalyzer)sim);
 	}
 
     

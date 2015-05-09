@@ -22,8 +22,7 @@ import java.util.Properties;
 
 import com.jme3.math.FastMath;
 
-import eu.opends.basics.SimulationBasics;
-import eu.opends.drivingTask.DrivingTaskDataQuery.Layer;
+import eu.opends.main.Simulator;import eu.opends.drivingTask.DrivingTaskDataQuery.Layer;
 import eu.opends.main.Simulator;
 import eu.opends.niftyGui.MyInstructionsGUIController;
 import eu.opends.trigger.GetTimeUntilBrakeAction;
@@ -69,7 +68,7 @@ public class InteractionMethods
 //						 	description="Amount of seconds to show text (0 = infinite)")
 //				}
 //	)
-//	public TriggerAction sendMessage(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+//	public TriggerAction sendMessage(Simulator sim, float delay, int repeat, Properties parameterList)
 //	{
 //		String parameter = "";
 //		try {
@@ -146,7 +145,7 @@ public class InteractionMethods
 								description="Makes the model (in)visible")
 					}
 		)
-	public TriggerAction manipulateObject(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction manipulateObject(Simulator sim, float delay, int repeat, Properties parameterList)
 	{
 		String parameter = "";
 		Float[] nullArray = new Float[] {null, null, null};
@@ -243,7 +242,7 @@ public class InteractionMethods
 								description="Makes the picture (in)visible")
 					}
 		)
-	public TriggerAction manipulatePicture(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction manipulatePicture(Simulator sim, float delay, int repeat, Properties parameterList)
 	{
 		String parameter = "";
 		
@@ -315,7 +314,7 @@ public class InteractionMethods
 							 	description="Amount of seconds to pause (0 = infinite)")
 					}
 		)
-	public TriggerAction pauseSimulation(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction pauseSimulation(Simulator sim, float delay, int repeat, Properties parameterList)
 	{
 		String parameter = "duration";
 		
@@ -347,7 +346,7 @@ public class InteractionMethods
 							 	description="screen number to switch to")
 					}
 		)
-	public TriggerAction returnToInstruction(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction returnToInstruction(Simulator sim, float delay, int repeat, Properties parameterList)
 	{
 		String parameter = "next";
 
@@ -381,7 +380,7 @@ public class InteractionMethods
 							 	description="Provide an ID to identify recording (optional)")
 					}
 		)
-	public TriggerAction startRecording(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction startRecording(Simulator sim, float delay, int repeat, Properties parameterList)
 	{
 		String parameter = "track";
 		
@@ -412,7 +411,7 @@ public class InteractionMethods
 			defaultRepeat = 0,
 			param = {}
 		)
-	public TriggerAction stopRecording(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction stopRecording(Simulator sim, float delay, int repeat, Properties parameterList)
 	{
 		// create StopRecordingTriggerAction
 		return new StopRecordingTriggerAction(delay, repeat,(Simulator)sim);
@@ -438,7 +437,7 @@ public class InteractionMethods
 								description="ID of the reset point to move the driving car to")
 					}
 		)
-	public TriggerAction resetCar(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction resetCar(Simulator sim, float delay, int repeat, Properties parameterList)
 	{
 		String parameter = "resetPointID";
 		
@@ -481,7 +480,7 @@ public class InteractionMethods
 								description="ID of the way point to move the traffic vehicle to")
 					}
 		)
-	public TriggerAction moveTraffic(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction moveTraffic(Simulator sim, float delay, int repeat, Properties parameterList)
 	{
 		String parameter = "";
 		
@@ -528,7 +527,7 @@ public class InteractionMethods
 								description="Speed limit in kph (0 = unlimited)")
 					}
 		)
-	public TriggerAction setCurrentSpeedLimit(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction setCurrentSpeedLimit(Simulator sim, float delay, int repeat, Properties parameterList)
 	{
 		String parameter = "speedLimit";
 		
@@ -569,7 +568,7 @@ public class InteractionMethods
 								description="Speed limit in kph (0 = unlimited)")
 					}
 		)
-	public TriggerAction setUpcomingSpeedLimit(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction setUpcomingSpeedLimit(Simulator sim, float delay, int repeat, Properties parameterList)
 	{
 		String parameter = "speedLimit";
 		
@@ -611,7 +610,7 @@ public class InteractionMethods
 								description="ID of trigger for identification in output file")
 					}
 		)
-	public TriggerAction measureTimeUntilBrake(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction measureTimeUntilBrake(Simulator sim, float delay, int repeat, Properties parameterList)
 	{
 		String parameter = "";
 		
@@ -653,7 +652,7 @@ public class InteractionMethods
 								description="Amount of speed (in kph) that has to be in- or decreased")
 					}
 		)
-	public TriggerAction measureTimeUntilSpeedChange(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction measureTimeUntilSpeedChange(Simulator sim, float delay, int repeat, Properties parameterList)
 	{	
 		String parameter = "";
 		
@@ -691,7 +690,7 @@ public class InteractionMethods
 								description="ID of sound file to play")
 					}
 		)
-	public TriggerAction playSound(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction playSound(Simulator sim, float delay, int repeat, Properties parameterList)
 	{	
 		String parameter = "";
 		
@@ -724,7 +723,7 @@ public class InteractionMethods
 								description="ID of traffic light to request for green")
 					}
 		)
-	public TriggerAction requestGreenTrafficLight(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction requestGreenTrafficLight(Simulator sim, float delay, int repeat, Properties parameterList)
 	{	
 		String parameter = "";
 		
@@ -755,7 +754,7 @@ public class InteractionMethods
 			defaultRepeat = 0,
 			param = {}
 		)
-	public TriggerAction startReactionMeasurement(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction startReactionMeasurement(Simulator sim, float delay, int repeat, Properties parameterList)
 	{	
 		// create StartReactionMeasurementTriggerAction
 		return new StartReactionMeasurementTriggerAction(delay, repeat, (Simulator)sim);
@@ -776,7 +775,7 @@ public class InteractionMethods
 								description="list of keys triggering the failure reaction")
 					}
 		)
-	public TriggerAction setupReactionTimer(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction setupReactionTimer(Simulator sim, float delay, int repeat, Properties parameterList)
 	{	
 		String parameter = "";
 		
@@ -838,7 +837,7 @@ public class InteractionMethods
 								description="list of keys triggering the failure reaction")
 					}
 		)
-	public TriggerAction setupKeyReactionTimer(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction setupKeyReactionTimer(Simulator sim, float delay, int repeat, Properties parameterList)
 	{	
 		String parameter = "";
 		
@@ -918,7 +917,7 @@ public class InteractionMethods
 								description="optional comment")
 					}
 		)
-	public TriggerAction setupLaneChangeReactionTimer(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction setupLaneChangeReactionTimer(Simulator sim, float delay, int repeat, Properties parameterList)
 	{	
 		String parameter = "";
 		
@@ -1038,7 +1037,7 @@ public class InteractionMethods
 								description="optional comment")
 					}
 		)
-	public TriggerAction setupBrakeReactionTimer(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction setupBrakeReactionTimer(Simulator sim, float delay, int repeat, Properties parameterList)
 	{	
 		String parameter = "";
 		
@@ -1138,7 +1137,7 @@ public class InteractionMethods
 								description="Speed (in km/h) to compare driving car's speed with.")
 					}
 		)
-	public TriggerAction reportSpeed(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction reportSpeed(Simulator sim, float delay, int repeat, Properties parameterList)
 	{	
 		String parameter = "";
 		
@@ -1189,7 +1188,7 @@ public class InteractionMethods
 								description="State required for report.")
 					}
 		)
-	public TriggerAction reportTrafficLight(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction reportTrafficLight(Simulator sim, float delay, int repeat, Properties parameterList)
 	{	
 		String parameter = "";
 		
@@ -1237,7 +1236,7 @@ public class InteractionMethods
 							 	description="Provide an ID to identify the instruction to show")
 					}
 		)
-	public TriggerAction openInstructionsScreen(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction openInstructionsScreen(Simulator sim, float delay, int repeat, Properties parameterList)
 	{
 		String parameter = "instructionID";
 		
@@ -1270,7 +1269,7 @@ public class InteractionMethods
 							 	description="Provide an ID of the stimulus to trigger")
 					}
 		)
-	public TriggerAction setTVPTStimulus(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction setTVPTStimulus(Simulator sim, float delay, int repeat, Properties parameterList)
 	{
 		String parameter = "stimulusID";
 		
@@ -1308,7 +1307,7 @@ public class InteractionMethods
 								description="Type of property to insert/edit")
 					}
 		)
-	public TriggerAction writeToKnowledgeBase(SimulationBasics sim, float delay, int repeat, Properties parameterList)
+	public TriggerAction writeToKnowledgeBase(Simulator sim, float delay, int repeat, Properties parameterList)
 	{	
 		String parameter = "";
 		

@@ -34,7 +34,6 @@ import com.jme3.scene.Spatial;
 import com.jme3.scene.Spatial.CullHint;
 import com.jme3.ui.Picture;
 
-import eu.opends.basics.SimulationBasics;
 import eu.opends.car.Car;
 import eu.opends.drivingTask.settings.SettingsLoader;
 import eu.opends.drivingTask.settings.SettingsLoader.Setting;
@@ -48,7 +47,7 @@ import eu.opends.niftyGui.KeyMappingGUI.GuiLayer;
  */
 public class PanelCenter
 {
-	private static SimulationBasics sim;
+	private static Simulator sim;
 
 	private static Picture speedometer, RPMgauge, logo, hood, warningFrame;
 	private static Node RPMIndicator, speedIndicator;

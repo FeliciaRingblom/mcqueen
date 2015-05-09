@@ -20,19 +20,30 @@
 package eu.opends.main;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import com.jme3.app.SimpleApplication;
 import com.jme3.app.StatsAppState;
 import com.jme3.app.state.VideoRecorderAppState;
+import com.jme3.asset.AssetNotFoundException;
+import com.jme3.asset.plugins.FileLocator;
+import com.jme3.bullet.BulletAppState;
+import com.jme3.bullet.PhysicsSpace;
 import com.jme3.input.Joystick;
 import com.jme3.math.Vector3f;
 import com.jme3.niftygui.NiftyJmeDisplay;
+import com.jme3.renderer.queue.RenderQueue.ShadowMode;
+import com.jme3.scene.Node;
+import com.jme3.scene.Spatial;
 import com.jme3.system.AppSettings;
+import com.jme3.util.SkyFactory;
 
 import de.lessvoid.nifty.Nifty;
 import eu.opends.analyzer.CarPositionReader;
@@ -43,17 +54,24 @@ import eu.opends.analyzer.DrivingTaskLogger;
 import eu.opends.analyzer.DataWriter;
 import eu.opends.audio.AudioCenter;
 import eu.opends.basics.InternalMapProcessing;
-import eu.opends.basics.SimulationBasics;
+import eu.opends.basics.LightFactory;
+import eu.opends.main.Simulator;import eu.opends.camera.CameraFactory;
 import eu.opends.camera.SimulatorCam;
 import eu.opends.cameraFlight.CameraFlight;
 import eu.opends.cameraFlight.NotEnoughWaypointsException;
 import eu.opends.car.ResetPosition;
 import eu.opends.car.SteeringCar;
 import eu.opends.drivingTask.DrivingTask;
+import eu.opends.drivingTask.interaction.InteractionLoader;
+import eu.opends.drivingTask.scenario.ScenarioLoader;
+import eu.opends.drivingTask.scene.SceneLoader;
+import eu.opends.drivingTask.settings.SettingsLoader;
 import eu.opends.drivingTask.settings.SettingsLoader.Setting;
+import eu.opends.environment.TrafficLightCenter;
 import eu.opends.input.KeyBindingCenter;
 import eu.opends.knowledgeBase.KnowledgeBase;
 import eu.opends.niftyGui.MyInstructionsGUIController;
+import eu.opends.niftyGui.ShutDownGUI;
 import eu.opends.reactionCenter.ReactionCenter;
 import eu.opends.settingsController.SettingsControllerServer;
 import eu.opends.taskDescription.contreTask.SteeringTask;
@@ -61,8 +79,11 @@ import eu.opends.taskDescription.tvpTask.ThreeVehiclePlatoonTask;
 import eu.opends.tools.CollisionListener;
 import eu.opends.tools.ObjectManipulationCenter;
 import eu.opends.tools.PanelCenter;
+import eu.opends.tools.PropertiesLoader;
 import eu.opends.tools.Util;
+import eu.opends.tools.XMLLoader;
 import eu.opends.traffic.PhysicalTraffic;
+import eu.opends.trigger.TriggerAction;
 import eu.opends.trigger.TriggerCenter;
 import eu.opends.visualization.LightningClient;
 
@@ -70,8 +91,26 @@ import eu.opends.visualization.LightningClient;
  * 
  * @author Rafael Math
  */
-public class Simulator extends SimulationBasics
+public class Simulator extends SimpleApplication
 {
+	
+	private static DrivingTask drivingTask;
+	private static SceneLoader sceneLoader;
+	private static ScenarioLoader scenarioLoader;
+	private static InteractionLoader interactionLoader;
+	private static SettingsLoader settingsLoader;
+	private static Map<String,List<TriggerAction>> triggerActionListMap = new HashMap<String,List<TriggerAction>>();
+	private BulletAppState bulletAppState;
+	private LightFactory lightFactory;
+	private CameraFactory cameraFactory;
+	private Node sceneNode;
+	private Node triggerNode;
+	private ShutDownGUI shutDownGUI;
+	private KeyBindingCenter keyBindingCenter;
+	private TrafficLightCenter trafficLightCenter;
+	private boolean debugEnabled = false;
+	private int numberOfScreens;
+	
 	private final static Logger logger = Logger.getLogger(Simulator.class);
 
     private Nifty nifty;
@@ -203,6 +242,119 @@ public class Simulator extends SimulationBasics
 		return outputFolder;
 	}
 	
+	
+	public KeyBindingCenter getKeyBindingCenter()
+	{
+		return keyBindingCenter;
+	}
+	
+	public TrafficLightCenter getTrafficLightCenter() 
+	{
+		return trafficLightCenter;
+	}
+	
+	public Node getSceneNode()
+	{
+		return sceneNode;
+	}
+	
+	
+	public Node getTriggerNode()
+	{
+		return triggerNode;
+	}
+	
+	
+    public BulletAppState getBulletAppState() 
+    {
+        return bulletAppState;
+    }
+    
+	
+    public PhysicsSpace getPhysicsSpace() 
+    {
+        return bulletAppState.getPhysicsSpace();
+    }
+    
+    
+    public float getPhysicsSpeed() 
+    {
+        return bulletAppState.getSpeed();
+    }
+    
+    
+    public boolean isPause() 
+    {
+        return !bulletAppState.isEnabled();
+    }
+    
+    
+    public void setPause(boolean pause) 
+    {
+    	if(this instanceof Simulator)
+    	{
+    		CameraFlight camFlight = ((Simulator)this).getCameraFlight();
+    		if(camFlight != null && !camFlight.isTerminated())
+    		{
+    			camFlight.play(); // must be set
+    		
+    			if(pause)				
+    				camFlight.pause();
+    		}
+    	}
+        bulletAppState.setEnabled(!pause);
+    }
+	
+	
+	public static DrivingTask getDrivingTask()
+	{
+		return drivingTask;
+	}
+	
+	
+	public static SettingsLoader getSettingsLoader()
+	{
+		return settingsLoader;
+	}
+
+	
+	public static Map<String,List<TriggerAction>> getTriggerActionListMap() 
+	{
+		return triggerActionListMap;
+	}
+
+	
+	public AppSettings getSettings() 
+	{
+		return settings;
+	}
+	
+	
+	public ShutDownGUI getShutDownGUI() 
+	{
+		return shutDownGUI;
+	}
+	
+
+	public CameraFactory getCameraFactory() 
+	{
+		return cameraFactory;
+	}
+	
+	
+	public int getNumberOfScreens()
+	{
+		return numberOfScreens;
+	}
+	
+	
+	public void toggleDebugMode()
+	{
+		debugEnabled = !debugEnabled;
+		bulletAppState.setDebugEnabled(debugEnabled);
+	}
+	
+	
 	/*Added by Felicia*/
 	
 	private float area = 0;
@@ -314,7 +466,7 @@ public class Simulator extends SimulationBasics
     	showStats(drivingTask.getSettingsLoader().getSetting(Setting.General_showStats, false));  	
     	
     	// sets up physics, camera, light, shadows and sky
-    	super.simpleInitApp();
+    	initTest();
     	
     	// set gravity
     	gravityConstant = drivingTask.getSceneLoader().getGravity(SimulationDefaults.gravity);
@@ -472,6 +624,75 @@ public class Simulator extends SimulationBasics
 			
     	}
     }
+    
+    
+    public void initTest() 
+    {    	
+    	System.out.println("simpleInitApp() i Simulator");
+    	lookupNumberOfScreens();
+    	
+    	// init physics
+    	stateManager.detach(bulletAppState);
+    	stateManager.cleanup();
+        bulletAppState = new BulletAppState();
+        stateManager.attach(bulletAppState);
+        
+        // register loader for *.properties-files
+        assetManager.registerLoader(PropertiesLoader.class, "properties");
+        assetManager.registerLoader(XMLLoader.class, "xml");
+        
+        if(sceneNode != null){
+        	getViewPort().detachScene(sceneNode);
+        	rootNode.detachChild(sceneNode);
+        }
+		sceneNode = new Node("sceneNode");
+		rootNode.attachChild(sceneNode);
+		        
+		triggerNode = new Node("triggerNode");
+		sceneNode.attachChild(triggerNode);
+
+        // setup light settings
+        lightFactory = new LightFactory(this);
+        lightFactory.initLight();
+        
+        // build sky
+        createSkyBox();
+        
+        shutDownGUI = new ShutDownGUI(this);
+    }
+
+	private void createSkyBox()
+	{
+		String skyModelPath = Simulator.getDrivingTask().getSceneLoader().getSkyTexture(SimulationDefaults.skyTexture);
+        assetManager.registerLocator("assets", FileLocator.class);
+        Spatial sky;
+        try{
+        	sky = SkyFactory.createSky(assetManager, skyModelPath, false);
+        } catch (AssetNotFoundException e) {
+        	System.err.println("Simulator: Could not find sky texture '" + skyModelPath + 
+        			"'. Using default ('" + SimulationDefaults.skyTexture + "').");
+        	sky = SkyFactory.createSky(assetManager, SimulationDefaults.skyTexture, false);
+        }
+        sky.setShadowMode(ShadowMode.Off);
+        sceneNode.attachChild(sky);
+	}
+    
+    
+    private void lookupNumberOfScreens()
+    {
+		numberOfScreens = Simulator.getSettingsLoader().getSetting(Setting.General_numberOfScreens, -1);
+		
+		if(numberOfScreens < 1)
+		{
+			int width = getSettings().getWidth();
+	    	int height = getSettings().getHeight();
+	    	
+			if((width == 5040 && height == 1050) || (width == 4200 && height == 1050))
+				numberOfScreens = 3;
+			else
+				numberOfScreens = 1;
+		}
+    }
 
     
 	private void updateDataWriter() 
@@ -575,7 +796,7 @@ public class Simulator extends SimulationBasics
 			
 			sim.setPauseOnLostFocus(false);
 			System.out.println("ska nu anropa sim.start() från main");
-			sim.setShowSettings(false);
+			sim.setShowSettings(true);
 			sim.start();
     	}
     	catch(Exception e1)

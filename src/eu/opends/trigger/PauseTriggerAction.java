@@ -18,19 +18,18 @@
 
 package eu.opends.trigger;
 
-import eu.opends.basics.SimulationBasics;
-
+import eu.opends.main.Simulator;
 /**
  * 
  * @author Rafael Math
  */
 public class PauseTriggerAction extends TriggerAction 
 {
-	private SimulationBasics sim;
+	private Simulator sim;
 	private int duration;
 	
 	
-	public PauseTriggerAction(SimulationBasics sim, float delay, int maxRepeat, int duration)
+	public PauseTriggerAction(Simulator sim, float delay, int maxRepeat, int duration)
 	{
 		super(delay, maxRepeat);
 		this.sim = sim;

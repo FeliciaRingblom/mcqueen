@@ -29,8 +29,7 @@
 //import de.lessvoid.nifty.Nifty;
 //import de.lessvoid.nifty.elements.Element;
 //import de.lessvoid.nifty.screen.Screen;
-//import eu.opends.basics.SimulationBasics;
-//
+//import eu.opends.main.Simulator;//
 //
 ///**
 // * This class represents the instruction screen GUI. It provides methods 
@@ -42,7 +41,7 @@
 //public class InstructionScreenGUI 
 //{
 //	private Nifty nifty;
-//	private SimulationBasics sim;
+//	private Simulator sim;
 //	private boolean instructionScreenHidden = true;
 //	private boolean initiallyPaused = false;
 //	private AssetManager assetManager;
@@ -56,9 +55,9 @@
 //	 * Creates a new instance of the instruction screen.
 //	 * 
 //	 * @param sim
-//	 * 			SimulationBasics class.
+//	 * 			Simulator class.
 //	 */
-//	public InstructionScreenGUI(SimulationBasics sim)
+//	public InstructionScreenGUI(Simulator sim)
 //	{
 //		this.sim = sim;
 //		this.assetManager = sim.getAssetManager();

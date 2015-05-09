@@ -25,8 +25,7 @@ import com.jme3.math.Vector3f;
 import com.jme3.scene.Spatial;
 import com.jme3.scene.Spatial.CullHint;
 
-import eu.opends.basics.SimulationBasics;
-import eu.opends.environment.GeoPosition;
+import eu.opends.main.Simulator;import eu.opends.environment.GeoPosition;
 
 /**
  * 
@@ -34,10 +33,10 @@ import eu.opends.environment.GeoPosition;
  */
 public class ObjectManipulationCenter 
 {
-	private SimulationBasics sim;
+	private Simulator sim;
 
 	
-	public ObjectManipulationCenter(SimulationBasics sim)
+	public ObjectManipulationCenter(Simulator sim)
 	{
 		this.sim = sim;
 	}

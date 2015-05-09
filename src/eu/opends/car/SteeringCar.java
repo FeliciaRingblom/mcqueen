@@ -20,7 +20,6 @@ package eu.opends.car;
 
 import com.jme3.math.ColorRGBA;
 
-import eu.opends.basics.SimulationBasics;
 import eu.opends.drivingTask.DrivingTask;
 import eu.opends.drivingTask.scenario.ScenarioLoader;
 import eu.opends.drivingTask.scenario.ScenarioLoader.CarProperty;
@@ -42,7 +41,7 @@ public class SteeringCar extends Car
 	{		
 		this.sim = sim;
 		
-		DrivingTask drivingTask = SimulationBasics.getDrivingTask();
+		DrivingTask drivingTask = Simulator.getDrivingTask();
 		ScenarioLoader scenarioLoader = drivingTask.getScenarioLoader();
 		
 		initialPosition = scenarioLoader.getStartLocation();

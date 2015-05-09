@@ -23,16 +23,18 @@ import java.util.List;
 
 import com.jme3.light.Light;
 
+import eu.opends.main.Simulator;
+
 /**
  * 
  * @author Rafael Math
  */
 public class LightFactory 
 {
-	private SimulationBasics sim;
+	private Simulator sim;
 	
 	
-	public LightFactory(SimulationBasics sim)
+	public LightFactory(Simulator sim)
 	{
 		this.sim = sim;
 	}
@@ -40,7 +42,7 @@ public class LightFactory
 	
 	public void initLight() 
 	{
-		List<Light> lightList = SimulationBasics.getDrivingTask().getSceneLoader().getLightList();
+		List<Light> lightList = Simulator.getDrivingTask().getSceneLoader().getLightList();
 		
 		for(Light light : lightList)
 			sim.getSceneNode().addLight(light);     

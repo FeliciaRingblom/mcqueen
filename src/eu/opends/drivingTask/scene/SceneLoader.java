@@ -58,10 +58,10 @@ import com.jme3.texture.Image;
 import com.jme3.ui.Picture;
 
 import eu.opends.basics.MapObject;
-import eu.opends.basics.SimulationBasics;
 import eu.opends.car.ResetPosition;
 import eu.opends.drivingTask.DrivingTaskDataQuery;
 import eu.opends.drivingTask.DrivingTaskDataQuery.Layer;
+import eu.opends.main.Simulator;
 
 /**
  * 
@@ -70,7 +70,7 @@ import eu.opends.drivingTask.DrivingTaskDataQuery.Layer;
 public class SceneLoader 
 {
 	private DrivingTaskDataQuery dtData;
-	private SimulationBasics sim;
+	private Simulator sim;
 	private AssetManager assetManager;
 	private Map<String, Spatial> geometryMap = new HashMap<String, Spatial>();
 	private Map<String, Vector3f> pointMap = new HashMap<String, Vector3f>();
@@ -78,7 +78,7 @@ public class SceneLoader
 	private List<MapObject> mapObjectsList = new ArrayList<MapObject>();
 	
 	
-	public SceneLoader(DrivingTaskDataQuery dtData, SimulationBasics sim) 
+	public SceneLoader(DrivingTaskDataQuery dtData, Simulator sim) 
 	{
 		this.dtData = dtData;
 		this.sim = sim;

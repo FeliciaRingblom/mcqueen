@@ -38,13 +38,13 @@ import eu.opends.main.Simulator;
  */
 public class InternalMapProcessing
 {
-	private SimulationBasics sim;
+	private Simulator sim;
 	private Node sceneNode;
 	private PhysicsSpace physicsSpace;
 	private List<Spatial> triggerList = new ArrayList<Spatial>();
 	
 	
-	public InternalMapProcessing(SimulationBasics sim)
+	public InternalMapProcessing(Simulator sim)
 	{
 		this.sim = sim;
 		this.sceneNode = sim.getSceneNode();
@@ -175,7 +175,7 @@ public class InternalMapProcessing
 	{		
 		for (Spatial object : sceneNode.getChildren()) 
 		{
-			if (SimulationBasics.getTriggerActionListMap().containsKey(object.getName())) 
+			if (Simulator.getTriggerActionListMap().containsKey(object.getName())) 
 			{
 				// add trigger to trigger list
 				triggerList.add(object);

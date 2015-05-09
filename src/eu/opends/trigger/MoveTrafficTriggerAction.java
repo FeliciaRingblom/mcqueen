@@ -18,8 +18,7 @@
 
 package eu.opends.trigger;
 
-import eu.opends.basics.SimulationBasics;
-import eu.opends.main.Simulator;
+import eu.opends.main.Simulator;import eu.opends.main.Simulator;
 import eu.opends.traffic.PhysicalTraffic;
 import eu.opends.traffic.TrafficCar;
 
@@ -33,7 +32,7 @@ import eu.opends.traffic.TrafficCar;
  */
 public class MoveTrafficTriggerAction extends TriggerAction 
 {
-	private SimulationBasics sim;
+	private Simulator sim;
 	private String trafficCarName;
 	private String wayPointID;
 	
@@ -51,7 +50,7 @@ public class MoveTrafficTriggerAction extends TriggerAction
 	 * @param wayPointID
 	 * 			ID of the way point to move the traffic object to.
 	 */
-	public MoveTrafficTriggerAction(SimulationBasics sim, float delay, int maxRepeat, String trafficCarName, String wayPointID) 
+	public MoveTrafficTriggerAction(Simulator sim, float delay, int maxRepeat, String trafficCarName, String wayPointID) 
 	{
 		super(delay, maxRepeat);
 		this.sim = sim;

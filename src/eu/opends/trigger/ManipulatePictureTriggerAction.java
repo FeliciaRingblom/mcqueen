@@ -25,8 +25,7 @@ import com.jme3.scene.Spatial;
 import com.jme3.scene.Spatial.CullHint;
 import com.jme3.ui.Picture;
 
-import eu.opends.basics.SimulationBasics;
-import eu.opends.camera.CameraFactory;
+import eu.opends.main.Simulator;import eu.opends.camera.CameraFactory;
 import eu.opends.camera.SimulatorCam;
 import eu.opends.tools.PanelCenter;
 
@@ -40,7 +39,7 @@ import eu.opends.tools.PanelCenter;
  */
 public class ManipulatePictureTriggerAction extends TriggerAction 
 {
-	private SimulationBasics sim;
+	private Simulator sim;
 	private String pictureID;
 	private boolean isVisible;
 	
@@ -52,7 +51,7 @@ public class ManipulatePictureTriggerAction extends TriggerAction
 	 * @param maxRepeat
 	 * 			Maximum number how often the trigger can be hit.
 	 */
-	public ManipulatePictureTriggerAction(SimulationBasics sim, float delay, int maxRepeat, 
+	public ManipulatePictureTriggerAction(Simulator sim, float delay, int maxRepeat, 
 			String pictureID, boolean isVisible) 
 	{
 		super(delay, maxRepeat);

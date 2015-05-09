@@ -22,8 +22,7 @@ import Jama.Matrix;
 
 import com.jme3.math.Vector3f;
 
-import eu.opends.basics.SimulationBasics;
-import eu.opends.tools.Vector3d;
+import eu.opends.main.Simulator;import eu.opends.tools.Vector3d;
 
 
 /**
@@ -44,7 +43,7 @@ public class GeoPosition
 	private static Matrix getModelToGeoMatrix()
 	{
 		// load matrix from scenario.xml
-		Matrix modelToGeoMatrix = SimulationBasics.getDrivingTask().getScenarioLoader().getModelToGeoMatrix();
+		Matrix modelToGeoMatrix = Simulator.getDrivingTask().getScenarioLoader().getModelToGeoMatrix();
 
 		if(modelToGeoMatrix == null)
 		{
@@ -82,7 +81,7 @@ public class GeoPosition
 	private static Matrix getGeoToModelMatrix()
 	{
 		// load matrix from scenario.xml
-		Matrix geoToModelMatrix = SimulationBasics.getDrivingTask().getScenarioLoader().getGeoToModelMatrix();
+		Matrix geoToModelMatrix = Simulator.getDrivingTask().getScenarioLoader().getGeoToModelMatrix();
 
 		if(geoToModelMatrix == null)
 		{

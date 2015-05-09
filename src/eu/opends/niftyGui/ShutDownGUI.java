@@ -27,8 +27,7 @@ import com.jme3.renderer.ViewPort;
 import com.jme3.scene.Spatial.CullHint;
 
 import de.lessvoid.nifty.Nifty;
-import eu.opends.basics.SimulationBasics;
-import eu.opends.main.Simulator;
+import eu.opends.main.Simulator;import eu.opends.main.Simulator;
 
 /**
  * 
@@ -37,7 +36,7 @@ import eu.opends.main.Simulator;
 public class ShutDownGUI 
 {
 	private Nifty nifty;
-	private SimulationBasics sim;
+	private Simulator sim;
 	private boolean shutDownDialogHidden = true;
 	private boolean initiallyPaused = false;
 	private AssetManager assetManager;
@@ -47,7 +46,7 @@ public class ShutDownGUI
 	private FlyByCamera flyCam;
 
 	
-	public ShutDownGUI(SimulationBasics sim) 
+	public ShutDownGUI(Simulator sim) 
 	{
 		this.sim = sim;
 		this.assetManager = sim.getAssetManager();

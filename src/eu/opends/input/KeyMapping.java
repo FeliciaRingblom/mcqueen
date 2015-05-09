@@ -20,8 +20,7 @@ package eu.opends.input;
 
 import java.util.ArrayList;
 
-import eu.opends.basics.SimulationBasics;
-
+import eu.opends.main.Simulator;
 /**
  * 
  * @author Rafael Math
@@ -54,7 +53,7 @@ public class KeyMapping
 		keyMappingList.add(KeyMapping.PRINT_POS);
 
 		
-		SimulationBasics.getDrivingTask().getSettingsLoader().lookUpKeyMappings(keyMappingList);
+		Simulator.getDrivingTask().getSettingsLoader().lookUpKeyMappings(keyMappingList);
 		
 		return keyMappingList;
 	}
@@ -67,7 +66,7 @@ public class KeyMapping
 		// specify order of key mapping list  (if available)
 		// <no mapping yet>
 		
-		SimulationBasics.getDrivingTask().getSettingsLoader().lookUpKeyMappings(keyMappingList);
+		Simulator.getDrivingTask().getSettingsLoader().lookUpKeyMappings(keyMappingList);
 		
 		return keyMappingList;
 	}
@@ -80,7 +79,7 @@ public class KeyMapping
 		// specify order of key mapping list  (if available)
 		keyMappingList.add(KeyMapping.SHUTDOWN);
 		
-		SimulationBasics.getDrivingTask().getSettingsLoader().lookUpKeyMappings(keyMappingList);
+		Simulator.getDrivingTask().getSettingsLoader().lookUpKeyMappings(keyMappingList);
 		
 		return keyMappingList;
 	}

@@ -34,7 +34,6 @@ import com.jme3.scene.Node;
 import com.jme3.scene.control.CameraControl.ControlDirection;
 import com.jme3.ui.Picture;
 
-import eu.opends.basics.SimulationBasics;
 import eu.opends.drivingTask.settings.SettingsLoader;
 import eu.opends.drivingTask.settings.SettingsLoader.Setting;
 import eu.opends.main.Simulator;
@@ -46,7 +45,7 @@ import eu.opends.main.Simulator;
  */
 public abstract class CameraFactory 
 {
-	protected SimulationBasics sim;
+	protected Simulator sim;
 	protected SettingsLoader settingsLoader;
 	protected CameraMode camMode = CameraMode.EGO;
 	protected boolean topViewEnabled = false;
@@ -195,12 +194,12 @@ public abstract class CameraFactory
 	 *
 	 * @param targetNode
 	 */
-	public void initCamera(SimulationBasics sim, Node targetNode) 
+	public void initCamera(Simulator sim, Node targetNode) 
 	{
 		this.sim = sim;
 		this.targetNode = targetNode;
 		this.cam = sim.getCamera();
-		this.settingsLoader = SimulationBasics.getSettingsLoader();
+		this.settingsLoader = Simulator.getSettingsLoader();
 		
 		isCarPointingUp = settingsLoader.getSetting(Setting.General_topView_carPointingUp, true);
 		

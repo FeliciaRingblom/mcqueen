@@ -26,8 +26,7 @@ import com.jme3.scene.Spatial;
 import com.jme3.scene.Spatial.CullHint;
 import com.jme3.ui.Picture;
 
-import eu.opends.basics.SimulationBasics;
-import eu.opends.tools.Util;
+import eu.opends.main.Simulator;import eu.opends.tools.Util;
 
 
 /**
@@ -39,7 +38,7 @@ import eu.opends.tools.Util;
  */
 public class ManipulateObjectTriggerAction extends TriggerAction 
 {
-	private SimulationBasics sim;
+	private Simulator sim;
 	private String objectID;
 	
 	private Float[] translation;
@@ -67,7 +66,7 @@ public class ManipulateObjectTriggerAction extends TriggerAction
 	 * @param objectID
 	 * 			ID of the object to manipulate.
 	 */
-	public ManipulateObjectTriggerAction(SimulationBasics sim, float delay, int maxRepeat, String objectID) 
+	public ManipulateObjectTriggerAction(Simulator sim, float delay, int maxRepeat, String objectID) 
 	{
 		super(delay, maxRepeat);
 		this.sim = sim;

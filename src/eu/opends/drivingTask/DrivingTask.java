@@ -20,12 +20,12 @@ package eu.opends.drivingTask;
 
 import java.io.File;
 
-import eu.opends.basics.SimulationBasics;
 import eu.opends.drivingTask.interaction.InteractionLoader;
 import eu.opends.drivingTask.scenario.ScenarioLoader;
 import eu.opends.drivingTask.scene.SceneLoader;
 import eu.opends.drivingTask.settings.SettingsLoader;
 import eu.opends.drivingTask.task.TaskLoader;
+import eu.opends.main.Simulator;
 
 
 /**
@@ -84,7 +84,7 @@ public class DrivingTask
 	 * @param xmlfile
 	 * 			XML driving task file to parse
 	 */
-	public DrivingTask(SimulationBasics sim, File xmlfile) 
+	public DrivingTask(Simulator sim, File xmlfile) 
 	{
 		this.drivingTaskFileName = xmlfile.getName();
 		this.drivingTaskPath = xmlfile.getPath();

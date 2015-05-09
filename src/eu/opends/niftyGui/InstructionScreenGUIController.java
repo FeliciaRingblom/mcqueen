@@ -21,8 +21,7 @@
 //import de.lessvoid.nifty.Nifty;
 //import de.lessvoid.nifty.screen.Screen;
 //import de.lessvoid.nifty.screen.ScreenController;
-//import eu.opends.basics.SimulationBasics;
-//
+//import eu.opends.main.Simulator;//
 //
 ///**
 // * This class handles display and user interaction with the key mapping 
@@ -32,7 +31,7 @@
 // */
 //public class InstructionScreenGUIController implements ScreenController 
 //{
-//	//private SimulationBasics sim;
+//	//private Simulator sim;
 //	//private Nifty nifty;
 //	private InstructionScreenGUI instructionScreenGUI;
 //	
@@ -47,7 +46,7 @@
 //	 * @param instructionScreenGUI
 //	 * 			Instance of the key mapping and graphic settings GUI.
 //	 */
-//	public InstructionScreenGUIController(SimulationBasics sim, InstructionScreenGUI instructionScreenGUI) 
+//	public InstructionScreenGUIController(Simulator sim, InstructionScreenGUI instructionScreenGUI) 
 //	{
 //		//this.sim = sim;
 //		this.instructionScreenGUI = instructionScreenGUI;

@@ -32,8 +32,7 @@ import com.jme3.scene.Spatial;
 
 //import eu.opends.audio.AudioCenter;
 //import eu.opends.basics.MapObject;
-import eu.opends.basics.SimulationBasics;
-import eu.opends.car.Car;
+import eu.opends.main.Simulator;import eu.opends.car.Car;
 import eu.opends.environment.TrafficLightCenter.TriggerType;
 import eu.opends.main.Simulator;
 import eu.opends.tools.Util;
@@ -99,7 +98,7 @@ public class TriggerCenter
 
 			tempSpatialName = tempSpatial.getName();
 			
-			if (SimulationBasics.getTriggerActionListMap().containsKey(tempSpatialName))
+			if (Simulator.getTriggerActionListMap().containsKey(tempSpatialName))
 			{
 				roadObjectsTriggerList.add(tempSpatial);
 			}
@@ -202,7 +201,7 @@ public class TriggerCenter
 				// if car has collided with a trigger --> report trigger to HMI Center
 				if(resultCollision.size() > 0)
 				{
-					if(SimulationBasics.getTriggerActionListMap().containsKey(triggerName))
+					if(Simulator.getTriggerActionListMap().containsKey(triggerName))
 						TriggerCenter.performTriggerAction(triggerName, car);
 				}
 			}
@@ -342,7 +341,7 @@ public class TriggerCenter
 			// remove trigger from report list after 2 seconds
 			int seconds = 2;
 		
-			List<TriggerAction> triggerActionList = SimulationBasics.getTriggerActionListMap().get(triggerID);
+			List<TriggerAction> triggerActionList = Simulator.getTriggerActionListMap().get(triggerID);
 			for(TriggerAction triggerAction : triggerActionList)
 			{
 				triggerAction.performAction();

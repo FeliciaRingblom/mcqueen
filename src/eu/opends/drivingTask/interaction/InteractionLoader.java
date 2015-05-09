@@ -35,8 +35,7 @@ import com.jme3.input.InputManager;
 import com.jme3.input.KeyInput;
 import com.jme3.input.controls.KeyTrigger;
 
-import eu.opends.basics.SimulationBasics;
-import eu.opends.drivingTask.DrivingTaskDataQuery;
+import eu.opends.main.Simulator;import eu.opends.drivingTask.DrivingTaskDataQuery;
 import eu.opends.drivingTask.DrivingTaskDataQuery.Layer;
 import eu.opends.input.KeyActionListener;
 import eu.opends.main.Simulator;
@@ -49,12 +48,12 @@ import eu.opends.trigger.TriggerAction;
 public class InteractionLoader 
 {
 	private DrivingTaskDataQuery dtData;
-	private SimulationBasics sim;
+	private Simulator sim;
 	private Map<String,List<ActionDescription>> activityMap;
 	private List<TriggerDescription> triggerList;
 	
 	
-	public InteractionLoader(DrivingTaskDataQuery dtData, SimulationBasics sim) 
+	public InteractionLoader(DrivingTaskDataQuery dtData, Simulator sim) 
 	{
 		this.dtData = dtData;
 		this.sim = sim;
@@ -273,7 +272,7 @@ public class InteractionLoader
 				List<TriggerAction> triggerActionList = getTriggerActionList(triggerDescription);
 				
 				if(!triggerActionList.isEmpty())
-					SimulationBasics.getTriggerActionListMap().put(objectName, triggerActionList);
+					Simulator.getTriggerActionListMap().put(objectName, triggerActionList);
 			}
 			else if(triggerDescription.getCondition().startsWith("pressKey:"))
 			{
@@ -342,7 +341,7 @@ public class InteractionLoader
 
 			// argument list with corresponding types
 			Object argumentList[] = new Object[] {sim, delay, repeat, parameterList};
-			Class<?> parameterTypes[] = new Class[] {SimulationBasics.class, Float.TYPE, Integer.TYPE, Properties.class};
+			Class<?> parameterTypes[] = new Class[] {Simulator.class, Float.TYPE, Integer.TYPE, Properties.class};
 			
 			// get method to call
 			Class<?> interactionMethodsClass = Class.forName("eu.opends.drivingTask.interaction.InteractionMethods");

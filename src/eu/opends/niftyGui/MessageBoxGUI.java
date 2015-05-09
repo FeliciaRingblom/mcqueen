@@ -30,8 +30,7 @@
 //import de.lessvoid.nifty.controls.ListBox.SelectionMode;
 //import de.lessvoid.nifty.screen.Screen;
 //import de.lessvoid.nifty.tools.Color;
-//import eu.opends.basics.SimulationBasics;
-//import eu.opends.niftyGui.listBox.TextListBoxModel;
+//import eu.opends.main.Simulator;//import eu.opends.niftyGui.listBox.TextListBoxModel;
 //
 //
 ///**
@@ -67,7 +66,7 @@
 //	 * 			Simulation Basics
 //	 */
 //	@SuppressWarnings("unchecked")
-//	public MessageBoxGUI(SimulationBasics sim) 
+//	public MessageBoxGUI(Simulator sim) 
 //	{
 //		inputManager = sim.getInputManager();
 //		guiViewPort = sim.getGuiViewPort();

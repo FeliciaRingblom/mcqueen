@@ -21,8 +21,7 @@
 //import de.lessvoid.nifty.Nifty;
 //import de.lessvoid.nifty.screen.Screen;
 //import de.lessvoid.nifty.screen.ScreenController;
-//import eu.opends.basics.SimulationBasics;
-//
+//import eu.opends.main.Simulator;//
 ///**
 // * 
 // * @author Rafael Math
@@ -32,7 +31,7 @@
 //	private MessageBoxGUI messageBoxGUI;
 //	
 //	
-//	public MessageBoxGUIController(SimulationBasics sim, MessageBoxGUI messageBoxGUI) 
+//	public MessageBoxGUIController(Simulator sim, MessageBoxGUI messageBoxGUI) 
 //	{
 //		this.messageBoxGUI = messageBoxGUI;
 //	}

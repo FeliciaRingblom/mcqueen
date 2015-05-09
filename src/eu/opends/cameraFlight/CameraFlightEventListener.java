@@ -22,7 +22,6 @@ import com.jme3.cinematic.events.CinematicEvent;
 import com.jme3.cinematic.events.CinematicEventListener;
 import com.jme3.post.filters.FadeFilter;
 
-import eu.opends.basics.SimulationBasics;
 import eu.opends.camera.CameraFactory.CameraMode;
 import eu.opends.main.Simulator;
 import eu.opends.tools.PanelCenter;
@@ -33,12 +32,12 @@ import eu.opends.tools.PanelCenter;
  */
 public class CameraFlightEventListener implements CinematicEventListener 
 {
-	private SimulationBasics sim;
+	private Simulator sim;
 	private FadeFilter fade;
 	private float speedKmPerHour;
 	private CameraMode previousCamMode = CameraMode.EGO;
 	
-	public CameraFlightEventListener(SimulationBasics sim, FadeFilter fade, float speedKmPerHour)
+	public CameraFlightEventListener(Simulator sim, FadeFilter fade, float speedKmPerHour)
 	{
 		this.sim = sim;
 		this.fade = fade;

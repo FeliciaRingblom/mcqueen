@@ -1,7 +1,6 @@
 package eu.opends.trigger;
 
-import eu.opends.basics.SimulationBasics;
-import eu.opends.main.Simulator;
+import eu.opends.main.Simulator;import eu.opends.main.Simulator;
 import eu.opends.niftyGui.MyInstructionsGUIController;
 /**
  * @author Jessica Larsson, Felicia Ringblom, 2015

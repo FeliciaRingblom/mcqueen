@@ -35,8 +35,7 @@ import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
 
 import eu.opends.basics.MapObject;
-import eu.opends.basics.SimulationBasics;
-import eu.opends.cameraFlight.CameraFlightSettings;
+import eu.opends.main.Simulator;import eu.opends.cameraFlight.CameraFlightSettings;
 import eu.opends.car.ResetPosition;
 import eu.opends.drivingTask.DrivingTask;
 import eu.opends.drivingTask.DrivingTaskDataQuery;
@@ -63,7 +62,7 @@ import eu.opends.traffic.Waypoint;
 public class ScenarioLoader 
 {
 	private DrivingTaskDataQuery dtData;
-	private SimulationBasics sim;
+	private Simulator sim;
 	private SceneLoader sceneLoader;
 	private float driverCarMass;
 	private Vector3f driverCarStartLocation;
@@ -106,7 +105,7 @@ public class ScenarioLoader
 	}
 	
 
-	public ScenarioLoader(DrivingTaskDataQuery dtData, SimulationBasics sim, DrivingTask drivingTask) 
+	public ScenarioLoader(DrivingTaskDataQuery dtData, Simulator sim, DrivingTask drivingTask) 
 	{
 		this.dtData = dtData;
 		this.sim = sim;
