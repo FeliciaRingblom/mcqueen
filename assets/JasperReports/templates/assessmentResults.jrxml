@@ -2,7 +2,12 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report9" pageWidth="595" pageHeight="842" orientation="Portrait" columnWidth="505" leftMargin="60" rightMargin="30" topMargin="20" bottomMargin="20">
 	<style name="Arial_Normal" isDefault="true" fontName="Arial" fontSize="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 	<style name="Arial_Bold" isDefault="false" fontName="Arial" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
-	<parameter name="groupLeft" class="java.lang.String">
+	
+    <parameter name="age" class="java.lang.String"></parameter>
+    <parameter name="gender" class="java.lang.String"></parameter>
+    <parameter name="idNr" class="java.lang.String"></parameter>
+    <parameter name="diagnosisNr" class="java.lang.String"></parameter>
+    <parameter name="groupLeft" class="java.lang.String">
 		<defaultValueExpression><![CDATA["    "]]></defaultValueExpression>
 	</parameter>
 	<parameter name="groupRight" class="java.lang.String">
@@ -80,7 +85,7 @@
 				<textElement textAlignment="Left">
 					<font size="24"/>
 				</textElement>
-				<text><![CDATA[Test Resultat]]></text>
+				<text><![CDATA[Testresultat]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -91,22 +96,57 @@
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
-				<text><![CDATA[löpnummer]]></text>
+				<text><![CDATA[Löpnr: ]]></text>
 			</staticText>
-			<staticText>
-				<reportElement x="0" y="15" width="200" height="14" style="Arial_Normal"/>
-				<textElement textAlignment="Left">
-					<font size="12"/>
-				</textElement>
-				<text><![CDATA[ålder]]></text>
-			</staticText>
+            <textField isBlankWhenNull="true">
+                <reportElement x="40" y="0" width="200" height="14" style="Arial_Normal"/>
+                <textElement textAlignment="Left">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{idNr}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="0" y="15" width="200" height="14" style="Arial_Normal"/>
+                <textElement textAlignment="Left">
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[Diagnosnr: ]]></text>
+            </staticText>
+            <textField isBlankWhenNull="true">
+                <reportElement x="65" y="15" width="200" height="14" style="Arial_Normal"/>
+                <textElement textAlignment="Left">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{diagnosisNr}]]></textFieldExpression>
+            </textField>
 			<staticText>
 				<reportElement x="0" y="30" width="200" height="14" style="Arial_Normal"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
-				<text><![CDATA[kön]]></text>
+				<text><![CDATA[Ålder: ]]></text>
 			</staticText>
+            <textField isBlankWhenNull="true">
+                <reportElement x="40" y="30" width="200" height="14" style="Arial_Normal"/>
+                <textElement textAlignment="Left">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{age}]]></textFieldExpression>
+            </textField>
+			<staticText>
+				<reportElement x="0" y="45" width="200" height="14" style="Arial_Normal"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Kön: ]]></text>
+			</staticText>
+            <textField isBlankWhenNull="true">
+                <reportElement x="35" y="45" width="200" height="14" style="Arial_Normal"/>
+                <textElement textAlignment="Left">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{gender}]]></textFieldExpression>
+            </textField>
 			<staticText>
 				<reportElement x="210" y="5" width="100" height="30" style="Arial_Bold"/>
 				<textElement textAlignment="Right">

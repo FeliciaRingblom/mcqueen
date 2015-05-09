@@ -32,7 +32,6 @@ import eu.opends.drivingTask.settings.SettingsLoader.Setting;
 import eu.opends.main.SimulationDefaults;
 import eu.opends.main.Simulator;
 import eu.opends.tools.Util;
-
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
@@ -55,6 +54,7 @@ public class ReactionLogger
 	private String outputFolder;
 	BufferedWriter bw;
 	private int count = 0;
+	private String age, gender, diagnosisNr, idNr;
 
 
 	private void start()
@@ -107,10 +107,16 @@ public class ReactionLogger
 	}
 
 	
-	public void close()
+	public void close(String age, String idNr, String gender, String diagnosisNr)
 	{
+		this.age = age;
+		this.idNr = idNr;
+		this.gender = gender;
+		this.diagnosisNr = diagnosisNr;
+		
 		if(isRunning)
 		{
+			
 			isRunning = false;
 			
 			try {
@@ -180,6 +186,11 @@ public class ReactionLogger
 		String groupRight = settingsLoader.getSetting(Setting.ReactionMeasurement_groupRight, "     ");
 		if(!groupRight.isEmpty())
 			parameters.put("groupRight", groupRight);
+		
+		parameters.put("age", age);
+		parameters.put("gender", gender);
+		parameters.put("diagnosisNr", diagnosisNr);
+		parameters.put("idNr", idNr);
 
 		return parameters;
 	}

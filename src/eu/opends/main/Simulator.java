@@ -78,6 +78,8 @@ public class Simulator extends SimulationBasics
     private boolean drivingTaskGiven = false;
     private boolean initializationFinished = false;
     
+    private String age, gender, diagnosisNr, idNr;
+    
     private MyInstructionsGUIController myInstructions;
     public MyInstructionsGUIController getMyInstructions() {
 		return myInstructions;
@@ -299,11 +301,17 @@ public class Simulator extends SimulationBasics
         flyCam.setEnabled(true);
 	}
 	
-    public void simpleInitDrivingTask(String drivingTaskFileName, String driverName, String speed)
+    public void 
+    simpleInitDrivingTask(String drivingTaskFileName, String speed, String idNr, String diagnosisNr, String gender, String age)
     {
     	initializationFinished = false;
-    	
+    	   	
     	SimulationDefaults.drivingTaskFileName = drivingTaskFileName;
+    	this.setIdNr(idNr);
+    	this.setDiagnosisNr(diagnosisNr);
+    	this.setGender(gender);
+    	this.setAge(age);
+    	//System.out.println("start: " + this.idNr + ", " + this.diagnosisNr + ", " + this.gender + ", " + this.age);
     	
     	Util.makeDirectory("analyzerData");
     	outputFolder = "analyzerData/" + Util.getDateTimeString();
@@ -349,15 +357,11 @@ public class Simulator extends SimulationBasics
 		triggerCenter.setup();
 				
 		drivingTaskLogger = new DrivingTaskLogger(outputFolder, driverName, drivingTask.getFileName());
-		
-		
-		try {
 			
+		try {		
 			// attach camera to camera flight
 			cameraFlight = new CameraFlight(this);
-			
 		} catch (NotEnoughWaypointsException e) {
-
 			// if not enough way points available, attach camera to driving car
 			car.getCarNode().attachChild(cameraFactory.getMainCameraNode());
 		}
@@ -583,4 +587,36 @@ public class Simulator extends SimulationBasics
     		logger.fatal("Could not run main method:", e1);
     	}
     }
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+
+	public String getDiagnosisNr() {
+		return diagnosisNr;
+	}
+
+	public void setDiagnosisNr(String diagnosisNr) {
+		this.diagnosisNr = diagnosisNr;
+	}
+
+	public String getIdNr() {
+		return idNr;
+	}
+
+	public void setIdNr(String idNr) {
+		this.idNr = idNr;
+	}
 }

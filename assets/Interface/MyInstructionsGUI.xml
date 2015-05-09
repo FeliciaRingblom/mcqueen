@@ -48,11 +48,11 @@
               <panel width="40%" childLayout="horizontal" x="40%" height="50%">
                 <panel childLayout="horizontal">
                   <control name="label" text="man" with="60px" color="#000f"/>
-                  <control name="radioButton" id="option-male" group="RadioGroup-gender" />
+                  <control name="radioButton" id="man" group="RadioGroup-gender" />
                 </panel>
                 <panel childLayout="horizontal">
                   <control name="label" text="kvinna" with="60px" color="#000f"/>
-                  <control name="radioButton" id="option-female" group="RadioGroup-gender" />
+                  <control name="radioButton" id="kvinna" group="RadioGroup-gender" />
                 </panel>
               </panel>          
               <control id="RadioGroup-speed" name="radioButtonGroup"/>          

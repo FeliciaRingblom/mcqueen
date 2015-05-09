@@ -41,12 +41,17 @@ public class ReactionCenter
 	
 	private boolean isRunning = false;
 	private List<ReactionTimer> reactionTimerList = new ArrayList<ReactionTimer>();
+	private String age, gender, diagnosisNr, idNr;
 	
 	
 	public ReactionCenter(Simulator sim)
 	{
 		this.sim = sim;
 		this.inputManager = sim.getInputManager();
+		age = sim.getAge();
+		gender = sim.getGender();
+		diagnosisNr = sim.getDiagnosisNr();
+		idNr = sim.getIdNr();
 	}
 
 	
@@ -268,7 +273,7 @@ public class ReactionCenter
 		}
 		
 		isRunning = false;
-		reactionLogger.close();
+		reactionLogger.close(age, idNr, gender, diagnosisNr);
 	}
 
 }
