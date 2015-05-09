@@ -3,17 +3,14 @@ package eu.opends.niftyGui;
 import com.jme3.asset.AssetManager;
 import com.jme3.asset.plugins.FileLocator;
 import com.jme3.input.InputManager;
-import com.jme3.niftygui.NiftyJmeDisplay;
 
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.NiftyEventSubscriber;
 import de.lessvoid.nifty.controls.RadioButtonGroupStateChangedEvent;
 import de.lessvoid.nifty.controls.TextField;
 import de.lessvoid.nifty.elements.Element;
-import de.lessvoid.nifty.elements.render.PanelRenderer;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
-import de.lessvoid.nifty.tools.SizeValue;
 import eu.opends.main.Simulator;
 
 /**
@@ -27,6 +24,8 @@ public class MyInstructionsGUIController implements ScreenController {
 	private Screen screen;
 	private InputManager inputManager;
 	private String speed = "low";
+	private String gender = "man";
+	private String age, idNr, diagnosisNr;
 	
 	public MyInstructionsGUIController(Simulator sim, Nifty nifty)
 	{
@@ -44,19 +43,11 @@ public class MyInstructionsGUIController implements ScreenController {
 	     this.screen = arg1;		
 	}
 	
+	@Override
+	public void onEndScreen() {}
 
 	@Override
-	public void onEndScreen() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void onStartScreen() {
-		System.out.println("i onstartscreen");
-		// TODO Auto-generated method stub
-		
-	}
+	public void onStartScreen() {}
 	
 	public void clickChangeSound() {
 		//System.out.println("clicked sound");
@@ -64,7 +55,6 @@ public class MyInstructionsGUIController implements ScreenController {
 	}
 
 	public void startTest(){
-		String driverName = getTextFromTextfield("driversNameTextfield");
 		nifty.exit();
 		nifty.gotoScreen("instruction_1"); 
 	}
@@ -99,29 +89,36 @@ public class MyInstructionsGUIController implements ScreenController {
 		nifty.gotoScreen("end"); 
 	}	
 	
-	public void startIntroStraight(){
-		String driverName = getTextFromTextfield("driversNameTextfield");
+	public void startIntroStraight(){		
+		idNr = getTextFromTextfield("input_id");
+		age = getTextFromTextfield("input_age");
+		diagnosisNr = getTextFromTextfield("input_diagnosis_nr");
 		nifty.exit();
-		
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStraight/introStraight.xml";
-		//sim.closeDrivingTaskSelectionGUI();
-		sim.simpleInitDrivingTask(drivingTask,driverName, speed);	
-	}
-	
-	public void startIntroStimuli(){	
-		String driverName = getTextFromTextfield("input_id");
-		nifty.exit();	
 		
-		String drivingTask = "assets/DrivingTasks/Projects/IntroStimuli/introStimuli.xml";
-		sim.closeDrivingTaskSelectionGUI();
-		sim.simpleInitDrivingTask(drivingTask,driverName, speed);
+		//sim.closeDrivingTaskSelectionGUI();
+		sim.simpleInitDrivingTask(drivingTask, speed, idNr, diagnosisNr, gender, age);	
 	}
 	
-	public void startMainTest(){
-		nifty.exit();		
-		String input_id = getTextFromTextfield("input_id");
+	public void startIntroStimuli(){		
+		idNr = getTextFromTextfield("input_id");
+		age = getTextFromTextfield("input_age");
+		diagnosisNr = getTextFromTextfield("input_diagnosis_nr");
+		nifty.exit();
+		String drivingTask = "assets/DrivingTasks/Projects/IntroStimuli/introStimuli.xml";
+		
+		sim.closeDrivingTaskSelectionGUI();
+		sim.simpleInitDrivingTask(drivingTask, speed, idNr, diagnosisNr, gender, age);
+	}
+	
+	public void startMainTest(){			
+		idNr = getTextFromTextfield("input_id");
+		age = getTextFromTextfield("input_age");
+		diagnosisNr = getTextFromTextfield("input_diagnosis_nr");
+		nifty.exit();
 		String drivingTask = "assets/DrivingTasks/Projects/Countryside/countryside.xml";
-		sim.simpleInitDrivingTask(drivingTask,input_id, speed);
+		
+		sim.simpleInitDrivingTask(drivingTask, speed, idNr, diagnosisNr, gender, age);
 	}
 	
 	public void gotoResult(){
@@ -132,10 +129,14 @@ public class MyInstructionsGUIController implements ScreenController {
 	  public void onRadioGroupSpeedChanged(final String id, final RadioButtonGroupStateChangedEvent event) {
 	    speed = event.getSelectedId();
 	  }
+	  
+	  @NiftyEventSubscriber(id="RadioGroup-gender")
+	  public void onRadioGroupGenderChanged(final String id, final RadioButtonGroupStateChangedEvent event) {
+	    gender = event.getSelectedId();
+	  }
 
 	
 	public void setScreen(int screenNumber) {
-
 		sim.getGuiNode().detachAllChildren();
 		String next = "instruction_" + screenNumber;
 		nifty.gotoScreen(next);

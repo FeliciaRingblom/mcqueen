@@ -63,12 +63,8 @@
                 <control name="label" text="50km/h" with="60px" color="#000f"/>
                 <control name="radioButton" id="middle" group="RadioGroup-speed" />
               </panel>    
-              <panel childLayout="horizontal" y="90%">
-                <panel childLayout="horizontal" x="0%">
-                  <control name="label" text="60km/h" with="60px" color="#000f"/>
-                  <control name="radioButton" id="high" group="RadioGroup-speed" />
-                </panel> 
-              </panel>  
+
+  
             </panel>            
           
           </panel>
