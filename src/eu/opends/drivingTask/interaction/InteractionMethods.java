@@ -24,7 +24,6 @@ import com.jme3.math.FastMath;
 
 import eu.opends.main.Simulator;import eu.opends.drivingTask.DrivingTaskDataQuery.Layer;
 import eu.opends.main.Simulator;
-import eu.opends.niftyGui.MyInstructionsGUIController;
 import eu.opends.trigger.GetTimeUntilBrakeAction;
 import eu.opends.trigger.GetTimeUntilSpeedChangeAction;
 import eu.opends.trigger.ManipulateObjectTriggerAction;

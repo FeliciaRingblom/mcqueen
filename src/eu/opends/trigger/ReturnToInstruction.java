@@ -1,7 +1,7 @@
 package eu.opends.trigger;
 
 import eu.opends.main.Simulator;import eu.opends.main.Simulator;
-import eu.opends.niftyGui.MyInstructionsGUIController;
+import eu.opends.niftyGui.StartScreenGUIController;
 /**
  * @author Jessica Larsson, Felicia Ringblom, 2015
  */
@@ -21,7 +21,7 @@ public class ReturnToInstruction extends TriggerAction {
 
 	@Override
 	protected void execute() {
-		sim.getMyInstructions().setScreen(this.screenNumber);
+		sim.getInstructionsGUI().setScreen(this.screenNumber);
 	}
 
 }

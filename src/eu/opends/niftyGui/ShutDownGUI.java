@@ -18,16 +18,12 @@
 
 package eu.opends.niftyGui;
 
-import com.jme3.asset.AssetManager;
-import com.jme3.audio.AudioRenderer;
 import com.jme3.input.FlyByCamera;
 import com.jme3.input.InputManager;
-import com.jme3.niftygui.NiftyJmeDisplay;
-import com.jme3.renderer.ViewPort;
 import com.jme3.scene.Spatial.CullHint;
 
 import de.lessvoid.nifty.Nifty;
-import eu.opends.main.Simulator;import eu.opends.main.Simulator;
+import eu.opends.main.Simulator;
 
 /**
  * 
@@ -39,23 +35,17 @@ public class ShutDownGUI
 	private Simulator sim;
 	private boolean shutDownDialogHidden = true;
 	private boolean initiallyPaused = false;
-	private AssetManager assetManager;
 	private InputManager inputManager;
-	private AudioRenderer audioRenderer;
-	private ViewPort guiViewPort;
 	private FlyByCamera flyCam;
 
 	
 	public ShutDownGUI(Simulator sim) 
 	{
 		this.sim = sim;
-		this.assetManager = sim.getAssetManager();
 		this.inputManager = sim.getInputManager();
-		this.audioRenderer = sim.getAudioRenderer();
-		this.guiViewPort = sim.getGuiViewPort();
 		this.flyCam = sim.getFlyByCamera();
+		this.nifty = sim.getNifty();
 	}
-
 	
 	public void toggleDialog() 
 	{
@@ -74,7 +64,7 @@ public class ShutDownGUI
 			initiallyPaused = sim.isPause();
 			sim.setPause(true);
 			sim.getGuiNode().setCullHint(CullHint.Always);
-			initShutDownGUI();
+			init();
 			shutDownDialogHidden = false;
 		}
 	}
@@ -85,7 +75,7 @@ public class ShutDownGUI
 		if(!shutDownDialogHidden)
 		{
 			
-			closeShutDownGUI();
+			close();
 			shutDownDialogHidden = true;
 			sim.getGuiNode().setCullHint(CullHint.Inherit);
 			sim.setPause(initiallyPaused);
@@ -93,38 +83,18 @@ public class ShutDownGUI
 	}
 	
 	
-	private void initShutDownGUI() 
+	private void init() 
 	{
-		NiftyJmeDisplay niftyDisplay = new NiftyJmeDisplay(assetManager,
-				inputManager, audioRenderer, guiViewPort);
-
-		// Create a new NiftyGUI object
-		nifty = niftyDisplay.getNifty();
-
 		String xmlPath = "Interface/ShutDownGUI.xml";
-
-		// Read XML and initialize custom ScreenController
-		nifty.fromXml(xmlPath, "start",	new ShutDownGUIController((Simulator)sim, this));
-
-		// attach the Nifty display to the gui view port as a processor
-		guiViewPort.addProcessor(niftyDisplay);
-
-		// disable fly cam
+		nifty.fromXml(xmlPath, "start",	new ShutDownGUIController(sim));
 		flyCam.setEnabled(false);
 	}
 	
 
-	private void closeShutDownGUI() 
+	private void close() 
 	{
 		nifty.exit();
 		inputManager.setCursorVisible(false);
 		flyCam.setEnabled(true);
 	}
-
-
-	public Nifty getNifty() 
-	{
-		return nifty;
-	}
-
 }

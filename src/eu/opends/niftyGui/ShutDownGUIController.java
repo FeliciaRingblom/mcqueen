@@ -31,13 +31,11 @@ import eu.opends.main.Simulator;
 public class ShutDownGUIController implements ScreenController 
 {
 	private Simulator sim;
-	private ShutDownGUI shutDownGUI;
 	
 	
-	public ShutDownGUIController(Simulator sim, ShutDownGUI shutDownGUI) 
+	public ShutDownGUIController(Simulator sim) 
 	{
 		this.sim = sim;
-		this.shutDownGUI = shutDownGUI;
 	}
 
 	

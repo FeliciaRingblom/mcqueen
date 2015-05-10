@@ -51,26 +51,24 @@ import eu.opends.analyzer.CarPositionWriter;
 import eu.opends.analyzer.DataUnit;
 import eu.opends.analyzer.DeviationComputer;
 import eu.opends.analyzer.DrivingTaskLogger;
-import eu.opends.analyzer.DataWriter;
 import eu.opends.audio.AudioCenter;
 import eu.opends.basics.InternalMapProcessing;
 import eu.opends.basics.LightFactory;
-import eu.opends.main.Simulator;import eu.opends.camera.CameraFactory;
+import eu.opends.main.Simulator;
+import eu.opends.camera.CameraFactory;
 import eu.opends.camera.SimulatorCam;
 import eu.opends.cameraFlight.CameraFlight;
 import eu.opends.cameraFlight.NotEnoughWaypointsException;
 import eu.opends.car.ResetPosition;
 import eu.opends.car.SteeringCar;
 import eu.opends.drivingTask.DrivingTask;
-import eu.opends.drivingTask.interaction.InteractionLoader;
-import eu.opends.drivingTask.scenario.ScenarioLoader;
-import eu.opends.drivingTask.scene.SceneLoader;
 import eu.opends.drivingTask.settings.SettingsLoader;
 import eu.opends.drivingTask.settings.SettingsLoader.Setting;
 import eu.opends.environment.TrafficLightCenter;
 import eu.opends.input.KeyBindingCenter;
 import eu.opends.knowledgeBase.KnowledgeBase;
-import eu.opends.niftyGui.MyInstructionsGUIController;
+import eu.opends.niftyGui.InstructionsGUI;
+import eu.opends.niftyGui.StartScreenGUIController;
 import eu.opends.niftyGui.ShutDownGUI;
 import eu.opends.reactionCenter.ReactionCenter;
 import eu.opends.settingsController.SettingsControllerServer;
@@ -95,10 +93,6 @@ public class Simulator extends SimpleApplication
 {
 	
 	private static DrivingTask drivingTask;
-	private static SceneLoader sceneLoader;
-	private static ScenarioLoader scenarioLoader;
-	private static InteractionLoader interactionLoader;
-	private static SettingsLoader settingsLoader;
 	private static DrivingTaskLogger drivingTaskLogger;
 	
 	private static Map<String,List<TriggerAction>> triggerActionListMap = new HashMap<String,List<TriggerAction>>();
@@ -113,7 +107,8 @@ public class Simulator extends SimpleApplication
 	private Node triggerNode;
 	private Nifty nifty;
 	private ShutDownGUI shutDownGUI;
-    private MyInstructionsGUIController myInstructions;
+	private InstructionsGUI instructionsGUI;
+    private StartScreenGUIController startScreen;
 	private KeyBindingCenter keyBindingCenter;
 	private TrafficLightCenter trafficLightCenter;
     private PhysicalTraffic physicalTraffic;
@@ -151,8 +146,7 @@ public class Simulator extends SimpleApplication
 	private float roadWidth = 50.0f; //what is a good value here????
     private static Float gravityConstant;
 
-	//private String instructionScreenID = null;
-    private String age, gender, diagnosisNr, idNr;
+    private String age, gender, diagnosisNr, idNr, speed;
 	private static String driverName;
 	private static String outputFolder;
 	
@@ -161,9 +155,9 @@ public class Simulator extends SimpleApplication
 	
 
 	
-    public MyInstructionsGUIController getMyInstructions() 
+    public StartScreenGUIController getStartScreen() 
     {
-		return myInstructions;
+		return startScreen;
 	}
     
 	public static Float getGravityConstant()
@@ -189,6 +183,11 @@ public class Simulator extends SimpleApplication
 	public CarPositionWriter getMyCarPositionWriter() 
 	{
 		return carPositionWriter;
+	}
+	
+	public Nifty getNifty()
+	{
+		return nifty;
 	}
 	
 	public LightningClient getLightningClient() 
@@ -232,11 +231,6 @@ public class Simulator extends SimpleApplication
 		return objectManipulationCenter;
 	}
 	
-//	public void setInstructionScreen(String ID)
-//	{
-//		instructionScreenID = ID;
-//	}
-	
 	public SettingsControllerServer getSettingsControllerServer()
 	{
 		return settingsControllerServer;
@@ -246,7 +240,6 @@ public class Simulator extends SimpleApplication
 	{
 		return outputFolder;
 	}
-	
 	
 	public KeyBindingCenter getKeyBindingCenter()
 	{
@@ -263,19 +256,16 @@ public class Simulator extends SimpleApplication
 		return sceneNode;
 	}
 	
-	
 	public Node getTriggerNode()
 	{
 		return triggerNode;
 	}
-	
 	
     public BulletAppState getBulletAppState() 
     {
         return bulletAppState;
     }
     
-	
     public PhysicsSpace getPhysicsSpace() 
     {
         return bulletAppState.getPhysicsSpace();
@@ -286,10 +276,9 @@ public class Simulator extends SimpleApplication
 		return drivingTask;
 	}
 	
-	
 	public static SettingsLoader getSettingsLoader()
 	{
-		return settingsLoader;
+		return drivingTask.getSettingsLoader();
 	}
 
 	
@@ -308,6 +297,11 @@ public class Simulator extends SimpleApplication
 	public ShutDownGUI getShutDownGUI() 
 	{
 		return shutDownGUI;
+	}
+	
+	public InstructionsGUI getInstructionsGUI() 
+	{
+		return instructionsGUI;
 	}
 	
 
@@ -334,7 +328,6 @@ public class Simulator extends SimpleApplication
 		showStats = !showStats;
 		showStats(showStats);
 	}
-    
     
     public float getPhysicsSpeed() 
     {
@@ -364,7 +357,7 @@ public class Simulator extends SimpleApplication
     		CameraFlight camFlight = ((Simulator)this).getCameraFlight();
     		if(camFlight != null && !camFlight.isTerminated())
     		{
-    			camFlight.play(); // must be set
+    			camFlight.play(); 
     		
     			if(pause)				
     				camFlight.pause();
@@ -411,24 +404,28 @@ public class Simulator extends SimpleApplication
     public void simpleInitApp()
     {
     	showStats(false);
+    	initNifty();
+        instructionsGUI = new InstructionsGUI(this);
+        shutDownGUI = new ShutDownGUI(this);
     	initDrivingAssessmentTest();
     }
     
-    private void initDrivingAssessmentTest() 
-    {
+    private void initNifty(){
 		NiftyJmeDisplay niftyDisplay = new NiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort);
     	
     	// Create a new NiftyGUI object
     	nifty = niftyDisplay.getNifty();
     	nifty.setLocale(new Locale("sv", "SE"));
-    	
-    	myInstructions = new MyInstructionsGUIController(this, nifty);
-    		
-    	String xmlPath = "Interface/MyInstructionsGUI.xml";
-    	nifty.fromXml(xmlPath, "start", myInstructions);
-    	
+    	    	
     	// attach the Nifty display to the gui view port as a processor
     	guiViewPort.addProcessor(niftyDisplay);
+    }
+    
+    private void initDrivingAssessmentTest() 
+    {
+    	startScreen = new StartScreenGUIController(this, nifty);    	
+    	String xmlPath = "Interface/StartScreenGUI.xml";
+    	nifty.fromXml(xmlPath, "start", startScreen);
     	
     	// disable fly cam
     	flyCam.setEnabled(false);
@@ -442,15 +439,12 @@ public class Simulator extends SimpleApplication
 	}
 	
     public void 
-    simpleInitDrivingTask(String drivingTaskFileName, String speed, String idNr, String diagnosisNr, String gender, String age)
+    simpleInitDrivingTask(String drivingTaskFileName)
     {
     	initializationFinished = false;
     	   	
     	SimulationDefaults.drivingTaskFileName = drivingTaskFileName;
-    	this.setIdNr(idNr);
-    	this.setDiagnosisNr(diagnosisNr);
-    	this.setGender(gender);
-    	this.setAge(age);
+
     	//System.out.println("start: " + this.idNr + ", " + this.diagnosisNr + ", " + this.gender + ", " + this.age);
     	
     	Util.makeDirectory("analyzerData");
@@ -462,7 +456,34 @@ public class Simulator extends SimpleApplication
     	showStats(drivingTask.getSettingsLoader().getSetting(Setting.General_showStats, false));  	
     	
     	// sets up physics, camera, light, shadows and sky
-    	initTest();
+    	lookupNumberOfScreens();
+    	
+    	// init physics
+    	stateManager.detach(bulletAppState);
+    	stateManager.cleanup();
+        bulletAppState = new BulletAppState();
+        stateManager.attach(bulletAppState);
+        
+        // register loader for *.properties-files
+        assetManager.registerLoader(PropertiesLoader.class, "properties");
+        assetManager.registerLoader(XMLLoader.class, "xml");
+        
+        if(sceneNode != null){
+        	getViewPort().detachScene(sceneNode);
+        	rootNode.detachChild(sceneNode);
+        }
+		sceneNode = new Node("sceneNode");
+		rootNode.attachChild(sceneNode);
+		        
+		triggerNode = new Node("triggerNode");
+		sceneNode.attachChild(triggerNode);
+
+        // setup light settings
+        lightFactory = new LightFactory(this);
+        lightFactory.initLight();
+        
+        // build sky
+        createSkyBox();
     	
     	// set gravity
     	gravityConstant = drivingTask.getSceneLoader().getGravity(SimulationDefaults.gravity);
@@ -482,7 +503,7 @@ public class Simulator extends SimpleApplication
 		car = new SteeringCar(this, speed);
 		
 		if(driverName == null || driverName.isEmpty())
-			driverName = settingsLoader.getSetting(Setting.General_driverName, SimulationDefaults.driverName);
+			driverName = getSettingsLoader().getSetting(Setting.General_driverName, SimulationDefaults.driverName);
     	SimulationDefaults.driverName = driverName;
         
 		// setup key binding
@@ -512,7 +533,7 @@ public class Simulator extends SimpleApplication
 		
 		objectManipulationCenter = new ObjectManipulationCenter(this);
 		
-		if(settingsLoader.getSetting(Setting.SettingsControllerServer_startServer, SimulationDefaults.SettingsControllerServer_startServer))
+		if(getSettingsLoader().getSetting(Setting.SettingsControllerServer_startServer, SimulationDefaults.SettingsControllerServer_startServer))
 		{
 			settingsControllerServer = new SettingsControllerServer(this);
 			settingsControllerServer.start();
@@ -530,7 +551,7 @@ public class Simulator extends SimpleApplication
     	CollisionListener collisionListener = new CollisionListener();
         getPhysicsSpace().addCollisionListener(collisionListener);
         
-        String videoPath = settingsLoader.getSetting(Setting.General_captureVideo, "");
+        String videoPath = getSettingsLoader().getSetting(Setting.General_captureVideo, "");
         if((videoPath != null) && (!videoPath.isEmpty()) && (Util.isValidFilename(videoPath)))
         {
         	File videoFile = new File(videoPath);
@@ -558,11 +579,6 @@ public class Simulator extends SimpleApplication
 		String drivingTaskFileName = SimulationDefaults.drivingTaskFileName;
 		File drivingTaskFile = new File(drivingTaskFileName);
 		drivingTask = new DrivingTask(this, drivingTaskFile);
-
-		sceneLoader = drivingTask.getSceneLoader();
-		scenarioLoader = drivingTask.getScenarioLoader();
-		interactionLoader = drivingTask.getInteractionLoader();
-		settingsLoader = drivingTask.getSettingsLoader();
 	}
 	
 	
@@ -612,41 +628,6 @@ public class Simulator extends SimpleApplication
     	}
     }
     
-    
-    public void initTest() 
-    {    	
-    	System.out.println("simpleInitApp() i Simulator");
-    	lookupNumberOfScreens();
-    	
-    	// init physics
-    	stateManager.detach(bulletAppState);
-    	stateManager.cleanup();
-        bulletAppState = new BulletAppState();
-        stateManager.attach(bulletAppState);
-        
-        // register loader for *.properties-files
-        assetManager.registerLoader(PropertiesLoader.class, "properties");
-        assetManager.registerLoader(XMLLoader.class, "xml");
-        
-        if(sceneNode != null){
-        	getViewPort().detachScene(sceneNode);
-        	rootNode.detachChild(sceneNode);
-        }
-		sceneNode = new Node("sceneNode");
-		rootNode.attachChild(sceneNode);
-		        
-		triggerNode = new Node("triggerNode");
-		sceneNode.attachChild(triggerNode);
-
-        // setup light settings
-        lightFactory = new LightFactory(this);
-        lightFactory.initLight();
-        
-        // build sky
-        createSkyBox();
-        
-        shutDownGUI = new ShutDownGUI(this);
-    }
 
 	private void createSkyBox()
 	{
@@ -667,7 +648,7 @@ public class Simulator extends SimpleApplication
     
     private void lookupNumberOfScreens()
     {
-		numberOfScreens = Simulator.getSettingsLoader().getSetting(Setting.General_numberOfScreens, -1);
+		numberOfScreens = drivingTask.getSettingsLoader().getSetting(Setting.General_numberOfScreens, -1);
 		
 		if(numberOfScreens < 1)
 		{
@@ -807,5 +788,9 @@ public class Simulator extends SimpleApplication
 
 	public void setIdNr(String idNr) {
 		this.idNr = idNr;
+	}
+	
+	public void setSpeed(String speed){
+		this.speed = speed;
 	}
 }
