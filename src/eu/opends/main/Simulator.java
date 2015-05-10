@@ -526,7 +526,11 @@ public class Simulator extends SimpleApplication
 			car.getCarNode().attachChild(cameraFactory.getMainCameraNode());
 		}
 		
-		reactionCenter = new ReactionCenter(this);
+		if(reactionCenter == null){
+			System.out.println("new ReactionCenter");
+			reactionCenter = new ReactionCenter(this);
+		}
+			
 		
 		steeringTask = new SteeringTask(this, driverName);
 		
@@ -705,7 +709,7 @@ public class Simulator extends SimpleApplication
 				lightningClient.close();
 						
 			steeringTask.close();
-			
+			System.out.println("stänger reactionCentret nu.");
 			reactionCenter.close();
 			
 			KnowledgeBase.KB.disconnect();

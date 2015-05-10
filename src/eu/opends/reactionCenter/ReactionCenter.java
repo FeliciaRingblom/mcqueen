@@ -58,7 +58,7 @@ public class ReactionCenter
 	public void start()
 	{
 		if(!isRunning)
-		{			
+		{	System.out.println("starta ny reactionListerner");		
 			reactionListener = new ReactionListener(this);
 			
 			experimentStartTime = new GregorianCalendar().getTimeInMillis();

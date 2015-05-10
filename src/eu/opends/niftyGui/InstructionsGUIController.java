@@ -97,7 +97,7 @@ public class InstructionsGUIController implements ScreenController
 	
 	public void startTest3(){					
 		sim.getNifty().exit();
-		String drivingTask = "assets/DrivingTasks/Projects/Test2/test3.xml";	
+		String drivingTask = "assets/DrivingTasks/Projects/Test3/test3.xml";	
 		sim.initDrivingTask(drivingTask);
 	}
 }

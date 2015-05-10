@@ -151,7 +151,7 @@
         <panel id="content" width="75%" height="90%" childLayout="absolute-inside">
          
           <panel id="top" width="100%" height="25%" childLayout="vertical">
-            <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Starta test 2" wrap="true" color="#000f" textHAlign="center" textVAlign="top"/>  
+            <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Starta test 3" wrap="true" color="#000f" textHAlign="center" textVAlign="top"/>  
           </panel>
           
           <panel id="center" childLayout="absolute-inside" width="100%" y="25%" height="50%">
