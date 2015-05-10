@@ -19,7 +19,7 @@
     <attributes font="fonts/verdana-48-regular.fnt" color="#00ff"/>
   </style>
   <resourceBundle id="intro" filename="assets/Interface/intro" />
-
+ 
   <!-- Start screen with -->
   <screen id="start" controller="eu.opends.niftyGui.StartScreenGUIController" >
     <layer id="backLayer" childLayout="vertical" >
@@ -46,11 +46,11 @@
             <panel width="40%" childLayout="horizontal" x="40%" height="50%">
               <panel childLayout="horizontal">
                 <control name="label" text="man" with="60px" color="#000f"/>
-                <control name="radioButton" id="option-male" group="RadioGroup-gender" />
+                <control name="radioButton" id="man" group="RadioGroup-gender" />
               </panel>
               <panel childLayout="horizontal">
                 <control name="label" text="kvinna" with="60px" color="#000f"/>
-                <control name="radioButton" id="option-female" group="RadioGroup-gender" />
+                <control name="radioButton" id="kvinna" group="RadioGroup-gender" />
               </panel>
             </panel>          
             <control id="RadioGroup-speed" name="radioButtonGroup"/>          
@@ -62,9 +62,13 @@
               <panel childLayout="horizontal" x="40%">
                 <control name="label" text="50km/h" with="60px" color="#000f"/>
                 <control name="radioButton" id="middle" group="RadioGroup-speed" />
+              </panel> 
+              <panel childLayout="horizontal" y="90%">
+                <panel childLayout="horizontal" x="0%">
+                  <control name="label" text="60km/h" with="60px" color="#000f"/>
+                  <control name="radioButton" id="high" group="RadioGroup-speed" />
+                </panel> 
               </panel>    
-
-  
             </panel>            
           
           </panel>
@@ -100,5 +104,6 @@
       </panel><!-- ./wrapper -->
     </layer>
   </screen>
+
 
 </nifty>

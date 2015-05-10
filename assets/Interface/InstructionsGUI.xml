@@ -19,7 +19,7 @@
     <attributes font="fonts/verdana-48-regular.fnt" color="#00ff"/>
   </style>
   <resourceBundle id="intro" filename="assets/Interface/intro" />
-
+  
   <!-- First instructions screen, explaining the purpose -->
   <screen id="instruction_1" controller="eu.opends.niftyGui.InstructionsGUIController">
     <layer id="backLayer" childLayout="vertical" >
