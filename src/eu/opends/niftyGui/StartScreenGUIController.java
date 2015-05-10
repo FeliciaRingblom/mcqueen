@@ -59,21 +59,21 @@ public class StartScreenGUIController implements ScreenController {
 		setDrivingTaskSettings();
 		nifty.exit();
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStraight/introStraight.xml";
-		sim.simpleInitDrivingTask(drivingTask);	
+		sim.initDrivingTask(drivingTask);	
 	}
 	
 	public void startIntroStimuli(){		
 		setDrivingTaskSettings();
 		nifty.exit();
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStimuli/introStimuli.xml";
-		sim.simpleInitDrivingTask(drivingTask);
+		sim.initDrivingTask(drivingTask);
 	}
 	
 	public void startMainTest(){			
 		setDrivingTaskSettings();
 		nifty.exit();
 		String drivingTask = "assets/DrivingTasks/Projects/Countryside/countryside.xml";	
-		sim.simpleInitDrivingTask(drivingTask);
+		sim.initDrivingTask(drivingTask);
 	}
 	
 	

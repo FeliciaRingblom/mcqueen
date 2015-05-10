@@ -67,7 +67,8 @@ public class ShutDownGUIController implements ScreenController
 	
 	public void clickBackToMenuButton(){
 		sim.getShutDownGUI().hideDialog();
-		sim.getGuiNode().detachChildNamed("hood");
+		sim.closeDrivngTask();
+		sim.getGuiNode().detachAllChildren();
 		sim.simpleInitApp();
 	}
 	

@@ -3,33 +3,13 @@
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
         xsi:schemaLocation="http://opends.eu/drivingtask/scenario ../../Schema/scenario.xsd">
         
-        <environment>
-        	<weather>
-                <snowingPercentage>0</snowingPercentage>
-        		<rainingPercentage>0</rainingPercentage>
-        		<fogPercentage>0</fogPercentage>
-        	</weather>
-        </environment>
+
 
         <driver>
-        	<cameraFlight>
-        	    <speed>50</speed>
-        	    <automaticStart>true</automaticStart>
-        	    <automaticStop>true</automaticStop>
-        	    <track>
-        			<point ref="startPoint" />
-        			<point ref="startPointSecondaryTask" />
-        			<point ref="startPointPrimaryTask" />
-        			<point ref="endTasks" />
-        			<point ref="endPoint" />
-        		</track>
-        	</cameraFlight>
-
+              <idealTrack>
+<point ref='IdealPoint.0001'/><point ref='IdealPoint.0002'/><point ref='IdealPoint.0003'/><point ref='IdealPoint.0004'/><point ref='IdealPoint.0005'/><point ref='IdealPoint.0006'/><point ref='IdealPoint.0007'/><point ref='IdealPoint.0008'/><point ref='IdealPoint.0009'/><point ref='IdealPoint.0010'/><point ref='IdealPoint.0011'/><point ref='IdealPoint.0012'/><point ref='IdealPoint.0013'/><point ref='IdealPoint.0014'/><point ref='IdealPoint.0015'/><point ref='IdealPoint.0016'/><point ref='IdealPoint.0017'/><point ref='IdealPoint.0018'/><point ref='IdealPoint.0019'/><point ref='IdealPoint.0020'/><point ref='IdealPoint.0021'/><point ref='IdealPoint.0022'/><point ref='IdealPoint.0023'/><point ref='IdealPoint.0024'/><point ref='IdealPoint.0025'/><point ref='IdealPoint.0026'/><point ref='IdealPoint.0027'/><point ref='IdealPoint.0028'/><point ref='IdealPoint.0029'/><point ref='IdealPoint.0030'/><point ref='IdealPoint.0031'/><point ref='IdealPoint.0032'/><point ref='IdealPoint.0033'/><point ref='IdealPoint.0034'/><point ref='IdealPoint.0035'/><point ref='IdealPoint.0036'/><point ref='IdealPoint.0037'/><point ref='IdealPoint.0038'/>
+</idealTrack>
         	<car id="" ref="driverCar" profile="">
-        		<resetPoints>
-        			<resetPoint ref="reset1" />
-        			<resetPoint ref="reset2" />
-        		</resetPoints>
         		<tires profile="">
         			<type>winter</type>
         			<size>16</size>
@@ -70,11 +50,6 @@
         		</brake>
         	</car>
         </driver>
-        
-        <traffic>
-        </traffic>
-        
-        <road>
-        </road>
+          
         
 </scenario>

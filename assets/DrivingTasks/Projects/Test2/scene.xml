@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scene xmlns="http://opends.eu/drivingtask/scene"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://opends.eu/drivingtask/scene ../../Schema/scene.xsd">
+
+  <sounds>
+  </sounds>
+
+  <models>
+    <model id="grassPlane" key="Scenes/grassPlane/Scene.scene">
+     <mass>0</mass>
+     <visible>true</visible>
+     <collisionShape>meshShape</collisionShape>
+     <scale>
+      <vector jtype="java_lang_Float" size="3">
+       <entry>1</entry>
+       <entry>1</entry>
+       <entry>1</entry>
+     </vector>
+   </scale>
+   <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+     <entry>0</entry>
+     <entry>0</entry>
+     <entry>0</entry>
+   </vector>
+ </rotation>
+ <translation>
+  <vector jtype="java_lang_Float" size="3">
+   <entry>0</entry>
+   <entry>0</entry>
+   <entry>0</entry>
+ </vector>
+</translation>
+</model>
+<model id="driverCar" key="Models/Cars/drivingCars/PurpleMitsubishi/Car.scene">
+ <mass>800</mass>
+ <visible>true</visible>
+ <collisionShape>meshShape</collisionShape>
+ <scale>
+  <vector jtype="java_lang_Float" size="3">
+   <entry>1</entry>
+   <entry>1</entry>
+   <entry>1</entry>
+ </vector>
+</scale>	
+<rotation quaternion="false">
+  <vector jtype="java_lang_Float" size="3">
+   <entry>0</entry>
+   <entry>132</entry>
+   <entry>0</entry>
+ </vector>
+</rotation>
+<translation>
+  <vector jtype="java_lang_Float" size="3">
+   <entry>-620.4993</entry>
+   <entry>21</entry>
+   <entry>-749.1053</entry>
+ </vector>
+</translation>
+</model>		
+<model id="City" key="Scenes/Video5/video5.scene">
+ <mass>0</mass>
+ <visible>true</visible>
+ <collisionShape>meshShape</collisionShape>
+ <scale>
+  <vector jtype="java_lang_Float" size="3">
+   <entry>0.3</entry>
+   <entry>0.3</entry>
+   <entry>0.3</entry>
+ </vector>
+</scale>
+<rotation quaternion="false">
+  <vector jtype="java_lang_Float" size="3">
+   <entry>0</entry>
+   <entry>0</entry>
+   <entry>0</entry>
+ </vector>
+</rotation>
+<translation>
+  <vector jtype="java_lang_Float" size="3">
+   <entry>0</entry>
+   <entry>50</entry>
+   <entry>0</entry>
+ </vector>
+</translation>			
+</model>
+<model id="delimiter" key="Scenes/Video5/delimiter.scene">
+  <mass>0</mass>
+  <visible>true</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.3</entry>
+      <entry>0.3</entry>
+      <entry>0.3</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0</entry>
+      <entry>0</entry>
+      <entry>0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0</entry>
+      <entry>50</entry>
+      <entry>0</entry>
+    </vector>
+  </translation>
+</model>
+<model id="finishSign" key="Models/finishSign/finishSign.scene" ref="">
+  <mass>0</mass>
+  <visible>true</visible>
+  <collisionShape>none</collisionShape>  
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>2</entry>
+      <entry>1</entry>
+      <entry>0.5</entry>
+    </vector>
+  </scale>	
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+     <entry>0</entry>
+     <entry>230</entry>
+     <entry>0</entry>
+   </vector>
+ </rotation>
+ <translation>
+  <vector jtype="java_lang_Float" size="3">
+   <entry>210.50781</entry>
+   <entry>45</entry>
+   <entry>297.00974</entry>
+ </vector>
+</translation>
+</model>
+<model id="Finish_Trigger" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+     <entry>2</entry>
+     <entry>1</entry>
+     <entry>0.5</entry>
+   </vector>
+ </scale>
+ <rotation quaternion="false">
+  <vector jtype="java_lang_Float" size="3">
+   <entry>0</entry>
+   <entry>230</entry>
+   <entry>0</entry>
+ </vector>
+</rotation>
+<translation>
+  <vector jtype="java_lang_Float" size="3">
+   <entry>210.50781</entry>
+   <entry>43</entry>
+   <entry>297.00974</entry>
+ </vector>
+</translation>
+</model> 
+<model id="Start_Trigger" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>2</entry>
+      <entry>1</entry>
+      <entry>0.5</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0</entry>
+      <entry>230</entry>
+      <entry>0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>-620.4993</entry>
+      <entry>21.0</entry>
+      <entry>-749.1053</entry><!--  (-598.0783, 20.058653, -728.9019) -->
+    </vector>
+  </translation>
+</model> 
+<model id="Stimuli_Trigger1" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>44.393166</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+   <entry>-620.4993</entry>
+   <entry>21</entry>
+   <entry>-749.1053</entry>
+    </vector>
+  </translation>
+</model> 
+<model id="Stimuli_Trigger2" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>-434.9032</entry>
+      <entry>19.94584</entry>
+      <entry>-547.92316</entry>
+    </vector>
+  </translation>
+</model> 
+<model id="Stimuli_Trigger3" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>-429.7125</entry>
+      <entry>19.945312</entry>
+      <entry>-521.39575</entry>
+    </vector>
+  </translation>
+</model> 
+<model id="Stimuli_Trigger4" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>-415.27173</entry>
+      <entry>19.945969</entry>
+      <entry>-493.4856</entry>
+    </vector>
+  </translation>
+</model>  
+<model id="Stimuli_Trigger5" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>-401.4155</entry>
+      <entry>19.945955</entry>
+      <entry>-449.46744</entry>
+    </vector>
+  </translation>
+</model> 
+<model id="Stimuli_Trigger6" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>-379.52594</entry>
+      <entry>19.945997</entry>
+      <entry>-412.39545</entry>
+    </vector>
+  </translation>
+</model> 
+<model id="Stimuli_Trigger7" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>-366.9774</entry>
+      <entry>19.945967</entry>
+      <entry>-399.41574</entry>
+    </vector>
+  </translation>
+</model> 
+<model id="Stimuli_Trigger8" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>-340.08777</entry>
+      <entry>19.945967</entry>
+      <entry>-368.88922</entry>
+    </vector>
+  </translation>
+</model>  
+<model id="Stimuli_Trigger9" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>-296.62817</entry>
+      <entry>19.945967</entry>
+      <entry>-317.11554</entry>
+    </vector>
+  </translation>
+</model> 
+<model id="Stimuli_Trigger10" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>-286.20978</entry>
+      <entry>19.945967</entry>
+      <entry>-304.70404</entry>
+    </vector>
+  </translation>
+</model> 
+<model id="Stimuli_Trigger11" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>-268.50708</entry>
+      <entry>19.945969</entry>
+      <entry>-285.38153</entry>
+    </vector>
+  </translation>
+</model> 
+<model id="Stimuli_Trigger12" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>-224.6273</entry>
+      <entry>19.945969</entry>
+      <entry>-235.74783</entry>
+    </vector>
+  </translation>
+</model> 
+<model id="Stimuli_Trigger13" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>-149.57709</entry>
+      <entry>19.945967</entry>
+      <entry>-150.41122</entry>
+    </vector>
+  </translation>
+</model> 
+<model id="Stimuli_Trigger14" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>-54.84929</entry>
+      <entry>19.945967</entry>
+      <entry>-53.48488</entry>
+    </vector>
+  </translation>
+</model> 
+<model id="Stimuli_Trigger15" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>-25.97805</entry>
+      <entry>19.945967</entry>
+      <entry>-24.74885</entry>
+    </vector>
+  </translation>
+</model> 
+
+
+<model id="speedLimit50_1" key="Models/RoadSigns/speedLimits/speedLimit50/speedLimit50.scene"><mass>0</mass><visible>true</visible><collisionShape>meshShape</collisionShape><scale><vector jtype="java_lang_Float" size="3"><entry>1.0</entry><entry>1.0</entry><entry>1.0</entry></vector></scale><rotation quaternion="false"><vector jtype="java_lang_Float" size="3"><entry>0</entry><entry>-133.09236</entry><entry>0</entry></vector></rotation><translation><vector jtype="java_lang_Float" size="3"><entry>-538.22473</entry><entry>19.692575</entry><entry>-671.4367</entry></vector></translation></model>
+<model id="speedLimit50_2" key="Models/RoadSigns/speedLimits/speedLimit50/speedLimit50.scene"><mass>0</mass><visible>true</visible><collisionShape>meshShape</collisionShape><scale><vector jtype="java_lang_Float" size="3"><entry>1.0</entry><entry>1.0</entry><entry>1.0</entry></vector></scale><rotation quaternion="false"><vector jtype="java_lang_Float" size="3"><entry>0</entry><entry>48.145496</entry><entry>0</entry></vector></rotation><translation><vector jtype="java_lang_Float" size="3"><entry>-533.3986</entry><entry>19.692232</entry><entry>-677.16003</entry></vector></translation></model>
+<model id="speedLimit50_3" key="Models/RoadSigns/speedLimits/speedLimit50/speedLimit50.scene"><mass>0</mass><visible>true</visible><collisionShape>meshShape</collisionShape><scale><vector jtype="java_lang_Float" size="3"><entry>1.0</entry><entry>1.0</entry><entry>1.0</entry></vector></scale><rotation quaternion="false"><vector jtype="java_lang_Float" size="3"><entry>0</entry><entry>-153.75056</entry><entry>0</entry></vector></rotation><translation><vector jtype="java_lang_Float" size="3"><entry>24.329275</entry><entry>19.732534</entry><entry>59.670444</entry></vector></translation></model>
+<model id="speedLimit50_4" key="Models/RoadSigns/speedLimits/speedLimit50/speedLimit50.scene"><mass>0</mass><visible>true</visible><collisionShape>meshShape</collisionShape><scale><vector jtype="java_lang_Float" size="3"><entry>1.0</entry><entry>1.0</entry><entry>1.0</entry></vector></scale><rotation quaternion="false"><vector jtype="java_lang_Float" size="3"><entry>0</entry><entry>44.393166</entry><entry>0</entry></vector></rotation><translation><vector jtype="java_lang_Float" size="3"><entry>-34.789753</entry><entry>19.7322</entry><entry>-41.598827</entry></vector></translation></model>
+
+
+</models>
+
+<gravity>9.81</gravity>
+
+<time>19:00:12</time>
+
+<date>2010-11-25</date>
+
+<lights>
+  <directionalLight>
+   <direction>
+    <vector jtype="java_lang_Float" size="3">
+     <entry>0.5</entry>
+     <entry>-0.5</entry>
+     <entry>0.5</entry>
+   </vector>
+ </direction>
+ <color>
+  <vector jtype="java_lang_Float" size="4">
+   <entry>0.7</entry>
+   <entry>0.7</entry>
+   <entry>0.7</entry>
+   <entry>0.7</entry>
+ </vector>
+</color>
+</directionalLight>
+<directionalLight>
+ <direction>
+  <vector jtype="java_lang_Float" size="3">
+   <entry>-0.5</entry>
+   <entry>-0.5</entry>
+   <entry>0.5</entry>
+ </vector>
+</direction>
+<color>
+  <vector jtype="java_lang_Float" size="4">
+   <entry>0.7</entry>
+   <entry>0.7</entry>
+   <entry>0.7</entry>
+   <entry>0.7</entry>
+ </vector>
+</color>
+</directionalLight>
+<directionalLight>
+ <direction>
+  <vector jtype="java_lang_Float" size="3">
+   <entry>0.5</entry>
+   <entry>-0.5</entry>
+   <entry>-0.5</entry>
+ </vector>
+</direction>
+<color>
+  <vector jtype="java_lang_Float" size="4">
+   <entry>0.7</entry>
+   <entry>0.7</entry>
+   <entry>0.7</entry>
+   <entry>0.7</entry>
+ </vector>
+</color>
+</directionalLight>
+<directionalLight>
+ <direction>
+  <vector jtype="java_lang_Float" size="3">
+   <entry>-0.5</entry>
+   <entry>-0.5</entry>
+   <entry>-0.5</entry>
+ </vector>
+</direction>
+<color>
+  <vector jtype="java_lang_Float" size="4">
+   <entry>0.7</entry>
+   <entry>0.7</entry>
+   <entry>0.7</entry>
+   <entry>0.7</entry>
+ </vector>
+</color>
+</directionalLight>
+</lights>
+<pictures>
+  <picture id="rightArrow_toLeft" key="assets/Textures/ReactionTest/stimuliImages/right.png" level="0">
+   <hPosition><fromLeft value="22" unit="px"></fromLeft></hPosition>
+   <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
+   <width>100</width>
+   <height>100</height>
+   <useAlpha>true</useAlpha>
+   <visible>false</visible>
+ </picture>
+
+ <picture id="leftRedSquare" key="assets/Textures/ReactionTest/peripheralIcons/red_square.png" level="1">
+  <hPosition><fromLeft value="22" unit="px"></fromLeft></hPosition>
+  <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
+  <width>100</width>
+  <height>100</height>
+  <useAlpha>true</useAlpha>
+  <visible>false</visible>
+</picture>
+
+<picture id="leftArrow_toLeft" key="assets/Textures/ReactionTest/stimuliImages/left.png" level="2">
+  <hPosition><fromLeft value="22" unit="px"></fromLeft></hPosition>
+  <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
+  <width>100</width>
+  <height>100</height>
+  <useAlpha>true</useAlpha>
+  <visible>false</visible>
+</picture>
+
+<picture id="leftRedCircle" key="assets/Textures/ReactionTest/peripheralIcons/red_circle.png" level="3">
+  <hPosition><fromLeft value="22" unit="px"></fromLeft></hPosition>
+  <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
+  <width>100</width>
+  <height>100</height>
+  <useAlpha>true</useAlpha>
+  <visible>false</visible>
+</picture>
+
+<picture id="leftArrow_toRight" key="assets/Textures/ReactionTest/stimuliImages/left.png" level="4">
+  <hPosition><fromRight value="22" unit="px"></fromRight></hPosition>
+  <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
+  <width>100</width>
+  <height>100</height>
+  <useAlpha>true</useAlpha>
+  <visible>false</visible>
+</picture>
+
+<picture id="rightArrow_toRight" key="assets/Textures/ReactionTest/stimuliImages/right.png" level="5">
+ <hPosition><fromRight value="22" unit="px"></fromRight></hPosition>
+ <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
+ <width>100</width>
+ <height>100</height>
+ <useAlpha>true</useAlpha>
+ <visible>false</visible>
+</picture>
+
+<picture id="rightRedSquare" key="assets/Textures/ReactionTest/peripheralIcons/red_square.png" level="6">
+  <hPosition><fromRight value="22" unit="px"></fromRight></hPosition>
+  <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
+  <width>100</width>
+  <height>100</height>
+  <useAlpha>true</useAlpha>
+  <visible>false</visible>
+</picture>
+
+<picture id="rightRedCircle" key="assets/Textures/ReactionTest/peripheralIcons/red_circle.png" level="7">
+  <hPosition><fromRight value="22" unit="px"></fromRight></hPosition>
+  <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
+  <width>100</width>
+  <height>100</height>
+  <useAlpha>true</useAlpha>
+  <visible>false</visible>
+
+</picture>
+
+
+</pictures>
+<skyTexture>Textures/Sky/Bright/hills.dds</skyTexture>
+
+<geometries>
+<point id='IdealPoint.0001'><translation><vector jtype='java_lang_Float' size='3'><entry>-608.86</entry><entry>20.16</entry><entry>-738.855</entry></vector></translation></point>
+<point id='IdealPoint.0002'><translation><vector jtype='java_lang_Float' size='3'><entry>-582.782</entry><entry>19.95</entry><entry>-714.133</entry></vector></translation></point>
+<point id='IdealPoint.0003'><translation><vector jtype='java_lang_Float' size='3'><entry>-556.689</entry><entry>19.828</entry><entry>-691.068</entry></vector></translation></point>
+<point id='IdealPoint.0004'><translation><vector jtype='java_lang_Float' size='3'><entry>-530.664</entry><entry>19.93</entry><entry>-667.407</entry></vector></translation></point>
+<point id='IdealPoint.0005'><translation><vector jtype='java_lang_Float' size='3'><entry>-505.738</entry><entry>19.946</entry><entry>-641.574</entry></vector></translation></point>
+<point id='IdealPoint.0006'><translation><vector jtype='java_lang_Float' size='3'><entry>-482.92</entry><entry>19.946</entry><entry>-614.31</entry></vector></translation></point>
+<point id='IdealPoint.0007'><translation><vector jtype='java_lang_Float' size='3'><entry>-460.563</entry><entry>19.946</entry><entry>-585.717</entry></vector></translation></point>
+<point id='IdealPoint.0008'><translation><vector jtype='java_lang_Float' size='3'><entry>-438.776</entry><entry>19.946</entry><entry>-557.157</entry></vector></translation></point>
+<point id='IdealPoint.0009'><translation><vector jtype='java_lang_Float' size='3'><entry>-422.344</entry><entry>19.946</entry><entry>-525.36</entry></vector></translation></point>
+<point id='IdealPoint.0010'><translation><vector jtype='java_lang_Float' size='3'><entry>-415.572</entry><entry>19.946</entry><entry>-490.502</entry></vector></translation></point>
+<point id='IdealPoint.0011'><translation><vector jtype='java_lang_Float' size='3'><entry>-405.686</entry><entry>19.946</entry><entry>-456.786</entry></vector></translation></point>
+<point id='IdealPoint.0012'><translation><vector jtype='java_lang_Float' size='3'><entry>-389.859</entry><entry>19.946</entry><entry>-425.429</entry></vector></translation></point>
+<point id='IdealPoint.0013'><translation><vector jtype='java_lang_Float' size='3'><entry>-367.417</entry><entry>19.946</entry><entry>-398.403</entry></vector></translation></point>
+<point id='IdealPoint.0014'><translation><vector jtype='java_lang_Float' size='3'><entry>-343.293</entry><entry>19.946</entry><entry>-372.298</entry></vector></translation></point>
+<point id='IdealPoint.0015'><translation><vector jtype='java_lang_Float' size='3'><entry>-319.991</entry><entry>19.946</entry><entry>-345.448</entry></vector></translation></point>
+<point id='IdealPoint.0016'><translation><vector jtype='java_lang_Float' size='3'><entry>-296.939</entry><entry>19.946</entry><entry>-318.379</entry></vector></translation></point>
+<point id='IdealPoint.0017'><translation><vector jtype='java_lang_Float' size='3'><entry>-273.576</entry><entry>19.946</entry><entry>-291.089</entry></vector></translation></point>
+<point id='IdealPoint.0018'><translation><vector jtype='java_lang_Float' size='3'><entry>-250.121</entry><entry>19.946</entry><entry>-263.876</entry></vector></translation></point>
+<point id='IdealPoint.0019'><translation><vector jtype='java_lang_Float' size='3'><entry>-226.167</entry><entry>19.946</entry><entry>-236.606</entry></vector></translation></point>
+<point id='IdealPoint.0020'><translation><vector jtype='java_lang_Float' size='3'><entry>-202.156</entry><entry>19.946</entry><entry>-209.387</entry></vector></translation></point>
+<point id='IdealPoint.0021'><translation><vector jtype='java_lang_Float' size='3'><entry>-178.403</entry><entry>19.946</entry><entry>-182.436</entry></vector></translation></point>
+<point id='IdealPoint.0022'><translation><vector jtype='java_lang_Float' size='3'><entry>-153.883</entry><entry>19.946</entry><entry>-155.18</entry></vector></translation></point>
+<point id='IdealPoint.0023'><translation><vector jtype='java_lang_Float' size='3'><entry>-130.786</entry><entry>19.946</entry><entry>-129.631</entry></vector></translation></point>
+<point id='IdealPoint.0024'><translation><vector jtype='java_lang_Float' size='3'><entry>-106.39</entry><entry>19.946</entry><entry>-102.756</entry></vector></translation></point>
+<point id='IdealPoint.0025'><translation><vector jtype='java_lang_Float' size='3'><entry>-79.989</entry><entry>19.946</entry><entry>-76.81</entry></vector></translation></point>
+<point id='IdealPoint.0026'><translation><vector jtype='java_lang_Float' size='3'><entry>-53.86</entry><entry>19.946</entry><entry>-52.707</entry></vector></translation></point>
+<point id='IdealPoint.0027'><translation><vector jtype='java_lang_Float' size='3'><entry>-28.437</entry><entry>19.946</entry><entry>-28.387</entry></vector></translation></point>
+<point id='IdealPoint.0028'><translation><vector jtype='java_lang_Float' size='3'><entry>-6.942</entry><entry>19.946</entry><entry>-0.613</entry></vector></translation></point>
+<point id='IdealPoint.0029'><translation><vector jtype='java_lang_Float' size='3'><entry>10.986</entry><entry>19.946</entry><entry>30.942</entry></vector></translation></point>
+<point id='IdealPoint.0030'><translation><vector jtype='java_lang_Float' size='3'><entry>28.172</entry><entry>19.946</entry><entry>62.478</entry></vector></translation></point>
+<point id='IdealPoint.0031'><translation><vector jtype='java_lang_Float' size='3'><entry>42.377</entry><entry>19.946</entry><entry>95.866</entry></vector></translation></point>
+<point id='IdealPoint.0032'><translation><vector jtype='java_lang_Float' size='3'><entry>57.426</entry><entry>19.946</entry><entry>128.874</entry></vector></translation></point>
+<point id='IdealPoint.0033'><translation><vector jtype='java_lang_Float' size='3'><entry>75.346</entry><entry>19.946</entry><entry>160.617</entry></vector></translation></point>
+<point id='IdealPoint.0034'><translation><vector jtype='java_lang_Float' size='3'><entry>88.713</entry><entry>20.166</entry><entry>191.846</entry></vector></translation></point>
+<point id='IdealPoint.0035'><translation><vector jtype='java_lang_Float' size='3'><entry>111.934</entry><entry>22.179</entry><entry>218.918</entry></vector></translation></point>
+<point id='IdealPoint.0036'><translation><vector jtype='java_lang_Float' size='3'><entry>137.159</entry><entry>27.186</entry><entry>243.817</entry></vector></translation></point>
+<point id='IdealPoint.0037'><translation><vector jtype='java_lang_Float' size='3'><entry>165.055</entry><entry>33.585</entry><entry>266.306</entry></vector></translation></point>
+<point id='IdealPoint.0038'><translation><vector jtype='java_lang_Float' size='3'><entry>192.383</entry><entry>39.928</entry><entry>289.434</entry></vector></translation></point>
+</geometries>
+
+
+
+</scene>

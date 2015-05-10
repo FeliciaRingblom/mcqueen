@@ -26,6 +26,7 @@ public class InstructionsGUI {
 	
 	
 	public void setScreen(int screenNumber) {
+		sim.closeDrivngTask();
         if(sim.getSceneNode() != null){
         	sim.getViewPort().detachScene(sim.getSceneNode());
         	sim.getGuiNode().detachAllChildren();

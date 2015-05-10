@@ -19,7 +19,7 @@
     <attributes font="fonts/verdana-48-regular.fnt" color="#00ff"/>
   </style>
   <resourceBundle id="intro" filename="assets/Interface/intro" />
-  
+
   <!-- First instructions screen, explaining the purpose -->
   <screen id="instruction_1" controller="eu.opends.niftyGui.InstructionsGUIController">
     <layer id="backLayer" childLayout="vertical" >
@@ -105,12 +105,12 @@
           </panel>
           
           <panel id="center" childLayout="absolute-inside" width="100%" y="25%" height="50%">
-            <text id="txt2" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Du ska nu få prova på att köra en sträcka." wrap="true" color="#000f" textHAlign="center" textVAlign="top"/> 
+            <text id="txt2" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Du ska nu få köra första testet" wrap="true" color="#000f" textHAlign="center" textVAlign="top"/> 
           </panel>
 
           <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">  
             <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="30%" height="85%" x="35%">
-              <interact onClick="startIntroStimuli()" />
+              <interact onClick="startTest1()" />
             </image>                 
           </panel>
           
@@ -119,29 +119,49 @@
     </layer>
   </screen>
 
-   <!-- Fifth instructions screen, two options: start main test or redo instructions. -->
+  <!-- Fifth instructions screen -->  
   <screen id="instruction_5" controller="eu.opends.niftyGui.InstructionsGUIController" >
     <layer id="backLayer" childLayout="vertical">
      <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#efefef">
         <panel id="content" width="75%" height="90%" childLayout="absolute-inside">
          
           <panel id="top" width="100%" height="25%" childLayout="vertical">
-            <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Jag känner mig redo att starta testet." wrap="true" color="#000f" textHAlign="center" textVAlign="center"/>  
-
-            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="114px" height="54px" align="center">
-              <interact onClick="startMainTest()" />
-            </image>
+            <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Starta test 2" wrap="true" color="#000f" textHAlign="center" textVAlign="top"/>  
           </panel>
           
           <panel id="center" childLayout="absolute-inside" width="100%" y="25%" height="50%">
+            <text id="txt2" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Du ska nu få prova på att köra en sträcka." wrap="true" color="#000f" textHAlign="center" textVAlign="top"/> 
           </panel>
 
-          <panel id="bottom" width="100%" y="75%" height="25%" childLayout="vertical"> 
-            <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Jag vill gå igenom instruktionerna igen." wrap="true" color="#000f" textHAlign="center" textVAlign="center"/>  
+          <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">  
+            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="30%" height="85%" x="35%">
+              <interact onClick="startTest2()" />
+            </image>                 
+          </panel>
+          
+        </panel>
+      </panel><!-- ./wrapper -->
+    </layer>
+  </screen>
 
-            <image id="img_next" filename="assets/Interface/images_instruction_screen/repeat.png" width="114px" height="54px" align="center">
-              <interact onClick="startMainTest()" />
-            </image>
+    <!-- Sixth instructions screen-->  
+  <screen id="instruction_6" controller="eu.opends.niftyGui.InstructionsGUIController" >
+    <layer id="backLayer" childLayout="vertical">
+     <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#efefef">
+        <panel id="content" width="75%" height="90%" childLayout="absolute-inside">
+         
+          <panel id="top" width="100%" height="25%" childLayout="vertical">
+            <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Starta test 2" wrap="true" color="#000f" textHAlign="center" textVAlign="top"/>  
+          </panel>
+          
+          <panel id="center" childLayout="absolute-inside" width="100%" y="25%" height="50%">
+            <text id="txt2" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Du ska nu få prova på att köra en sträcka." wrap="true" color="#000f" textHAlign="center" textVAlign="top"/> 
+          </panel>
+
+          <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">  
+            <image id="img_next" filename="assets/Interface/images_instruction_screen/next.png" width="30%" height="85%" x="35%">
+              <interact onClick="startTest3()" />
+            </image>                 
           </panel>
           
         </panel>
@@ -150,7 +170,7 @@
   </screen>
 
   <!-- Last instruction screen, shows when test is completed -->
-  <screen id="instruction_6" controller="eu.opends.niftyGui.InstructionsGUIController" >
+  <screen id="instruction_7" controller="eu.opends.niftyGui.InstructionsGUIController" >
     <layer id="backLayer" childLayout="vertical">
      <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#efefef">
         <panel id="content" width="75%" height="90%" childLayout="absolute-inside">

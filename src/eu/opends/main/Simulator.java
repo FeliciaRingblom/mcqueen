@@ -373,7 +373,7 @@ public class Simulator extends SimpleApplication
 	}
 	
 	public void calculateCarData(String fileName){
-		carPositionReader.initReader("analyzerData/test/countryside.txt", true);
+		carPositionReader.initReader("analyzerData/test/carData.txt", true);
 		carPositionReader.loadDriveData();
 		
 		carPositionList = carPositionReader.getCarPositionList();
@@ -438,8 +438,7 @@ public class Simulator extends SimpleApplication
         flyCam.setEnabled(true);
 	}
 	
-    public void 
-    simpleInitDrivingTask(String drivingTaskFileName)
+    public void initDrivingTask(String drivingTaskFileName)
     {
     	initializationFinished = false;
     	   	
@@ -571,6 +570,11 @@ public class Simulator extends SimpleApplication
 		
 		String analyzerFile = "analyzerData/test/carData.txt";
 		calculateCarData(analyzerFile);	
+    }
+    
+    public void closeDrivngTask()
+    {
+    	
     }
     
     
@@ -713,7 +717,7 @@ public class Simulator extends SimpleApplication
 			
 		}
 
-		super.destroy();
+		//super.destroy();
 		logger.info("finished destroy()");
     }
 	

@@ -80,18 +80,24 @@ public class InstructionsGUIController implements ScreenController
 	public void startIntroStraight(){		
 		sim.getNifty().exit();
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStraight/introStraight.xml";
-		sim.simpleInitDrivingTask(drivingTask);	
+		sim.initDrivingTask(drivingTask);	
 	}
 	
-	public void startIntroStimuli(){		
+	public void startTest1(){		
 		sim.getNifty().exit();
-		String drivingTask = "assets/DrivingTasks/Projects/IntroStimuli/introStimuli.xml";
-		sim.simpleInitDrivingTask(drivingTask);
+		String drivingTask = "assets/DrivingTasks/Projects/Test1/test1.xml";
+		sim.initDrivingTask(drivingTask);
 	}
 	
-	public void startMainTest(){					
+	public void startTest2(){					
 		sim.getNifty().exit();
-		String drivingTask = "assets/DrivingTasks/Projects/Countryside/countryside.xml";	
-		sim.simpleInitDrivingTask(drivingTask);
+		String drivingTask = "assets/DrivingTasks/Projects/Test2/test2.xml";	
+		sim.initDrivingTask(drivingTask);
+	}
+	
+	public void startTest3(){					
+		sim.getNifty().exit();
+		String drivingTask = "assets/DrivingTasks/Projects/Test2/test3.xml";	
+		sim.initDrivingTask(drivingTask);
 	}
 }

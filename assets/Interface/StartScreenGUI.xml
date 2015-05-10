@@ -85,19 +85,19 @@
             <effect>
               <onHover name="border" border="2px" color="#ffba00" timeType="infinite"/>
             </effect>
-            <interact onClick="startIntroStraight()" />
+            <interact onClick="" />
           </image>
           <image id="start_stimuli" filename="assets/Interface/images_instruction_screen/small_start_button2.png" width="26%" height="25%" align="center" y="65%" x="37%">
             <effect>
               <onHover name="border" border="2px" color="#ffba00" timeType="infinite"/>
             </effect>
-            <interact onClick="startIntroStimuli()" />
+            <interact onClick="" />
           </image>
           <image id="start_main" filename="assets/Interface/images_instruction_screen/small_start_button3.png" width="25%" height="25%" align="center" y="65%" x="70%">
             <effect>
               <onHover name="border" border="2px" color="#ffba00" timeType="infinite"/>
             </effect>
-            <interact onClick="startMainTest()" />
+            <interact onClick="" />
           </image>
         </panel><!-- ./botttom -->
 
