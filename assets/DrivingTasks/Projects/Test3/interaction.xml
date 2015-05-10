@@ -108,7 +108,6 @@
   <activity id="setUpKeyReactionTimer1" ref="">
     <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
       <parameter name="reactionGroup" value="stimuli_right"/>
-      <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value="JOY_2"/>
     </action>    
   </activity>
@@ -122,14 +121,12 @@
   <activity id="setUpKeyReactionTimer5" ref="">
     <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
       <parameter name="reactionGroup" value="stimuli_right"/>
-      <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value="JOY_2"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer6" ref="">
     <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
       <parameter name="reactionGroup" value="stimuli_left"/>
-      <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value="JOY_2"/>
     </action>    
   </activity>
@@ -150,14 +147,12 @@
   <activity id="setUpKeyReactionTimer9" ref="">
     <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
       <parameter name="reactionGroup" value="stimuli_right"/>
-      <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value="JOY_2"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer10" ref="">
     <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
       <parameter name="reactionGroup" value="stimuli_left"/>
-      <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value="JOY_2"/>
     </action>    
   </activity>
@@ -178,7 +173,6 @@
   <activity id="setUpKeyReactionTimer13" ref="">
     <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
       <parameter name="reactionGroup" value="stimuli_left"/>
-      <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value="JOY_2"/>
     </action>    
   </activity>
