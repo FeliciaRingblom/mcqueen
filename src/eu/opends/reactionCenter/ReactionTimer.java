@@ -84,7 +84,7 @@ public abstract class ReactionTimer
 			reactionLogger.add(reactionGroupID, -2, 10000L, reactionStartTime, relativeStartTime, comment);
 			
 			trialLogger.setReaction(0);
-			trialLogger.writeLog();
+			//trialLogger.writeLog();
 			
 			reactionTimer = null;
 			timerIsActive = false;

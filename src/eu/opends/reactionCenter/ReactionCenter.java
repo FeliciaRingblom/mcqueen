@@ -58,16 +58,16 @@ public class ReactionCenter
 	public void start()
 	{
 		if(!isRunning)
-		{	System.out.println("starta ny reactionListerner");		
+		{	
 			reactionListener = new ReactionListener(this);
 			
 			experimentStartTime = new GregorianCalendar().getTimeInMillis();
 			isRunning = true;
 			
 			System.err.println("Start");
-			Simulator.getDrivingTaskLogger().reportText("trial;vpn;age;gender;task;task_detail;condition_num;" +
-					"condition_string;track;accuracy;additional_false_r;RT_brake1;RT_brake2;RT_brake3;RT_brake4;" +
-					"RT_change1;RT_change2;RT_change3;RT_change4");
+//			Simulator.getDrivingTaskLogger().reportText("trial;vpn;age;gender;task;task_detail;condition_num;" +
+//					"condition_string;track;accuracy;additional_false_r;RT_brake1;RT_brake2;RT_brake3;RT_brake4;" +
+//					"RT_change1;RT_change2;RT_change3;RT_change4");
 		}
 	}
 

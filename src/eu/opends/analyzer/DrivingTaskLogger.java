@@ -62,7 +62,7 @@ public class DrivingTaskLogger
 		this.drivingTask = drivingTask;
 
 		Util.makeDirectory(outputFolder);
-		initWriter();
+		//initWriter();
 	}
 	
 	

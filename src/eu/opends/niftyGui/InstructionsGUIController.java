@@ -47,7 +47,6 @@ public class InstructionsGUIController implements ScreenController
 	}
 	
 	public void gotoInstructions2(){
-		System.out.println("next next next");
 		sim.getNifty().exit();
 		sim.getNifty().gotoScreen("instruction_2"); 
 	}
@@ -86,18 +85,21 @@ public class InstructionsGUIController implements ScreenController
 	public void startTest1(){		
 		sim.getNifty().exit();
 		String drivingTask = "assets/DrivingTasks/Projects/Test1/test1.xml";
+		sim.setTestNr(1);
 		sim.initDrivingTask(drivingTask);
 	}
 	
 	public void startTest2(){					
 		sim.getNifty().exit();
-		String drivingTask = "assets/DrivingTasks/Projects/Test2/test2.xml";	
+		String drivingTask = "assets/DrivingTasks/Projects/Test2/test2.xml";
+		sim.setTestNr(2);
 		sim.initDrivingTask(drivingTask);
 	}
 	
 	public void startTest3(){					
 		sim.getNifty().exit();
 		String drivingTask = "assets/DrivingTasks/Projects/Test3/test3.xml";	
+		sim.setTestNr(3);
 		sim.initDrivingTask(drivingTask);
 	}
 }

@@ -58,7 +58,6 @@ public class ShutDownGUI
 
 	public void showDialog() 
 	{
-		System.out.println("i showDialog i ShutDownGUI.java");
 		if(shutDownDialogHidden)
 		{
 			initiallyPaused = sim.isPause();

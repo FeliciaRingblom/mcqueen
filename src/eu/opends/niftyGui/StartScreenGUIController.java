@@ -55,28 +55,6 @@ public class StartScreenGUIController implements ScreenController {
 		sim.getInstructionsGUI().setScreen(1);
 	}	
 	
-	public void startIntroStraight(){		
-		setDrivingTaskSettings();
-		nifty.exit();
-		String drivingTask = "assets/DrivingTasks/Projects/IntroStraight/introStraight.xml";
-		sim.initDrivingTask(drivingTask);	
-	}
-	
-	public void startIntroStimuli(){		
-		setDrivingTaskSettings();
-		nifty.exit();
-		String drivingTask = "assets/DrivingTasks/Projects/IntroStimuli/introStimuli.xml";
-		sim.initDrivingTask(drivingTask);
-	}
-	
-	public void startMainTest(){			
-		setDrivingTaskSettings();
-		nifty.exit();
-		String drivingTask = "assets/DrivingTasks/Projects/Countryside/countryside.xml";	
-		sim.initDrivingTask(drivingTask);
-	}
-	
-	
 	@NiftyEventSubscriber(id="RadioGroup-speed")
 	public void onRadioGroupSpeedChanged(final String id, final RadioButtonGroupStateChangedEvent event) 
 	{

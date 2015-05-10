@@ -139,7 +139,7 @@ public class Simulator extends SimpleApplication
 	private boolean showStats = false;	
 
 	
-	private int numberOfScreens;
+	private int numberOfScreens, testNr;
 	
 	private float area = 0;
 	private float lengthOfIdealLine = 1;
@@ -447,7 +447,8 @@ public class Simulator extends SimpleApplication
     	//System.out.println("start: " + this.idNr + ", " + this.diagnosisNr + ", " + this.gender + ", " + this.age);
     	
     	Util.makeDirectory("analyzerData");
-    	outputFolder = "analyzerData/" + Util.getDateTimeString();
+    	outputFolder = "analyzerData/ID_" + idNr;
+    	Util.makeDirectory(outputFolder);
     	
     	initDrivingTaskLayers();
     	
@@ -516,7 +517,7 @@ public class Simulator extends SimpleApplication
 		// init trigger center
 		triggerCenter.setup();
 				
-		drivingTaskLogger = new DrivingTaskLogger(outputFolder, driverName, drivingTask.getFileName());
+		//drivingTaskLogger = new DrivingTaskLogger(outputFolder, driverName, drivingTask.getFileName());
 			
 		try {		
 			// attach camera to camera flight
@@ -592,7 +593,7 @@ public class Simulator extends SimpleApplication
 	
 	public void initializeDataWriter() 
 	{
-		carPositionWriter = new CarPositionWriter(outputFolder, car, driverName, SimulationDefaults.drivingTaskFileName);
+		carPositionWriter = new CarPositionWriter(outputFolder, car, driverName, SimulationDefaults.drivingTaskFileName, testNr);
 	}
 	
     @Override
@@ -709,7 +710,6 @@ public class Simulator extends SimpleApplication
 				lightningClient.close();
 						
 			steeringTask.close();
-			System.out.println("stänger reactionCentret nu.");
 			reactionCenter.close();
 			
 			KnowledgeBase.KB.disconnect();
@@ -800,5 +800,9 @@ public class Simulator extends SimpleApplication
 	
 	public void setSpeed(String speed){
 		this.speed = speed;
+	}
+	
+	public void setTestNr(int testNr){
+		this.testNr = testNr;
 	}
 }

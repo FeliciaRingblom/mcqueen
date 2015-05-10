@@ -30,7 +30,7 @@ public class CarPositionWriter {
 	private Date curDate;
 	private String relativeDrivingTaskPath;
 	
-	public CarPositionWriter(String outputFolder, Car car, String driverName, String absoluteDrivingTaskPath) 
+	public CarPositionWriter(String outputFolder, Car car, String driverName, String absoluteDrivingTaskPath, int testNr) 
 	{		
 		this.outputFolder = outputFolder;
 		this.car = car;
@@ -40,7 +40,7 @@ public class CarPositionWriter {
 		
 		Util.makeDirectory(outputFolder);
 
-		analyzerDataFile = new File(outputFolder + "/carData.txt");
+		analyzerDataFile = new File(outputFolder + "/positionData_" + testNr + ".txt");
 
 		initWriter();
 	}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="assessmentResults_subreportUserData" language="groovy" pageWidth="555" pageHeight="802" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+<style name="Arial_Normal" isDefault="true" fontName="Arial" fontSize="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<style name="Arial_Bold" isDefault="false" fontName="Arial" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<queryString language="xPath">
+		<![CDATA[report/data]]>
+	</queryString>
+	<field name="gender" class="java.lang.String">
+		<fieldDescription><![CDATA[gender]]></fieldDescription>
+	</field>
+	<field name="age" class="java.lang.String">
+		<fieldDescription><![CDATA[age]]></fieldDescription>
+	</field>
+	<columnHeader>
+	    <band height="80">
+			<staticText>
+			<reportElement x="0" y="0" width="200" height="14" style="Arial_Normal"/>
+			<textElement textAlignment="Left">
+				<font size="12"/>
+			</textElement>
+			<text><![CDATA[age:]]></text>
+		</staticText>
+		<textField isBlankWhenNull="false">
+			<reportElement x="0" y="15" width="200" height="14" style="Arial_Normal"/>
+				<textElement textAlignment="Left"><font size="12"/></textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{age}]]></textFieldExpression>
+		</textField>
+
+		<staticText>
+			<reportElement x="0" y="30" width="200" height="14" style="Arial_Normal"/>
+			<textElement textAlignment="Left">
+				<font size="12"/>
+			</textElement>
+			<text><![CDATA[kön]]></text>
+		</staticText>
+		<textField isBlankWhenNull="false">
+			<reportElement x="30" y="30" width="200" height="14" style="Arial_Normal"/>
+				<textElement textAlignment="Left"><font size="12"/></textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gender}]]></textFieldExpression>
+		</textField>
+		<line>
+			<reportElement x="0" y="70" width="490" height="1"/>
+			<graphicElement>
+				<pen lineWidth="1"/>
+			</graphicElement>
+		</line>
+	    </band>
+	</columnHeader>
+</jasperReport>
