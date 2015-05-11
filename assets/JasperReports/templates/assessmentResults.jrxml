@@ -345,8 +345,9 @@
 				<xySeries>
 					<seriesExpression><![CDATA[$P{groupLeft}]]></seriesExpression>
 					<xValueExpression><![CDATA[$F{reactionID}]]></xValueExpression>		
-					<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupLeft}) ?
-						((($F{reactionResult} < 0) ? 0 : -$F{reactionTime})):0]]>
+					<yValueExpression><![CDATA[($F{reactionGroup}.equals($P{groupLeft}) && $F{reactionID} < 7 )?
+						((($F{reactionResult} < 0) ? 0 : -$F{reactionTime}))
+                        :0]]>
 					</yValueExpression>
 					<labelExpression><![CDATA[""]]></labelExpression>
 				</xySeries>
@@ -405,7 +406,7 @@
             </textElement>
             <text><![CDATA[Reaktionsförmåga]]></text>
         </staticText>
-        <staticText>
+<!--         <staticText>
             <reportElement x="300" y="240" width="300" height="30" style="Arial_Normal"/>
             <textElement textAlignment="Left">
                 <font size="12"/>
@@ -439,15 +440,15 @@
                 </categoryDataset>
                 <barPlot>
                     <plot orientation="Vertical">
-                        <seriesColor seriesOrder="0" color="#197E36"/> <!-- green -->
-                        <seriesColor seriesOrder="1" color="#1B7BA7"/> <!-- blue -->
-                        <seriesColor seriesOrder="2" color="#DA3C08"/> <!-- red -->
+                        <seriesColor seriesOrder="0" color="#197E36"/> 
+                        <seriesColor seriesOrder="1" color="#1B7BA7"/> 
+                        <seriesColor seriesOrder="2" color="#DA3C08"/> 
                     </plot>
                     <categoryAxisFormat>
                         <axisFormat verticalTickLabels="false" tickLabelColor="#FFFFFF" axisLineColor="#FFFFFF"/>
                     </categoryAxisFormat>
                 </barPlot>
-            </stackedBarChart>
+            </stackedBarChart> -->
 		<line>
 			<reportElement x="135" y="290" width="0" height="95" forecolor="#42485A"/>
 			<graphicElement>
