@@ -14,8 +14,7 @@
   <style id="nifty-textfield#field">
     <attributes childLayout="center" childClip="true" backgroundColor="#efefef" padding="0px,2px"/>
     <effect>
-      <onFocus name="border" border="2px" color="#ffba00" post="true" />
-      <onFocus name="colorBar" color="#ffff" post="true" inset="1px" />
+      <onFocus name="border" border="2px" color="#ffffff" post="true" />
       <onEnabled name="renderQuad" startColor="#ffba00" endColor="#ffff" post="true" length="150" />
       <onDisabled name="renderQuad" startColor="#ffba00" endColor="#ffff" post="true" length="150" />
     </effect>
