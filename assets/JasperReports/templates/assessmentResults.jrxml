@@ -47,13 +47,46 @@
 		<variableExpression><![CDATA[$F{reactionGroup}.equals($P{groupLeft}) && ($F{reactionResult} > 0)
 						     ? $F{reactionTime}:null]]></variableExpression>
 	</variable>
+    <variable name="averageReactionTimeLeftPart1" class="java.lang.Integer" calculation="Average">
+        <variableExpression><![CDATA[($F{reactionGroup}.equals($P{groupLeft}) && ($F{reactionResult} > 0)  && $F{reactionID} < 11)
+                             ? $F{reactionTime}:null]]></variableExpression>
+    </variable>
+    <variable name="averageReactionTimeLeftPart2" class="java.lang.Integer" calculation="Average">
+        <variableExpression><![CDATA[($F{reactionGroup}.equals($P{groupLeft}) && ($F{reactionResult} > 0)  && $F{reactionID} < 22 && $F{reactionID} > 11)
+                             ? $F{reactionTime}:null]]></variableExpression>
+    </variable>
+    <variable name="averageReactionTimeLeftPart3" class="java.lang.Integer" calculation="Average">
+        <variableExpression><![CDATA[($F{reactionGroup}.equals($P{groupLeft}) && ($F{reactionResult} > 0)  && $F{reactionID} < 33 && $F{reactionID} > 22)
+                             ? $F{reactionTime}:null]]></variableExpression>
+    </variable>
 	<variable name="averageReactionTimeRight" class="java.lang.Integer" calculation="Average">
 		<variableExpression><![CDATA[$F{reactionGroup}.equals($P{groupRight}) && ($F{reactionResult} > 0)
 						     ? $F{reactionTime}:null]]></variableExpression>
 	</variable>
+    <variable name="averageReactionTimeRightPart1" class="java.lang.Integer" calculation="Average">
+        <variableExpression><![CDATA[($F{reactionGroup}.equals($P{groupRight}) && ($F{reactionResult} > 0) && $F{reactionID} < 11)
+                             ? $F{reactionTime}:null]]></variableExpression>
+    </variable>
+    <variable name="averageReactionTimeRightPart2" class="java.lang.Integer" calculation="Average">
+        <variableExpression><![CDATA[($F{reactionGroup}.equals($P{groupRight}) && ($F{reactionResult} > 0) && $F{reactionID} < 22 && $F{reactionID} > 11)
+                             ? $F{reactionTime}:null]]></variableExpression>
+    </variable>
+    <variable name="averageReactionTimeRightPart3" class="java.lang.Integer" calculation="Average">
+        <variableExpression><![CDATA[($F{reactionGroup}.equals($P{groupRight}) && ($F{reactionResult} > 0) && $F{reactionID} < 33 && $F{reactionID} > 22)
+                             ? $F{reactionTime}:null]]></variableExpression>
+    </variable>
 	<variable name="missedReaction" class="java.lang.Integer" calculation="Sum">
 		<variableExpression><![CDATA[($F{reactionResult} < 0 ? 1 : 0)]]></variableExpression>
 	</variable>
+    <variable name="missedReactionPart1" class="java.lang.Integer" calculation="Sum">
+        <variableExpression><![CDATA[(($F{reactionResult} < 0 && $F{reactionID} < 11)? 1 : 0)]]></variableExpression>
+    </variable>
+    <variable name="missedReactionPart2" class="java.lang.Integer" calculation="Sum">
+        <variableExpression><![CDATA[(($F{reactionResult} < 0 && $F{reactionID} < 22 && $F{reactionID} > 11) ? 1 : 0)]]></variableExpression>
+    </variable>
+    <variable name="missedReactionPart3" class="java.lang.Integer" calculation="Sum">
+        <variableExpression><![CDATA[(($F{reactionResult} < 0 && $F{reactionID} < 33 && $F{reactionID} > 22) ? 1 : 0)]]></variableExpression>
+    </variable>
 	<variable name="amountReactions" class="java.lang.Integer" calculation="Count">
 		<variableExpression><![CDATA[($F{reactionResult})]]></variableExpression>
 	</variable>
@@ -66,18 +99,54 @@
 	<variable name="lowestReactionTimeLeft" class="java.lang.Integer" calculation="Lowest">
 		<variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupLeft})) ? $F{reactionTime} : null)]]></variableExpression>
 	</variable>
+    <variable name="lowestReactionTimeLeftPart1" class="java.lang.Integer" calculation="Lowest">
+        <variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupLeft}) && $F{reactionID} < 11) ? $F{reactionTime} : null)]]></variableExpression>
+    </variable>
+    <variable name="lowestReactionTimeLeftPart2" class="java.lang.Integer" calculation="Lowest">
+        <variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupLeft}) && $F{reactionID} < 22 && $F{reactionID} > 11) ? $F{reactionTime} : null)]]></variableExpression>
+    </variable>
+    <variable name="lowestReactionTimeLeftPart3" class="java.lang.Integer" calculation="Lowest">
+        <variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupLeft}) && $F{reactionID} < 33 && $F{reactionID} > 22) ? $F{reactionTime} : null)]]></variableExpression>
+    </variable>
 	<variable name="lowestReactionTimeRight" class="java.lang.Integer" calculation="Lowest">
 		<variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupRight})) ? $F{reactionTime} : null)]]></variableExpression>
 	</variable>
+    <variable name="lowestReactionTimeRightPart1" class="java.lang.Integer" calculation="Lowest">
+        <variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupRight}) && $F{reactionID} < 11) ? $F{reactionTime} : null)]]></variableExpression>
+    </variable>
+    <variable name="lowestReactionTimeRightPart2" class="java.lang.Integer" calculation="Lowest">
+        <variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupRight}) && $F{reactionID} < 22 && $F{reactionID} > 11) ? $F{reactionTime} : null)]]></variableExpression>
+    </variable>
+    <variable name="lowestReactionTimeRightPart3" class="java.lang.Integer" calculation="Lowest">
+        <variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupRight}) && $F{reactionID} < 33 && $F{reactionID} > 22) ? $F{reactionTime} : null)]]></variableExpression>
+    </variable>
 	<variable name="highestReactionTime" class="java.lang.Integer" calculation="Highest">
 		<variableExpression><![CDATA[(($F{reactionResult} > 0 || $F{reactionResult} < -1) ? $F{reactionTime} : 1000)]]></variableExpression>
 	</variable>
 	<variable name="highestReactionTimeLeft" class="java.lang.Integer" calculation="Highest">
 		<variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupLeft})) ? $F{reactionTime} : null)]]></variableExpression>
 	</variable>
+   <variable name="highestReactionTimeLeftPart1" class="java.lang.Integer" calculation="Highest">
+        <variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupLeft}) && $F{reactionID} < 11) ? $F{reactionTime} : null)]]></variableExpression>
+    </variable>
+    <variable name="highestReactionTimeLeftPart2" class="java.lang.Integer" calculation="Highest">
+        <variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupLeft}) && $F{reactionID} < 22 && $F{reactionID} > 11) ? $F{reactionTime} : null)]]></variableExpression>
+    </variable>
+    <variable name="highestReactionTimeLeftPart3" class="java.lang.Integer" calculation="Highest">
+        <variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupLeft}) && $F{reactionID} < 33 && $F{reactionID} > 22) ? $F{reactionTime} : null)]]></variableExpression>
+    </variable>
 	<variable name="highestReactionTimeRight" class="java.lang.Integer" calculation="Highest">
 		<variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupRight})) ? $F{reactionTime} : null)]]></variableExpression>
 	</variable>
+    <variable name="highestReactionTimeRightPart1" class="java.lang.Integer" calculation="Highest">
+        <variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupRight}) && $F{reactionID} < 11) ? $F{reactionTime} : null)]]></variableExpression>
+    </variable>
+    <variable name="highestReactionTimeRightPart2" class="java.lang.Integer" calculation="Highest">
+        <variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupRight}) && $F{reactionID} < 22 && $F{reactionID} > 11) ? $F{reactionTime} : null)]]></variableExpression>
+    </variable>
+    <variable name="highestReactionTimeRightPart3" class="java.lang.Integer" calculation="Highest">
+        <variableExpression><![CDATA[(($F{reactionResult} > 0 && $F{reactionGroup}.equals($P{groupRight}) && $F{reactionID} < 33 && $F{reactionID} > 22) ? $F{reactionTime} : null)]]></variableExpression>
+    </variable>
 	<title>
 		<band height="90">
 			<staticText>
@@ -201,24 +270,24 @@
 			<staticText>
 				<reportElement x="175" y="25" width="300" height="30" style="Arial_Normal"/>
 				<textElement textAlignment="Left"><font size="10"/></textElement>
-				<text><![CDATA[Reaktionstid vänster: ]]></text>
+				<text><![CDATA[Genomsnittlig reaktionstid  vänster: ]]></text>
 			</staticText>
  			<textField isBlankWhenNull="true">
-				<reportElement x="270" y="25" width="515" height="30"/>
+				<reportElement x="340" y="25" width="515" height="30"/>
 				<textElement textAlignment="Left"><font size="10"/></textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeLeft}]]></textFieldExpression>
 			</textField>	
 			<staticText>
-				<reportElement x="295" y="25" width="300" height="30" style="Arial_Normal"/>
+				<reportElement x="370" y="25" width="300" height="30" style="Arial_Normal"/>
 				<textElement textAlignment="Left"><font size="10"/></textElement>
 				<text><![CDATA[ms]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="335" y="25" width="300" height="30" style="Arial_Normal"/>
+				<reportElement x="390" y="25" width="300" height="30" style="Arial_Normal"/>
 				<textElement textAlignment="Left">
 					<font size="10"/>
 				</textElement>
-				<text><![CDATA[Reaktionstid höger: ]]></text>
+				<text><![CDATA[höger: ]]></text>
 			</staticText>
  			<textField isBlankWhenNull="true">
 				<reportElement x="425" y="25" width="515" height="30"/>
@@ -267,47 +336,170 @@
             <textField isBlankWhenNull="true">
                 <reportElement x="150" y="87" width="110" height="30"/>
                 <textElement textAlignment="Center"><font size="12"/></textElement>
-                <textFieldExpression class="java.lang.String"><![CDATA[$V{amountReactions}]]></textFieldExpression>
+                <textFieldExpression class="java.lang.String"><![CDATA[$V{amountReactions}/3]]></textFieldExpression>
             </textField>
  			<textField isBlankWhenNull="true">
 				<reportElement x="150" y="100" width="110" height="30"/>
 				<textElement textAlignment="Center"><font size="12"/></textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$V{missedReaction}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{missedReactionPart1}]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement x="205" y="125" width="0" height="50" forecolor="#FFFFFF"/>
 				<graphicElement><pen lineWidth="1"/></graphicElement>
 			</line>
+            <staticText>
+                <reportElement x="150" y="120" width="55" height="30" style="Arial_Normal"/>
+                <textElement textAlignment="Center"><font size="7"/></textElement>
+                <text><![CDATA[vänster]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="205" y="120" width="55" height="30" style="Arial_Normal"/>
+                <textElement textAlignment="Center"><font size="7"/></textElement>
+                <text><![CDATA[höger]]></text>
+            </staticText>           
  			<textField isBlankWhenNull="true">
 				<reportElement x="150" y="130" width="55" height="30"/>
 				<textElement textAlignment="Center"><font size="12"/></textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeLeft}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeLeftPart1}]]></textFieldExpression>
 			</textField>
  			<textField isBlankWhenNull="true">
 				<reportElement x="205" y="130" width="55" height="30"/>
 				<textElement textAlignment="Center"><font size="12"/></textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeRight}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeRightPart1}]]></textFieldExpression>
 			</textField>
  			<textField isBlankWhenNull="true">
 				<reportElement x="150" y="143" width="55" height="30"/>
 				<textElement textAlignment="Center"><font size="12"/></textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$V{lowestReactionTimeLeft}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{lowestReactionTimeLeftPart1}]]></textFieldExpression>
 			</textField>
  			<textField isBlankWhenNull="true">
 				<reportElement x="205" y="143" width="55" height="30"/>
 				<textElement textAlignment="Center"><font size="12"/></textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$V{lowestReactionTimeRight}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{lowestReactionTimeRightPart1}]]></textFieldExpression>
 			</textField>
  			<textField isBlankWhenNull="true">
 				<reportElement x="150" y="156" width="55" height="30"/>
 				<textElement textAlignment="Center"><font size="12"/></textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$V{highestReactionTimeLeft}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{highestReactionTimeLeftPart1}]]></textFieldExpression>
 			</textField>
  			<textField isBlankWhenNull="true">
 				<reportElement x="205" y="156" width="55" height="30"/>
 				<textElement textAlignment="Center"><font size="12"/></textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$V{highestReactionTimeRight}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{highestReactionTimeRightPart1}]]></textFieldExpression>
 			</textField>
+            <!-- Summary Part2 -->
+            <textField isBlankWhenNull="true">
+                <reportElement x="260" y="87" width="110" height="30"/>
+                <textElement textAlignment="Center"><font size="12"/></textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$V{amountReactions}/3]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="260" y="100" width="110" height="30"/>
+                <textElement textAlignment="Center"><font size="12"/></textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$V{missedReactionPart2}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="315" y="125" width="0" height="50" forecolor="#FFFFFF"/>
+                <graphicElement><pen lineWidth="1"/></graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="260" y="120" width="55" height="30" style="Arial_Normal"/>
+                <textElement textAlignment="Center"><font size="7"/></textElement>
+                <text><![CDATA[vänster]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="315" y="120" width="55" height="30" style="Arial_Normal"/>
+                <textElement textAlignment="Center"><font size="7"/></textElement>
+                <text><![CDATA[höger]]></text>
+            </staticText> 
+            <textField isBlankWhenNull="true">
+                <reportElement x="260" y="130" width="55" height="30"/>
+                <textElement textAlignment="Center"><font size="12"/></textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeLeftPart2}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="315" y="130" width="55" height="30"/>
+                <textElement textAlignment="Center"><font size="12"/></textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeRightPart2}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="260" y="143" width="55" height="30"/>
+                <textElement textAlignment="Center"><font size="12"/></textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$V{lowestReactionTimeLeftPart2}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="315" y="143" width="55" height="30"/>
+                <textElement textAlignment="Center"><font size="12"/></textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$V{lowestReactionTimeRightPart2}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="260" y="156" width="55" height="30"/>
+                <textElement textAlignment="Center"><font size="12"/></textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$V{highestReactionTimeLeftPart2}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="315" y="156" width="55" height="30"/>
+                <textElement textAlignment="Center"><font size="12"/></textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$V{highestReactionTimeRightPart2}]]></textFieldExpression>
+            </textField>
+            <!-- End summary part2 -->
+            <!-- Summary Part3 -->
+            <textField isBlankWhenNull="true">
+                <reportElement x="370" y="87" width="110" height="30"/>
+                <textElement textAlignment="Center"><font size="12"/></textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$V{amountReactions}/3]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="370" y="100" width="110" height="30"/>
+                <textElement textAlignment="Center"><font size="12"/></textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$V{missedReactionPart3}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="425" y="125" width="0" height="50" forecolor="#FFFFFF"/>
+                <graphicElement><pen lineWidth="1"/></graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="370" y="120" width="55" height="30" style="Arial_Normal"/>
+                <textElement textAlignment="Center"><font size="7"/></textElement>
+                <text><![CDATA[vänster]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="425" y="120" width="55" height="30" style="Arial_Normal"/>
+                <textElement textAlignment="Center"><font size="7"/></textElement>
+                <text><![CDATA[höger]]></text>
+            </staticText> 
+            <textField isBlankWhenNull="true">
+                <reportElement x="370" y="130" width="55" height="30"/>
+                <textElement textAlignment="Center"><font size="12"/></textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeLeftPart3}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="425" y="130" width="55" height="30"/>
+                <textElement textAlignment="Center"><font size="12"/></textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$V{averageReactionTimeRightPart3}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="370" y="143" width="55" height="30"/>
+                <textElement textAlignment="Center"><font size="12"/></textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$V{lowestReactionTimeLeftPart3}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="425" y="143" width="55" height="30"/>
+                <textElement textAlignment="Center"><font size="12"/></textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$V{lowestReactionTimeRightPart3}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="370" y="156" width="55" height="30"/>
+                <textElement textAlignment="Center"><font size="12"/></textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$V{highestReactionTimeLeftPart3}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="425" y="156" width="55" height="30"/>
+                <textElement textAlignment="Center"><font size="12"/></textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$V{highestReactionTimeRightPart3}]]></textFieldExpression>
+            </textField>
+            <!-- End summary part3 -->
+
 			<line>
 				<reportElement x="260" y="65" width="0" height="110" forecolor="#FFFFFF"/>
 				<graphicElement><pen lineWidth="2"/></graphicElement>
@@ -345,7 +537,7 @@
 				<xySeries>
 					<seriesExpression><![CDATA[$P{groupLeft}]]></seriesExpression>
 					<xValueExpression><![CDATA[$F{reactionID}]]></xValueExpression>		
-					<yValueExpression><![CDATA[($F{reactionGroup}.equals($P{groupLeft}) && $F{reactionID} < 7 )?
+					<yValueExpression><![CDATA[($F{reactionGroup}.equals($P{groupLeft}) && $F{reactionID} < 11 )?
 						((($F{reactionResult} < 0) ? 0 : -$F{reactionTime}))
                         :0]]>
 					</yValueExpression>
@@ -354,7 +546,7 @@
 				<xySeries>
 					<seriesExpression><![CDATA[$P{groupRight}]]></seriesExpression>	
 					<xValueExpression><![CDATA[$F{reactionID}]]></xValueExpression>	
-					<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupRight}) ?
+					<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupRight}) && $F{reactionID} < 11 ?
 						((($F{reactionResult} < 0) ? 0 : $F{reactionTime})):0]]>
 					</yValueExpression>
 					<labelExpression><![CDATA[""]]></labelExpression>
@@ -362,7 +554,7 @@
 				<xySeries>
 					<seriesExpression><![CDATA[$P{groupMissed}]]></seriesExpression>	
 					<xValueExpression><![CDATA[$F{reactionID}]]></xValueExpression>	
-					<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupRight}) ?
+					<yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupRight}) && $F{reactionID} < 11 ?
 						((($F{reactionResult} < 0) ? 10000 : 0)):(($F{reactionResult} < 0) ? -10000 : 0)]]>
 					</yValueExpression>
 					<labelExpression><![CDATA[""]]></labelExpression>
