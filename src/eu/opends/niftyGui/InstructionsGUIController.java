@@ -71,6 +71,16 @@ public class InstructionsGUIController implements ScreenController
 		sim.getNifty().gotoScreen("instruction_6"); 
 	}
 	
+	public void gotoInstructions7(){
+		sim.getNifty().exit();
+		sim.getNifty().gotoScreen("instruction_7"); 
+	}
+	
+	public void gotoInstructions8(){
+		sim.getNifty().exit();
+		sim.getNifty().gotoScreen("instruction_8"); 
+	}
+	
 	public void gotoEndScreen(){
 		sim.getNifty().exit();
 		sim.getNifty().gotoScreen("end"); 

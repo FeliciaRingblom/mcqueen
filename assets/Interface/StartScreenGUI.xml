@@ -79,19 +79,19 @@
             <effect>
               <onHover name="border" border="3px" color="#ffffff" timeType="infinite"/>
             </effect>
-            <interact onClick="" />
+            <interact onClick="gotoInstructions3()" />
           </image>
           <image id="start_btn_2" filename="assets/Interface/images_instruction_screen/start_sm.png" width="12%" height="12%" x="59%" y="45%">
             <effect>
               <onHover name="border" border="3px" color="#ffffff" timeType="infinite"/>
             </effect>
-            <interact onClick="" />
+            <interact onClick="gotoInstructions5()" />
           </image>
           <image id="start_btn_3" filename="assets/Interface/images_instruction_screen/start_sm.png" width="12%" height="12%" x="79%" y="45%">
             <effect>
               <onHover name="border" border="3px" color="#ffffff" timeType="infinite"/>
             </effect>
-            <interact onClick="" />
+            <interact onClick="gotoInstructions7()" />
           </image>
 
         </panel><!-- ./center -->

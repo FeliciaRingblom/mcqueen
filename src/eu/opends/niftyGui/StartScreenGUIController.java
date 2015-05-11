@@ -55,6 +55,21 @@ public class StartScreenGUIController implements ScreenController {
 		sim.getInstructionsGUI().setScreen(1);
 	}	
 	
+	public void gotoInstructions3(){
+		setDrivingTaskSettings();
+		sim.getInstructionsGUI().setScreen(3);	
+	}
+	
+	public void gotoInstructions5(){
+		setDrivingTaskSettings();
+		sim.getInstructionsGUI().setScreen(5);	
+	}
+	
+	public void gotoInstructions7(){
+		setDrivingTaskSettings();
+		sim.getInstructionsGUI().setScreen(7);	
+	}
+	
 	@NiftyEventSubscriber(id="RadioGroup-speed")
 	public void onRadioGroupSpeedChanged(final String id, final RadioButtonGroupStateChangedEvent event) 
 	{
