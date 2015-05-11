@@ -29,7 +29,9 @@
           </panel>
           
           <panel id="center" childLayout="absolute-inside" width="100%" height="70%">
- 
+            <image id="img_next" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
+              <interact onClick="toggleSound()" />
+            </image>
           </panel>
           
           <panel id="bottom" width="100%" height="20%" childLayout="absolute-inside">  
@@ -51,7 +53,9 @@
           </panel>
           
           <panel id="center" childLayout="absolute-inside" width="100%" height="70%">
- 
+             <image id="img_next" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
+              <interact onClick="toggleSound()" />
+            </image>
           </panel>
           
           <panel id="bottom" width="100%" height="20%" childLayout="absolute-inside">  
@@ -73,7 +77,9 @@
         </panel>
         
         <panel id="center" childLayout="absolute-inside" width="100%" height="70%">
-
+            <image id="img_next" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
+              <interact onClick="toggleSound()" />
+            </image>
         </panel>
         
         <panel id="bottom" width="100%" height="20%" childLayout="absolute-inside">  
@@ -95,6 +101,9 @@
         </panel>
         
         <panel id="center" childLayout="absolute-inside" width="100%" height="70%">
+            <image id="img_next" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
+              <interact onClick="toggleSound()" />
+            </image>
           <image id="img_next" filename="assets/Interface/images_instruction_screen/start_green.png" width="20%" height="15%" x="40%" y="50%">          
             <effect>
               <onHover name="border" border="3px" color="#ffffff" timeType="infinite"/>
@@ -119,7 +128,9 @@
         </panel>
         
         <panel id="center" childLayout="absolute-inside" width="100%" height="70%">
-
+            <image id="img_next" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
+              <interact onClick="toggleSound()" />
+            </image>
         </panel>
         
         <panel id="bottom" width="100%" height="20%" childLayout="absolute-inside">  
@@ -142,6 +153,9 @@
         
         
         <panel id="center" childLayout="absolute-inside" width="100%" height="70%">
+          <image id="img_next" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
+            <interact onClick="toggleSound()" />
+          </image>
           <image id="img_next" filename="assets/Interface/images_instruction_screen/start_green.png" width="20%" height="15%" x="40%" y="50%">          
             <effect>
               <onHover name="border" border="3px" color="#ffffff" timeType="infinite"/>
@@ -166,7 +180,9 @@
         </panel>
         
         <panel id="center" childLayout="absolute-inside" width="100%" height="70%">
-
+          <image id="img_next" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
+            <interact onClick="toggleSound()" />
+          </image>
         </panel>
         
         <panel id="bottom" width="100%" height="20%" childLayout="absolute-inside">  
@@ -188,6 +204,9 @@
         </panel>
         
         <panel id="center" childLayout="absolute-inside" width="100%" height="70%">
+          <image id="img_next" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
+            <interact onClick="toggleSound()" />
+          </image>
           <image id="img_next" filename="assets/Interface/images_instruction_screen/start_green.png" width="20%" height="15%" x="40%" y="50%">          
             <effect>
               <onHover name="border" border="3px" color="#ffffff" timeType="infinite"/>
@@ -216,6 +235,9 @@
           </panel>
           
           <panel id="center" childLayout="absolute-inside" width="100%" y="25%" height="50%">
+            <image id="img_next" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
+              <interact onClick="toggleSound()" />
+            </image>
           </panel>
           
           <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">  
