@@ -9,6 +9,8 @@ public class InstructionsGUIController implements ScreenController
 {
 	
 	private Simulator sim;
+	private boolean soundIsOn = false;
+	
 	
 	
 	public InstructionsGUIController(Simulator sim) 
@@ -37,8 +39,14 @@ public class InstructionsGUIController implements ScreenController
 		
 	}
 	
-	public void clickChangeSound() {
-		//System.out.println("clicked sound");
+	public void toggleSound() {
+		if(soundIsOn){
+			System.out.println("sound of");
+			soundIsOn = false;		
+		}else{
+			System.out.println("soun on");
+			soundIsOn = true;
+		}
 		//screen.findElementByName("imgSound").getRenderer().setImage();
 	}
 	
@@ -69,6 +77,16 @@ public class InstructionsGUIController implements ScreenController
 	public void gotoInstructions6(){
 		sim.getNifty().exit();
 		sim.getNifty().gotoScreen("instruction_6"); 
+	}
+	
+	public void gotoInstructions7(){
+		sim.getNifty().exit();
+		sim.getNifty().gotoScreen("instruction_7"); 
+	}
+	
+	public void gotoInstructions8(){
+		sim.getNifty().exit();
+		sim.getNifty().gotoScreen("instruction_8"); 
 	}
 	
 	public void gotoEndScreen(){
