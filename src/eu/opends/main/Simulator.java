@@ -139,7 +139,8 @@ public class Simulator extends SimpleApplication
 	private boolean showStats = false;	
 
 	
-	private int numberOfScreens, testNr;
+	private int numberOfScreens;
+	private int testNr = 0;
 	
 	private float area = 0;
 	private float lengthOfIdealLine = 1;
@@ -805,4 +806,9 @@ public class Simulator extends SimpleApplication
 	public void setTestNr(int testNr){
 		this.testNr = testNr;
 	}
+	
+	public int getTestNr(){
+		return testNr;
+	}
+
 }

@@ -75,15 +75,13 @@ public class SimulatorActionListener implements ActionListener
 		{
 			if (value) 
 			{
-				ManipulatePictureTriggerAction manipulatePicture =  new ManipulatePictureTriggerAction(sim, 0, 4, "leftArrow_toRight", false);
-				manipulatePicture.execute();
-				ManipulatePictureTriggerAction manipulatePicture2 =  new ManipulatePictureTriggerAction(sim, 0, 4, "leftArrow_toLeft", false);
-				manipulatePicture2.execute();
-
-			}
-			else
-			{
-				
+				if (sim.getTestNr() > 1) 
+				{
+					ManipulatePictureTriggerAction manipulatePicture =  new ManipulatePictureTriggerAction(sim, 0, 4, "leftArrow_toRight", false);
+					manipulatePicture.execute();
+					ManipulatePictureTriggerAction manipulatePicture2 =  new ManipulatePictureTriggerAction(sim, 0, 4, "leftArrow_toLeft", false);
+					manipulatePicture2.execute();
+				}
 			}
 		}
 		
@@ -95,10 +93,14 @@ public class SimulatorActionListener implements ActionListener
 				manipulatePicture.execute();
 				ManipulatePictureTriggerAction manipulatePicture2 =  new ManipulatePictureTriggerAction(sim, 0, 4, "rightArrow_toLeft", false);
 				manipulatePicture2.execute();
-			}
-			else
-			{
 				
+				if (sim.getTestNr() == 1) 
+				{
+					ManipulatePictureTriggerAction manipulatePicture3 =  new ManipulatePictureTriggerAction(sim, 0, 4, "leftArrow_toRight", false);
+					manipulatePicture3.execute();
+					ManipulatePictureTriggerAction manipulatePicture4 =  new ManipulatePictureTriggerAction(sim, 0, 4, "leftArrow_toLeft", false);
+					manipulatePicture4.execute();
+				}
 			}
 		}
 		
