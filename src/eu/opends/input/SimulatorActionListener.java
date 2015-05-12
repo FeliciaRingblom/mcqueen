@@ -71,12 +71,12 @@ public class SimulatorActionListener implements ActionListener
 			car.steer(steeringValue);
 		}
 		
-		else if (binding.equals(KeyMapping.REACT_SQUARE.getID())) 
+		else if (binding.equals(KeyMapping.REACT_ARROW_LEFT.getID())) 
 		{
 			if (value) 
 			{
 				if(sim.getTestNr() > 1){
-					ManipulatePictureTriggerAction manipulatePicture =  new ManipulatePictureTriggerAction(sim, 0, 4, "rightArrow_toRight", false);
+				ManipulatePictureTriggerAction manipulatePicture =  new ManipulatePictureTriggerAction(sim, 0, 4, "rightArrow_toRight", false);
 					manipulatePicture.execute();
 					ManipulatePictureTriggerAction manipulatePicture2 =  new ManipulatePictureTriggerAction(sim, 0, 4, "rightArrow_toLeft", false);
 					manipulatePicture2.execute();
@@ -88,7 +88,7 @@ public class SimulatorActionListener implements ActionListener
 			}
 		}
 		
-		else if (binding.equals(KeyMapping.REACT_CIRCLE.getID())) 
+		else if (binding.equals(KeyMapping.REACT_ARROW_RIGHT.getID())) 
 		{
 			if (value) 
 			{

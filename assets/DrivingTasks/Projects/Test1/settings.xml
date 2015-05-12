@@ -28,8 +28,8 @@
 			<steeringSensitivityFactor>0.6</steeringSensitivityFactor>
 			<pedalSensitivityFactor>4.0</pedalSensitivityFactor>
 			<keyAssignments>
-				<keyAssignment function="react_square" key="BUTTON_1" />
-				<keyAssignment function="react_circle" key="BUTTON_2" />
+				<keyAssignment function="react_arrow_left" key="BUTTON_1" />
+				<keyAssignment function="react_arrow_right" key="BUTTON_2" />
 			</keyAssignments>
 		</joystick>
 		<keyboard>
