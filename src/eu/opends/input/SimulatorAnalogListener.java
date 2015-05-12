@@ -100,7 +100,7 @@ public class SimulatorAnalogListener implements AnalogListener
 			else
 				simulator.getCar().setGasPedalIntensity(accelerationValue);
 			
-			simulator.getThreeVehiclePlatoonTask().reportAcceleratorIntensity(Math.abs(accelerationValue));
+			//simulator.getThreeVehiclePlatoonTask().reportAcceleratorIntensity(Math.abs(accelerationValue));
 		} 
 		
 		else if (binding.equals("Joy Up")) 
