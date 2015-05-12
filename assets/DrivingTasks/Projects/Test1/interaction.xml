@@ -208,6 +208,20 @@
       <parameter name="failureReaction" value=""/>
     </action>    
   </activity>
+    <activity id="setUpKeyReactionTimer19" ref="">
+    <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
+      <parameter name="reactionGroup" value="stimuli_left"/>
+      <parameter name="correctReaction" value="JOY_3"/>
+      <parameter name="failureReaction" value=""/>
+    </action>    
+  </activity>
+  <activity id="setUpKeyReactionTimer20" ref="">
+    <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
+      <parameter name="reactionGroup" value="stimuli_right"/>
+      <parameter name="correctReaction" value="JOY_3"/>
+      <parameter name="failureReaction" value=""/>
+    </action>    
+  </activity>
 </activities>
 
   <triggers>

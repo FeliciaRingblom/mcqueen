@@ -34,8 +34,6 @@
 		</joystick>
 		<keyboard>
 			<keyAssignments>
-				<!--<keyAssignment function="toggle_cam" key="KEY_V" />
-				<keyAssignment function="horn" key="KEY_H" />-->
 			</keyAssignments>
 		</keyboard>
 		<mouse>
