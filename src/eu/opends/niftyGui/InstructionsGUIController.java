@@ -1,7 +1,10 @@
 package eu.opends.niftyGui;
 
 import de.lessvoid.nifty.Nifty;
+import de.lessvoid.nifty.render.NiftyImage;
 import de.lessvoid.nifty.screen.Screen;
+import de.lessvoid.nifty.elements.Element;
+import de.lessvoid.nifty.elements.render.ImageRenderer;
 import de.lessvoid.nifty.screen.ScreenController;
 import eu.opends.main.Simulator;
 
@@ -9,6 +12,7 @@ public class InstructionsGUIController implements ScreenController
 {
 	
 	private Simulator sim;
+	private Nifty nifty;
 	private boolean soundIsOn = false;
 	
 	
@@ -16,6 +20,7 @@ public class InstructionsGUIController implements ScreenController
 	public InstructionsGUIController(Simulator sim) 
 	{
 		this.sim = sim;
+		this.nifty = sim.getNifty();
 	}
 
 	
@@ -41,42 +46,57 @@ public class InstructionsGUIController implements ScreenController
 	
 	public void toggleSound() {
 		if(soundIsOn){
-			System.out.println("sound of");
-			soundIsOn = false;		
+			stopSound();
 		}else{
-			System.out.println("soun on");
-			soundIsOn = true;
+			playSound();
 		}
-		//screen.findElementByName("imgSound").getRenderer().setImage();
+	}
+	
+	private void stopSound(){
+		Screen currentScreen = nifty.getCurrentScreen();
+		NiftyImage newImage = nifty.getRenderEngine().createImage(currentScreen, "Interface/images_instruction_screen/speaker_off.png", false); // false means don't linear filter the image, true would apply linear filtering
+		Element element = currentScreen.findElementByName("imgSound");
+		element.getRenderer(ImageRenderer.class).setImage(newImage);
+		
+		soundIsOn = false;			
+	}
+	
+	private void playSound(){
+		Screen currentScreen = nifty.getCurrentScreen();
+		NiftyImage newImage = nifty.getRenderEngine().createImage(currentScreen, "Interface/images_instruction_screen/speaker_on.png", false); // false means don't linear filter the image, true would apply linear filtering
+		Element element = currentScreen.findElementByName("imgSound");
+		element.getRenderer(ImageRenderer.class).setImage(newImage);
+		
+		soundIsOn = true;	
 	}
 	
 	public void gotoResult(){
-		sim.getNifty().gotoScreen("result"); 
+		nifty.gotoScreen("result"); 
 	}
 	
 	public void gotoInstructions2(){
-		sim.getNifty().exit();
-		sim.getNifty().gotoScreen("instruction_2"); 
+		nifty.exit();
+		nifty.gotoScreen("instruction_2"); 
 	}
 	
 	public void gotoInstructions3(){
-		sim.getNifty().exit();
-		sim.getNifty().gotoScreen("instruction_3"); 
+		nifty.exit();
+		nifty.gotoScreen("instruction_3"); 
 	}
 		
 	public void gotoInstructions4(){
-		sim.getNifty().exit();
-		sim.getNifty().gotoScreen("instruction_4"); 
+		nifty.exit();
+		nifty.gotoScreen("instruction_4"); 
 	}
 	
 	public void gotoInstructions5(){
-		sim.getNifty().exit();
-		sim.getNifty().gotoScreen("instruction_5"); 
+		nifty.exit();
+		nifty.gotoScreen("instruction_5"); 
 	}
 	
 	public void gotoInstructions6(){
-		sim.getNifty().exit();
-		sim.getNifty().gotoScreen("instruction_6"); 
+		nifty.exit();
+		nifty.gotoScreen("instruction_6"); 
 	}
 	
 	public void gotoInstructions7(){
@@ -85,37 +105,37 @@ public class InstructionsGUIController implements ScreenController
 	}
 	
 	public void gotoInstructions8(){
-		sim.getNifty().exit();
-		sim.getNifty().gotoScreen("instruction_8"); 
+		nifty.exit();
+		nifty.gotoScreen("instruction_8"); 
 	}
 	
 	public void gotoEndScreen(){
-		sim.getNifty().exit();
-		sim.getNifty().gotoScreen("end"); 
+		nifty.exit();
+		nifty.gotoScreen("end"); 
 	}
 	
 	public void startIntroStraight(){		
-		sim.getNifty().exit();
+		nifty.exit();
 		String drivingTask = "assets/DrivingTasks/Projects/IntroStraight/introStraight.xml";
 		sim.initDrivingTask(drivingTask);	
 	}
 	
 	public void startTest1(){		
-		sim.getNifty().exit();
+		nifty.exit();
 		String drivingTask = "assets/DrivingTasks/Projects/Test1/test1.xml";
 		sim.setTestNr(1);
 		sim.initDrivingTask(drivingTask);
 	}
 	
 	public void startTest2(){					
-		sim.getNifty().exit();
+		nifty.exit();
 		String drivingTask = "assets/DrivingTasks/Projects/Test2/test2.xml";
 		sim.setTestNr(2);
 		sim.initDrivingTask(drivingTask);
 	}
 	
 	public void startTest3(){					
-		sim.getNifty().exit();
+		nifty.exit();
 		String drivingTask = "assets/DrivingTasks/Projects/Test3/test3.xml";	
 		sim.setTestNr(3);
 		sim.initDrivingTask(drivingTask);

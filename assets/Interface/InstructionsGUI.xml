@@ -29,7 +29,7 @@
           </panel>
           
           <panel id="center" childLayout="absolute-inside" width="100%" height="70%">
-            <image id="img_next" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
+            <image id="imgSound" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
               <interact onClick="toggleSound()" />
             </image>
           </panel>
@@ -53,7 +53,7 @@
           </panel>
           
           <panel id="center" childLayout="absolute-inside" width="100%" height="70%">
-             <image id="img_next" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
+             <image id="imgSound" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
               <interact onClick="toggleSound()" />
             </image>
           </panel>
@@ -77,7 +77,7 @@
         </panel>
         
         <panel id="center" childLayout="absolute-inside" width="100%" height="70%">
-            <image id="img_next" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
+            <image id="imgSound" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
               <interact onClick="toggleSound()" />
             </image>
         </panel>
@@ -101,7 +101,7 @@
         </panel>
         
         <panel id="center" childLayout="absolute-inside" width="100%" height="70%">
-            <image id="img_next" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
+            <image id="imgSound" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
               <interact onClick="toggleSound()" />
             </image>
           <image id="img_next" filename="assets/Interface/images_instruction_screen/start_green.png" width="20%" height="15%" x="40%" y="50%">          
@@ -128,7 +128,7 @@
         </panel>
         
         <panel id="center" childLayout="absolute-inside" width="100%" height="70%">
-            <image id="img_next" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
+            <image id="imgSound" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
               <interact onClick="toggleSound()" />
             </image>
         </panel>
@@ -153,7 +153,7 @@
         
         
         <panel id="center" childLayout="absolute-inside" width="100%" height="70%">
-          <image id="img_next" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
+          <image id="imgSound" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
             <interact onClick="toggleSound()" />
           </image>
           <image id="img_next" filename="assets/Interface/images_instruction_screen/start_green.png" width="20%" height="15%" x="40%" y="50%">          
@@ -180,7 +180,7 @@
         </panel>
         
         <panel id="center" childLayout="absolute-inside" width="100%" height="70%">
-          <image id="img_next" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
+          <image id="imgSound" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
             <interact onClick="toggleSound()" />
           </image>
         </panel>
@@ -204,7 +204,7 @@
         </panel>
         
         <panel id="center" childLayout="absolute-inside" width="100%" height="70%">
-          <image id="img_next" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
+          <image id="imgSound" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
             <interact onClick="toggleSound()" />
           </image>
           <image id="img_next" filename="assets/Interface/images_instruction_screen/start_green.png" width="20%" height="15%" x="40%" y="50%">          
@@ -235,7 +235,7 @@
           </panel>
           
           <panel id="center" childLayout="absolute-inside" width="100%" y="25%" height="50%">
-            <image id="img_next" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
+            <image id="imgSound" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
               <interact onClick="toggleSound()" />
             </image>
           </panel>
