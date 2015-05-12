@@ -43,7 +43,7 @@
    <entry>1</entry>
    <entry>1</entry>
  </vector>
-</scale>	
+</scale>  
 <rotation quaternion="false">
   <vector jtype="java_lang_Float" size="3">
    <entry>0</entry>
@@ -58,7 +58,7 @@
    <entry>-749.1053</entry>
  </vector>
 </translation>
-</model>		
+</model>    
 <model id="City" key="Scenes/Video5/video5.scene">
  <mass>0</mass>
  <visible>true</visible>
@@ -83,7 +83,7 @@
    <entry>50</entry>
    <entry>0</entry>
  </vector>
-</translation>			
+</translation>      
 </model>
 <model id="delimiter" key="Scenes/Video5/delimiter.scene">
   <mass>0</mass>
@@ -121,7 +121,7 @@
       <entry>1</entry>
       <entry>0.5</entry>
     </vector>
-  </scale>	
+  </scale>  
   <rotation quaternion="false">
     <vector jtype="java_lang_Float" size="3">
      <entry>0</entry>
@@ -157,9 +157,9 @@
 </rotation>
 <translation>
   <vector jtype="java_lang_Float" size="3">
-   <entry>120.15623</entry>
-   <entry>23.587446</entry>
-   <entry>227.29121</entry>
+   <entry>143.38042</entry>
+   <entry>28.433805</entry>
+   <entry>248.57693</entry>
  </vector>
 </translation>
 </model> 
@@ -185,7 +185,7 @@
     <vector jtype="java_lang_Float" size="3">
       <entry>-620.4993</entry>
       <entry>21.0</entry>
-      <entry>-749.1053</entry><!--  (-598.0783, 20.058653, -728.9019) -->
+      <entry>-749.1053</entry>
     </vector>
   </translation>
 </model> 
@@ -209,9 +209,9 @@
   </rotation>
   <translation>
     <vector jtype="java_lang_Float" size="3">
-   <entry>-620.4993</entry>
-   <entry>21</entry>
-   <entry>-749.1053</entry>
+   <entry>-601.461</entry>
+   <entry>20.078728</entry>
+   <entry>-731.9507</entry>
     </vector>
   </translation>
 </model> 
@@ -235,9 +235,9 @@
   </rotation>
   <translation>
     <vector jtype="java_lang_Float" size="3">
-      <entry>-434.9032</entry>
-      <entry>19.94584</entry>
-      <entry>-547.92316</entry>
+      <entry>-561.9456</entry>
+      <entry>19.82208</entry>
+      <entry>-695.2472</entry>
     </vector>
   </translation>
 </model> 
@@ -261,9 +261,9 @@
   </rotation>
   <translation>
     <vector jtype="java_lang_Float" size="3">
-      <entry>-429.7125</entry>
-      <entry>19.945312</entry>
-      <entry>-521.39575</entry>
+      <entry>-504.2274</entry>
+      <entry>19.945965</entry>
+      <entry>-638.1144</entry>
     </vector>
   </translation>
 </model> 
@@ -287,9 +287,9 @@
   </rotation>
   <translation>
     <vector jtype="java_lang_Float" size="3">
-      <entry>-415.27173</entry>
+      <entry>-451.9843</entry>
       <entry>19.945969</entry>
-      <entry>-493.4856</entry>
+      <entry>-574.76263</entry>
     </vector>
   </translation>
 </model>  
@@ -313,9 +313,9 @@
   </rotation>
   <translation>
     <vector jtype="java_lang_Float" size="3">
-      <entry>-401.4155</entry>
-      <entry>19.945955</entry>
-      <entry>-449.46744</entry>
+      <entry>-417.07895</entry>
+      <entry>19.94507</entry>
+      <entry>-505.11758</entry>
     </vector>
   </translation>
 </model> 
@@ -339,9 +339,9 @@
   </rotation>
   <translation>
     <vector jtype="java_lang_Float" size="3">
-      <entry>-379.52594</entry>
-      <entry>19.945997</entry>
-      <entry>-412.39545</entry>
+      <entry>-402.95486</entry>
+      <entry>19.945965</entry>
+      <entry>-452.34366</entry>
     </vector>
   </translation>
 </model> 
@@ -365,9 +365,9 @@
   </rotation>
   <translation>
     <vector jtype="java_lang_Float" size="3">
-      <entry>-366.9774</entry>
-      <entry>19.945967</entry>
-      <entry>-399.41574</entry>
+      <entry>-384.19284</entry>
+      <entry>19.945969</entry>
+      <entry>-419.95657</entry>
     </vector>
   </translation>
 </model> 
@@ -391,12 +391,12 @@
   </rotation>
   <translation>
     <vector jtype="java_lang_Float" size="3">
-      <entry>-340.08777</entry>
+      <entry>-332.89532</entry>
       <entry>19.945967</entry>
-      <entry>-368.88922</entry>
+      <entry>-360.70096</entry>
     </vector>
   </translation>
-</model>  
+</model>
 <model id="Stimuli_Trigger9" key="Models/trigger/trigger.scene" ref="">
   <mass>0</mass>
   <visible>false</visible>
@@ -417,9 +417,9 @@
   </rotation>
   <translation>
     <vector jtype="java_lang_Float" size="3">
-      <entry>-296.62817</entry>
+      <entry>-294.47974</entry>
       <entry>19.945967</entry>
-      <entry>-317.11554</entry>
+      <entry>-315.3691</entry>
     </vector>
   </translation>
 </model> 
@@ -443,9 +443,9 @@
   </rotation>
   <translation>
     <vector jtype="java_lang_Float" size="3">
-      <entry>-286.20978</entry>
+      <entry>-256.03845</entry>
       <entry>19.945967</entry>
-      <entry>-304.70404</entry>
+      <entry>-271.0874</entry>
     </vector>
   </translation>
 </model> 
@@ -469,9 +469,9 @@
   </rotation>
   <translation>
     <vector jtype="java_lang_Float" size="3">
-      <entry>-268.50708</entry>
-      <entry>19.945969</entry>
-      <entry>-285.38153</entry>
+      <entry>-213.64807</entry>
+      <entry>19.945967</entry>
+      <entry>-221.41328</entry>
     </vector>
   </translation>
 </model> 
@@ -495,9 +495,9 @@
   </rotation>
   <translation>
     <vector jtype="java_lang_Float" size="3">
-      <entry>-224.6273</entry>
+      <entry>-166.83392</entry>
       <entry>19.945969</entry>
-      <entry>-235.74783</entry>
+      <entry>-170.78368</entry>
     </vector>
   </translation>
 </model> 
@@ -521,9 +521,9 @@
   </rotation>
   <translation>
     <vector jtype="java_lang_Float" size="3">
-      <entry>-149.57709</entry>
-      <entry>19.945967</entry>
-      <entry>-150.41122</entry>
+      <entry>-131.73256</entry>
+      <entry>19.945969</entry>
+      <entry>-130.68149</entry>
     </vector>
   </translation>
 </model> 
@@ -547,9 +547,9 @@
   </rotation>
   <translation>
     <vector jtype="java_lang_Float" size="3">
-      <entry>-54.84929</entry>
-      <entry>19.945967</entry>
-      <entry>-53.48488</entry>
+      <entry>-84.17738</entry>
+      <entry>19.945595</entry>
+      <entry>-82.266304</entry>
     </vector>
   </translation>
 </model> 
@@ -573,9 +573,139 @@
   </rotation>
   <translation>
     <vector jtype="java_lang_Float" size="3">
-      <entry>-25.97805</entry>
+      <entry>-37.44783</entry>
       <entry>19.945967</entry>
-      <entry>-24.74885</entry>
+      <entry>-36.448</entry>
+    </vector>
+  </translation>
+</model> 
+<model id="Stimuli_Trigger16" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>10.711427</entry>
+      <entry>19.945969</entry>
+      <entry>28.735025</entry>
+    </vector>
+  </translation>
+</model> 
+<model id="Stimuli_Trigger17" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>42.678974</entry>
+      <entry>19.945967</entry>
+      <entry>96.85063</entry>
+    </vector>
+  </translation>
+</model> 
+<model id="Stimuli_Trigger18" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>73.82702</entry>
+      <entry>19.945265</entry>
+      <entry>164.28687</entry>
+    </vector>
+  </translation>
+</model> 
+<model id="Stimuli_Trigger19" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>108.86717</entry>
+      <entry>21.749882</entry>
+      <entry>215.33104</entry>
+    </vector>
+  </translation>
+</model>
+<model id="Stimuli_Trigger20" key="Models/trigger/trigger.scene" ref="">
+  <mass>0</mass>
+  <visible>false</visible>
+  <collisionShape>none</collisionShape>
+  <scale>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+      <entry>1.0</entry>
+    </vector>
+  </scale>
+  <rotation quaternion="false">
+    <vector jtype="java_lang_Float" size="3">
+      <entry>0.0</entry>
+      <entry>-153.75056</entry>
+      <entry>0.0</entry>
+    </vector>
+  </rotation>
+  <translation>
+    <vector jtype="java_lang_Float" size="3">
+      <entry>148.83392</entry>
+      <entry>29.615091</entry>
+      <entry>252.51704</entry>
     </vector>
   </translation>
 </model> 

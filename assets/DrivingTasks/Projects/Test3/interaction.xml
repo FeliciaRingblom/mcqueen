@@ -33,89 +33,80 @@
     </action>
   </activity>
 
-  <activity id="showStimuliGreenCircleR" ref="">
+  <activity id="showRightArrowToRight" ref="">
     <action delay="0.0" id="manipulatePicture" repeat="1">  
      <parameter name="id" value="rightArrow_toRight" /> 
      <parameter name="visible" value="true"/>     
    </action>  
   </activity>
-  <activity id="showStimuliGreenCircleL" ref="">
+  <activity id="showRightArrowToLeft" ref="">
     <action delay="0.0" id="manipulatePicture" repeat="1">  
       <parameter name="id" value="rightArrow_toLeft" /> 
       <parameter name="visible" value="true"/>     
     </action>
   </activity>
-  <activity id="showStimuliGreenSquareR" ref="">
+  <activity id="showLeftArrowToRight" ref="">
     <action delay="0.0" id="manipulatePicture" repeat="1">  
       <parameter name="id" value="leftArrow_toRight" /> 
       <parameter name="visible" value="true"/>     
     </action>
   </activity>
-  <activity id="showStimuliGreenSquareL" ref="">
+  <activity id="showLeftArrowToLeft" ref="">
     <action delay="0.0" id="manipulatePicture" repeat="1">  
       <parameter name="id" value="leftArrow_toLeft" /> 
       <parameter name="visible" value="true"/>     
     </action>
   </activity>
-  <!--<activity id="showStimuliRedCircleL" ref="">
-    <action delay="0.0" id="manipulatePicture" repeat="1">  
-      <parameter name="id" value="leftRedCircle" /> 
-      <parameter name="visible" value="true"/>     
-    </action>
+    <activity id="hideRightArrowToRight" ref="">
+    <action delay="3.0" id="manipulatePicture" repeat="1">  
+     <parameter name="id" value="rightArrow_toRight" /> 
+     <parameter name="visible" value="false"/>     
+   </action>  
   </activity>
-  <activity id="hideStimuliCircleL" ref="">
-    <action delay="0.0" id="manipulatePicture" repeat="4">  
-      <parameter name="id" value="leftRedCircle" /> 
+  <activity id="hideRightArrowToLeft" ref="">
+    <action delay="3.0" id="manipulatePicture" repeat="1">  
+      <parameter name="id" value="rightArrow_toLeft" /> 
       <parameter name="visible" value="false"/>     
     </action>
   </activity>
-  <activity id="showStimuliRedCircleR" ref="">
-    <action delay="0.0" id="manipulatePicture" repeat="4">  
-      <parameter name="id" value="rightRedCircle" /> 
-      <parameter name="visible" value="true"/>     
-    </action>
-  </activity>
-  <activity id="hideStimuliCircleR" ref="">
-    <action delay="0.0" id="manipulatePicture" repeat="4">  
-      <parameter name="id" value="rightRedCircle" /> 
+  <activity id="hideLeftArrowToRight" ref="">
+    <action delay="3.0" id="manipulatePicture" repeat="1">  
+      <parameter name="id" value="leftArrow_toRight" /> 
       <parameter name="visible" value="false"/>     
     </action>
   </activity>
-  <activity id="showStimuliRedSquareL" ref="">
-    <action delay="0.0" id="manipulatePicture" repeat="4">  
-      <parameter name="id" value="leftRedSquare" /> 
-      <parameter name="visible" value="true"/>     
-    </action>
-  </activity>
-  <activity id="hideStimuliSquareL" ref="">
-    <action delay="0.0" id="manipulatePicture" repeat="4">  
-      <parameter name="id" value="leftRedSquare" /> 
+  <activity id="hideLeftArrowToLeft" ref="">
+    <action delay="3.0" id="manipulatePicture" repeat="1">  
+      <parameter name="id" value="leftArrow_toLeft" /> 
       <parameter name="visible" value="false"/>     
     </action>
-  </activity>
-  <activity id="showStimuliRedSquareR" ref="">
-    <action delay="0.0" id="manipulatePicture" repeat="4">  
-      <parameter name="id" value="rightRedSquare" /> 
-      <parameter name="visible" value="true"/>     
-    </action>
-  </activity>
-  <activity id="hideStimuliSquareR" ref="">
-    <action delay="0.0" id="manipulatePicture" repeat="4">  
-      <parameter name="id" value="rightRedSquare" /> 
-      <parameter name="visible" value="false"/>     
-    </action>
-  </activity> -->   
+  </activity> 
+ 
   <activity id="setUpKeyReactionTimer1" ref="">
+    <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
+      <parameter name="reactionGroup" value="stimuli_right"/>
+      <parameter name="correctReaction" value=""/>
+      <parameter name="failureReaction" value="JOY_3, JOY_2"/>
+    </action>    
+  </activity>
+  <activity id="setUpKeyReactionTimer2" ref="">
+    <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
+      <parameter name="reactionGroup" value="stimuli_left"/>
+      <parameter name="correctReaction" value=""/>
+      <parameter name="failureReaction" value="JOY_3, JOY_2"/>
+    </action>    
+  </activity>
+  <activity id="setUpKeyReactionTimer3" ref="">
     <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
       <parameter name="reactionGroup" value="stimuli_right"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value="JOY_2"/>
     </action>    
   </activity>
- <activity id="setUpKeyReactionTimer2" ref="">
+  <activity id="setUpKeyReactionTimer4" ref="">
     <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
       <parameter name="reactionGroup" value="stimuli_left"/>
-      <parameter name="correctReaction" value=""/>
+      <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value="JOY_2"/>
     </action>    
   </activity>
@@ -135,8 +126,8 @@
   </activity>
   <activity id="setUpKeyReactionTimer7" ref="">
     <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
-      <parameter name="reactionGroup" value="stimuli_right"/>
-      <parameter name="correctReaction" value=""/>
+      <parameter name="reactionGroup" value="stimuli_left"/>
+      <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value="JOY_2"/>
     </action>    
   </activity>
@@ -144,45 +135,94 @@
     <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
       <parameter name="reactionGroup" value="stimuli_right"/>
       <parameter name="correctReaction" value=""/>
-      <parameter name="failureReaction" value="JOY_2"/>
+      <parameter name="failureReaction" value="JOY_3, JOY_2"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer9" ref="">
     <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
-      <parameter name="reactionGroup" value="stimuli_right"/>
-      <parameter name="correctReaction" value="JOY_3"/>
-      <parameter name="failureReaction" value="JOY_2"/>
+      <parameter name="reactionGroup" value="stimuli_left"/>
+      <parameter name="correctReaction" value=""/>
+      <parameter name="failureReaction" value="JOY_3, JOY_2"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer10" ref="">
     <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
-      <parameter name="reactionGroup" value="stimuli_left"/>
+      <parameter name="reactionGroup" value="stimuli_right"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value="JOY_2"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer11" ref="">
     <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
-      <parameter name="reactionGroup" value="stimuli_left"/>
+      <parameter name="reactionGroup" value="stimuli_right"/>
       <parameter name="correctReaction" value=""/>
-      <parameter name="failureReaction" value="JOY_2"/>
+      <parameter name="failureReaction" value="JOY_3, JOY_2"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer12" ref="">
     <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
-      <parameter name="reactionGroup" value="stimuli_right"/>
+      <parameter name="reactionGroup" value="stimuli_left"/>
       <parameter name="correctReaction" value=""/>
-      <parameter name="failureReaction" value="JOY_2"/>
+      <parameter name="failureReaction" value="JOY_3, JOY_2"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer13" ref="">
+    <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
+      <parameter name="reactionGroup" value="stimuli_right"/>
+      <parameter name="correctReaction" value="JOY_3"/>
+      <parameter name="failureReaction" value="JOY_2"/>
+    </action>    
+  </activity>
+  <activity id="setUpKeyReactionTimer14" ref="">
     <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
       <parameter name="reactionGroup" value="stimuli_left"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value="JOY_2"/>
     </action>    
   </activity>
-  </activities>
+  <activity id="setUpKeyReactionTimer15" ref="">
+    <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
+      <parameter name="reactionGroup" value="stimuli_left"/>
+      <parameter name="correctReaction" value=""/>
+      <parameter name="failureReaction" value="JOY_3, JOY_2"/>
+    </action>    
+  </activity>
+  <activity id="setUpKeyReactionTimer16" ref="">
+    <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
+      <parameter name="reactionGroup" value="stimuli_right"/>
+      <parameter name="correctReaction" value=""/>
+      <parameter name="failureReaction" value="JOY_3, JOY_2"/>
+    </action>    
+  </activity>
+  <activity id="setUpKeyReactionTimer17" ref="">
+    <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
+      <parameter name="reactionGroup" value="stimuli_right"/>
+      <parameter name="correctReaction" value=""/>
+      <parameter name="failureReaction" value="JOY_3, JOY_2"/>
+    </action>    
+  </activity>
+  <activity id="setUpKeyReactionTimer18" ref="">
+    <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
+      <parameter name="reactionGroup" value="stimuli_left"/>
+      <parameter name="correctReaction" value="JOY_3"/>
+      <parameter name="failureReaction" value="JOY_2"/>
+    </action>    
+  </activity>
+  <activity id="setUpKeyReactionTimer19" ref="">
+    <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
+      <parameter name="reactionGroup" value="stimuli_left"/>
+      <parameter name="correctReaction" value=""/>
+      <parameter name="failureReaction" value="JOY_3, JOY_2"/>
+    </action>    
+  </activity>
+  <activity id="setUpKeyReactionTimer20" ref="">
+    <action delay="0.0" id="setupKeyReactionTimer" repeat="1">
+      <parameter name="reactionGroup" value="stimuli_right"/>
+      <parameter name="correctReaction" value="JOY_3"/>
+      <parameter name="failureReaction" value="JOY_2"/>
+    </action>    
+  </activity>
+</activities>
 
   <triggers>
     <trigger id="Finish_Trigger" priority="1">
@@ -203,104 +243,164 @@
     <trigger id="Stimuli_Trigger1" priority="1">
       <activities>
         <activity ref="setUpKeyReactionTimer1"/>
-        <activity ref="showStimuliGreenCircleR"/>
+        <activity ref="showLeftArrowToRight"/>
+        <activity ref="hideLeftArrowToRight"/>
       </activities>
       <condition>collideWith:Stimuli_Trigger1</condition>
     </trigger>
     <trigger id="Stimuli_Trigger2" priority="1">
       <activities>
-         <activity ref="setUpKeyReactionTimer2"/>
-        <activity ref="showStimuliGreenSquareL"/>
+        <activity ref="setUpKeyReactionTimer2"/>
+        <activity ref="showLeftArrowToLeft"/>
+        <activity ref="hideLeftArrowToLeft"/>
       </activities>
       <condition>collideWith:Stimuli_Trigger2</condition>
     </trigger>
-    <!--<trigger id="Stimuli_Trigger3" priority="1">
+    <trigger id="Stimuli_Trigger3" priority="1">
       <activities>
-        <activity ref="showStimuliRedCircleL"/>
+        <activity ref="setUpKeyReactionTimer3"/>
+        <activity ref="showRightArrowToRight"/>
+        <activity ref="hideRightArrowToRight"/>
       </activities>
       <condition>collideWith:Stimuli_Trigger3</condition>
-    </trigger>-->
+    </trigger>
     <trigger id="Stimuli_Trigger4" priority="1">
       <activities>
-        <activity ref="hideStimuliCircleL"/>
+        <activity ref="setUpKeyReactionTimer4"/>
+        <activity ref="showRightArrowToLeft"/>
+        <activity ref="hideRightArrowToLeft"/>
       </activities>
       <condition>collideWith:Stimuli_Trigger4</condition>
     </trigger>
     <trigger id="Stimuli_Trigger5" priority="1">
       <activities>
         <activity ref="setUpKeyReactionTimer5"/>
-        <activity ref="showStimuliGreenCircleR"/>
+        <activity ref="showRightArrowToRight"/>
+        <activity ref="hideRightArrowToRight"/>
       </activities>
       <condition>collideWith:Stimuli_Trigger5</condition>
     </trigger>
     <trigger id="Stimuli_Trigger6" priority="1">
       <activities>
         <activity ref="setUpKeyReactionTimer6"/>
-        <activity ref="showStimuliGreenCircleL"/>
+        <activity ref="showRightArrowToLeft"/>
+        <activity ref="hideRightArrowToLeft"/>
       </activities>
       <condition>collideWith:Stimuli_Trigger6</condition>
     </trigger>
     <trigger id="Stimuli_Trigger7" priority="1">
       <activities>
         <activity ref="setUpKeyReactionTimer7"/>
-        <activity ref="showStimuliGreenSquareR"/>
+        <activity ref="showRightArrowToLeft"/>
+        <activity ref="hideRightArrowToLeft"/>
       </activities>
       <condition>collideWith:Stimuli_Trigger7</condition>
     </trigger>
     <trigger id="Stimuli_Trigger8" priority="1">
       <activities>
         <activity ref="setUpKeyReactionTimer8"/>
-        <activity ref="showStimuliGreenSquareR"/>
+        <activity ref="showLeftArrowToRight"/>
+        <activity ref="hideLeftArrowToRight"/>
       </activities>
       <condition>collideWith:Stimuli_Trigger8</condition>
     </trigger>
     <trigger id="Stimuli_Trigger9" priority="1">
       <activities>
         <activity ref="setUpKeyReactionTimer9"/>
-        <activity ref="showStimuliGreenCircleR"/>
+        <activity ref="showLeftArrowToLeft"/>
+        <activity ref="hideLeftArrowToLeft"/>
       </activities>
       <condition>collideWith:Stimuli_Trigger9</condition>
     </trigger>
     <trigger id="Stimuli_Trigger10" priority="1">
       <activities>
         <activity ref="setUpKeyReactionTimer10"/>
-        <activity ref="showStimuliGreenCircleL"/>
+        <activity ref="showRightArrowToRight"/>
+        <activity ref="hideRightArrowToRight"/>
       </activities>
       <condition>collideWith:Stimuli_Trigger10</condition>
     </trigger>
     <trigger id="Stimuli_Trigger11" priority="1">
       <activities>
         <activity ref="setUpKeyReactionTimer11"/>
-        <activity ref="showStimuliGreenSquareL"/>
+        <activity ref="showLeftArrowToRight"/>
+         <activity ref="hideLeftArrowToRight"/>
       </activities>
       <condition>collideWith:Stimuli_Trigger11</condition>
     </trigger>
     <trigger id="Stimuli_Trigger12" priority="1">
       <activities>
         <activity ref="setUpKeyReactionTimer12"/>
-        <activity ref="showStimuliGreenSquareR"/>
+        <activity ref="showLeftArrowToLeft"/>
+        <activity ref="hideLeftArrowToLeft"/>
       </activities>
       <condition>collideWith:Stimuli_Trigger12</condition>
     </trigger>
     <trigger id="Stimuli_Trigger13" priority="1">
       <activities>
         <activity ref="setUpKeyReactionTimer13"/>
-        <activity ref="showStimuliGreenCircleL"/>
+        <activity ref="showRightArrowToRight"/>
+        <activity ref="hideRightArrowToRight"/>
       </activities>
       <condition>collideWith:Stimuli_Trigger13</condition>
     </trigger>
-   <!-- <trigger id="Stimuli_Trigger14" priority="1">
+    <trigger id="Stimuli_Trigger14" priority="1">
       <activities>
-        <activity ref="showStimuliRedSquareR"/>
+        <activity ref="setUpKeyReactionTimer14"/>
+        <activity ref="showRightArrowToLeft"/>
+        <activity ref="hideRightArrowToLeft"/>
       </activities>
       <condition>collideWith:Stimuli_Trigger14</condition>
-    </trigger>-->
+    </trigger>
     <trigger id="Stimuli_Trigger15" priority="1">
       <activities>
-        <activity ref="hideStimuliSquareR"/>
+        <activity ref="setUpKeyReactionTimer15"/>
+        <activity ref="showLeftArrowToLeft"/>
+        <activity ref="hideLeftArrowToLeft"/>
       </activities>
       <condition>collideWith:Stimuli_Trigger15</condition>
     </trigger>
+    <trigger id="Stimuli_Trigger16" priority="1">
+      <activities>
+        <activity ref="setUpKeyReactionTimer16"/>
+        <activity ref="showLeftArrowToRight"/>
+        <activity ref="hideLeftArrowToRight"/>
+      </activities>
+      <condition>collideWith:Stimuli_Trigger16</condition>
+    </trigger>
+    <trigger id="Stimuli_Trigger17" priority="1">
+      <activities>
+        <activity ref="setUpKeyReactionTimer17"/>
+        <activity ref="showLeftArrowToRight"/>
+        <activity ref="hideLeftArrowToRight"/>
+      </activities>
+      <condition>collideWith:Stimuli_Trigger17</condition>
+    </trigger>
+    <trigger id="Stimuli_Trigger18" priority="1">
+      <activities>
+        <activity ref="setUpKeyReactionTimer18"/>
+        <activity ref="showRightArrowToLeft"/>
+        <activity ref="hideRightArrowToLeft"/>
+      </activities>
+      <condition>collideWith:Stimuli_Trigger18</condition>
+    </trigger>    
+    <trigger id="Stimuli_Trigger19" priority="1">
+      <activities>
+        <activity ref="setUpKeyReactionTimer19"/>
+        <activity ref="showLeftArrowToLeft"/>
+        <activity ref="hideLeftArrowToLeft"/>
+      </activities>
+      <condition>collideWith:Stimuli_Trigger19</condition>
+    </trigger>
+    <trigger id="Stimuli_Trigger20" priority="1">
+      <activities>
+        <activity ref="setUpKeyReactionTimer20"/>
+        <activity ref="showRightArrowToRight"/>
+        <activity ref="hideRightArrowToRight"/>
+      </activities>
+      <condition>collideWith:Stimuli_Trigger20</condition>
+    </trigger>
+
   </triggers>
 
 </interaction>
