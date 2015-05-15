@@ -140,4 +140,20 @@ public class InstructionsGUIController implements ScreenController
 		sim.setTestNr(3);
 		sim.initDrivingTask(drivingTask);
 	}
+	
+	public void playVideo1() {
+		System.out.println("Play Video 1");
+	}
+	
+	public void playVideo2() {
+		System.out.println("Play Video 2");
+	}
+	
+	public void playVideo3() {
+		System.out.println("Play Video 3");
+	}
+	
+	public void openPDF() {
+		System.out.println("Open PDF");
+	}
 }

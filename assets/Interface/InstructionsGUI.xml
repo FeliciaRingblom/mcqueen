@@ -223,30 +223,41 @@
   </screen>
 
 
-
   <!-- Last instruction screen, shows when test is completed -->
   <screen id="instruction_9" controller="eu.opends.niftyGui.InstructionsGUIController" >
     <layer id="backLayer" childLayout="vertical">
-     <panel id="wrapper" width="100%" height="100%" childLayout="center" backgroundColor="#efefef">
-        <panel id="content" width="75%" height="90%" childLayout="absolute-inside">
-         
-          <panel id="top" width="100%" height="25%" childLayout="vertical">
-            <text id="txt1" font="assets/Interface/Fonts/Arial32px.fnt" width="97%" text="Du är nu klar med testet" wrap="true" color="#000f" textHAlign="center" textVAlign="top"/>  
-          </panel>
-          
-          <panel id="center" childLayout="absolute-inside" width="100%" y="25%" height="50%">
-            <image id="imgSound" filename="assets/Interface/images_instruction_screen/speaker_off.png" width="7%" height="15%" x="90%" y="5%">          
-              <interact onClick="toggleSound()" />
-            </image>
-          </panel>
-          
-          <panel id="bottom" width="100%" y="75%" height="25%" childLayout="absolute-inside">  
-            <image id="img5" filename="assets/Interface/images_instruction_screen/repeat.png" width="10%" height="10%" align="center">
-               <interact onClick="gotoEndScreen()" />
-            </image>        
-          </panel>
-
+      <panel id="wrapper" width="100%" height="100%" childLayout="vertical" backgroundImage="assets/Interface/images_instruction_screen/instructions_9.png">
+       
+        <panel id="top" width="100%" height="10%" childLayout="horizontal"> 
         </panel>
+        
+        <panel id="center" childLayout="absolute-inside" width="100%" height="48%">
+   
+        </panel>
+        
+        <panel id="bottom" width="100%" height="42%" childLayout="absolute-inside"> 
+          <image id="play_1" filename="assets/Interface/images_instruction_screen/play1.png" width="15%" height="20%" x="14%">   <effect>
+              <onHover name="border" border="3px" color="#ffffff" timeType="infinite"/>
+            </effect>
+            <interact onClick="playVideo1()" />
+          </image>   
+          <image id="play_2" filename="assets/Interface/images_instruction_screen/play2.png" width="15%" height="20%" x="14%" y="25%">   <effect>
+              <onHover name="border" border="3px" color="#ffffff" timeType="infinite"/>
+            </effect>
+            <interact onClick="playVideo2()" />
+          </image> 
+          <image id="play_3" filename="assets/Interface/images_instruction_screen/play3.png" width="15%" height="20%" x="14%" y="50%">   <effect>
+              <onHover name="border" border="3px" color="#ffffff" timeType="infinite"/>
+            </effect>
+            <interact onClick="playVideo3()" />
+          </image>       
+          <image id="play_3" filename="assets/Interface/images_instruction_screen/openPDF.png" width="30%" height="35%" x="54%">   <effect>
+              <onHover name="border" border="3px" color="#ffffff" timeType="infinite"/>
+            </effect>
+            <interact onClick="openPDF()" />
+          </image>        
+        </panel>
+      
       </panel><!-- ./wrapper -->
     </layer>
   </screen>

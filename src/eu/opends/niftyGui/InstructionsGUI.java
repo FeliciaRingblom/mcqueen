@@ -37,5 +37,4 @@ public class InstructionsGUI {
 		nifty.fromXml(xmlPath, screenID, new InstructionsGUIController(sim));
 		flyCam.setEnabled(false);
 	}
-
 }
