@@ -145,7 +145,7 @@ public class Simulator extends SimpleApplication
 	
 	private float area = 0;
 	private float lengthOfIdealLine = 1;
-	private float roadWidth = 50.0f; //what is a good value here????
+	private float roadWidth = 10.0f; //what is a good value here????
     private static Float gravityConstant;
 
     private String age, gender, diagnosisNr, idNr, speed, hands;
@@ -575,7 +575,7 @@ public class Simulator extends SimpleApplication
 		initializationFinished = true;
 		drivingMode = true;
 		
-		String analyzerFile = "analyzerData/test/carData.txt";
+		String analyzerFile = "analyzerData/test/introStraight.txt";
 		calculateCarData(analyzerFile);	
     }
     

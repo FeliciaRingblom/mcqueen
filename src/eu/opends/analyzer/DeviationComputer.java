@@ -275,7 +275,7 @@ public class DeviationComputer
 				Vector2f prevIP = idealPoints.elementAt(i-1);
 				Vector2f currIP = idealPoints.elementAt(i);
 				Vector2f nextIP = idealPoints.elementAt(i+1);
-				//System.out.println("prevIP: " + prevIP + " currIP=" + currIP + "nextIP = " + nextIP);
+				//System.out.println("prevIP: " + prevIP + " currIP=" + currIP + " nextIP = " + nextIP);
 			//
 				// compute the line which divides the angle at currIP in two equal halves
 				Line2D.Float crossLine = getHalfwayVector(prevIP, currIP, nextIP);
@@ -469,11 +469,11 @@ public class DeviationComputer
 			float x = wayPoint.getX();
 			float z = wayPoint.getZ();
 			Point2D point = new Point2D.Float(x,z);
-			
+						
 			// distance of current point from line segment
 			double distance = line.ptSegDist(point);
-			//System.out.println("point = " + point);
-			//System.out.println("distance = " + distance + " Maxidstance = " + MAX_DISTANCE);
+
+			
 			// ignore points, that are located too far away from the line
 			if(distance > MAX_DISTANCE)
 				continue;
