@@ -54,7 +54,7 @@ public class ReactionLogger
 	private String outputFolder;
 	BufferedWriter bw;
 	private int count = 0;
-	private String age, gender, diagnosisNr, idNr;
+	private String age, gender, diagnosisNr, idNr, speed, hands;
 
 
 	private void start()
@@ -107,12 +107,14 @@ public class ReactionLogger
 	}
 
 	
-	public void close(String age, String idNr, String gender, String diagnosisNr)
+	public void close(String age, String idNr, String gender, String diagnosisNr, String speed, String hands)
 	{
 		this.age = age;
 		this.idNr = idNr;
 		this.gender = gender;
 		this.diagnosisNr = diagnosisNr;
+		this.speed = speed; 
+		this.hands = hands;
 		
 		if(isRunning)
 		{
@@ -191,6 +193,8 @@ public class ReactionLogger
 		parameters.put("gender", gender);
 		parameters.put("diagnosisNr", diagnosisNr);
 		parameters.put("idNr", idNr);
+		parameters.put("hands", hands);
+		parameters.put("speed", speed);
 
 		return parameters;
 	}

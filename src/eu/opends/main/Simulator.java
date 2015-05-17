@@ -803,6 +803,9 @@ public class Simulator extends SimpleApplication
 	public void setSpeed(String speed){
 		this.speed = speed;
 	}
+	public String getSpeed(){
+		return speed;
+	}
 	
 	public void setTestNr(int testNr){
 		this.testNr = testNr;

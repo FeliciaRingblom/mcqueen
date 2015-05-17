@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report9" pageWidth="595" pageHeight="842" orientation="Portrait" columnWidth="505" leftMargin="60" rightMargin="30" topMargin="10" bottomMargin="0">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report9" pageWidth="595" pageHeight="842" orientation="Portrait" columnWidth="505" leftMargin="60" rightMargin="30" topMargin="20" bottomMargin="20">
 	<style name="Arial_Normal" isDefault="true" fontName="Arial" fontSize="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 	<style name="Arial_Bold" isDefault="false" fontName="Arial" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 	
     <parameter name="age" class="java.lang.String"></parameter>
+    <parameter name="speed" class="java.lang.String"></parameter>
+    <parameter name="hands" class="java.lang.String"></parameter>
     <parameter name="gender" class="java.lang.String"></parameter>
     <parameter name="idNr" class="java.lang.String"></parameter>
     <parameter name="diagnosisNr" class="java.lang.String"></parameter>
@@ -203,26 +205,47 @@
                 <textFieldExpression><![CDATA[$P{age}]]></textFieldExpression>
             </textField>
 			<staticText>
-				<reportElement x="0" y="45" width="200" height="14" style="Arial_Normal"/>
+				<reportElement x="200" y="0" width="200" height="14" style="Arial_Normal"/>
 				<textElement textAlignment="Left">
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Kön: ]]></text>
 			</staticText>
             <textField isBlankWhenNull="true">
-                <reportElement x="35" y="45" width="200" height="14" style="Arial_Normal"/>
+                <reportElement x="235" y="0" width="200" height="14" style="Arial_Normal"/>
                 <textElement textAlignment="Left">
                     <font size="12"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$P{gender}]]></textFieldExpression>
             </textField>
-			<staticText>
-				<reportElement x="210" y="5" width="100" height="30" style="Arial_Bold"/>
-				<textElement textAlignment="Right">
-					<font size="24"/>
-				</textElement>
-				<text><![CDATA[8.0]]></text>
-			</staticText>
+            <staticText>
+                <reportElement x="200" y="15" width="200" height="14" style="Arial_Normal"/>
+                <textElement textAlignment="Left">
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[Hastighet: ]]></text>
+            </staticText>
+            <textField isBlankWhenNull="true">
+                <reportElement x="265" y="15" width="200" height="14" style="Arial_Normal"/>
+                <textElement textAlignment="Left">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{speed}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="200" y="30" width="200" height="14" style="Arial_Normal"/>
+                <textElement textAlignment="Left">
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[Händer: ]]></text>
+            </staticText>
+            <textField isBlankWhenNull="true">
+                <reportElement x="230" y="30" width="200" height="14" style="Arial_Normal"/>
+                <textElement textAlignment="Left">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{hands}]]></textFieldExpression>
+            </textField>
 			<line>
 				<reportElement x="0" y="70" width="490" height="1"/>
 				<graphicElement>
@@ -232,16 +255,11 @@
 		</band>
 	</pageHeader>
 	<detail>
-		<band splitType="Stretch"/>
-	</detail>
-	<columnFooter>
-		<band splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band splitType="Stretch"/>
-	</pageFooter>
-	<summary>
-		<band height="700">
+		<band height="200">
+            <rectangle radius="15">
+                <reportElement x="0" y="60" width="480" height="120" backcolor="#E6E6E6"/>
+                <graphicElement pen="None"/>
+            </rectangle>
 			<staticText>
 				<reportElement x="0" y="0" width="300" height="30" style="Arial_Bold"/>
 				<textElement textAlignment="Left"><font size="18"/></textElement>
@@ -299,10 +317,6 @@
 				<textElement textAlignment="Left"><font size="10"/></textElement>
 				<text><![CDATA[ms]]></text>
 			</staticText>
-			<rectangle radius="15">
-				<reportElement x="0" y="60" width="480" height="120" backcolor="#E6E6E6"/>
-				<graphicElement pen="None"/>
-			</rectangle>
 			<staticText>
 				<reportElement x="150" y="70" width="110" height="30" style="Arial_Bold"/>
 				<textElement textAlignment="Center"><font size="12"/></textElement>
@@ -519,16 +533,17 @@
 				<reportElement x="370" y="65" width="0" height="110" forecolor="#FFFFFF"/>
 				<graphicElement><pen lineWidth="2"/></graphicElement>
 			</line>
-
+        </band>
+        <band height="700">
             <staticText>
-                <reportElement x="0" y="210" width="300" height="30" style="Arial_Bold"/>
+                <reportElement x="0" y="10" width="300" height="30" style="Arial_Bold"/>
                 <textElement textAlignment="Left">
                     <font size="18"/>
                 </textElement>
                 <text><![CDATA[Reaktionsförmåga]]></text>
             </staticText>
             <staticText>
-                <reportElement x="0" y="235" width="270" height="100" style="Arial_Normal"/>
+                <reportElement x="0" y="35" width="270" height="100" style="Arial_Normal"/>
                 <textElement textAlignment="Left">
                     <font size="8"/>
                 </textElement>
@@ -536,14 +551,14 @@
             </staticText>
             <!-- Reaction time bar chart Part1 -->
             <staticText>
-                <reportElement x="0" y="300" width="300" height="30" style="Arial_Bold"/>
+                <reportElement x="0" y="100" width="300" height="30" style="Arial_Bold"/>
                 <textElement textAlignment="Left">
                     <font size="10"/>
                 </textElement>
                 <text><![CDATA[Del 1: ]]></text>
             </staticText>
             <staticText>
-                <reportElement x="40" y="300" width="300" height="30" style="Arial_Normal"/>
+                <reportElement x="40" y="100" width="300" height="30" style="Arial_Normal"/>
                 <textElement textAlignment="Left">
                     <font size="10"/>
                 </textElement>
@@ -552,7 +567,7 @@
 
     		<xyBarChart>
     			<chart isShowLegend="false">
-    				<reportElement mode="Transparent" x="0" y="350" width="250" height="100"/>
+    				<reportElement mode="Transparent" x="0" y="150" width="250" height="100"/>
     				<box leftPadding="0"/>
     				<chartTitle/>
     				<chartSubtitle/>
@@ -597,33 +612,33 @@
     			</barPlot>
     		</xyBarChart>
     		<staticText>
-    			<reportElement x="0" y="330" width="125" height="30" style="Arial_Normal"/>
+    			<reportElement x="0" y="130" width="125" height="30" style="Arial_Normal"/>
     			<textElement textAlignment="Right">
     				<font size="8"/>
     			</textElement>
     				<text><![CDATA[Vänster]]></text>
     		</staticText>
     		<staticText>
-    			<reportElement x="145" y="330" width="300" height="30" style="Arial_Normal"/>
+    			<reportElement x="145" y="130" width="300" height="30" style="Arial_Normal"/>
     			<textElement textAlignment="Left">
     				<font size="8"/>
     			</textElement>
     				<text><![CDATA[Höger]]></text>
     		</staticText>	
             <line>
-                <reportElement x="135" y="340" width="0" height="95" forecolor="#42485A"/>
+                <reportElement x="135" y="140" width="0" height="95" forecolor="#42485A"/>
                 <graphicElement>
                     <pen lineWidth="2"/>
                 </graphicElement>
             </line>
             <line>
-                <reportElement x="93" y="340" width="0" height="95" forecolor="#e4e4e4"/>
+                <reportElement x="93" y="140" width="0" height="95" forecolor="#e4e4e4"/>
                 <graphicElement>
                     <pen lineWidth="2"/>
                 </graphicElement>
             </line>
             <line>
-                <reportElement x="177" y="340" width="0" height="95" forecolor="#e4e4e4"/>
+                <reportElement x="177" y="140" width="0" height="95" forecolor="#e4e4e4"/>
                 <graphicElement>
                     <pen lineWidth="2"/>
                 </graphicElement>
@@ -869,6 +884,17 @@
             </stackedBarChart> -->
 
 	</band>
+
+        
+    </detail>
+    <columnFooter>
+        <band splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band splitType="Stretch"/>
+    </pageFooter>
+<summary>
+    <band splitType="Stretch"/>
 </summary>
 
 </jasperReport>

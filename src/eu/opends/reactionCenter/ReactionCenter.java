@@ -41,7 +41,7 @@ public class ReactionCenter
 	
 	private boolean isRunning = false;
 	private List<ReactionTimer> reactionTimerList = new ArrayList<ReactionTimer>();
-	private String age, gender, diagnosisNr, idNr;
+	private String age, gender, diagnosisNr, idNr, speed, hands;
 	
 	
 	public ReactionCenter(Simulator sim)
@@ -52,6 +52,8 @@ public class ReactionCenter
 		gender = sim.getGender();
 		diagnosisNr = sim.getDiagnosisNr();
 		idNr = sim.getIdNr();
+		speed = sim.getSpeed();
+		hands = sim.getHands();
 	}
 
 	
@@ -273,7 +275,7 @@ public class ReactionCenter
 		}
 		
 		isRunning = false;
-		reactionLogger.close(age, idNr, gender, diagnosisNr);
+		reactionLogger.close(age, idNr, gender, diagnosisNr, speed, hands);
 	}
 
 }

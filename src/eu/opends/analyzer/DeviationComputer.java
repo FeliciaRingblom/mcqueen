@@ -260,7 +260,7 @@ public class DeviationComputer
 	{
 		int nrOfIdealPoints = idealPoints.size();
 		System.out.println("Number of ideal points after processing is: " + nrOfIdealPoints);
-
+		float [] areaarray = new float[nrOfIdealPoints];
 		if(nrOfIdealPoints >= 3)
 		{
 			// initialize
@@ -290,8 +290,9 @@ public class DeviationComputer
 				// compute area of current quadrangle with the given corners
 				quadrangle = new DeviationQuadrangle(prevWP, currWP, currIP, prevIP);
 				area = quadrangle.getArea();
-				//log("Area: " + area);
+				//System.out.println("Area: " + area);
 				
+				areaarray[i-1] = area;
 				// sum up all computed areas
 				sum += area;
 				

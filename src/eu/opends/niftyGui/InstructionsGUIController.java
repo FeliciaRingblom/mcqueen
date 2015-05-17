@@ -34,7 +34,7 @@ public class InstructionsGUIController implements ScreenController
 	@Override
 	public void onEndScreen() 
 	{
-		System.out.println("on end screen....");
+		//System.out.println("on end screen....");
 	}
 
 
