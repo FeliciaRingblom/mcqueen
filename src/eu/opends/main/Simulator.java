@@ -137,6 +137,7 @@ public class Simulator extends SimpleApplication
 	private boolean debugEnabled = false;
 	private boolean carPositionWriterQuittable = false;
 	private boolean showStats = false;	
+	private boolean drivingMode = false;
 
 	
 	private int numberOfScreens;
@@ -572,7 +573,7 @@ public class Simulator extends SimpleApplication
 		
         
 		initializationFinished = true;
-		
+		drivingMode = true;
 		
 		String analyzerFile = "analyzerData/test/carData.txt";
 		calculateCarData(analyzerFile);	
@@ -580,7 +581,7 @@ public class Simulator extends SimpleApplication
     
     public void closeDrivngTask()
     {
-    	
+    	drivingMode = false;
     }
     
     
@@ -819,4 +820,7 @@ public class Simulator extends SimpleApplication
 		this.hands = hands;
 	}
 
+	public boolean isDrivingMode() {
+		return drivingMode;
+	}
 }

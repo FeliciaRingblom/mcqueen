@@ -127,8 +127,9 @@ public class SimulatorActionListener implements ActionListener
 		
 		else if (binding.equals(KeyMapping.SHUTDOWN.getID())) 
 		{
-			if (value)
-				sim.getShutDownGUI().toggleDialog();
+			if (value && sim.isDrivingMode()){
+				sim.getShutDownGUI().toggleDialog();			
+			}
 		}
 	}
 
