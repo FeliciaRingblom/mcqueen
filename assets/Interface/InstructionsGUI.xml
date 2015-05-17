@@ -26,7 +26,7 @@
       <panel id="wrapper" width="100%" height="100%" childLayout="vertical" backgroundImage="assets/Interface/images_instruction_screen/instructions_1.png">
          
           <panel id="top" width="100%" height="10%" childLayout="absolute-inside"> 
-            <image id="imgSound" filename="assets/Interface/images_instruction_screen/menu_btn.png" width="4%" height="60%" x="95%" y="20%">          
+            <image id="backToMenu" filename="assets/Interface/images_instruction_screen/menu_btn.png" width="4%" height="60%" x="95%" y="20%">          
               <interact onClick="backToMenu()" />
             </image>
           </panel>
@@ -53,7 +53,7 @@
       <panel id="wrapper" width="100%" height="100%" childLayout="vertical" backgroundImage="assets/Interface/images_instruction_screen/instructions_2.png">
          
           <panel id="top" width="100%" height="10%" childLayout="absolute-inside"> 
-            <image id="imgSound" filename="assets/Interface/images_instruction_screen/menu_btn.png" width="4%" height="60%" x="95%" y="20%">          
+            <image id="backToMenu" filename="assets/Interface/images_instruction_screen/menu_btn.png" width="4%" height="60%" x="95%" y="20%">          
               <interact onClick="backToMenu()" />
             </image>
           </panel>
@@ -80,7 +80,7 @@
       <panel id="wrapper" width="100%" height="100%" childLayout="vertical" backgroundImage="assets/Interface/images_instruction_screen/instructions_3.png">
          
         <panel id="top" width="100%" height="10%" childLayout="absolute-inside"> 
-          <image id="imgSound" filename="assets/Interface/images_instruction_screen/menu_btn.png" width="4%" height="60%" x="95%" y="20%">          
+          <image id="backToMenu" filename="assets/Interface/images_instruction_screen/menu_btn.png" width="4%" height="60%" x="95%" y="20%">          
             <interact onClick="backToMenu()" />
           </image>
         </panel>
@@ -107,7 +107,7 @@
       <panel id="wrapper" width="100%" height="100%" childLayout="vertical" backgroundImage="assets/Interface/images_instruction_screen/instructions_4.png">
        
         <panel id="top" width="100%" height="10%" childLayout="absolute-inside"> 
-          <image id="imgSound" filename="assets/Interface/images_instruction_screen/menu_btn.png" width="4%" height="60%" x="95%" y="20%">          
+          <image id="backToMenu" filename="assets/Interface/images_instruction_screen/menu_btn.png" width="4%" height="60%" x="95%" y="20%">          
             <interact onClick="backToMenu()" />
           </image>
         </panel>
@@ -137,7 +137,7 @@
       <panel id="wrapper" width="100%" height="100%" childLayout="vertical" backgroundImage="assets/Interface/images_instruction_screen/instructions_5.png">
        
         <panel id="top" width="100%" height="10%" childLayout="absolute-inside"> 
-          <image id="imgSound" filename="assets/Interface/images_instruction_screen/menu_btn.png" width="4%" height="60%" x="95%" y="20%">          
+          <image id="backToMenu" filename="assets/Interface/images_instruction_screen/menu_btn.png" width="4%" height="60%" x="95%" y="20%">          
             <interact onClick="backToMenu()" />
           </image>
         </panel>
@@ -164,7 +164,7 @@
       <panel id="wrapper" width="100%" height="100%" childLayout="vertical" backgroundImage="assets/Interface/images_instruction_screen/instructions_6.png">
        
         <panel id="top" width="100%" height="10%" childLayout="absolute-inside"> 
-          <image id="imgSound" filename="assets/Interface/images_instruction_screen/menu_btn.png" width="4%" height="60%" x="95%" y="20%">          
+          <image id="backToMenu" filename="assets/Interface/images_instruction_screen/menu_btn.png" width="4%" height="60%" x="95%" y="20%">          
             <interact onClick="backToMenu()" />
           </image>
         </panel>
@@ -194,7 +194,7 @@
       <panel id="wrapper" width="100%" height="100%" childLayout="vertical" backgroundImage="assets/Interface/images_instruction_screen/instructions_7.png">
         
         <panel id="top" width="100%" height="10%" childLayout="absolute-inside"> 
-          <image id="imgSound" filename="assets/Interface/images_instruction_screen/menu_btn.png" width="4%" height="60%" x="95%" y="20%">          
+          <image id="backToMenu" filename="assets/Interface/images_instruction_screen/menu_btn.png" width="4%" height="60%" x="95%" y="20%">          
             <interact onClick="backToMenu()" />
           </image>
         </panel>
@@ -221,7 +221,7 @@
       <panel id="wrapper" width="100%" height="100%" childLayout="vertical" backgroundImage="assets/Interface/images_instruction_screen/instructions_8.png">
      
         <panel id="top" width="100%" height="10%" childLayout="absolute-inside"> 
-          <image id="imgSound" filename="assets/Interface/images_instruction_screen/menu_btn.png" width="4%" height="60%" x="95%" y="20%">          
+          <image id="backToMenu" filename="assets/Interface/images_instruction_screen/menu_btn.png" width="4%" height="60%" x="95%" y="20%">          
             <interact onClick="backToMenu()" />
           </image>
         </panel>
@@ -252,7 +252,7 @@
       <panel id="wrapper" width="100%" height="100%" childLayout="vertical" backgroundImage="assets/Interface/images_instruction_screen/instructions_9.png">
       
         <panel id="top" width="100%" height="10%" childLayout="absolute-inside"> 
-          <image id="imgSound" filename="assets/Interface/images_instruction_screen/menu_btn.png" width="4%" height="60%" x="95%" y="20%">          
+          <image id="backToMenu" filename="assets/Interface/images_instruction_screen/menu_btn.png" width="4%" height="60%" x="95%" y="20%">          
             <interact onClick="backToMenu()" />
           </image>
         </panel>

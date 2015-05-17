@@ -17,6 +17,7 @@
   <style id="console-font">
     <attributes font="assets/Interface/Fonts/Arial32px.fnt"  color="#00ff"/>
   </style>
+   <resourceBundle id="intro" filename="assets/Interface/intro" />
 	
   <!-- +++++++++++++++++++++++++++++++++++++++ -->
   <!-- start screen -->
@@ -24,36 +25,33 @@
   
 	<screen id="start" controller="eu.opends.niftyGui.ShutDownGUIController">
 	
-	<layer id="topLayer" childLayout="center" backgroundColor="#0008">
-		<panel childLayout="vertical" style="nifty-panel-bright" width="450px" height="150px" valign="center" align="center">
-			<panel childLayout="center" height="25px"/>
-			<panel childLayout="vertical" height="40px" valign="center">
-				<control name="label" id="closeMessageText" text="Vill du verkligen avsluta?" 
-					width="100%" heigth="100%" color="#000000" textHAlign="center"/>
+		<layer id="topLayer" childLayout="center" backgroundColor="#0008">
+			<panel childLayout="absolute-inside" backgroundColor="#f3f3f3" width="40%" height="30%" valign="center" align="center">
+
+				<image id="shutDownText" filename="assets/Interface/images_instruction_screen/shutdown_text.png" width="60%" height="15%" x="20%" y="15%"></image>
+
+				<image id="closeBtn" filename="assets/Interface/images_instruction_screen/close_btn.png" width="25%" height="20%" x="7%" y="70%">          
+					<effect>
+		              <onHover name="border" border="3px" color="#ffffff" timeType="infinite"/>
+		            </effect>
+	              	<interact onClick="clickCloseButton()" />
+	            </image>
+
+	           <image id="menuBtn" filename="assets/Interface/images_instruction_screen/to_menu_btn.png" width="25%" height="20%" x="37%" y="70%">          
+					<effect>
+		              <onHover name="border" border="3px" color="#ffffff" timeType="infinite"/>
+		            </effect>
+	              	<interact onClick="clickBackToMenuButton()" />
+	            </image>
+
+				<image id="canceleBtn" filename="assets/Interface/images_instruction_screen/cancel_btn.png" width="25%" height="20%" x="67%" y="70%">          
+					<effect>
+		              <onHover name="border" border="3px" color="#ffffff" timeType="infinite"/>
+		            </effect>
+	              	<interact onClick="clickCancelButton()" />
+	            </image>
 			</panel>
-			<panel childLayout="horizontal" height="80px" width="100%" align="center">
-				<panel childLayout="center" height="100%" width="33%" align="center">
-					<control id="closeButton" name="button" label="Avsluta programmet"
-						align="center" height="30px">
-						<interact onClick="clickCloseButton()" />
-					</control>
-				</panel>
-				<panel childLayout="center" height="100%" width="33%" align="center">
-					<control id="closeButton" name="button" label="Tillbaka till menyn"
-						align="center" height="30px">
-						<interact onClick="clickBackToMenuButton()" />
-					</control>
-				</panel>
-				<panel childLayout="center" height="100%" width="33%" align="center">
-					<control id="cancelButton" name="button" label="Fortsätt"
-						align="center" height="30px">
-						<interact onClick="clickCancelButton()" />
-					</control>
-				</panel>
-			</panel>
-		</panel>
-	</layer>
-				
+		</layer>				
 	</screen>
 	
 
