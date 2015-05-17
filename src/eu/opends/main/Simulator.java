@@ -147,7 +147,7 @@ public class Simulator extends SimpleApplication
 	private float roadWidth = 50.0f; //what is a good value here????
     private static Float gravityConstant;
 
-    private String age, gender, diagnosisNr, idNr, speed;
+    private String age, gender, diagnosisNr, idNr, speed, hands;
 	private static String driverName;
 	private static String outputFolder;
 	
@@ -809,6 +809,14 @@ public class Simulator extends SimpleApplication
 	
 	public int getTestNr(){
 		return testNr;
+	}
+
+	public String getHands() {
+		return hands;
+	}
+
+	public void setHands(String hands) {
+		this.hands = hands;
 	}
 
 }

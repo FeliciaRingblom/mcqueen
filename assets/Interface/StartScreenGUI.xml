@@ -64,6 +64,23 @@
                 </panel> 
               </panel>    
             </panel> 
+            <control id="RadioGroup-hands" name="radioButtonGroup"/>          
+            <panel width="40%" childLayout="horizontal" x="90%">
+              <panel childLayout="horizontal" x="0%">
+                <control name="label" text="båda händerna" with="60px" color="#000f"/>
+                <control name="radioButton" id="both" group="RadioGroup-hands" />
+              </panel>
+              <panel childLayout="horizontal" x="40%">
+                <control name="label" text="endast höger" with="60px" color="#000f"/>
+                <control name="radioButton" id="right" group="RadioGroup-hands" />
+              </panel> 
+              <panel childLayout="horizontal" y="90%">
+                <panel childLayout="horizontal" x="0%">
+                  <control name="label" text="endast vänster" with="60px" color="#000f"/>
+                  <control name="radioButton" id="left" group="RadioGroup-hands" />
+                </panel> 
+              </panel>    
+            </panel> 
           </panel>           
 
         </panel><!-- ./top -->

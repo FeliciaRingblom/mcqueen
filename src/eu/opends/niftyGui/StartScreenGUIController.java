@@ -25,6 +25,7 @@ public class StartScreenGUIController implements ScreenController {
 	private InputManager inputManager;
 	private String speed = "low";
 	private String gender = "man";
+	private String hands = "both";
 	
 	public StartScreenGUIController(Simulator sim, Nifty nifty)
 	{
@@ -81,6 +82,13 @@ public class StartScreenGUIController implements ScreenController {
 	{
 		gender = event.getSelectedId();
 	}
+	
+	@NiftyEventSubscriber(id="RadioGroup-hands")
+	public void onRadioGroupHandsChanged(final String id, final RadioButtonGroupStateChangedEvent event) 
+	{
+		hands = event.getSelectedId();
+		System.out.println(hands);
+	}
 	  
 	private void setDrivingTaskSettings()
 	{
@@ -89,6 +97,7 @@ public class StartScreenGUIController implements ScreenController {
 		sim.setDiagnosisNr(getTextFromTextfield("input_diagnosis_nr"));
 		sim.setGender(gender);
 		sim.setSpeed(speed);
+		sim.setHands(hands);
 	}
 
 	
