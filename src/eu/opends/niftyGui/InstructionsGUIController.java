@@ -70,6 +70,12 @@ public class InstructionsGUIController implements ScreenController
 		soundIsOn = true;	
 	}
 	
+	public void backToMenu(){
+		System.out.println("Back to menu");
+		sim.getGuiNode().detachAllChildren();
+		sim.simpleInitApp();
+	}
+	
 	public void gotoResult(){
 		nifty.gotoScreen("result"); 
 	}

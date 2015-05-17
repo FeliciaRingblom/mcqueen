@@ -67,7 +67,6 @@ public class StartScreenGUIController implements ScreenController {
 	
 	public void gotoInstructions7(){
 		setDrivingTaskSettings();
-		System.out.println("hejheje");
 		sim.getInstructionsGUI().setScreen(9);	
 	}
 	
@@ -93,10 +92,10 @@ public class StartScreenGUIController implements ScreenController {
 	}
 
 	
-    private Element getElementByName(String element)
-    {
-    	return nifty.getCurrentScreen().findElementByName(element);
-    }
+//    private Element getElementByName(String element)
+//    {
+//    	return nifty.getCurrentScreen().findElementByName(element);
+//    }
     
     
     private String getTextFromTextfield(String element)
