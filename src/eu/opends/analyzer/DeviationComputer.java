@@ -45,6 +45,7 @@ public class DeviationComputer
 	private Vector<Vector3f> deviationPoints;
 	private float roadWidth;
 	private static final double MAX_DISTANCE = 30.0;
+	private float[] areaArray;
 	
 	private static final float MAX_DISTANCE_BETWEEN_TWO_IDEAL_POINTS = 0.1f;
 	private static final boolean DEBUGMODE = true;
@@ -218,6 +219,10 @@ public class DeviationComputer
 		return wayPoints;
 	}
 	
+	public float[] getAreaPoints(){
+		return areaArray;
+	}
+	
 	
 	/**
 	 * Returns the list of deviation points, i.e. ideal point / 
@@ -260,7 +265,7 @@ public class DeviationComputer
 	{
 		int nrOfIdealPoints = idealPoints.size();
 		System.out.println("Number of ideal points after processing is: " + nrOfIdealPoints);
-		float [] areaarray = new float[nrOfIdealPoints];
+		float [] areaArray = new float[nrOfIdealPoints];
 		if(nrOfIdealPoints >= 3)
 		{
 			// initialize
@@ -284,17 +289,21 @@ public class DeviationComputer
 				//System.out.println("crossLine = " + crossLine.x1 + ", " + crossLine.y1 + ", " + crossLine.x2 + ", " + crossLine.y2);
 				// get way point on or next to the line
 				Vector3f currWP3f = getPointOnLine(crossLine);
+				int direction = getDirection(crossLine);
+				//System.out.println(direction);
+				
 				Vector2f currWP = new Vector2f(currWP3f.getX(), currWP3f.getZ());
 				//log("Point on line: " + currWP);
 
 				// compute area of current quadrangle with the given corners
 				quadrangle = new DeviationQuadrangle(prevWP, currWP, currIP, prevIP);
 				area = quadrangle.getArea();
-				//System.out.println("Area: " + area);
+				//System.out.println("Area: " + area*direction);
 				
-				areaarray[i-1] = area;
+				areaArray[i-1] = area*direction;
 				// sum up all computed areas
 				sum += area;
+				//System.out.println("Sum: " + sum);
 				
 				// store ideal point with adjusted height information
 				// use height value of corresponding way point (only for visualization)
@@ -316,6 +325,7 @@ public class DeviationComputer
 				// store current way point as corner for next quadrangle
 				prevWP = currWP;
 			}
+			this.areaArray = areaArray;
 			return sum;
 		}
 		else
@@ -519,6 +529,31 @@ public class DeviationComputer
 		
 		// if no points on or near the line found --> throw exception
 		throw new NotFinishedException("No waypoints on both sides of the line");		
+	}
+
+	//return -1 for left and 1 for right
+	private int getDirection(Line2D.Float line)
+	{			
+		// loop is ended as soon as points on the left and right could be found 
+		for(Vector3f wayPoint : wayPoints)
+		{
+			// get coordinates of current way point
+			float x = wayPoint.getX();
+			float z = wayPoint.getZ();
+			Point2D point = new Point2D.Float(x,z);
+						
+			// distance of current point from line segment
+			double distance = line.ptSegDist(point);
+
+			
+			// ignore points, that are located too far away from the line
+			if(distance > MAX_DISTANCE)
+				continue;
+
+			return(line.relativeCCW(point));
+	
+		}	
+		return(1);
 	}
 
 

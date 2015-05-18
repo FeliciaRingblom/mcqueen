@@ -115,6 +115,7 @@ public class ReactionLogger
 		this.diagnosisNr = diagnosisNr;
 		this.speed = speed; 
 		this.hands = hands;
+		translateVariables();
 		
 		if(isRunning)
 		{
@@ -197,5 +198,19 @@ public class ReactionLogger
 		parameters.put("speed", speed);
 
 		return parameters;
+	}
+	
+	private void translateVariables() {
+		if(speed.equals("low"))
+			speed = "40 km/h";	
+		else if(speed.equals("middle"))
+			speed = "50 km/h";
+		else speed = "60 km/h";
+		
+		if(hands.equals("both"))
+			hands = "-";
+		else if(hands.equals("right"))
+			hands = "endas höger hand";
+		else hands = "endast vänster hand";
 	}
 }

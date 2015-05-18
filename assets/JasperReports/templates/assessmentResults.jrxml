@@ -18,12 +18,16 @@
 		<parameter name="groupMissed" class="java.lang.String">
 		<defaultValueExpression><![CDATA["    "]]></defaultValueExpression>
 	</parameter>
+        <parameter name="maxDeviation" class="java.lang.Float" isForPrompting="false">
+        <defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+    </parameter>
 	<queryString language="xPath">
 		<![CDATA[report/reactionMeasurement]]>
 	</queryString>
 	<field name="reactionGroup" class="java.lang.String">
 		<fieldDescription><![CDATA[reactionGroup]]></fieldDescription>
 	</field>
+    <field name="absolute_time" class="java.lang.Long"/>
 	<field name="reactionResult" class="java.lang.Integer">
 		<fieldDescription><![CDATA[reactionResult]]></fieldDescription>
 	</field>
@@ -237,7 +241,7 @@
                 <textElement textAlignment="Left">
                     <font size="12"/>
                 </textElement>
-                <text><![CDATA[Händer: ]]></text>
+                <text><![CDATA[Annat: ]]></text>
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement x="230" y="30" width="200" height="14" style="Arial_Normal"/>
@@ -534,7 +538,7 @@
 				<graphicElement><pen lineWidth="2"/></graphicElement>
 			</line>
         </band>
-        <band height="700">
+        <band height="500">
             <staticText>
                 <reportElement x="0" y="10" width="300" height="30" style="Arial_Bold"/>
                 <textElement textAlignment="Left">
@@ -646,14 +650,14 @@
             <!-- End Reaction time bar chart Part1 -->
             <!-- Reaction time bar chart Part2 -->
             <staticText>
-                <reportElement x="255" y="300" width="250" height="30" style="Arial_Bold"/>
+                <reportElement x="255" y="100" width="250" height="30" style="Arial_Bold"/>
                 <textElement textAlignment="Left">
                     <font size="10"/>
                 </textElement>
                 <text><![CDATA[Del 2: ]]></text>
             </staticText>
             <staticText>
-                <reportElement x="290" y="300" width="200" height="30" style="Arial_Normal"/>
+                <reportElement x="290" y="100" width="200" height="30" style="Arial_Normal"/>
                 <textElement textAlignment="Left">
                     <font size="10"/>
                 </textElement>
@@ -662,7 +666,7 @@
 
             <xyBarChart>
                 <chart isShowLegend="false">
-                    <reportElement mode="Transparent" x="255" y="350" width="250" height="100"/>
+                    <reportElement mode="Transparent" x="255" y="150" width="250" height="100"/>
                     <box leftPadding="0"/>
                     <chartTitle/>
                     <chartSubtitle/>
@@ -707,33 +711,33 @@
                 </barPlot>
             </xyBarChart>
             <staticText>
-                <reportElement x="255" y="330" width="125" height="30" style="Arial_Normal"/>
+                <reportElement x="255" y="130" width="125" height="30" style="Arial_Normal"/>
                 <textElement textAlignment="Right">
                     <font size="8"/>
                 </textElement>
                     <text><![CDATA[Vänster]]></text>
             </staticText>
             <staticText>
-                <reportElement x="400" y="330" width="300" height="30" style="Arial_Normal"/>
+                <reportElement x="400" y="130" width="300" height="30" style="Arial_Normal"/>
                 <textElement textAlignment="Left">
                     <font size="8"/>
                 </textElement>
                     <text><![CDATA[Höger]]></text>
             </staticText>   
             <line>
-                <reportElement x="390" y="340" width="0" height="95" forecolor="#42485A"/>
+                <reportElement x="390" y="140" width="0" height="95" forecolor="#42485A"/>
                 <graphicElement>
                     <pen lineWidth="2"/>
                 </graphicElement>
             </line>
             <line>
-                <reportElement x="348" y="340" width="0" height="95" forecolor="#e4e4e4"/>
+                <reportElement x="348" y="140" width="0" height="95" forecolor="#e4e4e4"/>
                 <graphicElement>
                     <pen lineWidth="2"/>
                 </graphicElement>
             </line>
             <line>
-                <reportElement x="432" y="340" width="0" height="95" forecolor="#e4e4e4"/>
+                <reportElement x="432" y="140" width="0" height="95" forecolor="#e4e4e4"/>
                 <graphicElement>
                     <pen lineWidth="2"/>
                 </graphicElement>
@@ -742,14 +746,14 @@
 
             <!-- Reaction time bar chart Part3 -->
              <staticText>
-                <reportElement x="0" y="470" width="250" height="30" style="Arial_Bold"/>
+                <reportElement x="0" y="270" width="250" height="30" style="Arial_Bold"/>
                 <textElement textAlignment="Left">
                     <font size="10"/>
                 </textElement>
                 <text><![CDATA[Del 3: ]]></text>
             </staticText>
             <staticText>
-                <reportElement x="40" y="470" width="200" height="30" style="Arial_Normal"/>
+                <reportElement x="40" y="270" width="200" height="30" style="Arial_Normal"/>
                 <textElement textAlignment="Left">
                     <font size="10"/>
                 </textElement>
@@ -758,7 +762,7 @@
 
             <xyBarChart>
                 <chart isShowLegend="false">
-                    <reportElement mode="Transparent" x="0" y="510" width="250" height="100"/>
+                    <reportElement mode="Transparent" x="0" y="310" width="250" height="100"/>
                     <box leftPadding="0"/>
                     <chartTitle/>
                     <chartSubtitle/>
@@ -803,33 +807,33 @@
                 </barPlot>
             </xyBarChart>
             <staticText>
-                <reportElement x="0" y="480" width="125" height="30" style="Arial_Normal"/>
+                <reportElement x="0" y="290" width="125" height="30" style="Arial_Normal"/>
                 <textElement textAlignment="Right">
                     <font size="8"/>
                 </textElement>
                     <text><![CDATA[Vänster]]></text>
             </staticText>
             <staticText>
-                <reportElement x="145" y="480" width="300" height="30" style="Arial_Normal"/>
+                <reportElement x="145" y="290" width="300" height="30" style="Arial_Normal"/>
                 <textElement textAlignment="Left">
                     <font size="8"/>
                 </textElement>
                     <text><![CDATA[Höger]]></text>
             </staticText>   
             <line>
-                <reportElement x="135" y="510" width="0" height="95" forecolor="#42485A"/>
+                <reportElement x="135" y="300" width="0" height="95" forecolor="#42485A"/>
                 <graphicElement>
                     <pen lineWidth="2"/>
                 </graphicElement>
             </line>
             <line>
-                <reportElement x="93" y="510" width="0" height="95" forecolor="#e4e4e4"/>
+                <reportElement x="93" y="300" width="0" height="95" forecolor="#e4e4e4"/>
                 <graphicElement>
                     <pen lineWidth="2"/>
                 </graphicElement>
             </line>
             <line>
-                <reportElement x="177" y="510" width="0" height="95" forecolor="#e4e4e4"/>
+                <reportElement x="177" y="300" width="0" height="95" forecolor="#e4e4e4"/>
                 <graphicElement>
                     <pen lineWidth="2"/>
                 </graphicElement>
@@ -884,6 +888,48 @@
             </stackedBarChart> -->
 
 	</band>
+    <band height="500">
+        <staticText>
+            <reportElement x="0" y="10" width="300" height="30" style="Arial_Bold"/>
+            <textElement textAlignment="Left">
+                <font size="18"/>
+            </textElement>
+            <text><![CDATA[Vinglighet]]></text>
+        </staticText>
+        <staticText>
+            <reportElement x="0" y="35" width="270" height="100" style="Arial_Normal"/>
+            <textElement textAlignment="Left">
+                <font size="8"/>
+            </textElement>
+            <text><![CDATA[Graferna nedan visar dina reaktionstider på stimulin som visades under testet för respektive del i testet. Du kan se dina tider för de stimulin som dök upp på vänstra sidan av skärmen till vänster och de som dök upp höger till höger. Stimulin du missade visas i röd. En vanlig genomsnittstid bör ligga vid gråa linjen på runt ca 1200 ms.]]></text>
+        </staticText>
+            <xyLineChart>
+                <chart isShowLegend="false" theme="SteeringDeviationTheme">
+                    <reportElement x="12" y="0" width="300" height="197"/>
+                    <box leftPadding="0"/>
+                    <chartTitle position="Top"/>
+                    <chartSubtitle/>
+                    <chartLegend/>
+                </chart>
+                <xyDataset>
+                    <xySeries>
+                        <seriesExpression><![CDATA[$P{groupMissed}]]></seriesExpression>    
+                        <xValueExpression><![CDATA[$F{reactionID}]]></xValueExpression> 
+                        <yValueExpression><![CDATA[$F{reactionGroup}.equals($P{groupRight}) ?
+                            ((($F{reactionResult} < 0) ? 10000 : 0)):(($F{reactionResult} < 0) ? -10000 : 0)]]>
+                        </yValueExpression>
+                        <labelExpression><![CDATA[""]]></labelExpression>
+                    </xySeries>
+                </xyDataset>
+                <linePlot isShowLines="true" isShowShapes="false">
+                    <plot/>
+                     <domainAxisMinValueExpression><![CDATA[-3000]]></domainAxisMinValueExpression>
+                    <domainAxisMaxValueExpression><![CDATA[3000]]></domainAxisMaxValueExpression>
+                    <rangeAxisMinValueExpression><![CDATA[0]]></rangeAxisMinValueExpression>
+                    <rangeAxisMaxValueExpression><![CDATA[10]]></rangeAxisMaxValueExpression>
+                </linePlot>
+            </xyLineChart>
+    </band>
 
         
     </detail>
