@@ -123,7 +123,7 @@ public class PanelCenter
         hood = new Picture("hood");
         hood.setImage(sim.getAssetManager(), "Textures/Misc/hood.png", true);
         int width = sim.getSettings().getWidth()-200;
-        int height = width/1023*207;
+        int height = width/1023*100;
         hood.setWidth(width);
         hood.setHeight(height);
         hood.setPosition(100, 0);
