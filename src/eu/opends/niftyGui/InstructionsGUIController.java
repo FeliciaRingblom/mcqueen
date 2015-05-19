@@ -34,7 +34,6 @@ public class InstructionsGUIController implements ScreenController
 	@Override
 	public void onEndScreen() 
 	{
-		System.out.println("on end screen....");
 	}
 
 
@@ -128,21 +127,21 @@ public class InstructionsGUIController implements ScreenController
 	
 	public void startTest1(){		
 		nifty.exit();
-		String drivingTask = "assets/DrivingTasks/Projects/Test1/test1.xml";
+		String drivingTask = "assets/DrivingTasks/Projects/" + sim.getHands() + "/Test1/test1.xml";
 		sim.setTestNr(1);
 		sim.initDrivingTask(drivingTask);
 	}
 	
 	public void startTest2(){					
 		nifty.exit();
-		String drivingTask = "assets/DrivingTasks/Projects/Test2/test2.xml";
+		String drivingTask = "assets/DrivingTasks/Projects/" + sim.getHands() + "/Test2/test2.xml";
 		sim.setTestNr(2);
 		sim.initDrivingTask(drivingTask);
 	}
 	
 	public void startTest3(){					
 		nifty.exit();
-		String drivingTask = "assets/DrivingTasks/Projects/Test3/test3.xml";	
+		String drivingTask = "assets/DrivingTasks/Projects/" + sim.getHands() + "/Test3/test3.xml";	
 		sim.setTestNr(3);
 		sim.initDrivingTask(drivingTask);
 	}

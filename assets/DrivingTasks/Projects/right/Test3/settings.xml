@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://opends.eu/drivingtask/settings"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://opends.eu/drivingtask/settings ../../Schema/settings.xsd">
+
+	<general>
+		<driverName>default driver</driverName>
+		<showStats>false</showStats>
+		<captureVideo>test3.avi</captureVideo>
+		<showHood>true</showHood>
+		
+
+	</general>
+	
+
+	<reactionMeasurement>
+		<groupLeft>stimuli_left</groupLeft>
+		<groupRight>stimuli_right</groupRight>
+	</reactionMeasurement>
+	
+	<controllers>
+		<joystick>
+			<controllerID>0</controllerID>
+			<steeringAxis>0</steeringAxis>
+			<invertSteeringAxis>false</invertSteeringAxis>
+			<pedalAxis>1</pedalAxis>
+			<invertPedalAxis>false</invertPedalAxis>
+			<steeringSensitivityFactor>0.6</steeringSensitivityFactor>
+			<pedalSensitivityFactor>4.0</pedalSensitivityFactor>
+			<keyAssignments>
+				<keyAssignment function="react_arrow_left" key="BUTTON_1" />
+				<keyAssignment function="react_arrow_right" key="BUTTON_2" />
+			</keyAssignments>
+		</joystick>
+		<keyboard>
+			<keyAssignments>
+			</keyAssignments>
+		</keyboard>
+		<mouse>
+			<!-- only for outside view -->
+			<minScrollZoom>1</minScrollZoom>
+			<maxScrollZoom>40</maxScrollZoom>
+			<scrollSensitivityFactor>5</scrollSensitivityFactor>
+		</mouse>
+	</controllers>
+	
+</settings>

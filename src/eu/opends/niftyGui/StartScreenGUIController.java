@@ -87,7 +87,6 @@ public class StartScreenGUIController implements ScreenController {
 	public void onRadioGroupHandsChanged(final String id, final RadioButtonGroupStateChangedEvent event) 
 	{
 		hands = event.getSelectedId();
-		System.out.println(hands);
 	}
 	  
 	private void setDrivingTaskSettings()
@@ -98,14 +97,7 @@ public class StartScreenGUIController implements ScreenController {
 		sim.setGender(gender);
 		sim.setSpeed(speed);
 		sim.setHands(hands);
-	}
-
-	
-//    private Element getElementByName(String element)
-//    {
-//    	return nifty.getCurrentScreen().findElementByName(element);
-//    }
-    
+	} 
     
     private String getTextFromTextfield(String element)
     {
