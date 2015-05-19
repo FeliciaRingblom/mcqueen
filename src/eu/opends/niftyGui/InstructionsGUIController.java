@@ -72,7 +72,7 @@ public class InstructionsGUIController implements ScreenController
 	
 	public void backToMenu(){
 		System.out.println("Back to menu");
-		sim.getGuiNode().detachAllChildren();
+		nifty.exit();
 		sim.simpleInitApp();
 	}
 	
