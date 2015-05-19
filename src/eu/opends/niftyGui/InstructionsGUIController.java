@@ -1,5 +1,9 @@
 package eu.opends.niftyGui;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
+
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.render.NiftyImage;
 import de.lessvoid.nifty.screen.Screen;
@@ -146,19 +150,63 @@ public class InstructionsGUIController implements ScreenController
 		sim.initDrivingTask(drivingTask);
 	}
 	
-	public void playVideo1() {
-		System.out.println("Play Video 1");
+	public void playVideo1() {  
+		File video = new File("test1.avi");  //<-------change file name here
+        
+        Desktop desktop = Desktop.getDesktop();
+        if(video.exists()){
+			try {
+				desktop.open(video);
+			} catch (IOException e) {
+				System.out.println("could not play video 1");
+			}
+        }else{
+        	System.out.println("could not find file");
+        }
 	}
 	
 	public void playVideo2() {
-		System.out.println("Play Video 2");
+		File video = new File("test2.avi");  //<-------change file name here
+        
+        Desktop desktop = Desktop.getDesktop();
+        if(video.exists()){
+			try {
+				desktop.open(video);
+			} catch (IOException e) {
+				System.out.println("could not play video 2");
+			}
+        }else{
+        	System.out.println("could not find file");
+        }
 	}
 	
 	public void playVideo3() {
-		System.out.println("Play Video 3");
+		File video = new File("test3.avi");  //<-------change file name here
+        
+        Desktop desktop = Desktop.getDesktop();
+        if(video.exists()){
+			try {
+				desktop.open(video);
+			} catch (IOException e) {
+				System.out.println("could not play video 3");
+			}
+        }else{
+        	System.out.println("could not find file");
+        }
 	}
 	
 	public void openPDF() {
-		System.out.println("Open PDF");
+		File video = new File("result.pdf");   //<-------change file name here
+        
+        Desktop desktop = Desktop.getDesktop();
+        if(video.exists()){
+			try {
+				desktop.open(video);
+			} catch (IOException e) {
+				System.out.println("could not open pdf");
+			}
+        }else{
+        	System.out.println("could not find file");
+        }
 	}
 }
