@@ -2,9 +2,9 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report9" pageWidth="595" pageHeight="1150" orientation="Portrait" columnWidth="505" leftMargin="60" rightMargin="30" topMargin="20" bottomMargin="0">
     <style name="Arial_Normal" isDefault="true" fontName="Arial" fontSize="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
     <style name="Arial_Bold" isDefault="false" fontName="Arial" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
-    <parameter name="meanDeviation1" class="java.lang.Float"/>
-    <parameter name="meanDeviation2" class="java.lang.Float"/>
-    <parameter name="meanDeviation3" class="java.lang.Float"/>
+    <parameter name="meanDeviation1" class="java.lang.String"/>
+    <parameter name="meanDeviation2" class="java.lang.String"/>
+    <parameter name="meanDeviation3" class="java.lang.String"/>
     <parameter name="age" class="java.lang.String"/>
     <parameter name="speed" class="java.lang.String"/>
     <parameter name="hands" class="java.lang.String"/>
@@ -929,17 +929,17 @@
                     <text><![CDATA[[ms]]]></text>
             </staticText>
              <textField isBlankWhenNull="true">
-                <reportElement x="250" y="350" width="250" height="100" forecolor="#545454"/>
+                <reportElement x="250" y="350" width="250" height="180" forecolor="#545454"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"><font size="22"/></textElement>
                 <textFieldExpression class="java.lang.String"><![CDATA[$P{meanDeviation1}]]></textFieldExpression>
             </textField> 
              <textField isBlankWhenNull="true">
-                <reportElement x="250" y="550" width="250" height="100" forecolor="#545454"/>
+                <reportElement x="250" y="550" width="250" height="180" forecolor="#545454"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"><font size="22"/></textElement>
                 <textFieldExpression class="java.lang.String"><![CDATA[$P{meanDeviation2}]]></textFieldExpression>
             </textField>
              <textField isBlankWhenNull="true">
-                <reportElement x="250" y="760" width="250" height="100" forecolor="#545454"/>
+                <reportElement x="250" y="760" width="250" height="180" forecolor="#545454"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"><font size="22"/></textElement>
                 <textFieldExpression class="java.lang.String"><![CDATA[$P{meanDeviation3}]]></textFieldExpression>
             </textField>

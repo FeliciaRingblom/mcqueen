@@ -217,9 +217,9 @@ public class ReactionLogger
 		parameters.put("idNr", idNr);
 		parameters.put("hands", hands);
 		parameters.put("speed", speed);
-		parameters.put("meanDeviation1", meanDeviation_part1);
-		parameters.put("meanDeviation2", meanDeviation_part2);
-		parameters.put("meanDeviation3", meanDeviation_part3);
+		parameters.put("meanDeviation1", String.format("%.2f", meanDeviation_part1));
+		parameters.put("meanDeviation2", String.format("%.2f", meanDeviation_part2));
+		parameters.put("meanDeviation3", String.format("%.2f", meanDeviation_part3));
 		
 		return parameters;
 	}
@@ -268,6 +268,7 @@ public class ReactionLogger
 	
 	/*translates the variable names from the input screen to the right value for the result presentation*/
 	private void translateVariables() {
+		
 		if(speed.equals("low"))
 			speed = "40 km/h";	
 		else if(speed.equals("middle"))
