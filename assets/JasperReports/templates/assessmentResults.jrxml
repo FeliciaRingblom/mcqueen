@@ -944,6 +944,48 @@
                 <textFieldExpression class="java.lang.String"><![CDATA[$P{meanDeviation3}]]></textFieldExpression>
             </textField>
 
+            <!-- hide the minus signs in axis TODO: find a better solition! -->
+           <rectangle>
+                <reportElement x="12" y="890" width="4" height="4" backcolor="#ecf0f1"/>
+                <graphicElement pen="None"/>
+            </rectangle>
+           <rectangle>
+                <reportElement x="49" y="890" width="4" height="4" backcolor="#ecf0f1"/>
+                <graphicElement pen="None"/>
+            </rectangle>
+            <rectangle>
+                <reportElement x="86" y="890" width="4" height="4" backcolor="#ecf0f1"/>
+                <graphicElement pen="None"/>
+            </rectangle>
+           <rectangle>
+                <reportElement x="12" y="690" width="4" height="4" backcolor="#ecf0f1"/>
+                <graphicElement pen="None"/>
+            </rectangle>
+           <rectangle>
+                <reportElement x="49" y="690" width="4" height="4" backcolor="#ecf0f1"/>
+                <graphicElement pen="None"/>
+            </rectangle>
+            <rectangle>
+                <reportElement x="86" y="690" width="4" height="4" backcolor="#ecf0f1"/>
+                <graphicElement pen="None"/>
+            </rectangle>
+
+           <rectangle>
+                <reportElement x="12" y="480" width="4" height="4" backcolor="#ecf0f1"/>
+                <graphicElement pen="None"/>
+            </rectangle>
+           <rectangle>
+                <reportElement x="49" y="480" width="4" height="4" backcolor="#ecf0f1"/>
+                <graphicElement pen="None"/>
+            </rectangle>
+            <rectangle>
+                <reportElement x="86" y="480" width="4" height="4" backcolor="#ecf0f1"/>
+                <graphicElement pen="None"/>
+            </rectangle>
+            <!-- End hiding minus signs -->
+
+
+
     </band> <!-- End Part3 -->
    
 </summary>
