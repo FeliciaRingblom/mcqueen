@@ -36,7 +36,7 @@ public class ReactionCenter
 	private Simulator sim;
 	private InputManager inputManager;
 	private ReactionListener reactionListener;
-	private ReactionLogger reactionLogger = new ReactionLogger();
+	private ReactionLogger reactionLogger;
 	private long experimentStartTime;
 	
 	private boolean isRunning = false;
@@ -54,6 +54,7 @@ public class ReactionCenter
 		idNr = sim.getIdNr();
 		speed = sim.getSpeed();
 		hands = sim.getHands();
+		reactionLogger = new ReactionLogger(sim);
 	}
 
 	

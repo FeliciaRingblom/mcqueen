@@ -575,8 +575,8 @@ public class Simulator extends SimpleApplication
 		initializationFinished = true;
 		drivingMode = true;
 		
-		String analyzerFile = "analyzerData/test/introStraight.txt";
-		calculateCarData(analyzerFile);	
+		//String analyzerFile = "analyzerData/test/introStraight.txt";
+		//calculateCarData(analyzerFile);	
     }
     
     public void closeDrivngTask()
@@ -711,11 +711,11 @@ public class Simulator extends SimpleApplication
 			if(lightningClient != null)
 				lightningClient.close();
 						
-			steeringTask.close();
+			
 			reactionCenter.close();
 			
 			KnowledgeBase.KB.disconnect();
-			
+			steeringTask.close();
 			car.close();
 
 			if(settingsControllerServer != null)

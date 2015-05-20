@@ -48,7 +48,7 @@ public class DeviationComputer
 	private float[] areaArray;
 	
 	private static final float MAX_DISTANCE_BETWEEN_TWO_IDEAL_POINTS = 0.1f;
-	private static final boolean DEBUGMODE = true;
+	private static final boolean DEBUGMODE = false;
 	private SortedMap<String, Vector2f> idealPointMap = new TreeMap<String, Vector2f>();
 		
 	
@@ -264,7 +264,7 @@ public class DeviationComputer
 	public float getDeviation() throws Exception
 	{
 		int nrOfIdealPoints = idealPoints.size();
-		System.out.println("Number of ideal points after processing is: " + nrOfIdealPoints);
+		//System.out.println("Number of ideal points after processing is: " + nrOfIdealPoints);
 		float [] areaArray = new float[nrOfIdealPoints];
 		if(nrOfIdealPoints >= 3)
 		{
@@ -280,17 +280,14 @@ public class DeviationComputer
 				Vector2f prevIP = idealPoints.elementAt(i-1);
 				Vector2f currIP = idealPoints.elementAt(i);
 				Vector2f nextIP = idealPoints.elementAt(i+1);
-				//System.out.println("prevIP: " + prevIP + " currIP=" + currIP + " nextIP = " + nextIP);
-			//
+
 				// compute the line which divides the angle at currIP in two equal halves
 				Line2D.Float crossLine = getHalfwayVector(prevIP, currIP, nextIP);
 				//log("Line through IP " + currIP + " from (" + crossLine.getX1() + "," + crossLine.getY1() + ")" +
 						//" to (" + crossLine.getX2() + "," + crossLine.getY2() + ")");
-				//System.out.println("crossLine = " + crossLine.x1 + ", " + crossLine.y1 + ", " + crossLine.x2 + ", " + crossLine.y2);
 				// get way point on or next to the line
 				Vector3f currWP3f = getPointOnLine(crossLine);
 				int direction = getDirection(crossLine);
-				//System.out.println(direction);
 				
 				Vector2f currWP = new Vector2f(currWP3f.getX(), currWP3f.getZ());
 				//log("Point on line: " + currWP);
@@ -298,12 +295,10 @@ public class DeviationComputer
 				// compute area of current quadrangle with the given corners
 				quadrangle = new DeviationQuadrangle(prevWP, currWP, currIP, prevIP);
 				area = quadrangle.getArea();
-				//System.out.println("Area: " + area*direction);
 				
 				areaArray[i-1] = area*direction;
 				// sum up all computed areas
 				sum += area;
-				//System.out.println("Sum: " + sum);
 				
 				// store ideal point with adjusted height information
 				// use height value of corresponding way point (only for visualization)

@@ -25,8 +25,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
+import com.jme3.math.Vector3f;
+
+import eu.opends.analyzer.CarPositionReader;
+import eu.opends.analyzer.DataUnit;
+import eu.opends.analyzer.DeviationComputer;
 import eu.opends.drivingTask.settings.SettingsLoader;
 import eu.opends.drivingTask.settings.SettingsLoader.Setting;
 import eu.opends.main.SimulationDefaults;
@@ -48,13 +54,21 @@ import net.sf.jasperreports.engine.xml.JRXmlLoader;
  */
 public class ReactionLogger 
 {
+	private Simulator sim;
 	private boolean isRunning = false;
 	private String dataFileName = "reactionData.xml";
 	private String reportFileName = "reactionReport.pdf";
 	private String outputFolder;
 	BufferedWriter bw;
-	private int count = 0;
+	private int count = 0, part;
+	private float meanDeviation_part1, meanDeviation_part2, meanDeviation_part3;
 	private String age, gender, diagnosisNr, idNr, speed, hands;
+
+
+	public ReactionLogger(Simulator sim) {
+		this.sim = sim;
+		this.part = sim.getTestNr();
+	}
 
 
 	private void start()
@@ -141,11 +155,18 @@ public class ReactionLogger
 	{
 		try
 		{
+			//calculate data of driving deviation and steadiness for all three parts
+			meanDeviation_part1 = calculateCarData("analyzerData/test/carData.txt");
+			meanDeviation_part2 = calculateCarData("analyzerData/test/positionData_2.txt");
+			meanDeviation_part3 = calculateCarData("analyzerData/test/positionData_3.txt");
+			
+			
 			// open XML data source
-			JRDataSource dataSource = new JaxenXmlDataSource(new File(outputFolder + "/" + dataFileName),
+			//JRDataSource dataSource = new JaxenXmlDataSource(new File(outputFolder + "/" + dataFileName),
+				//	"report/reactionMeasurement");
+			
+			JRDataSource dataSource = new JaxenXmlDataSource(new File("analyzerData/Analyzer_1fel/reactionData.xml"),
 					"report/reactionMeasurement");
-//			JRDataSource dataSource = new JaxenXmlDataSource(new File("analyzerData/Analyzer_1fel/reactionData.xml"),
-//					"report/reactionMeasurement");
 			//get report template for reaction measurement
 			//InputStream reportStream = new FileInputStream("assets/JasperReports/templates/reactionMeasurement.jasper");
 			//InputStream inputStream = new FileInputStream("assets/JasperReports/templates/reactionMeasurement.jrxml");
@@ -196,10 +217,56 @@ public class ReactionLogger
 		parameters.put("idNr", idNr);
 		parameters.put("hands", hands);
 		parameters.put("speed", speed);
-
+		parameters.put("meanDeviation1", meanDeviation_part1);
+		parameters.put("meanDeviation2", meanDeviation_part2);
+		parameters.put("meanDeviation3", meanDeviation_part3);
+		
 		return parameters;
 	}
 	
+	/* calculate the drivers steadiness on road */
+	public float calculateCarData(String fileName){
+		CarPositionReader carPositionReader = new CarPositionReader();
+		LinkedList<Vector3f> carPositionList = new LinkedList<Vector3f>();
+		float roadWidth = 10.0f; //what is a good value here????
+		DeviationComputer devComp = sim.getDeviationComputer();
+		LinkedList<DataUnit> dataUnitList = new LinkedList<DataUnit>();
+		Long initialTimeStamp = 0l;
+		float area = 0;
+		float lengthOfIdealLine = 1;
+		float meanDeviation = 0;
+		
+		carPositionReader.initReader(fileName, true);
+		carPositionReader.loadDriveData();
+		
+		carPositionList = carPositionReader.getCarPositionList();
+
+		for(Vector3f carPos : carPositionList){
+			devComp.addWayPoint(carPos);
+		}
+		
+		dataUnitList = carPositionReader.getDataUnitList();
+		
+		if(dataUnitList.size() > 0)
+			initialTimeStamp = dataUnitList.get(0).getDate().getTime();
+		
+		//float[] areaArray = new float[1000]; 
+		try {
+			
+			area = devComp.getDeviation();
+			//areaArray = devComp.getAreaPoints();
+			lengthOfIdealLine = devComp.getLengthOfIdealLine();
+			meanDeviation = (float)area/lengthOfIdealLine;
+//			System.out.println("Area between ideal line and driven line: " + area);
+//			System.out.println("Length of ideal line: " + lengthOfIdealLine);
+//			System.out.println("Mean deviation: " + (float)area/lengthOfIdealLine + "\n");
+		} catch (Exception e) {
+			System.out.println(e.getMessage() + "\n");
+		}
+		return meanDeviation;
+	}
+	
+	/*translates the variable names from the input screen to the right value for the result presentation*/
 	private void translateVariables() {
 		if(speed.equals("low"))
 			speed = "40 km/h";	

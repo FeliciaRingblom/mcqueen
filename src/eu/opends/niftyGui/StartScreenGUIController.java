@@ -68,7 +68,7 @@ public class StartScreenGUIController implements ScreenController {
 	
 	public void gotoInstructions7(){
 		setDrivingTaskSettings();
-		sim.getInstructionsGUI().setScreen(9);	
+		sim.getInstructionsGUI().setScreen(7);	
 	}
 	
 	@NiftyEventSubscriber(id="RadioGroup-speed")
