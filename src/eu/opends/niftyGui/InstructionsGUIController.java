@@ -1,5 +1,9 @@
 package eu.opends.niftyGui;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
+
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.render.NiftyImage;
 import de.lessvoid.nifty.screen.Screen;
@@ -34,7 +38,7 @@ public class InstructionsGUIController implements ScreenController
 	@Override
 	public void onEndScreen() 
 	{
-		//System.out.println("on end screen....");
+
 	}
 
 
@@ -72,7 +76,7 @@ public class InstructionsGUIController implements ScreenController
 	
 	public void backToMenu(){
 		System.out.println("Back to menu");
-		sim.getGuiNode().detachAllChildren();
+		nifty.exit();
 		sim.simpleInitApp();
 	}
 	
@@ -128,38 +132,82 @@ public class InstructionsGUIController implements ScreenController
 	
 	public void startTest1(){		
 		nifty.exit();
-		String drivingTask = "assets/DrivingTasks/Projects/Test1/test1.xml";
+		String drivingTask = "assets/DrivingTasks/Projects/" + sim.getHands() + "/Test1/test1.xml";
 		sim.setTestNr(1);
 		sim.initDrivingTask(drivingTask);
 	}
 	
 	public void startTest2(){					
 		nifty.exit();
-		String drivingTask = "assets/DrivingTasks/Projects/Test2/test2.xml";
+		String drivingTask = "assets/DrivingTasks/Projects/" + sim.getHands() + "/Test2/test2.xml";
 		sim.setTestNr(2);
 		sim.initDrivingTask(drivingTask);
 	}
 	
 	public void startTest3(){					
 		nifty.exit();
-		String drivingTask = "assets/DrivingTasks/Projects/Test3/test3.xml";	
+		String drivingTask = "assets/DrivingTasks/Projects/" + sim.getHands() + "/Test3/test3.xml";	
 		sim.setTestNr(3);
 		sim.initDrivingTask(drivingTask);
 	}
 	
-	public void playVideo1() {
-		System.out.println("Play Video 1");
+	public void playVideo1() {  
+		File video = new File("test1.avi");  //<-------change file name here
+        
+        Desktop desktop = Desktop.getDesktop();
+        if(video.exists()){
+			try {
+				desktop.open(video);
+			} catch (IOException e) {
+				System.out.println("could not play video 1");
+			}
+        }else{
+        	System.out.println("could not find file");
+        }
 	}
 	
 	public void playVideo2() {
-		System.out.println("Play Video 2");
+		File video = new File("test2.avi");  //<-------change file name here
+        
+        Desktop desktop = Desktop.getDesktop();
+        if(video.exists()){
+			try {
+				desktop.open(video);
+			} catch (IOException e) {
+				System.out.println("could not play video 2");
+			}
+        }else{
+        	System.out.println("could not find file");
+        }
 	}
 	
 	public void playVideo3() {
-		System.out.println("Play Video 3");
+		File video = new File("test3.avi");  //<-------change file name here
+        
+        Desktop desktop = Desktop.getDesktop();
+        if(video.exists()){
+			try {
+				desktop.open(video);
+			} catch (IOException e) {
+				System.out.println("could not play video 3");
+			}
+        }else{
+        	System.out.println("could not find file");
+        }
 	}
 	
 	public void openPDF() {
-		System.out.println("Open PDF");
+		File video = new File("result.pdf");   //<-------change file name here
+        
+        Desktop desktop = Desktop.getDesktop();
+        if(video.exists()){
+			try {
+				desktop.open(video);
+			} catch (IOException e) {
+				System.out.println("could not open pdf");
+			}
+        }else{
+        	System.out.println("could not find file");
+        }
 	}
 }
