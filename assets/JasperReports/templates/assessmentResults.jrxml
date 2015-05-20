@@ -174,7 +174,7 @@
     <pageHeader>
         <band height="100">
             <staticText>
-                <reportElement x="0" y="0" width="200" height="14" style="Arial_Normal"/>
+                <reportElement x="0" y="0" width="200" height="14" style="Arial_Bold"/>
                 <textElement textAlignment="Left">
                     <font size="12"/>
                 </textElement>
@@ -188,7 +188,7 @@
                 <textFieldExpression><![CDATA[$P{idNr}]]></textFieldExpression>
             </textField>
             <staticText>
-                <reportElement x="0" y="15" width="200" height="14" style="Arial_Normal"/>
+                <reportElement x="0" y="15" width="200" height="14" style="Arial_Bold"/>
                 <textElement textAlignment="Left">
                     <font size="12"/>
                 </textElement>
@@ -202,7 +202,7 @@
                 <textFieldExpression><![CDATA[$P{diagnosisNr}]]></textFieldExpression>
             </textField>
             <staticText>
-                <reportElement x="0" y="30" width="200" height="14" style="Arial_Normal"/>
+                <reportElement x="0" y="30" width="200" height="14" style="Arial_Bold"/>
                 <textElement textAlignment="Left">
                     <font size="12"/>
                 </textElement>
@@ -216,7 +216,7 @@
                 <textFieldExpression><![CDATA[$P{age}]]></textFieldExpression>
             </textField>
             <staticText>
-                <reportElement x="200" y="0" width="200" height="14" style="Arial_Normal"/>
+                <reportElement x="200" y="0" width="200" height="14" style="Arial_Bold"/>
                 <textElement textAlignment="Left">
                     <font size="12"/>
                 </textElement>
@@ -230,21 +230,21 @@
                 <textFieldExpression><![CDATA[$P{gender}]]></textFieldExpression>
             </textField>
             <staticText>
-                <reportElement x="200" y="15" width="200" height="14" style="Arial_Normal"/>
+                <reportElement x="200" y="15" width="200" height="14" style="Arial_Bold"/>
                 <textElement textAlignment="Left">
                     <font size="12"/>
                 </textElement>
                 <text><![CDATA[Hastighet: ]]></text>
             </staticText>
             <textField isBlankWhenNull="true">
-                <reportElement x="265" y="15" width="200" height="14" style="Arial_Normal"/>
+                <reportElement x="262" y="15" width="200" height="14" style="Arial_Normal"/>
                 <textElement textAlignment="Left">
                     <font size="12"/>
                 </textElement>
                 <textFieldExpression><![CDATA[$P{speed}]]></textFieldExpression>
             </textField>
             <staticText>
-                <reportElement x="200" y="30" width="200" height="14" style="Arial_Normal"/>
+                <reportElement x="200" y="30" width="200" height="14" style="Arial_Bold"/>
                 <textElement textAlignment="Left">
                     <font size="12"/>
                 </textElement>
@@ -277,7 +277,7 @@
     <summary>
         <band height="940">
             <rectangle radius="15">
-                <reportElement x="0" y="60" width="480" height="120" backcolor="#E6E6E6"/>
+                <reportElement x="0" y="60" width="480" height="120" backcolor="#ecf0f1"/>
                 <graphicElement pen="None"/>
             </rectangle>
             <staticText>
@@ -569,22 +569,22 @@
                 <text><![CDATA[Graferna nedan visar dina reaktionstider på stimulin som visades under testet för respektive del i testet. Du kan se dina tider för de stimulin som dök upp på vänstra sidan av skärmen till vänster och de som dök upp höger till höger. Stimulin du missade visas i röd. En vanlig genomsnittstid bör ligga vid gråa linjen på runt ca 1200 ms.]]></text>
             </staticText>
             <rectangle>
-                <reportElement x="0" y="300" width="40" height="8" backcolor="#1B7BA7"/>
+                <reportElement x="0" y="300" width="40" height="8" backcolor="#34495e"/>
                 <graphicElement pen="None"/>
             </rectangle>
             <staticText>
-                <reportElement x="45" y="300" width="100" height="30" style="Arial_Normal"/>
+                <reportElement x="45" y="299" width="100" height="30" style="Arial_Normal"/>
                 <textElement textAlignment="Left">
                     <font size="10"/>
                 </textElement>
                 <text><![CDATA[rätt]]></text>
             </staticText>
             <rectangle>
-                <reportElement x="90" y="300" width="40" height="8" backcolor="#DA3C08"/>
+                <reportElement x="90" y="300" width="40" height="8" backcolor="#e74c3c"/>
                 <graphicElement pen="None"/>
             </rectangle>
             <staticText>
-                <reportElement x="135" y="300" width="100" height="30" style="Arial_Normal"/>
+                <reportElement x="135" y="299" width="100" height="30" style="Arial_Normal"/>
                 <textElement textAlignment="Left">
                     <font size="10"/>
                 </textElement>
@@ -608,7 +608,7 @@
 
             <!-- Part1 -->
             <rectangle radius="5">
-                <reportElement x="0" y="345" width="505" height="180" backcolor="#fafafa"/>
+                <reportElement x="0" y="345" width="505" height="180" backcolor="#ecf0f1"/>
                 <graphicElement pen="None"/>
             </rectangle>
             <staticText>
@@ -662,9 +662,9 @@
                 </xyDataset>
                 <barPlot isShowLabels="false" isShowTickLabels="false" isShowTickMarks="false">
                     <plot orientation="Horizontal">
-                        <seriesColor seriesOrder="0" color="#DA3C08"/> <!--red-->
-                        <seriesColor seriesOrder="1" color="#1B7BA7"/> <!--blue-->
-                        <seriesColor seriesOrder="2" color="#1B7BA7"/> <!--blue-->          
+                        <seriesColor seriesOrder="0" color="#e74c3c"/> <!--red-->
+                        <seriesColor seriesOrder="1" color="#34495e"/> <!--blue-->
+                        <seriesColor seriesOrder="2" color="#34495e"/> <!--blue-->          
                     </plot>
                     <domainAxisMinValueExpression><![CDATA[-0.5]]></domainAxisMinValueExpression>
                     <domainAxisMaxValueExpression><![CDATA[20.5]]></domainAxisMaxValueExpression>
@@ -693,13 +693,13 @@
                 </graphicElement>
             </line>
             <line>
-                <reportElement x="91" y="380" width="0" height="95" forecolor="#e4e4e4"/>
+                <reportElement x="91" y="380" width="0" height="95" forecolor="#95a5a6"/>
                 <graphicElement>
                     <pen lineWidth="2"/>
                 </graphicElement>
             </line>
             <line>
-                <reportElement x="175" y="380" width="0" height="95" forecolor="#e4e4e4"/>
+                <reportElement x="175" y="380" width="0" height="95" forecolor="#95a5a6"/>
                 <graphicElement>
                     <pen lineWidth="2"/>
                 </graphicElement>
@@ -718,7 +718,7 @@
             
 
             <rectangle radius="5">
-                <reportElement x="0" y="545" width="505" height="180" backcolor="#fafafa"/>
+                <reportElement x="0" y="545" width="505" height="180" backcolor="#ecf0f1"/>
                 <graphicElement pen="None"/>
             </rectangle>
             <staticText>
@@ -772,9 +772,9 @@
                 </xyDataset>
                 <barPlot isShowLabels="false" isShowTickLabels="false" isShowTickMarks="false">
                     <plot orientation="Horizontal">
-                        <seriesColor seriesOrder="0" color="#DA3C08"/> <!--red-->
-                        <seriesColor seriesOrder="1" color="#1B7BA7"/> <!--blue-->
-                        <seriesColor seriesOrder="2" color="#1B7BA7"/> <!--blue-->          
+                        <seriesColor seriesOrder="0" color="#e74c3c"/> <!--red-->
+                        <seriesColor seriesOrder="1" color="#34495e"/> <!--blue-->
+                        <seriesColor seriesOrder="2" color="#34495e"/> <!--blue-->          
                     </plot>
                     <domainAxisMinValueExpression><![CDATA[20.5]]></domainAxisMinValueExpression>
                     <domainAxisMaxValueExpression><![CDATA[41.5]]></domainAxisMaxValueExpression>
@@ -803,13 +803,13 @@
                 </graphicElement>
             </line>
             <line>
-                <reportElement x="91" y="590" width="0" height="95" forecolor="#e4e4e4"/>
+                <reportElement x="91" y="590" width="0" height="95" forecolor="#95a5a6"/>
                 <graphicElement>
                     <pen lineWidth="2"/>
                 </graphicElement>
             </line>
             <line>
-                <reportElement x="175" y="590" width="0" height="95" forecolor="#e4e4e4"/>
+                <reportElement x="175" y="590" width="0" height="95" forecolor="#95a5a6"/>
                 <graphicElement>
                     <pen lineWidth="2"/>
                 </graphicElement>
@@ -826,7 +826,7 @@
          <!--  Part3 -->
 
             <rectangle radius="5">
-                <reportElement x="0" y="755" width="505" height="180" backcolor="#fafafa"/>
+                <reportElement x="0" y="755" width="505" height="180" backcolor="#ecf0f1"/>
                 <graphicElement pen="None"/>
             </rectangle>
             <staticText>
@@ -879,9 +879,9 @@
                 </xyDataset>
                 <barPlot isShowLabels="false" isShowTickLabels="false" isShowTickMarks="false">
                     <plot orientation="Horizontal">
-                        <seriesColor seriesOrder="0" color="#DA3C08"/> <!--red-->
-                        <seriesColor seriesOrder="1" color="#1B7BA7"/> <!--blue-->
-                        <seriesColor seriesOrder="2" color="#1B7BA7"/> <!--blue-->          
+                        <seriesColor seriesOrder="0" color="#e74c3c"/> <!--red-->
+                        <seriesColor seriesOrder="1" color="#34495e"/> <!--blue-->
+                        <seriesColor seriesOrder="2" color="#34495e"/> <!--blue-->          
                     </plot>
                     <domainAxisMinValueExpression><![CDATA[41.5]]></domainAxisMinValueExpression>
                     <domainAxisMaxValueExpression><![CDATA[62.5]]></domainAxisMaxValueExpression>
@@ -910,13 +910,13 @@
                 </graphicElement>
             </line>
             <line>
-                <reportElement x="91" y="790" width="0" height="95" forecolor="#e4e4e4"/>
+                <reportElement x="91" y="790" width="0" height="95" forecolor="#95a5a6"/>
                 <graphicElement>
                     <pen lineWidth="2"/>
                 </graphicElement>
             </line>
             <line>
-                <reportElement x="175" y="790" width="0" height="95" forecolor="#e4e4e4"/>
+                <reportElement x="175" y="790" width="0" height="95" forecolor="#95a5a6"/>
                 <graphicElement>
                     <pen lineWidth="2"/>
                 </graphicElement>
