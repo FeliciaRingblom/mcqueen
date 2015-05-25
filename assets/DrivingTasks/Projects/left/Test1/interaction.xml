@@ -47,13 +47,13 @@
   </activity>
   <activity id="showLeftArrowToRight" ref="">
     <action delay="0.0" id="manipulatePicture" repeat="1">  
-      <parameter name="id" value="leftArrow_toRight" /> 
+      <parameter name="id" value="rightArrow_toRight" /> 
       <parameter name="visible" value="true"/>     
     </action>
   </activity>
   <activity id="showLeftArrowToLeft" ref="">
     <action delay="0.0" id="manipulatePicture" repeat="1">  
-      <parameter name="id" value="leftArrow_toLeft" /> 
+      <parameter name="id" value="rightArrow_toLeft" /> 
       <parameter name="visible" value="true"/>     
     </action>
   </activity>
@@ -71,13 +71,13 @@
   </activity>
   <activity id="hideLeftArrowToRight" ref="">
     <action delay="3.0" id="manipulatePicture" repeat="1">  
-      <parameter name="id" value="leftArrow_toRight" /> 
+      <parameter name="id" value="rightArrow_toRight" /> 
       <parameter name="visible" value="false"/>     
     </action>
   </activity>
   <activity id="hideLeftArrowToLeft" ref="">
     <action delay="3.0" id="manipulatePicture" repeat="1">  
-      <parameter name="id" value="leftArrow_toLeft" /> 
+      <parameter name="id" value="rightArrow_toLeft" /> 
       <parameter name="visible" value="false"/>     
     </action>
   </activity> 

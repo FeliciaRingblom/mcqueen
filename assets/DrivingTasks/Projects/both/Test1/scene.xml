@@ -805,72 +805,16 @@
    <visible>false</visible>
  </picture>
 
- <picture id="leftRedSquare" key="assets/Textures/ReactionTest/peripheralIcons/red_square.png" level="1">
-  <hPosition><fromLeft value="22" unit="px"></fromLeft></hPosition>
-  <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
-  <width>100</width>
-  <height>100</height>
-  <useAlpha>true</useAlpha>
-  <visible>false</visible>
-</picture>
-
-<picture id="leftArrow_toLeft" key="assets/Textures/ReactionTest/stimuliImages/left.png" level="2">
-  <hPosition><fromLeft value="22" unit="px"></fromLeft></hPosition>
-  <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
-  <width>100</width>
-  <height>100</height>
-  <useAlpha>true</useAlpha>
-  <visible>false</visible>
-</picture>
-
-<picture id="leftRedCircle" key="assets/Textures/ReactionTest/peripheralIcons/red_circle.png" level="3">
-  <hPosition><fromLeft value="22" unit="px"></fromLeft></hPosition>
-  <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
-  <width>100</width>
-  <height>100</height>
-  <useAlpha>true</useAlpha>
-  <visible>false</visible>
-</picture>
-
-<picture id="leftArrow_toRight" key="assets/Textures/ReactionTest/stimuliImages/left.png" level="4">
-  <hPosition><fromRight value="22" unit="px"></fromRight></hPosition>
-  <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
-  <width>100</width>
-  <height>100</height>
-  <useAlpha>true</useAlpha>
-  <visible>false</visible>
-</picture>
-
-<picture id="rightArrow_toRight" key="assets/Textures/ReactionTest/stimuliImages/right.png" level="5">
- <hPosition><fromRight value="22" unit="px"></fromRight></hPosition>
- <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
- <width>100</width>
- <height>100</height>
- <useAlpha>true</useAlpha>
- <visible>false</visible>
-</picture>
-
-<picture id="rightRedSquare" key="assets/Textures/ReactionTest/peripheralIcons/red_square.png" level="6">
-  <hPosition><fromRight value="22" unit="px"></fromRight></hPosition>
-  <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
-  <width>100</width>
-  <height>100</height>
-  <useAlpha>true</useAlpha>
-  <visible>false</visible>
-</picture>
-
-<picture id="rightRedCircle" key="assets/Textures/ReactionTest/peripheralIcons/red_circle.png" level="7">
-  <hPosition><fromRight value="22" unit="px"></fromRight></hPosition>
-  <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
-  <width>100</width>
-  <height>100</height>
-  <useAlpha>true</useAlpha>
-  <visible>false</visible>
-
-</picture>
-
-
+  <picture id="rightArrow_toRight" key="assets/Textures/ReactionTest/stimuliImages/right.png" level="5">
+   <hPosition><fromRight value="22" unit="px"></fromRight></hPosition>
+   <vPosition><fromTop value="22" unit="px"></fromTop></vPosition>
+   <width>100</width>
+   <height>100</height>
+   <useAlpha>true</useAlpha>
+   <visible>false</visible>
+  </picture>
 </pictures>
+
 <skyTexture>Textures/Sky/Bright/hills.dds</skyTexture>
 
 
