@@ -118,17 +118,17 @@ public class SimulatorActionListener implements ActionListener
 		
 		else if (binding.equals(KeyMapping.PRINT_POS.getID())) 
 		{
-			if (value)
-			{
-				
+			if (value)		
 				System.out.println(car.getPosition());		
-			}
 		}
 		
 		else if (binding.equals(KeyMapping.SHUTDOWN.getID())) 
 		{
-			if (value && sim.isDrivingMode()){
-				sim.getShutDownGUI().toggleDialog();			
+			if (value){
+				if (sim.isDrivingMode())
+					sim.getShutDownGUI().toggleDialog();
+				else
+					sim.stop();
 			}
 		}
 	}
