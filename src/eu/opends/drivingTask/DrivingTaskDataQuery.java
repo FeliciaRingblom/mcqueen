@@ -56,8 +56,6 @@ import com.jme3.math.FastMath;
 import com.jme3.math.Quaternion;
 import com.jme3.math.Vector3f;
 
-import eu.opends.traffic.Waypoint;
-
 /**
  *
  * @author Biasutti, Rafael Math
@@ -243,22 +241,6 @@ public class DrivingTaskDataQuery
 	public String getTaskPath()
 	{
 		return taskPath;
-	}
-	
-	
-	public Waypoint getWayPoint(Layer layer, String path) 
-	{
-		String id = getValue(layer, path + "/@id", String.class);
-		Vector3f translation = getVector3f(layer, path + "/" + layer + ":translation");
-		Float speed = getValue(layer, path + "/" + layer + ":speed", Float.class);
-		String trafficLightID = getValue(layer, path + "/" + layer + ":trafficLight", String.class);
-		Float headLightIntensity = getValue(layer, path + "/" + layer + ":headLightIntensity", Float.class);
-		String turnSignal = getValue(layer, path + "/" + layer + ":turnSignal", String.class);
-
-		if((id != null) && (translation != null) && (speed != null))
-			return new Waypoint(id, translation, speed, trafficLightID, headLightIntensity, turnSignal);
-		
-		return null;
 	}
 	
 	

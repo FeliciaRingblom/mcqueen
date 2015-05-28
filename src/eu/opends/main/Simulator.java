@@ -65,7 +65,6 @@ import eu.opends.drivingTask.DrivingTask;
 import eu.opends.drivingTask.settings.SettingsLoader;
 import eu.opends.drivingTask.settings.SettingsLoader.Setting;
 import eu.opends.input.KeyBindingCenter;
-import eu.opends.knowledgeBase.KnowledgeBase;
 import eu.opends.niftyGui.InstructionsGUI;
 import eu.opends.niftyGui.StartScreenGUIController;
 import eu.opends.niftyGui.ShutDownGUI;
@@ -73,13 +72,11 @@ import eu.opends.reactionCenter.ReactionCenter;
 import eu.opends.settingsController.SettingsControllerServer;
 import eu.opends.taskDescription.contreTask.SteeringTask;
 import eu.opends.taskDescription.tvpTask.ThreeVehiclePlatoonTask;
-import eu.opends.tools.CollisionListener;
 import eu.opends.tools.ObjectManipulationCenter;
 import eu.opends.tools.PanelCenter;
 import eu.opends.tools.PropertiesLoader;
 import eu.opends.tools.Util;
 import eu.opends.tools.XMLLoader;
-import eu.opends.traffic.PhysicalTraffic;
 import eu.opends.trigger.TriggerAction;
 import eu.opends.trigger.TriggerCenter;
 
@@ -108,7 +105,6 @@ public class Simulator extends SimpleApplication
 	private InstructionsGUI instructionsGUI;
     private StartScreenGUIController startScreen;
 	private KeyBindingCenter keyBindingCenter;
-    private PhysicalTraffic physicalTraffic;
 	private SteeringCar car;
 	private CarPositionWriter carPositionWriter;
 	private CameraFlight cameraFlight;
@@ -167,11 +163,7 @@ public class Simulator extends SimpleApplication
     {
     	return car;
     }
-    
-    public PhysicalTraffic getPhysicalTraffic()
-    {
-    	return physicalTraffic;
-    }
+   
 	
 	public static DrivingTaskLogger getDrivingTaskLogger()
 	{
@@ -543,8 +535,8 @@ public class Simulator extends SimpleApplication
         }
     	
     	// add physics collision listener
-    	CollisionListener collisionListener = new CollisionListener();
-        getPhysicsSpace().addCollisionListener(collisionListener);
+//    	CollisionListener collisionListener = new CollisionListener();
+//        getPhysicsSpace().addCollisionListener(collisionListener);
         
         String videoPath = getSettingsLoader().getSetting(Setting.General_captureVideo, "");
         if((videoPath != null) && (!videoPath.isEmpty()) && (Util.isValidFilename(videoPath)))
@@ -697,16 +689,13 @@ public class Simulator extends SimpleApplication
 			
 			reactionCenter.close();
 			
-			KnowledgeBase.KB.disconnect();
 			steeringTask.close();
-			car.close();
 
 			if(settingsControllerServer != null)
 				settingsControllerServer.close();
 			
 		}
 
-		//super.destroy();
 		logger.info("finished destroy()");
     }
 	

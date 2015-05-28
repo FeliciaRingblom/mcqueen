@@ -45,7 +45,6 @@ public class LightTexturesContainer
 	private Node carNode;
 	private LightState lightState;
 	private HashMap<LightState,HashMap<Spatial,Material>> lightTexturesContainer;
-	private TurnSignalThread turnSignalThread;
 	
 	
 	public enum LightState
@@ -74,11 +73,8 @@ public class LightTexturesContainer
 		// load lights texture file
 		processLightTexturesFile(lightTexturesPath);
 		
-		// init turn signal thread
-		turnSignalThread = new TurnSignalThread(this);
 		
 		// init light state
-		//lightState = LightState.AllOff;
 		setLightState(LightState.AllOff);
 	}
 	
@@ -131,26 +127,7 @@ public class LightTexturesContainer
 			setLightState(targetLightState);
 	}
 	
-	
-	public void setTurnSignal(TurnSignalState turnSignalState)
-	{
-		//start turn signal thread if not running
-		if(!turnSignalThread.isAlive())
-			turnSignalThread.start();
 
-		// set requested turn signal
-		turnSignalThread.setTurnSignalState(turnSignalState);
-	}
-
-	
-	public TurnSignalState getTurnSignal() 
-	{
-		// if not running
-		if(!turnSignalThread.isAlive())
-			return TurnSignalState.OFF;
-		else
-			return turnSignalThread.getTurnSignalState();
-	}
 	
 	
 	public void setLightState(LightState lightState)
@@ -181,12 +158,6 @@ public class LightTexturesContainer
 			case HazardLightsBrakeLights : return true;
 		}
 		return false;
-	}
-	
-	
-	public void close() 
-	{
-		turnSignalThread.requestStop();
 	}
 	
 	

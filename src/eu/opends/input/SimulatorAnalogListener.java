@@ -55,39 +55,26 @@ public class SimulatorAnalogListener implements AnalogListener
 		{
 			float steeringValue =  (value*steeringFactor)/tpf;
 			
-			//System.out.println("left: " + Math.round(steeringValue*100000)/1000f);
 
 			simulator.getSteeringTask().setSteeringIntensity(-2.6f*steeringValue);
-			
-			/*
-			if(Math.abs(steeringValue) <= 0.002f)
-				simulator.getCar().unsteer();
-			else*/
-				simulator.getCar().steer(steeringValue/2.3f);
-				//System.out.println("left: " + Math.round((steeringValue/2.3f)*100000)/1000f);
+	
+			simulator.getCar().steer(steeringValue/2.3f);
 		} 
 		
 		else if (binding.equals("Joy Right")) 
 		{
 			float steeringValue = (-value*steeringFactor)/tpf;
 			
-			//System.out.println("right: " + Math.round(steeringValue*100000)/1000f);
 
 			simulator.getSteeringTask().setSteeringIntensity(-2.6f*steeringValue);
-			
-			/*
-			if(Math.abs(steeringValue) <= 0.002f)
-				simulator.getCar().unsteer();
-			else*/
-				simulator.getCar().steer(steeringValue/2.3f);
-				//System.out.println("right: " + Math.round((steeringValue/2.3f)*100000)/1000f);
+	
+			simulator.getCar().steer(steeringValue/2.3f);
 		} 
 		
 		else if (binding.equals("Joy Down")) 
 		{
 			float accelerationValue = (-value*pedalFactor)/tpf;
 			
-			//System.out.println("acc: " + Math.round(accelerationValue*100000)/1000f);
 			
 			if(Math.abs(accelerationValue) >= 0.5f)
 				simulator.getSteeringTask().getPrimaryTask().reportGreenLight();
@@ -100,15 +87,12 @@ public class SimulatorAnalogListener implements AnalogListener
 			else
 				simulator.getCar().setGasPedalIntensity(accelerationValue);
 			
-			//simulator.getThreeVehiclePlatoonTask().reportAcceleratorIntensity(Math.abs(accelerationValue));
 		} 
 		
 		else if (binding.equals("Joy Up")) 
 		{
 			float brakeValue = (value*pedalFactor)/tpf;
-			
-			//System.out.println("brk: " + Math.round(brakeValue*100000)/1000f);
-			
+						
 			if(Math.abs(brakeValue) >= 0.5f)
 				simulator.getSteeringTask().getPrimaryTask().reportRedLight();
 			

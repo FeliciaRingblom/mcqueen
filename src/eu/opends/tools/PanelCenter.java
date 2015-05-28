@@ -531,8 +531,8 @@ public class PanelCenter
 		else
 			carSpeed = Math.round(car.getCurrentSpeedKmh() * 10)/10f;
 		
-		float currentSpeedLimit = SpeedControlCenter.getCurrentSpeedlimit();
-		float upcomingSpeedLimit = SpeedControlCenter.getUpcomingSpeedlimit();
+//		float currentSpeedLimit = SpeedControlCenter.getCurrentSpeedlimit();
+//		float upcomingSpeedLimit = SpeedControlCenter.getUpcomingSpeedlimit();
 		
 		if(Math.abs(carSpeed) <= 0.7f)
 		{
@@ -545,27 +545,27 @@ public class PanelCenter
 			setSpeedIndicator(carSpeed);		
 		}
 		
-		if((currentSpeedLimit != 0) && ((carSpeed > currentSpeedLimit+10) || (carSpeed < upcomingSpeedLimit-10)))
-		{
-			speedText.setColor(ColorRGBA.Red);
-			if(!reportedExceeding)
-			{
-				if(carSpeed > currentSpeedLimit+10)
-					Simulator.getDrivingTaskLogger().reportSpeedLimitExceeded();
-				else
-					Simulator.getDrivingTaskLogger().reportSpeedLimitUnderExceeded();
-				reportedExceeding = true;
-			}
-		}
-		else
-		{
-			if(reportedExceeding)
-			{
-				Simulator.getDrivingTaskLogger().reportSpeedNormal();
-				reportedExceeding = false;
-			}
-			speedText.setColor(ColorRGBA.LightGray);
-		}
+//		if((currentSpeedLimit != 0) && ((carSpeed > currentSpeedLimit+10) || (carSpeed < upcomingSpeedLimit-10)))
+//		{
+//			speedText.setColor(ColorRGBA.Red);
+//			if(!reportedExceeding)
+//			{
+//				if(carSpeed > currentSpeedLimit+10)
+//					Simulator.getDrivingTaskLogger().reportSpeedLimitExceeded();
+//				else
+//					Simulator.getDrivingTaskLogger().reportSpeedLimitUnderExceeded();
+//				reportedExceeding = true;
+//			}
+//		}
+//		else
+//		{
+//			if(reportedExceeding)
+//			{
+//				Simulator.getDrivingTaskLogger().reportSpeedNormal();
+//				reportedExceeding = false;
+//			}
+//			speedText.setColor(ColorRGBA.LightGray);
+//		}
 	}
 
 

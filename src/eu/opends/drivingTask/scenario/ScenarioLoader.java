@@ -19,8 +19,6 @@
 package eu.opends.drivingTask.scenario;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -35,17 +33,13 @@ import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
 
 import eu.opends.basics.MapObject;
-import eu.opends.main.Simulator;import eu.opends.cameraFlight.CameraFlightSettings;
+import eu.opends.cameraFlight.CameraFlightSettings;
 import eu.opends.car.ResetPosition;
 import eu.opends.drivingTask.DrivingTask;
 import eu.opends.drivingTask.DrivingTaskDataQuery;
 import eu.opends.drivingTask.DrivingTaskDataQuery.Layer;
 import eu.opends.drivingTask.scene.SceneLoader;
 import eu.opends.main.Simulator;
-import eu.opends.traffic.FollowBoxSettings;
-import eu.opends.traffic.PhysicalTraffic;
-import eu.opends.traffic.TrafficCarData;
-import eu.opends.traffic.Waypoint;
 
 
 /**
@@ -102,7 +96,6 @@ public class ScenarioLoader
 		this.sim = sim;
 		this.sceneLoader = drivingTask.getSceneLoader();
 		processSceneCar();
-		extractTraffic();
 		extractCameraFlight();
 		extractConversionMatrices();
 		
@@ -303,27 +296,6 @@ public class ScenarioLoader
 		return geoToModelMatrix;
 	}
 	
-	
-//	public WeatherSettings getWeatherSettings()
-//	{
-//		Float snowingPercentage = dtData.getValue(Layer.SCENARIO, 
-//				"/scenario:scenario/scenario:environment/scenario:weather/scenario:snowingPercentage", Float.class);
-//		if(snowingPercentage == null)
-//			snowingPercentage = 0f;
-//		
-//		Float rainingPercentage = dtData.getValue(Layer.SCENARIO, 
-//				"/scenario:scenario/scenario:environment/scenario:weather/scenario:rainingPercentage", Float.class);
-//		if(rainingPercentage == null)
-//			rainingPercentage = 0f;
-//		
-//		Float fogPercentage = dtData.getValue(Layer.SCENARIO, 
-//				"/scenario:scenario/scenario:environment/scenario:weather/scenario:fogPercentage", Float.class);
-//		if(fogPercentage == null)
-//			fogPercentage = 0f;
-//		
-//		return new WeatherSettings(snowingPercentage, rainingPercentage, fogPercentage);
-//	}
-	
 
 	/**
 	 * Looks up the node "startPosition" for the initial location 
@@ -380,114 +352,6 @@ public class ScenarioLoader
 	}
 	
 	
-	private void extractTraffic()
-	{
-		try {
-			NodeList pointNodes = (NodeList) dtData.xPathQuery(Layer.SCENARIO, 
-					"/scenario:scenario/scenario:traffic/scenario:vehicle", XPathConstants.NODESET);
-
-			for (int k = 1; k <= pointNodes.getLength(); k++) 
-			{
-				String name = dtData.getValue(Layer.SCENARIO, 
-						"/scenario:scenario/scenario:traffic/scenario:vehicle["+k+"]/@id", String.class);
-				
-				Float mass = dtData.getValue(Layer.SCENARIO, 
-						"/scenario:scenario/scenario:traffic/scenario:vehicle["+k+"]/scenario:mass", Float.class);
-
-				Float acceleration = dtData.getValue(Layer.SCENARIO, 
-						"/scenario:scenario/scenario:traffic/scenario:vehicle["+k+"]/scenario:acceleration", Float.class);
-				
-				Float decelerationBrake = dtData.getValue(Layer.SCENARIO, 
-						"/scenario:scenario/scenario:traffic/scenario:vehicle["+k+"]/scenario:decelerationBrake", Float.class);
-				
-				Float decelerationFreeWheel = dtData.getValue(Layer.SCENARIO, 
-						"/scenario:scenario/scenario:traffic/scenario:vehicle["+k+"]/scenario:decelerationFreeWheel", Float.class);
-				
-				Boolean engineOn = dtData.getValue(Layer.SCENARIO, 
-						"/scenario:scenario/scenario:traffic/scenario:vehicle["+k+"]/scenario:engineOn", Boolean.class);
-				
-				String modelPath = dtData.getValue(Layer.SCENARIO, 
-						"/scenario:scenario/scenario:traffic/scenario:vehicle["+k+"]/scenario:modelPath", String.class);
-				
-				ArrayList<Waypoint> wayPoints = extractWayPoints(
-						"/scenario:scenario/scenario:traffic/scenario:vehicle["+k+"]/scenario:wayPoints/scenario:wayPoint");
-				
-				Float curveTension = dtData.getValue(Layer.SCENARIO, 
-						"/scenario:scenario/scenario:traffic/scenario:vehicle["+k+"]/scenario:curveTension", Float.class);
-				
-				Float maxDistance = dtData.getValue(Layer.SCENARIO, 
-						"/scenario:scenario/scenario:traffic/scenario:vehicle["+k+"]/scenario:maxDistanceFromPath", Float.class);
-		
-				Boolean pathIsCycle = dtData.getValue(Layer.SCENARIO, 
-						"/scenario:scenario/scenario:traffic/scenario:vehicle["+k+"]/scenario:pathIsCycle", Boolean.class);
-				
-				Boolean pathIsVisible = dtData.getValue(Layer.SCENARIO, 
-						"/scenario:scenario/scenario:traffic/scenario:vehicle["+k+"]/scenario:pathIsVisible", Boolean.class);
-				
-				String startWayPoint = dtData.getValue(Layer.SCENARIO, 
-						"/scenario:scenario/scenario:traffic/scenario:vehicle["+k+"]/scenario:startWayPoint", String.class);
-
-				
-				TrafficCarData trafficCarData = new TrafficCarData(name, mass, acceleration, decelerationBrake, 
-						decelerationFreeWheel, engineOn, modelPath, new FollowBoxSettings(wayPoints, maxDistance, 
-						curveTension, pathIsCycle, pathIsVisible, startWayPoint));
-				PhysicalTraffic.getVehicleDataList().add(trafficCarData);
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-	}
-	
-
-	public ArrayList<Waypoint> extractWayPoints(String path)
-	{
-		ArrayList<Waypoint> wayPoints = new ArrayList<Waypoint>();
-		
-		try {
-			NodeList pointNodes = (NodeList) dtData.xPathQuery(Layer.SCENARIO, 
-					path, XPathConstants.NODESET);
-
-			for (int k = 1; k <= pointNodes.getLength(); k++) 
-			{
-				Waypoint wayPoint = dtData.getWayPoint(Layer.SCENARIO, path + "["+k+"]");
-			
-				String wayPointRef = dtData.getValue(Layer.SCENARIO, 
-						path + "["+k+"]/@ref", String.class);
-
-				Map<String, Vector3f> pointMap = sceneLoader.getPointMap();
-				
-				if(wayPoint != null)
-				{
-					wayPoints.add(wayPoint);
-				}
-				else if((wayPointRef != null) && (pointMap.containsKey(wayPointRef)))
-				{
-					Vector3f translation = pointMap.get(wayPointRef);
-					Float speed = dtData.getValue(Layer.SCENARIO, path + "["+k+"]/scenario:speed", Float.class);
-					String trafficLightID = dtData.getValue(Layer.SCENARIO, path + "["+k+"]/scenario:trafficLight", String.class);
-					Float headLightIntensity = dtData.getValue(Layer.SCENARIO, path + "["+k+"]/scenario:headLightIntensity", Float.class);
-					String turnSignal = dtData.getValue(Layer.SCENARIO, path + "["+k+"]/scenario:turnSignal", String.class);
-					
-					if((translation != null) && (speed != null))
-					{
-						Waypoint point = new Waypoint(wayPointRef, translation, speed, trafficLightID, headLightIntensity, turnSignal);
-						wayPoints.add(point);
-					}
-				}
-				else 
-					throw new Exception("Error in way point list");
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			return new ArrayList<Waypoint>();
-		}
-		
-		return wayPoints;
-	}
-
 
 	public boolean isAutomaticTransmission(boolean defaultValue) 
 	{

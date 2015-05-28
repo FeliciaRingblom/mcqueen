@@ -354,7 +354,6 @@ public abstract class Car
 	public void setBrakePedalPressIntensity(float intensity) 
 	{
 		brakePedalPressIntensity = intensity;
-		SpeedControlCenter.stopBrakeTimer();
 	}
 	
 	
@@ -458,7 +457,6 @@ public abstract class Car
 		
 		// update values
 		previousPosition = currentPosition;
-		//System.out.println("currentPos: " + currentPosition);
 	}
 	
 	
@@ -523,22 +521,11 @@ public abstract class Car
 	{
 		this.engineOn = engineOn;
 		resetPedals();
-		
-		//showEngineStatusMessage(engineOn);
-		
+				
 		if(engineOn)
 			AudioCenter.startEngine();
 		else
 			AudioCenter.stopEngine();
-	}
-
-
-	protected void showEngineStatusMessage(boolean engineOn) 
-	{
-//		if(engineOn)
-//			PanelCenter.getMessageBox().addMessage("Engin on", 2);
-//		else
-//			PanelCenter.getMessageBox().addMessage("Engin off. Press 'e' to start.", 0);
 	}
 
 	
@@ -593,24 +580,5 @@ public abstract class Car
 	public boolean isBrakeLightOn()
 	{
 		return lightTexturesContainer.isBrakeLightOn();
-	}
-
-	
-	public void setTurnSignal(TurnSignalState turnSignalState)
-	{
-		lightTexturesContainer.setTurnSignal(turnSignalState);
-	}
-	
-
-	public TurnSignalState getTurnSignal() 
-	{
-		return lightTexturesContainer.getTurnSignal();
-	}
-	
-	
-	public void close()
-	{
-		lightTexturesContainer.close();
-		
 	}
 }

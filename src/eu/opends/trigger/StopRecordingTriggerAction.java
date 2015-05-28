@@ -18,6 +18,7 @@
 //
 //package eu.opends.trigger;
 //
+//import eu.opends.analyzer.CarPositionWriter;
 //import eu.opends.analyzer.DataWriter;
 //import eu.opends.main.Simulator;
 //import eu.opends.tools.PanelCenter;
@@ -41,7 +42,7 @@
 //	{
 //		if(!isExceeded())
 //		{
-//			DataWriter dataWriter = sim.getMyDataWriter();
+//			CarPositionWriter dataWriter = sim.getMyCarPositionWriter();
 //			if (dataWriter != null)
 //			{
 //				// stop recording drive	

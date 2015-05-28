@@ -33,9 +33,7 @@ import eu.opends.trafficObjectLocator.TrafficObjectLocator;
  * @author Rafael Math
  */
 public class SteeringCar extends Car 
-{
-    private TrafficObjectLocator trafficObjectLocator;
-    
+{    
     
 	public SteeringCar(Simulator sim, String speed) 
 	{		
@@ -76,7 +74,6 @@ public class SteeringCar extends Car
 		maxFreeWheelBrakeForce = 0.004375f * decelerationFreeWheel * mass;
 		
 		engineOn = scenarioLoader.getCarProperty(CarProperty.engine_engineOn, SimulationDefaults.engine_engineOn);
-		showEngineStatusMessage(engineOn);
 		
 		Float lightIntensityObj = scenarioLoader.getCarProperty(CarProperty.light_intensity, SimulationDefaults.light_intensity);
 		if(lightIntensityObj != null)
@@ -88,16 +85,8 @@ public class SteeringCar extends Car
 		modelPath = scenarioLoader.getModelPath();
 		
 		init();
-
-        // allows to place objects at current position
-        trafficObjectLocator = new TrafficObjectLocator(sim, this);
 	}
 
-	
-	public TrafficObjectLocator getObjectLocator()
-	{
-		return trafficObjectLocator;
-	}
 	
 	
 	// will be called, in every frame
@@ -110,20 +99,9 @@ public class SteeringCar extends Car
 			// apply 0 acceleration when engine not running
 			pAccel = powerTrain.getPAccel(tpf, 0) * 30f;
 		}
-//		else if(isAutoAcceleration && (getCurrentSpeedKmh() < minSpeed))
-//		{
-//			// apply maximum acceleration (= -1 for forward) to maintain minimum speed
-//			pAccel = powerTrain.getPAccel(tpf, -1) * 30f;
-//		}
-//		else if(isCruiseControl && (getCurrentSpeedKmh() < targetSpeedCruiseControl))
-//		{
-//			// apply maximum acceleration (= -1 for forward) to maintain target speed
-//			pAccel = powerTrain.getPAccel(tpf, -1) * 30f;
-//		}
 		else
 		{
-			// apply acceleration according to gas pedal state
-			//pAccel = powerTrain.getPAccel(tpf, gasPedalPressIntensity) * 30f;
+
 			pAccel = -1500f;
 		}
 		transmission.performAcceleration(pAccel);
@@ -145,7 +123,6 @@ public class SteeringCar extends Car
         rightHeadLight.setPosition(carModel.getRightLightPosition());
         rightHeadLight.setDirection(carModel.getRightLightDirection());
         
-        trafficObjectLocator.update();
 	}
 
 }
