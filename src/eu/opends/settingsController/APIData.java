@@ -168,21 +168,6 @@ public class APIData {
 		}
 		
 		//physicalAttributes
-		else if(var.equals("/root/thisVehicle/physicalAttributes/Properties/latitude")){
-			Vector3d geoPosition = car.getGeoPosition();
-			double latitude = geoPosition.getX();  // N-S position in geo coordinates
-			value = String.valueOf(latitude);
-		}
-		else if(var.equals("/root/thisVehicle/physicalAttributes/Properties/longitude")){
-			Vector3d geoPosition = car.getGeoPosition();
-			double longitude = geoPosition.getY(); // W-E position in geo coordinates
-			value = String.valueOf(longitude);		
-		}
-		else if(var.equals("/root/thisVehicle/physicalAttributes/Properties/altitude")){
-			Vector3d geoPosition = car.getGeoPosition();
-			double altitude = geoPosition.getZ();  // meters above sea level
-			value = String.valueOf(altitude);
-		}
 		else if(var.equals("/root/thisVehicle/physicalAttributes/Properties/orientation")){
 			float orientation = car.getHeadingDegree();  // 0..360 degree
 			value = String.valueOf(orientation);

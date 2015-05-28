@@ -33,7 +33,6 @@ import com.jme3.scene.Spatial;
 //import eu.opends.audio.AudioCenter;
 //import eu.opends.basics.MapObject;
 import eu.opends.main.Simulator;import eu.opends.car.Car;
-import eu.opends.environment.TrafficLightCenter.TriggerType;
 import eu.opends.main.Simulator;
 import eu.opends.tools.Util;
 
@@ -87,10 +86,7 @@ public class TriggerCenter
 
 		String tempSpatialName;
 
-		//-----------------------
 		List<Spatial> tempList = sim.getTriggerNode().getChildren();
-		//List<Spatial> tempList = Util.getAllSpatials(sim.getTriggerNode());
-		//-----------------------
 		
 		for (Iterator<Spatial> it = tempList.iterator(); it.hasNext();) 
 		{
@@ -109,68 +105,9 @@ public class TriggerCenter
 	
 	public void doTriggerChecks() 
 	{
-		handleTrafficLightCollision(trafficLightTriggerList);
-		handleTrafficLightPhaseCollision(trafficLightPhaseTriggerList);
 		handleRoadObjectsCollision(roadObjectsTriggerList);
-		//computeContactWithCar();
 	}
 
-	
-	/**
-	 * This method handles a collision of the car with a traffic light trigger. 
-	 * The TrafficLightTrigger which recognizes cars located close to a traffic 
-	 * light (up to 40 meters) and requests green light.
-	 * A collision will be forwarded to the traffic light center.
-	 * 
-	 * @param triggerList
-	 * 			list of all traffic light triggers in order to monitor approximation 
-	 * 			to traffic lights
-	 */
-	private void handleTrafficLightCollision(Map<String,Spatial> triggerList)
-	{
-		for (Entry<String, Spatial> trigger : triggerList.entrySet())
-		{
-			resultCollision.clear();
-			triggerName = trigger.getValue().getName();
-			
-			// calculate collision of the car with a road object trigger
-			Spatial triggerObject = sim.getTriggerNode().getChild(triggerName);
-			sim.getCar().getCarNode().collideWith(triggerObject.getWorldBound(), resultCollision);
-			
-			if(resultCollision.size() > 0) 
-				sim.getTrafficLightCenter().reportCollision(trigger.getKey(), TriggerType.REQUEST);
-		}
-	}
-	
-	
-	/**
-	 * This method handles a collision of the car with a traffic light phase trigger.
-	 * The TrafficLightPhaseTrigger is a long range trigger (up to 150 meters) 
-	 * which controls the SIM-TD traffic light phase assistant</p>
-	 * A collision will be forwarded to the traffic light center.
-	 * 
-	 * @param triggerList
-	 * 			list of all traffic light triggers in order to monitor approximation 
-	 * 			to traffic lights
-	 */
-	private void handleTrafficLightPhaseCollision(Map<String,Spatial> triggerList)
-	{
-		for (Entry<String, Spatial> trigger : triggerList.entrySet())
-		{
-			resultCollision.clear();
-			triggerName = trigger.getValue().getName();
-			
-			// calculate collision of the car with a road object trigger
-			Spatial triggerObject = sim.getTriggerNode().getChild(triggerName);
-			sim.getCar().getCarNode().collideWith(triggerObject.getWorldBound(), resultCollision);
-			
-			if(resultCollision.size() > 0) 
-			{
-				sim.getTrafficLightCenter().reportCollision(trigger.getKey(), TriggerType.PHASE);
-			}
-		}
-	}
-	
 	
 	/**
 	 * This method handles a collision of the car with a road object trigger. This can be:
@@ -211,113 +148,6 @@ public class TriggerCenter
 
 	Map<String,Integer> collisionMap = new HashMap<String,Integer>();
 	float suspensionForce[] = {0,0,0,0};
-	
-	/**
-	 * Computes the IDs of the road objects that are in touch with any of the car's wheels
-	 * and forwards them to class VisualSimulatorState for ecoDrive project.
-	 */
-	/*
-	private void computeContactWithCar()
-	{
-		Car car = sim.getCar();
-
-		for (Spatial roadObject : ((Node)sim.getSceneNode()).getChildren()) 
-		{	
-			if(roadObject.getName() != null)
-			{
-				resultCollision.clear();
-				//String[] roadObjectName = roadObject.getName().split("\\.");
-				
-				// calculate collision of the car with a road object
-				car.getCarNode().collideWith(roadObject.getWorldBound(), resultCollision);
-	
-				if(resultCollision.size() > 0)
-				{
-					// if car has collided with a road object --> report collision
-					//System.out.println("Collided with: " + roadObjectName[0]);
-					
-					// report collision with chassis --> play sound
-					if(resultCollision.getClosestCollision().getGeometry().getName().startsWith("Car-geom-1"))
-						playCollisionSound(car, roadObject.getName());
-				}
-			}
-		}
-		
-		// decrease frame counter of every road object contained in collisionMap by 1
-		decreaseCounter();
-		
-		// report collision with wheels --> play sound
-    	for(int i=0; i<=3; i++)
-    	{
-			float currentSuspensionForce = car.getCarControl().getWheel(i).getWheelInfo().wheelsSuspensionForce;
-			if(suspensionForce[i] - currentSuspensionForce > 2000)
-				AudioCenter.playSound("potHole");
-			suspensionForce[i] = currentSuspensionForce;
-    	}
-	}
-	
-
-	private void playCollisionSound(Car car, String roadObjectName)
-	{
-		MapObject currentMapObject = getMapObject(roadObjectName);
-		
-		// if object is collidable (world-node-objects are considered to be always collidable)
-		if((currentMapObject == null) || (!currentMapObject.getCollisionShape().equalsIgnoreCase("none")))
-		{
-			if(!collisionMap.containsKey(roadObjectName))
-			{
-				if(car.getCurrentSpeedKmh() > 50)
-				{
-					//AudioCenter.playSound("crash");
-					//car.setEnginOn(false);
-					//car.setBrakePedalPressIntensity(1f);
-				}
-				else
-				{
-					// TODO exclude initial sound
-					if(!roadObjectName.equalsIgnoreCase("sb_smaf_bordstein"))
-					{
-						String soundFile = "collision";
-						if((currentMapObject != null) && (!currentMapObject.getCollisionSound().isEmpty()))
-							soundFile = currentMapObject.getCollisionSound();
-						AudioCenter.playSound(soundFile);
-					}
-				}							
-			}
-			
-			// lock road object at least for the next 5 frames
-			collisionMap.put(roadObjectName, 5);
-		}
-	}
-
-
-	private void decreaseCounter()
-	{
-		Iterator<Entry<String, Integer>> iterator = collisionMap.entrySet().iterator();
-		
-		while(iterator.hasNext()) 
-		{
-			Entry<String, Integer> entry = (Entry<String, Integer>)iterator.next();
-
-			if(entry.getValue() > 1)
-				entry.setValue(entry.getValue() - 1);
-			else
-				iterator.remove();
-		}
-	}
-	
-
-	private MapObject getMapObject(String currentCollision)
-	{
-		List<MapObject> mapObjects = Simulator.getDrivingTask().getSceneLoader().getMapObjects();
-		for(MapObject mapObject : mapObjects)
-		{
-			if(mapObject.getName().equals(currentCollision))
-				return mapObject;
-		}
-		return null;
-	}
-	*/
 	
 
 	/**

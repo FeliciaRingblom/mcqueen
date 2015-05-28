@@ -22,18 +22,14 @@ import java.util.Properties;
 
 import com.jme3.math.FastMath;
 
-import eu.opends.main.Simulator;import eu.opends.drivingTask.DrivingTaskDataQuery.Layer;
 import eu.opends.main.Simulator;
-import eu.opends.trigger.GetTimeUntilBrakeAction;
-import eu.opends.trigger.GetTimeUntilSpeedChangeAction;
-import eu.opends.trigger.ManipulateObjectTriggerAction;
+import eu.opends.drivingTask.DrivingTaskDataQuery.Layer;
 import eu.opends.trigger.ManipulatePictureTriggerAction;
 import eu.opends.trigger.MoveTrafficTriggerAction;
 import eu.opends.trigger.PauseTriggerAction;
 import eu.opends.trigger.PlaySoundAction;
 import eu.opends.trigger.ReportSpeedTriggerAction;
 import eu.opends.trigger.ReportTrafficLightTriggerAction;
-import eu.opends.trigger.RequestGreenTrafficLightAction;
 import eu.opends.trigger.ResetCarToResetPointAction;
 import eu.opends.trigger.ReturnToInstruction;
 import eu.opends.trigger.SetSpeedLimitAction;
@@ -92,138 +88,138 @@ public class InteractionMethods
 //	}
 	
 	
-	
-	@Action(
-			name = "manipulateObject", 
-			layer = Layer.SCENE, 
-			description = "Manipulates translation, rotation, scale and/or visibility of the given model",
-			defaultDelay = 0,
-			defaultRepeat = 0,
-			param = {@Parameter(name="id", type="String", defaultValue="model01", 
-								description="ID of the model to manipulate"),
-					 @Parameter(name="setTranslationX", type="Float", defaultValue="0.0", 
-							 	description="Translate model to this x-coordinate"),
-					 @Parameter(name="setTranslationY", type="Float", defaultValue="0.0", 
-							 	description="Translate model to this y-coordinate"),
-					 @Parameter(name="setTranslationZ", type="Float", defaultValue="0.0", 
-							 	description="Translate model to this z-coordinate"),
-					 @Parameter(name="setRotationX", type="Float", defaultValue="0.0", 
-							 	description="Rotate model around x-axis"),
-					 @Parameter(name="setRotationY", type="Float", defaultValue="0.0", 
-							 	description="Rotate model around y-axis"),
-					 @Parameter(name="setRotationZ", type="Float", defaultValue="0.0", 
-							 	description="Rotate model around z-axis"),
-					 @Parameter(name="setScaleX", type="Float", defaultValue="1.0", 
-							 	description="Scale model to this x-coordinate"),
-					 @Parameter(name="setScaleY", type="Float", defaultValue="1.0", 
-							 	description="Scale model to this y-coordinate"),
-					 @Parameter(name="setScaleZ", type="Float", defaultValue="1.0", 
-							 	description="Scale model to this z-coordinate"),
-					 @Parameter(name="addTranslationX", type="Float", defaultValue="0.0", 
-							 	description="Adds this value to the models x-coordinate"),
-					 @Parameter(name="addTranslationY", type="Float", defaultValue="0.0", 
-							 	description="Adds this value to the models y-coordinate"),
-					 @Parameter(name="addTranslationZ", type="Float", defaultValue="0.0", 
-							 	description="Adds this value to the models z-coordinate"),
-					 @Parameter(name="addRotationX", type="Float", defaultValue="0.0", 
-							 	description="Adds this value to the models rotation around the x-axis"),
-					 @Parameter(name="addRotationY", type="Float", defaultValue="0.0", 
-							 	description="Adds this value to the models rotation around the y-axis"),
-					 @Parameter(name="addRotationZ", type="Float", defaultValue="0.0", 
-							 	description="Adds this value to the models rotation around the z-axis"),
-					 @Parameter(name="addScaleX", type="Float", defaultValue="1.0", 
-							 	description="Adds this value to the models x-coordinate scale"),
-					 @Parameter(name="addScaleY", type="Float", defaultValue="1.0", 
-							 	description="Adds this value to the models y-coordinate scale"),
-					 @Parameter(name="addScaleZ", type="Float", defaultValue="1.0", 
-							 	description="Adds this value to the models z-coordinate scale"),
-					 @Parameter(name="visible", type="Boolean", defaultValue="true", 
-								description="Makes the model (in)visible")
-					}
-		)
-	public TriggerAction manipulateObject(Simulator sim, float delay, int repeat, Properties parameterList)
-	{
-		String parameter = "";
-		Float[] nullArray = new Float[] {null, null, null};
-		
-		try {
-
-			// look up id of object to manipulate --> if not available, quit
-			parameter = "id";
-			String id = parameterList.getProperty(parameter);
-			if(id == null)
-				throw new Exception();
-			
-			// create ManipulateObjectTriggerAction
-			ManipulateObjectTriggerAction manipulateObjectTriggerAction = 
-				new ManipulateObjectTriggerAction(sim, delay, repeat, id);
-
-			// set translation, if available
-			parameter = "setTranslation";
-			String[] translationKeys = new String[] {"setTranslationX", "setTranslationY", "setTranslationZ"};
-			Float[] translation = extractFloatValues(parameterList, translationKeys, nullArray);
-
-			if(translation != null)
-				manipulateObjectTriggerAction.setTranslation(translation);
-				
-			// set rotation, if available
-			parameter = "setRotation";
-			String[] rotationKeys = new String[] {"setRotationX", "setRotationY", "setRotationZ"};
-			Float[] rotation = extractFloatValues(parameterList, rotationKeys, nullArray);
-
-			if(rotation != null)
-				manipulateObjectTriggerAction.setRotation(rotation);
-			
-			// set scale, if available
-			parameter = "setScale";
-			String[] scaleKeys = new String[] {"setScaleX", "setScaleY", "setScaleZ"};
-			Float[] scale = extractFloatValues(parameterList, scaleKeys, nullArray);
-
-			if(scale != null)
-				manipulateObjectTriggerAction.setScale(scale);	
-
-			// add translation, if available
-			parameter = "addTranslation";
-			String[] addTranslationKeys = new String[] {"addTranslationX", "addTranslationY", "addTranslationZ"};
-			Float[] addTranslation = extractFloatValues(parameterList, addTranslationKeys, nullArray);
-
-			if(addTranslation != null)
-				manipulateObjectTriggerAction.addTranslation(addTranslation);
-				
-			// add rotation, if available
-			parameter = "addRotation";
-			String[] addRotationKeys = new String[] {"addRotationX", "addRotationY", "addRotationZ"};
-			Float[] addRotation = extractFloatValues(parameterList, addRotationKeys, nullArray);
-
-			if(addRotation != null)
-				manipulateObjectTriggerAction.addRotation(addRotation);
-			
-			// add scale, if available
-			parameter = "addScale";
-			String[] addScaleKeys = new String[] {"addScaleX", "addScaleY", "addScaleZ"};
-			Float[] addScale = extractFloatValues(parameterList, addScaleKeys, nullArray);
-
-			if(addScale != null)
-				manipulateObjectTriggerAction.addScale(addScale);
-			
-			// set visibility, if available
-			parameter = "visible";
-			String visible = parameterList.getProperty(parameter);
-			if(visible != null)
-				manipulateObjectTriggerAction.setVisibility(Boolean.parseBoolean(visible));
-			
-											
-			return manipulateObjectTriggerAction;
-			
-		} catch (Exception e) {
-
-			if(e instanceof NotAFloatException)
-				parameter = ((NotAFloatException)e).getVariableName();
-
-			reportError("manipulateObject", parameter);
-			return null;
-		}
-	}
+//	
+//	@Action(
+//			name = "manipulateObject", 
+//			layer = Layer.SCENE, 
+//			description = "Manipulates translation, rotation, scale and/or visibility of the given model",
+//			defaultDelay = 0,
+//			defaultRepeat = 0,
+//			param = {@Parameter(name="id", type="String", defaultValue="model01", 
+//								description="ID of the model to manipulate"),
+//					 @Parameter(name="setTranslationX", type="Float", defaultValue="0.0", 
+//							 	description="Translate model to this x-coordinate"),
+//					 @Parameter(name="setTranslationY", type="Float", defaultValue="0.0", 
+//							 	description="Translate model to this y-coordinate"),
+//					 @Parameter(name="setTranslationZ", type="Float", defaultValue="0.0", 
+//							 	description="Translate model to this z-coordinate"),
+//					 @Parameter(name="setRotationX", type="Float", defaultValue="0.0", 
+//							 	description="Rotate model around x-axis"),
+//					 @Parameter(name="setRotationY", type="Float", defaultValue="0.0", 
+//							 	description="Rotate model around y-axis"),
+//					 @Parameter(name="setRotationZ", type="Float", defaultValue="0.0", 
+//							 	description="Rotate model around z-axis"),
+//					 @Parameter(name="setScaleX", type="Float", defaultValue="1.0", 
+//							 	description="Scale model to this x-coordinate"),
+//					 @Parameter(name="setScaleY", type="Float", defaultValue="1.0", 
+//							 	description="Scale model to this y-coordinate"),
+//					 @Parameter(name="setScaleZ", type="Float", defaultValue="1.0", 
+//							 	description="Scale model to this z-coordinate"),
+//					 @Parameter(name="addTranslationX", type="Float", defaultValue="0.0", 
+//							 	description="Adds this value to the models x-coordinate"),
+//					 @Parameter(name="addTranslationY", type="Float", defaultValue="0.0", 
+//							 	description="Adds this value to the models y-coordinate"),
+//					 @Parameter(name="addTranslationZ", type="Float", defaultValue="0.0", 
+//							 	description="Adds this value to the models z-coordinate"),
+//					 @Parameter(name="addRotationX", type="Float", defaultValue="0.0", 
+//							 	description="Adds this value to the models rotation around the x-axis"),
+//					 @Parameter(name="addRotationY", type="Float", defaultValue="0.0", 
+//							 	description="Adds this value to the models rotation around the y-axis"),
+//					 @Parameter(name="addRotationZ", type="Float", defaultValue="0.0", 
+//							 	description="Adds this value to the models rotation around the z-axis"),
+//					 @Parameter(name="addScaleX", type="Float", defaultValue="1.0", 
+//							 	description="Adds this value to the models x-coordinate scale"),
+//					 @Parameter(name="addScaleY", type="Float", defaultValue="1.0", 
+//							 	description="Adds this value to the models y-coordinate scale"),
+//					 @Parameter(name="addScaleZ", type="Float", defaultValue="1.0", 
+//							 	description="Adds this value to the models z-coordinate scale"),
+//					 @Parameter(name="visible", type="Boolean", defaultValue="true", 
+//								description="Makes the model (in)visible")
+//					}
+//		)
+//	public TriggerAction manipulateObject(Simulator sim, float delay, int repeat, Properties parameterList)
+//	{
+//		String parameter = "";
+//		Float[] nullArray = new Float[] {null, null, null};
+//		
+//		try {
+//
+//			// look up id of object to manipulate --> if not available, quit
+//			parameter = "id";
+//			String id = parameterList.getProperty(parameter);
+//			if(id == null)
+//				throw new Exception();
+//			
+//			// create ManipulateObjectTriggerAction
+//			ManipulateObjectTriggerAction manipulateObjectTriggerAction = 
+//				new ManipulateObjectTriggerAction(sim, delay, repeat, id);
+//
+//			// set translation, if available
+//			parameter = "setTranslation";
+//			String[] translationKeys = new String[] {"setTranslationX", "setTranslationY", "setTranslationZ"};
+//			Float[] translation = extractFloatValues(parameterList, translationKeys, nullArray);
+//
+//			if(translation != null)
+//				manipulateObjectTriggerAction.setTranslation(translation);
+//				
+//			// set rotation, if available
+//			parameter = "setRotation";
+//			String[] rotationKeys = new String[] {"setRotationX", "setRotationY", "setRotationZ"};
+//			Float[] rotation = extractFloatValues(parameterList, rotationKeys, nullArray);
+//
+//			if(rotation != null)
+//				manipulateObjectTriggerAction.setRotation(rotation);
+//			
+//			// set scale, if available
+//			parameter = "setScale";
+//			String[] scaleKeys = new String[] {"setScaleX", "setScaleY", "setScaleZ"};
+//			Float[] scale = extractFloatValues(parameterList, scaleKeys, nullArray);
+//
+//			if(scale != null)
+//				manipulateObjectTriggerAction.setScale(scale);	
+//
+//			// add translation, if available
+//			parameter = "addTranslation";
+//			String[] addTranslationKeys = new String[] {"addTranslationX", "addTranslationY", "addTranslationZ"};
+//			Float[] addTranslation = extractFloatValues(parameterList, addTranslationKeys, nullArray);
+//
+//			if(addTranslation != null)
+//				manipulateObjectTriggerAction.addTranslation(addTranslation);
+//				
+//			// add rotation, if available
+//			parameter = "addRotation";
+//			String[] addRotationKeys = new String[] {"addRotationX", "addRotationY", "addRotationZ"};
+//			Float[] addRotation = extractFloatValues(parameterList, addRotationKeys, nullArray);
+//
+//			if(addRotation != null)
+//				manipulateObjectTriggerAction.addRotation(addRotation);
+//			
+//			// add scale, if available
+//			parameter = "addScale";
+//			String[] addScaleKeys = new String[] {"addScaleX", "addScaleY", "addScaleZ"};
+//			Float[] addScale = extractFloatValues(parameterList, addScaleKeys, nullArray);
+//
+//			if(addScale != null)
+//				manipulateObjectTriggerAction.addScale(addScale);
+//			
+//			// set visibility, if available
+//			parameter = "visible";
+//			String visible = parameterList.getProperty(parameter);
+//			if(visible != null)
+//				manipulateObjectTriggerAction.setVisibility(Boolean.parseBoolean(visible));
+//			
+//											
+//			return manipulateObjectTriggerAction;
+//			
+//		} catch (Exception e) {
+//
+//			if(e instanceof NotAFloatException)
+//				parameter = ((NotAFloatException)e).getVariableName();
+//
+//			reportError("manipulateObject", parameter);
+//			return null;
+//		}
+//	}
 	
 	
 	@Action(
@@ -589,91 +585,91 @@ public class InteractionMethods
 	
 	
 	
-	/**
-	 * Creates a GetTimeUntilBrake trigger action by parsing the given node list. 
-	 * Time from hitting the trigger until the driver brakes will be recorded.
-	 * 
-	 * @return
-	 * 			GetTimeUntilBrake trigger action.
-	 */
-	@Action(
-			name = "measureTimeUntilBrake",
-			layer = Layer.SCENARIO,
-			description = "Measures time until brake was applied",
-			defaultDelay = 0,
-			defaultRepeat = 0,
-			param = {@Parameter(name="triggerName", type="String", defaultValue="trigger01", 
-								description="ID of trigger for identification in output file")
-					}
-		)
-	public TriggerAction measureTimeUntilBrake(Simulator sim, float delay, int repeat, Properties parameterList)
-	{
-		String parameter = "";
-		
-		try {
-			
-			// extract name of trigger
-			parameter = "triggerName";
-			String triggerName = parameterList.getProperty(parameter);
-			if(triggerName == null)
-				throw new Exception();
-			
-			// create GetTimeUntilBrakeAction
-			return new GetTimeUntilBrakeAction(delay, repeat, triggerName);
-			
-		} catch (Exception e) {
-			
-			reportError("measureTimeUntilBrake", parameter);
-			return null;
-		}
-	}
-	
-	
-	/**
-	 * Creates a GetTimeUntilSpeedChange trigger action by parsing the given node list. 
-	 * Time from hitting the trigger until the car reached the given speed change.
-	 * 
-	 * @return
-	 * 			GetTimeUntilSpeedChange trigger action.
-	 */
-	@Action(
-			name = "measureTimeUntilSpeedChange",
-			layer = Layer.SCENARIO,
-			description = "Measures time until speed was changed by the given amount",
-			defaultDelay = 0,
-			defaultRepeat = 0,
-			param = {@Parameter(name="triggerName", type="String", defaultValue="trigger01", 
-								description="ID of trigger for identification in output file"),
-					 @Parameter(name="speedChange", type="Integer", defaultValue="20", 
-								description="Amount of speed (in kph) that has to be in- or decreased")
-					}
-		)
-	public TriggerAction measureTimeUntilSpeedChange(Simulator sim, float delay, int repeat, Properties parameterList)
-	{	
-		String parameter = "";
-		
-		try {
-			
-			// extract name of trigger
-			parameter = "triggerName";
-			String triggerName = parameterList.getProperty(parameter);
-			if(triggerName == null)
-				throw new Exception();
-			
-			// read speed change
-			parameter = "speedChange";
-			String speedChangeString = parameterList.getProperty(parameter);
-			int speedChange = Integer.parseInt(speedChangeString);
-			
-			// create GetTimeUntilBrakeAction
-			return new GetTimeUntilSpeedChangeAction(delay, repeat, triggerName, speedChange, (Simulator)sim);
-			
-		} catch (Exception e) {
-			
-			reportError("measureTimeUntilSpeedChange", parameter);
-			return null;
-		}
-	}
+//	/**
+//	 * Creates a GetTimeUntilBrake trigger action by parsing the given node list. 
+//	 * Time from hitting the trigger until the driver brakes will be recorded.
+//	 * 
+//	 * @return
+//	 * 			GetTimeUntilBrake trigger action.
+//	 */
+//	@Action(
+//			name = "measureTimeUntilBrake",
+//			layer = Layer.SCENARIO,
+//			description = "Measures time until brake was applied",
+//			defaultDelay = 0,
+//			defaultRepeat = 0,
+//			param = {@Parameter(name="triggerName", type="String", defaultValue="trigger01", 
+//								description="ID of trigger for identification in output file")
+//					}
+//		)
+//	public TriggerAction measureTimeUntilBrake(Simulator sim, float delay, int repeat, Properties parameterList)
+//	{
+//		String parameter = "";
+//		
+//		try {
+//			
+//			// extract name of trigger
+//			parameter = "triggerName";
+//			String triggerName = parameterList.getProperty(parameter);
+//			if(triggerName == null)
+//				throw new Exception();
+//			
+//			// create GetTimeUntilBrakeAction
+//			return new GetTimeUntilBrakeAction(delay, repeat, triggerName);
+//			
+//		} catch (Exception e) {
+//			
+//			reportError("measureTimeUntilBrake", parameter);
+//			return null;
+//		}
+//	}
+//	
+//	
+//	/**
+//	 * Creates a GetTimeUntilSpeedChange trigger action by parsing the given node list. 
+//	 * Time from hitting the trigger until the car reached the given speed change.
+//	 * 
+//	 * @return
+//	 * 			GetTimeUntilSpeedChange trigger action.
+//	 */
+//	@Action(
+//			name = "measureTimeUntilSpeedChange",
+//			layer = Layer.SCENARIO,
+//			description = "Measures time until speed was changed by the given amount",
+//			defaultDelay = 0,
+//			defaultRepeat = 0,
+//			param = {@Parameter(name="triggerName", type="String", defaultValue="trigger01", 
+//								description="ID of trigger for identification in output file"),
+//					 @Parameter(name="speedChange", type="Integer", defaultValue="20", 
+//								description="Amount of speed (in kph) that has to be in- or decreased")
+//					}
+//		)
+//	public TriggerAction measureTimeUntilSpeedChange(Simulator sim, float delay, int repeat, Properties parameterList)
+//	{	
+//		String parameter = "";
+//		
+//		try {
+//			
+//			// extract name of trigger
+//			parameter = "triggerName";
+//			String triggerName = parameterList.getProperty(parameter);
+//			if(triggerName == null)
+//				throw new Exception();
+//			
+//			// read speed change
+//			parameter = "speedChange";
+//			String speedChangeString = parameterList.getProperty(parameter);
+//			int speedChange = Integer.parseInt(speedChangeString);
+//			
+//			// create GetTimeUntilBrakeAction
+//			return new GetTimeUntilSpeedChangeAction(delay, repeat, triggerName, speedChange, (Simulator)sim);
+//			
+//		} catch (Exception e) {
+//			
+//			reportError("measureTimeUntilSpeedChange", parameter);
+//			return null;
+//		}
+//	}
 	
 	
 	@Action(
@@ -708,38 +704,38 @@ public class InteractionMethods
 		}
 	}
 	
-	
-	@Action(
-			name = "requestGreenTrafficLight",
-			layer = Layer.INTERACTION,
-			description = "Requests a given traffic light to turn green",
-			defaultDelay = 0,
-			defaultRepeat = 0,
-			param = {@Parameter(name="trafficLightID", type="String", defaultValue="TrafficLight10", 
-								description="ID of traffic light to request for green")
-					}
-		)
-	public TriggerAction requestGreenTrafficLight(Simulator sim, float delay, int repeat, Properties parameterList)
-	{	
-		String parameter = "";
-		
-		try {
-			
-			// extract ID of traffic light
-			parameter = "trafficLightID";
-			String trafficLightID = parameterList.getProperty(parameter);
-			if(trafficLightID == null)
-				throw new Exception();
-
-			// create RequestGreenTrafficLightAction
-			return new RequestGreenTrafficLightAction(delay, repeat, (Simulator)sim, trafficLightID);
-			
-		} catch (Exception e) {
-			
-			reportError("requestGreenTrafficLight", parameter);
-			return null;
-		}
-	}
+//	
+//	@Action(
+//			name = "requestGreenTrafficLight",
+//			layer = Layer.INTERACTION,
+//			description = "Requests a given traffic light to turn green",
+//			defaultDelay = 0,
+//			defaultRepeat = 0,
+//			param = {@Parameter(name="trafficLightID", type="String", defaultValue="TrafficLight10", 
+//								description="ID of traffic light to request for green")
+//					}
+//		)
+//	public TriggerAction requestGreenTrafficLight(Simulator sim, float delay, int repeat, Properties parameterList)
+//	{	
+//		String parameter = "";
+//		
+//		try {
+//			
+//			// extract ID of traffic light
+//			parameter = "trafficLightID";
+//			String trafficLightID = parameterList.getProperty(parameter);
+//			if(trafficLightID == null)
+//				throw new Exception();
+//
+//			// create RequestGreenTrafficLightAction
+//			return new RequestGreenTrafficLightAction(delay, repeat, (Simulator)sim, trafficLightID);
+//			
+//		} catch (Exception e) {
+//			
+//			reportError("requestGreenTrafficLight", parameter);
+//			return null;
+//		}
+//	}
 	
 	
 	@Action(

@@ -41,12 +41,6 @@ import eu.opends.drivingTask.DrivingTask;
 import eu.opends.drivingTask.DrivingTaskDataQuery;
 import eu.opends.drivingTask.DrivingTaskDataQuery.Layer;
 import eu.opends.drivingTask.scene.SceneLoader;
-import eu.opends.environment.LaneLimit;
-import eu.opends.environment.TrafficLight;
-import eu.opends.environment.TrafficLightPhase;
-import eu.opends.environment.TrafficLightPositionData;
-import eu.opends.environment.TrafficLight.TrafficLightDirection;
-import eu.opends.environment.TrafficLight.TrafficLightState;
 import eu.opends.main.Simulator;
 import eu.opends.traffic.FollowBoxSettings;
 import eu.opends.traffic.PhysicalTraffic;
@@ -69,9 +63,6 @@ public class ScenarioLoader
 	private Quaternion driverCarStartRotation;
 	private String driverCarModelPath;
 	private CameraFlightSettings cameraFlightSettings;
-	private Map<String, LaneLimit> laneList = new HashMap<String, LaneLimit>();
-	private List<Intersection> intersectionList = new ArrayList<Intersection>();
-	private List<TrafficLight> globalTrafficLightList = new ArrayList<TrafficLight>();
 	private Matrix modelToGeoMatrix;
 	private Matrix geoToModelMatrix;
 	
@@ -117,9 +108,6 @@ public class ScenarioLoader
 		
 		if(sim instanceof Simulator)
 			extractIdealLine();
-		
-		extractRoadInformation();
-		//extractTrafficLights();
 	}
 
 
@@ -180,37 +168,6 @@ public class ScenarioLoader
 			e.printStackTrace();
 		}
 	}
-
-	
-	private void extractRoadInformation() 
-	{
-		String path = "/scenario:scenario/scenario:road/scenario:lane";
-		
-		try {
-			NodeList laneNodes = (NodeList) dtData.xPathQuery(Layer.SCENARIO, 
-					path, XPathConstants.NODESET);
-
-			for (int k = 1; k <= laneNodes.getLength(); k++) 
-			{
-				String laneID = dtData.getValue(Layer.SCENARIO, path + "["+k+"]/@id", String.class);
-				
-				Float xMin = dtData.getValue(Layer.SCENARIO, path + "["+k+"]/scenario:xMin", Float.class);
-				
-				Float xMax = dtData.getValue(Layer.SCENARIO, path + "["+k+"]/scenario:xMax", Float.class);
-				
-				
-				if(laneID != null && !laneID.isEmpty() && xMin != null && xMax != null)
-				{
-					LaneLimit laneLimit = new LaneLimit(xMin, xMax);
-					laneList.put(laneID, laneLimit);
-				}
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
 
 	private ResetPosition createResetPosition(String path) 
 	{
@@ -402,11 +359,6 @@ public class ScenarioLoader
 	}
 	
 	
-	public Map<String, LaneLimit> getLaneList()
-	{
-		return laneList;
-	}
-	
 	
 	/**
 	 * Looks up the sub node (specified in parameter name) of the given element node
@@ -590,154 +542,6 @@ public class ScenarioLoader
 	}
 
 
-	private void extractIntersections() 
-	{	
-		String path = "/scenario:scenario/scenario:road/scenario:intersection";
-		
-		try {
-			NodeList intersectionNodes = (NodeList) dtData.xPathQuery(Layer.SCENARIO, 
-					path , XPathConstants.NODESET);
-
-			for (int i = 1; i <= intersectionNodes.getLength(); i++) 
-			{
-				// get ID of intersection (traffic light group)
-				String intersectionID = dtData.getValue(Layer.SCENARIO, 
-						path + "["+i+"]/@id", String.class);
-				
-				// get mode of traffic lights at this intersection
-				String trafficLightMode = dtData.getValue(Layer.SCENARIO, 
-						path + "["+i+"]/@mode", String.class);
-				
-				LinkedList<TrafficLightPhase> trafficLightPhaseList = new LinkedList<TrafficLightPhase>();
-				
-				NodeList phaseNodes = (NodeList) dtData.xPathQuery(Layer.SCENARIO, 
-						path + "["+i+"]/scenario:phases/scenario:phase" , XPathConstants.NODESET);		
-				
-				for (int k = 1; k <= phaseNodes.getLength(); k++) 
-				{
-					// get ID of traffic light phase
-					String phaseID = dtData.getValue(Layer.SCENARIO, 
-							path + "[" + i + "]/scenario:phases/scenario:phase[" + k + "]/@id", String.class);
-
-					// get duration of phase
-					Integer duration = dtData.getValue(Layer.SCENARIO, 
-							path + "[" + i + "]/scenario:phases/scenario:phase[" + k + "]/@duration", Integer.class);
-					
-					// get state of phase
-					String state = dtData.getValue(Layer.SCENARIO, 
-							path + "[" + i + "]/scenario:phases/scenario:phase[" + k + "]/@state", String.class);
-					
-					trafficLightPhaseList.add(new TrafficLightPhase(phaseID, duration, state));					
-				}				
-				
-				
-				List<TrafficLight> localTrafficLightList = new ArrayList<TrafficLight>();
-				
-				NodeList trafficLightNodes = (NodeList) dtData.xPathQuery(Layer.SCENARIO, 
-						path + "["+i+"]/scenario:trafficLights/scenario:trafficLight" , XPathConstants.NODESET);
-				
-				for (int k = 1; k <= trafficLightNodes.getLength(); k++) 
-				{
-					// get ID and spatial of traffic light
-					String trafficLightID = dtData.getValue(Layer.SCENARIO, 
-							path + "[" + i + "]/scenario:trafficLights/scenario:trafficLight[" + k + "]/@id", String.class);
-					
-					// get phase positon of traffic light
-					Integer phasePosition = dtData.getValue(Layer.SCENARIO, 
-							path + "[" + i + "]/scenario:trafficLights/scenario:trafficLight[" + k + "]/@phasePosition", Integer.class);
-					if(phasePosition == null)
-						phasePosition = 1;
-					
-					// get trigger of traffic light (might be null)
-					String trafficLightTriggerID = dtData.getValue(Layer.SCENARIO, 
-							path + "[" + i + "]/scenario:trafficLights/scenario:trafficLight[" + k + "]/@trigger", String.class);
-					
-					// get trigger of traffic light phase (might be null)
-					String trafficLightPhaseTriggerID = dtData.getValue(Layer.SCENARIO, 
-							path + "[" + i + "]/scenario:trafficLights/scenario:trafficLight[" + k + "]/@phaseTrigger", String.class);
-					
-					// get initial traffic light state
-					TrafficLightState initialState = TrafficLightState.RED;
-					String initialStateString = dtData.getValue(Layer.SCENARIO, 
-							path + "[" + i + "]/scenario:trafficLights/scenario:trafficLight[" + k + "]/scenario:initialState", String.class);
-					if(!initialStateString.isEmpty())
-						initialState = TrafficLightState.valueOf(initialStateString.toUpperCase());
-					
-					// get direction of arrow
-					TrafficLightDirection direction = TrafficLightDirection.NONE;
-					String directionString = dtData.getValue(Layer.SCENARIO, 
-							path + "[" + i + "]/scenario:trafficLights/scenario:trafficLight[" + k + "]/scenario:direction", String.class);
-					if(!directionString.isEmpty())
-						direction = TrafficLightDirection.valueOf(directionString.toUpperCase());
-					
-					// get conflicting traffic lights
-					String requiresRedString = dtData.getValue(Layer.SCENARIO, 
-							path + "[" + i + "]/scenario:trafficLights/scenario:trafficLight[" + k + "]/scenario:requiresRed", String.class);
-					ArrayList<String> requiresRedList = new ArrayList<String> ();
-					for(String reqiresRedTL : requiresRedString.split(","))
-						requiresRedList.add(reqiresRedTL);
-					
-					// get position data (for SIM-TD traffic light phase assistant)
-					String roadID = dtData.getValue(Layer.SCENARIO, 
-							path + "[" + i + "]/scenario:trafficLights/scenario:trafficLight[" + k + "]/scenario:positionData/@roadID", String.class);
-					Integer crossingType = dtData.getValue(Layer.SCENARIO, 
-							path + "[" + i + "]/scenario:trafficLights/scenario:trafficLight[" + k + "]/scenario:positionData/@crossingType", Integer.class);
-					if(crossingType == null)
-						crossingType = 0;
-					Integer arrowType = dtData.getValue(Layer.SCENARIO, 
-							path + "[" + i + "]/scenario:trafficLights/scenario:trafficLight[" + k + "]/scenario:positionData/@arrowType", Integer.class);
-					if(arrowType == null)
-						arrowType = 0;
-					Integer lane = dtData.getValue(Layer.SCENARIO, 
-							path + "[" + i + "]/scenario:trafficLights/scenario:trafficLight[" + k + "]/scenario:positionData/@lane", Integer.class);
-					if(lane == null)
-						lane = 0;
-					TrafficLightPositionData positionData = new TrafficLightPositionData(roadID, crossingType, arrowType, lane);
-					
-					// create new traffic light
-					TrafficLight trafficLight = new TrafficLight((Simulator) sim, trafficLightID, trafficLightTriggerID, 
-							trafficLightPhaseTriggerID, intersectionID, initialState, direction, 
-							phasePosition, requiresRedList, positionData);
-					
-					// if not already contained in global traffic light list
-					if(!containedInList(trafficLightID))
-					{
-						globalTrafficLightList.add(trafficLight);
-						localTrafficLightList.add(trafficLight);
-					}
-					else
-						System.err.println("Object '" + trafficLightID + "' has been assigned to more than one traffic light!");
-				}
-				
-				intersectionList.add(new Intersection(intersectionID, trafficLightMode, trafficLightPhaseList, localTrafficLightList));
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 	
-	private boolean containedInList(String trafficLightID) 
-	{
-		for(TrafficLight t : globalTrafficLightList)
-			if(t.getName().equals(trafficLightID))
-				return true;
-		
-		return false;
-	}
-
-
-	public List<Intersection> getIntersections()
-	{
-		extractIntersections();
-		return intersectionList;
-	}
-
-
-	public List<TrafficLight> getTrafficLights()
-	{
-		return globalTrafficLightList;
-	}
 	
 }

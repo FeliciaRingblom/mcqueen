@@ -31,7 +31,6 @@ import com.jme3.scene.Node;
 
 import eu.opends.audio.AudioCenter;
 import eu.opends.car.LightTexturesContainer.TurnSignalState;
-import eu.opends.environment.GeoPosition;
 import eu.opends.main.Simulator;
 import eu.opends.tools.PanelCenter;
 import eu.opends.tools.SpeedControlCenter;
@@ -261,13 +260,6 @@ public abstract class Car
 	{
 		return carControl.getPhysicsLocation();
 	}
-	
-	
-	public Vector3d getGeoPosition() 
-	{
-		return GeoPosition.modelToGeo(getPosition());
-	}
-
 	
 	public float getHeadingDegree() 
 	{

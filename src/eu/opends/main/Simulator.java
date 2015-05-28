@@ -64,7 +64,6 @@ import eu.opends.car.SteeringCar;
 import eu.opends.drivingTask.DrivingTask;
 import eu.opends.drivingTask.settings.SettingsLoader;
 import eu.opends.drivingTask.settings.SettingsLoader.Setting;
-import eu.opends.environment.TrafficLightCenter;
 import eu.opends.input.KeyBindingCenter;
 import eu.opends.knowledgeBase.KnowledgeBase;
 import eu.opends.niftyGui.InstructionsGUI;
@@ -83,7 +82,6 @@ import eu.opends.tools.XMLLoader;
 import eu.opends.traffic.PhysicalTraffic;
 import eu.opends.trigger.TriggerAction;
 import eu.opends.trigger.TriggerCenter;
-import eu.opends.visualization.LightningClient;
 
 /**
  * 
@@ -110,11 +108,9 @@ public class Simulator extends SimpleApplication
 	private InstructionsGUI instructionsGUI;
     private StartScreenGUIController startScreen;
 	private KeyBindingCenter keyBindingCenter;
-	private TrafficLightCenter trafficLightCenter;
     private PhysicalTraffic physicalTraffic;
 	private SteeringCar car;
 	private CarPositionWriter carPositionWriter;
-	private LightningClient lightningClient;
 	private CameraFlight cameraFlight;
 	private SteeringTask steeringTask;
 	private ThreeVehiclePlatoonTask threeVehiclePlatoonTask;
@@ -191,11 +187,7 @@ public class Simulator extends SimpleApplication
 	{
 		return nifty;
 	}
-	
-	public LightningClient getLightningClient() 
-	{
-		return lightningClient;
-	}
+
 	
 	public TriggerCenter getTriggerCenter()
 	{
@@ -248,10 +240,7 @@ public class Simulator extends SimpleApplication
 		return keyBindingCenter;
 	}
 	
-	public TrafficLightCenter getTrafficLightCenter() 
-	{
-		return trafficLightCenter;
-	}
+
 	
 	public Node getSceneNode()
 	{
@@ -617,10 +606,6 @@ public class Simulator extends SimpleApplication
 			triggerCenter.doTriggerChecks();
 		
 			updateDataWriter();
-			
-			// send camera data via TCP to Lightning
-			if(lightningClient != null)
-				lightningClient.sendCameraData(cam);
 					
 			if(!isPause())
 				car.update(tpf);
@@ -708,8 +693,6 @@ public class Simulator extends SimpleApplication
 
 		if(initializationFinished)
 		{
-			if(lightningClient != null)
-				lightningClient.close();
 						
 			
 			reactionCenter.close();
