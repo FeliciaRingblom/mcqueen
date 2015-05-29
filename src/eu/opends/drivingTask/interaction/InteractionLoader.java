@@ -35,7 +35,7 @@ import com.jme3.input.InputManager;
 import com.jme3.input.KeyInput;
 import com.jme3.input.controls.KeyTrigger;
 
-import eu.opends.main.Simulator;import eu.opends.drivingTask.DrivingTaskDataQuery;
+import eu.opends.drivingTask.DrivingTaskDataQuery;
 import eu.opends.drivingTask.DrivingTaskDataQuery.Layer;
 import eu.opends.input.KeyActionListener;
 import eu.opends.main.Simulator;

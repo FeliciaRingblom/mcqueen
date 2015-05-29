@@ -25,7 +25,7 @@
 //
 ///**
 // * 
-// * @author Rafael Math
+// * @author Rafael Math, Felicia Ringblom, Jessica Larsson
 // */
 //public class StartRecordingTriggerAction extends TriggerAction 
 //{

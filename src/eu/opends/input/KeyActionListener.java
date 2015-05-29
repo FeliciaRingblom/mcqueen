@@ -26,7 +26,7 @@ import eu.opends.trigger.TriggerAction;
 
 /**
  * 
- * @author Rafael Math
+ * @author Rafael Math, Felicia Ringblom, Jessica Larsson
  */
 public class KeyActionListener implements ActionListener 
 {

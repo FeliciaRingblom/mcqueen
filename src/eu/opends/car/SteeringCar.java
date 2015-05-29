@@ -25,12 +25,11 @@ import eu.opends.drivingTask.scenario.ScenarioLoader;
 import eu.opends.drivingTask.scenario.ScenarioLoader.CarProperty;
 import eu.opends.main.SimulationDefaults;
 import eu.opends.main.Simulator;
-import eu.opends.trafficObjectLocator.TrafficObjectLocator;
 
 /**
  * Driving Car
  * 
- * @author Rafael Math
+ * @author Rafael Math, Felicia Ringblom, Jessica Larsson
  */
 public class SteeringCar extends Car 
 {    

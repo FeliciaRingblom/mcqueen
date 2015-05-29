@@ -14,7 +14,7 @@ import de.lessvoid.nifty.screen.ScreenController;
 import eu.opends.main.Simulator;
 
 /**
- * @author Jessica Larsson, Felicia Ringblom, 2015
+ * @author Jessica Larsson, Felicia Ringblom
  */
 
 public class StartScreenGUIController implements ScreenController {

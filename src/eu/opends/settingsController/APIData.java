@@ -21,10 +21,6 @@ import org.w3c.dom.NodeList;
 import com.jme3.math.FastMath;
 
 import eu.opends.car.Car;
-import eu.opends.drivingTask.settings.SettingsLoader.Setting;
-import eu.opends.main.SimulationDefaults;
-import eu.opends.main.Simulator;
-import eu.opends.tools.Vector3d;
 
 public class APIData {
 	

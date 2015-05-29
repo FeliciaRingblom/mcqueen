@@ -24,17 +24,15 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import com.jme3.collision.CollisionResults;
 //import com.jme3.scene.Node;
 import com.jme3.scene.Spatial;
 
+import eu.opends.car.Car;
 //import eu.opends.audio.AudioCenter;
 //import eu.opends.basics.MapObject;
-import eu.opends.main.Simulator;import eu.opends.car.Car;
 import eu.opends.main.Simulator;
-import eu.opends.tools.Util;
 
 
 /**
@@ -47,8 +45,6 @@ public class TriggerCenter
 	private CollisionResults resultCollision;
 
 	private Simulator sim;
-
-	private String triggerName;
 
 	private static Map<String,Spatial> trafficLightTriggerList, trafficLightPhaseTriggerList;
 

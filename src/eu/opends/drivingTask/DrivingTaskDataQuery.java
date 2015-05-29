@@ -58,7 +58,7 @@ import com.jme3.math.Vector3f;
 
 /**
  *
- * @author Biasutti, Rafael Math
+ * @author Biasutti, Rafael Math, Felicia Ringblom, Jessica Larsson
  */
 public class DrivingTaskDataQuery 
 {

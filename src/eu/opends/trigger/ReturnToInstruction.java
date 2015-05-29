@@ -1,9 +1,8 @@
 package eu.opends.trigger;
 
-import eu.opends.main.Simulator;import eu.opends.main.Simulator;
-import eu.opends.niftyGui.StartScreenGUIController;
+import eu.opends.main.Simulator;
 /**
- * @author Jessica Larsson, Felicia Ringblom, 2015
+ * @author Jessica Larsson, Felicia Ringblom
  */
 public class ReturnToInstruction extends TriggerAction {
 	

@@ -20,8 +20,6 @@ package eu.opends.drivingTask.interaction;
 
 import java.util.Properties;
 
-import com.jme3.math.FastMath;
-
 import eu.opends.drivingTask.DrivingTaskDataQuery.Layer;
 import eu.opends.main.Simulator;
 import eu.opends.trigger.ManipulatePictureTriggerAction;
@@ -36,7 +34,7 @@ import eu.opends.trigger.TriggerAction;
 
 /**
  * 
- * @author Rafael Math
+ * @author Rafael Math, Felicia Ringblom, Jessica Larsson
  */
 public class InteractionMethods 
 {  	

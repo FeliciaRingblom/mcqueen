@@ -26,15 +26,13 @@ import eu.opends.trigger.ManipulatePictureTriggerAction;
 
 /**
  * 
- * @author Rafael Math
+ * @author Rafael Math, Felicia Ringblom, Jessica Larsson
  */
 public class SimulatorActionListener implements ActionListener
 {
 	private float steeringValue = 0;
-	private float accelerationValue = 0;
 	private Simulator sim;
 	private Car car;
-	private boolean isWireFrame = false;
 	
 	
     public SimulatorActionListener(Simulator sim) 

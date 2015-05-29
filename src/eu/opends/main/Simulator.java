@@ -82,7 +82,7 @@ import eu.opends.trigger.TriggerCenter;
 
 /**
  * 
- * @author Rafael Math
+ * @author Rafael Math, Felicia Ringblom, Jessica Larsson
  */
 public class Simulator extends SimpleApplication
 {

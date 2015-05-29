@@ -11,7 +11,10 @@ import de.lessvoid.nifty.elements.Element;
 import de.lessvoid.nifty.elements.render.ImageRenderer;
 import de.lessvoid.nifty.screen.ScreenController;
 import eu.opends.main.Simulator;
-
+/**
+ * 
+ * @author Jessica Larsson, Felicia Ringblom
+ */
 public class InstructionsGUIController implements ScreenController 
 {
 	

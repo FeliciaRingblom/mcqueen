@@ -550,54 +550,6 @@ public class DeviationComputer
 		}	
 		return(1);
 	}
-
-
-	
-/*	
- 	// Test with given way and ideal points
-	public static void main(String[] args)
-	{
-		DeviationComputer devComp = new DeviationComputer(5.0f,-0.30f);
-		
-		devComp.˛Line through IPaddIdealPoint(new Vector2f(3.5f,1));
-		devComp.addIdealPoint(new Vector2f(3.5f,3.5f));
-		devComp.addIdealPoint(new Vector2f(7,3.5f));
-		devComp.addIdealPoint(new Vector2f(7,8));
-		devComp.addIdealPoint(new Vector2f(9.5f,10.5f));
-		devComp.addIdealPoint(new Vector2f(6,14));
-		//devComp.showAllIdealPoints();
-		
-		devComp.addWayPoint(new Vector2f(2.5f,1.5f));
-		devComp.addWayPoint(new Vector2f(2.5f,2.5f));
-		devComp.addWayPoint(new Vector2f(3,3.5f));
-		devComp.addWayPoint(new Vector2f(3,4.5f));
-		devComp.addWayPoint(new Vector2f(4,4.5f));
-		devComp.addWayPoint(new Vector2f(5.5f,4));
-		devComp.addWayPoint(new Vector2f(5.5f,5));
-		devComp.addWayPoint(new Vector2f(6.5f,5));
-		devComp.addWayPoint(new Vector2f(6.5f,6));
-		
-		//devComp.addWayPoint(new Vector2f(6.5f,7.5f));
-		//devComp.addWayPoint(new Vector2f(7,8.5f));
-		
-		devComp.addWayPoint(new Vector2f(8.5f,7));
-		devComp.addWayPoint(new Vector2f(9,7.5f));
-		
-		
-		devComp.addWayPoint(new Vector2f(7.5f,9.5f));
-		devComp.addWayPoint(new Vector2f(8.5f,10));
-		devComp.addWayPoint(new Vector2f(8.5f,11));
-		//devComp.showAllWayPoints();
-		
-		try {
-			float area = devComp.getDeviation();
-			System.out.println("TOTAL: " + area);
-		} catch (Exception e) {
-			System.err.println(e.toString());
-		}
-	}
-*/
-	
 }
 
 

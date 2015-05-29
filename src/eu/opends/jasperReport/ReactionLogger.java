@@ -28,6 +28,16 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
+import net.sf.jasperreports.engine.JRDataSource;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JaxenXmlDataSource;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+
 import com.jme3.math.Vector3f;
 
 import eu.opends.analyzer.CarPositionReader;
@@ -38,15 +48,6 @@ import eu.opends.drivingTask.settings.SettingsLoader.Setting;
 import eu.opends.main.SimulationDefaults;
 import eu.opends.main.Simulator;
 import eu.opends.tools.Util;
-import net.sf.jasperreports.engine.JRDataSource;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperExportManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.data.JaxenXmlDataSource;
-import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.engine.xml.JRXmlLoader;
 
 /**
  * 
@@ -60,14 +61,13 @@ public class ReactionLogger
 	private String reportFileName = "reactionReport.pdf";
 	private String outputFolder;
 	BufferedWriter bw;
-	private int count = 0, part;
+	private int count = 0;
 	private float meanDeviation_part1, meanDeviation_part2, meanDeviation_part3;
 	private String age, gender, diagnosisNr, idNr, speed, hands;
 
 
 	public ReactionLogger(Simulator sim) {
 		this.sim = sim;
-		this.part = sim.getTestNr();
 	}
 
 

@@ -19,31 +19,28 @@
 package eu.opends.tools;
 
 import java.text.DecimalFormat;
-import java.util.TreeMap;
 import java.util.Map.Entry;
+import java.util.TreeMap;
 
 import com.jme3.font.BitmapFont;
+import com.jme3.font.BitmapFont.Align;
 import com.jme3.font.BitmapText;
 import com.jme3.font.Rectangle;
-import com.jme3.font.BitmapFont.Align;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.FastMath;
 import com.jme3.math.Quaternion;
 import com.jme3.scene.Node;
-import com.jme3.scene.Spatial;
 import com.jme3.scene.Spatial.CullHint;
 import com.jme3.ui.Picture;
 
 import eu.opends.car.Car;
 import eu.opends.drivingTask.settings.SettingsLoader;
 import eu.opends.drivingTask.settings.SettingsLoader.Setting;
-import eu.opends.main.DriveAnalyzer;
 import eu.opends.main.Simulator;
-import eu.opends.niftyGui.KeyMappingGUI.GuiLayer;
 
 /**
  * 
- * @author Rafael Math
+ * @author Rafael Math, Felicia Ringblom, Jessica Larsson
  */
 public class PanelCenter
 {

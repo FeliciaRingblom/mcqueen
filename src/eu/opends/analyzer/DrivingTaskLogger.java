@@ -32,7 +32,7 @@ import eu.opends.tools.Util;
 /**
  * This class is used for logging driving task data to a text file. 
  * 
- * @author Rafael Math
+ * @author Rafael Math, Jessica Larsson
  */
 public class DrivingTaskLogger 
 {

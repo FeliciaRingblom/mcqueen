@@ -37,7 +37,6 @@ import com.jme3.renderer.ViewPort;
 import com.jme3.scene.CameraNode;
 import com.jme3.scene.Node;
 
-import eu.opends.camera.CameraFactory.CameraMode;
 import eu.opends.main.Simulator;
 
 

@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import eu.opends.main.Simulator;
 /**
  * 
- * @author Rafael Math
+ * @author Rafael Math, Felicia Ringblom, Jessica Larsson
  */
 public class KeyMapping
 {

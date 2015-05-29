@@ -29,7 +29,7 @@ import com.jme3.math.Vector3f;
  * Data object containing position and speed of the car, as well as the current
  * date. Based on <code>AnalyzationData.java</code> from the CARS-project.
  * 
- * @author Marco Mueller, Rafael Math
+ * @author Marco Mueller, Rafael Math, Felicia Ringblom, Jessica Larsson
  */
 public class DataUnit implements Serializable 
 {

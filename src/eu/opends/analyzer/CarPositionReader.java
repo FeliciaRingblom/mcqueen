@@ -13,6 +13,10 @@ import com.jme3.math.Vector3f;
 
 import eu.opends.drivingTask.DrivingTask;
 
+/** 
+ * 
+ * @author Rafael Math, Felicia Ringblom, Jessica Larsson
+ */
 public class CarPositionReader {
 	private File inFile;
 	private BufferedReader inputReader;

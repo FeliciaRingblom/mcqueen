@@ -14,6 +14,11 @@ import java.util.GregorianCalendar;
 import eu.opends.car.Car;
 import eu.opends.tools.Util;
 
+/** 
+ * 
+ * @author Rafael Math, Felicia Ringblom, Jessica Larsson
+ */
+
 public class CarPositionWriter {
 	private Calendar startTime =new GregorianCalendar();
 	

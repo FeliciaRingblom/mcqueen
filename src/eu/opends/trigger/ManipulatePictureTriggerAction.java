@@ -18,15 +18,14 @@
 
 package eu.opends.trigger;
 
-import java.util.TreeMap;
 import java.util.Map.Entry;
+import java.util.TreeMap;
 
 import com.jme3.scene.Spatial;
 import com.jme3.scene.Spatial.CullHint;
 import com.jme3.ui.Picture;
 
-import eu.opends.main.Simulator;import eu.opends.camera.CameraFactory;
-import eu.opends.camera.SimulatorCam;
+import eu.opends.main.Simulator;
 import eu.opends.tools.PanelCenter;
 
 

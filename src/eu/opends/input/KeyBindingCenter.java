@@ -39,7 +39,6 @@ import com.jme3.input.controls.KeyTrigger;
 
 import eu.opends.drivingTask.settings.SettingsLoader;
 import eu.opends.drivingTask.settings.SettingsLoader.Setting;
-import eu.opends.main.DriveAnalyzer;
 import eu.opends.main.Simulator;
 
 /**
@@ -202,30 +201,6 @@ public class KeyBindingCenter
         }
 	}
 	
-	
-	private void assignDriveAnalyzerKeys(DriveAnalyzer analyzer) 
-	{
-		//remove arrow key's mapping for chase camera
-		if(inputManager.hasMapping("FLYCAM_Left"))
-			inputManager.deleteTrigger("FLYCAM_Left", new KeyTrigger(KeyInput.KEY_LEFT));
-		
-		if(inputManager.hasMapping("FLYCAM_Right"))
-			inputManager.deleteTrigger("FLYCAM_Right", new KeyTrigger(KeyInput.KEY_RIGHT));
-		
-		if(inputManager.hasMapping("FLYCAM_Up"))
-			inputManager.deleteTrigger("FLYCAM_Up", new KeyTrigger(KeyInput.KEY_UP));
-		
-		if(inputManager.hasMapping("FLYCAM_Down"))
-			inputManager.deleteTrigger("FLYCAM_Down", new KeyTrigger(KeyInput.KEY_DOWN));
-		
-		
-		// ACTION
-		InputListener driveAnalyzerActionListener = new DriveAnalyzerActionListener(analyzer);
-		for(KeyMapping keyMapping : KeyMapping.getDriveAnalyzerActionKeyMappingList())
-			addKeyMapping(keyMapping, driveAnalyzerActionListener);
-	}
-
-
 	public void close() {
 		keyBindingList.clear();
 

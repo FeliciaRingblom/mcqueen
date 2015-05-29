@@ -23,7 +23,7 @@ import com.jme3.math.Vector3f;
 
 /**
  * 
- * @author Rafael Math
+ * @author Rafael Math, Felicia Ringblom
  */
 public class SimulationDefaults 
 {

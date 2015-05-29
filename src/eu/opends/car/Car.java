@@ -30,15 +30,11 @@ import com.jme3.renderer.queue.RenderQueue.ShadowMode;
 import com.jme3.scene.Node;
 
 import eu.opends.audio.AudioCenter;
-import eu.opends.car.LightTexturesContainer.TurnSignalState;
 import eu.opends.main.Simulator;
-import eu.opends.tools.PanelCenter;
-import eu.opends.tools.SpeedControlCenter;
-import eu.opends.tools.Vector3d;
 
 /**
  * 
- * @author Rafael Math
+ * @author Rafael Math, Felicia Ringblom, Jessica Larsson
  */
 public abstract class Car
 {

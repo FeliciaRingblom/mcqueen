@@ -26,7 +26,7 @@ import eu.opends.main.Simulator;
 
 /**
  * 
- * @author Rafael Math
+ * @author Rafael Math, Felicia Ringblom
  */
 public class ShutDownGUIController implements ScreenController 
 {
