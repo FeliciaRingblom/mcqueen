@@ -155,7 +155,7 @@ public class InstructionsGUIController implements ScreenController
 	}
 	
 	public void playVideo1() {  
-		File video = new File("test1.avi");  //<-------change file name here
+		File video = new File("test1.avi"); 
         
         Desktop desktop = Desktop.getDesktop();
         if(video.exists()){
@@ -170,7 +170,7 @@ public class InstructionsGUIController implements ScreenController
 	}
 	
 	public void playVideo2() {
-		File video = new File("test2.avi");  //<-------change file name here
+		File video = new File("test2.avi"); 
         
         Desktop desktop = Desktop.getDesktop();
         if(video.exists()){
@@ -185,7 +185,7 @@ public class InstructionsGUIController implements ScreenController
 	}
 	
 	public void playVideo3() {
-		File video = new File("test3.avi");  //<-------change file name here
+		File video = new File("test3.avi"); 
         
         Desktop desktop = Desktop.getDesktop();
         if(video.exists()){
@@ -200,12 +200,13 @@ public class InstructionsGUIController implements ScreenController
 	}
 	
 	public void openPDF() {
-		File video = new File("result.pdf");   //<-------change file name here
+		String filePath = sim.getOutputFolder();
+		File pdf = new File(filePath + "/reactionReport.pdf");
         
         Desktop desktop = Desktop.getDesktop();
-        if(video.exists()){
+        if(pdf.exists()){
 			try {
-				desktop.open(video);
+				desktop.open(pdf);
 			} catch (IOException e) {
 				System.out.println("could not open pdf");
 			}

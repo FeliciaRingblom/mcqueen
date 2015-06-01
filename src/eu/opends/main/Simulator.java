@@ -222,7 +222,7 @@ public class Simulator extends SimpleApplication
 		return settingsControllerServer;
 	}		
 	
-	public static String getOutputFolder()
+	public String getOutputFolder()
 	{
 		return outputFolder;
 	}

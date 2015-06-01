@@ -75,7 +75,7 @@ public class ReactionLogger
 	{
 		try
 		{		
-			outputFolder = Simulator.getOutputFolder();
+			outputFolder = sim.getOutputFolder();
 			Util.makeDirectory(outputFolder);
 			
 			bw = new BufferedWriter(new FileWriter(outputFolder + "/" + dataFileName));
@@ -184,9 +184,9 @@ public class ReactionLogger
 			System.out.println("PDF creation time : " + (System.currentTimeMillis() - start) + " ms");
 			
 			// open PDF file
-			boolean suppressPDF = Simulator.getSettingsLoader().getSetting(Setting.Analyzer_suppressPDFPopup, 
-					SimulationDefaults.Analyzer_suppressPDFPopup);
-			
+			//boolean suppressPDF = Simulator.getSettingsLoader().getSetting(Setting.Analyzer_suppressPDFPopup, 
+			//		SimulationDefaults.Analyzer_suppressPDFPopup);
+			boolean suppressPDF = true;
 			if(!suppressPDF)
 				Util.open(outputFolder + "/" + reportFileName);
 
