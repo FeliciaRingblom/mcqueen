@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="tools/multidriver_server/src"/>
-	<classpathentry kind="src" path="tools/settingscontroller_client/src"/>
 	<classpathentry kind="lib" path="Analyzer.jar"/>
 	<classpathentry kind="lib" path="lib/CarOntology.jar"/>
 	<classpathentry kind="lib" path="lib/com.springsource.org.jaxen-1.1.1.jar"/>
