@@ -19,6 +19,8 @@
 
 package eu.opends.main;
 
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -681,12 +683,13 @@ public class Simulator extends SimpleApplication
 	public void destroy()
     {
 		System.out.println("i destroy()");
+		
 		logger.info("started destroy()");
 
+		audioRenderer.cleanup();
 		if(initializationFinished)
 		{
 						
-			
 			reactionCenter.close();
 			
 			steeringTask.close();
@@ -719,12 +722,17 @@ public class Simulator extends SimpleApplication
 	        settings.setTitle("Testa din körförmåga. ");
 	        
 	        // set splash screen parameters
+	        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+	        int width = gd.getDisplayMode().getWidth();
+	        int height = gd.getDisplayMode().getHeight();
+	        int bitDepth = gd.getDisplayMode().getBitDepth();
+	        int refreshRate = gd.getDisplayMode().getRefreshRate();
 	        settings.setFullscreen(false);
-	        settings.setResolution(1280, 720);
+	        settings.setResolution(width, height);
 	        settings.setSamples(4);
-	        settings.setBitsPerPixel(24);
+	        settings.setBitsPerPixel(bitDepth);
 	        settings.setVSync(false);
-	        settings.setFrequency(60);
+	        settings.setFrequency(refreshRate);
 	     
 	        
 			sim.setSettings(settings);
