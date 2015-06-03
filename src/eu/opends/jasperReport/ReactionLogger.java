@@ -28,6 +28,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
+import javax.swing.JOptionPane;
+
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
@@ -156,10 +158,24 @@ public class ReactionLogger
 		try
 		{
 			//calculate data of driving deviation and steadiness for all three parts
-			meanDeviation_part1 = calculateCarData("analyzerData/test/carData.txt");
-			meanDeviation_part2 = calculateCarData("analyzerData/test/positionData_2.txt");
-			meanDeviation_part3 = calculateCarData("analyzerData/test/positionData_3.txt");
-			
+			try {
+				meanDeviation_part1 = calculateCarData(outputFolder + "/carData.txt");
+			} catch (Exception e) {
+				meanDeviation_part1 = 0.0f;
+				System.out.println("meanDeviation part 1 failed");
+			}
+			try {
+				meanDeviation_part2 = calculateCarData(outputFolder + "/positionData_2.txt");
+			} catch (Exception e) {
+				meanDeviation_part2 = 0.0f;
+				System.out.println("meanDeviation part 2 failed");
+			}
+			try {
+				meanDeviation_part3 = calculateCarData(outputFolder + "/positionData_3.txt");
+			} catch (Exception e) {
+				meanDeviation_part3 = 0.0f;
+				System.out.println("meanDeviation part 3 failed");
+			}
 			
 			// open XML data source
 			//JRDataSource dataSource = new JaxenXmlDataSource(new File(outputFolder + "/" + dataFileName),
@@ -180,7 +196,21 @@ public class ReactionLogger
 			
 			// create PDF file
 			long start = System.currentTimeMillis();
-			JasperExportManager.exportReportToPdfFile(print, outputFolder + "/" + reportFileName);
+			System.out.println("Before crash");
+			boolean succesful = false;
+			while (!succesful) {
+				try {
+					JasperExportManager.exportReportToPdfFile(print, outputFolder + "/" + reportFileName);
+					succesful = true;
+				} catch (Exception e) {
+					//custom title, error icon
+					JOptionPane.showMessageDialog(null,
+					    "Please close the report file before proceeding: \n" + outputFolder + "/" + reportFileName +
+					    "\n Löpnr: " + sim.getTestNr(),
+					    "PDF creation error",
+					    JOptionPane.ERROR_MESSAGE);
+				}
+			}
 			System.out.println("PDF creation time : " + (System.currentTimeMillis() - start) + " ms");
 			
 			// open PDF file
