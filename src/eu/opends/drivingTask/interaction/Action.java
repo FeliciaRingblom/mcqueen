@@ -18,13 +18,13 @@
 
 package eu.opends.drivingTask.interaction;
 
-import eu.opends.drivingTask.DrivingTaskDataQuery;
-
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+
+import eu.opends.drivingTask.DrivingTaskDataQuery;
 
 /**
  *

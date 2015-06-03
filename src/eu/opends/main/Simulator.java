@@ -56,7 +56,6 @@ import eu.opends.analyzer.DrivingTaskLogger;
 import eu.opends.audio.AudioCenter;
 import eu.opends.basics.InternalMapProcessing;
 import eu.opends.basics.LightFactory;
-import eu.opends.main.Simulator;
 import eu.opends.camera.CameraFactory;
 import eu.opends.camera.SimulatorCam;
 import eu.opends.cameraFlight.CameraFlight;
@@ -68,8 +67,8 @@ import eu.opends.drivingTask.settings.SettingsLoader;
 import eu.opends.drivingTask.settings.SettingsLoader.Setting;
 import eu.opends.input.KeyBindingCenter;
 import eu.opends.niftyGui.InstructionsGUI;
-import eu.opends.niftyGui.StartScreenGUIController;
 import eu.opends.niftyGui.ShutDownGUI;
+import eu.opends.niftyGui.StartScreenGUIController;
 import eu.opends.reactionCenter.ReactionCenter;
 import eu.opends.settingsController.SettingsControllerServer;
 import eu.opends.taskDescription.contreTask.SteeringTask;
@@ -357,7 +356,7 @@ public class Simulator extends SimpleApplication
 		bulletAppState.setDebugEnabled(debugEnabled);
 	}
 	
-	public void calculateCarData(String fileName){
+	/*public void calculateCarData(String fileName){
 		carPositionReader.initReader(fileName, true);
 		carPositionReader.loadDriveData();
 		
@@ -382,7 +381,7 @@ public class Simulator extends SimpleApplication
 		} catch (Exception e) {
 			System.out.println(e.getMessage() + "\n");
 		}
-	}
+	}*/
 	
 		
     @Override

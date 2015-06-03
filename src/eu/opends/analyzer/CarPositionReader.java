@@ -35,7 +35,7 @@ public class CarPositionReader {
 
 		inFile = new File(filePath);
 		if (!inFile.isFile()) {
-			System.err.println("File " + inFile.toString()
+			System.err.println("CarPositionReader: File " + inFile.toString()
 					+ " could not be found.");
 		}
 		try {

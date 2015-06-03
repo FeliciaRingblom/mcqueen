@@ -47,7 +47,6 @@ import eu.opends.analyzer.DataUnit;
 import eu.opends.analyzer.DeviationComputer;
 import eu.opends.drivingTask.settings.SettingsLoader;
 import eu.opends.drivingTask.settings.SettingsLoader.Setting;
-import eu.opends.main.SimulationDefaults;
 import eu.opends.main.Simulator;
 import eu.opends.tools.Util;
 
@@ -257,7 +256,9 @@ public class ReactionLogger
 		return parameters;
 	}
 	
-	/* calculate the drivers steadiness on road */
+	/**
+	 *  calculate the drivers steadiness on road 
+	 */
 	public float calculateCarData(String fileName){
 		CarPositionReader carPositionReader = new CarPositionReader();
 		LinkedList<Vector3f> carPositionList = new LinkedList<Vector3f>();

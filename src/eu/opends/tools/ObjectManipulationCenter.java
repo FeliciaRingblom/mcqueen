@@ -25,7 +25,8 @@ import com.jme3.math.Vector3f;
 import com.jme3.scene.Spatial;
 import com.jme3.scene.Spatial.CullHint;
 
-import eu.opends.main.Simulator;import eu.opends.environment.GeoPosition;
+import eu.opends.environment.GeoPosition;
+import eu.opends.main.Simulator;
 
 /**
  * 
