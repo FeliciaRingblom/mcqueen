@@ -358,7 +358,7 @@ public class Simulator extends SimpleApplication
 	}
 	
 	public void calculateCarData(String fileName){
-		carPositionReader.initReader("analyzerData/test/carData.txt", true);
+		carPositionReader.initReader(fileName, true);
 		carPositionReader.loadDriveData();
 		
 		carPositionList = carPositionReader.getCarPositionList();
