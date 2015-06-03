@@ -157,21 +157,25 @@ public class ReactionLogger
 	{
 		try
 		{
+			System.out.println("GenerateReport()");
 			//calculate data of driving deviation and steadiness for all three parts
 			try {
 				meanDeviation_part1 = calculateCarData(outputFolder + "/carData.txt");
+				System.out.println("meanDev part 1" + meanDeviation_part1);
 			} catch (Exception e) {
 				meanDeviation_part1 = 0.0f;
 				System.out.println("meanDeviation part 1 failed");
 			}
 			try {
 				meanDeviation_part2 = calculateCarData(outputFolder + "/positionData_2.txt");
+				System.out.println("meanDev part 1" + meanDeviation_part2);
 			} catch (Exception e) {
 				meanDeviation_part2 = 0.0f;
 				System.out.println("meanDeviation part 2 failed");
 			}
 			try {
 				meanDeviation_part3 = calculateCarData(outputFolder + "/positionData_3.txt");
+				System.out.println("meanDev part 1" + meanDeviation_part3);
 			} catch (Exception e) {
 				meanDeviation_part3 = 0.0f;
 				System.out.println("meanDeviation part 3 failed");
@@ -181,7 +185,7 @@ public class ReactionLogger
 			//JRDataSource dataSource = new JaxenXmlDataSource(new File(outputFolder + "/" + dataFileName),
 				//	"report/reactionMeasurement");
 			
-			JRDataSource dataSource = new JaxenXmlDataSource(new File("analyzerData/Analyzer_1fel/reactionData.xml"),
+			JRDataSource dataSource = new JaxenXmlDataSource(new File(outputFolder + "/reactionData.xml"),
 					"report/reactionMeasurement");
 			//get report template for reaction measurement
 			//InputStream reportStream = new FileInputStream("assets/JasperReports/templates/reactionMeasurement.jasper");
@@ -196,7 +200,6 @@ public class ReactionLogger
 			
 			// create PDF file
 			long start = System.currentTimeMillis();
-			System.out.println("Before crash");
 			boolean succesful = false;
 			while (!succesful) {
 				try {
@@ -206,7 +209,7 @@ public class ReactionLogger
 					//custom title, error icon
 					JOptionPane.showMessageDialog(null,
 					    "Please close the report file before proceeding: \n" + outputFolder + "/" + reportFileName +
-					    "\n Löpnr: " + sim.getTestNr(),
+					    "\n Löpnr: " + sim.getIdNr(),
 					    "PDF creation error",
 					    JOptionPane.ERROR_MESSAGE);
 				}
