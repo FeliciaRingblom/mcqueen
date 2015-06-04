@@ -30,10 +30,10 @@ public class SimulationDefaults
 	public static String driverName = "inget namn";
 	public static String drivingTaskFileName = "assets/DrivingTasks/Projects/IntroStraight/introStraight.xml";
 	
-	public static boolean SettingsControllerServer_startServer = false;
+	public static Boolean SettingsControllerServer_startServer = false;
 	public static int SettingsControllerServer_port = 1000;
 	
-	public static boolean Analyzer_suppressPDFPopup = true;
+	public static Boolean Analyzer_suppressPDFPopup = true;
 	
 	public static float gravity = 9.81f;
 	

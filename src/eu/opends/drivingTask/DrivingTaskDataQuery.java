@@ -414,7 +414,7 @@ public class DrivingTaskDataQuery
                 System.out.println("Query: " + query);
                 System.out.println("Result: " + stringValue);
             }
-            
+            //TODO this does not work correctly for Booleans
             Constructor<T> constructor = cast.getConstructor(String.class);
             Object obj = constructor.newInstance(stringValue);
             return (T) obj;
