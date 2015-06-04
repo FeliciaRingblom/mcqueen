@@ -47,7 +47,9 @@ public class StartScreenGUIController implements ScreenController {
 	public void onEndScreen() {}
 
 	@Override
-	public void onStartScreen() {}
+	public void onStartScreen() {
+		System.out.println("onStartScreen");
+	}
 	
 
 	public void startTest(){

@@ -55,11 +55,13 @@ public class ReactionCenter
 		speed = sim.getSpeed();
 		hands = sim.getHands();
 		reactionLogger = new ReactionLogger(sim);
+		System.out.println("ReactionCenter constructor");
 	}
 
 	
 	public void start()
 	{
+		System.out.println("start ReactionCenter");
 		if(!isRunning)
 		{	
 			reactionListener = new ReactionListener(this);
@@ -67,7 +69,6 @@ public class ReactionCenter
 			experimentStartTime = new GregorianCalendar().getTimeInMillis();
 			isRunning = true;
 			
-			System.err.println("Start");
 //			Simulator.getDrivingTaskLogger().reportText("trial;vpn;age;gender;task;task_detail;condition_num;" +
 //					"condition_string;track;accuracy;additional_false_r;RT_brake1;RT_brake2;RT_brake3;RT_brake4;" +
 //					"RT_change1;RT_change2;RT_change3;RT_change4");
@@ -277,6 +278,11 @@ public class ReactionCenter
 		
 		isRunning = false;
 		reactionLogger.close(age, idNr, gender, diagnosisNr, speed, hands);
+	}
+
+
+	public void generateReport() {
+		reactionLogger.generateReport();		
 	}
 
 }

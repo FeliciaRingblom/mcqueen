@@ -202,16 +202,15 @@ public class InstructionsGUIController implements ScreenController
 	public void openPDF() {
 		String filePath = sim.getOutputFolder();
 		File pdf = new File(filePath + "/reactionReport.pdf");
-        
-        Desktop desktop = Desktop.getDesktop();
-        if(pdf.exists()){
-			try {
-				desktop.open(pdf);
-			} catch (IOException e) {
-				System.out.println("could not open pdf");
-			}
-        }else{
-        	System.out.println("could not find file");
-        }
+		sim.getReactionCenter().close();
+		sim.getReactionCenter().generateReport();
+
+		Desktop desktop = Desktop.getDesktop();
+
+		try {
+			desktop.open(pdf);
+		} catch (IOException e) {
+			System.out.println("could not open pdf");
+		}
 	}
 }

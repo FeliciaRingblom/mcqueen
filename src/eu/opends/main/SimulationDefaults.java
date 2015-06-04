@@ -33,7 +33,7 @@ public class SimulationDefaults
 	public static boolean SettingsControllerServer_startServer = false;
 	public static int SettingsControllerServer_port = 1000;
 	
-	public static boolean Analyzer_suppressPDFPopup = false;
+	public static boolean Analyzer_suppressPDFPopup = true;
 	
 	public static float gravity = 9.81f;
 	

@@ -304,8 +304,7 @@ public class SettingsLoader
 			
 			Class<T> cast = (Class<T>) defaultValue.getClass();
 			T returnvalue = (T) dtData.getValue(Layer.SETTINGS, setting.getXPathQuery(), cast);
-			
-			if(returnvalue == null)
+			if(returnvalue == null) //TODO this does not work for booleans
 				returnvalue = defaultValue;
 			
 			return returnvalue;
