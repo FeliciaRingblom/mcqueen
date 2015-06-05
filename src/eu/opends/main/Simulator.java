@@ -722,10 +722,15 @@ public class Simulator extends SimpleApplication
 	        
 	        // set splash screen parameters
 	        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-	        int width = gd.getDisplayMode().getWidth();
-	        int height = gd.getDisplayMode().getHeight();
-	        int bitDepth = gd.getDisplayMode().getBitDepth();
-	        int refreshRate = gd.getDisplayMode().getRefreshRate();
+	        //TODO uncomment
+//	        int width = gd.getDisplayMode().getWidth();
+//	        int height = gd.getDisplayMode().getHeight();
+//	        int bitDepth = gd.getDisplayMode().getBitDepth();
+//	        int refreshRate = gd.getDisplayMode().getRefreshRate();
+	        int width = 800;
+	        int height = 600;
+	        int bitDepth = 24;
+	        int refreshRate = 60;
 	        settings.setFullscreen(false);
 	        settings.setResolution(width, height);
 	        settings.setSamples(4);

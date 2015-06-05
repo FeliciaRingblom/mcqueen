@@ -81,8 +81,12 @@ public abstract class ReactionTimer
 			// report previous reaction as missing
 			long reactionStartTime = reactionTimer.getTimeInMillis();
 			long relativeStartTime = reactionStartTime - experimentStartTime;
-			reactionLogger.add(reactionGroupID, -2, 10000L, reactionStartTime, relativeStartTime, comment);
-			
+			//Is used in test 3 when some stimulis are supposed to be missing
+			if (comment.equalsIgnoreCase("ignore")) { 
+				reactionLogger.add(reactionGroupID, 1, 0L, reactionStartTime, relativeStartTime, comment);
+			} else {
+				reactionLogger.add(reactionGroupID, -2, 10000L, reactionStartTime, relativeStartTime, comment);
+			}
 			trialLogger.setReaction(0);
 			//trialLogger.writeLog();
 			
