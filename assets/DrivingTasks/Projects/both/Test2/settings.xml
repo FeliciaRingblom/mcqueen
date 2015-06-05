@@ -11,7 +11,9 @@
 		
 
 	</general>
-	
+	<analyzer>
+		<suppressPDFPopup>true</suppressPDFPopup>
+	</analyzer>
 
 	<reactionMeasurement>
 		<groupLeft>stimuli_left</groupLeft>
