@@ -145,7 +145,9 @@ public class ReactionLogger
 				// open PDF file
 				boolean suppressPDF = Simulator.getSettingsLoader().getSetting(Setting.Analyzer_suppressPDFPopup, 
 						SimulationDefaults.Analyzer_suppressPDFPopup);
-				generateReport();
+				if (!hasGeneratedReport){
+					generateReport();
+				}
 				if(!suppressPDF) {
 					Util.open(outputFolder + "/" + reportFileName);
 				}
@@ -160,74 +162,73 @@ public class ReactionLogger
 
 	public void generateReport()
 	{
-		if (!hasGeneratedReport){
-			try
-			{
-				System.out.println("GenerateReport()");
-				//calculate data of driving deviation and steadiness for all three parts
-				try {
-					meanDeviation_part1 = calculateCarData(outputFolder + "/carData.txt");
-					System.out.println("meanDev part 1" + meanDeviation_part1);
-				} catch (Exception e) {
-					meanDeviation_part1 = 0.0f;
-					System.out.println("meanDeviation part 1 failed");
-				}
-				try {
-					meanDeviation_part2 = calculateCarData(outputFolder + "/positionData_2.txt");
-					System.out.println("meanDev part 1" + meanDeviation_part2);
-				} catch (Exception e) {
-					meanDeviation_part2 = 0.0f;
-					System.out.println("meanDeviation part 2 failed");
-				}
-				try {
-					meanDeviation_part3 = calculateCarData(outputFolder + "/positionData_3.txt");
-					System.out.println("meanDev part 1" + meanDeviation_part3);
-				} catch (Exception e) {
-					meanDeviation_part3 = 0.0f;
-					System.out.println("meanDeviation part 3 failed");
-				}
-
-				// open XML data source
-				//JRDataSource dataSource = new JaxenXmlDataSource(new File(outputFolder + "/" + dataFileName),
-				//	"report/reactionMeasurement");
-
-				JRDataSource dataSource = new JaxenXmlDataSource(new File(outputFolder + "/reactionData.xml"),
-						"report/reactionMeasurement");
-				//get report template for reaction measurement
-				//InputStream reportStream = new FileInputStream("assets/JasperReports/templates/reactionMeasurement.jasper");
-				//InputStream inputStream = new FileInputStream("assets/JasperReports/templates/reactionMeasurement.jrxml");
-				InputStream inputStream = new FileInputStream("assets/JasperReports/templates/assessmentResults.jrxml");
-				JasperDesign design = JRXmlLoader.load(inputStream);
-				JasperReport report = JasperCompileManager.compileReport(design);
-
-				// fill report with parameters and data
-				Map<String, Object> parameters = getParameters();
-				JasperPrint print = JasperFillManager.fillReport(report, parameters, dataSource);
-
-				// create PDF file
-				boolean succesful = false;
-				while (!succesful) {
-					long start = System.currentTimeMillis();
-					try {
-						JasperExportManager.exportReportToPdfFile(print, outputFolder + "/" + reportFileName);
-						succesful = true;
-						hasGeneratedReport = true;
-					} catch (Exception e) {
-						//custom title, error icon
-						JOptionPane.showMessageDialog(null,
-								"Please close the report file before proceeding: \n" + outputFolder + "/" + reportFileName +
-								"\n Löpnr: " + sim.getIdNr(),
-								"PDF creation error",
-								JOptionPane.ERROR_MESSAGE);
-					}
-					System.out.println("PDF creation time : " + (System.currentTimeMillis() - start) + " ms");
-				}
+		try
+		{
+			System.out.println("GenerateReport()");
+			//calculate data of driving deviation and steadiness for all three parts
+			try {
+				meanDeviation_part1 = calculateCarData(outputFolder + "/carData.txt");
+				System.out.println("meanDev part 1" + meanDeviation_part1);
 			} catch (Exception e) {
-
-				e.printStackTrace();
+				meanDeviation_part1 = 0.0f;
+				System.out.println("meanDeviation part 1 failed");
 			}
+			try {
+				meanDeviation_part2 = calculateCarData(outputFolder + "/positionData_2.txt");
+				System.out.println("meanDev part 1" + meanDeviation_part2);
+			} catch (Exception e) {
+				meanDeviation_part2 = 0.0f;
+				System.out.println("meanDeviation part 2 failed");
+			}
+			try {
+				meanDeviation_part3 = calculateCarData(outputFolder + "/positionData_3.txt");
+				System.out.println("meanDev part 1" + meanDeviation_part3);
+			} catch (Exception e) {
+				meanDeviation_part3 = 0.0f;
+				System.out.println("meanDeviation part 3 failed");
+			}
+
+			// open XML data source
+			//JRDataSource dataSource = new JaxenXmlDataSource(new File(outputFolder + "/" + dataFileName),
+			//	"report/reactionMeasurement");
+
+			JRDataSource dataSource = new JaxenXmlDataSource(new File(outputFolder + "/reactionData.xml"),
+					"report/reactionMeasurement");
+			//get report template for reaction measurement
+			//InputStream reportStream = new FileInputStream("assets/JasperReports/templates/reactionMeasurement.jasper");
+			//InputStream inputStream = new FileInputStream("assets/JasperReports/templates/reactionMeasurement.jrxml");
+			InputStream inputStream = new FileInputStream("assets/JasperReports/templates/assessmentResults.jrxml");
+			JasperDesign design = JRXmlLoader.load(inputStream);
+			JasperReport report = JasperCompileManager.compileReport(design);
+
+			// fill report with parameters and data
+			Map<String, Object> parameters = getParameters();
+			JasperPrint print = JasperFillManager.fillReport(report, parameters, dataSource);
+
+			// create PDF file
+			boolean succesful = false;
+			while (!succesful) {
+				long start = System.currentTimeMillis();
+				try {
+					JasperExportManager.exportReportToPdfFile(print, outputFolder + "/" + reportFileName);
+					succesful = true;
+					hasGeneratedReport = true;
+				} catch (Exception e) {
+					//custom title, error icon
+					JOptionPane.showMessageDialog(null,
+							"Please close the report file before proceeding: \n" + outputFolder + "/" + reportFileName +
+							"\n Löpnr: " + sim.getIdNr(),
+							"PDF creation error",
+							JOptionPane.ERROR_MESSAGE);
+				}
+				System.out.println("PDF creation time : " + (System.currentTimeMillis() - start) + " ms");
+			}
+		} catch (Exception e) {
+
+			e.printStackTrace();
 		}
 	}
+
 
 
 	private Map<String, Object> getParameters() 
