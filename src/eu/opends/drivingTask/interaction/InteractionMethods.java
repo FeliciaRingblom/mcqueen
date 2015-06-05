@@ -267,7 +267,7 @@ public class InteractionMethods
 	}
 	
 	
-	@Action(
+/*	@Action(
 			name = "setupReactionTimer",
 			layer = Layer.INTERACTION,
 			description = "Sets up a reaction timer (Deprecated)",
@@ -286,34 +286,39 @@ public class InteractionMethods
 		String parameter = "";
 		
 		try {
-			
+			System.out.println("InteractionMethods.setupReactionTimer()");
 			// extract ID of timer
 			parameter = "timerID";
 			String timerID = parameterList.getProperty(parameter);
+			System.out.println("TimerID " + timerID);
 			if(timerID == null)
 				timerID = "timer1";
 			
 			// extract reaction group
 			parameter = "reactionGroup";
 			String reactionGroup = parameterList.getProperty(parameter);
+			System.out.println("reactionGroup " + reactionGroup);
 			if(reactionGroup == null)
 				throw new Exception();
 			
 			// extract list of keys triggering the correct reaction
 			parameter = "correctReaction";
 			String correctReaction = parameterList.getProperty(parameter);
+			System.out.println("correctReaction " + correctReaction);
 			if(correctReaction == null)
 				throw new Exception();
 			
 			// extract list of keys triggering the failure reaction
 			parameter = "failureReaction";
 			String failureReaction = parameterList.getProperty(parameter);
+			System.out.println("failureReaction " + failureReaction);
 			if(failureReaction == null)
 				throw new Exception();
 			
 			// extract optional comment
 			parameter = "comment";
 			String comment = parameterList.getProperty(parameter);
+			System.out.println("comment " + comment);
 			if(comment == null)
 				comment = "";
 	
@@ -326,7 +331,7 @@ public class InteractionMethods
 			reportError("setupReactionTimer", parameter);
 			return null;
 		}
-	}
+	}*/
 	
 	
 	@Action(
@@ -348,34 +353,40 @@ public class InteractionMethods
 		String parameter = "";
 		
 		try {
+			System.out.println("InteractionMethods.setupReactionTimer()");
 			
 			// extract ID of timer
 			parameter = "timerID";
 			String timerID = parameterList.getProperty(parameter);
+			System.out.println("timerID " + timerID);
 			if(timerID == null)
 				timerID = "timer1";
 			
 			// extract reaction group
 			parameter = "reactionGroup";
 			String reactionGroup = parameterList.getProperty(parameter);
+			System.out.println("reactionGroup " + reactionGroup);
 			if(reactionGroup == null)
 				throw new Exception();
 			
 			// extract list of keys triggering the correct reaction
 			parameter = "correctReaction";
 			String correctReaction = parameterList.getProperty(parameter);
+			System.out.println("correctReaction " + correctReaction);
 			if(correctReaction == null)
 				throw new Exception();
 			
 			// extract list of keys triggering the failure reaction
 			parameter = "failureReaction";
 			String failureReaction = parameterList.getProperty(parameter);
+			System.out.println("failureReaction " + failureReaction);
 			if(failureReaction == null)
 				throw new Exception();
 			
 			// extract optional comment
 			parameter = "comment";
 			String comment = parameterList.getProperty(parameter);
+			System.out.println("comment " + comment);
 			if(comment == null)
 				comment = "";
 	
