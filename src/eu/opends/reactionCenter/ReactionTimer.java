@@ -41,6 +41,7 @@ public abstract class ReactionTimer
 	protected Calendar reactionTimer = null;
 	protected String comment;
 	protected String reactionGroupID;
+
 	protected boolean correctReactionReported = false;
 	protected boolean failureReactionReported = false;
 	
@@ -48,7 +49,17 @@ public abstract class ReactionTimer
 	
 	protected TrialLogger trialLogger;
 	
+	long reactionStartTime;
+
+	long relativeStartTime;
+
+	private int reactionResult;
+
+	private long reactionTime;
 	
+
+
+
 	public ReactionTimer(Simulator sim, ReactionLogger reactionlogger, long experimentStartTime, String timerID, int index)
 	{
 		this.sim = sim;
@@ -79,13 +90,17 @@ public abstract class ReactionTimer
 		if(timerIsActive)
 		{
 			// report previous reaction as missing
-			long reactionStartTime = reactionTimer.getTimeInMillis();
-			long relativeStartTime = reactionStartTime - experimentStartTime;
+			reactionStartTime = reactionTimer.getTimeInMillis();
+			relativeStartTime = reactionStartTime - experimentStartTime;
 			//Is used in test 3 when some stimulis are supposed to be missing
 			if (comment.equalsIgnoreCase("ignore")) { 
-				reactionLogger.add(reactionGroupID, 1, 0L, reactionStartTime, relativeStartTime, comment);
+				reactionResult = 1;
+				reactionTime = 0L;
+				reactionLogger.add(this);
 			} else {
-				reactionLogger.add(reactionGroupID, -2, 10000L, reactionStartTime, relativeStartTime, comment);
+				reactionResult = -2;
+				reactionTime = 10000L;
+				reactionLogger.add(this);
 			}
 			trialLogger.setReaction(0);
 			//trialLogger.writeLog();
@@ -94,21 +109,45 @@ public abstract class ReactionTimer
 			timerIsActive = false;
 		}
 	}
+
+	public String getReactionGroupID() {
+		return reactionGroupID;
+	}
 	
+
+	public long getReactionStartTime() {
+		return reactionStartTime;
+	}
+
+
+	public long getRelativeStartTime() {
+		return relativeStartTime;
+	}
+	
+	public int getReactionResult() {
+		return reactionResult;
+	}
+	
+
+	public long getReactionTime() {
+		return reactionTime;
+	}
+
 	
 	public void update()
 	{
 		if(timerIsActive)
 		{
-			long reactionStartTime = reactionTimer.getTimeInMillis();
-			long relativeStartTime = reactionStartTime - experimentStartTime;
+			reactionStartTime = reactionTimer.getTimeInMillis();
+			relativeStartTime = reactionStartTime - experimentStartTime;
 			long currentTime = new GregorianCalendar().getTimeInMillis();
-			long reactionTime = currentTime - reactionStartTime;
+			reactionTime = currentTime - reactionStartTime;
 			
 			if(correctReactionReported)
 			{		
 				// report correct reaction
-				reactionLogger.add(reactionGroupID, 1, reactionTime, reactionStartTime, relativeStartTime, comment);
+				this.reactionResult = 1;
+				reactionLogger.add(this);
 
 				reactionTimer = null;
 				comment = "";
@@ -119,8 +158,9 @@ public abstract class ReactionTimer
 			else if(failureReactionReported)
 			{
 				// report failure reaction
-				reactionLogger.add(reactionGroupID, -1, reactionTime, reactionStartTime, relativeStartTime, comment);
-
+				this.reactionResult = -1;
+				reactionLogger.add(this);
+				
 				reactionTimer = null;
 				comment = "";
 				
@@ -167,5 +207,10 @@ public abstract class ReactionTimer
 		reactionTimer = new GregorianCalendar();
 		correctReactionReported = false;
 		failureReactionReported = false;
+	}
+
+
+	public String getComment() {
+		return comment;
 	}
 }

@@ -76,7 +76,7 @@ public class ReactionCenter
 	}
 
 	
-	public void setupKeyReactionTimer(String timerID, String reactionGroupID, String correctReaction, 
+	public synchronized void setupKeyReactionTimer(String timerID, String reactionGroupID, String correctReaction, 
 			String failureReaction,	String comment)
 	{
 		
@@ -205,7 +205,7 @@ public class ReactionCenter
 	}
 
 	
-	private ReactionTimer getReactionTimer(String timerID) 
+	private synchronized ReactionTimer getReactionTimer(String timerID) 
 	{
 		for(int index=0; index<reactionTimerList.size(); index++)
 			if(reactionTimerList.get(index).getTimerID().equals(timerID))
@@ -214,7 +214,7 @@ public class ReactionCenter
 	}
 	
 	
-	public void update()
+	public synchronized void update()
 	{		
 		if(isRunning)
 		{
@@ -231,28 +231,30 @@ public class ReactionCenter
 	}
 	
 	
+	public void reportFailureReaction(int index)
+	{
+		if(reactionTimerList.size() > index){
+			ReactionTimer temp = reactionTimerList.get(index);
+			reactionTimerList.get(index).reportFailureReaction();
+		}
+	}
+	
+	
+/*	public void reportFailureReaction(String timerID)
+	{
+		ReactionTimer reactionTimer = getReactionTimer(timerID);
+		if(reactionTimer != null)
+			reactionTimer.reportFailureReaction();
+		else
+			System.err.println("No reaction timer '" + timerID + "' found!");
+	}
+
+	
 	public void reportCorrectReaction(String timerID)
 	{
 		ReactionTimer reactionTimer = getReactionTimer(timerID);
 		if(reactionTimer != null)
 			reactionTimer.reportCorrectReaction();
-		else
-			System.err.println("No reaction timer '" + timerID + "' found!");
-	}
-	
-	
-	public void reportFailureReaction(int index)
-	{
-		if(reactionTimerList.size() > index)
-			reactionTimerList.get(index).reportFailureReaction();
-	}
-	
-	
-	public void reportFailureReaction(String timerID)
-	{
-		ReactionTimer reactionTimer = getReactionTimer(timerID);
-		if(reactionTimer != null)
-			reactionTimer.reportFailureReaction();
 		else
 			System.err.println("No reaction timer '" + timerID + "' found!");
 	}
@@ -266,8 +268,7 @@ public class ReactionCenter
 		else
 			System.err.println("No reaction timer '" + timerID + "' found!");
 	}
-	
-	
+	*/
 	public void close()
 	{
 		if(isRunning)

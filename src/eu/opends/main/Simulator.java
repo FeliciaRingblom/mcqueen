@@ -129,7 +129,7 @@ public class Simulator extends SimpleApplication
     private boolean initializationFinished = false;
 	private boolean debugEnabled = false;
 	private boolean carPositionWriterQuittable = false;
-	private boolean showStats = false;	
+	private boolean showStats = true;	
 	private boolean drivingMode = false;
 
 	
@@ -302,6 +302,7 @@ public class Simulator extends SimpleApplication
     
     public void showStats(boolean show)
 	{
+    	System.out.println("showstats" + show);
 		showStats = show;
 		setDisplayFps(show);
     	setDisplayStatView(show);
@@ -309,8 +310,10 @@ public class Simulator extends SimpleApplication
 	
 	public void toggleStats()
 	{
+    	System.out.println("togglestats pre " + showStats);
 		showStats = !showStats;
 		showStats(showStats);
+    	System.out.println("togglestats aft " + showStats);		
 	}
     
     public float getPhysicsSpeed() 
@@ -387,7 +390,9 @@ public class Simulator extends SimpleApplication
     @Override
     public void simpleInitApp()
     {
-    	showStats(false);
+    	showStats(true);
+    	setDisplayFps(true);
+    	setDisplayStatView(true);
     	initNifty();
         instructionsGUI = new InstructionsGUI(this);
         shutDownGUI = new ShutDownGUI(this);
@@ -425,7 +430,7 @@ public class Simulator extends SimpleApplication
     public void initDrivingTask(String drivingTaskFileName)
     {
     	initializationFinished = false;
-    	   	
+    	showStats(true);
     	SimulationDefaults.drivingTaskFileName = drivingTaskFileName;
 
     	//System.out.println("start: " + this.idNr + ", " + this.diagnosisNr + ", " + this.gender + ", " + this.age);
@@ -437,11 +442,11 @@ public class Simulator extends SimpleApplication
     	initDrivingTaskLayers();
     	
     	// show stats if set in driving task
-    	showStats(drivingTask.getSettingsLoader().getSetting(Setting.General_showStats, false));  	
+    	showStats(drivingTask.getSettingsLoader().getSetting(Setting.General_showStats, true));  	
     	
     	// sets up physics, camera, light, shadows and sky
     	lookupNumberOfScreens();
-    	
+    	System.out.println("Number of screens" + getNumberOfScreens());
     	// init physics
     	stateManager.detach(bulletAppState);
     	stateManager.cleanup();
@@ -718,7 +723,8 @@ public class Simulator extends SimpleApplication
 	    	AppSettings settings = new AppSettings(true);
 	        settings.setUseJoysticks(true);
 	        settings.setSettingsDialogImage("assets/Textures/Logo/mcQueen.jpg");
-	        settings.setTitle("Testa din kÃ¶rfÃ¶rmÃ¥ga. ");
+	        settings.setTitle("Testa din körförmåga. ");
+	        
 	        
 	        // set splash screen parameters
 	        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
@@ -731,12 +737,19 @@ public class Simulator extends SimpleApplication
 	        int height = 600;
 	        int bitDepth = 24;
 	        int refreshRate = 60;
+	        System.out.println(width);
+	        System.out.println(height);
+	        System.out.println(bitDepth);
+	        System.out.println(refreshRate);
 	        settings.setFullscreen(false);
 	        settings.setResolution(width, height);
 	        settings.setSamples(4);
 	        settings.setBitsPerPixel(bitDepth);
 	        settings.setVSync(false);
 	        settings.setFrequency(refreshRate);
+	        settings.setFrameRate(30);
+	        System.out.println(settings.getFrameRate());
+	        System.out.println(settings.getFrequency());
 	     
 	        
 			sim.setSettings(settings);
