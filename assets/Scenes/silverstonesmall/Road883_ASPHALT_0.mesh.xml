@@ -1,0 +1,40 @@
+<mesh>
+	<submeshes>
+		<submesh material="ASPHALT_0.001" usesharedvertices="false">
+			<faces count="4">
+				<face v1="0" v2="1" v3="2"/>
+				<face v1="1" v2="3" v3="2"/>
+				<face v1="2" v2="3" v3="4"/>
+				<face v1="3" v2="5" v3="4"/>
+			</faces>
+			<geometry vertexcount="6">
+				<vertexbuffer positions="true" normals="true">
+					<vertex>
+						<position x="271.268097" y="0.000000" z="267.550903"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="268.269897" y="0.000000" z="265.745117"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="236.944458" y="0.000000" z="330.834381"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="233.867889" y="0.000000" z="329.165619"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="211.729584" y="0.000000" z="377.320465"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="208.624420" y="0.000000" z="375.705536"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+				</vertexbuffer>
+			</geometry>
+		</submesh>
+	</submeshes>
+</mesh>

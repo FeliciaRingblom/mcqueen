@@ -1,0 +1,30 @@
+<mesh>
+	<submeshes>
+		<submesh material="EARTH_0" usesharedvertices="false">
+			<faces count="2">
+				<face v1="0" v2="1" v3="2"/>
+				<face v1="1" v2="3" v3="2"/>
+			</faces>
+			<geometry vertexcount="4">
+				<vertexbuffer positions="true" normals="true">
+					<vertex>
+						<position x="1512.561646" y="0.000000" z="-2741.074707"/>
+						<normal x="0.000000" y="1.000000" z="-0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="1511.968384" y="0.000000" z="-2737.625244"/>
+						<normal x="0.000000" y="1.000000" z="-0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="1523.285889" y="0.000000" z="-2734.922607"/>
+						<normal x="0.000000" y="1.000000" z="-0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="1520.126099" y="0.000000" z="-2733.417236"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+				</vertexbuffer>
+			</geometry>
+		</submesh>
+	</submeshes>
+</mesh>

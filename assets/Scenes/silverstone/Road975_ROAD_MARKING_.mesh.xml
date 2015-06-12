@@ -1,0 +1,40 @@
+<mesh>
+	<submeshes>
+		<submesh material="ROAD_MARKING_DASH" usesharedvertices="false">
+			<faces count="4">
+				<face v1="0" v2="1" v3="2"/>
+				<face v1="1" v2="3" v3="2"/>
+				<face v1="2" v2="3" v3="4"/>
+				<face v1="3" v2="5" v3="4"/>
+			</faces>
+			<geometry vertexcount="6">
+				<vertexbuffer positions="true" normals="true">
+					<vertex>
+						<position x="452.523987" y="0.000000" z="420.966217"/>
+						<normal x="0.000000" y="1.000000" z="-0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="452.502014" y="0.000000" z="421.063782"/>
+						<normal x="0.000000" y="1.000000" z="-0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="467.068451" y="0.000000" z="423.616241"/>
+						<normal x="0.000000" y="1.000000" z="-0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="467.050507" y="0.000000" z="423.714630"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="487.406525" y="0.000000" z="427.321930"/>
+						<normal x="0.000000" y="1.000000" z="-0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="487.387451" y="0.000000" z="427.420074"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+				</vertexbuffer>
+			</geometry>
+		</submesh>
+	</submeshes>
+</mesh>

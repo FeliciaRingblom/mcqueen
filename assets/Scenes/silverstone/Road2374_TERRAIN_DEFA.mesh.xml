@@ -1,0 +1,40 @@
+<mesh>
+	<submeshes>
+		<submesh material="TERRAIN_DEFAULT_0.001" usesharedvertices="false">
+			<faces count="4">
+				<face v1="0" v2="1" v3="2"/>
+				<face v1="1" v2="3" v3="2"/>
+				<face v1="2" v2="3" v3="4"/>
+				<face v1="3" v2="5" v3="4"/>
+			</faces>
+			<geometry vertexcount="6">
+				<vertexbuffer positions="true" normals="true">
+					<vertex>
+						<position x="546.913574" y="0.000000" z="-793.594910"/>
+						<normal x="-0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="547.548340" y="0.000000" z="-792.347107"/>
+						<normal x="-0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="689.682617" y="0.000000" z="-866.224976"/>
+						<normal x="-0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="690.317383" y="0.000000" z="-864.977173"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="699.765564" y="0.000000" z="-871.354431"/>
+						<normal x="-0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="700.390442" y="0.000000" z="-870.101563"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+				</vertexbuffer>
+			</geometry>
+		</submesh>
+	</submeshes>
+</mesh>

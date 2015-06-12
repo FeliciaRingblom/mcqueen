@@ -1,0 +1,40 @@
+<mesh>
+	<submeshes>
+		<submesh material="ROOF_DEFAULT_0.001" usesharedvertices="false">
+			<faces count="4">
+				<face v1="0" v2="1" v3="2"/>
+				<face v1="3" v2="0" v3="4"/>
+				<face v1="0" v2="2" v3="4"/>
+				<face v1="5" v2="0" v3="3"/>
+			</faces>
+			<geometry vertexcount="6">
+				<vertexbuffer positions="true" normals="true">
+					<vertex>
+						<position x="-519.789001" y="7.500000" z="356.221008"/>
+						<normal x="0.000000" y="1.000000" z="-0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-532.632996" y="7.500000" z="368.699005"/>
+						<normal x="0.000000" y="1.000000" z="-0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-511.714996" y="7.500000" z="375.678009"/>
+						<normal x="0.000000" y="1.000000" z="-0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-299.546997" y="7.500000" z="91.938004"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-496.291992" y="7.500000" z="373.473999"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-320.471985" y="7.500000" z="76.519997"/>
+						<normal x="0.000000" y="1.000000" z="-0.000000"/>
+					</vertex>
+				</vertexbuffer>
+			</geometry>
+		</submesh>
+	</submeshes>
+</mesh>

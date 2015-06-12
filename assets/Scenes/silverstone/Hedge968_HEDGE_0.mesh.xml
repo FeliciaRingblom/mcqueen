@@ -1,0 +1,102 @@
+<mesh>
+	<submeshes>
+		<submesh material="HEDGE_0" usesharedvertices="false">
+			<faces count="10">
+				<face v1="0" v2="1" v3="2"/>
+				<face v1="1" v2="3" v3="2"/>
+				<face v1="4" v2="5" v3="6"/>
+				<face v1="5" v2="7" v3="6"/>
+				<face v1="8" v2="9" v3="10"/>
+				<face v1="9" v2="11" v3="10"/>
+				<face v1="12" v2="13" v3="15"/>
+				<face v1="13" v2="14" v3="15"/>
+				<face v1="16" v2="17" v3="19"/>
+				<face v1="17" v2="18" v3="19"/>
+			</faces>
+			<geometry vertexcount="20">
+				<vertexbuffer positions="true" normals="true">
+					<vertex>
+						<position x="649.089844" y="1.000000" z="73.257355"/>
+						<normal x="-0.892728" y="-0.000000" z="-0.450596"/>
+					</vertex>
+					<vertex>
+						<position x="649.089844" y="0.000000" z="73.257355"/>
+						<normal x="-0.892728" y="-0.000000" z="-0.450596"/>
+					</vertex>
+					<vertex>
+						<position x="638.065796" y="1.000000" z="95.098351"/>
+						<normal x="-0.892728" y="-0.000000" z="-0.450596"/>
+					</vertex>
+					<vertex>
+						<position x="638.065796" y="0.000000" z="95.098351"/>
+						<normal x="-0.892728" y="0.000000" z="-0.450596"/>
+					</vertex>
+					<vertex>
+						<position x="649.536194" y="1.000000" z="73.482651"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="649.089844" y="1.000000" z="73.257355"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="638.512207" y="1.000000" z="95.323647"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="638.065796" y="1.000000" z="95.098351"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="649.536194" y="0.000000" z="73.482651"/>
+						<normal x="0.892729" y="-0.000000" z="0.450594"/>
+					</vertex>
+					<vertex>
+						<position x="649.536194" y="1.000000" z="73.482651"/>
+						<normal x="0.892729" y="-0.000000" z="0.450594"/>
+					</vertex>
+					<vertex>
+						<position x="638.512207" y="0.000000" z="95.323647"/>
+						<normal x="0.892729" y="-0.000000" z="0.450594"/>
+					</vertex>
+					<vertex>
+						<position x="638.512207" y="1.000000" z="95.323647"/>
+						<normal x="0.892729" y="0.000000" z="0.450594"/>
+					</vertex>
+					<vertex>
+						<position x="649.089844" y="0.000000" z="73.257355"/>
+						<normal x="0.450604" y="0.000000" z="-0.892724"/>
+					</vertex>
+					<vertex>
+						<position x="649.089844" y="1.000000" z="73.257355"/>
+						<normal x="0.450604" y="0.000000" z="-0.892724"/>
+					</vertex>
+					<vertex>
+						<position x="649.536194" y="1.000000" z="73.482651"/>
+						<normal x="0.450604" y="0.000000" z="-0.892724"/>
+					</vertex>
+					<vertex>
+						<position x="649.536194" y="0.000000" z="73.482651"/>
+						<normal x="0.450604" y="0.000000" z="-0.892724"/>
+					</vertex>
+					<vertex>
+						<position x="638.512207" y="0.000000" z="95.323647"/>
+						<normal x="-0.450555" y="0.000000" z="0.892749"/>
+					</vertex>
+					<vertex>
+						<position x="638.512207" y="1.000000" z="95.323647"/>
+						<normal x="-0.450555" y="0.000000" z="0.892749"/>
+					</vertex>
+					<vertex>
+						<position x="638.065796" y="1.000000" z="95.098351"/>
+						<normal x="-0.450555" y="0.000000" z="0.892749"/>
+					</vertex>
+					<vertex>
+						<position x="638.065796" y="0.000000" z="95.098351"/>
+						<normal x="-0.450555" y="0.000000" z="0.892749"/>
+					</vertex>
+				</vertexbuffer>
+			</geometry>
+		</submesh>
+	</submeshes>
+</mesh>

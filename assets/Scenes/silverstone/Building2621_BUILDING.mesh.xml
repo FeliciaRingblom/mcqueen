@@ -1,0 +1,84 @@
+<mesh>
+	<submeshes>
+		<submesh material="BUILDING_DEFAULT_" usesharedvertices="false">
+			<faces count="8">
+				<face v1="0" v2="1" v3="2"/>
+				<face v1="1" v2="3" v3="2"/>
+				<face v1="4" v2="5" v3="6"/>
+				<face v1="5" v2="7" v3="6"/>
+				<face v1="8" v2="9" v3="10"/>
+				<face v1="9" v2="11" v3="10"/>
+				<face v1="12" v2="13" v3="14"/>
+				<face v1="15" v2="13" v3="12"/>
+			</faces>
+			<geometry vertexcount="16">
+				<vertexbuffer positions="true" normals="true">
+					<vertex>
+						<position x="30.798000" y="7.500000" z="-119.481003"/>
+						<normal x="-0.283040" y="-0.000000" z="-0.959108"/>
+					</vertex>
+					<vertex>
+						<position x="30.798000" y="0.000000" z="-119.481003"/>
+						<normal x="-0.283040" y="-0.000000" z="-0.959108"/>
+					</vertex>
+					<vertex>
+						<position x="-125.938004" y="7.500000" z="-73.226997"/>
+						<normal x="-0.283040" y="-0.000000" z="-0.959108"/>
+					</vertex>
+					<vertex>
+						<position x="-125.938004" y="0.000000" z="-73.226997"/>
+						<normal x="-0.283040" y="0.000000" z="-0.959108"/>
+					</vertex>
+					<vertex>
+						<position x="-125.938004" y="7.500000" z="-73.226997"/>
+						<normal x="-0.973763" y="0.000000" z="0.227566"/>
+					</vertex>
+					<vertex>
+						<position x="-125.938004" y="0.000000" z="-73.226997"/>
+						<normal x="-0.973763" y="0.000000" z="0.227566"/>
+					</vertex>
+					<vertex>
+						<position x="-123.364998" y="7.500000" z="-62.216999"/>
+						<normal x="-0.973763" y="0.000000" z="0.227566"/>
+					</vertex>
+					<vertex>
+						<position x="-123.364998" y="0.000000" z="-62.216999"/>
+						<normal x="-0.973763" y="0.000000" z="0.227566"/>
+					</vertex>
+					<vertex>
+						<position x="-123.364998" y="7.500000" z="-62.216999"/>
+						<normal x="0.285042" y="0.000000" z="0.958515"/>
+					</vertex>
+					<vertex>
+						<position x="-123.364998" y="0.000000" z="-62.216999"/>
+						<normal x="0.285042" y="0.000000" z="0.958515"/>
+					</vertex>
+					<vertex>
+						<position x="33.370998" y="7.500000" z="-108.827003"/>
+						<normal x="0.285042" y="0.000000" z="0.958515"/>
+					</vertex>
+					<vertex>
+						<position x="33.370998" y="0.000000" z="-108.827003"/>
+						<normal x="0.285042" y="0.000000" z="0.958515"/>
+					</vertex>
+					<vertex>
+						<position x="33.370998" y="0.000000" z="-108.827003"/>
+						<normal x="0.972054" y="0.000000" z="-0.234756"/>
+					</vertex>
+					<vertex>
+						<position x="30.798000" y="7.500000" z="-119.481003"/>
+						<normal x="0.972054" y="0.000000" z="-0.234756"/>
+					</vertex>
+					<vertex>
+						<position x="33.370998" y="7.500000" z="-108.827003"/>
+						<normal x="0.972054" y="0.000000" z="-0.234756"/>
+					</vertex>
+					<vertex>
+						<position x="30.798000" y="0.000000" z="-119.481003"/>
+						<normal x="0.972054" y="0.000000" z="-0.234756"/>
+					</vertex>
+				</vertexbuffer>
+			</geometry>
+		</submesh>
+	</submeshes>
+</mesh>

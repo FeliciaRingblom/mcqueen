@@ -1,0 +1,116 @@
+<mesh>
+	<submeshes>
+		<submesh material="ROAD_MARKING_DASH" usesharedvertices="false">
+			<faces count="16">
+				<face v1="0" v2="1" v3="2"/>
+				<face v1="1" v2="3" v3="2"/>
+				<face v1="2" v2="3" v3="4"/>
+				<face v1="3" v2="5" v3="4"/>
+				<face v1="4" v2="5" v3="6"/>
+				<face v1="5" v2="7" v3="6"/>
+				<face v1="6" v2="7" v3="8"/>
+				<face v1="7" v2="9" v3="8"/>
+				<face v1="10" v2="11" v3="12"/>
+				<face v1="11" v2="13" v3="12"/>
+				<face v1="14" v2="15" v3="16"/>
+				<face v1="15" v2="17" v3="16"/>
+				<face v1="16" v2="17" v3="18"/>
+				<face v1="17" v2="19" v3="18"/>
+				<face v1="18" v2="19" v3="20"/>
+				<face v1="19" v2="21" v3="20"/>
+			</faces>
+			<geometry vertexcount="22">
+				<vertexbuffer positions="true" normals="true">
+					<vertex>
+						<position x="247.270386" y="0.000000" z="-204.293991"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="247.337616" y="0.000000" z="-204.368011"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="209.966385" y="0.000000" z="-238.182632"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="210.033615" y="0.000000" z="-238.256653"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="174.983139" y="0.000000" z="-269.962982"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="175.050369" y="0.000000" z="-270.037018"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-0.540204" y="0.000000" z="-429.416321"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-0.472963" y="0.000000" z="-429.490356"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-34.553738" y="0.000000" z="-460.315765"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-34.486496" y="0.000000" z="-460.389771"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-38.542416" y="0.000000" z="-463.986267"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-38.474232" y="0.000000" z="-464.059418"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-72.039413" y="0.000000" z="-495.210663"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-71.971230" y="0.000000" z="-495.283813"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-76.281334" y="0.000000" z="-499.105957"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-76.214249" y="0.000000" z="-499.180115"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-90.033539" y="0.000000" z="-511.546295"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-89.966461" y="0.000000" z="-511.620453"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-154.610413" y="0.000000" z="-569.962891"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-154.543320" y="0.000000" z="-570.037109"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-211.899353" y="0.000000" z="-621.786865"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+					<vertex>
+						<position x="-211.834641" y="0.000000" z="-621.863098"/>
+						<normal x="0.000000" y="1.000000" z="0.000000"/>
+					</vertex>
+				</vertexbuffer>
+			</geometry>
+		</submesh>
+	</submeshes>
+</mesh>
