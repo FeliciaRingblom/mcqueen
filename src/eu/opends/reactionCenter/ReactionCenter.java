@@ -226,17 +226,16 @@ public class ReactionCenter
 	
 	public void reportCorrectReaction(int index)
 	{
-		if(reactionTimerList.size() > index)
-			reactionTimerList.get(index).reportCorrectReaction();
+		reactionTimerList.get(index).reportCorrectReaction();
 	}
 	
+	public void reportMissedReaction(int index) {
+		reactionTimerList.get(index).reportMissedReaction();
+	}
 	
 	public void reportFailureReaction(int index)
 	{
-		if(reactionTimerList.size() > index){
-			ReactionTimer temp = reactionTimerList.get(index);
-			reactionTimerList.get(index).reportFailureReaction();
-		}
+		reactionTimerList.get(index).reportFailureReaction();
 	}
 	
 	
@@ -284,6 +283,11 @@ public class ReactionCenter
 
 	public void generateReport() {
 		reactionLogger.generateReport();		
+	}
+
+
+	public boolean isNotMissed(int index) {
+		return reactionTimerList.size() - 1 == index;
 	}
 
 }

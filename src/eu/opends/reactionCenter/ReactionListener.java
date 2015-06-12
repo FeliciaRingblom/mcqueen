@@ -45,16 +45,26 @@ public class ReactionListener implements ActionListener
 					reactionGroupArray[1].equalsIgnoreCase("group") && value)
 			{
 				int index = Integer.parseInt(reactionGroupArray[2]);
-				reactionCenter.reportCorrectReaction(index);
-				System.out.println("Key: reaction_group_" + index);
+				if (reactionCenter.isNotMissed(index)) {
+					System.out.println("Key: reaction_group_" + index);
+					reactionCenter.reportCorrectReaction(index);
+				} else {
+					System.out.println("Missed Key: reaction_group_" + index);
+					reactionCenter.reportMissedReaction(index);
+				}
 			}
 			
 			else if (reactionGroupArray.length == 3 && reactionGroupArray[0].equalsIgnoreCase("failure") && 
 					reactionGroupArray[1].equalsIgnoreCase("group") && value) 
 			{
 				int index = Integer.parseInt(reactionGroupArray[2]);
-				reactionCenter.reportFailureReaction(index);
-				System.out.println("Key: failure_group_" + index);
+				if (reactionCenter.isNotMissed(index)) {
+					reactionCenter.reportFailureReaction(index);
+					System.out.println("Key: failure_group_" + index);
+				} else {
+					reactionCenter.reportMissedReaction(index);
+					System.out.println("Missed Key: failure_group_" + index);
+				}
 			}
 			
 		} catch(Exception e) {

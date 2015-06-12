@@ -129,6 +129,11 @@ public class SimulatorActionListener implements ActionListener
 					sim.stop();
 			}
 		}
+		else if (binding.equals(KeyMapping.TOGGLE_STATS.getID()))
+		{
+			if (value)
+				sim.toggleStats();
+		}
 	}
 
 }

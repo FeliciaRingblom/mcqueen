@@ -52,7 +52,7 @@ public class InternalMapProcessing
 		
 		// get list of additional objects (generated from XML file)
 		addMapObjectsToScene(Simulator.getDrivingTask().getSceneLoader().getMapObjects());
-
+		System.out.println("InternalMapProcessing" + Simulator.getDrivingTask().getSceneLoader().getMapObjects());
 		System.out.println("MapModelList:  [" + listToString(sceneNode) + "]");
 
 		// apply triggers to certain visible objects

@@ -24,6 +24,7 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -49,6 +50,7 @@ import eu.opends.drivingTask.settings.SettingsLoader;
 import eu.opends.drivingTask.settings.SettingsLoader.Setting;
 import eu.opends.main.SimulationDefaults;
 import eu.opends.main.Simulator;
+import eu.opends.reactionCenter.ReactionTimer;
 import eu.opends.tools.Util;
 
 /**
@@ -63,13 +65,16 @@ public class ReactionLogger
 	private String reportFileName = "reactionReport.pdf";
 	private String outputFolder;
 	BufferedWriter bw;
-	private int count = 0;
 	private float meanDeviation_part1, meanDeviation_part2, meanDeviation_part3;
 	private String age, gender, diagnosisNr, idNr, speed, hands;
 	private boolean hasGeneratedReport = false;
+	private ReactionTimer timerList[];
+
 
 	public ReactionLogger(Simulator sim) {
 		this.sim = sim;
+		timerList = new ReactionTimer[60];
+		System.out.println("ReactionLogger.ReactionLogger()");
 	}
 
 
@@ -92,36 +97,45 @@ public class ReactionLogger
 		}		
 	}
 
+	private int toIndex(String reactionTimerID) {
+		int sep = reactionTimerID.indexOf('_');
+		int testNo = Integer.parseInt(reactionTimerID.substring(0, sep));
+		int reactionNo = Integer.parseInt(reactionTimerID.substring(sep + 1));
+		return (testNo - 1) * 20 + reactionNo - 1;  //TODO change to constants 
+	}
 
-	public void add(String reactionGroup, int reactionResult, long reactionTime, 
-			long absoluteTime, long experimentTime, String comment)
-	{
-		if(!isRunning)
+	public void add(ReactionTimer reactionTimer) {
+		if(!isRunning) {
 			start();
-
+		}
 		if(isRunning)
-		{
+		{		
+			timerList[toIndex(reactionTimer.getTimerID())] = reactionTimer;
 
-			try {
-
-				bw.write("\t<reactionMeasurement>\n");
-				bw.write("\t\t<reactionID>" + count + "</reactionID>\n");
-				bw.write("\t\t<reactionGroup>" + reactionGroup + "</reactionGroup>\n");	
-				bw.write("\t\t<reactionResult>" + reactionResult + "</reactionResult>\n");				
-				bw.write("\t\t<reactionTime>" + reactionTime + "</reactionTime>\n");				
-				bw.write("\t\t<absoluteTime>" + absoluteTime + "</absoluteTime>\n");				
-				bw.write("\t\t<experimentTime>" + experimentTime + "</experimentTime>\n");				
-				bw.write("\t\t<comment>" + comment + "</comment>\n");
-				bw.write("\t</reactionMeasurement>\n");
-				count = count+1;
-
-			} catch (IOException e) {
-
-				e.printStackTrace();
-			}
 		}
 	}
 
+	private void generateDataXML () {
+		try {
+			for (ReactionTimer reactionTimer : timerList) {
+				if (reactionTimer != null) { 
+					bw.write("\t<reactionMeasurement>\n");
+					bw.write("\t\t<reactionID>" + toIndex(reactionTimer.getTimerID()) + "</reactionID>\n");
+					bw.write("\t\t<reactionGroup>" + reactionTimer.getReactionGroupID() + "</reactionGroup>\n");	
+					bw.write("\t\t<reactionResult>" + reactionTimer.getReactionResult() + "</reactionResult>\n");				
+					bw.write("\t\t<reactionTime>" + reactionTimer.getReactionTime() + "</reactionTime>\n");				
+					bw.write("\t\t<absoluteTime>" + reactionTimer.getReactionStartTime() + "</absoluteTime>\n");				
+					bw.write("\t\t<experimentTime>" + reactionTimer.getRelativeStartTime() + "</experimentTime>\n");				
+					bw.write("\t\t<comment>" + reactionTimer.getComment() + "</comment>\n");
+					bw.write("\t</reactionMeasurement>\n");
+				}
+			}
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+	}
 
 	public void close(String age, String idNr, String gender, String diagnosisNr, String speed, String hands)
 	{
@@ -139,7 +153,7 @@ public class ReactionLogger
 			isRunning = false;
 
 			try {
-
+				generateDataXML();
 				bw.write("</report>\n");        
 				bw.close();
 				// open PDF file
@@ -158,7 +172,6 @@ public class ReactionLogger
 			}
 		}
 	}
-
 
 	public void generateReport()
 	{
@@ -222,6 +235,7 @@ public class ReactionLogger
 							JOptionPane.ERROR_MESSAGE);
 				}
 				System.out.println("PDF creation time : " + (System.currentTimeMillis() - start) + " ms");
+				System.out.println(outputFolder + reportFileName);
 			}
 		} catch (Exception e) {
 
@@ -317,4 +331,7 @@ public class ReactionLogger
 			hands = "endas höger hand";
 		else hands = "endast vänster hand";
 	}
+
+
+
 }
