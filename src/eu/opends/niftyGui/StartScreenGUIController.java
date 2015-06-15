@@ -8,6 +8,7 @@ import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.NiftyEventSubscriber;
 import de.lessvoid.nifty.controls.RadioButtonGroupStateChangedEvent;
 import de.lessvoid.nifty.controls.TextField;
+import de.lessvoid.nifty.controls.textfield.TextFieldControl;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
 import eu.opends.main.Simulator;
@@ -46,9 +47,17 @@ public class StartScreenGUIController implements ScreenController {
 	@Override
 	public void onEndScreen() {}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onStartScreen() {
 		System.out.println("onStartScreen");
+		
+		if(sim.getIdNr() != null)
+			screen.findControl("input_id", TextFieldControl.class).setText(sim.getIdNr());
+		if(sim.getDiagnosisNr() != null)
+			screen.findControl("input_diagnosis_nr", TextFieldControl.class).setText(sim.getDiagnosisNr());
+		if(sim.getAge() != null)
+			screen.findControl("input_age", TextFieldControl.class).setText(sim.getAge());
 	}
 	
 
