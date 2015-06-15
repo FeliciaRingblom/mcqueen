@@ -8,6 +8,7 @@ import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.NiftyEventSubscriber;
 import de.lessvoid.nifty.controls.RadioButtonGroupStateChangedEvent;
 import de.lessvoid.nifty.controls.TextField;
+import de.lessvoid.nifty.controls.radiobutton.RadioButtonControl;
 import de.lessvoid.nifty.controls.textfield.TextFieldControl;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
@@ -58,6 +59,14 @@ public class StartScreenGUIController implements ScreenController {
 			screen.findControl("input_diagnosis_nr", TextFieldControl.class).setText(sim.getDiagnosisNr());
 		if(sim.getAge() != null)
 			screen.findControl("input_age", TextFieldControl.class).setText(sim.getAge());
+		
+		if(sim.getSpeed() != null)
+			screen.findControl(sim.getSpeed(), RadioButtonControl.class).select();
+		if(sim.getGender() != null)
+			screen.findControl(sim.getGender(), RadioButtonControl.class).select();
+		if(sim.getHands() != null)
+			screen.findControl(sim.getHands(), RadioButtonControl.class).select();
+
 	}
 	
 
