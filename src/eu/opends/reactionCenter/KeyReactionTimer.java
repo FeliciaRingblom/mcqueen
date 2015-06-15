@@ -65,9 +65,13 @@ public class KeyReactionTimer extends ReactionTimer
 	public void reportMissedReaction()
 	{
 		super.reportMissedReaction();
+		if(inputManager.hasMapping("reaction_group_" + index)){
+			inputManager.deleteMapping("reaction_group_" + index);
+		}
+		if(inputManager.hasMapping("failure_group_" + index)) {
+			inputManager.deleteMapping("failure_group_" + index);
+		}
 		
-		inputManager.deleteMapping("reaction_group_" + index);
-		inputManager.deleteMapping("failure_group_" + index);
 	}
 	
 
@@ -76,8 +80,12 @@ public class KeyReactionTimer extends ReactionTimer
 		super.update();
 		if(!timerIsActive && (correctReactionReported || failureReactionReported))
 		{
-			inputManager.deleteMapping("reaction_group_" + index);
-			inputManager.deleteMapping("failure_group_" + index);
+			if(inputManager.hasMapping("reaction_group_" + index)){
+				inputManager.deleteMapping("reaction_group_" + index);
+			}
+			if(inputManager.hasMapping("failure_group_" + index)) {
+				inputManager.deleteMapping("failure_group_" + index);
+			}
 		}
 	}
 	
