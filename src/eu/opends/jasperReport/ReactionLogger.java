@@ -188,14 +188,14 @@ public class ReactionLogger
 			}
 			try {
 				meanDeviation_part2 = calculateCarData(outputFolder + "/positionData_2.txt");
-				System.out.println("meanDev part 1" + meanDeviation_part2);
+				System.out.println("meanDev part 2" + meanDeviation_part2);
 			} catch (Exception e) {
 				meanDeviation_part2 = 0.0f;
 				System.out.println("meanDeviation part 2 failed");
 			}
 			try {
 				meanDeviation_part3 = calculateCarData(outputFolder + "/positionData_3.txt");
-				System.out.println("meanDev part 1" + meanDeviation_part3);
+				System.out.println("meanDev part 3" + meanDeviation_part3);
 			} catch (Exception e) {
 				meanDeviation_part3 = 0.0f;
 				System.out.println("meanDeviation part 3 failed");
@@ -278,7 +278,7 @@ public class ReactionLogger
 	public float calculateCarData(String fileName){
 		CarPositionReader carPositionReader = new CarPositionReader();
 		LinkedList<Vector3f> carPositionList = new LinkedList<Vector3f>();
-		float roadWidth = 10.0f; //what is a good value here????
+		float roadWidth = 10.0f; //TODO what is a good value here????
 		DeviationComputer devComp = sim.getDeviationComputer();
 		LinkedList<DataUnit> dataUnitList = new LinkedList<DataUnit>();
 		Long initialTimeStamp = 0l;
