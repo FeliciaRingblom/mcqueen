@@ -87,6 +87,7 @@
       <parameter name="reactionGroup" value="stimuli_right"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_1"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer2" ref="">
@@ -94,6 +95,7 @@
       <parameter name="reactionGroup" value="stimuli_left"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_2"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer3" ref="">
@@ -101,6 +103,7 @@
       <parameter name="reactionGroup" value="stimuli_right"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_3"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer4" ref="">
@@ -108,6 +111,7 @@
       <parameter name="reactionGroup" value="stimuli_left"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_4"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer5" ref="">
@@ -115,6 +119,7 @@
       <parameter name="reactionGroup" value="stimuli_right"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_5"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer6" ref="">
@@ -122,6 +127,7 @@
       <parameter name="reactionGroup" value="stimuli_left"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_6"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer7" ref="">
@@ -129,6 +135,7 @@
       <parameter name="reactionGroup" value="stimuli_left"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_7"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer8" ref="">
@@ -136,6 +143,7 @@
       <parameter name="reactionGroup" value="stimuli_right"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_8"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer9" ref="">
@@ -143,6 +151,7 @@
       <parameter name="reactionGroup" value="stimuli_left"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_9"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer10" ref="">
@@ -150,6 +159,7 @@
       <parameter name="reactionGroup" value="stimuli_right"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_10"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer11" ref="">
@@ -157,6 +167,7 @@
       <parameter name="reactionGroup" value="stimuli_right"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_11"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer12" ref="">
@@ -164,6 +175,7 @@
       <parameter name="reactionGroup" value="stimuli_left"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_12"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer13" ref="">
@@ -171,6 +183,7 @@
       <parameter name="reactionGroup" value="stimuli_right"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_13"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer14" ref="">
@@ -178,6 +191,7 @@
       <parameter name="reactionGroup" value="stimuli_left"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_14"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer15" ref="">
@@ -185,6 +199,7 @@
       <parameter name="reactionGroup" value="stimuli_left"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_15"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer16" ref="">
@@ -192,6 +207,7 @@
       <parameter name="reactionGroup" value="stimuli_right"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_16"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer17" ref="">
@@ -199,6 +215,7 @@
       <parameter name="reactionGroup" value="stimuli_right"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_17"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer18" ref="">
@@ -206,6 +223,7 @@
       <parameter name="reactionGroup" value="stimuli_left"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_18"/>
     </action>    
   </activity>
     <activity id="setUpKeyReactionTimer19" ref="">
@@ -213,6 +231,7 @@
       <parameter name="reactionGroup" value="stimuli_left"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_19"/>
     </action>    
   </activity>
   <activity id="setUpKeyReactionTimer20" ref="">
@@ -220,6 +239,7 @@
       <parameter name="reactionGroup" value="stimuli_right"/>
       <parameter name="correctReaction" value="JOY_3"/>
       <parameter name="failureReaction" value=""/>
+      <parameter name="timerID" value="1_20"/>
     </action>    
   </activity>
 </activities>
