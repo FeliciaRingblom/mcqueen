@@ -535,9 +535,8 @@ public class Simulator extends SimpleApplication
 		StatsAppState statsAppState = stateManager.getState(StatsAppState.class);
     	if (statsAppState != null && statsAppState.getFpsText() != null && statsAppState.getStatsView() != null) 
     	{
-    		statsAppState.getFpsText().setLocalTranslation(3, getSettings().getHeight()-145, 0);
-    		statsAppState.getStatsView().setLocalTranslation(3, getSettings().getHeight()-145, 0);
-    		statsAppState.setDarkenBehind(false);
+    		statsAppState.initialize(stateManager, this);  
+    		statsAppState.setDarkenBehind(true);
         }
     	
     	// add physics collision listener
@@ -723,7 +722,7 @@ public class Simulator extends SimpleApplication
 	    	AppSettings settings = new AppSettings(true);
 	        settings.setUseJoysticks(true);
 	        settings.setSettingsDialogImage("assets/Textures/Logo/mcQueen.jpg");
-	        settings.setTitle("Testa din körförmåga. ");
+	        settings.setTitle("Testa din kï¿½rfï¿½rmï¿½ga. ");
 	        
 	        
 	        // set splash screen parameters
